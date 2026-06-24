@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Clock } from "lucide-react";
 import { Reveal } from "@/components/home/reveal";
@@ -53,21 +54,37 @@ export default async function Page({
           title: l === "en" ? "Bars" : "Bares",
         })}
       />
-      <article className="home-concept bg-concept-sand py-20 md:py-28">
-        <div className="container">
-          <Reveal>
-            <div className="mx-auto max-w-2xl text-center">
-              <p className="eyebrow">{copy.eyebrow}</p>
-              <h1 className="mt-4 font-concept text-h1 font-medium leading-[1.06] text-concept-ocean ">
-                {copy.title}
-              </h1>
-              <p className="mx-auto mt-5 max-w-xl text-body-sm leading-relaxed text-concept-ink/80">
-                {copy.description}
-              </p>
+      <article className="home-concept bg-concept-sand">
+        {/* HERO */}
+        <section className="relative overflow-hidden text-white">
+          <div className="relative min-h-[58svh] md:min-h-[66svh]">
+            <Image
+              src="/images/golden-beach-bar-qN10cbKY.jpg"
+              alt={copy.title}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.5)_0%,rgba(0,0,0,0.14)_40%,rgba(0,0,0,0.74)_100%)]" />
+            <div className="container relative flex min-h-[58svh] flex-col justify-end pb-12 pt-32 md:min-h-[66svh] md:pb-16">
+              <Reveal>
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white">
+                  {copy.eyebrow}
+                </p>
+                <h1 className="mt-4 max-w-3xl font-concept text-display font-medium leading-[1.02] text-shadow-hero">
+                  {copy.title}
+                </h1>
+                <p className="mt-5 max-w-md text-base leading-relaxed text-white/88 md:text-lg">
+                  {copy.description}
+                </p>
+              </Reveal>
             </div>
-          </Reveal>
+          </div>
+        </section>
 
-          <div className="mx-auto mt-14 grid max-w-5xl gap-8 md:grid-cols-2">
+        <div className="container py-20 md:py-28">
+          <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2">
             {bars.map((venue, i) => {
               const t = venue.text[l];
               // Lead with the curated cover, then this bar's own photos.

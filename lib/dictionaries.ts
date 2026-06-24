@@ -7,7 +7,8 @@ import type { Locale } from "@/lib/i18n";
 const en = {
   nav: {
     home: "Home",
-    rooms: "Rooms",
+    rooms: "Suites",
+    eatDrink: "Eat & Drink",
     restaurant: "Restaurant",
     bars: "Bars",
     bakery: "Bakery",
@@ -320,7 +321,8 @@ type Dict = typeof en;
 const es: Dict = {
   nav: {
     home: "Inicio",
-    rooms: "Habitaciones",
+    rooms: "Suites",
+    eatDrink: "Comer y Beber",
     restaurant: "Restaurante",
     bars: "Bares",
     bakery: "Panadería",

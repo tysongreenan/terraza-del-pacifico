@@ -6,7 +6,8 @@ import { Menu, X, Phone } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-type NavItem = { href: string; label: string };
+type NavLink = { href: string; label: string };
+type NavItem = NavLink | { label: string; children: NavLink[] };
 
 export function MobileNav({
   items,
@@ -43,18 +44,44 @@ export function MobileNav({
       </button>
 
       {open && (
-        <div className="fixed inset-x-0 top-20 z-40 border-b border-border bg-background/98 backdrop-blur shadow-lg md:top-[5.75rem]">
+        <div
+          className={cn(
+            "fixed inset-x-0 z-40 border-b border-border bg-background shadow-lg",
+            overlay ? "top-24 md:top-[11rem]" : "top-[4.5rem] md:top-[5.5rem]"
+          )}
+        >
           <nav className="container flex flex-col py-4">
-            {items.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="flex min-h-[44px] items-center border-b border-border/50 text-base text-foreground/90 transition-colors hover:text-accent"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {items.map((item) =>
+              "children" in item ? (
+                <div
+                  key={item.label}
+                  className="border-b border-border/50 py-2"
+                >
+                  <p className="py-1 text-xs font-semibold uppercase tracking-wider text-foreground/50">
+                    {item.label}
+                  </p>
+                  {item.children.map((child) => (
+                    <Link
+                      key={child.href}
+                      href={child.href}
+                      onClick={() => setOpen(false)}
+                      className="flex min-h-[44px] items-center pl-3 text-base text-foreground/90 transition-colors hover:text-accent"
+                    >
+                      {child.label}
+                    </Link>
+                  ))}
+                </div>
+              ) : (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="flex min-h-[44px] items-center border-b border-border/50 text-base text-foreground/90 transition-colors hover:text-accent"
+                >
+                  {item.label}
+                </Link>
+              )
+            )}
             <a
               href={callHref}
               onClick={() => setOpen(false)}

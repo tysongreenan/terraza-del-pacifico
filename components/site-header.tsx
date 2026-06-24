@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { Phone } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { ChevronDown, Phone } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { LanguageToggle } from "@/components/language-toggle";
 import { MobileNav } from "@/components/mobile-nav";
@@ -12,6 +12,82 @@ import type { Dictionary } from "@/lib/dictionaries";
 import { bookingHref } from "@/lib/site";
 import { socials } from "@/lib/socials";
 import { cn } from "@/lib/utils";
+
+export type NavLink = { href: string; label: string };
+export type NavEntry = NavLink | { label: string; children: NavLink[] };
+
+function NavDropdown({
+  label,
+  children,
+  transparent,
+}: {
+  label: string;
+  children: NavLink[];
+  transparent: boolean;
+}) {
+  const [open, setOpen] = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const cancelClose = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+  };
+  const scheduleClose = () => {
+    cancelClose();
+    closeTimer.current = setTimeout(() => setOpen(false), 120);
+  };
+
+  return (
+    <div
+      className="relative"
+      onMouseEnter={() => {
+        cancelClose();
+        setOpen(true);
+      }}
+      onMouseLeave={scheduleClose}
+      onBlur={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget as Node)) setOpen(false);
+      }}
+    >
+      <button
+        type="button"
+        aria-expanded={open}
+        aria-haspopup="true"
+        onClick={() => setOpen((v) => !v)}
+        className={cn(
+          "inline-flex items-center gap-1 text-caption tracking-wide transition-colors",
+          transparent
+            ? "text-white/95 drop-shadow-sm hover:text-white"
+            : "text-foreground/75 hover:text-foreground"
+        )}
+      >
+        {label}
+        <ChevronDown
+          className={cn(
+            "h-3.5 w-3.5 transition-transform duration-200",
+            open && "rotate-180"
+          )}
+          aria-hidden
+        />
+      </button>
+      {open && (
+        <div className="absolute left-1/2 top-full -translate-x-1/2 pt-3">
+          <div className="min-w-[12rem] overflow-hidden rounded-sm border border-border bg-background p-1.5 shadow-lg">
+            {children.map((c) => (
+              <Link
+                key={c.href}
+                href={c.href}
+                onClick={() => setOpen(false)}
+                className="block rounded-sm px-3 py-2 text-caption tracking-wide text-foreground/80 transition-colors hover:bg-muted hover:text-foreground"
+              >
+                {c.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
 
 export function SiteHeader({
   locale,
@@ -33,12 +109,16 @@ export function SiteHeader({
 
   const transparent = !scrolled;
 
-  const nav = [
-    { href: p(""), label: n.home },
+  const nav: NavEntry[] = [
     { href: p("habitaciones"), label: n.rooms },
-    { href: p("restaurante"), label: n.restaurant },
-    { href: p("bares"), label: n.bars },
-    { href: p("panaderia"), label: n.bakery },
+    {
+      label: n.eatDrink,
+      children: [
+        { href: p("restaurante"), label: n.restaurant },
+        { href: p("bares"), label: n.bars },
+        { href: p("panaderia"), label: n.bakery },
+      ],
+    },
     { href: p("eventos"), label: n.events },
     { href: p("experiencias"), label: n.experiences },
     { href: p("galeria"), label: n.gallery },
@@ -56,44 +136,18 @@ export function SiteHeader({
           : "border-b border-border bg-background/95 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-background/90"
       )}
     >
-      <div className="container flex h-[5rem] items-center justify-between gap-4 md:h-[5.75rem]">
-        <Link
-          href={p("")}
-          aria-label="Terraza del Pacífico"
-          className="relative z-10 inline-flex items-center"
-        >
-          <Image
-            src={transparent ? "/images/logo-light.png" : "/images/Logo-nuevo-B86U915-.png"}
-            alt="Terraza del Pacífico"
-            width={480}
-            height={432}
-            priority
-            className={cn(
-              "h-16 w-auto transition-[height,filter] duration-300 md:h-20",
-              transparent && "drop-shadow-md"
-            )}
-          />
-        </Link>
-
-        <nav className="relative z-10 hidden items-center gap-6 xl:flex">
-          {nav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={cn(
-                "text-caption tracking-wide transition-colors",
-                transparent
-                  ? "text-white/95 drop-shadow-sm hover:text-white"
-                  : "text-foreground/75 hover:text-foreground"
-              )}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
-
-        <div className="relative z-10 flex items-center gap-2 md:gap-4">
-          <div className="hidden items-center gap-1 lg:flex">
+      {/* Utility bar — contact + social, right-aligned. Only at the top of the page. */}
+      <div className={cn(transparent ? "hidden md:block" : "hidden")}>
+        <div className="mx-auto flex h-10 w-full max-w-[1600px] items-center justify-end gap-5 px-6 lg:px-10">
+          <a
+            href={dict.footer.phoneHref}
+            aria-label={`${n.callAria}: ${dict.footer.phone}`}
+            className="inline-flex items-center gap-2 text-caption tracking-wide text-white/90 drop-shadow-sm transition-colors hover:text-white"
+          >
+            <Phone className="h-[0.95rem] w-[0.95rem] text-accent" aria-hidden />
+            {dict.footer.phone}
+          </a>
+          <div className="flex items-center gap-1">
             {socials.map(({ label, href, Icon }) => (
               <a
                 key={label}
@@ -101,29 +155,70 @@ export function SiteHeader({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className={cn(
-                  "flex h-9 w-9 items-center justify-center rounded-full transition-colors",
-                  transparent
-                    ? "text-white/95 drop-shadow-sm hover:bg-white/10 hover:text-white"
-                    : "text-foreground/75 hover:bg-muted hover:text-foreground"
-                )}
+                className="flex h-8 w-8 items-center justify-center rounded-full text-white/90 drop-shadow-sm transition-colors hover:bg-white/10 hover:text-white"
               >
                 <Icon className="h-4 w-4" />
               </a>
             ))}
           </div>
-          <a
-            href={dict.footer.phoneHref}
-            aria-label={`${n.callAria}: ${dict.footer.phone}`}
+        </div>
+      </div>
+
+      {/* Main bar — logo + primary nav */}
+      <div
+        className={cn(
+          "mx-auto flex w-full max-w-[1600px] items-center justify-between gap-4 px-6 transition-[height] duration-300 lg:px-10",
+          transparent ? "h-24 md:h-[8.5rem]" : "h-[4.5rem] md:h-[5.5rem]"
+        )}
+      >
+        <Link
+          href={p("")}
+          aria-label="Terraza del Pacífico"
+          className="relative z-10 inline-flex items-center"
+        >
+          <Image
+            src="/images/Logo-nuevo-B86U915-.png"
+            alt="Terraza del Pacífico"
+            width={480}
+            height={432}
+            priority
             className={cn(
-              "hidden h-9 w-9 items-center justify-center rounded-full transition-colors sm:inline-flex",
+              "max-w-[30vw] transition-[width,filter] duration-300",
               transparent
-                ? "text-white/95 drop-shadow-sm hover:bg-white/10 hover:text-white"
-                : "text-foreground/75 hover:bg-muted hover:text-foreground"
+                ? "w-[5.5rem] brightness-0 invert drop-shadow-md md:w-[8.5rem]"
+                : "w-[3.25rem] md:w-[4.25rem]"
             )}
-          >
-            <Phone className="h-[1.05rem] w-[1.05rem]" />
-          </a>
+          />
+        </Link>
+
+        <div className="relative z-10 flex items-center gap-6 xl:gap-8">
+        <nav className="hidden items-center gap-6 xl:flex">
+          {nav.map((item) =>
+            "children" in item ? (
+              <NavDropdown
+                key={item.label}
+                label={item.label}
+                children={item.children}
+                transparent={transparent}
+              />
+            ) : (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={cn(
+                  "text-caption tracking-wide transition-colors",
+                  transparent
+                    ? "text-white/95 drop-shadow-sm hover:text-white"
+                    : "text-foreground/75 hover:text-foreground"
+                )}
+              >
+                {item.label}
+              </Link>
+            )
+          )}
+        </nav>
+
+        <div className="flex items-center gap-2 md:gap-4">
           <LanguageToggle
             locale={locale}
             label={n.langLabel}
@@ -154,6 +249,7 @@ export function SiteHeader({
             callLabel={dict.footer.phone}
             overlay={transparent}
           />
+        </div>
         </div>
       </div>
     </header>

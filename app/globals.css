@@ -102,8 +102,8 @@
   }
   html {
     scroll-behavior: smooth;
-    /* offset for the sticky 4rem header when jumping to #booking etc. */
-    scroll-padding-top: 5rem;
+    /* offset for the fixed header (utility bar + main bar) when jumping to #booking etc. */
+    scroll-padding-top: 7rem;
   }
 }
 
