@@ -251,11 +251,11 @@ export function HeroCarousel({
 
         <div className="container relative z-10 flex min-h-[92svh] w-full items-end pb-36 pt-28 md:pb-44 md:pt-32">
           <div className="max-w-2xl text-white">
-            <p className="animate-rise text-sm font-semibold uppercase tracking-[0.22em] text-white/85 text-shadow-hero">
+            <p className="animate-rise text-sm font-semibold uppercase tracking-[0.22em] text-concept-gold text-shadow-hero">
               {h.eyebrow}
             </p>
             <h1
-              className="animate-rise mt-4 text-balance font-concept text-4xl font-medium leading-[1.08] text-shadow-hero sm:text-5xl md:text-6xl lg:text-[3.4rem]"
+              className="animate-rise mt-4 text-balance font-concept text-display font-medium leading-[1.08] text-shadow-hero lg:text-[3.4rem]"
               style={{ animationDelay: "0.08s" }}
             >
               {h.title}

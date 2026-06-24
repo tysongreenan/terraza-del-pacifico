@@ -59,10 +59,10 @@ export function VivaceMenu({
           />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,24,37,0.4)_0%,rgba(10,24,37,0.1)_45%,rgba(10,24,37,0.72)_100%)]" />
           <div className="container relative flex h-full flex-col justify-end pb-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#f3ead6]">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-concept-gold">
               {labels.eyebrow}
             </p>
-            <h1 className="mt-3 font-concept text-5xl font-medium leading-none text-shadow-hero md:text-[56px]">
+            <h1 className="mt-3 font-concept text-display font-medium leading-none text-shadow-hero ">
               {labels.title}
             </h1>
           </div>
@@ -111,15 +111,15 @@ export function VivaceMenu({
       <section className="pb-20 md:pb-24">
         <Reveal key={cat.id}>
           <div className="container pt-14 text-center">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-concept-gold-muted">
+            <p className="text-micro font-semibold uppercase tracking-[0.3em] text-concept-gold-muted">
               {menuSubhead[lang]}
             </p>
-            <h2 className="mt-4 font-concept text-4xl font-medium italic leading-none text-concept-ocean md:text-[58px]">
+            <h2 className="mt-4 font-concept text-display font-medium italic leading-none text-concept-ocean ">
               {cat.title[lang]}
             </h2>
             <div className="mt-5 flex items-center justify-center gap-3.5">
               <span className="h-px w-11 bg-[#d8c79c]" />
-              <span className="text-[11px] text-concept-gold">◆</span>
+              <span className="text-micro text-concept-gold">◆</span>
               <span className="h-px w-11 bg-[#d8c79c]" />
             </div>
           </div>
@@ -135,7 +135,7 @@ export function VivaceMenu({
                 {cat.note[lang]}
               </p>
             )}
-            <p className="mt-9 text-center text-[11px] tracking-[0.08em] text-[#6b6559]">
+            <p className="mt-9 text-center text-micro tracking-[0.08em] text-[#6b6559]">
               {menuPriceNote[lang]}
             </p>
           </div>
@@ -143,7 +143,7 @@ export function VivaceMenu({
       </section>
 
       {/* footer actions */}
-      <section className="border-t border-[#e7dfcf] bg-concept-sand-muted py-10">
+      <section className="border-t border-[#e7dfcf] bg-concept-sand-muted py-section-sm">
         <div className="container flex flex-col items-center justify-between gap-4 sm:flex-row">
           <Link
             href={`/${locale}/restaurante`}
@@ -155,7 +155,7 @@ export function VivaceMenu({
             href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-sm bg-concept-gold px-8 py-3.5 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90"
+            className="inline-flex items-center gap-2 rounded-sm bg-concept-gold px-8 py-3.5 text-caption font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90"
           >
             {labels.reserve}
           </a>
@@ -175,7 +175,7 @@ function DishColumn({ items, lang }: { items: MenuItem[]; lang: Locale }) {
               {item.name[lang]}
             </span>
             <span className="flex-1 translate-y-[-5px] border-b border-dotted border-[#d3c4a4]" />
-            <span className="whitespace-nowrap font-concept text-[22px] text-concept-gold-muted">
+            <span className="whitespace-nowrap font-concept text-h4 text-concept-gold-muted">
               {item.price}
             </span>
           </div>

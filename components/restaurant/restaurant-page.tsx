@@ -28,10 +28,10 @@ export function RestaurantPage({ locale }: { locale: Locale }) {
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,24,37,0.46)_0%,rgba(10,24,37,0.08)_38%,rgba(10,24,37,0.66)_100%)]" />
           <div className="container relative flex min-h-[72svh] flex-col justify-end pb-8 pt-28 md:min-h-[80svh]">
             <Reveal>
-              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#f3ead6]">
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-concept-gold">
                 {copy.hero.eyebrow}
               </p>
-              <h1 className="mt-5 max-w-3xl font-concept text-4xl font-medium leading-[1.02] text-shadow-hero md:text-6xl lg:text-[70px]">
+              <h1 className="mt-5 max-w-3xl font-concept text-display font-medium leading-[1.02] text-shadow-hero ">
                 {copy.hero.titleLines[0]}
                 <br />
                 {copy.hero.titleLines[1]}
@@ -44,7 +44,7 @@ export function RestaurantPage({ locale }: { locale: Locale }) {
                   href={whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-sm bg-concept-gold px-7 py-3.5 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90"
+                  className="inline-flex items-center gap-2 rounded-sm bg-concept-gold px-7 py-3.5 text-caption font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90"
                 >
                   {copy.hero.reserveCta}
                 </a>
@@ -52,7 +52,7 @@ export function RestaurantPage({ locale }: { locale: Locale }) {
                   href={whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-sm border border-white/60 px-7 py-3.5 text-[13px] font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10"
+                  className="inline-flex items-center gap-2 rounded-sm border border-white/60 px-7 py-3.5 text-caption font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10"
                 >
                   <MessageCircle className="h-4 w-4" aria-hidden />
                   {copy.hero.whatsappCta}
@@ -91,24 +91,24 @@ export function RestaurantPage({ locale }: { locale: Locale }) {
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-concept-gold">
             {copy.chef.eyebrow}
           </p>
-          <h2 className="mt-4 font-concept text-3xl font-medium leading-[1.1] text-white md:text-[46px]">
+          <h2 className="mt-4 font-concept text-h1 font-medium leading-[1.1] text-white ">
             {copy.chef.titleLines[0]}
             <br />
             {copy.chef.titleLines[1]}
           </h2>
-          <p className="mt-5 max-w-md text-[15px] leading-[1.8] text-[#bcd0d8]">
+          <p className="mt-5 max-w-md text-body-sm leading-[1.8] text-[#bcd0d8]">
             {copy.chef.body}
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Link
               href={menuHref()}
-              className="inline-flex items-center gap-2 rounded-sm bg-concept-gold px-8 py-3.5 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90"
+              className="inline-flex items-center gap-2 rounded-sm bg-concept-gold px-8 py-3.5 text-caption font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90"
             >
               {copy.chef.menuCta}
             </Link>
             <Link
               href={menuHref()}
-              className="inline-flex items-center gap-2 rounded-sm border border-white/45 px-7 py-3.5 text-[13px] font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10"
+              className="inline-flex items-center gap-2 rounded-sm border border-white/45 px-7 py-3.5 text-caption font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10"
             >
               {copy.chef.bioCta}
             </Link>
@@ -117,12 +117,12 @@ export function RestaurantPage({ locale }: { locale: Locale }) {
       </section>
 
       {/* MENU ENTRY CARDS */}
-      <section className="py-20 md:py-24">
+      <section className="py-section md:py-section">
         <div className="container max-w-5xl">
           <Reveal>
             <div className="mb-10 md:mb-12">
               <p className="eyebrow">{copy.menus.eyebrow}</p>
-              <h2 className="mt-3 font-concept text-3xl font-medium leading-[1.04] text-concept-ocean md:text-[42px]">
+              <h2 className="mt-3 font-concept text-h1 font-medium leading-[1.04] text-concept-ocean ">
                 {copy.menus.title}
               </h2>
             </div>
@@ -144,7 +144,7 @@ export function RestaurantPage({ locale }: { locale: Locale }) {
                     />
                   </div>
                   <div className="flex flex-1 flex-col p-8">
-                    <h3 className="font-concept text-3xl font-medium leading-none text-concept-ocean">
+                    <h3 className="font-concept text-h3 font-medium leading-none text-concept-ocean">
                       {card.title}
                     </h3>
                     <p className="mt-3 text-sm leading-relaxed text-[#6f6a62]">
@@ -171,12 +171,12 @@ export function RestaurantPage({ locale }: { locale: Locale }) {
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-concept-gold">
             {copy.ambiance.eyebrow}
           </p>
-          <h2 className="mt-4 font-concept text-3xl font-medium leading-[1.08] text-white md:text-[46px]">
+          <h2 className="mt-4 font-concept text-h1 font-medium leading-[1.08] text-white ">
             {copy.ambiance.titleLines[0]}
             <br />
             {copy.ambiance.titleLines[1]}
           </h2>
-          <p className="mt-5 max-w-md text-[15px] leading-[1.8] text-[#bcd0d8]">
+          <p className="mt-5 max-w-md text-body-sm leading-[1.8] text-[#bcd0d8]">
             {copy.ambiance.body}
           </p>
         </Reveal>
@@ -188,10 +188,10 @@ export function RestaurantPage({ locale }: { locale: Locale }) {
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-concept-gold">
             {copy.reserve.eyebrow}
           </p>
-          <h2 className="mt-4 font-concept text-3xl font-medium leading-[1.08] text-white md:text-[46px]">
+          <h2 className="mt-4 font-concept text-h1 font-medium leading-[1.08] text-white ">
             {copy.reserve.title}
           </h2>
-          <p className="mt-5 max-w-md text-[15px] leading-[1.7] text-[#bcd0d8]">
+          <p className="mt-5 max-w-md text-body-sm leading-[1.7] text-[#bcd0d8]">
             {copy.reserve.body}
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
@@ -199,7 +199,7 @@ export function RestaurantPage({ locale }: { locale: Locale }) {
               href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-sm bg-concept-gold px-8 py-3.5 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90"
+              className="inline-flex items-center gap-2 rounded-sm bg-concept-gold px-8 py-3.5 text-caption font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90"
             >
               {copy.reserve.primary}
             </a>
@@ -207,7 +207,7 @@ export function RestaurantPage({ locale }: { locale: Locale }) {
               href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-sm border border-white/50 px-7 py-3.5 text-[13px] font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10"
+              className="inline-flex items-center gap-2 rounded-sm border border-white/50 px-7 py-3.5 text-caption font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10"
             >
               <MessageCircle className="h-4 w-4" aria-hidden />
               {copy.reserve.secondary}
