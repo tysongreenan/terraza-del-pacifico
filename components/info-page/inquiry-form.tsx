@@ -115,6 +115,10 @@ export function InquiryForm({
       ? "border-white/25 text-white placeholder:text-white/45 [color-scheme:dark]"
       : "border-[#d3cab6] text-concept-ink placeholder:text-[#aaa394]"
   );
+  const fieldLabelClass = cn(
+    "block text-[11px] uppercase tracking-[0.12em]",
+    dark ? "text-white/50" : "text-[#aaa394]"
+  );
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -259,7 +263,7 @@ export function InquiryForm({
           />
         </label>
 
-        <div className={cn("grid gap-5", kind === "event" ? "grid-cols-2" : "grid-cols-1 md:grid-cols-3")}>
+        <div className={cn("grid gap-5", kind === "event" ? "grid-cols-2" : "grid-cols-1 md:grid-cols-2")}>
           {kind === "event" ? (
             <>
               <label className="block">
@@ -304,7 +308,7 @@ export function InquiryForm({
                 </select>
               </label>
               <label className="block">
-                <span className="sr-only">{t.experience.date}</span>
+                <span className={fieldLabelClass}>{t.experience.date}</span>
                 <input
                   name="date"
                   type="date"
@@ -313,7 +317,7 @@ export function InquiryForm({
                 />
               </label>
               <label className="block">
-                <span className="sr-only">{t.experience.experienceDate}</span>
+                <span className={fieldLabelClass}>{t.experience.experienceDate}</span>
                 <input
                   name="experienceDate"
                   type="date"
