@@ -6,6 +6,7 @@ import { useState } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight, Diamond } from "lucide-react";
 import { Reveal } from "@/components/home/reveal";
 import { LuxuryCtaBand } from "@/components/luxury/primitives";
+import { actionButtonVariants } from "@/components/ui/button";
 import { bookingHref, whatsappHref, eventsEmail } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import type { Locale } from "@/lib/i18n";
@@ -32,6 +33,7 @@ function roomImageAlt(room: Room, locale: Locale) {
 // Shared focus ring so keyboard focus is visible on gold and bordered controls.
 const focusRing =
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2 focus-visible:ring-offset-transparent";
+const roomsHeroImage = "/images/Photos from Expedia/Common areas/LEd pool view from room .webp";
 
 export function SuitesHub({
   locale,
@@ -63,25 +65,23 @@ export function SuitesHub({
       {/* HERO — cinematic carousel cycling all rooms, switcher docked below */}
       <section className="relative overflow-hidden text-white">
         <div className="relative min-h-[78svh] md:min-h-[88svh]">
-          {rooms.map(({ room, editorial }, i) => (
-            <Image
-              key={room.slug}
-              src={editorial.image}
-              alt={roomImageAlt(room, locale)}
-              fill
-              priority={i === 0}
-              sizes="100vw"
-              className={cn(
-                "object-cover transition-opacity [transition-duration:900ms]",
-                i === active ? "opacity-100" : "opacity-0"
-              )}
-            />
-          ))}
+          <Image
+            src={roomsHeroImage}
+            alt={
+              locale === "es"
+                ? "Vista desde una habitacion hacia la piscina, jardines y Playa Hermosa"
+                : "View from a room toward the pool, gardens and Playa Hermosa"
+            }
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
           <div className="hero-scrim absolute inset-0" />
 
           <div className="container relative flex min-h-[78svh] flex-col justify-end pb-44 pt-28 md:min-h-[88svh] md:pb-48">
             <Reveal>
-              <p className="text-eyebrow uppercase text-concept-gold text-shadow-hero">{copy.hero.eyebrow}</p>
+              <p className="text-eyebrow uppercase text-white text-shadow-hero">{copy.hero.eyebrow}</p>
               <h1 className="mt-4 max-w-3xl font-concept text-display font-medium leading-[1.02] text-shadow-hero ">
                 {copy.hero.titleLines[0]}
                 <br />
@@ -93,8 +93,10 @@ export function SuitesHub({
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
                   href={bookingHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={cn(
-                    "inline-flex items-center justify-center gap-2 rounded-sm bg-concept-gold px-7 py-3.5 text-caption font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90",
+                    actionButtonVariants({ variant: "primary", size: "lg" }),
                     focusRing
                   )}
                 >
@@ -104,7 +106,7 @@ export function SuitesHub({
                 <Link
                   href={`/${locale}/habitaciones/comparar`}
                   className={cn(
-                    "inline-flex items-center justify-center rounded-sm border border-white/60 px-7 py-3.5 text-caption font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10",
+                    actionButtonVariants({ variant: "secondary", surface: "dark", size: "lg" }),
                     focusRing
                   )}
                 >
@@ -197,7 +199,7 @@ export function SuitesHub({
         <Link
           href={`/${locale}/habitaciones/comparar`}
           className={cn(
-            "inline-flex items-center gap-2 rounded-sm border border-[#cdbfa6] px-8 py-4 text-xs font-semibold uppercase tracking-[0.12em] text-concept-ocean transition-colors hover:border-concept-ocean",
+            actionButtonVariants({ variant: "secondary", surface: "light", size: "lg" }),
             focusRing
           )}
         >
@@ -368,8 +370,10 @@ function RoomFeature({
           <div className="mt-7 flex flex-wrap gap-3">
             <a
               href={bookingHref}
+              target="_blank"
+              rel="noopener noreferrer"
               className={cn(
-                "rounded-sm bg-concept-gold px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90",
+                actionButtonVariants({ variant: "primary" }),
                 focusRing
               )}
             >
@@ -378,7 +382,7 @@ function RoomFeature({
             <Link
               href={`/${locale}/habitaciones/${room.slug}`}
               className={cn(
-                "rounded-sm border border-[#cdbfa6] px-6 py-3.5 text-xs font-semibold uppercase tracking-[0.1em] text-concept-ocean transition-colors hover:border-concept-ocean",
+                actionButtonVariants({ variant: "secondary", surface: "light" }),
                 focusRing
               )}
             >

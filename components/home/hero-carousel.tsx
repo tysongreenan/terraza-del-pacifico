@@ -5,8 +5,7 @@ import Link from "next/link";
 import { ArrowRight, Pause, Play, Star } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { heroSlides } from "@/content/hero-slides";
-import { HeroBookingBar } from "@/components/home/hero-booking-bar";
-import { buttonVariants } from "@/components/ui/button";
+import { actionButtonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import type { Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/lib/dictionaries";
@@ -251,7 +250,7 @@ export function HeroCarousel({
 
         <div className="container relative z-10 flex min-h-[92svh] w-full items-end pb-36 pt-28 md:pb-44 md:pt-32">
           <div className="max-w-2xl text-white">
-            <p className="animate-rise text-sm font-semibold uppercase tracking-[0.22em] text-concept-gold text-shadow-hero">
+            <p className="animate-rise text-sm font-semibold uppercase tracking-[0.22em] text-white text-shadow-hero">
               {h.eyebrow}
             </p>
             <h1
@@ -273,9 +272,11 @@ export function HeroCarousel({
             >
               <Link
                 href={bookingHref}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={cn(
-                  buttonVariants({ size: "lg" }),
-                  "inline-flex min-w-[220px] items-center justify-center gap-2 bg-white text-primary shadow-xl shadow-black/25 hover:bg-white/92"
+                  actionButtonVariants({ variant: "primary", size: "lg" }),
+                  "min-w-[220px] shadow-xl shadow-black/25"
                 )}
               >
                 {h.primaryCta}
@@ -347,14 +348,9 @@ export function HeroCarousel({
         </div>
       </div>
 
-      {/* Booking bar + trust — one sand bridge into the next section */}
+      {/* Trust line — sand bridge into the next section */}
       <div className="relative z-20 bg-concept-sand">
-        <div className="relative z-30 -mt-12 px-6 md:-mt-[4.5rem] md:px-0">
-          <div className="container">
-            <HeroBookingBar dict={dict} />
-          </div>
-        </div>
-        <p className="px-6 pb-8 pt-5 text-center text-xs font-medium uppercase tracking-[0.14em] text-concept-ocean md:px-12 md:pb-10 md:pt-6">
+        <p className="px-6 pb-8 pt-8 text-center text-xs font-medium uppercase tracking-[0.14em] text-concept-ocean md:px-12 md:pb-10 md:pt-10">
           <span className="text-concept-gold-muted">◆</span>
           <span className="mx-2">{h.trust}</span>
         </p>

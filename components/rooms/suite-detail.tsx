@@ -279,9 +279,11 @@ export function SuiteDetail({
           {/* right: sticky booking card */}
           <aside className="w-full flex-none lg:w-[372px]">
             <div className="lg:sticky lg:top-24">
-              {/* date / availability card — the whole panel links to booking */}
+              {/* reserve card — links out to the Orbe booking engine (new tab) */}
               <a
                 href={bookingHref}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block rounded-sm border border-[#ece5d8] bg-white p-7 shadow-[0_14px_40px_rgba(16,58,77,0.1)] transition-shadow hover:shadow-[0_18px_50px_rgba(16,58,77,0.16)] focus:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold"
               >
                 <div className="flex items-baseline justify-between">
@@ -293,32 +295,9 @@ export function SuiteDetail({
                   </span>
                 </div>
 
-                <div className="mt-5 flex overflow-hidden rounded-sm border border-[#e4ddce]">
-                  <div className="flex-1 border-r border-[#e4ddce] px-4 py-3.5">
-                    <div className="text-micro font-semibold uppercase tracking-[0.14em] text-[#9a9282]">
-                      {dict.bookingBar.checkIn}
-                    </div>
-                    <div className="mt-1 text-sm text-concept-ink">
-                      {dict.bookingBar.checkInPlaceholder}
-                    </div>
-                  </div>
-                  <div className="flex-1 px-4 py-3.5">
-                    <div className="text-micro font-semibold uppercase tracking-[0.14em] text-[#9a9282]">
-                      {dict.bookingBar.checkOut}
-                    </div>
-                    <div className="mt-1 text-sm text-concept-ink">
-                      {dict.bookingBar.checkOutPlaceholder}
-                    </div>
-                  </div>
-                </div>
-                <div className="rounded-sm rounded-t-none border border-t-0 border-[#e4ddce] px-4 py-3.5">
-                  <div className="text-micro font-semibold uppercase tracking-[0.14em] text-[#9a9282]">
-                    {dict.bookingBar.guests}
-                  </div>
-                  <div className="mt-1 text-sm text-concept-ink">
-                    {copy.sleeps(room.guests)}
-                  </div>
-                </div>
+                <p className="mt-3 text-sm leading-relaxed text-[#6f6a5f]">
+                  {copy.sleeps(room.guests)}
+                </p>
 
                 <div className="mt-5 flex items-center justify-center gap-2 rounded-sm bg-concept-gold px-6 py-4 text-caption font-semibold uppercase tracking-[0.1em] text-concept-ink">
                   {dict.bookingBar.cta}
@@ -443,7 +422,7 @@ export function SuiteDetail({
         </div>
       </section>
 
-      {/* CTA band — also the `#booking` anchor the booking card scrolls to */}
+      {/* closing CTA band */}
       <LuxuryCtaBand
         locale={locale}
         eyebrow={cta.eyebrow}

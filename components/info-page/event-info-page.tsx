@@ -11,7 +11,9 @@ import {
   type MosaicImage,
 } from "@/components/luxury/primitives";
 import { LuxuryImageSlider, type SliderSlide } from "@/components/luxury/image-slider";
+import { actionButtonVariants } from "@/components/ui/button";
 import { expandInfoPageGallery } from "@/lib/luxury-gallery";
+import { cn } from "@/lib/utils";
 import type { Locale } from "@/lib/i18n";
 import type { InfoPage as InfoPageData } from "@/content/info-pages";
 import { pageHref } from "@/content/info-pages";
@@ -94,7 +96,7 @@ export function EventInfoPage({
           href={page.cta.href}
           target={external ? "_blank" : undefined}
           rel={external ? "noopener noreferrer" : undefined}
-          className="inline-flex items-center justify-center gap-2 rounded-sm bg-concept-gold px-7 py-3.5 text-caption font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2"
+          className={cn(actionButtonVariants({ variant: "primary" }))}
         >
           {page.cta.label[locale]}
           <ArrowRight className="h-4 w-4" aria-hidden />

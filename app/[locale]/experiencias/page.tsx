@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { InfoHub } from "@/components/info-page/info-hub";
+import { ExperiencesCarousel } from "@/components/info-page/experiences-carousel";
 import { experienceHub, experiences } from "@/content/experiences";
-import { events } from "@/content/events";
 import { pageHref } from "@/content/info-pages";
 import { isLocale, type Locale } from "@/lib/i18n";
 import { siteUrl } from "@/lib/site";
@@ -44,7 +43,6 @@ export default async function ExperiencesPage({
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
   const l = locale as Locale;
-  const surfNights = events.find((page) => page.id === "surf-nights");
 
   const itemListJsonLd = {
     "@context": "https://schema.org",
@@ -73,12 +71,7 @@ export default async function ExperiencesPage({
         className="sr-only object-cover"
         aria-hidden
       />
-      <InfoHub
-        hub={experienceHub}
-        pages={experiences}
-        locale={l}
-        featured={surfNights}
-      />
+      <ExperiencesCarousel hub={experienceHub} pages={experiences} locale={l} />
     </div>
   );
 }

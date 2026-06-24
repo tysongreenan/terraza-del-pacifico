@@ -6,6 +6,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useMemo, useState } from "react";
 import { defaultRoomSlug, roomGalleries } from "@/content/room-galleries";
 import { Reveal } from "@/components/home/reveal";
+import { actionButtonVariants } from "@/components/ui/button";
 import type { Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/lib/dictionaries";
 import { bookingHref } from "@/lib/site";
@@ -211,13 +212,15 @@ export function Suites({
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link
                   href={bookingHref}
-                  className="rounded-sm bg-concept-gold px-6 py-3.5 text-xs font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-concept-ocean focus-visible:ring-offset-2 focus-visible:ring-offset-concept-sand"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={actionButtonVariants({ variant: "primary" })}
                 >
                   {s.bookCta}
                 </Link>
                 <Link
                   href={`/${locale}/habitaciones/${room.slug}`}
-                  className="rounded-sm border border-[#cdbfa6] px-6 py-3.5 text-xs font-semibold uppercase tracking-[0.1em] text-concept-ocean transition-colors hover:border-concept-ocean focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2 focus-visible:ring-offset-concept-sand"
+                  className={actionButtonVariants({ variant: "secondary", surface: "light" })}
                 >
                   {s.detailsCta}
                 </Link>

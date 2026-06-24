@@ -61,7 +61,7 @@ export function AboutPage({
           <div className="hero-scrim absolute inset-0" />
           <div className="container relative flex min-h-[68svh] flex-col justify-end pb-16 pt-28 md:min-h-[74svh] md:pb-20">
             <Reveal>
-              <p className="text-eyebrow uppercase text-concept-gold text-shadow-hero">{copy.hero.eyebrow}</p>
+              <p className="text-eyebrow uppercase text-white text-shadow-hero">{copy.hero.eyebrow}</p>
               <h1 className="mt-5 max-w-3xl font-concept text-display font-medium leading-[1.02] text-shadow-hero ">
                 {copy.hero.titleLines[0]}
                 <br />

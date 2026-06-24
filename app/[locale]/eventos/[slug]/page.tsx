@@ -3,6 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { EventsHub } from "@/components/info-page/events-hub";
 import { EventInfoPage } from "@/components/info-page/event-info-page";
+import { InfoDetailTemplate } from "@/components/info-page/detail-template";
 import { byLocalizedSlug, localizedParams, pageHref } from "@/content/info-pages";
 import {
   events,
@@ -177,7 +178,11 @@ export default async function EventDetailPage({
         className="sr-only object-cover"
         aria-hidden
       />
-      <EventInfoPage page={page} related={related} locale={l} />
+      {page.id === "surf-nights" ? (
+        <InfoDetailTemplate page={page} related={related} locale={l} />
+      ) : (
+        <EventInfoPage page={page} related={related} locale={l} />
+      )}
     </div>
   );
 }

@@ -78,7 +78,7 @@ export function RoomsCompare({
           <div className="hero-scrim absolute inset-0" />
           <div className="container relative flex min-h-[56svh] flex-col justify-end pb-16 pt-28 md:min-h-[60svh] md:pb-20">
             <Reveal>
-              <p className="text-eyebrow uppercase text-concept-gold text-shadow-hero">{copy.hero.eyebrow}</p>
+              <p className="text-eyebrow uppercase text-white text-shadow-hero">{copy.hero.eyebrow}</p>
               <h1 className="mt-4 font-concept text-display font-medium leading-[1.02] text-shadow-hero ">
                 {copy.hero.title}
               </h1>

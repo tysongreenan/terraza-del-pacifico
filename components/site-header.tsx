@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Phone } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
@@ -11,6 +10,7 @@ import { MobileNav } from "@/components/mobile-nav";
 import type { Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/lib/dictionaries";
 import { bookingHref } from "@/lib/site";
+import { socials } from "@/lib/socials";
 import { cn } from "@/lib/utils";
 
 export function SiteHeader({
@@ -22,9 +22,6 @@ export function SiteHeader({
 }) {
   const n = dict.nav;
   const p = (slug: string) => `/${locale}${slug ? `/${slug}` : ""}`;
-  const pathname = usePathname();
-  const isHome =
-    pathname === `/${locale}` || pathname === `/${locale}/`;
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -34,7 +31,7 @@ export function SiteHeader({
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const transparent = isHome && !scrolled;
+  const transparent = !scrolled;
 
   const nav = [
     { href: p(""), label: n.home },
@@ -53,26 +50,26 @@ export function SiteHeader({
     <header
       className={cn(
         "top-0 z-50 w-full transition-[background-color,border-color,box-shadow] duration-300",
-        isHome ? "fixed" : "sticky",
+        "fixed",
         transparent
           ? "border-transparent bg-transparent shadow-none"
           : "border-b border-border bg-background/95 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-background/90"
       )}
     >
-      <div className="container flex h-[4.25rem] items-center justify-between gap-4 md:h-[4.75rem]">
+      <div className="container flex h-[5rem] items-center justify-between gap-4 md:h-[5.75rem]">
         <Link
           href={p("")}
           aria-label="Terraza del Pacífico"
           className="relative z-10 inline-flex items-center"
         >
           <Image
-            src="/images/Logo-nuevo-B86U915-.png"
+            src={transparent ? "/images/logo-light.png" : "/images/Logo-nuevo-B86U915-.png"}
             alt="Terraza del Pacífico"
             width={480}
             height={432}
             priority
             className={cn(
-              "h-12 w-auto md:h-14",
+              "h-16 w-auto transition-[height,filter] duration-300 md:h-20",
               transparent && "drop-shadow-md"
             )}
           />
@@ -96,6 +93,25 @@ export function SiteHeader({
         </nav>
 
         <div className="relative z-10 flex items-center gap-2 md:gap-4">
+          <div className="hidden items-center gap-1 lg:flex">
+            {socials.map(({ label, href, Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className={cn(
+                  "flex h-9 w-9 items-center justify-center rounded-full transition-colors",
+                  transparent
+                    ? "text-white/95 drop-shadow-sm hover:bg-white/10 hover:text-white"
+                    : "text-foreground/75 hover:bg-muted hover:text-foreground"
+                )}
+              >
+                <Icon className="h-4 w-4" />
+              </a>
+            ))}
+          </div>
           <a
             href={dict.footer.phoneHref}
             aria-label={`${n.callAria}: ${dict.footer.phone}`}
@@ -116,6 +132,8 @@ export function SiteHeader({
           />
           <Link
             href={bookHref}
+            target="_blank"
+            rel="noopener noreferrer"
             className={cn(
               buttonVariants({
                 variant: "accent",

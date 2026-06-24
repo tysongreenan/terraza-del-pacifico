@@ -113,7 +113,7 @@ const CATEGORIES: GalleryCategory[] = [
       "/images/exp-garden-lawn.avif",
       "/images/Resort Highlights/DJI_20250526154631_0071_D.JPG",
       "/images/exp-beach-grounds.jpg",
-      "/images/Resort Highlights/IMG_6128.JPG",
+      "/images/Resort Highlights/IMG_61303.JPG",
       "/images/exp-sunset-drone.jpg",
       "/images/events-aerial-sunset-DjFbPbt1.jpg",
     ],

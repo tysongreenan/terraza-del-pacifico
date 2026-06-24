@@ -10,7 +10,9 @@ import {
   mosaicSpan,
   type MosaicImage,
 } from "@/components/luxury/primitives";
+import { actionButtonVariants } from "@/components/ui/button";
 import type { Locale } from "@/lib/i18n";
+import { cn } from "@/lib/utils";
 import type { HubPage, InfoPage } from "@/content/info-pages";
 import { pageHref } from "@/content/info-pages";
 
@@ -95,7 +97,7 @@ export function InfoHub({
           <div className="container flex justify-center">
             <Link
               href={pageHref(featured, locale)}
-              className="inline-flex items-center gap-2 rounded-sm border border-concept-ocean/25 px-8 py-3.5 text-caption font-semibold uppercase tracking-[0.1em] text-concept-ocean transition-colors hover:bg-concept-ocean hover:text-white"
+              className={cn(actionButtonVariants({ variant: "secondary", surface: "light" }))}
             >
               {locale === "en" ? "Explore Surf Nights" : "Explorar Surf Nights"}
               <ArrowRight className="h-4 w-4" aria-hidden />

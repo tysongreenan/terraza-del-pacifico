@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { Reveal } from "@/components/home/reveal";
+import { actionButtonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export type SliderSlide = {
@@ -100,7 +101,10 @@ export function LuxuryImageSlider({
               {exploreHref && exploreLabel && (
                 <Link
                   href={exploreHref}
-                  className="mt-6 inline-flex items-center gap-2 rounded-sm border-b border-concept-gold-muted pb-1 text-xs font-semibold uppercase tracking-[0.1em] text-concept-ocean transition-colors hover:text-concept-gold-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2"
+                  className={cn(
+                    actionButtonVariants({ variant: "tertiary", surface: "light" }),
+                    "mt-6"
+                  )}
                 >
                   {exploreLabel} →
                 </Link>

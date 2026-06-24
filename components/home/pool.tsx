@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Sparkles, ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/home/reveal";
-import { buttonVariants } from "@/components/ui/button";
+import { actionButtonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import type { Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/lib/dictionaries";
 import { bookingHref } from "@/lib/site";
@@ -80,11 +81,9 @@ export function Pool({
           <Reveal delay={200} className="mt-10">
             <Link
               href={bookingHref}
-              className={buttonVariants({
-                variant: "accent",
-                size: "lg",
-                className: "shadow-xl shadow-black/30",
-              })}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(actionButtonVariants({ variant: "primary", size: "lg" }), "shadow-xl shadow-black/30")}
             >
               {pool.cta}
               <ArrowRight className="h-4 w-4" aria-hidden />

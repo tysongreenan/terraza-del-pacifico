@@ -40,7 +40,7 @@ export const bars: Venue[] = [
       { src: "/images/Resturant/chloemurdochphotography-48.JPG", alt: "White wine poured poolside" },
     ],
     ctaImage: "/images/Resturant/DSCF4078(1).JPG",
-    cardImage: "/images/Resturant/chloemurdochphotography-259.JPG",
+    cardImage: "/images/golden-beach-bar-qN10cbKY.jpg",
     text: {
       en: {
         hero: {
@@ -106,15 +106,16 @@ export const bars: Venue[] = [
     slug: "iguana-bar",
     palette: "ocean",
     hours: { opens: "10:00", closes: "18:00" },
-    heroImage: "/images/Resturant/chloemurdochphotography-255.JPG",
+    heroImage: "/images/iguanabar-photo-download-1of1/Iguana_Bar_at_night/DSC09526-3.jpg",
     introSlides: [
-      { src: "/images/New Pool/dji_fly_20241022_013636_0636_1753125648022_photo2.JPG", alt: "The LED pool at night" },
-      { src: "/images/exp-pool-day-loungers.avif", alt: "The pool by day with sun loungers and foliage" },
-      { src: "/images/Resturant/chloemurdochphotography-342.JPG", alt: "Layered frozen signature cocktail" },
-      { src: "/images/Resturant/chloemurdochphotography-267.JPG", alt: "Blue-curaçao tropical cocktail" },
+      { src: "/images/iguanabar-photo-download-1of1/Iguana_Bar_at_day/DSC08652-2.jpg", alt: "Iguana Bar's poolside palapa across the turquoise pool by day" },
+      { src: "/images/iguanabar-photo-download-1of1/Iguana_Bar_at_day/DSC08675.jpg", alt: "Iguana Bar counter and barstools beside the pool in daylight" },
+      { src: "/images/iguanabar-photo-download-1of1/Iguana_Bar_at_night/DSC09546-2.jpg", alt: "Iguana Bar glowing at dusk with guests relaxing in the pool" },
+      { src: "/images/iguanabar-photo-download-1of1/Iguana_Bar_at_night/DSC09544-2.jpg", alt: "Iguana Bar's illuminated sign and barstools at night" },
+      { src: "/images/iguanabar-photo-download-1of1/Iguana_Bar_at_night/DSC09526-2.jpg", alt: "Iguana Bar lit up at night beside the pool" },
     ],
     ctaImage: "/images/Resturant/IMG_78472.JPG",
-    cardImage: "/images/Resturant/chloemurdochphotography-255.JPG",
+    cardImage: "/images/iguanabar-photo-download-1of1/Iguana_Bar_at_day/DSC08652-2.jpg",
     text: {
       en: {
         hero: {

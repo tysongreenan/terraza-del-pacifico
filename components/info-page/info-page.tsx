@@ -10,7 +10,9 @@ import {
   luxuryButtonOutline,
   type MosaicImage,
 } from "@/components/luxury/primitives";
+import { actionButtonVariants } from "@/components/ui/button";
 import { expandInfoPageGallery } from "@/lib/luxury-gallery";
+import { cn } from "@/lib/utils";
 import type { Locale } from "@/lib/i18n";
 import type { InfoPage as InfoPageData } from "@/content/info-pages";
 import { pageHref } from "@/content/info-pages";
@@ -75,7 +77,7 @@ export function InfoPage({
           href={page.cta.href}
           target={external ? "_blank" : undefined}
           rel={external ? "noopener noreferrer" : undefined}
-          className="inline-flex items-center justify-center gap-2 rounded-sm bg-concept-gold px-7 py-3.5 text-caption font-semibold uppercase tracking-[0.1em] text-concept-ink transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-concept-ocean focus-visible:ring-offset-2 focus-visible:ring-offset-concept-gold"
+          className={cn(actionButtonVariants({ variant: "primary" }))}
         >
           {page.cta.label[locale]}
           <ArrowRight className="h-4 w-4" aria-hidden />

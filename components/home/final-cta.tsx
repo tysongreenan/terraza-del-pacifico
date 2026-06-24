@@ -18,7 +18,7 @@ export function FinalCta({ dict }: { dict: Dictionary }) {
         sizes="100vw"
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-[rgba(16,58,77,0.4)] to-[rgba(16,58,77,0.55)]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/45 to-black/65" />
 
       <div className="container relative z-10">
         <Reveal>
@@ -33,6 +33,8 @@ export function FinalCta({ dict }: { dict: Dictionary }) {
         >
           <a
             href={bookingHref}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-sm bg-concept-gold px-8 py-4 text-caption font-semibold uppercase tracking-[0.1em] text-[#1a1611]"
           >
             {c.primaryCta}

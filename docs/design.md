@@ -83,6 +83,39 @@ exist on all three fonts — use `font-semibold`/`font-bold` freely.
 
 ---
 
+## Buttons
+
+One canonical system: `actionButtonVariants` in `components/ui/button.tsx`.
+**Never hand-roll button classes** — apply the variants to a `<button>`, `<a>`,
+or `<Link>`. All buttons share: `rounded-sm`, uppercase, `tracking-[0.1em]`,
+`text-caption`, gold focus ring, and one of three sizes (`sm`, `default`, `lg`).
+
+| Variant | Look | Use |
+|---------|------|-----|
+| `primary` | Gold solid (`bg-concept-gold` / `text-concept-ink`) | The main action — Book, Submit, the one CTA you want clicked |
+| `secondary` | Outline, **surface-aware** — on light a warm hairline that darkens to ocean on hover (no fill); on dark a white hairline with a faint white fill on hover | The alternative action sitting beside primary |
+| `tertiary` | Text link + `→` arrow, no border/padding, turns gold on hover | Quiet inline actions — "View all", "More experiences" |
+
+`secondary` and `tertiary` take a **`surface`**: `light` (ocean ink, default) or
+`dark` (white, for photo/ocean backgrounds). `primary` gold reads on both.
+
+```tsx
+import { actionButtonVariants } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+
+<a href={bookingHref} className={actionButtonVariants({ variant: "primary" })}>
+  Book your stay
+</a>
+<Link href={hubHref} className={actionButtonVariants({ variant: "secondary", surface: "dark" })}>
+  All events
+</Link>
+<Link href={hubHref} className={actionButtonVariants({ variant: "tertiary" })}>
+  More experiences <ArrowRight className="h-4 w-4" aria-hidden />
+</Link>
+```
+
+---
+
 ## Spacing
 
 Layout uses Tailwind's default spacing scale. For **top-level section vertical

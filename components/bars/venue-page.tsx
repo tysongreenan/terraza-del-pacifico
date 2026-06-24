@@ -21,13 +21,13 @@ export function VenuePage({
 
   // Palette-aware tokens for the dark pour-list and hero scrim.
   const heroScrim = amber
-    ? "bg-[linear-gradient(180deg,rgba(43,30,18,0.4)_0%,rgba(43,30,18,0.06)_38%,rgba(28,20,12,0.72)_100%)]"
-    : "bg-[linear-gradient(180deg,rgba(16,58,77,0.42)_0%,rgba(16,58,77,0.06)_38%,rgba(10,28,37,0.72)_100%)]";
+    ? "bg-[linear-gradient(180deg,rgba(0,0,0,0.5)_0%,rgba(0,0,0,0.14)_38%,rgba(0,0,0,0.74)_100%)]"
+    : "bg-[linear-gradient(180deg,rgba(0,0,0,0.5)_0%,rgba(0,0,0,0.14)_38%,rgba(0,0,0,0.74)_100%)]";
   const pourBg = amber ? "bg-[#1c140c]" : "bg-concept-ocean";
   const pourBorder = amber ? "border-[rgba(201,167,99,0.25)]" : "border-[rgba(159,185,194,0.25)]";
   const ctaScrim = amber
-    ? "bg-[linear-gradient(180deg,rgba(28,20,12,0.5),rgba(28,20,12,0.62))]"
-    : "bg-[linear-gradient(180deg,rgba(16,58,77,0.46),rgba(16,58,77,0.6))]";
+    ? "bg-[linear-gradient(180deg,rgba(0,0,0,0.52),rgba(0,0,0,0.68))]"
+    : "bg-[linear-gradient(180deg,rgba(0,0,0,0.52),rgba(0,0,0,0.68))]";
 
   return (
     <article className="home-concept bg-concept-sand">

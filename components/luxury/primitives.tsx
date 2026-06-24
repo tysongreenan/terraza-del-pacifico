@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import { Reveal } from "@/components/home/reveal";
+import { actionButtonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { bookingHref, whatsappHref } from "@/lib/site";
 import type { Locale } from "@/lib/i18n";
@@ -47,7 +48,7 @@ export function LuxuryHero({
       <div className="hero-scrim absolute inset-0" />
       <div className="container relative flex min-h-[72svh] flex-col justify-end pb-16 pt-28 md:pb-20">
         <Reveal>
-          <p className="text-eyebrow uppercase text-concept-gold text-shadow-hero">{eyebrow}</p>
+          <p className="text-eyebrow uppercase text-white text-shadow-hero">{eyebrow}</p>
           <h1 className="mt-4 max-w-4xl font-concept text-display font-medium leading-[1.02] text-shadow-hero ">
             {title}
           </h1>
@@ -192,7 +193,12 @@ export function LuxurySplitBand({
         {cta && (
           <Link
             href={cta.href}
-            className="mt-8 inline-flex w-fit items-center gap-2 rounded-sm border border-white/45 px-8 py-3.5 text-caption font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10"
+            target={cta.href.startsWith("http") ? "_blank" : undefined}
+            rel={cta.href.startsWith("http") ? "noopener noreferrer" : undefined}
+            className={cn(
+              actionButtonVariants({ variant: "secondary", surface: "dark" }),
+              "mt-8 w-fit"
+            )}
           >
             {cta.label}
             <ArrowRight className="h-4 w-4" aria-hidden />
@@ -230,11 +236,11 @@ export function LuxuryImageBand({
         sizes="100vw"
         className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-[rgba(16,58,77,0.72)] via-[rgba(16,58,77,0.35)] to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/35 to-transparent" />
       {(eyebrow || title || body) && (
         <div className="container relative flex items-end py-16 md:min-h-[inherit] md:py-20">
           <Reveal className="max-w-xl">
-            {eyebrow && <p className="text-eyebrow uppercase text-concept-gold text-shadow-hero">{eyebrow}</p>}
+            {eyebrow && <p className="text-eyebrow uppercase text-white text-shadow-hero">{eyebrow}</p>}
             {title && (
               <h2 className="mt-3 font-concept text-h1 font-medium leading-[1.08] ">
                 {title}
@@ -318,10 +324,10 @@ export function LuxuryCtaBand({
         sizes="100vw"
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-[rgba(16,58,77,0.45)] to-[rgba(16,58,77,0.62)]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/70" />
       <div className="container relative z-10">
         <Reveal>
-          <p className="text-eyebrow uppercase text-concept-gold text-shadow-hero">{eyebrow}</p>
+          <p className="text-eyebrow uppercase text-white text-shadow-hero">{eyebrow}</p>
           <h2 className="mx-auto mt-4 max-w-3xl font-concept text-h1 font-medium leading-tight text-shadow-hero ">
             {title}
           </h2>
@@ -335,7 +341,9 @@ export function LuxuryCtaBand({
         >
           <a
             href={primaryHref}
-            className="inline-flex items-center justify-center rounded-sm bg-concept-gold px-8 py-4 text-caption font-semibold uppercase tracking-[0.1em] text-[#1a1611]"
+            target={primaryHref.startsWith("http") ? "_blank" : undefined}
+            rel={primaryHref.startsWith("http") ? "noopener noreferrer" : undefined}
+            className={actionButtonVariants({ variant: "primary", size: "lg" })}
           >
             {primaryLabel}
           </a>
@@ -343,7 +351,11 @@ export function LuxuryCtaBand({
             href={secondaryHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-sm border border-white/60 px-8 py-4 text-caption font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10"
+            className={actionButtonVariants({
+              variant: "secondary",
+              surface: "dark",
+              size: "lg",
+            })}
           >
             <MessageCircle className="h-4 w-4" aria-hidden />
             {secondaryLabel}
@@ -361,10 +373,13 @@ export function LuxuryCtaBand({
 }
 
 export function luxuryButtonPrimary(label: string, href: string) {
+  const external = href.startsWith("http");
   return (
     <a
       href={href}
-      className="inline-flex items-center justify-center gap-2 rounded-sm bg-concept-gold px-7 py-3.5 text-caption font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90"
+      target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
+      className={actionButtonVariants({ variant: "primary" })}
     >
       {label}
       <ArrowRight className="h-4 w-4" aria-hidden />
@@ -376,7 +391,7 @@ export function luxuryButtonOutline(label: string, href: string) {
   return (
     <Link
       href={href}
-      className="inline-flex items-center justify-center gap-2 rounded-sm border border-white/55 px-7 py-3.5 text-caption font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10"
+      className={actionButtonVariants({ variant: "secondary", surface: "dark" })}
     >
       {label}
     </Link>

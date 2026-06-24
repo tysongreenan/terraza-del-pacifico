@@ -43,7 +43,7 @@ export function MobileNav({
       </button>
 
       {open && (
-        <div className="fixed inset-x-0 top-16 z-40 border-b border-border bg-background/98 backdrop-blur shadow-lg">
+        <div className="fixed inset-x-0 top-20 z-40 border-b border-border bg-background/98 backdrop-blur shadow-lg md:top-[5.75rem]">
           <nav className="container flex flex-col py-4">
             {items.map((item) => (
               <Link
@@ -65,6 +65,8 @@ export function MobileNav({
             </a>
             <Link
               href={bookHref}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
               className={buttonVariants({
                 variant: "accent",

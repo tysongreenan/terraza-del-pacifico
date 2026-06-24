@@ -37,12 +37,8 @@ const en = {
     soundOn: "Sound on",
   },
   bookingBar: {
-    checkIn: "Check in",
-    checkOut: "Check out",
-    guests: "Guests",
-    checkInPlaceholder: "Add dates",
-    checkOutPlaceholder: "Add dates",
-    guestsDefault: "2 adults",
+    title: "Reserve your stay",
+    subtitle: "Real-time availability and our best rate — book direct.",
     cta: "Check availability",
   },
   discover: {
@@ -354,12 +350,8 @@ const es: Dict = {
     soundOn: "Con sonido",
   },
   bookingBar: {
-    checkIn: "Entrada",
-    checkOut: "Salida",
-    guests: "Huéspedes",
-    checkInPlaceholder: "Agregar fechas",
-    checkOutPlaceholder: "Agregar fechas",
-    guestsDefault: "2 adultos",
+    title: "Reserva tu estadía",
+    subtitle: "Disponibilidad en tiempo real y nuestra mejor tarifa — directo.",
     cta: "Ver disponibilidad",
   },
   discover: {

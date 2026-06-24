@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { InfoPage } from "@/components/info-page/info-page";
+import { InfoDetailTemplate } from "@/components/info-page/detail-template";
 import { JsonLd } from "@/components/json-ld";
 import { byLocalizedSlug, localizedParams, pageHref } from "@/content/info-pages";
 import { experiences } from "@/content/experiences";
@@ -73,7 +73,7 @@ export default async function ExperienceDetailPage({
         className="sr-only object-cover"
         aria-hidden
       />
-      <InfoPage page={page} related={related} locale={l} />
+      <InfoDetailTemplate page={page} related={related} locale={l} />
     </div>
   );
 }

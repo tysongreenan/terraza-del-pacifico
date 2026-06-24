@@ -606,6 +606,8 @@ export function PageScaffold({
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href={bookingHref}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={buttonVariants({ variant: "accent", size: "lg" })}
               >
                 {copy.book}

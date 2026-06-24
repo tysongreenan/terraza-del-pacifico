@@ -3,7 +3,9 @@ import Link from "next/link";
 import { MessageCircle } from "lucide-react";
 import { Reveal } from "@/components/home/reveal";
 import { PanelCarousel } from "@/components/luxury/panel-carousel";
-import { bookingHref, whatsappHref } from "@/lib/site";
+import { actionButtonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { whatsappHref } from "@/lib/site";
 import type { Locale } from "@/lib/i18n";
 import { restaurantPageContent } from "@/content/restaurant-page";
 
@@ -23,12 +25,12 @@ export function RestaurantPage({ locale }: { locale: Locale }) {
             fill
             priority
             sizes="100vw"
-            className="object-cover"
+            className="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,24,37,0.46)_0%,rgba(10,24,37,0.08)_38%,rgba(10,24,37,0.66)_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.62)_0%,rgba(0,0,0,0.2)_38%,rgba(0,0,0,0.74)_100%)]" />
           <div className="container relative flex min-h-[72svh] flex-col justify-end pb-8 pt-28 md:min-h-[80svh]">
             <Reveal>
-              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-concept-gold">
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white">
                 {copy.hero.eyebrow}
               </p>
               <h1 className="mt-5 max-w-3xl font-concept text-display font-medium leading-[1.02] text-shadow-hero ">
@@ -44,19 +46,16 @@ export function RestaurantPage({ locale }: { locale: Locale }) {
                   href={whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-sm bg-concept-gold px-7 py-3.5 text-caption font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90"
+                  className={actionButtonVariants({ variant: "primary", size: "lg" })}
                 >
                   {copy.hero.reserveCta}
                 </a>
-                <a
-                  href={whatsappHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-sm border border-white/60 px-7 py-3.5 text-caption font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10"
+                <Link
+                  href={menuHref()}
+                  className={actionButtonVariants({ variant: "secondary", surface: "dark", size: "lg" })}
                 >
-                  <MessageCircle className="h-4 w-4" aria-hidden />
                   {copy.hero.whatsappCta}
-                </a>
+                </Link>
               </div>
             </Reveal>
 
@@ -76,43 +75,24 @@ export function RestaurantPage({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      {/* CHEF split — image left, ocean panel right */}
-      <section className="flex flex-col bg-concept-ocean md:flex-row md:items-stretch">
-        <div className="relative min-h-[360px] w-full md:min-h-[560px] md:w-1/2">
-          <Image
-            src={copy.chef.image}
-            alt={copy.chef.alt}
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover"
-          />
-        </div>
-        <Reveal className="flex w-full flex-col justify-center px-8 py-16 md:w-1/2 md:px-[72px] md:py-24">
+      {/* AMBIANCE split — carousel left, ocean text right */}
+      <section className="flex flex-col md:flex-row md:items-stretch">
+        <PanelCarousel
+          slides={copy.ambiance.slides}
+          className="min-h-[360px] w-full md:min-h-[540px] md:w-1/2"
+        />
+        <Reveal className="flex w-full flex-col justify-center bg-concept-ocean px-8 py-16 md:w-1/2 md:px-[72px] md:py-24">
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-concept-gold">
-            {copy.chef.eyebrow}
+            {copy.ambiance.eyebrow}
           </p>
-          <h2 className="mt-4 font-concept text-h1 font-medium leading-[1.1] text-white ">
-            {copy.chef.titleLines[0]}
+          <h2 className="mt-4 font-concept text-h1 font-medium leading-[1.08] text-white ">
+            {copy.ambiance.titleLines[0]}
             <br />
-            {copy.chef.titleLines[1]}
+            {copy.ambiance.titleLines[1]}
           </h2>
           <p className="mt-5 max-w-md text-body-sm leading-[1.8] text-[#bcd0d8]">
-            {copy.chef.body}
+            {copy.ambiance.body}
           </p>
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Link
-              href={menuHref()}
-              className="inline-flex items-center gap-2 rounded-sm bg-concept-gold px-8 py-3.5 text-caption font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90"
-            >
-              {copy.chef.menuCta}
-            </Link>
-            <Link
-              href={menuHref()}
-              className="inline-flex items-center gap-2 rounded-sm border border-white/45 px-7 py-3.5 text-caption font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10"
-            >
-              {copy.chef.bioCta}
-            </Link>
-          </div>
         </Reveal>
       </section>
 
@@ -161,24 +141,43 @@ export function RestaurantPage({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      {/* AMBIANCE split — carousel left, ocean text right */}
-      <section className="flex flex-col md:flex-row md:items-stretch">
-        <PanelCarousel
-          slides={copy.ambiance.slides}
-          className="min-h-[360px] w-full md:min-h-[540px] md:w-1/2"
-        />
-        <Reveal className="flex w-full flex-col justify-center bg-concept-ocean px-8 py-16 md:w-1/2 md:px-[72px] md:py-24">
+      {/* CHEF split — image left, ocean panel right */}
+      <section className="flex flex-col bg-concept-ocean md:flex-row md:items-stretch">
+        <div className="relative min-h-[360px] w-full md:min-h-[560px] md:w-1/2">
+          <Image
+            src={copy.chef.image}
+            alt={copy.chef.alt}
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover object-[center_top]"
+          />
+        </div>
+        <Reveal className="flex w-full flex-col justify-center px-8 py-16 md:w-1/2 md:px-[72px] md:py-24">
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-concept-gold">
-            {copy.ambiance.eyebrow}
+            {copy.chef.eyebrow}
           </p>
-          <h2 className="mt-4 font-concept text-h1 font-medium leading-[1.08] text-white ">
-            {copy.ambiance.titleLines[0]}
+          <h2 className="mt-4 font-concept text-h1 font-medium leading-[1.1] text-white ">
+            {copy.chef.titleLines[0]}
             <br />
-            {copy.ambiance.titleLines[1]}
+            {copy.chef.titleLines[1]}
           </h2>
           <p className="mt-5 max-w-md text-body-sm leading-[1.8] text-[#bcd0d8]">
-            {copy.ambiance.body}
+            {copy.chef.body}
           </p>
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <Link
+              href={menuHref()}
+              className={actionButtonVariants({ variant: "primary", size: "lg" })}
+            >
+              {copy.chef.menuCta}
+            </Link>
+            <Link
+              href={menuHref()}
+              className={actionButtonVariants({ variant: "secondary", surface: "dark", size: "lg" })}
+            >
+              {copy.chef.bioCta}
+            </Link>
+          </div>
         </Reveal>
       </section>
 
@@ -199,7 +198,7 @@ export function RestaurantPage({ locale }: { locale: Locale }) {
               href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-sm bg-concept-gold px-8 py-3.5 text-caption font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90"
+              className={actionButtonVariants({ variant: "primary", size: "lg" })}
             >
               {copy.reserve.primary}
             </a>
@@ -207,7 +206,7 @@ export function RestaurantPage({ locale }: { locale: Locale }) {
               href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-sm border border-white/50 px-7 py-3.5 text-caption font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10"
+              className={cn(actionButtonVariants({ variant: "secondary", surface: "dark", size: "lg" }), "gap-2.5")}
             >
               <MessageCircle className="h-4 w-4" aria-hidden />
               {copy.reserve.secondary}
