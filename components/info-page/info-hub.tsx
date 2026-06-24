@@ -106,12 +106,16 @@ export function InfoHub({
 
       <section className="bg-concept-sand-muted py-14 md:py-16">
         <div className="container">
-          <div className="flex gap-4 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] md:gap-5 [&::-webkit-scrollbar]:hidden">
+          <div
+            role="region"
+            aria-label={locale === "en" ? "Experiences" : "Experiencias"}
+            className="flex gap-4 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] md:gap-5 [&::-webkit-scrollbar]:hidden"
+          >
             {pages.map((page) => (
               <Link
                 key={page.id}
                 href={pageHref(page, locale)}
-                className="group relative h-[360px] w-[240px] shrink-0 overflow-hidden rounded-sm md:h-[400px] md:w-[280px]"
+                className="group relative h-[360px] w-[240px] shrink-0 overflow-hidden rounded-sm transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2 md:h-[400px] md:w-[280px]"
               >
                 <Image
                   src={page.heroImage.src}
@@ -120,7 +124,7 @@ export function InfoHub({
                   sizes="280px"
                   className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(11,32,42,0.92)] via-[rgba(11,32,42,0.2)] to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-concept-ocean/90 via-concept-ocean/20 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-5 text-white">
                   <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-concept-gold">
                     {page.eyebrow[locale]}

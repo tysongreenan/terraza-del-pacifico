@@ -67,7 +67,7 @@ const en: HubCopy = {
     eyebrow: "Stay · Oceanfront Rooms",
     titleLines: ["Wake to the Pacific,", "Four Ways"],
     description:
-      "Each room a few barefoot steps from the sand, the pool and the morning light — from a couple's hideaway to a full family villa.",
+      "Each room sits a few barefoot steps from the sand, the pool and the morning light. Pick a couple's hideaway or a full family villa.",
     primaryCta: "Check Availability",
     secondaryCta: "Compare All Rooms",
   },
@@ -173,7 +173,7 @@ const es: HubCopy = {
     eyebrow: "Hospedaje · Habitaciones frente al mar",
     titleLines: ["Despierta con el Pacífico,", "de cuatro formas"],
     description:
-      "Cada habitación a unos pasos descalzos de la arena, la piscina y la luz de la mañana — desde un refugio para dos hasta una villa para toda la familia.",
+      "Cada habitación está a unos pasos descalzos de la arena, la piscina y la luz de la mañana. Elige un refugio para dos o una villa para toda la familia.",
     primaryCta: "Ver disponibilidad",
     secondaryCta: "Comparar habitaciones",
   },

@@ -59,7 +59,7 @@ export function SiteFooter({
       <div className="container grid gap-10 py-14 md:grid-cols-4">
         <div className="md:col-span-1">
           <Image
-            src="/images/Logo-nuevo-B86U915-.png"
+            src="/images/logo-light.png"
             alt="Hotel Terraza del Pacífico"
             width={480}
             height={432}

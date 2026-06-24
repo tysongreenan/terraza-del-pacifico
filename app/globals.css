@@ -5,7 +5,8 @@
 /*
   Design tokens reverse-engineered from terrazadelpacifico.com (2026-06-22).
   shadcn/ui HSL convention: "H S% L%". Brand palette: gold (primary accent),
-  ocean (teal), earth, sand. Verify against the source repo when available.
+  ocean blue (#103a4d), earth, sand. No green-teal — the brand cool color is
+  the deep ocean blue used for headings/surfaces. Verify against source repo.
 */
 @layer base {
   :root {
@@ -18,7 +19,7 @@
     --popover: 45 30% 98%;
     --popover-foreground: 30 25% 20%;
 
-    --primary: 175 37% 16%;
+    --primary: 199 66% 18%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 25%;
@@ -27,7 +28,7 @@
     --muted: 40 20% 92%;
     --muted-foreground: 30 15% 45%;
 
-    --accent: 43 53% 54%;
+    --accent: 40 49% 59%;
     --accent-foreground: 30 40% 12%;
 
     --destructive: 0 84% 60%;
@@ -35,16 +36,22 @@
 
     --border: 40 25% 88%;
     --input: 40 25% 88%;
-    --ring: 43 53% 54%;
+    --ring: 40 49% 59%;
 
     --radius: 0.5rem;
 
-    /* Brand */
-    --gold: 43 53% 54%;
-    --ocean: 174 65% 40%;
-    --ocean-light: 174 55% 65%;
+    /* ── Brand scale — single source of truth ───────────────────────────
+       The Tailwind `concept-*` palette and the gold/ocean/sand/ink tokens
+       all alias these vars, so each brand color is defined exactly once.
+       Cool color is the deep ocean blue (#103a4d). No green-teal. */
+    --gold: 40 49% 59%;          /* #c9a763 — canonical gold (= --accent) */
+    --gold-muted: 38 54% 34%;    /* #876528 — deep gold for fine rules/labels */
+    --ocean: 199 66% 18%;        /* #103a4d — deep ocean blue (= --primary)  */
+    --ocean-light: 199 50% 58%;  /* lighter ocean for accents               */
+    --sand: 40 50% 96%;          /* #faf6ef — warm off-white surface         */
+    --sand-muted: 40 40% 93%;    /* #f5efe5 — slightly deeper sand           */
+    --ink: 33 15% 15%;           /* #2b2620 — near-black warm ink for text   */
     --earth: 30 35% 35%;
-    --sand: 40 35% 85%;
   }
 
   .dark {
@@ -57,7 +64,7 @@
     --popover: 30 25% 12%;
     --popover-foreground: 40 20% 92%;
 
-    --primary: 153 84% 35%;
+    --primary: 199 70% 45%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 35%;
@@ -171,7 +178,7 @@
   }
 
   .eyebrow {
-    @apply text-xs font-semibold uppercase tracking-[0.24em] text-concept-gold-muted;
+    @apply text-eyebrow uppercase text-concept-gold-muted;
   }
 
   .home-concept h1,

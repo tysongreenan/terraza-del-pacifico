@@ -5,7 +5,7 @@ import { JsonLd } from "@/components/json-ld";
 import { bars, getVenue } from "@/content/bars";
 import { getDictionary } from "@/lib/dictionaries";
 import { locales, type Locale } from "@/lib/i18n";
-import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
+import { absoluteUrl, breadcrumbJsonLd, localizedPath, pageMetadata, siteUrl } from "@/lib/seo";
 
 export function generateStaticParams() {
   return locales.flatMap((locale) =>
@@ -41,6 +41,28 @@ export default async function Page({
   const venue = getVenue(slug);
   if (!venue) notFound();
   const dict = getDictionary(l);
+  const t = venue.text[l];
+
+  // BarOrPub structured data. Built only from genuine, on-page facts; geo,
+  // priceRange, and openingHours are intentionally omitted until confirmed,
+  // matching the fabrication-risk discipline in lib/seo.ts.
+  const barJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BarOrPub",
+    "@id": `${siteUrl}/bares/${slug}#bar`,
+    name: t.hero.title,
+    description: t.hero.description,
+    image: absoluteUrl(venue.heroImage),
+    url: absoluteUrl(localizedPath(l, `bares/${slug}`)),
+    parentOrganization: { "@id": `${siteUrl}/#hotel` },
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Playa Hermosa",
+      addressLocality: "Playa Hermosa",
+      addressRegion: "Puntarenas",
+      addressCountry: "CR",
+    },
+  };
 
   return (
     <>
@@ -48,9 +70,10 @@ export default async function Page({
         data={breadcrumbJsonLd({
           locale: l,
           path: `bares/${slug}`,
-          title: venue.text[l].hero.title,
+          title: t.hero.title,
         })}
       />
+      <JsonLd data={barJsonLd} />
       <VenuePage venue={venue} locale={l} mapHref={dict.location.mapHref} />
     </>
   );

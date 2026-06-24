@@ -130,10 +130,12 @@ export function Suites({
                   <button
                     key={i}
                     type="button"
-                    aria-label={`Photo ${i + 1}`}
+                    aria-label={
+                      locale === "en" ? `Photo ${i + 1}` : `Foto ${i + 1}`
+                    }
                     onClick={() => setSlideIndex(i)}
                     className={cn(
-                      "h-[3px] w-[22px] rounded-full transition-colors",
+                      "h-[3px] w-[22px] rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-concept-ocean",
                       i === slideIndex ? "bg-white" : "bg-white/40 hover:bg-white/70"
                     )}
                   />
@@ -147,16 +149,16 @@ export function Suites({
                 <button
                   type="button"
                   onClick={prevSlide}
-                  aria-label="Previous photo"
-                  className="flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-concept-ocean shadow-sm transition-transform hover:scale-105"
+                  aria-label={locale === "en" ? "Previous photo" : "Foto anterior"}
+                  className="flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-concept-ocean shadow-sm transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2 focus-visible:ring-offset-concept-ocean"
                 >
                   <ChevronLeft className="h-4 w-4" aria-hidden />
                 </button>
                 <button
                   type="button"
                   onClick={nextSlide}
-                  aria-label="Next photo"
-                  className="flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-concept-ocean shadow-sm transition-transform hover:scale-105"
+                  aria-label={locale === "en" ? "Next photo" : "Siguiente foto"}
+                  className="flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-concept-ocean shadow-sm transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2 focus-visible:ring-offset-concept-ocean"
                 >
                   <ChevronRight className="h-4 w-4" aria-hidden />
                 </button>
@@ -209,13 +211,13 @@ export function Suites({
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link
                   href={bookingHref}
-                  className="rounded-sm bg-concept-gold px-6 py-3.5 text-xs font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90"
+                  className="rounded-sm bg-concept-gold px-6 py-3.5 text-xs font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-concept-ocean focus-visible:ring-offset-2 focus-visible:ring-offset-concept-sand"
                 >
                   {s.bookCta}
                 </Link>
                 <Link
                   href={`/${locale}/habitaciones/${room.slug}`}
-                  className="rounded-sm border border-[#cdbfa6] px-6 py-3.5 text-xs font-semibold uppercase tracking-[0.1em] text-concept-ocean transition-colors hover:border-concept-ocean"
+                  className="rounded-sm border border-[#cdbfa6] px-6 py-3.5 text-xs font-semibold uppercase tracking-[0.1em] text-concept-ocean transition-colors hover:border-concept-ocean focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2 focus-visible:ring-offset-concept-sand"
                 >
                   {s.detailsCta}
                 </Link>
@@ -236,7 +238,13 @@ export function Suites({
                 key={item.slug}
                 type="button"
                 onClick={() => selectRoom(item.slug)}
-                className="text-left"
+                aria-pressed={selected}
+                aria-label={
+                  locale === "en"
+                    ? `View the ${item.name}`
+                    : `Ver ${item.name}`
+                }
+                className="rounded-sm text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2 focus-visible:ring-offset-concept-sand"
               >
                 <div
                   className={cn(
@@ -246,7 +254,7 @@ export function Suites({
                 >
                   <Image
                     src={item.image}
-                    alt={item.name}
+                    alt=""
                     fill
                     sizes="(max-width: 768px) 50vw, 25vw"
                     className="object-cover"

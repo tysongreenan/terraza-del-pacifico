@@ -1,5 +1,5 @@
 import newsletter from "@/content/blog-newsletter-febrero.json";
-import type { Locale } from "@/lib/i18n";
+import { defaultLocale, type Locale } from "@/lib/i18n";
 
 type BlogContent = {
   title: string;
@@ -33,12 +33,31 @@ const navLabels = new Set([
   "Back to blog",
 ]);
 
+// Localized card/meta copy for each post. The article body lives in the source
+// JSON (English for now); titles and excerpts are translated here so the
+// Spanish hub and /es/blog/[slug] no longer surface English chrome.
+type LocalizedCopy = { title: string; excerpt: string };
+
+const postCopy: Record<string, Record<Locale, LocalizedCopy>> = {
+  [newsletter.slug]: {
+    es: {
+      title: "Febrero frente al Pacífico",
+      excerpt:
+        "Novedades de febrero en el Hotel Terraza del Pacífico: estancias frente al mar, pases de día, yoga gratis, música en vivo y noches de surf.",
+    },
+    en: {
+      title: "February Facing the Pacific",
+      excerpt:
+        "February news from Hotel Terraza del Pacífico: beachfront stays, day passes, free yoga, live music and surf nights.",
+    },
+  },
+};
+
 const posts: BlogPost[] = [
   {
     slug: newsletter.slug,
-    title: "February Facing the Pacific",
-    excerpt:
-      "February news, beachfront stays, day passes, yoga, live music, surf nights and special experiences at Hotel Terraza del Pacifico.",
+    title: postCopy[newsletter.slug].en.title,
+    excerpt: postCopy[newsletter.slug].en.excerpt,
     publishedAt: "2026-04-23",
     language: "en",
     coverImage: localImage(newsletter.imgs?.[1] ?? "/images/og-image.jpg"),
@@ -46,12 +65,19 @@ const posts: BlogPost[] = [
   },
 ];
 
-export function getBlogPosts(locale?: Locale) {
-  const filtered = posts;
-  return [...filtered].sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
+function localizePost(post: BlogPost, locale: Locale): BlogPost {
+  const copy = postCopy[post.slug]?.[locale];
+  if (!copy) return post;
+  return { ...post, title: copy.title, excerpt: copy.excerpt, language: locale };
 }
 
-export function getBlogPost(slug: string, locale?: Locale) {
+export function getBlogPosts(locale: Locale = defaultLocale) {
+  return [...posts]
+    .map((post) => localizePost(post, locale))
+    .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
+}
+
+export function getBlogPost(slug: string, locale: Locale = defaultLocale) {
   return getBlogPosts(locale).find((post) => post.slug === slug) ?? null;
 }
 

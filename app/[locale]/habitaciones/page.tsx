@@ -8,12 +8,32 @@ import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 
 const path = "habitaciones";
 
-export function generateMetadata({
+// Localized title/description so the Spanish route does not inherit the
+// English-only strings stored in habitaciones.json. The OG/Twitter/canonical
+// and hreflang alternates still come from pageMetadata().
+const seoCopy: Record<Locale, { title: string; desc: string }> = {
+  es: {
+    title: "Habitaciones y villas frente al mar | Hotel Terraza del Pacífico",
+    desc: "Habitaciones Superior, Estándar, Junior Suite y villas en Playa Hermosa. Vistas al Pacífico, aire acondicionado, WiFi y acceso a la playa.",
+  },
+  en: {
+    title: "Beachfront rooms and villas | Hotel Terraza del Pacífico",
+    desc: "Superior, Standard, Junior Suite rooms and villas in Playa Hermosa. Pacific views, air conditioning, WiFi and direct beach access.",
+  },
+};
+
+export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  return pageMetadata({ params, path, content: data });
+  const { locale } = await params;
+  const l = (locale === "en" ? "en" : "es") as Locale;
+  return pageMetadata({
+    params: Promise.resolve({ locale }),
+    path,
+    content: { ...data, ...seoCopy[l] },
+  });
 }
 
 export default async function Page({

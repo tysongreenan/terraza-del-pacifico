@@ -21,9 +21,9 @@ const en = {
   },
   hero: {
     eyebrow: "Playa Hermosa · Costa Rica",
-    title: "Where the Pacific Is Your Front Yard",
+    title: "Beachfront on Playa Hermosa",
     subtitle:
-      "Oceanfront luxury, unforgettable sunsets and authentic Costa Rican hospitality, directly on the sand of Playa Hermosa.",
+      "Right on the sand at Playa Hermosa, just south of Jacó — the surf a few steps from your room and a warm Costa Rican welcome at the door.",
     primaryCta: "Book Your Escape",
     secondaryCta: "Explore the Resort",
     trust: "Best rate guaranteed when you book direct",
@@ -45,11 +45,11 @@ const en = {
   },
   discover: {
     eyebrow: "All of it, steps from your room",
-    title: "One beachfront resort, a thousand reasons to never leave the sand",
+    title: "One beachfront resort on Playa Hermosa, and plenty of reasons to stay on the sand",
     exploreCta: "Explore the resort",
   },
   welcome: {
-    eyebrow: "Bienvenidos",
+    eyebrow: "Welcome",
     title: "Welcome to Terraza del Pacífico",
     body: "For more than twenty years, this stretch of sand has been a place to slow down, where mornings open with whale song on the horizon and evenings close with the sky on fire over the Pacific.",
     stats: [
@@ -194,9 +194,9 @@ const en = {
   pool: {
     eyebrow: "Found Nowhere Else in Costa Rica",
     title: "A Pool That Turns Into a Starry Sky",
-    body: "As the sun sets over the Pacific, our signature pool becomes something extraordinary. Designed by a renowned Italian artist, more than 1,200 LED lights shimmer beneath the water: the illusion of a star-filled sky beneath your feet.",
+    body: "As the sun sets over the Pacific, the pool changes character. An Italian artist set more than 1,200 LED lights beneath the surface, so the water reads like a sky full of stars under your feet.",
     body2:
-      "More than a pool, it's an immersive work of art where luxury, innovation and nature meet. Swim at night, sip a cocktail poolside, and lose yourself in a display you'll find nowhere else.",
+      "Swim after dark or sit at the edge with a cocktail and watch the lights move. It is the kind of thing guests photograph and still cannot quite explain afterward.",
     stat1: { value: "1,200+", label: "LED lights underwater" },
     stat2: { value: "1 of 1", label: "Designed by an Italian artist" },
     cta: "Experience the magic",
@@ -291,7 +291,7 @@ const es: Dict = {
     eyebrow: "Playa Hermosa · Costa Rica",
     title: "Frente al Mar",
     subtitle:
-      "Lujo frente al mar, atardeceres inolvidables y auténtica hospitalidad costarricense, directamente sobre la arena de Playa Hermosa.",
+      "Sobre la arena de Playa Hermosa, con el mar a pocos pasos de tu habitación y una bienvenida costarricense en la puerta.",
     primaryCta: "Reserva tu Escape",
     secondaryCta: "Explora el Resort",
     trust: "Mejor tarifa garantizada al reservar directo",
@@ -313,7 +313,7 @@ const es: Dict = {
   },
   discover: {
     eyebrow: "Todo a pasos de tu habitación",
-    title: "Un resort frente al mar, mil razones para no salir de la arena",
+    title: "Un resort frente al mar, con motivos de sobra para quedarse en la arena",
     exploreCta: "Explora el resort",
   },
   welcome: {
@@ -462,9 +462,9 @@ const es: Dict = {
   pool: {
     eyebrow: "No Existe en Ningún Otro Lugar de Costa Rica",
     title: "Una Piscina Que Se Convierte en Cielo Estrellado",
-    body: "Cuando el sol cae sobre el Pacífico, nuestra piscina insignia se transforma en algo extraordinario. Diseñada por un reconocido artista italiano, más de 1.200 luces LED brillan bajo el agua: la ilusión de un cielo estrellado bajo tus pies.",
+    body: "Cuando el sol cae sobre el Pacífico, la piscina cambia por completo. Un artista italiano colocó más de 1.200 luces LED bajo el agua, y la superficie parece un cielo estrellado bajo tus pies.",
     body2:
-      "Más que una piscina, es una obra de arte inmersiva donde el lujo, la innovación y la naturaleza se encuentran. Nada de noche, toma un cóctel a la orilla y piérdete en un espectáculo que no encontrarás en ningún otro lugar.",
+      "Nada de noche o siéntate en la orilla con un cóctel a ver moverse las luces. Es de esas cosas que los huéspedes fotografían y aún así no logran explicar del todo.",
     stat1: { value: "1.200+", label: "Luces LED bajo el agua" },
     stat2: { value: "Única", label: "Diseñada por un artista italiano" },
     cta: "Vive la magia",

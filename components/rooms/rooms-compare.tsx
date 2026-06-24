@@ -69,7 +69,7 @@ export function RoomsCompare({
         <div className="relative min-h-[56svh] md:min-h-[60svh]">
           <Image
             src={heroImage}
-            alt={copy.hero.title}
+            alt={copy.hero.imageAlt}
             fill
             priority
             sizes="100vw"
@@ -94,7 +94,7 @@ export function RoomsCompare({
       <div className="container">
         <div className="flex flex-col gap-0 md:flex-row">
           {/* filter rail */}
-          <aside className="flex-none border-b border-[#ece5d8] py-10 md:w-[300px] md:self-start md:border-b-0 md:border-r md:py-12 md:pr-9 md:[position:sticky] md:top-24">
+          <aside className="flex-none border-b border-border py-10 md:w-[300px] md:self-start md:border-b-0 md:border-r md:py-12 md:pr-9 md:[position:sticky] md:top-24">
             <p className="eyebrow">{copy.refine}</p>
 
             <Filter label={copy.guests.label}>
@@ -139,18 +139,20 @@ export function RoomsCompare({
               </div>
             </Filter>
 
-            <div className="mt-8 border-t border-[#ece5d8] pt-6">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#6b6559]">
-                {copy.showing}
-              </p>
-              <p className="mt-1 font-concept text-[28px] text-concept-ocean">
-                {copy.roomTypes(filtered.length)}
-              </p>
+            <div className="mt-8 border-t border-border pt-6">
+              <div role="status" aria-live="polite">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                  {copy.showing}
+                </p>
+                <p className="mt-1 font-concept text-[28px] text-concept-ocean">
+                  {copy.roomTypes(filtered.length)}
+                </p>
+              </div>
               {hasFilters && (
                 <button
                   type="button"
                   onClick={clearAll}
-                  className="mt-3 text-xs font-medium uppercase tracking-[0.1em] text-concept-gold-muted underline-offset-4 hover:underline"
+                  className="mt-3 min-h-[44px] text-xs font-medium uppercase tracking-[0.1em] text-concept-gold-muted underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
                 >
                   {copy.clear}
                 </button>
@@ -168,14 +170,18 @@ export function RoomsCompare({
                     {copy.heading.title}
                   </h2>
                 </div>
-                <p className="hidden text-xs tracking-wide text-[#6b6559] sm:block">
+                <p className="hidden text-xs tracking-wide text-muted-foreground sm:block">
                   {copy.heading.note}
                 </p>
               </div>
             </Reveal>
 
+            <div role="table" aria-label={copy.heading.title}>
             {/* column header (desktop) */}
-            <div className="hidden grid-cols-[2.4fr_.8fr_.8fr_1fr_1fr_1.4fr] items-center gap-6 border-b border-concept-ink pb-3 md:grid">
+            <div
+              role="row"
+              className="hidden grid-cols-[2.4fr_.8fr_.8fr_1fr_1fr_1.4fr] items-center gap-6 border-b border-concept-ink pb-3 md:grid"
+            >
               {[
                 copy.columns.room,
                 copy.columns.guests,
@@ -185,16 +191,17 @@ export function RoomsCompare({
               ].map((c) => (
                 <div
                   key={c}
-                  className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#6b6559]"
+                  role="columnheader"
+                  className="text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground"
                 >
                   {c}
                 </div>
               ))}
-              <div />
+              <div role="columnheader" />
             </div>
 
             {filtered.length === 0 ? (
-              <p className="py-16 text-center text-sm text-[#6b6559]">
+              <p className="py-16 text-center text-sm text-muted-foreground">
                 {copy.empty}
               </p>
             ) : (
@@ -203,9 +210,10 @@ export function RoomsCompare({
                 return (
                   <div
                     key={room.slug}
-                    className="grid grid-cols-2 items-center gap-x-6 gap-y-4 border-b border-[#ece5d8] py-5 md:grid-cols-[2.4fr_.8fr_.8fr_1fr_1fr_1.4fr]"
+                    role="row"
+                    className="grid grid-cols-2 items-center gap-x-6 gap-y-4 border-b border-border py-5 md:grid-cols-[2.4fr_.8fr_.8fr_1fr_1fr_1.4fr]"
                   >
-                    <div className="col-span-2 flex items-center gap-4 md:col-span-1">
+                    <div role="cell" className="col-span-2 flex items-center gap-4 md:col-span-1">
                       <div className="relative h-[74px] w-[104px] flex-none overflow-hidden rounded-sm">
                         <Image
                           src={room.image}
@@ -230,16 +238,21 @@ export function RoomsCompare({
                     <SpecCell label={copy.columns.beds} value={room.beds} />
                     <SpecCell label={copy.columns.view} value={room.view} />
 
-                    <div className="col-span-2 flex gap-2.5 md:col-span-1 md:justify-end">
+                    <div role="cell" className="col-span-2 flex gap-2.5 md:col-span-1 md:justify-end">
                       <Link
                         href={`/${locale}/habitaciones/${room.slug}`}
-                        className="rounded-sm border border-[#cdbfa6] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-concept-ocean transition-colors hover:border-concept-ocean"
+                        aria-label={`${s.detailsCta}: ${room.name}`}
+                        className="flex min-h-[44px] items-center rounded-sm border border-border px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-concept-ocean transition-colors hover:border-concept-ocean focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
                       >
                         {s.detailsCta}
                       </Link>
                       <a
                         href={bookingHref}
-                        className="rounded-sm bg-concept-gold px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90"
+                        aria-label={`${s.bookCta}: ${room.name}`}
+                        {...(bookingHref.startsWith("http")
+                          ? { target: "_blank", rel: "noopener noreferrer" }
+                          : {})}
+                        className="flex min-h-[44px] items-center rounded-sm bg-concept-gold px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-concept-ink transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
                       >
                         {s.bookCta}
                       </a>
@@ -248,11 +261,12 @@ export function RoomsCompare({
                 );
               })
             )}
+            </div>
 
             <div className="pt-10">
               <Link
                 href={`/${locale}/habitaciones`}
-                className="text-xs font-semibold uppercase tracking-[0.12em] text-concept-ocean transition-colors hover:text-concept-gold-muted"
+                className="inline-flex min-h-[44px] items-center text-xs font-semibold uppercase tracking-[0.12em] text-concept-ocean transition-colors hover:text-concept-gold-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
               >
                 {copy.backToHub}
               </Link>
@@ -269,7 +283,7 @@ export function RoomsCompare({
 function Filter({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div className="mt-8">
-      <p className="mb-3.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#6b6559]">
+      <p className="mb-3.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
         {label}
       </p>
       <div className="flex flex-wrap gap-2">{children}</div>
@@ -290,11 +304,12 @@ function Pill({
     <button
       type="button"
       onClick={onClick}
+      aria-pressed={active}
       className={cn(
-        "rounded-full px-4 py-2 text-xs transition-colors",
+        "inline-flex min-h-[44px] items-center rounded-full px-4 py-2.5 text-xs transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2",
         active
-          ? "bg-concept-gold font-semibold text-[#1a1611]"
-          : "border border-[#ddd4c4] text-[#6f6a62] hover:border-concept-gold-muted"
+          ? "bg-concept-gold font-semibold text-concept-ink"
+          : "border border-border text-muted-foreground hover:border-concept-gold-muted"
       )}
     >
       {label}
@@ -315,15 +330,17 @@ function CheckRow({
     <button
       type="button"
       onClick={onClick}
+      role="checkbox"
+      aria-checked={checked}
       className={cn(
-        "flex items-center gap-2.5 text-left text-[13px] transition-colors",
-        checked ? "text-concept-ink" : "text-[#6f6a62] hover:text-concept-ink"
+        "flex min-h-[44px] items-center gap-2.5 py-1.5 text-left text-[13px] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2",
+        checked ? "text-concept-ink" : "text-muted-foreground hover:text-concept-ink"
       )}
     >
       <span
         className={cn(
           "flex h-4 w-4 flex-none items-center justify-center rounded-[3px] border transition-colors",
-          checked ? "border-concept-ocean bg-concept-ocean text-white" : "border-[#cdbfa6]"
+          checked ? "border-concept-ocean bg-concept-ocean text-white" : "border-border"
         )}
       >
         {checked && <Check className="h-3 w-3" aria-hidden />}
@@ -335,8 +352,8 @@ function CheckRow({
 
 function SpecCell({ label, value }: { label: string; value: string }) {
   return (
-    <div className="font-concept text-2xl leading-none text-concept-ocean">
-      <span className="mr-2 font-sans text-[10px] font-semibold uppercase tracking-[0.12em] text-[#6b6559] md:hidden">
+    <div role="cell" className="font-concept text-2xl leading-none text-concept-ocean">
+      <span className="mr-2 font-sans text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground md:hidden">
         {label}
       </span>
       {value}

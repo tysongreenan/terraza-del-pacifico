@@ -7,12 +7,33 @@ import { breadcrumbJsonLd, pageMetadata, restaurantJsonLd } from "@/lib/seo";
 
 const path = "restaurante";
 
-export function generateMetadata({
+// Locale-aware SEO copy. The captured JSON (`data`) is English-only, so Spanish
+// visitors would otherwise receive an English title/description. We select the
+// right strings by locale while keeping the same { title, desc } content shape
+// that pageMetadata expects.
+const seoByLocale: Record<Locale, { title: string; desc: string }> = {
+  en: {
+    title: data.title,
+    desc: data.desc,
+  },
+  es: {
+    title: "Vivace Beachfront | Restaurante mediterráneo en Playa Hermosa",
+    desc: "Restaurante frente al mar a cargo del chef siciliano Luigi. Cocina mediterránea e italiana con ingredientes frescos de Costa Rica.",
+  },
+};
+
+export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  return pageMetadata({ params, path, content: data });
+  const { locale } = await params;
+  const l: Locale = locale === "en" ? "en" : "es";
+  return pageMetadata({
+    params: Promise.resolve({ locale }),
+    path,
+    content: seoByLocale[l],
+  });
 }
 
 export default async function Page({

@@ -8,12 +8,32 @@ import { pageMetadata } from "@/lib/seo";
 const path = "galeria";
 const pagePeekImage = "/images/hero-aerial-beach-QbQLfxOv.jpg";
 
-export function generateMetadata({
+// Localized title/desc so the Spanish route ships Spanish SEO metadata instead
+// of the English values baked into galeria.json.
+const META: Record<Locale, { title: string; desc: string }> = {
+  es: {
+    title: "Galería | Hotel Terraza del Pacífico",
+    desc: "Fotos del hotel, las habitaciones, el restaurante, los eventos y las experiencias en Playa Hermosa, Costa Rica.",
+  },
+  en: {
+    title: "Gallery | Hotel Terraza del Pacífico",
+    desc: "Browse photos of the hotel, rooms, restaurant, events, and experiences in Playa Hermosa, Costa Rica.",
+  },
+};
+
+export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  return pageMetadata({ params, path, content: data });
+  const { locale } = await params;
+  const content = META[(locale as Locale)] ?? META.es;
+  return pageMetadata({
+    params,
+    path,
+    content,
+    image: "/images/pool-aerial-day-BveHvOiS.jpg",
+  });
 }
 
 export default async function Page({

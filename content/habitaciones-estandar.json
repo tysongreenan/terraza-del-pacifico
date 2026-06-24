@@ -1,7 +1,13 @@
 {
   "url": "https://terrazadelpacifico.com/habitaciones/estandar",
-  "title": "Standard Room | Hotel Terraza del Pacífico",
-  "desc": "Comfortable and bright Standard Room in Playa Hermosa. Perfect for families and couples seeking calm by the Pacific.",
+  "title": {
+    "es": "Habitación Estándar | Hotel Terraza del Pacífico",
+    "en": "Standard Room | Hotel Terraza del Pacífico"
+  },
+  "desc": {
+    "es": "Habitación Estándar de 32 m² frente a los jardines en Playa Hermosa, para hasta cuatro huéspedes con dos camas dobles. A pasos de la piscina, el restaurante y la playa.",
+    "en": "32 m² garden-facing Standard Room in Playa Hermosa for up to four guests, with two double beds. A short walk from the pool, restaurant and beach."
+  },
   "h1": [
     "Standard Room"
   ],

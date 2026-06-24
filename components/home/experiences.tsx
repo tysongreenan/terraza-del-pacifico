@@ -60,16 +60,16 @@ export function Experiences({
                 <button
                   type="button"
                   onClick={() => scrollBy(-1)}
-                  aria-label="Previous experience"
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-[#cdbfa6] text-[#b9ac95] transition-colors hover:border-concept-ocean hover:text-concept-ocean"
+                  aria-label={locale === "en" ? "Previous experience" : "Experiencia anterior"}
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-[#cdbfa6] text-[#b9ac95] transition-colors hover:border-concept-ocean hover:text-concept-ocean focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2 focus-visible:ring-offset-concept-sand-muted"
                 >
                   <ChevronLeft className="h-4 w-4" aria-hidden />
                 </button>
                 <button
                   type="button"
                   onClick={() => scrollBy(1)}
-                  aria-label="Next experience"
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-concept-ocean text-concept-ocean transition-opacity hover:opacity-80"
+                  aria-label={locale === "en" ? "Next experience" : "Siguiente experiencia"}
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-concept-ocean text-concept-ocean transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2 focus-visible:ring-offset-concept-sand-muted"
                 >
                   <ChevronRight className="h-4 w-4" aria-hidden />
                 </button>
@@ -122,7 +122,7 @@ export function Experiences({
                 <Link
                   href={`/${locale}/${item.slug}`}
                   className={cn(
-                    "rounded-sm px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.08em]",
+                    "rounded-sm px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.08em] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2 focus-visible:ring-offset-[rgba(11,32,42,0.9)]",
                     item.cta === "Join" || item.cta === "Unirse"
                       ? "border border-white/50 text-white"
                       : "bg-concept-gold text-[#1a1611]"

@@ -9,12 +9,34 @@ import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 
 const path = "sobre-nosotros";
 
-export function generateMetadata({
+// Localized title/description so the Spanish route does not inherit the
+// English-only strings stored in sobre-nosotros.json. The OG/Twitter/canonical
+// and hreflang alternates still come from pageMetadata(). The about hero image
+// is used for OG so social shares match the page instead of the generic default.
+const seoCopy: Record<Locale, { title: string; desc: string }> = {
+  es: {
+    title: "Sobre nosotros | Hotel Terraza del Pacífico",
+    desc: "Más de 20 años creando estancias frente al Pacífico costarricense en Playa Hermosa. Conoce nuestra historia, instalaciones y forma de recibir.",
+  },
+  en: {
+    title: "About us | Hotel Terraza del Pacífico",
+    desc: "More than 20 years of beachfront stays on the Costa Rican Pacific at Playa Hermosa. Read our story, facilities and how we welcome guests.",
+  },
+};
+
+export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  return pageMetadata({ params, path, content: data });
+  const { locale } = await params;
+  const l = (locale === "en" ? "en" : "es") as Locale;
+  return pageMetadata({
+    params: Promise.resolve({ locale }),
+    path,
+    content: { ...data, ...seoCopy[l] },
+    image: "/images/g-aerial-beach-property-COogc_9W.jpg",
+  });
 }
 
 export default async function Page({

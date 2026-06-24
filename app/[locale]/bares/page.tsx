@@ -73,17 +73,21 @@ export default async function Page({
                 <Reveal key={venue.slug} delay={i * 90}>
                   <Link
                     href={`/${l}/bares/${venue.slug}`}
-                    className="group block overflow-hidden rounded-sm border border-[#ece5d8] bg-white transition-shadow hover:shadow-[0_18px_44px_rgba(16,58,77,0.14)]"
+                    aria-label={`${t.hero.title} — ${copy.viewCta}`}
+                    className="group block overflow-hidden rounded-sm border border-[#ece5d8] bg-white transition-shadow hover:shadow-[0_18px_44px_rgba(16,58,77,0.14)] focus:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2 focus-visible:ring-offset-concept-sand"
                   >
                     <div className="relative h-72 overflow-hidden">
                       <Image
                         src={venue.cardImage}
-                        alt={t.hero.title}
+                        alt={`${t.hero.title}, ${t.card.tagline}`}
                         fill
                         sizes="(max-width: 768px) 100vw, 50vw"
-                        className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                        className="object-cover transition-transform duration-700 group-hover:scale-[1.03] motion-reduce:transition-none"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[rgba(11,32,42,0.45)] to-transparent" />
+                      <div
+                        aria-hidden
+                        className="absolute inset-0 bg-gradient-to-t from-[rgba(11,32,42,0.45)] to-transparent"
+                      />
                     </div>
                     <div className="p-8">
                       <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-concept-gold-muted">
@@ -95,7 +99,7 @@ export default async function Page({
                       <p className="mt-3 text-sm leading-relaxed text-[#6f6a62]">
                         {t.hero.description}
                       </p>
-                      <span className="mt-5 inline-flex items-center gap-1 border-b border-[#d8c79c] pb-1 text-xs font-semibold uppercase tracking-[0.12em] text-concept-ocean">
+                      <span className="mt-5 inline-flex items-center gap-1 border-b border-[#d8c79c] pb-1 text-xs font-semibold uppercase tracking-[0.12em] text-concept-ocean transition-colors group-hover:border-concept-gold group-focus-visible:border-concept-gold">
                         {copy.viewCta}
                       </span>
                     </div>

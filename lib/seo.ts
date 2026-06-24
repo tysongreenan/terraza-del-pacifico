@@ -6,11 +6,23 @@ export const siteUrl = "https://terrazadelpacifico.com";
 export const siteName = "Hotel Terraza del Pacífico";
 export const defaultOgImage = "/images/og-image.jpg";
 
+// A localizable string is either one shared value or a per-locale map. The map
+// form lets content/*.json supply { es, en } so each route serves metadata in
+// the right language instead of falling back to one hardcoded string.
+export type LocalizableText = string | Partial<Record<Locale, string>>;
+
 export type CapturedSeoContent = {
-  title: string;
-  desc: string;
+  title: LocalizableText;
+  desc: LocalizableText;
   h1?: string[];
 };
+
+// Resolve a LocalizableText for one locale: prefer the requested locale, then
+// Spanish (primary locale), then any value present, then "".
+function resolveLocalized(value: LocalizableText, locale: Locale): string {
+  if (typeof value === "string") return value;
+  return value[locale] ?? value.es ?? Object.values(value).find(Boolean) ?? "";
+}
 
 export type StaticRoute = {
   slug: string;
@@ -73,8 +85,8 @@ export async function pageMetadata({
   const { locale } = await params;
   const safeLocale = locales.includes(locale as Locale) ? (locale as Locale) : "es";
   const canonical = localizedPath(safeLocale, path);
-  const title = content.title;
-  const description = content.desc;
+  const title = resolveLocalized(content.title, safeLocale);
+  const description = resolveLocalized(content.desc, safeLocale);
 
   return {
     title: { absolute: title },
@@ -192,7 +204,7 @@ export function breadcrumbJsonLd({
     {
       "@type": "ListItem",
       position: 1,
-      name: "Home",
+      name: locale === "en" ? "Home" : "Inicio",
       item: absoluteUrl(localizedPath(locale)),
     },
     ...pathParts.map((part, index) => ({
@@ -220,6 +232,25 @@ export function restaurantJsonLd() {
     image: absoluteUrl("/images/restaurant-view-WsRnSUPN.jpg"),
     servesCuisine: ["Mediterranean", "Italian", "Costa Rican"],
     parentOrganization: { "@id": `${siteUrl}/#hotel` },
+    // Published on /restaurante ("You can also call us at +506 2643 3222").
+    telephone: "+50626433222",
+    // Downloadable menu page linked from /restaurante.
+    hasMenu: absoluteUrl("/es/restaurante/menu"),
+    // Daily operating window as advertised on the page ("Open daily · 7 AM – 10 PM").
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ],
+      opens: "07:00",
+      closes: "22:00",
+    },
     address: {
       "@type": "PostalAddress",
       streetAddress: "Playa Hermosa",
@@ -227,6 +258,193 @@ export function restaurantJsonLd() {
       addressRegion: "Puntarenas",
       addressCountry: "CR",
     },
+  };
+}
+
+// Minimal shape needed to describe a bar venue as a BarOrPub node. Kept local
+// (not imported from content/bars.ts) so this helper is self-contained and the
+// caller passes whatever it already has in hand.
+export type BarListEntry = {
+  slug: string;
+  name: string;
+  cardImage: string;
+  hours?: { opens: string; closes: string };
+};
+
+// ItemList of the /bares venues so search and AI answers can read the hub as a
+// structured collection of two distinct bars, each tied back to the Hotel.
+export function barsItemListJsonLd(locale: Locale, bars: BarListEntry[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: bars.map((bar, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "BarOrPub",
+        name: bar.name,
+        url: absoluteUrl(localizedPath(locale, `bares/${bar.slug}`)),
+        image: absoluteUrl(bar.cardImage),
+        parentOrganization: { "@id": `${siteUrl}/#hotel` },
+        ...(bar.hours
+          ? {
+              openingHoursSpecification: {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                  "Sunday",
+                ],
+                opens: bar.hours.opens,
+                closes: bar.hours.closes,
+              },
+            }
+          : {}),
+      },
+    })),
+  };
+}
+
+// Minimal shape needed to describe a room/suite as a HotelRoom node. `guests`
+// and `size` arrive as on-page display strings (e.g. "4", "32 m²"); we parse a
+// number where possible and otherwise omit the field rather than guess.
+export type RoomListEntry = {
+  slug: string;
+  name: string;
+  guests?: string;
+  size?: string;
+  beds?: string;
+};
+
+function parseLeadingNumber(value?: string): number | undefined {
+  if (!value) return undefined;
+  const match = value.match(/\d+(?:\.\d+)?/);
+  return match ? Number(match[0]) : undefined;
+}
+
+// ItemList of HotelRoom nodes for the /habitaciones hub. Prices are omitted on
+// purpose until real values are confirmed (fabricated structured data is a
+// Google penalty risk).
+export function roomsJsonLd(locale: Locale, rooms: RoomListEntry[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: rooms.map((room, index) => {
+      const occupancy = parseLeadingNumber(room.guests);
+      const floorSize = parseLeadingNumber(room.size);
+      return {
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "HotelRoom",
+          name: room.name,
+          url: absoluteUrl(localizedPath(locale, `habitaciones/${room.slug}`)),
+          ...(occupancy !== undefined
+            ? {
+                occupancy: {
+                  "@type": "QuantitativeValue",
+                  maxValue: occupancy,
+                  unitText: "person",
+                },
+              }
+            : {}),
+          ...(floorSize !== undefined
+            ? {
+                floorSize: {
+                  "@type": "QuantitativeValue",
+                  value: floorSize,
+                  unitCode: "MTK",
+                },
+              }
+            : {}),
+          ...(room.beds ? { bed: room.beds } : {}),
+        },
+      };
+    }),
+  };
+}
+
+// Per-room HotelRoom node for a single room detail page. Mirrors the ItemList
+// entries in `roomsJsonLd` but stands alone with an @id, description and the
+// containing Hotel, so each room page carries verifiable structured data.
+//
+// Every value is read from the on-page dict entry: occupancy/floorSize are
+// parsed from the display strings, the bed string is split into a count + type
+// only when a leading number is present (rooms like "Multiple"/"Múltiples"
+// emit the raw `bed` string with no fabricated count), and amenities come from
+// the shared, genuine amenitiesNote. NO price or rating is emitted.
+export function hotelRoomJsonLd({
+  locale,
+  path,
+  room,
+  description,
+  amenities,
+}: {
+  locale: Locale;
+  path: string;
+  room: RoomListEntry & { view?: string };
+  description?: string;
+  amenities?: string[];
+}) {
+  const occupancy = parseLeadingNumber(room.guests);
+  const floorSize = parseLeadingNumber(room.size);
+  const bedCount = parseLeadingNumber(room.beds);
+  const bedType = room.beds
+    ? room.beds.replace(/^\s*\d+(?:\.\d+)?\s*/, "").trim()
+    : undefined;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": ["Accommodation", "HotelRoom"],
+    "@id": `${siteUrl}/${path}#room`,
+    name: room.name,
+    ...(description ? { description } : {}),
+    url: absoluteUrl(localizedPath(locale, path)),
+    ...(occupancy !== undefined
+      ? {
+          occupancy: {
+            "@type": "QuantitativeValue",
+            maxValue: occupancy,
+            unitText: locale === "en" ? "person" : "persona",
+          },
+        }
+      : {}),
+    ...(floorSize !== undefined
+      ? {
+          floorSize: {
+            "@type": "QuantitativeValue",
+            value: floorSize,
+            unitCode: "MTK",
+          },
+        }
+      : {}),
+    ...(room.beds
+      ? {
+          bed:
+            bedCount !== undefined && bedType
+              ? {
+                  "@type": "BedDetails",
+                  numberOfBeds: bedCount,
+                  typeOfBed: bedType,
+                }
+              : room.beds,
+        }
+      : {}),
+    ...(room.view ? { view: room.view } : {}),
+    ...(amenities && amenities.length
+      ? {
+          amenityFeature: amenities.map((name) => ({
+            "@type": "LocationFeatureSpecification",
+            name,
+            value: true,
+          })),
+        }
+      : {}),
+    containedInPlace: { "@id": `${siteUrl}/#hotel` },
   };
 }
 

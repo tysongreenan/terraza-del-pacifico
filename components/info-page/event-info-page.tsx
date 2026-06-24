@@ -21,6 +21,7 @@ const COPY = {
     viewAll: "Todos los eventos",
     galleryEyebrow: "Galería",
     galleryTitle: "El evento en imágenes",
+    mosaicEyebrow: "Más imágenes",
     sliderTitle: "Explora en fotos",
     dragHint: "Desliza para ver más",
     relatedEyebrow: "También te puede interesar",
@@ -35,6 +36,7 @@ const COPY = {
     viewAll: "All events",
     galleryEyebrow: "Gallery",
     galleryTitle: "The event in pictures",
+    mosaicEyebrow: "More photos",
     sliderTitle: "Explore in photos",
     dragHint: "Swipe to see more",
     relatedEyebrow: "You may also like",
@@ -92,7 +94,7 @@ export function EventInfoPage({
           href={page.cta.href}
           target={external ? "_blank" : undefined}
           rel={external ? "noopener noreferrer" : undefined}
-          className="inline-flex items-center justify-center gap-2 rounded-sm bg-concept-gold px-7 py-3.5 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90"
+          className="inline-flex items-center justify-center gap-2 rounded-sm bg-concept-gold px-7 py-3.5 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2"
         >
           {page.cta.label[locale]}
           <ArrowRight className="h-4 w-4" aria-hidden />
@@ -147,7 +149,7 @@ export function EventInfoPage({
       })}
 
       <LuxuryMosaic
-        eyebrow={copy.galleryEyebrow}
+        eyebrow={copy.mosaicEyebrow}
         title={copy.galleryTitle}
         images={galleryMosaic}
         className="bg-concept-sand"
@@ -176,7 +178,7 @@ export function EventInfoPage({
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(11,32,42,0.88)] via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-concept-ocean/90 via-transparent to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-5 text-white">
                     <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-concept-gold">
                       {item.eyebrow[locale]}

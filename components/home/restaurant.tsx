@@ -18,7 +18,11 @@ export function Restaurant({
       <Reveal className="relative min-h-[220px] w-full md:min-h-[520px] md:w-1/2">
         <Image
           src="/images/restaurant-sunset-T7wmiQ85.jpg"
-          alt="Vivace Beachfront restaurant facing the Pacific"
+          alt={
+            locale === "en"
+              ? "Vivace beachfront restaurant at sunset, tables facing the Pacific"
+              : "Restaurante Vivace frente al mar al atardecer, mesas de cara al Pacífico"
+          }
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover"
@@ -40,7 +44,7 @@ export function Restaurant({
         </p>
         <Link
           href={`/${locale}/restaurante`}
-          className="mt-8 inline-flex w-fit rounded-sm border border-white/45 px-8 py-3.5 text-[13px] font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10"
+          className="mt-8 inline-flex w-fit rounded-sm border border-white/45 px-8 py-3.5 text-[13px] font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-concept-ocean"
         >
           {r.cta}
         </Link>

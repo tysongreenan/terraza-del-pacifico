@@ -3,7 +3,8 @@ import { notFound } from "next/navigation";
 import data from "@/content/home.json";
 import { isLocale, type Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionaries";
-import { pageMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
+import { JsonLd } from "@/components/json-ld";
 import { Hero } from "@/components/home/hero";
 import { ResortDiscovery } from "@/components/home/resort-discovery";
 import { Welcome } from "@/components/home/welcome";
@@ -15,12 +16,34 @@ import { Instagram } from "@/components/home/instagram";
 import { Location } from "@/components/home/location";
 import { FinalCta } from "@/components/home/final-cta";
 
-export function generateMetadata({
+// Localized home-page SEO. `content/home.json` ships a single (English) title
+// and description, which would otherwise serve identical metadata to both
+// locales. We resolve a locale-specific title/desc here so es-CR and en-US each
+// get unique, translated metadata while keeping the captured English copy as
+// the en fallback. Facts (place, amenities) are unchanged.
+const homeSeo: Record<Locale, { title: string; desc: string }> = {
+  es: {
+    title: "Hotel Terraza del Pacífico | Playa Hermosa, Costa Rica",
+    desc: "Hotel frente al mar en Playa Hermosa, Costa Rica. Habitaciones con vista al océano, piscina con luces LED, restaurante mediterráneo y experiencias junto a la playa.",
+  },
+  en: {
+    title: "Hotel Terraza del Pacífico | Playa Hermosa, Costa Rica",
+    desc: "Beachfront hotel in Playa Hermosa, Costa Rica. Ocean-view rooms, an LED-lit pool, a Mediterranean restaurant and experiences by the sea.",
+  },
+};
+
+export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  return pageMetadata({ params, path: "", content: data });
+  const { locale } = await params;
+  const seo = isLocale(locale) ? homeSeo[locale] : homeSeo.es;
+  return pageMetadata({
+    params,
+    path: "",
+    content: { ...data, title: seo.title, desc: seo.desc },
+  });
 }
 
 export default async function HomePage({
@@ -35,6 +58,7 @@ export default async function HomePage({
 
   return (
     <div className="home-concept">
+      <JsonLd data={breadcrumbJsonLd({ locale: l, path: "", title: data.h1[0] })} />
       <Hero locale={l} dict={dict} />
       <ResortDiscovery locale={l} dict={dict} />
       <Experiences locale={l} dict={dict} />

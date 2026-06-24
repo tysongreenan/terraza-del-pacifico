@@ -13,8 +13,8 @@ export const eventHub: HubPage = {
     en: "Oceanfront events",
   },
   description: {
-    es: "Bodas, Surf Nights, reuniones, celebraciones familiares y cenas privadas en un resort frente a Playa Hermosa.",
-    en: "Weddings, Surf Nights, meetings, family celebrations and private dinners at an oceanfront resort in Playa Hermosa.",
+    es: "Bodas, Surf Nights, reuniones, celebraciones familiares y cenas privadas en un resort frente al mar en Playa Hermosa, a pocos minutos de Jaco.",
+    en: "Weddings, Surf Nights, meetings, family celebrations and private dinners at a beachfront resort on Playa Hermosa, just south of Jaco.",
   },
   heroImage: {
     src: "/images/Wedding/AM5_93842.JPG",
@@ -181,11 +181,11 @@ export const events: InfoPage[] = [
         body: {
           es: [
             "Los espacios frente al mar, jardines y areas exteriores ofrecen opciones para ceremonias intimas o celebraciones mas amplias.",
-            "El sonido de las olas y la luz del Pacifico ayudan a crear un escenario dificil de replicar en un salon cerrado.",
+            "Las parejas suelen elegir la ceremonia al atardecer, con las olas de fondo y la luz del Pacifico sobre los jardines.",
           ],
           en: [
             "Oceanfront areas, gardens and outdoor spaces offer options for intimate ceremonies or larger celebrations.",
-            "The sound of the waves and Pacific light create a setting that is hard to reproduce indoors.",
+            "Most couples choose a sunset ceremony, with the waves behind them and Pacific light over the gardens.",
           ],
         },
       },
@@ -220,11 +220,11 @@ export const events: InfoPage[] = [
         body: {
           es: [
             "Los invitados pueden hospedarse, disfrutar la playa, la piscina, el restaurante y las actividades del hotel durante el fin de semana.",
-            "Esto convierte la boda en una experiencia de destino completa, no solo en un evento de una noche.",
+            "Asi la boda se vive como un fin de semana de destino y no solo como una noche.",
           ],
           en: [
             "Guests can stay onsite and enjoy the beach, pool, restaurant and hotel activities during the weekend.",
-            "This turns the wedding into a full destination experience, not just a one-night event.",
+            "The wedding becomes a destination weekend rather than a single evening.",
           ],
         },
       },
@@ -634,11 +634,11 @@ export const events: InfoPage[] = [
         title: { es: "Resumen", en: "Overview" },
         body: {
           es: [
-            "Las celebraciones familiares encuentran en Terraza del Pacifico un lugar comodo, natural y memorable.",
+            "Las celebraciones familiares encuentran en Terraza del Pacifico un lugar comodo junto al mar.",
             "El hotel permite reunir a distintas generaciones en un ambiente relajado junto al mar.",
           ],
           en: [
-            "Family celebrations find a comfortable, natural and memorable home at Terraza del Pacifico.",
+            "Family celebrations have room to spread out at Terraza del Pacifico, right by the sea.",
             "The hotel brings different generations together in a relaxed oceanfront setting.",
           ],
         },
@@ -795,11 +795,11 @@ export const events: InfoPage[] = [
         body: {
           es: [
             "Vivace aporta una cocina inspirada en el Mediterraneo y la tradicion italiana de Chef Luigi.",
-            "El resultado es una cena con identidad, producto fresco y un entorno dificil de igualar.",
+            "El resultado es una cena de cocina italiana con producto fresco, servida frente al mar.",
           ],
           en: [
             "Vivace brings cuisine inspired by the Mediterranean and Chef Luigi's Italian tradition.",
-            "The result is a dinner with identity, fresh product and a setting that is hard to match.",
+            "The result is an Italian dinner made with fresh produce and served beside the ocean.",
           ],
         },
       },

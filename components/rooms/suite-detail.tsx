@@ -127,7 +127,7 @@ export function SuiteDetail({
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(16,58,77,0.62)] via-[rgba(16,58,77,0.05)] to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-concept-ocean/[0.62] via-concept-ocean/[0.05] to-transparent" />
             </button>
             <div className="pointer-events-none absolute bottom-6 left-6 z-20 md:bottom-7 md:left-7">
               <p className="mb-2 text-[11px] font-medium uppercase tracking-[0.22em] text-[#f3ead6]">
@@ -161,7 +161,7 @@ export function SuiteDetail({
                   className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                 />
                 {isLast ? (
-                  <div className="absolute inset-0 flex items-center justify-center bg-[rgba(16,58,77,0.55)] font-concept text-2xl text-white">
+                  <div className="absolute inset-0 flex items-center justify-center bg-concept-ocean/55 font-concept text-2xl text-white">
                     {copy.photosOverlay(remaining)}
                   </div>
                 ) : (
@@ -260,7 +260,7 @@ export function SuiteDetail({
                   type="button"
                   onClick={() => scrollByCards(-1)}
                   aria-label={copy.prev}
-                  className="absolute left-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/60 bg-[rgba(16,58,77,0.45)] text-white backdrop-blur-sm transition-colors hover:bg-[rgba(16,58,77,0.65)]"
+                  className="absolute left-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/60 bg-concept-ocean/45 text-white backdrop-blur-sm transition-colors hover:bg-concept-ocean/65 focus:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold"
                 >
                   <ChevronLeft className="h-5 w-5" aria-hidden />
                 </button>
@@ -268,7 +268,7 @@ export function SuiteDetail({
                   type="button"
                   onClick={() => scrollByCards(1)}
                   aria-label={copy.next}
-                  className="absolute right-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/60 bg-[rgba(16,58,77,0.45)] text-white backdrop-blur-sm transition-colors hover:bg-[rgba(16,58,77,0.65)]"
+                  className="absolute right-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/60 bg-concept-ocean/45 text-white backdrop-blur-sm transition-colors hover:bg-concept-ocean/65 focus:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold"
                 >
                   <ChevronRight className="h-5 w-5" aria-hidden />
                 </button>
@@ -282,7 +282,7 @@ export function SuiteDetail({
               {/* date / availability card — the whole panel links to booking */}
               <a
                 href={bookingHref}
-                className="block rounded-sm border border-[#ece5d8] bg-white p-7 shadow-[0_14px_40px_rgba(16,58,77,0.1)] transition-shadow hover:shadow-[0_18px_50px_rgba(16,58,77,0.16)]"
+                className="block rounded-sm border border-[#ece5d8] bg-white p-7 shadow-[0_14px_40px_rgba(16,58,77,0.1)] transition-shadow hover:shadow-[0_18px_50px_rgba(16,58,77,0.16)] focus:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold"
               >
                 <div className="flex items-baseline justify-between">
                   <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a9282]">
@@ -320,7 +320,7 @@ export function SuiteDetail({
                   </div>
                 </div>
 
-                <div className="mt-5 flex items-center justify-center gap-2 rounded-sm bg-concept-gold px-6 py-4 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#1a1611]">
+                <div className="mt-5 flex items-center justify-center gap-2 rounded-sm bg-concept-gold px-6 py-4 text-[13px] font-semibold uppercase tracking-[0.1em] text-concept-ink">
                   {dict.bookingBar.cta}
                   <ArrowRight className="h-4 w-4" aria-hidden />
                 </div>
@@ -333,14 +333,19 @@ export function SuiteDetail({
                 href={whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 flex items-center justify-center gap-2.5 rounded-sm bg-[#1f7a4d] px-5 py-3.5 text-[13px] font-medium text-white transition-opacity hover:opacity-90"
+                aria-label={
+                  locale === "es"
+                    ? "Pregunta por WhatsApp (abre en una pestaña nueva)"
+                    : "Ask on WhatsApp (opens in a new tab)"
+                }
+                className="mt-4 flex items-center justify-center gap-2.5 rounded-sm bg-[#1f7a4d] px-5 py-3.5 text-[13px] font-medium text-white transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold"
               >
                 <MessageCircle className="h-4 w-4" aria-hidden />
                 {copy.askWhatsApp}
               </a>
 
               {/* good to know */}
-              <div className="mt-4 rounded-sm bg-[#f5efe5] p-7">
+              <div className="mt-4 rounded-sm bg-concept-sand-muted p-7">
                 <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-concept-gold-muted">
                   {copy.goodToKnow}
                 </p>
@@ -388,7 +393,7 @@ export function SuiteDetail({
       </section>
 
       {/* OTHER WAYS TO STAY */}
-      <section className="bg-[#f5efe5] py-16 md:py-20">
+      <section className="bg-concept-sand-muted py-16 md:py-20">
         <div className="container">
           <div className="mb-8 flex items-end justify-between gap-6">
             <div>
@@ -411,18 +416,22 @@ export function SuiteDetail({
               <Link
                 key={r.slug}
                 href={`/${locale}/habitaciones/${r.slug}`}
-                className="group block"
+                className="group block rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold"
               >
                 <div className="relative h-[220px] overflow-hidden rounded-sm">
                   <Image
                     src={image}
-                    alt={r.name}
+                    alt={
+                      locale === "es"
+                        ? `${r.name} en Hotel Terraza del Pacífico`
+                        : `${r.name} at Hotel Terraza del Pacífico`
+                    }
                     fill
                     sizes="(max-width: 640px) 100vw, 33vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                   />
                 </div>
-                <h3 className="mt-4 font-concept text-2xl text-concept-ocean">
+                <h3 className="mt-4 font-concept text-2xl text-concept-ocean transition-colors group-hover:text-concept-gold-muted">
                   {r.name}
                 </h3>
                 <p className="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-concept-gold-muted">

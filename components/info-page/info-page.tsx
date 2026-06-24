@@ -75,7 +75,7 @@ export function InfoPage({
           href={page.cta.href}
           target={external ? "_blank" : undefined}
           rel={external ? "noopener noreferrer" : undefined}
-          className="inline-flex items-center justify-center gap-2 rounded-sm bg-concept-gold px-7 py-3.5 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90"
+          className="inline-flex items-center justify-center gap-2 rounded-sm bg-concept-gold px-7 py-3.5 text-[13px] font-semibold uppercase tracking-[0.1em] text-concept-ink transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-concept-ocean focus-visible:ring-offset-2 focus-visible:ring-offset-concept-gold"
         >
           {page.cta.label[locale]}
           <ArrowRight className="h-4 w-4" aria-hidden />
@@ -94,15 +94,40 @@ export function InfoPage({
         const image = bandImages[index % bandImages.length];
         if (!image) return null;
 
+        const paragraphs = section.body[locale];
+
         return (
-          <LuxuryImageBand
-            key={section.title[locale]}
-            image={image.src}
-            imageAlt={image.alt[locale]}
-            eyebrow={page.eyebrow[locale]}
-            title={section.title[locale]}
-            minHeight={index % 2 === 0 ? "48vh" : "42vh"}
-          />
+          <div key={section.title[locale]}>
+            <LuxuryImageBand
+              image={image.src}
+              imageAlt={image.alt[locale]}
+              eyebrow={page.eyebrow[locale]}
+              title={section.title[locale]}
+              minHeight={index % 2 === 0 ? "48vh" : "42vh"}
+            />
+            {paragraphs.length > 0 && (
+              <section
+                className={
+                  index % 2 === 0
+                    ? "bg-concept-sand py-12 md:py-16"
+                    : "bg-concept-sand-muted py-12 md:py-16"
+                }
+              >
+                <div className="container">
+                  <div className="max-w-2xl space-y-4">
+                    {paragraphs.map((paragraph, paragraphIndex) => (
+                      <p
+                        key={paragraphIndex}
+                        className="text-[17px] leading-relaxed text-concept-ink/85"
+                      >
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              </section>
+            )}
+          </div>
         );
       })}
 
@@ -127,7 +152,7 @@ export function InfoPage({
                 <Link
                   key={item.id}
                   href={pageHref(item, locale)}
-                  className="group relative aspect-[4/5] overflow-hidden rounded-sm"
+                  className="group relative aspect-[4/5] overflow-hidden rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2 focus-visible:ring-offset-concept-sand"
                 >
                   <Image
                     src={item.heroImage.src}

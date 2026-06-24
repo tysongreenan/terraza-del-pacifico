@@ -95,7 +95,7 @@ const en: SuiteDetailCopy = {
         "Adults only — children are not accepted in this room category.",
       ],
       highlight:
-        "The most-booked room we have — and it's easy to see why.",
+        "Only two of these exist, and they book out first.",
     },
     superior: {
       headline: "Two double beds, steps from the pool and the sand",
@@ -206,7 +206,7 @@ const es: SuiteDetailCopy = {
         "Solo adultos — no se aceptan niños en esta categoría.",
       ],
       highlight:
-        "La habitación más reservada que tenemos — y es fácil ver por qué.",
+        "Solo existen dos, y son las primeras en reservarse.",
     },
     superior: {
       headline: "Dos camas dobles, a pasos de la piscina y la arena",

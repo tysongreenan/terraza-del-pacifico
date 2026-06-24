@@ -1,7 +1,13 @@
 {
   "url": "https://terrazadelpacifico.com/habitaciones/superior",
-  "title": "Superior Room | Hotel Terraza del Pacífico",
-  "desc": "Superior Room with ocean view in Playa Hermosa. Capacity for 4 guests, air conditioning, WiFi and direct beach access.",
+  "title": {
+    "es": "Habitación Superior | Hotel Terraza del Pacífico",
+    "en": "Superior Room | Hotel Terraza del Pacífico"
+  },
+  "desc": {
+    "es": "Habitación Superior en Playa Hermosa: dos camas dobles para hasta 4 huéspedes, 32 m², aire acondicionado y WiFi, a pasos de la piscina y la playa.",
+    "en": "Superior Room in Playa Hermosa with two double beds for up to 4 guests, 32 m², air conditioning and WiFi, steps from the pool and the beach."
+  },
   "h1": [
     "Superior Room"
   ],

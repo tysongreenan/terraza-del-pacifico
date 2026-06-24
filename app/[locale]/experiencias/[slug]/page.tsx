@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { InfoPage } from "@/components/info-page/info-page";
+import { JsonLd } from "@/components/json-ld";
 import { byLocalizedSlug, localizedParams, pageHref } from "@/content/info-pages";
 import { experiences } from "@/content/experiences";
 import { isLocale, type Locale } from "@/lib/i18n";
+import { breadcrumbJsonLd } from "@/lib/seo";
 
 export function generateStaticParams() {
   return localizedParams(experiences);
@@ -56,6 +58,13 @@ export default async function ExperienceDetailPage({
 
   return (
     <div className="home-concept bg-concept-sand font-concept">
+      <JsonLd
+        data={breadcrumbJsonLd({
+          locale: l,
+          path: `experiencias/${page.slugs[l]}`,
+          title: page.title[l],
+        })}
+      />
       <Image
         src={page.heroImage.src}
         alt={page.heroImage.alt[l]}

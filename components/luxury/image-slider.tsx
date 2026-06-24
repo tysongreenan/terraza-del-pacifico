@@ -100,7 +100,7 @@ export function LuxuryImageSlider({
               {exploreHref && exploreLabel && (
                 <Link
                   href={exploreHref}
-                  className="mt-6 inline-flex items-center gap-2 border-b border-concept-gold-muted pb-1 text-xs font-semibold uppercase tracking-[0.1em] text-concept-ocean transition-colors hover:text-concept-gold-muted"
+                  className="mt-6 inline-flex items-center gap-2 rounded-sm border-b border-concept-gold-muted pb-1 text-xs font-semibold uppercase tracking-[0.1em] text-concept-ocean transition-colors hover:text-concept-gold-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2"
                 >
                   {exploreLabel} →
                 </Link>
@@ -112,7 +112,7 @@ export function LuxuryImageSlider({
                   type="button"
                   onClick={() => scrollBy(-1)}
                   aria-label={prevLabel}
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-[#cdbfa6] text-[#b9ac95] transition-colors hover:border-concept-ocean hover:text-concept-ocean"
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-[#cdbfa6] text-[#b9ac95] transition-colors hover:border-concept-ocean hover:text-concept-ocean focus:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2"
                 >
                   <ChevronLeft className="h-4 w-4" aria-hidden />
                 </button>
@@ -120,7 +120,7 @@ export function LuxuryImageSlider({
                   type="button"
                   onClick={() => scrollBy(1)}
                   aria-label={nextLabel}
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-concept-ocean text-concept-ocean transition-opacity hover:opacity-80"
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-concept-ocean text-concept-ocean transition-opacity hover:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2"
                 >
                   <ChevronRight className="h-4 w-4" aria-hidden />
                 </button>

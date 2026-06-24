@@ -19,7 +19,7 @@ export const roomFacets: Record<
 };
 
 type CompareCopy = {
-  hero: { eyebrow: string; title: string; description: string };
+  hero: { eyebrow: string; title: string; description: string; imageAlt: string };
   refine: string;
   guests: { label: string; any: string; options: { value: GuestBucket; label: string }[] };
   view: { label: string; options: { value: ViewFacet; label: string }[] };
@@ -40,6 +40,8 @@ const en: CompareCopy = {
     title: "Find Your Room",
     description:
       "Four room types, all on the sand. Filter by who's coming and how you like to wake up.",
+    imageAlt:
+      "Pool-view room at Hotel Terraza del Pacífico, steps from the sand at Playa Hermosa",
   },
   refine: "Refine",
   guests: {
@@ -92,6 +94,8 @@ const es: CompareCopy = {
     title: "Encuentra tu habitación",
     description:
       "Cuatro tipos de habitación, todas sobre la arena. Filtra por quién viene y cómo te gusta despertar.",
+    imageAlt:
+      "Habitación con vista a la piscina del Hotel Terraza del Pacífico, a pasos de la arena de Playa Hermosa",
   },
   refine: "Filtrar",
   guests: {

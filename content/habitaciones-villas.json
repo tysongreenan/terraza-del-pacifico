@@ -1,7 +1,13 @@
 {
   "url": "https://terrazadelpacifico.com/habitaciones/villas",
-  "title": "Villas | Hotel Terraza del Pacífico",
-  "desc": "Spacious villas for up to 6 guests with kitchen and private living area in Playa Hermosa. Perfect for families or groups.",
+  "title": {
+    "es": "Villas | Hotel Terraza del Pacífico",
+    "en": "Villas | Hotel Terraza del Pacífico"
+  },
+  "desc": {
+    "es": "Villas amplias para hasta 6 huéspedes, con cocina completa y sala privada en Playa Hermosa. Ideales para familias, grupos y estancias largas.",
+    "en": "Spacious villas for up to 6 guests, with a full kitchen and private living area in Playa Hermosa. Ideal for families, groups, and longer stays."
+  },
   "h1": [
     "Villa"
   ],

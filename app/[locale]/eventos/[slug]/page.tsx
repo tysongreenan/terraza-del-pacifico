@@ -11,6 +11,44 @@ import {
   otherEventSlugs,
 } from "@/content/events";
 import { isLocale, type Locale } from "@/lib/i18n";
+import { siteUrl } from "@/lib/site";
+
+const BREADCRUMB_LABELS = {
+  es: { home: "Inicio", events: "Eventos" },
+  en: { home: "Home", events: "Events" },
+} as const;
+
+function breadcrumbJsonLd(
+  locale: Locale,
+  pageTitle: string,
+  pagePath: string
+) {
+  const labels = BREADCRUMB_LABELS[locale];
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: labels.home,
+        item: `${siteUrl}/${locale}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: labels.events,
+        item: `${siteUrl}/${locale}/eventos`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: pageTitle,
+        item: `${siteUrl}${pagePath}`,
+      },
+    ],
+  };
+}
 
 function otherEventsParams() {
   return [
@@ -54,6 +92,11 @@ export async function generateMetadata({
           "x-default": `/es/eventos/${otherEventSlugs.es}`,
         },
       },
+      openGraph: {
+        title: otherEventsHub.title[l],
+        description: otherEventsHub.description[l],
+        images: [otherEventsHub.heroImage.src],
+      },
     };
   }
 
@@ -89,8 +132,17 @@ export default async function EventDetailPage({
   const l = locale as Locale;
 
   if (isOtherEventsSlug(l, slug)) {
+    const breadcrumb = breadcrumbJsonLd(
+      l,
+      otherEventsHub.title[l],
+      `/${l}/eventos/${otherEventSlugs[l]}`
+    );
     return (
       <div className="home-concept bg-concept-sand font-concept">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+        />
         <Image
           src={otherEventsHub.heroImage.src}
           alt={otherEventsHub.heroImage.alt[l]}
@@ -109,9 +161,14 @@ export default async function EventDetailPage({
   const related = page.relatedIds
     .map((id) => events.find((item) => item.id === id))
     .filter((item): item is (typeof events)[number] => Boolean(item));
+  const breadcrumb = breadcrumbJsonLd(l, page.title[l], pageHref(page, l));
 
   return (
     <div className="home-concept bg-concept-sand font-concept">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
       <Image
         src={page.heroImage.src}
         alt={page.heroImage.alt[l]}

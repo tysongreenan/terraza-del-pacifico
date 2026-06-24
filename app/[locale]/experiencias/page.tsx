@@ -4,7 +4,9 @@ import { notFound } from "next/navigation";
 import { InfoHub } from "@/components/info-page/info-hub";
 import { experienceHub, experiences } from "@/content/experiences";
 import { events } from "@/content/events";
+import { pageHref } from "@/content/info-pages";
 import { isLocale, type Locale } from "@/lib/i18n";
+import { siteUrl } from "@/lib/site";
 
 export async function generateMetadata({
   params,
@@ -26,6 +28,11 @@ export async function generateMetadata({
         "x-default": "/es/experiencias",
       },
     },
+    openGraph: {
+      title: experienceHub.title[l],
+      description: experienceHub.description[l],
+      images: [experienceHub.heroImage.src],
+    },
   };
 }
 
@@ -39,8 +46,25 @@ export default async function ExperiencesPage({
   const l = locale as Locale;
   const surfNights = events.find((page) => page.id === "surf-nights");
 
+  const itemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: experienceHub.title[l],
+    description: experienceHub.description[l],
+    itemListElement: experiences.map((page, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: page.title[l],
+      url: `${siteUrl}${pageHref(page, l)}`,
+    })),
+  };
+
   return (
     <div className="home-concept bg-concept-sand font-concept">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+      />
       <Image
         src={experienceHub.heroImage.src}
         alt={experienceHub.heroImage.alt[l]}

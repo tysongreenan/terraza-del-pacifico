@@ -40,7 +40,7 @@ function SlideThumb({
       aria-label={`${label} ${index + 1}`}
       onClick={() => onSelect(index)}
       className={cn(
-        "relative shrink-0 overflow-hidden rounded-md border-2 transition-all duration-300",
+        "relative shrink-0 overflow-hidden rounded-md border-2 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black/40",
         size === "sm"
           ? "h-16 w-16"
           : "h-20 w-20 md:h-24 md:w-24",

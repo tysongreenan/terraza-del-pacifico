@@ -7,12 +7,12 @@ export const experienceHub: HubPage = {
     en: "Experiences",
   },
   title: {
-    es: "Experiencias frente al Pacifico",
-    en: "Pacific-front experiences",
+    es: "Experiencias frente al mar en Playa Hermosa",
+    en: "Beachfront experiences in Playa Hermosa",
   },
   description: {
-    es: "Naturaleza, bienestar, musica y momentos junto al mar. Explora las actividades que hacen que una estadia en Terraza del Pacifico sea mas que una visita a la playa.",
-    en: "Nature, wellness, music and oceanfront moments. Explore the activities that turn a stay at Terraza del Pacifico into more than a beach visit.",
+    es: "Avistamiento de ballenas, yoga en la arena y noches con musica en vivo. Estas son las actividades que hacen que una estadia en Terraza del Pacifico sea mas que una visita a la playa.",
+    en: "Whale watching, yoga on the sand and evenings of live music. These are the activities that turn a stay at Terraza del Pacifico into more than a beach visit.",
   },
   heroImage: {
     src: "/images/Resort Highlights/DJI_20250526154631_0071_D.JPG",
@@ -47,8 +47,8 @@ export const experiences: InfoPage[] = [
       en: "July to October",
     },
     description: {
-      es: "Durante la temporada, las ballenas jorobadas llegan a las aguas calidas del Pacifico costarricense. Playa Hermosa ofrece un punto de partida natural para vivir este espectaculo.",
-      en: "During the season, humpback whales arrive in the warm waters of Costa Rica's Pacific. Playa Hermosa is a natural starting point for this unforgettable spectacle.",
+      es: "Durante la temporada, las ballenas jorobadas llegan a las aguas calidas del Pacifico costarricense. Playa Hermosa ofrece un punto de partida natural para verlas de cerca.",
+      en: "During the season, humpback whales arrive in the warm waters of Costa Rica's Pacific. Playa Hermosa is a natural starting point for seeing them up close.",
     },
     heroImage: {
       src: "/images/whales-aerial-Bx8BrmsB.jpg",
@@ -431,11 +431,11 @@ export const experiences: InfoPage[] = [
         body: {
           es: [
             "Practicar junto al Pacifico crea un ritmo natural: brisa, sombra, arena y sonido de mar.",
-            "Es una experiencia sencilla, pero profundamente conectada con el lugar.",
+            "Una practica sencilla que toma su ritmo del lugar.",
           ],
           en: [
             "Practicing beside the Pacific creates a natural rhythm: breeze, shade, sand and ocean sound.",
-            "It is simple, but deeply connected to the place.",
+            "A simple practice that takes its cues from the place itself.",
           ],
         },
       },
@@ -604,11 +604,11 @@ export const experiences: InfoPage[] = [
         body: {
           es: [
             "Llega antes del atardecer para disfrutar la luz del Pacifico y quedarte a cenar cuando inicia la musica.",
-            "Es una de las formas mas sencillas de vivir la energia del hotel.",
+            "Es una forma sencilla de pasar la noche sin salir del resort.",
           ],
           en: [
             "Arrive before sunset to enjoy the Pacific light, then stay for dinner as the music begins.",
-            "It is one of the easiest ways to feel the energy of the hotel.",
+            "It is an easy way to spend an evening here without leaving the resort.",
           ],
         },
       },

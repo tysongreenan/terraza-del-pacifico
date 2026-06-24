@@ -18,6 +18,8 @@ type VenueText = {
 export type Venue = {
   slug: string;
   palette: "amber" | "ocean";
+  /** Locale-invariant daily opening hours (24h, Mo–Su) for JSON-LD openingHoursSpecification. */
+  hours?: { opens: string; closes: string };
   heroImage: string;
   introSlides: { src: string; alt: string }[];
   ctaImage: string;
@@ -29,6 +31,7 @@ export const bars: Venue[] = [
   {
     slug: "golden-beach-bar",
     palette: "amber",
+    hours: { opens: "11:00", closes: "19:00" },
     heroImage: "/images/golden-beach-bar-qN10cbKY.jpg",
     introSlides: [
       { src: "/images/pool-aerial-day-BveHvOiS.jpg", alt: "Aerial of the beach and pool" },
@@ -43,13 +46,13 @@ export const bars: Venue[] = [
         hero: {
           title: "Golden Beach Bar",
           description:
-            "Feet in the sand, waves as your soundtrack — craft cocktails and cold beer, right where the Pacific meets the shore.",
+            "Cocktails and cold beer with your feet in the sand, right where the Pacific meets the shore.",
           meta: ["Daily · 11:00 AM – 7:00 PM", "Playa Hermosa · direct beach access"],
         },
         intro: {
           eyebrow: "The sunset spot",
           titleLines: ["The ultimate", "beachfront experience"],
-          body: "The ideal place to watch the sunset with a drink in hand, share with friends, or simply take in the Pacific in all its splendor. No shoes, no rush — just the horizon and a cold glass.",
+          body: "A good spot to watch the sunset with a drink in hand and friends nearby. No shoes needed — just the horizon and a cold glass.",
           cta: "See the drinks",
         },
         pours: {
@@ -72,13 +75,13 @@ export const bars: Venue[] = [
         hero: {
           title: "Golden Beach Bar",
           description:
-            "Pies en la arena, las olas como banda sonora — cócteles de autor y cerveza fría, justo donde el Pacífico toca la orilla.",
+            "Cócteles y cerveza fría con los pies en la arena, justo donde el Pacífico toca la orilla.",
           meta: ["Todos los días · 11:00 AM – 7:00 PM", "Playa Hermosa · acceso directo a la playa"],
         },
         intro: {
           eyebrow: "El lugar del atardecer",
           titleLines: ["La experiencia", "frente al mar"],
-          body: "El lugar ideal para ver el atardecer con un trago en la mano, compartir con amigos o simplemente contemplar el Pacífico en todo su esplendor. Sin zapatos, sin prisa — solo el horizonte y un vaso frío.",
+          body: "Un buen lugar para ver el atardecer con un trago en la mano y amigos cerca. Sin zapatos — solo el horizonte y un vaso frío.",
           cta: "Ver los tragos",
         },
         pours: {
@@ -102,6 +105,7 @@ export const bars: Venue[] = [
   {
     slug: "iguana-bar",
     palette: "ocean",
+    hours: { opens: "10:00", closes: "18:00" },
     heroImage: "/images/iguana-bar-pool-CP3k5v8t.jpg",
     introSlides: [
       { src: "/images/pool-starry-night-DUYiQ-e6.jpg", alt: "The LED pool at night" },
@@ -122,7 +126,7 @@ export const bars: Venue[] = [
         intro: {
           eyebrow: "Cool off, stay in",
           titleLines: ["Relax without", "leaving the water"],
-          body: "With direct pool service, your favorite drinks come to you — no need to interrupt the moment. The casual, tropical atmosphere makes Iguana Bar a guest favorite all day long.",
+          body: "With pool service, your drinks come to you, so you never have to leave the water. The casual, tropical setting keeps guests at Iguana Bar through the afternoon.",
           cta: "See the drinks",
         },
         pours: {
@@ -151,7 +155,7 @@ export const bars: Venue[] = [
         intro: {
           eyebrow: "Refréscate sin salir",
           titleLines: ["Relájate sin", "salir del agua"],
-          body: "Con servicio directo en la piscina, tus bebidas favoritas llegan a ti — sin interrumpir el momento. El ambiente casual y tropical hace del Iguana Bar un favorito de los huéspedes todo el día.",
+          body: "Con servicio en la piscina, tus bebidas llegan a ti y no tienes que salir del agua. El ambiente casual y tropical mantiene a los huéspedes en el Iguana Bar toda la tarde.",
           cta: "Ver los tragos",
         },
         pours: {
@@ -184,13 +188,13 @@ export const barsIndexCopy: Record<Locale, { eyebrow: string; title: string; des
     title: "Two bars, both on the water",
     description:
       "Whether you want toes in the sand at sunset or a frozen drink without leaving the pool, there's a bar a few steps away.",
-    viewCta: "Visit the bar →",
+    viewCta: "Visit the bar",
   },
   es: {
     eyebrow: "Comer y beber · Bares",
     title: "Dos bares, ambos sobre el agua",
     description:
       "Ya sea con los pies en la arena al atardecer o un trago frozen sin salir de la piscina, hay un bar a pocos pasos.",
-    viewCta: "Visitar el bar →",
+    viewCta: "Visitar el bar",
   },
 };

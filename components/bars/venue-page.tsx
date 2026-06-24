@@ -78,7 +78,7 @@ export function VenuePage({
           </p>
           <a
             href="#pours"
-            className="mt-8 inline-flex w-fit items-center rounded-sm border border-[#cdbfa6] px-7 py-3.5 text-[13px] font-medium uppercase tracking-[0.1em] text-concept-ocean transition-colors hover:border-concept-ocean"
+            className="mt-8 inline-flex w-fit items-center rounded-sm border border-[#cdbfa6] px-7 py-3.5 text-[13px] font-medium uppercase tracking-[0.1em] text-concept-ocean transition-colors hover:border-concept-ocean focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2"
           >
             {t.intro.cta}
           </a>
@@ -162,7 +162,7 @@ export function VenuePage({
                 href={mapHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-sm bg-concept-gold px-8 py-3.5 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90"
+                className="inline-flex items-center justify-center rounded-sm bg-concept-gold px-8 py-3.5 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
               >
                 {t.cta.primary}
               </a>
@@ -170,7 +170,7 @@ export function VenuePage({
                 href={whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-sm border border-white/60 px-8 py-3.5 text-[13px] font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10"
+                className="inline-flex items-center justify-center gap-2 rounded-sm border border-white/60 px-8 py-3.5 text-[13px] font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
               >
                 <MessageCircle className="h-4 w-4" aria-hidden />
                 {t.cta.secondary}

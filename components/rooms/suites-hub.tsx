@@ -15,6 +15,24 @@ import { LinkPreview } from "@/components/ui/link-preview";
 
 type Room = Dictionary["suites"]["items"][number];
 
+// Distinct, descriptive alt text per room so the hero slide and the editorial
+// frame don't reuse the same string. Built from the localized room name + view.
+function roomImageAlt(room: Room, locale: Locale) {
+  const view = room.view?.toLowerCase();
+  if (locale === "es") {
+    return view
+      ? `${room.name}, vista ${view} en Playa Hermosa, Terraza del Pacífico`
+      : `${room.name} frente al mar en Playa Hermosa, Terraza del Pacífico`;
+  }
+  return view
+    ? `${room.name} with ${view} view in Playa Hermosa, Terraza del Pacifico`
+    : `${room.name} on the beachfront in Playa Hermosa, Terraza del Pacifico`;
+}
+
+// Shared focus ring so keyboard focus is visible on gold and bordered controls.
+const focusRing =
+  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2 focus-visible:ring-offset-transparent";
+
 export function SuitesHub({
   locale,
   dict,
@@ -49,7 +67,7 @@ export function SuitesHub({
             <Image
               key={room.slug}
               src={editorial.image}
-              alt={room.name}
+              alt={roomImageAlt(room, locale)}
               fill
               priority={i === 0}
               sizes="100vw"
@@ -75,14 +93,20 @@ export function SuitesHub({
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
                   href={bookingHref}
-                  className="inline-flex items-center justify-center gap-2 rounded-sm bg-concept-gold px-7 py-3.5 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90"
+                  className={cn(
+                    "inline-flex items-center justify-center gap-2 rounded-sm bg-concept-gold px-7 py-3.5 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90",
+                    focusRing
+                  )}
                 >
                   {copy.hero.primaryCta}
                   <ArrowRight className="h-4 w-4" aria-hidden />
                 </a>
                 <Link
                   href={`/${locale}/habitaciones/comparar`}
-                  className="inline-flex items-center justify-center rounded-sm border border-white/60 px-7 py-3.5 text-[13px] font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10"
+                  className={cn(
+                    "inline-flex items-center justify-center rounded-sm border border-white/60 px-7 py-3.5 text-[13px] font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10",
+                    focusRing
+                  )}
                 >
                   {copy.hero.secondaryCta}
                 </Link>
@@ -94,16 +118,22 @@ export function SuitesHub({
               <button
                 type="button"
                 onClick={() => go(-1)}
-                aria-label="Previous room"
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-white/60 text-white backdrop-blur-sm transition-colors hover:bg-white/10"
+                aria-label={locale === "es" ? "Habitación anterior" : "Previous room"}
+                className={cn(
+                  "flex h-12 w-12 items-center justify-center rounded-full border border-white/60 text-white backdrop-blur-sm transition-colors hover:bg-white/10",
+                  focusRing
+                )}
               >
                 <ChevronLeft className="h-5 w-5" aria-hidden />
               </button>
               <button
                 type="button"
                 onClick={() => go(1)}
-                aria-label="Next room"
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-white/60 bg-white/10 text-white backdrop-blur-sm transition-colors hover:bg-white/20"
+                aria-label={locale === "es" ? "Habitación siguiente" : "Next room"}
+                className={cn(
+                  "flex h-12 w-12 items-center justify-center rounded-full border border-white/60 bg-white/10 text-white backdrop-blur-sm transition-colors hover:bg-white/20",
+                  focusRing
+                )}
               >
                 <ChevronRight className="h-5 w-5" aria-hidden />
               </button>
@@ -119,8 +149,10 @@ export function SuitesHub({
                 key={room.slug}
                 type="button"
                 onClick={() => setActive(i)}
+                aria-current={i === active ? "true" : undefined}
                 className={cn(
                   "flex-1 border-b border-[#eae4d8] px-6 py-4 text-left transition-colors last:border-b-0 md:border-b-0 md:border-r",
+                  focusRing,
                   i === active && "border-b-2 border-b-concept-gold md:border-b-0 md:border-t-2 md:border-t-concept-gold"
                 )}
               >
@@ -140,12 +172,22 @@ export function SuitesHub({
             <div className="flex items-center justify-center p-3">
               <a
                 href={bookingHref}
-                className="inline-flex w-full items-center justify-center rounded-sm bg-concept-gold px-7 py-3.5 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90 md:w-auto"
+                className={cn(
+                  "inline-flex w-full items-center justify-center rounded-sm bg-concept-gold px-7 py-3.5 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90 md:w-auto",
+                  focusRing
+                )}
               >
                 {copy.switcher.reserve}
               </a>
             </div>
           </div>
+
+          {/* Announce the active room to screen readers as the carousel changes. */}
+          <p aria-live="polite" className="sr-only">
+            {locale === "es"
+              ? `Mostrando ${activeRoom.room.name}`
+              : `Showing ${activeRoom.room.name}`}
+          </p>
         </div>
       </section>
 
@@ -196,7 +238,10 @@ export function SuitesHub({
       <div className="container pb-20 text-center md:pb-24">
         <Link
           href={`/${locale}/habitaciones/comparar`}
-          className="inline-flex items-center gap-2 rounded-sm border border-[#cdbfa6] px-8 py-4 text-xs font-semibold uppercase tracking-[0.12em] text-concept-ocean transition-colors hover:border-concept-ocean"
+          className={cn(
+            "inline-flex items-center gap-2 rounded-sm border border-[#cdbfa6] px-8 py-4 text-xs font-semibold uppercase tracking-[0.12em] text-concept-ocean transition-colors hover:border-concept-ocean",
+            focusRing
+          )}
         >
           {copy.compareCta}
         </Link>
@@ -285,7 +330,7 @@ function RoomFeature({
           <div className="relative h-[360px] md:h-[540px]">
             <Image
               src={editorial.image}
-              alt={room.name}
+              alt={roomImageAlt(room, locale)}
               fill
               sizes="(max-width: 768px) 100vw, 70vw"
               className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
@@ -365,13 +410,19 @@ function RoomFeature({
           <div className="mt-7 flex flex-wrap gap-3">
             <a
               href={bookingHref}
-              className="rounded-sm bg-concept-gold px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90"
+              className={cn(
+                "rounded-sm bg-concept-gold px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90",
+                focusRing
+              )}
             >
               {s.bookCta}
             </a>
             <Link
               href={`/${locale}/habitaciones/${room.slug}`}
-              className="rounded-sm border border-[#cdbfa6] px-6 py-3.5 text-xs font-semibold uppercase tracking-[0.1em] text-concept-ocean transition-colors hover:border-concept-ocean"
+              className={cn(
+                "rounded-sm border border-[#cdbfa6] px-6 py-3.5 text-xs font-semibold uppercase tracking-[0.1em] text-concept-ocean transition-colors hover:border-concept-ocean",
+                focusRing
+              )}
             >
               {editorial.viewCta}
             </Link>

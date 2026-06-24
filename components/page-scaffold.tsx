@@ -180,6 +180,51 @@ const LUXURY_COPY = {
   },
 } as const;
 
+// Bilingual UI strings for the default (non-luxury) scaffold. Mirrors the
+// LUXURY_COPY pattern so Spanish routes don't render hardcoded English.
+const DEFAULT_COPY = {
+  es: {
+    brand: "Hotel Terraza del Pacífico",
+    book: "Reservar",
+    whatsapp: "WhatsApp",
+    overviewEyebrow: "Resumen",
+    overviewTitle: "Lo esencial",
+    statBookingValue: "Directa",
+    statBookingLabel: "Atención de reservas",
+    statFromValue: "90 min",
+    statFromLabel: "Desde San José",
+    statBeachValue: "Frente al mar",
+    statBeachLabel: "Playa Hermosa",
+    galleryEyebrow: "Galería",
+    galleryTitle: "Una mirada más cercana",
+    reserveEyebrow: "Reserva directa",
+    reserveTitle: "¿Listo para planear tu estancia?",
+    reserveBody:
+      "Contacta al hotel para disponibilidad, detalles de eventos, reservas de restaurante o ayuda para elegir la habitación ideal.",
+    email: "Correo",
+  },
+  en: {
+    brand: "Hotel Terraza del Pacífico",
+    book: "Book Your Escape",
+    whatsapp: "WhatsApp",
+    overviewEyebrow: "Overview",
+    overviewTitle: "The essentials",
+    statBookingValue: "Direct",
+    statBookingLabel: "Booking support",
+    statFromValue: "90 min",
+    statFromLabel: "From San Jose",
+    statBeachValue: "Beachfront",
+    statBeachLabel: "Playa Hermosa",
+    galleryEyebrow: "Gallery",
+    galleryTitle: "A closer look",
+    reserveEyebrow: "Direct booking",
+    reserveTitle: "Ready to plan your stay?",
+    reserveBody:
+      "Contact the hotel directly for availability, event details, restaurant reservations, or help choosing the right room.",
+    email: "Email",
+  },
+} as const;
+
 const PAGE_INTRO: Record<
   string,
   Record<Locale, { eyebrow: string; title: string; body?: string }>
@@ -214,6 +259,26 @@ const PAGE_INTRO: Record<
     en: {
       eyebrow: "Our story",
       title: "Over 20 years on the Pacific",
+    },
+  },
+};
+
+// Per-page bilingual hero copy. When present, this overrides the scraped
+// (English-only) data.h1[0]/data.desc so the hero reads in the active locale.
+const LUXURY_HERO: Record<
+  string,
+  Record<Locale, { title: string; description: string }>
+> = {
+  galeria: {
+    es: {
+      title: "Galería",
+      description:
+        "Fotos del hotel, las habitaciones, el restaurante, los eventos y las experiencias en Playa Hermosa, Costa Rica.",
+    },
+    en: {
+      title: "Gallery",
+      description:
+        "Browse photos of the hotel, rooms, restaurant, events, and experiences in Playa Hermosa, Costa Rica.",
     },
   },
 };
@@ -306,8 +371,18 @@ function SectionBody({ lines }: { lines: string[] }) {
   );
 }
 
-function ImageGallery({ images, title }: { images: string[]; title: string }) {
+function ImageGallery({
+  images,
+  title,
+  locale,
+}: {
+  images: string[];
+  title: string;
+  locale: Locale;
+}) {
   if (images.length === 0) return null;
+  const copy = DEFAULT_COPY[locale];
+  const altLead = locale === "es" ? "Foto de" : "Photo of";
 
   return (
     <section className="bg-muted/45 py-16">
@@ -315,10 +390,10 @@ function ImageGallery({ images, title }: { images: string[]; title: string }) {
         <div className="mb-8 flex items-end justify-between gap-6">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-accent">
-              Gallery
+              {copy.galleryEyebrow}
             </p>
             <h2 className="mt-2 text-3xl font-bold text-primary md:text-4xl">
-              A closer look
+              {copy.galleryTitle}
             </h2>
           </div>
         </div>
@@ -327,7 +402,7 @@ function ImageGallery({ images, title }: { images: string[]; title: string }) {
             <Image
               key={src}
               src={src}
-              alt={`${title} photo from Hotel Terraza del Pacifico ${index + 1}`}
+              alt={`${altLead} ${title} — Hotel Terraza del Pacífico ${index + 1}`}
               width={900}
               height={675}
               sizes={index === 0 ? "(min-width: 768px) 66vw, 100vw" : "(min-width: 768px) 33vw, 100vw"}
@@ -365,6 +440,9 @@ function LuxuryPageScaffold({
     .filter((section) => section.body.length > 0)
     .slice(0, path === "galeria" ? 0 : 4);
   const pageIntro = PAGE_INTRO[path]?.[locale];
+  const heroCopy = LUXURY_HERO[path]?.[locale];
+  const heroTitle = heroCopy?.title ?? title;
+  const heroDescription = heroCopy?.description ?? data.desc;
   const introLine = data.desc;
 
   const mosaicItems: MosaicImage[] = images
@@ -388,10 +466,10 @@ function LuxuryPageScaffold({
 
       <LuxuryHero
         eyebrow={copy.brand}
-        title={title}
-        description={data.desc}
+        title={heroTitle}
+        description={heroDescription}
         image={hero}
-        imageAlt={title}
+        imageAlt={heroTitle}
       >
         {luxuryButtonPrimary(copy.book, bookingHref)}
         <a
@@ -490,11 +568,15 @@ export function PageScaffold({
     );
   }
 
+  const copy = DEFAULT_COPY[locale];
   const title = data.h1[0] ?? data.title;
   const images = imageList(data);
   const hero = images[0];
   const { intro, sections } = buildSections(data);
   const primarySections = sections.slice(0, 6);
+  // Policy/legal routes: suppress the generic marketing gallery + "essentials"
+  // resort framing so the page stays focused on the policy content.
+  const isPolicies = path === "politicas";
 
   return (
     <article>
@@ -515,7 +597,7 @@ export function PageScaffold({
         <div className="container relative flex min-h-[58vh] items-end pb-14 pt-28">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-accent">
-              Hotel Terraza del Pacifico
+              {copy.brand}
             </p>
             <h1 className="mt-4 text-4xl font-bold md:text-6xl">{title}</h1>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-white/86">
@@ -526,7 +608,7 @@ export function PageScaffold({
                 href={bookingHref}
                 className={buttonVariants({ variant: "accent", size: "lg" })}
               >
-                Book Your Escape
+                {copy.book}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
               <Link
@@ -539,7 +621,7 @@ export function PageScaffold({
                 })}
               >
                 <MessageCircle className="mr-2 h-4 w-4" />
-                WhatsApp
+                {copy.whatsapp}
               </Link>
             </div>
           </div>
@@ -547,20 +629,33 @@ export function PageScaffold({
       </section>
 
       <section className="container py-14 md:py-18">
-        <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-accent">
-              Overview
-            </p>
-            <h2 className="mt-3 text-3xl font-bold text-primary md:text-4xl">
-              The essentials
-            </h2>
-            <div className="mt-8 grid gap-5 sm:grid-cols-3 lg:grid-cols-1">
-              <LeadStat value="Beachfront" label="Playa Hermosa" />
-              <LeadStat value="90 min" label="From San Jose" />
-              <LeadStat value="Direct" label="Booking support" />
+        <div
+          className={cn(
+            "grid gap-10",
+            !isPolicies && "lg:grid-cols-[0.8fr_1.2fr]"
+          )}
+        >
+          {!isPolicies && (
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-accent">
+                {copy.overviewEyebrow}
+              </p>
+              <h2 className="mt-3 text-3xl font-bold text-primary md:text-4xl">
+                {copy.overviewTitle}
+              </h2>
+              <div className="mt-8 grid gap-5 sm:grid-cols-3 lg:grid-cols-1">
+                <LeadStat
+                  value={copy.statBeachValue}
+                  label={copy.statBeachLabel}
+                />
+                <LeadStat value={copy.statFromValue} label={copy.statFromLabel} />
+                <LeadStat
+                  value={copy.statBookingValue}
+                  label={copy.statBookingLabel}
+                />
+              </div>
             </div>
-          </div>
+          )}
           <div className="max-w-3xl space-y-4 text-lg leading-8 text-foreground/78">
             {(intro.length > 0 ? intro : [data.desc]).map((line, index) => (
               <p key={`${line}-${index}`}>{line}</p>
@@ -587,20 +682,19 @@ export function PageScaffold({
         </section>
       )}
 
-      <ImageGallery images={images} title={title} />
+      {!isPolicies && (
+        <ImageGallery images={images} title={title} locale={locale} />
+      )}
 
       <section id="booking" className="container py-16">
         <div className="grid gap-8 rounded-md bg-primary p-8 text-primary-foreground md:grid-cols-[1fr_auto] md:items-center">
           <div>
             <p className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.22em] text-accent">
               <CalendarDays className="h-4 w-4" />
-              Direct booking
+              {copy.reserveEyebrow}
             </p>
-            <h2 className="mt-3 text-3xl font-bold">Ready to plan your stay?</h2>
-            <p className="mt-3 max-w-2xl text-white/78">
-              Contact the hotel directly for availability, event details,
-              restaurant reservations, or help choosing the right room.
-            </p>
+            <h2 className="mt-3 text-3xl font-bold">{copy.reserveTitle}</h2>
+            <p className="mt-3 max-w-2xl text-white/78">{copy.reserveBody}</p>
           </div>
           <div className="flex flex-wrap gap-3">
             <Link
@@ -613,14 +707,14 @@ export function PageScaffold({
               })}
             >
               <Mail className="mr-2 h-4 w-4" />
-              Email
+              {copy.email}
             </Link>
             <Link
               href={whatsappHref}
               className={buttonVariants({ variant: "accent", size: "lg" })}
             >
               <MessageCircle className="mr-2 h-4 w-4" />
-              WhatsApp
+              {copy.whatsapp}
             </Link>
           </div>
         </div>

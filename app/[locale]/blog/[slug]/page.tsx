@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/json-ld";
 import { htmlLang, isLocale, locales, type Locale } from "@/lib/i18n";
@@ -73,6 +75,12 @@ export default async function BlogPost({
   if (!post) notFound();
   const path = `blog/${slug}`;
   const body = blogBodyLines(post);
+  const coverAlt =
+    safeLocale === "es"
+      ? "Atardecer sobre el Pacífico desde la terraza frente al mar del Hotel Terraza del Pacífico, Playa Hermosa."
+      : "Sunset over the Pacific from the beachfront terrace at Hotel Terraza del Pacífico, Playa Hermosa.";
+  const showCover =
+    Boolean(post.coverImage) && !post.coverImage.endsWith("/og-image.jpg");
 
   return (
     <article className="container max-w-2xl py-12">
@@ -91,19 +99,35 @@ export default async function BlogPost({
           description: post.excerpt ?? undefined,
           image: absoluteUrl(post.coverImage ?? defaultOgImage),
           datePublished: post.publishedAt,
+          dateModified: post.publishedAt,
           inLanguage: htmlLang[safeLocale],
           mainEntityOfPage: absoluteUrl(localizedPath(safeLocale, path)),
+          author: { "@id": "https://terrazadelpacifico.com/#hotel" },
           publisher: { "@id": "https://terrazadelpacifico.com/#hotel" },
         }}
       />
-      <h1 className="font-serif text-4xl font-bold text-primary">{post.title}</h1>
-      <p className="mt-4 text-sm font-semibold uppercase tracking-[0.18em] text-accent">
+      {showCover ? (
+        <Image
+          src={post.coverImage}
+          alt={coverAlt}
+          width={1280}
+          height={720}
+          priority
+          sizes="(min-width: 768px) 42rem, 100vw"
+          className="mb-8 aspect-video w-full rounded-lg object-cover"
+        />
+      ) : null}
+      <h1 className="font-display text-4xl font-bold text-primary md:text-5xl">{post.title}</h1>
+      <time
+        dateTime={post.publishedAt}
+        className="mt-4 block text-sm font-semibold uppercase tracking-[0.18em] text-accent"
+      >
         {new Intl.DateTimeFormat(safeLocale === "es" ? "es-CR" : "en-US", {
           month: "long",
           day: "numeric",
           year: "numeric",
         }).format(new Date(post.publishedAt))}
-      </p>
+      </time>
       <p className="mt-4 text-lg text-muted-foreground">{post.excerpt}</p>
       <div className="mt-10 space-y-4 text-base leading-8 text-foreground/78">
         {body.map((line, index) => {
@@ -119,6 +143,14 @@ export default async function BlogPost({
             <p key={`${line}-${index}`}>{line}</p>
           );
         })}
+      </div>
+      <div className="mt-12 border-t border-border pt-8">
+        <Link
+          href={localizedPath(safeLocale, "blog")}
+          className="inline-flex min-h-[44px] items-center font-display text-sm font-semibold text-primary underline-offset-4 transition-colors hover:text-ocean hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+        >
+          {safeLocale === "es" ? "← Volver al blog" : "← Back to blog"}
+        </Link>
       </div>
     </article>
   );
