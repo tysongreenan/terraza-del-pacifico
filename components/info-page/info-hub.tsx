@@ -91,11 +91,11 @@ export function InfoHub({
       )}
 
       {featured && (
-        <section className="bg-concept-sand py-10 md:py-12">
+        <section className="bg-concept-sand py-section-sm">
           <div className="container flex justify-center">
             <Link
               href={pageHref(featured, locale)}
-              className="inline-flex items-center gap-2 rounded-sm border border-concept-ocean/25 px-8 py-3.5 text-[13px] font-semibold uppercase tracking-[0.1em] text-concept-ocean transition-colors hover:bg-concept-ocean hover:text-white"
+              className="inline-flex items-center gap-2 rounded-sm border border-concept-ocean/25 px-8 py-3.5 text-caption font-semibold uppercase tracking-[0.1em] text-concept-ocean transition-colors hover:bg-concept-ocean hover:text-white"
             >
               {locale === "en" ? "Explore Surf Nights" : "Explorar Surf Nights"}
               <ArrowRight className="h-4 w-4" aria-hidden />
@@ -104,7 +104,7 @@ export function InfoHub({
         </section>
       )}
 
-      <section className="bg-concept-sand-muted py-14 md:py-16">
+      <section className="bg-concept-sand-muted py-14 md:py-section-sm">
         <div className="container">
           <div
             role="region"
@@ -126,13 +126,13 @@ export function InfoHub({
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-concept-ocean/90 via-concept-ocean/20 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-concept-gold">
+                  <p className="text-micro font-semibold uppercase tracking-[0.14em] text-concept-gold">
                     {page.eyebrow[locale]}
                   </p>
-                  <h3 className="mt-2 font-concept text-2xl leading-tight md:text-3xl">
+                  <h3 className="mt-2 font-concept text-2xl leading-tight text-h3">
                     {page.title[locale]}
                   </h3>
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-white/90">
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-micro font-semibold uppercase tracking-[0.1em] text-white/90">
                     {copy.explore}
                     <ArrowRight className="h-3.5 w-3.5" aria-hidden />
                   </span>

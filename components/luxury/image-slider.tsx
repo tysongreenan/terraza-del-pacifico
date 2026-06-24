@@ -89,11 +89,11 @@ export function LuxuryImageSlider({
           <div className="flex flex-col gap-6 pb-8 md:flex-row md:items-end md:justify-between md:pb-10">
             <div className="max-w-2xl">
               {eyebrow && <p className="eyebrow">{eyebrow}</p>}
-              <h2 className="mt-3 font-concept text-3xl font-medium leading-[1.04] text-concept-ocean md:text-5xl">
+              <h2 className="mt-3 font-concept text-h1 font-medium leading-[1.04] text-concept-ocean ">
                 {title}
               </h2>
               {subtitle && (
-                <p className="mt-4 text-sm leading-relaxed text-concept-ink/75 md:text-[15px]">
+                <p className="mt-4 text-sm leading-relaxed text-concept-ink/75 md:text-body-sm">
                   {subtitle}
                 </p>
               )}
@@ -168,7 +168,7 @@ export function LuxuryImageSlider({
             />
           </div>
           {dragHint && (
-            <span className="text-[11px] font-medium uppercase tracking-[0.1em] text-concept-gold-muted">
+            <span className="text-micro font-medium uppercase tracking-[0.1em] text-concept-gold-muted">
               {dragHint}
             </span>
           )}

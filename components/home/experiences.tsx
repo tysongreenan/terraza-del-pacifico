@@ -42,13 +42,13 @@ export function Experiences({
   };
 
   return (
-    <section id="experiences" className="scroll-mt-20 bg-concept-sand-muted py-16 md:py-24">
+    <section id="experiences" className="scroll-mt-20 bg-concept-sand-muted py-section-sm md:py-section">
       <div className="container">
         <Reveal>
           <div className="flex flex-col gap-6 pb-8 md:flex-row md:items-end md:justify-between md:pb-10">
             <div>
               <p className="eyebrow">{e.eyebrow}</p>
-              <h2 className="mt-3 font-concept text-3xl font-medium leading-[1.04] text-concept-ocean md:text-5xl">
+              <h2 className="mt-3 font-concept text-h1 font-medium leading-[1.04] text-concept-ocean ">
                 {e.title}
               </h2>
             </div>
@@ -100,7 +100,7 @@ export function Experiences({
             <div className="absolute inset-0 bg-gradient-to-t from-[rgba(11,32,42,0.9)] via-[rgba(11,32,42,0.2)] to-transparent" />
             <span
               className={cn(
-                "absolute left-4 top-4 z-10 rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em]",
+                "absolute left-4 top-4 z-10 rounded-full px-3 py-1 text-micro font-semibold uppercase tracking-[0.12em]",
                 item.badge === "Included" || item.badge === "Incluido"
                   ? "bg-concept-gold text-[#1a1611]"
                   : "border border-white/50 text-white"
@@ -109,20 +109,20 @@ export function Experiences({
               {item.badge}
             </span>
             <div className="absolute inset-x-0 bottom-0 z-10 p-5 text-white">
-              <h3 className="font-concept text-3xl leading-[1.02]">
+              <h3 className="font-concept text-h3 leading-[1.02]">
                 {item.title}
               </h3>
               <p className="mt-2 text-xs leading-relaxed text-[#cfe0e6]">
                 {item.body}
               </p>
               <div className="mt-4 flex items-center justify-between border-t border-white/20 pt-3.5">
-                <span className="text-[11px] tracking-wide text-[#bcd0d8]">
+                <span className="text-micro tracking-wide text-[#bcd0d8]">
                   {item.detail}
                 </span>
                 <Link
                   href={`/${locale}/${item.slug}`}
                   className={cn(
-                    "rounded-sm px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.08em] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2 focus-visible:ring-offset-[rgba(11,32,42,0.9)]",
+                    "rounded-sm px-4 py-2 text-micro font-semibold uppercase tracking-[0.08em] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2 focus-visible:ring-offset-[rgba(11,32,42,0.9)]",
                     item.cta === "Join" || item.cta === "Unirse"
                       ? "border border-white/50 text-white"
                       : "bg-concept-gold text-[#1a1611]"
@@ -144,7 +144,7 @@ export function Experiences({
               style={{ width: `${Math.max(12, progress * 100)}%` }}
             />
           </div>
-          <span className="text-[11px] font-medium uppercase tracking-[0.1em] text-concept-gold-muted">
+          <span className="text-micro font-medium uppercase tracking-[0.1em] text-concept-gold-muted">
             {e.dragHint}
           </span>
         </div>

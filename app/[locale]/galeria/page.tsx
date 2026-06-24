@@ -32,7 +32,7 @@ export async function generateMetadata({
     params,
     path,
     content,
-    image: "/images/pool-aerial-day-BveHvOiS.jpg",
+    image: "/images/Resort Highlights/IMG_2559.JPG",
   });
 }
 

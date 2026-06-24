@@ -28,3 +28,6 @@ yarn-error.log*
 .vscode/*
 !.vscode/extensions.json
 .idea
+
+# legacy imported Vite site — not part of the Next app; breaks build type-check
+/terraza-web-creator-main/

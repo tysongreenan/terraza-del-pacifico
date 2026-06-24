@@ -27,17 +27,17 @@ export const navTiles: NavTile[] = [
   {
     id: "rooms",
     href: "habitaciones",
-    image: "/images/room-toucan-art-n3cC8Tze.jpg",
+    image: "/images/Suit photos/RLR_48512.JPG",
     icon: "bed",
     alt: {
-      es: "Suite frente al mar en Terraza del Pacífico",
-      en: "Oceanfront suite at Terraza del Pacífico",
+      es: "Suite frente al mar en Terraza del Pacífico, Playa Hermosa",
+      en: "Oceanfront suite at Terraza del Pacífico on Playa Hermosa",
     },
     title: { es: "Habitaciones y Suites", en: "Rooms & Suites" },
     cta: { es: "Ver Habitaciones", en: "View Rooms" },
     subtitle: {
-      es: "Frente al mar, a pasos de la arena",
-      en: "Oceanfront, steps from the sand",
+      es: "Frente al mar en Playa Hermosa, a pasos de la arena",
+      en: "Beachfront on Playa Hermosa, steps from the sand",
     },
     colSpan: 2,
     rowSpan: 2,
@@ -46,7 +46,7 @@ export const navTiles: NavTile[] = [
   {
     id: "restaurant",
     href: "restaurante",
-    image: "/images/restaurant-night-DDkbFUTM.jpg",
+    image: "/images/Resturant/DSCF40452.JPG",
     icon: "restaurant",
     alt: {
       es: "Restaurante Vivace Beachfront de noche",
@@ -64,7 +64,7 @@ export const navTiles: NavTile[] = [
   {
     id: "bars",
     href: "bares",
-    image: "/images/restaurant-cocktails-ITbgxYoM.jpg",
+    image: "/images/Resturant/chloemurdochphotography-293.JPG",
     icon: "bar",
     alt: {
       es: "Cócteles en el bar frente al mar",
@@ -82,11 +82,11 @@ export const navTiles: NavTile[] = [
   {
     id: "about",
     href: "sobre-nosotros",
-    image: "/images/g-aerial-beach-property-COogc_9W.jpg",
+    image: "/images/exp-facade.webp",
     icon: "about",
     alt: {
-      es: "Vista aérea del resort frente a la playa",
-      en: "Aerial view of the beachfront resort",
+      es: "Vista aérea del resort frente al mar en Playa Hermosa, cerca de Jacó",
+      en: "Aerial view of the beachfront resort on Playa Hermosa, near Jacó",
     },
     title: { es: "Sobre Nosotros", en: "About Us" },
     cta: { es: "Conócenos", en: "Learn About Us" },
@@ -100,7 +100,7 @@ export const navTiles: NavTile[] = [
   {
     id: "gallery",
     href: "galeria",
-    image: "/images/pool-starry-night-DUYiQ-e6.jpg",
+    image: "/images/New Pool/dji_fly_20241022_013726_0642_1753125646863_photo2.JPG",
     icon: "gallery",
     alt: {
       es: "Piscina LED bajo una noche estrellada",

@@ -93,9 +93,9 @@ const FEATURED_IMAGES: Record<string, string[]> = {
     "/images/Resturant/DSCF40452.JPG",
     "/images/Resturant/1L6A2626.jpg",
     "/images/Resturant/chloemurdochphotography-37.JPG",
-    "/images/Resturant/1L6A2554.jpg",
+    "/images/Resturant/1L6A2547.jpg",
     "/images/Resturant/chloemurdochphotography-17.JPG",
-    "/images/Resturant/1L6A2572.jpg",
+    "/images/Resturant/chloemurdochphotography-320.JPG",
     "/images/Resturant/chloemurdochphotography-255.JPG",
     "/images/Resturant/chloemurdochphotography-267.JPG",
     "/images/Resturant/chloemurdochphotography-293.JPG",
@@ -111,9 +111,9 @@ const FEATURED_IMAGES: Record<string, string[]> = {
     "/images/New Pool/dji_fly_20241022_013922_0645_1753125628421_photo4.JPG",
     "/images/Resort Highlights/IMG_2542.JPG",
     "/images/Resort Highlights/IMG_2559.JPG",
-    "/images/Resort Highlights/DSC03681.jpg",
+    "/images/exp-reception.avif",
     "/images/Resort Highlights/IMG_3735.JPG",
-    "/images/Resort Highlights/IMG_3748.JPG",
+    "/images/exp-entry-walkway.avif",
     "/images/Resort Highlights/perfileimage2.JPG",
     "/images/Resort Highlights/IMG_22232.JPG",
     "/images/Resort Highlights/IMG_2458_jpg.JPG",
@@ -124,11 +124,11 @@ const FEATURED_IMAGES: Record<string, string[]> = {
 const SUPPLEMENT_IMAGES: Record<string, string[]> = {
   "sobre-nosotros": [
     "/images/g-aerial-beach-property-COogc_9W.jpg",
-    "/images/pool-aerial-day-BveHvOiS.jpg",
+    "/images/exp-sunset-drone.jpg",
     "/images/wedding-beach-ceremony-NqUR8iSS.jpg",
     "/images/Resort Highlights/DJI_20250526154631_0071_D.JPG",
     "/images/restaurant-sunset-T7wmiQ85.jpg",
-    "/images/g-family-beach-DHJPEGnp.jpg",
+    "/images/Resort Highlights/IMG_6128.JPG",
     "/images/events-pool-aerial-DuNYfspA.jpg",
     "/images/g-aerial-pool-overview-CCOWXk2j.jpg",
   ],
@@ -385,14 +385,14 @@ function ImageGallery({
   const altLead = locale === "es" ? "Foto de" : "Photo of";
 
   return (
-    <section className="bg-muted/45 py-16">
+    <section className="bg-muted/45 py-section-sm">
       <div className="container">
         <div className="mb-8 flex items-end justify-between gap-6">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-accent">
               {copy.galleryEyebrow}
             </p>
-            <h2 className="mt-2 text-3xl font-bold text-primary md:text-4xl">
+            <h2 className="mt-2 text-h2 font-bold text-primary ">
               {copy.galleryTitle}
             </h2>
           </div>
@@ -457,7 +457,7 @@ function LuxuryPageScaffold({
       ? "/images/restaurant-sunset-T7wmiQ85.jpg"
       : path === "sobre-nosotros"
         ? "/images/g-aerial-beach-property-COogc_9W.jpg"
-        : "/images/pool-aerial-day-BveHvOiS.jpg";
+        : "/images/Resort Highlights/IMG_2559.JPG";
 
   return (
     <article className="home-concept">
@@ -476,7 +476,7 @@ function LuxuryPageScaffold({
           href={whatsappHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-2 rounded-sm border border-white/55 px-7 py-3.5 text-[13px] font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10"
+          className="inline-flex items-center justify-center gap-2 rounded-sm border border-white/55 px-7 py-3.5 text-caption font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10"
         >
           <MessageCircle className="h-4 w-4" aria-hidden />
           {copy.whatsapp}
@@ -599,7 +599,7 @@ export function PageScaffold({
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-accent">
               {copy.brand}
             </p>
-            <h1 className="mt-4 text-4xl font-bold md:text-6xl">{title}</h1>
+            <h1 className="mt-4 text-display font-bold ">{title}</h1>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-white/86">
               {data.desc}
             </p>
@@ -628,7 +628,7 @@ export function PageScaffold({
         </div>
       </section>
 
-      <section className="container py-14 md:py-18">
+      <section className="container py-14 md:py-section">
         <div
           className={cn(
             "grid gap-10",
@@ -640,7 +640,7 @@ export function PageScaffold({
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-accent">
                 {copy.overviewEyebrow}
               </p>
-              <h2 className="mt-3 text-3xl font-bold text-primary md:text-4xl">
+              <h2 className="mt-3 text-h2 font-bold text-primary ">
                 {copy.overviewTitle}
               </h2>
               <div className="mt-8 grid gap-5 sm:grid-cols-3 lg:grid-cols-1">
@@ -686,14 +686,14 @@ export function PageScaffold({
         <ImageGallery images={images} title={title} locale={locale} />
       )}
 
-      <section id="booking" className="container py-16">
+      <section id="booking" className="container py-section-sm">
         <div className="grid gap-8 rounded-md bg-primary p-8 text-primary-foreground md:grid-cols-[1fr_auto] md:items-center">
           <div>
             <p className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.22em] text-accent">
               <CalendarDays className="h-4 w-4" />
               {copy.reserveEyebrow}
             </p>
-            <h2 className="mt-3 text-3xl font-bold">{copy.reserveTitle}</h2>
+            <h2 className="mt-3 text-h3 font-bold">{copy.reserveTitle}</h2>
             <p className="mt-3 max-w-2xl text-white/78">{copy.reserveBody}</p>
           </div>
           <div className="flex flex-wrap gap-3">

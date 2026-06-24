@@ -32,15 +32,15 @@ export const bars: Venue[] = [
     slug: "golden-beach-bar",
     palette: "amber",
     hours: { opens: "11:00", closes: "19:00" },
-    heroImage: "/images/golden-beach-bar-qN10cbKY.jpg",
+    heroImage: "/images/Resturant/chloemurdochphotography-259.JPG",
     introSlides: [
-      { src: "/images/pool-aerial-day-BveHvOiS.jpg", alt: "Aerial of the beach and pool" },
-      { src: "/images/restaurant-cocktails-ITbgxYoM.jpg", alt: "Craft cocktails" },
-      { src: "/images/restaurant-sunset-T7wmiQ85.jpg", alt: "Sunset over the Pacific" },
-      { src: "/images/restaurant-view-WsRnSUPN.jpg", alt: "Beachfront seating" },
+      { src: "/images/Resturant/DSCF40452.JPG", alt: "Sunset terrace framed by palms" },
+      { src: "/images/Resturant/1L6A2634.jpg", alt: "Couples at a terrace table under string lights, ocean beyond" },
+      { src: "/images/Resturant/chloemurdochphotography-53.JPG", alt: "Tacos and a cold beer" },
+      { src: "/images/Resturant/chloemurdochphotography-48.JPG", alt: "White wine poured poolside" },
     ],
-    ctaImage: "/images/restaurant-sunset-silhouette-CBBvMTsI.jpg",
-    cardImage: "/images/golden-beach-bar-qN10cbKY.jpg",
+    ctaImage: "/images/Resturant/DSCF4078(1).JPG",
+    cardImage: "/images/Resturant/chloemurdochphotography-259.JPG",
     text: {
       en: {
         hero: {
@@ -106,15 +106,15 @@ export const bars: Venue[] = [
     slug: "iguana-bar",
     palette: "ocean",
     hours: { opens: "10:00", closes: "18:00" },
-    heroImage: "/images/iguana-bar-pool-CP3k5v8t.jpg",
+    heroImage: "/images/Resturant/chloemurdochphotography-255.JPG",
     introSlides: [
-      { src: "/images/pool-starry-night-DUYiQ-e6.jpg", alt: "The LED pool at night" },
-      { src: "/images/g-aerial-pool-overview-CCOWXk2j.jpg", alt: "Pool overview" },
-      { src: "/images/pool-aerial-day-BveHvOiS.jpg", alt: "Pool by day" },
-      { src: "/images/g-pool-night-1-WgdE2JvM.jpg", alt: "Poolside at night" },
+      { src: "/images/New Pool/dji_fly_20241022_013636_0636_1753125648022_photo2.JPG", alt: "The LED pool at night" },
+      { src: "/images/exp-pool-day-loungers.avif", alt: "The pool by day with sun loungers and foliage" },
+      { src: "/images/Resturant/chloemurdochphotography-342.JPG", alt: "Layered frozen signature cocktail" },
+      { src: "/images/Resturant/chloemurdochphotography-267.JPG", alt: "Blue-curaçao tropical cocktail" },
     ],
-    ctaImage: "/images/pool-aerial-night-BvFgNxHn.jpg",
-    cardImage: "/images/iguana-bar-pool-CP3k5v8t.jpg",
+    ctaImage: "/images/Resturant/IMG_78472.JPG",
+    cardImage: "/images/Resturant/chloemurdochphotography-255.JPG",
     text: {
       en: {
         hero: {

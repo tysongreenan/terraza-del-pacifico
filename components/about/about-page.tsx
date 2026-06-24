@@ -1,11 +1,39 @@
 import Image from "next/image";
+import Link from "next/link";
+import {
+  BedDouble,
+  Coffee,
+  Dog,
+  PlugZap,
+  ShieldCheck,
+  Smile,
+  Umbrella,
+  Waves,
+  Wifi,
+} from "lucide-react";
 import { Reveal } from "@/components/home/reveal";
 import { PanelCarousel } from "@/components/luxury/panel-carousel";
-import { LuxuryCtaBand, LuxuryFactsStrip } from "@/components/luxury/primitives";
+import {
+  LuxuryCtaBand,
+  LuxuryFactsStrip,
+  LuxurySplitBand,
+} from "@/components/luxury/primitives";
 import { bookingHref, whatsappHref } from "@/lib/site";
 import type { Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/lib/dictionaries";
-import { aboutContent } from "@/content/about";
+import { aboutContent, type FacilityIcon } from "@/content/about";
+
+const facilityIcons: Record<FacilityIcon, typeof Waves> = {
+  rooms: BedDouble,
+  pools: Waves,
+  beach: Umbrella,
+  pet: Dog,
+  wifi: Wifi,
+  parking: ShieldCheck,
+  ev: PlugZap,
+  kids: Smile,
+  bakery: Coffee,
+};
 
 export function AboutPage({
   locale,
@@ -33,8 +61,8 @@ export function AboutPage({
           <div className="hero-scrim absolute inset-0" />
           <div className="container relative flex min-h-[68svh] flex-col justify-end pb-16 pt-28 md:min-h-[74svh] md:pb-20">
             <Reveal>
-              <p className="eyebrow text-concept-gold">{copy.hero.eyebrow}</p>
-              <h1 className="mt-5 max-w-3xl font-concept text-4xl font-medium leading-[1.02] text-shadow-hero md:text-6xl lg:text-[68px]">
+              <p className="text-eyebrow uppercase text-concept-gold text-shadow-hero">{copy.hero.eyebrow}</p>
+              <h1 className="mt-5 max-w-3xl font-concept text-display font-medium leading-[1.02] text-shadow-hero ">
                 {copy.hero.titleLines[0]}
                 <br />
                 {copy.hero.titleLines[1]}
@@ -44,18 +72,18 @@ export function AboutPage({
               </p>
             </Reveal>
           </div>
-          <p className="absolute bottom-8 right-6 z-10 hidden font-mono text-[11px] tracking-[0.16em] text-white/80 md:block">
+          <p className="absolute bottom-8 right-6 z-10 hidden font-mono text-micro tracking-[0.16em] text-white/80 md:block">
             {copy.hero.meta}
           </p>
         </div>
       </section>
 
       {/* STATEMENT band */}
-      <section className="py-20 md:py-28">
+      <section className="py-section md:py-section">
         <div className="container max-w-4xl text-center">
           <Reveal>
             <p className="eyebrow">{copy.statementEyebrow}</p>
-            <p className="mx-auto mt-5 max-w-3xl font-concept text-2xl font-normal leading-[1.34] text-concept-ink md:text-[38px]">
+            <p className="mx-auto mt-5 max-w-3xl font-concept text-2xl font-normal leading-[1.34] text-concept-ink text-h2">
               {w.body}
             </p>
           </Reveal>
@@ -66,7 +94,7 @@ export function AboutPage({
       <section className="flex flex-col md:flex-row md:items-stretch">
         <Reveal className="flex w-full flex-col justify-center bg-concept-sand-muted px-8 py-16 md:w-1/2 md:px-[72px] md:py-24">
           <p className="eyebrow">{copy.story.eyebrow}</p>
-          <h2 className="mt-4 font-concept text-3xl font-medium leading-[1.1] text-concept-ocean md:text-[44px]">
+          <h2 className="mt-4 font-concept text-h1 font-medium leading-[1.1] text-concept-ocean ">
             {copy.story.titleLines[0]}
             <br />
             {copy.story.titleLines[1]}
@@ -74,7 +102,7 @@ export function AboutPage({
           {copy.story.paragraphs.map((p, i) => (
             <p
               key={i}
-              className="mt-5 max-w-md text-[15px] leading-[1.8] text-[#6f6a62]"
+              className="mt-5 max-w-md text-body-sm leading-[1.8] text-[#6f6a62]"
             >
               {p}
             </p>
@@ -87,14 +115,14 @@ export function AboutPage({
       </section>
 
       {/* TIMELINE — dark milestone strip */}
-      <section className="bg-concept-ocean py-20 md:py-24">
+      <section className="bg-concept-ocean py-section md:py-section">
         <div className="container">
           <Reveal>
             <div className="mb-12 text-center md:mb-14">
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-concept-gold">
                 {copy.timeline.eyebrow}
               </p>
-              <h2 className="mt-3 font-concept text-3xl font-medium text-white md:text-[42px]">
+              <h2 className="mt-3 font-concept text-h1 font-medium text-white ">
                 {copy.timeline.title}
               </h2>
             </div>
@@ -107,7 +135,7 @@ export function AboutPage({
                 className="relative px-1 pt-9 sm:px-6 lg:border-r lg:border-[#9fb9c2]/18 lg:last:border-r-0"
               >
                 <span className="absolute -top-[7px] left-1 h-3 w-3 rounded-full bg-concept-gold sm:left-6" />
-                <div className="font-concept text-4xl leading-none text-white">
+                <div className="font-concept text-h2 leading-none text-white">
                   {item.year}
                 </div>
                 <p className="mt-3 text-sm leading-relaxed text-[#9fb9c2]">
@@ -120,12 +148,12 @@ export function AboutPage({
       </section>
 
       {/* VALUES trio */}
-      <section className="py-20 md:py-24">
+      <section className="py-section md:py-section">
         <div className="container">
           <Reveal>
             <div className="mb-12 text-center md:mb-14">
               <p className="eyebrow">{copy.values.eyebrow}</p>
-              <h2 className="mt-3 font-concept text-3xl font-medium text-concept-ocean md:text-[42px]">
+              <h2 className="mt-3 font-concept text-h1 font-medium text-concept-ocean ">
                 {copy.values.title}
               </h2>
             </div>
@@ -154,6 +182,138 @@ export function AboutPage({
         </div>
       </section>
 
+      {/* POOL feature — LED pool story */}
+      <section className="flex flex-col md:flex-row md:items-stretch">
+        <Reveal className="relative min-h-[300px] w-full overflow-hidden md:min-h-[480px] md:w-1/2">
+          <Image
+            src={copy.pool.image}
+            alt={copy.pool.alt}
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover"
+          />
+        </Reveal>
+        <Reveal
+          delay={100}
+          className="flex w-full flex-col justify-center bg-concept-ocean px-8 py-16 md:w-1/2 md:px-[72px] md:py-24"
+        >
+          <p className="text-eyebrow uppercase text-concept-gold">
+            {copy.pool.eyebrow}
+          </p>
+          <h2 className="mt-4 font-concept text-h1 font-medium leading-[1.1] text-white ">
+            {copy.pool.title}
+          </h2>
+          {copy.pool.paragraphs.map((p, i) => (
+            <p
+              key={i}
+              className="mt-5 max-w-md text-body-sm leading-[1.8] text-[#bcd0d8]"
+            >
+              {p}
+            </p>
+          ))}
+        </Reveal>
+      </section>
+
+      {/* PRIVILEGED LOCATION — wildlife prose + highlights */}
+      <section className="py-section md:py-section">
+        <div className="container">
+          <Reveal>
+            <div className="mb-10 max-w-2xl md:mb-14">
+              <p className="eyebrow">{copy.location.eyebrow}</p>
+              <h2 className="mt-3 font-concept text-h1 font-medium leading-[1.08] text-concept-ocean ">
+                {copy.location.title}
+              </h2>
+              {copy.location.paragraphs.map((p, i) => (
+                <p
+                  key={i}
+                  className="mt-5 text-body-sm leading-[1.8] text-[#6f6a62]"
+                >
+                  {p}
+                </p>
+              ))}
+            </div>
+          </Reveal>
+          <div className="grid gap-6 md:grid-cols-2">
+            {copy.location.highlights.map((h, i) => (
+              <Reveal
+                key={h.title}
+                delay={i * 90}
+                className="rounded-sm border border-[#ece5d8] bg-concept-sand-muted p-8 md:p-10"
+              >
+                <h3 className="font-concept text-2xl text-concept-ocean">
+                  {h.title}
+                </h3>
+                <p className="mt-3 max-w-md text-sm leading-relaxed text-[#6f6a62]">
+                  {h.body}
+                </p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* OUR FACILITIES — amenity grid */}
+      <section className="bg-concept-sand-muted py-section md:py-section">
+        <div className="container">
+          <Reveal>
+            <div className="mb-12 text-center md:mb-14">
+              <p className="eyebrow">{copy.facilities.eyebrow}</p>
+              <h2 className="mt-3 font-concept text-h1 font-medium text-concept-ocean ">
+                {copy.facilities.title}
+              </h2>
+            </div>
+          </Reveal>
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-5 lg:grid-cols-3">
+            {copy.facilities.items.map((item, i) => {
+              const Icon = facilityIcons[item.icon];
+              const inner = (
+                <>
+                  <Icon
+                    className="h-7 w-7 flex-none text-concept-gold"
+                    aria-hidden
+                  />
+                  <div>
+                    <h3 className="font-concept text-lg leading-tight text-concept-ocean">
+                      {item.title}
+                    </h3>
+                    <p className="mt-1 text-sm leading-snug text-[#6f6a62]">
+                      {item.subtitle}
+                    </p>
+                  </div>
+                </>
+              );
+
+              return (
+                <Reveal key={item.title} delay={i * 50}>
+                  {item.href ? (
+                    <Link
+                      href={`/${locale}${item.href}`}
+                      className="flex h-full items-start gap-4 rounded-sm border border-[#ece5d8] bg-concept-sand p-6 transition-colors hover:border-concept-gold/60 md:p-7"
+                    >
+                      {inner}
+                    </Link>
+                  ) : (
+                    <div className="flex h-full items-start gap-4 rounded-sm border border-[#ece5d8] bg-concept-sand p-6 md:p-7">
+                      {inner}
+                    </div>
+                  )}
+                </Reveal>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* WEDDINGS & BEACHFRONT EVENTS — split band + CTA */}
+      <LuxurySplitBand
+        image={copy.weddings.image}
+        imageAlt={copy.weddings.alt}
+        eyebrow={copy.weddings.eyebrow}
+        title={copy.weddings.title}
+        body={copy.weddings.body}
+        cta={{ label: copy.weddings.cta, href: `/${locale}/eventos` }}
+      />
+
       {/* STATS strip */}
       <LuxuryFactsStrip
         facts={w.stats.map((s) => ({ value: s.value, label: s.label }))}
@@ -169,7 +329,7 @@ export function AboutPage({
         primaryHref={bookingHref}
         secondaryLabel={copy.cta.secondary}
         secondaryHref={whatsappHref}
-        image="/images/pool-aerial-day-BveHvOiS.jpg"
+        image="/images/exp-garden-lawn.avif"
       />
     </article>
   );

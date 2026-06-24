@@ -8,11 +8,11 @@ export function Instagram({ dict }: { dict: Dictionary }) {
 
   const ig = dict.instagram;
   return (
-    <section className="bg-concept-sand-muted px-6 py-16 md:px-12 md:py-24">
+    <section className="bg-concept-sand-muted px-6 py-section-sm md:px-12 md:py-section">
       <div className="container">
         <Reveal className="text-center md:text-left">
           <p className="eyebrow">{ig.eyebrow}</p>
-          <h2 className="mt-3 font-concept text-3xl font-medium text-concept-ocean md:text-4xl">
+          <h2 className="mt-3 font-concept text-h2 font-medium text-concept-ocean ">
             {ig.title}
           </h2>
         </Reveal>

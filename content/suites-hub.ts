@@ -79,13 +79,13 @@ const en: HubCopy = {
       {
         text: "the ocean",
         href: "/en/galeria",
-        image: "/images/g-aerial-beach-property-COogc_9W.jpg",
+        image: "/images/exp-villa-block-lawn.jpg",
       },
       " should be the first thing you see and the last thing you hear. The only choice is ",
       {
         text: "how much space",
         href: "/en/habitaciones/comparar",
-        image: "/images/villa-living-room-CHkIhyVw.jpg",
+        image: "/images/exp-villa-block-lawn.jpg",
       },
       " you want around it.",
     ],
@@ -99,7 +99,7 @@ const en: HubCopy = {
         "A calm, light-filled retreat for two — wake to the pool and the sound of the surf just beyond your terrace, then drift to sleep with the doors open.",
       viewCta: "View Suite →",
       photoCount: 6,
-      image: "/images/room-junior-suite-wide-D5tbucTk.jpg",
+      image: "/images/exp-room-junior-hero.avif",
     },
     superior: {
       kicker: "For families & friends",
@@ -107,7 +107,7 @@ const en: HubCopy = {
         "Two double beds and main-pool views, steps from the sand. Room to spread out without ever losing the water from sight.",
       viewCta: "View Room →",
       photoCount: 0,
-      image: "/images/room-two-beds-D9Pgywgw.jpg",
+      image: "/images/exp-room-superior-hero.avif",
     },
     estandar: {
       kicker: "Quiet & serene",
@@ -115,7 +115,7 @@ const en: HubCopy = {
         "A calm, garden-facing room for up to four — two double beds, your own terrace, and the same short barefoot walk to the sand as every other room.",
       viewCta: "View Room →",
       photoCount: 5,
-      image: "/images/room-standard-wide-DxUYeeXV.jpg",
+      image: "/images/exp-room-standard-hero.avif",
     },
     villas: {
       kicker: "Room for everyone",
@@ -124,7 +124,7 @@ const en: HubCopy = {
         "A whole home on the sand for up to six — full kitchen, living room and a wraparound terrace. The most space we offer, with nothing between you and the Pacific.",
       viewCta: "View Villa →",
       photoCount: 0,
-      image: "/images/villa-living-room-CHkIhyVw.jpg",
+      image: "/images/exp-villa-hero.avif",
     },
   },
   included: {
@@ -142,7 +142,7 @@ const en: HubCopy = {
       },
       {
         title: "Beachfront yoga",
-        body: "Daily 7 AM sessions at the water's edge, included with your stay.",
+        body: "Free sessions at the water's edge — Sun & Wed 8 AM, Sat 4 PM, included with your stay.",
       },
       {
         title: "Private terrace",
@@ -185,13 +185,13 @@ const es: HubCopy = {
       {
         text: "el océano",
         href: "/es/galeria",
-        image: "/images/g-aerial-beach-property-COogc_9W.jpg",
+        image: "/images/exp-villa-block-lawn.jpg",
       },
       " debe ser lo primero que veas y lo último que escuches. Lo único que eliges es ",
       {
         text: "cuánto espacio",
         href: "/es/habitaciones/comparar",
-        image: "/images/villa-living-room-CHkIhyVw.jpg",
+        image: "/images/exp-villa-block-lawn.jpg",
       },
       " quieres a su alrededor.",
     ],
@@ -205,7 +205,7 @@ const es: HubCopy = {
         "Un refugio luminoso y tranquilo para dos — despierta con la piscina y el sonido del mar justo más allá de tu terraza, y duérmete con las puertas abiertas.",
       viewCta: "Ver suite →",
       photoCount: 6,
-      image: "/images/room-junior-suite-wide-D5tbucTk.jpg",
+      image: "/images/exp-room-junior-hero.avif",
     },
     superior: {
       kicker: "Para familias y amigos",
@@ -213,7 +213,7 @@ const es: HubCopy = {
         "Dos camas dobles y vista a la piscina principal, a pasos de la arena. Espacio para estirarse sin perder nunca el agua de vista.",
       viewCta: "Ver habitación →",
       photoCount: 0,
-      image: "/images/room-two-beds-D9Pgywgw.jpg",
+      image: "/images/exp-room-superior-hero.avif",
     },
     estandar: {
       kicker: "Tranquila y serena",
@@ -221,7 +221,7 @@ const es: HubCopy = {
         "Una habitación serena frente al jardín para hasta cuatro — dos camas dobles, tu propia terraza y la misma corta caminata descalza a la arena que cualquier otra habitación.",
       viewCta: "Ver habitación →",
       photoCount: 5,
-      image: "/images/room-standard-wide-DxUYeeXV.jpg",
+      image: "/images/exp-room-standard-hero.avif",
     },
     villas: {
       kicker: "Espacio para todos",
@@ -230,7 +230,7 @@ const es: HubCopy = {
         "Una casa entera sobre la arena para hasta seis — cocina completa, sala de estar y una terraza envolvente. El mayor espacio que ofrecemos, sin nada entre tú y el Pacífico.",
       viewCta: "Ver villa →",
       photoCount: 0,
-      image: "/images/villa-living-room-CHkIhyVw.jpg",
+      image: "/images/exp-villa-hero.avif",
     },
   },
   included: {
@@ -248,7 +248,7 @@ const es: HubCopy = {
       },
       {
         title: "Yoga frente al mar",
-        body: "Sesiones diarias a las 7 AM a la orilla del agua, incluidas con tu estancia.",
+        body: "Sesiones gratuitas a la orilla del agua — Dom y Mié 8 AM, Sáb 4 PM, incluidas con tu estancia.",
       },
       {
         title: "Terraza privada",

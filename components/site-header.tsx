@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { Phone } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { LanguageToggle } from "@/components/language-toggle";
 import { MobileNav } from "@/components/mobile-nav";
@@ -40,6 +41,7 @@ export function SiteHeader({
     { href: p("habitaciones"), label: n.rooms },
     { href: p("restaurante"), label: n.restaurant },
     { href: p("bares"), label: n.bars },
+    { href: p("panaderia"), label: n.bakery },
     { href: p("eventos"), label: n.events },
     { href: p("experiencias"), label: n.experiences },
     { href: p("galeria"), label: n.gallery },
@@ -82,7 +84,7 @@ export function SiteHeader({
               key={item.href}
               href={item.href}
               className={cn(
-                "text-[13px] tracking-wide transition-colors",
+                "text-caption tracking-wide transition-colors",
                 transparent
                   ? "text-white/95 drop-shadow-sm hover:text-white"
                   : "text-foreground/75 hover:text-foreground"
@@ -94,6 +96,18 @@ export function SiteHeader({
         </nav>
 
         <div className="relative z-10 flex items-center gap-2 md:gap-4">
+          <a
+            href={dict.footer.phoneHref}
+            aria-label={`${n.callAria}: ${dict.footer.phone}`}
+            className={cn(
+              "hidden h-9 w-9 items-center justify-center rounded-full transition-colors sm:inline-flex",
+              transparent
+                ? "text-white/95 drop-shadow-sm hover:bg-white/10 hover:text-white"
+                : "text-foreground/75 hover:bg-muted hover:text-foreground"
+            )}
+          >
+            <Phone className="h-[1.05rem] w-[1.05rem]" />
+          </a>
           <LanguageToggle
             locale={locale}
             label={n.langLabel}
@@ -118,6 +132,8 @@ export function SiteHeader({
             items={nav}
             bookHref={bookHref}
             bookLabel={n.book}
+            callHref={dict.footer.phoneHref}
+            callLabel={dict.footer.phone}
             overlay={transparent}
           />
         </div>

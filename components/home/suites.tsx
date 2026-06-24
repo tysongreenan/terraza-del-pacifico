@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils";
 const ROOM_EXTRA_IMAGES: Record<string, string[]> = {
   superior: [
     "/images/room-king-bed-B58lVEdC.jpg",
-    "/images/g-aerial-pool-overview-CCOWXk2j.jpg",
+    "/images/Suit photos/RLR_4906.jpg",
   ],
   estandar: [
     "/images/room-toucan-art-n3cC8Tze.jpg",
@@ -22,12 +22,12 @@ const ROOM_EXTRA_IMAGES: Record<string, string[]> = {
   ],
   "junior-suite": [
     "/images/room-toucan-art-n3cC8Tze.jpg",
-    "/images/pool-aerial-day-BveHvOiS.jpg",
+    "/images/Suit photos/RLR_48512.JPG",
     "/images/room-king-bed-B58lVEdC.jpg",
   ],
   villas: [
     "/images/villa-bedroom-view-_Eb74lE7.jpg",
-    "/images/g-aerial-beach-property-COogc_9W.jpg",
+    "/images/Suit photos/IMG_4757.jpg",
   ],
 };
 
@@ -83,13 +83,13 @@ export function Suites({
   const isJunior = activeSlug === "junior-suite";
 
   return (
-    <section id="suites" className="scroll-mt-20 bg-concept-sand py-16 md:py-24">
+    <section id="suites" className="scroll-mt-20 bg-concept-sand py-section-sm md:py-section">
       <div className="container">
         <Reveal>
           <div className="mb-10 flex flex-col gap-6 md:mb-12 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="eyebrow">{s.eyebrow}</p>
-              <h2 className="mt-3 font-concept text-3xl font-medium leading-[1.04] text-concept-ocean md:text-5xl">
+              <h2 className="mt-3 font-concept text-h1 font-medium leading-[1.04] text-concept-ocean ">
                 {s.title}
               </h2>
             </div>
@@ -121,7 +121,7 @@ export function Suites({
               ))}
               <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(10,28,37,0)_70%,rgba(10,28,37,0.45)_100%)]" />
               {isJunior && (
-                <span className="absolute left-5 top-5 z-10 rounded-sm bg-concept-gold px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#1a1611]">
+                <span className="absolute left-5 top-5 z-10 rounded-sm bg-concept-gold px-3.5 py-1.5 text-micro font-semibold uppercase tracking-[0.14em] text-[#1a1611]">
                   {s.mostBooked}
                 </span>
               )}
@@ -167,11 +167,11 @@ export function Suites({
 
             <div className="flex w-full flex-col justify-center bg-concept-sand px-8 py-10 md:w-[38%] md:px-12 md:py-14">
               {room.tagline && (
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-concept-gold-muted">
+                <p className="text-micro font-semibold uppercase tracking-[0.22em] text-concept-gold-muted">
                   {room.tagline}
                 </p>
               )}
-              <h3 className="mt-2 font-concept text-[34px] font-medium leading-none text-concept-ocean md:text-[40px]">
+              <h3 className="mt-2 font-concept text-h1 font-medium leading-none text-concept-ocean ">
                 {room.name}
               </h3>
 
@@ -191,10 +191,10 @@ export function Suites({
                       i < 2 && "border-b border-[#ece5d8]"
                     )}
                   >
-                    <dd className="font-concept text-[26px] leading-none text-concept-ink">
+                    <dd className="font-concept text-h3 leading-none text-concept-ink">
                       {stat.value}
                     </dd>
-                    <dt className="mt-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#8a8478]">
+                    <dt className="mt-0.5 text-micro font-semibold uppercase tracking-[0.12em] text-[#8a8478]">
                       {stat.label}
                     </dt>
                   </div>
@@ -204,7 +204,7 @@ export function Suites({
               <p className="mt-5 text-sm leading-[1.7] text-[#6f6a62]">
                 {room.blurb}
               </p>
-              <p className="mt-4 text-[11px] tracking-wide text-[#8a8478]">
+              <p className="mt-4 text-micro tracking-wide text-[#8a8478]">
                 {s.amenitiesNote}
               </p>
 
@@ -222,7 +222,7 @@ export function Suites({
                   {s.detailsCta}
                 </Link>
               </div>
-              <p className="mt-4 text-[11px] font-medium uppercase tracking-[0.1em] text-concept-ocean">
+              <p className="mt-4 text-micro font-medium uppercase tracking-[0.1em] text-concept-ocean">
                 <span className="text-concept-gold-muted">◆</span>{" "}
                 {dict.hero.trust}
               </p>
@@ -265,7 +265,7 @@ export function Suites({
                 </div>
                 <p
                   className={cn(
-                    "mt-3 font-concept text-lg md:text-[21px]",
+                    "mt-3 font-concept text-lg md:text-h4",
                     selected ? "text-concept-ocean" : "text-concept-ink"
                   )}
                 >
@@ -273,7 +273,7 @@ export function Suites({
                 </p>
                 <p
                   className={cn(
-                    "mt-1 text-[11px]",
+                    "mt-1 text-micro",
                     selected ? "text-concept-gold-muted" : "text-[#8a8478]"
                   )}
                 >

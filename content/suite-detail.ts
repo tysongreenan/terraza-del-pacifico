@@ -138,7 +138,7 @@ const en: SuiteDetailCopy = {
       ],
     },
     villas: {
-      headline: "A whole beach house for the people you travel with",
+      headline: "A recently renovated beach house for the people you travel with",
       amenities: [
         "Full kitchen",
         "Living & dining area",
@@ -147,6 +147,7 @@ const en: SuiteDetailCopy = {
         "Free Wi-Fi",
         "Coffee maker & kettle",
         "Microwave & blender",
+        "Rice cooker",
         "Complete kitchenware",
       ],
       goodToKnow: [
@@ -249,7 +250,7 @@ const es: SuiteDetailCopy = {
       ],
     },
     villas: {
-      headline: "Una casa de playa entera para los tuyos",
+      headline: "Una casa de playa entera, recientemente renovada, para los tuyos",
       amenities: [
         "Cocina completa",
         "Sala y comedor",
@@ -258,6 +259,7 @@ const es: SuiteDetailCopy = {
         "WiFi gratis",
         "Cafetera y hervidor",
         "Microondas y licuadora",
+        "Arrocera",
         "Menaje de cocina completo",
       ],
       goodToKnow: [

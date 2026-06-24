@@ -1,82 +1,115 @@
-# Design System — Typography & Spacing
+# Design System — Colors, Type & Spacing
 
-Source of truth for fonts and type-level spacing.
+Single source of truth for the visual system. Tokens live in
+`app/globals.css` (CSS vars) and `tailwind.config.ts` (Tailwind theme).
+**Build new pages with these tokens — avoid arbitrary `[...]` values.**
 
-**Direction:** Clean modern sans. Minimal, contemporary, highly legible.
-
-**Scope:** Typography and the spacing that lives inside type (line-height,
-letter-spacing) only. All existing color tokens in `app/globals.css` /
-`tailwind.config.ts` stay untouched (gold, ocean, earth, sand, etc.).
-
----
-
-## Fonts
-
-Both are Google Fonts (variable — all weights available), loaded via
-`next/font/google` in `app/[locale]/layout.tsx` and exposed as CSS variables.
-
-| Role | Font | CSS var | Tailwind | Notes |
-|------|------|---------|----------|-------|
-| **Display / headings** | **Manrope** | `--font-manrope` | `font-display` (and `font-serif`*) | Modern semi-geometric sans. A touch of character so titles aren't flat. |
-| **Body / UI** | **Inter** | `--font-inter` | `font-sans` (default) | The standard for clean, legible UI/body text. |
-
-\* `font-serif` is **aliased to Manrope** so the ~9 existing `font-serif`
-headings keep working with zero edits. **Prefer `font-display` in new code.**
-
-> Both fonts have real bold weights, so `font-bold` / `font-semibold` on
-> headings render genuine weights — no faux-bold. Use weight freely for emphasis.
+**Direction:** Barefoot luxury. Cormorant serif display + clean Inter body,
+a deep ocean blue, warm gold, and sand. Calm, photography-forward.
 
 ---
 
-## Type scale & rhythm
+## Colors
 
-| Element | Suggested size (mobile → desktop) | Line-height | Weight | Letter-spacing |
-|---------|-----------------------------------|-------------|--------|----------------|
-| H1 | 36px → 56px | 1.2 | 700 | -0.02em |
-| H2 | 28px → 40px | 1.2 | 700 | -0.02em |
-| H3 | 22px → 28px | 1.2 | 600 | -0.02em |
-| H4 | 20px | 1.3 | 600 | -0.02em |
-| Body | 16px | 1.6 | 400 | 0 |
-| Small / captions | 14px | 1.5 | 400 | 0 |
+Every brand color is defined **once** as an HSL CSS var in `app/globals.css`,
+then exposed through Tailwind. The `concept-*` palette and the shadcn semantic
+tokens both alias the same vars, so there is no duplication.
 
-Key rhythm tokens (set globally in `app/globals.css`):
-- **Body `line-height: 1.6`** (Inter).
-- **Headings `line-height: 1.2`, `letter-spacing: -0.02em`** (Manrope) — the
-  tight negative tracking is the hallmark of the clean modern look.
+| Token (Tailwind) | CSS var | Value | Use |
+|------------------|---------|-------|-----|
+| `concept-ocean` / `primary` | `--ocean` / `--primary` | `#103a4d` deep ocean blue | Headings, dark surfaces, primary buttons |
+| `concept-gold` / `accent` | `--gold` / `--accent` | `#c9a763` gold | Accents, CTAs, fine rules |
+| `concept-gold-muted` | `--gold-muted` | `#876528` | Eyebrows, small labels, hairlines |
+| `concept-sand` / `background` | `--sand` / `--background` | `#faf6ef` warm off-white | Page / section surfaces |
+| `concept-sand-muted` | `--sand-muted` | `#f5efe5` | Alternating panels |
+| `concept-ink` / `foreground` | `--ink` | `#2b2620` warm near-black | Body text on light |
 
-> **Layout spacing is not encoded here.** Keep the existing section/layout spacing.
+> **No green-teal anywhere.** The brand cool color is the ocean blue `#103a4d`.
+> The only teal allowed is the wave glyph baked into the logo image. The
+> WhatsApp button green (`#1f7a4d`) is intentional (WhatsApp's brand).
+
+### Text on dark / ocean surfaces
+
+Use the semantic tokens instead of new `text-white/NN` one-offs:
+
+| Token | Alpha | Use |
+|-------|-------|-----|
+| `text-on-dark` | 100% | Primary text on ocean/photo backgrounds |
+| `text-on-dark-muted` | 72% | Secondary text, captions on dark |
+| `text-on-dark-subtle` | 55% | De-emphasized labels on dark |
+
+Borders/overlays on dark still use `border-white/NN` · `bg-white/NN` (those
+opacities mean surface tint, not text).
 
 ---
 
-## The statement treatment: `.display-title`
+## Type scale
 
-Opt-in utility for hero / big section titles — bolder, tighter than base headings.
+Fonts (loaded via `next/font/google` in `app/layout.tsx`):
 
-```html
-<h2 class="display-title text-4xl text-primary">Nuestras Habitaciones</h2>
+| Role | Font | CSS var | Tailwind |
+|------|------|---------|----------|
+| **Display / headings (serif)** | **Cormorant** | `--font-cormorant` | `font-concept` |
+| **Headings (sans, alt)** | **Manrope** | `--font-manrope` | `font-display` (and `font-serif`*) |
+| **Body / UI** | **Inter** | `--font-inter` | `font-sans` (default) |
+
+\* `font-serif` is aliased to Manrope for legacy headings. Prefer `font-concept`
+for the luxury serif look, `font-sans` for body.
+
+**Sizes are fluid** (`clamp()`), so they scale with the viewport — **no `md:`
+size variants needed.** Each token carries only **size + line-height**, so it
+composes with any font weight/tracking (the serif and sans looks keep their own).
+
+| Token | Size (mobile → desktop) | Typical use |
+|-------|-------------------------|-------------|
+| `text-display` | 44 → 70px | Hero titles |
+| `text-h1` | 34 → 46px | Section titles |
+| `text-h2` | 30 → 38px | Sub-section titles |
+| `text-h3` | 24 → 28px | Card titles |
+| `text-h4` | 22px | Small headings |
+| `text-body-lg` | 18px | Lead paragraphs |
+| `text-body` | 16px | Body (default) |
+| `text-body-sm` | 15px | Dense body |
+| `text-caption` | 13px | Captions, meta |
+| `text-micro` | 11px | Tiny labels |
+| `text-eyebrow` | 12px, 0.24em, 600 | Overline/eyebrow (full style) |
+
+There is also an `.eyebrow` utility (`text-eyebrow uppercase text-concept-gold-muted`)
+for the standard gold overline.
+
+**Conventions:** serif titles → `font-concept font-medium` + a `text-h*`/`text-display`
+token. Body → nothing to do (`font-sans` is the `<body>` default). Real bold weights
+exist on all three fonts — use `font-semibold`/`font-bold` freely.
+
+---
+
+## Spacing
+
+Layout uses Tailwind's default spacing scale. For **top-level section vertical
+rhythm**, use the fluid tokens instead of ad-hoc `py-16/20/24/28`:
+
+| Token | Size (mobile → desktop) | Use |
+|-------|-------------------------|-----|
+| `py-section` | 56 → 96px | Standard section padding |
+| `py-section-sm` | 40 → 64px | Tighter sections (lists, info hubs) |
+
+Container is centered, `1.5rem` gutter, `1280px` max (`tailwind.config.ts`).
+
+---
+
+## How to build a new section
+
+```tsx
+<section className="py-section">
+  <div className="container">
+    <p className="eyebrow">Nuestras Suites</p>
+    <h2 className="mt-3 font-concept font-medium text-h1 text-concept-ocean">
+      Despierta con el Pacífico
+    </h2>
+    <p className="mt-4 text-body text-concept-ink/80">…</p>
+  </div>
+</section>
 ```
 
-Defined in `app/globals.css`:
-
-```css
-.display-title {
-  font-family: var(--font-manrope), sans-serif;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-}
-```
-
-Base `h1–h4` already get Manrope + tight tracking; add `.display-title` only
-when you want the extra-bold hero statement.
-
----
-
-## How to build pages with this
-
-- **Body text** → nothing to do; `font-sans` (Inter) is the `<body>` default.
-- **Headings** → already Manrope. For hero/section titles add `.display-title`.
-- **Emphasis** → real `font-semibold` / `font-bold` are available on both fonts.
-- **Buttons / nav** → `font-display` (Manrope) at `font-medium`/`font-semibold`
-  reads clean and modern.
-- **Colors** → use existing tokens only.
+On an ocean/photo background, swap text colors for `text-on-dark` /
+`text-on-dark-muted` and keep the same type + spacing tokens.

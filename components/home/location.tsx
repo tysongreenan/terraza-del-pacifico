@@ -8,10 +8,10 @@ export function Location({ dict }: { dict: Dictionary }) {
     <section className="flex flex-col md:flex-row">
       <Reveal className="flex w-full flex-col justify-center bg-concept-sand-muted px-8 py-14 md:w-[46%] md:px-16 md:py-20">
         <p className="eyebrow">{l.eyebrow}</p>
-        <h2 className="mt-4 font-concept text-3xl font-medium leading-[1.1] text-concept-ocean md:text-[46px]">
+        <h2 className="mt-4 font-concept text-h1 font-medium leading-[1.1] text-concept-ocean ">
           {l.title}
         </h2>
-        <p className="mt-5 max-w-sm text-[15px] leading-relaxed text-[#6f6a62]">
+        <p className="mt-5 max-w-sm text-body-sm leading-relaxed text-[#6f6a62]">
           {l.distance}
         </p>
         <address className="mt-6 not-italic text-sm leading-relaxed text-concept-ink">

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -12,11 +12,15 @@ export function MobileNav({
   items,
   bookHref,
   bookLabel,
+  callHref,
+  callLabel,
   overlay = false,
 }: {
   items: NavItem[];
   bookHref: string;
   bookLabel: string;
+  callHref: string;
+  callLabel: string;
   overlay?: boolean;
 }) {
   const [open, setOpen] = useState(false);
@@ -51,13 +55,21 @@ export function MobileNav({
                 {item.label}
               </Link>
             ))}
+            <a
+              href={callHref}
+              onClick={() => setOpen(false)}
+              className="mt-4 inline-flex min-h-[44px] items-center gap-2 text-base font-medium text-concept-ocean transition-colors hover:text-accent"
+            >
+              <Phone className="h-4 w-4 text-accent" aria-hidden />
+              {callLabel}
+            </a>
             <Link
               href={bookHref}
               onClick={() => setOpen(false)}
               className={buttonVariants({
                 variant: "accent",
                 size: "lg",
-                className: "mt-4",
+                className: "mt-3",
               })}
             >
               {bookLabel}

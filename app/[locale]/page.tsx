@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import data from "@/content/home.json";
 import { isLocale, type Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionaries";
-import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, faqJsonLd, pageMetadata } from "@/lib/seo";
 import { JsonLd } from "@/components/json-ld";
 import { Hero } from "@/components/home/hero";
 import { ResortDiscovery } from "@/components/home/resort-discovery";
@@ -14,6 +14,7 @@ import { Restaurant } from "@/components/home/restaurant";
 import { Testimonials } from "@/components/home/testimonials";
 import { Instagram } from "@/components/home/instagram";
 import { Location } from "@/components/home/location";
+import { Faq } from "@/components/home/faq";
 import { FinalCta } from "@/components/home/final-cta";
 
 // Localized home-page SEO. `content/home.json` ships a single (English) title
@@ -67,6 +68,8 @@ export default async function HomePage({
       <Testimonials dict={dict} />
       <Welcome dict={dict} />
       <Location dict={dict} />
+      <Faq dict={dict} />
+      <JsonLd data={faqJsonLd(dict.faq.items)} />
       <Instagram dict={dict} />
       <FinalCta dict={dict} />
     </div>

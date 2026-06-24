@@ -10,12 +10,14 @@ const en = {
     rooms: "Rooms",
     restaurant: "Restaurant",
     bars: "Bars",
+    bakery: "Bakery",
     events: "Events",
     experiences: "Experiences",
     gallery: "Gallery",
     about: "About Us",
     blog: "Blog",
     book: "Book Your Escape",
+    callAria: "Call the hotel",
     langLabel: "ES",
     langSwitchAria: "Ver en español",
   },
@@ -28,8 +30,8 @@ const en = {
     secondaryCta: "Explore the Resort",
     trust: "Best rate guaranteed when you book direct",
     scroll: "Discover paradise",
-    rating: "4.7",
-    reviews: "Based on 42 customer reviews",
+    rating: "4.2",
+    reviews: "Based on 1,472 Google reviews",
     slideLabel: "View slide",
     soundOff: "Sound off",
     soundOn: "Sound on",
@@ -51,7 +53,7 @@ const en = {
   welcome: {
     eyebrow: "Welcome",
     title: "Welcome to Terraza del Pacífico",
-    body: "For more than twenty years, this stretch of sand has been a place to slow down, where mornings open with whale song on the horizon and evenings close with the sky on fire over the Pacific.",
+    body: "For more than twenty years, this beachfront stretch of Playa Hermosa, just minutes from Jacó, has been a place for families to slow down — where mornings open with whale song on the horizon and evenings close with the sky on fire over the Pacific.",
     stats: [
       { value: "20+", label: "Years of history" },
       { value: "0 m", label: "To the beach" },
@@ -80,7 +82,7 @@ const en = {
         slug: "experiencias/beachfront-yoga",
         title: "Beachfront Yoga",
         meta: "Included",
-        detail: "Daily · 7:00 AM",
+        detail: "Sun & Wed 8 AM · Sat 4 PM",
         cta: "Join",
         badge: "Included",
         body: "Open the day with surf and breath at the water's edge.",
@@ -103,7 +105,7 @@ const en = {
         detail: "Fridays · 6 PM",
         cta: "Sign up",
         badge: "Surf Nights",
-        body: "A famous break, floodlit for contests.",
+        body: "Playa Hermosa's famous surf break, floodlit for night contests.",
         image: "/images/surf-nights-C5MPn3sY.jpg",
       },
       {
@@ -130,7 +132,7 @@ const en = {
   },
   suites: {
     eyebrow: "Stay",
-    title: "Comfort and Elegance Facing the Ocean",
+    title: "Beachfront Comfort, Steps from Playa Hermosa",
     subtitle: "",
     allRoomsCta: "All Rooms & Suites →",
     perNight: "",
@@ -152,7 +154,7 @@ const en = {
         beds: "2 Double",
         view: "Pool",
         blurb: "Main pool views, steps from the restaurant and the sand.",
-        image: "/images/room-two-beds-D9Pgywgw.jpg",
+        image: "/images/exp-room-superior-hero.avif",
       },
       {
         slug: "estandar",
@@ -163,7 +165,7 @@ const en = {
         beds: "2 Double",
         view: "Gardens",
         blurb: "A quiet room set among tropical gardens.",
-        image: "/images/room-standard-wide-DxUYeeXV.jpg",
+        image: "/images/exp-room-standard-hero.avif",
       },
       {
         slug: "junior-suite",
@@ -174,7 +176,7 @@ const en = {
         beds: "1 King",
         view: "Pool",
         blurb: "A calm, light-filled retreat for two. Wake to the pool and the sound of the surf just beyond your terrace.",
-        image: "/images/room-junior-suite-wide-D5tbucTk.jpg",
+        image: "/images/exp-room-junior-hero.avif",
       },
       {
         slug: "villas",
@@ -183,9 +185,9 @@ const en = {
         guests: "6",
         size: "72 m²",
         beds: "Multiple",
-        view: "Ocean",
-        blurb: "A full kitchen and living room, ideal for families.",
-        image: "/images/villa-living-room-CHkIhyVw.jpg",
+        view: "Partial ocean",
+        blurb: "A full kitchen and living room with ocean views — ideal for families.",
+        image: "/images/exp-villa-hero.avif",
       },
     ],
     amenitiesNote:
@@ -204,7 +206,7 @@ const en = {
   restaurant: {
     eyebrow: "Vivace Beachfront",
     title: "Mediterranean Soul, Pacific Setting",
-    body: "Sicilian Chef Luigi brings the flavors of southern Italy to the water's edge: fresh catch, handmade pasta and slow evenings with sand beneath your table.",
+    body: "Sicilian Chef Luigi brings the flavors of southern Italy to the beachfront at Playa Hermosa: fresh catch, handmade pasta and slow evenings with sand beneath your table.",
     cta: "Explore the Menu",
     chefCaption: "Chef Luigi · Sicily, Italy",
   },
@@ -244,13 +246,13 @@ const en = {
     addressLine2: "Playa Hermosa, 34, Provincia de Puntarenas",
     addressLine3: "Jacó, 04023 · Costa Rica",
     distance:
-      "Playa Hermosa, Jacó, on the central Pacific coast, just 90 minutes from San José International Airport.",
+      "Beachfront on Playa Hermosa, just south of Jacó on Costa Rica's central Pacific coast — only 90 minutes from San José International Airport.",
     cta: "View on Google Maps",
     mapHref:
       "https://www.google.com/maps/search/?api=1&query=Hotel+Terraza+del+Pac%C3%ADfico+Playa+Hermosa+Costa+Rica",
   },
   finalCta: {
-    title: "Your Place in Paradise Is Waiting",
+    title: "Your Beachfront Escape on Playa Hermosa",
     subtitle: "",
     primaryCta: "Book Direct",
     secondaryCta: "WhatsApp Us",
@@ -259,14 +261,61 @@ const en = {
   footer: {
     tagline: "Warm water and cool waves.",
     contactTitle: "Contact",
+    // Main hotel line — matches the Google Business Profile exactly for NAP consistency.
+    phone: "+506 2643 3222",
+    phoneHref: "tel:+50626433222",
     email: "info@terrazadelpacifico.com",
     whatsapp: "WhatsApp: +506 8431 9953",
     scheduleTitle: "Schedule",
     checkin: "Check-in: 3:00 PM",
     checkout: "Check-out: 1:00 PM",
     pools: "Pools: 8:30 AM – 8:30 PM",
+    yoga: "Free yoga: Sun & Wed 8 AM, Sat 4 PM",
     exploreTitle: "Explore",
+    policies: "Policies",
     rights: "All rights reserved.",
+  },
+  faq: {
+    eyebrow: "Good to know",
+    title: "Frequently Asked Questions",
+    items: [
+      {
+        q: "Where is Hotel Terraza del Pacífico located?",
+        a: "We're right on the sand at Playa Hermosa, on Costa Rica's central Pacific coast — just south of Jacó and about 90 minutes from San José International Airport (SJO).",
+      },
+      {
+        q: "Is the hotel really beachfront?",
+        a: "Yes. Terraza del Pacífico sits directly on Playa Hermosa, with direct beach access from the property — the surf is a few steps from your room.",
+      },
+      {
+        q: "What are the check-in and check-out times?",
+        a: "Check-in is from 3:00 PM and check-out is by 1:00 PM. Reception is open daily from 7:00 AM to 10:00 PM.",
+      },
+      {
+        q: "Is Terraza del Pacífico good for families?",
+        a: "Very much so. For more than twenty years it has been a place for families to slow down, with a beachfront pool, calm gardens and room for kids to roam.",
+      },
+      {
+        q: "Is there a restaurant and bar on site?",
+        a: "Yes — Vivace Beachfront serves Mediterranean and Italian cooking with sand beneath your table, and our beach bars pour cold drinks right by the water at sunset.",
+      },
+      {
+        q: "What's included in a stay?",
+        a: "Stays include free WiFi, air conditioning, an outdoor LED-lit pool and direct beach access, with on-site dining, beachfront yoga and event spaces available.",
+      },
+      {
+        q: "Does the hotel have a pool?",
+        a: "Yes — an outdoor LED-lit pool plus a separate children's pool, with the beach just steps away.",
+      },
+      {
+        q: "Is Terraza del Pacífico pet-friendly?",
+        a: "Yes. We welcome one dog per room (up to 22 lb / 10 kg) for a fee of US$20 per pet, per day. Service animals are always welcome at no charge.",
+      },
+      {
+        q: "How much does it cost to stay at Terraza del Pacífico?",
+        a: "Rates vary by season and dates. For the most accurate price, check live availability — and you always get our best available rate when you book direct.",
+      },
+    ],
   },
 };
 
@@ -278,26 +327,28 @@ const es: Dict = {
     rooms: "Habitaciones",
     restaurant: "Restaurante",
     bars: "Bares",
+    bakery: "Panadería",
     events: "Eventos",
     experiences: "Experiencias",
     gallery: "Galería",
     about: "Sobre Nosotros",
     blog: "Blog",
     book: "Reserva tu Escape",
+    callAria: "Llamar al hotel",
     langLabel: "EN",
     langSwitchAria: "View in English",
   },
   hero: {
     eyebrow: "Playa Hermosa · Costa Rica",
-    title: "Frente al Mar",
+    title: "Frente al Mar en Playa Hermosa",
     subtitle:
-      "Sobre la arena de Playa Hermosa, con el mar a pocos pasos de tu habitación y una bienvenida costarricense en la puerta.",
+      "Sobre la arena de Playa Hermosa, al sur de Jacó — el surf a pocos pasos de tu habitación y una cálida bienvenida costarricense en la puerta.",
     primaryCta: "Reserva tu Escape",
     secondaryCta: "Explora el Resort",
     trust: "Mejor tarifa garantizada al reservar directo",
     scroll: "Descubre el paraíso",
-    rating: "4.7",
-    reviews: "Basado en 42 reseñas de clientes",
+    rating: "4.2",
+    reviews: "Basado en 1.472 reseñas de Google",
     slideLabel: "Ver diapositiva",
     soundOff: "Sin sonido",
     soundOn: "Con sonido",
@@ -313,13 +364,13 @@ const es: Dict = {
   },
   discover: {
     eyebrow: "Todo a pasos de tu habitación",
-    title: "Un resort frente al mar, con motivos de sobra para quedarse en la arena",
+    title: "Un resort frente al mar en Playa Hermosa, con motivos de sobra para quedarse en la arena",
     exploreCta: "Explora el resort",
   },
   welcome: {
     eyebrow: "Bienvenidos",
     title: "Bienvenidos a Terraza del Pacífico",
-    body: "Durante más de veinte años, este tramo de arena ha sido un lugar para bajar el ritmo, donde las mañanas comienzan con canto de ballenas en el horizonte y las noches cierran con el cielo en llamas sobre el Pacífico.",
+    body: "Durante más de veinte años, este tramo frente al mar en Playa Hermosa, a minutos de Jacó, ha sido un lugar donde las familias bajan el ritmo: las mañanas comienzan con el canto de las ballenas en el horizonte y las noches cierran con el cielo en llamas sobre el Pacífico.",
     stats: [
       { value: "20+", label: "Años de historia" },
       { value: "0 m", label: "A la playa" },
@@ -348,7 +399,7 @@ const es: Dict = {
         slug: "experiencias/yoga-frente-al-mar",
         title: "Yoga Frente al Mar",
         meta: "Incluido",
-        detail: "Diario · 7:00 AM",
+        detail: "Dom y Mié 8 AM · Sáb 4 PM",
         cta: "Unirse",
         badge: "Incluido",
         body: "Abre el día con olas y respiración a la orilla del agua.",
@@ -371,7 +422,7 @@ const es: Dict = {
         detail: "Viernes · 6 PM",
         cta: "Inscribirse",
         badge: "Surf Nights",
-        body: "Un break famoso, iluminado para competencias.",
+        body: "El famoso break de surf de Playa Hermosa, iluminado para competencias nocturnas.",
         image: "/images/surf-nights-C5MPn3sY.jpg",
       },
       {
@@ -398,7 +449,7 @@ const es: Dict = {
   },
   suites: {
     eyebrow: "Hospedaje",
-    title: "Confort y Elegancia Frente al Océano",
+    title: "Confort Frente al Mar, a Pasos de Playa Hermosa",
     subtitle: "",
     allRoomsCta: "Todas las Habitaciones →",
     perNight: "",
@@ -420,7 +471,7 @@ const es: Dict = {
         beds: "2 Dobles",
         view: "Piscina",
         blurb: "Vista a la piscina principal, a pasos del restaurante y la arena.",
-        image: "/images/room-two-beds-D9Pgywgw.jpg",
+        image: "/images/exp-room-superior-hero.avif",
       },
       {
         slug: "estandar",
@@ -431,7 +482,7 @@ const es: Dict = {
         beds: "2 Dobles",
         view: "Jardines",
         blurb: "Una habitación tranquila entre jardines tropicales.",
-        image: "/images/room-standard-wide-DxUYeeXV.jpg",
+        image: "/images/exp-room-standard-hero.avif",
       },
       {
         slug: "junior-suite",
@@ -442,7 +493,7 @@ const es: Dict = {
         beds: "1 King",
         view: "Piscina",
         blurb: "Un refugio luminoso y tranquilo para dos. Despierta con la piscina y el sonido del mar justo más allá de tu terraza.",
-        image: "/images/room-junior-suite-wide-D5tbucTk.jpg",
+        image: "/images/exp-room-junior-hero.avif",
       },
       {
         slug: "villas",
@@ -451,9 +502,9 @@ const es: Dict = {
         guests: "6",
         size: "72 m²",
         beds: "Múltiples",
-        view: "Océano",
-        blurb: "Cocina completa y sala de estar, ideal para familias.",
-        image: "/images/villa-living-room-CHkIhyVw.jpg",
+        view: "Vista parcial al mar",
+        blurb: "Cocina completa y sala de estar con vista al océano, ideal para familias.",
+        image: "/images/exp-villa-hero.avif",
       },
     ],
     amenitiesNote:
@@ -472,7 +523,7 @@ const es: Dict = {
   restaurant: {
     eyebrow: "Vivace Beachfront",
     title: "Alma Mediterránea, Escenario Pacífico",
-    body: "El chef siciliano Luigi trae los sabores del sur de Italia a la orilla del agua: pesca fresca, pasta artesanal y tardes lentas con arena bajo la mesa.",
+    body: "El chef siciliano Luigi trae los sabores del sur de Italia a la orilla del mar en Playa Hermosa: pesca fresca, pasta artesanal y tardes lentas con arena bajo la mesa.",
     cta: "Explorar el Menú",
     chefCaption: "Chef Luigi · Sicilia, Italia",
   },
@@ -512,13 +563,13 @@ const es: Dict = {
     addressLine2: "Playa Hermosa, 34, Provincia de Puntarenas",
     addressLine3: "Jacó, 04023 · Costa Rica",
     distance:
-      "Playa Hermosa, Jacó, en la costa pacífica central, a solo 90 minutos del Aeropuerto Internacional de San José.",
+      "Frente al mar en Playa Hermosa, al sur de Jacó en la costa pacífica central de Costa Rica, a solo 90 minutos del Aeropuerto Internacional de San José.",
     cta: "Ver en Google Maps",
     mapHref:
       "https://www.google.com/maps/search/?api=1&query=Hotel+Terraza+del+Pac%C3%ADfico+Playa+Hermosa+Costa+Rica",
   },
   finalCta: {
-    title: "Tu Lugar en el Paraíso Te Espera",
+    title: "Tu Escape Frente al Mar en Playa Hermosa",
     subtitle: "",
     primaryCta: "Reservar Directo",
     secondaryCta: "Escríbenos por WhatsApp",
@@ -527,14 +578,61 @@ const es: Dict = {
   footer: {
     tagline: "Aguas cálidas y olas frescas.",
     contactTitle: "Contacto",
+    // Línea principal del hotel — coincide con el Perfil de Empresa de Google para la consistencia NAP.
+    phone: "+506 2643 3222",
+    phoneHref: "tel:+50626433222",
     email: "info@terrazadelpacifico.com",
     whatsapp: "WhatsApp: +506 8431 9953",
     scheduleTitle: "Horario",
     checkin: "Check-in: 3:00 PM",
     checkout: "Check-out: 1:00 PM",
     pools: "Piscinas: 8:30 AM – 8:30 PM",
+    yoga: "Yoga gratis: Dom y Mié 8 AM, Sáb 4 PM",
     exploreTitle: "Explorar",
+    policies: "Políticas",
     rights: "Todos los derechos reservados.",
+  },
+  faq: {
+    eyebrow: "Bueno saber",
+    title: "Preguntas Frecuentes",
+    items: [
+      {
+        q: "¿Dónde está ubicado el Hotel Terraza del Pacífico?",
+        a: "Estamos sobre la arena de Playa Hermosa, en la costa pacífica central de Costa Rica, al sur de Jacó y a unos 90 minutos del Aeropuerto Internacional Juan Santamaría (SJO).",
+      },
+      {
+        q: "¿El hotel está realmente frente al mar?",
+        a: "Sí. Terraza del Pacífico está directamente sobre Playa Hermosa, con acceso directo a la playa desde la propiedad: el surf queda a pocos pasos de tu habitación.",
+      },
+      {
+        q: "¿Cuáles son los horarios de check-in y check-out?",
+        a: "El check-in es a partir de las 3:00 PM y el check-out es hasta la 1:00 PM. La recepción atiende todos los días de 7:00 AM a 10:00 PM.",
+      },
+      {
+        q: "¿Terraza del Pacífico es ideal para familias?",
+        a: "Totalmente. Por más de veinte años ha sido un lugar donde las familias bajan el ritmo, con piscina frente al mar, jardines tranquilos y espacio para que los niños jueguen.",
+      },
+      {
+        q: "¿Hay restaurante y bar en el hotel?",
+        a: "Sí — Vivace Beachfront ofrece cocina mediterránea e italiana con arena bajo la mesa, y nuestros bares de playa sirven bebidas frescas junto al agua al atardecer.",
+      },
+      {
+        q: "¿Qué incluye la estadía?",
+        a: "Las estadías incluyen WiFi gratis, aire acondicionado, piscina al aire libre con luces LED y acceso directo a la playa, con restaurante, yoga frente al mar y espacios para eventos disponibles.",
+      },
+      {
+        q: "¿El hotel tiene piscina?",
+        a: "Sí — una piscina al aire libre con luces LED y una piscina para niños, con la playa a pocos pasos.",
+      },
+      {
+        q: "¿Terraza del Pacífico admite mascotas?",
+        a: "Sí. Recibimos un perro por habitación (hasta 22 lb / 10 kg) con un cargo de US$20 por mascota, por día. Los animales de servicio siempre son bienvenidos sin cargo.",
+      },
+      {
+        q: "¿Cuánto cuesta hospedarse en Terraza del Pacífico?",
+        a: "Las tarifas varían según la temporada y las fechas. Para el precio más exacto, consulta la disponibilidad en línea — y al reservar directo siempre obtienes nuestra mejor tarifa disponible.",
+      },
+    ],
   },
 };
 

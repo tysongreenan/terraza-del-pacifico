@@ -60,7 +60,7 @@ export default async function Page({
       />
       <AboutPage locale={l} dict={dict} />
       {elfsightId && (
-        <section className="home-concept bg-concept-sand-muted py-14 md:py-16">
+        <section className="home-concept bg-concept-sand-muted py-14 md:py-section-sm">
           <div className="container">
             <ElfsightWidget appId={elfsightId} />
           </div>

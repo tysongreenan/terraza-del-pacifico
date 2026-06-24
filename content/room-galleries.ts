@@ -8,6 +8,13 @@ export const roomGalleries: RoomGallery[] = [
     slug: "superior",
     images: [
       {
+        src: "/images/exp-room-superior-hero.avif",
+        alt: {
+          es: "Habitación superior con dos camas dobles y muro de vidrio al balcón con piscina y mar",
+          en: "Superior room with two double beds and a floor-to-ceiling glass wall onto the balcony with pool and sea beyond",
+        },
+      },
+      {
         src: "/images/Suit photos/RLR_4906.jpg",
         alt: {
           es: "Habitación superior con dos camas dobles y techo abovedado",
@@ -15,24 +22,24 @@ export const roomGalleries: RoomGallery[] = [
         },
       },
       {
-        src: "/images/room-two-beds-D9Pgywgw.jpg",
+        src: "/images/exp-room-superior-view.avif",
         alt: {
-          es: "Habitación superior con dos camas",
-          en: "Superior room with two beds",
+          es: "Vista al jardín y los terrenos a través del muro de vidrio",
+          en: "Garden and grounds view through the glass wall",
         },
       },
       {
-        src: "/images/room-interior-C3-O8UpA.jpg",
+        src: "/images/exp-room-superior-terrace.avif",
         alt: {
-          es: "Interior de habitación con vista al resort",
-          en: "Room interior overlooking the resort",
+          es: "Terraza privada a nivel de planta baja con sillas y seto en flor",
+          en: "Private ground-level terrace with chairs and a flowering hedge",
         },
       },
       {
-        src: "/images/g-aerial-pool-overview-CCOWXk2j.jpg",
+        src: "/images/exp-bath-junior.avif",
         alt: {
-          es: "Vista a la piscina desde la habitación superior",
-          en: "Pool view from superior room",
+          es: "Baño con acento de madera cálida",
+          en: "Bathroom with a warm wood accent",
         },
       },
     ],
@@ -41,31 +48,31 @@ export const roomGalleries: RoomGallery[] = [
     slug: "estandar",
     images: [
       {
-        src: "/images/Suit photos/RLR_4906.jpg",
+        src: "/images/exp-room-standard-hero.avif",
         alt: {
-          es: "Habitación estándar con dos camas dobles",
-          en: "Standard room with two double beds",
+          es: "Habitación estándar con dos camas y balcón abierto con cortinas vaporosas",
+          en: "Standard room with twin beds and an open balcony with sheer curtains",
         },
       },
       {
-        src: "/images/room-standard-wide-DxUYeeXV.jpg",
+        src: "/images/exp-room-standard-balcony.avif",
         alt: {
-          es: "Habitación estándar amplia",
-          en: "Wide standard room",
+          es: "Balcón con vista hacia la piscina y las tumbonas",
+          en: "Balcony looking down to the pool and loungers",
         },
       },
       {
-        src: "/images/room-two-beds-D9Pgywgw.jpg",
+        src: "/images/exp-room-standard-interior.avif",
         alt: {
-          es: "Habitación estándar con dos camas",
-          en: "Standard room with two beds",
+          es: "Interior de techo abovedado de la habitación estándar",
+          en: "Vaulted-ceiling interior of the standard room",
         },
       },
       {
-        src: "/images/room-interior-C3-O8UpA.jpg",
+        src: "/images/exp-bath-standard.avif",
         alt: {
-          es: "Detalle del interior de la habitación estándar",
-          en: "Standard room interior detail",
+          es: "Baño con ducha de vidrio sin marco",
+          en: "Bathroom with a glass walk-in shower",
         },
       },
     ],
@@ -74,45 +81,45 @@ export const roomGalleries: RoomGallery[] = [
     slug: "junior-suite",
     images: [
       {
-        src: "/images/Suit photos/DSC03703.jpg",
+        src: "/images/exp-room-junior-hero.avif",
         alt: {
-          es: "Cama king en junior suite con arte tropical",
-          en: "King bed in the junior suite with tropical art",
+          es: "Junior suite con cama king y puertas de vidrio al balcón con vista clara al mar y la playa",
+          en: "King junior suite with glass balcony doors and a clear ocean and beach view",
         },
       },
       {
-        src: "/images/Suit photos/DSC03704.jpg",
+        src: "/images/exp-room-junior-living.avif",
         alt: {
-          es: "Junior suite con cubrecama coral y pintura de tucán",
-          en: "Junior suite with a coral throw and toucan painting",
+          es: "Cama king y sala de estar con sofá de cuero en la junior suite",
+          en: "King bed and leather loveseat lounge area in the junior suite",
         },
       },
       {
-        src: "/images/room-junior-suite-wide-D5tbucTk.jpg",
+        src: "/images/Suit photos/RLR_48512.JPG",
         alt: {
-          es: "Junior suite amplia con vista a la piscina",
-          en: "Wide junior suite with pool view",
+          es: "Junior suite con cama king, sofá y amplio espacio",
+          en: "Junior suite with a king bed, loveseat and generous space",
         },
       },
       {
-        src: "/images/Suit photos/DSC03689.jpg",
+        src: "/images/exp-room-junior-interior.avif",
         alt: {
-          es: "Detalle cálido de la cama king de la junior suite",
-          en: "Warm detail of the junior suite's king bed",
+          es: "Interior amplio de madera abovedada con vidrio al balcón",
+          en: "Spacious vaulted-wood interior with balcony glass",
         },
       },
       {
-        src: "/images/room-king-bed-B58lVEdC.jpg",
+        src: "/images/exp-bath-junior.avif",
         alt: {
-          es: "Cama king en junior suite",
-          en: "King bed in junior suite",
+          es: "Baño luminoso de azulejo blanco con techo de madera abovedado",
+          en: "Bright white-tile bathroom with a vaulted wood ceiling",
         },
       },
       {
-        src: "/images/pool-aerial-day-BveHvOiS.jpg",
+        src: "/images/exp-room-pool-view.webp",
         alt: {
-          es: "Vista a la piscina desde la junior suite",
-          en: "Pool view from junior suite",
+          es: "Vista desde el balcón de la habitación sobre la piscina de día",
+          en: "Room-balcony view over the daytime pool",
         },
       },
     ],
@@ -121,52 +128,52 @@ export const roomGalleries: RoomGallery[] = [
     slug: "villas",
     images: [
       {
-        src: "/images/villa-living-room-CHkIhyVw.jpg",
+        src: "/images/exp-villa-hero.avif",
         alt: {
-          es: "Sala de estar de la villa",
-          en: "Villa living room",
+          es: "Villa de planta abierta con cocineta, comedor y cama en un solo espacio",
+          en: "Open-plan villa with kitchenette, dining area and bed in one space",
         },
       },
       {
-        src: "/images/Suit photos/RLR_48512.jpg",
+        src: "/images/exp-villa-balcony-ocean.avif",
         alt: {
-          es: "Villa con cama, sala con sofá de cuero y mini-bar",
-          en: "Villa with a bed, leather-sofa lounge and mini-fridge",
+          es: "Balcón con mesa bistró y orquídea enmarcando una vista clara al océano",
+          en: "Balcony with a bistro set and orchid framing a clear ocean view",
+        },
+      },
+      {
+        src: "/images/exp-villa-dining-view.avif",
+        alt: {
+          es: "Comedor con puertas de vidrio que muestran la piscina y el horizonte del océano",
+          en: "Dining nook with glass doors showing the pool and ocean horizon",
+        },
+      },
+      {
+        src: "/images/exp-villa-kitchen.avif",
+        alt: {
+          es: "Cocina completa de la villa con cocina, refrigerador y cafetera",
+          en: "Full villa kitchen with cooktop, fridge and coffee maker",
+        },
+      },
+      {
+        src: "/images/exp-villa-twobed.avif",
+        alt: {
+          es: "Variante de villa con dos camas, comedor y puertas al balcón",
+          en: "Two-bed villa variant with dining area and balcony doors",
         },
       },
       {
         src: "/images/Suit photos/IMG_4757.jpg",
         alt: {
-          es: "Comedor de la villa con sillas de mimbre y sala",
-          en: "Villa dining nook with wicker chairs and lounge",
+          es: "Sala y comedor de la villa vistos a través de la puerta",
+          en: "Villa lounge and dining seen through the doorway",
         },
       },
       {
-        src: "/images/Suit photos/IMG_4779.jpg",
+        src: "/images/Suit photos/IMG_4688.JPG",
         alt: {
-          es: "Cocina completa de la villa con gabinetes de madera",
-          en: "Full villa kitchen with solid-wood cabinetry",
-        },
-      },
-      {
-        src: "/images/Suit photos/IMG_4763.jpg",
-        alt: {
-          es: "Interior abierto de la villa con cama, comedor y TV",
-          en: "Open-plan villa interior with bed, dining area and TV",
-        },
-      },
-      {
-        src: "/images/villa-kitchen-detail-CYiwCD4T.jpg",
-        alt: {
-          es: "Cocina de la villa",
-          en: "Villa kitchen",
-        },
-      },
-      {
-        src: "/images/villa-bedroom-view-_Eb74lE7.jpg",
-        alt: {
-          es: "Dormitorio de la villa con vista",
-          en: "Villa bedroom with view",
+          es: "Detalle de la cocineta de la villa con ollas rojas",
+          en: "Villa kitchenette detail with red pots",
         },
       },
     ],

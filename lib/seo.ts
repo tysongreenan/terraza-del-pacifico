@@ -44,6 +44,7 @@ export const staticRoutes: StaticRoute[] = [
   { slug: "bares", path: "bares", priority: 0.7, changeFrequency: "monthly" },
   { slug: "bares-golden-beach-bar", path: "bares/golden-beach-bar", priority: 0.65, changeFrequency: "monthly" },
   { slug: "bares-iguana-bar", path: "bares/iguana-bar", priority: 0.65, changeFrequency: "monthly" },
+  { slug: "panaderia", path: "panaderia", priority: 0.7, changeFrequency: "monthly" },
   { slug: "eventos", path: "eventos", priority: 0.85, changeFrequency: "monthly" },
   { slug: "eventos-bodas", path: "eventos/bodas", priority: 0.85, changeFrequency: "monthly" },
   { slug: "eventos-surf-nights", path: "eventos/surf-nights", priority: 0.8, changeFrequency: "weekly" },
@@ -125,6 +126,8 @@ const hotelAmenities = [
   "Bar",
   "Beachfront yoga",
   "Event & wedding venue",
+  "Children's pool",
+  "Pet-friendly (dogs)",
 ];
 
 export function organizationJsonLd() {
@@ -137,27 +140,54 @@ export function organizationJsonLd() {
     logo: absoluteUrl("/images/Logo-nuevo-B86U915-.png"),
     image: [
       absoluteUrl(defaultOgImage),
-      absoluteUrl("/images/pool-aerial-day-BveHvOiS.jpg"),
+      absoluteUrl("/images/exp-beach-topdown.jpg"),
       absoluteUrl("/images/restaurant-view-WsRnSUPN.jpg"),
     ],
     email: "info@terrazadelpacifico.com",
-    telephone: "+50684319953",
+    // Main hotel line — matches the Google Business Profile and restaurantJsonLd
+    // (the WhatsApp booking line lives in finalCta/footer, not here).
+    telephone: "+50626433222",
+    // Mirrors the Google Business Profile listing exactly for NAP consistency.
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Playa Hermosa",
-      addressLocality: "Playa Hermosa",
+      streetAddress: "Playa Hermosa, 34",
+      addressLocality: "Jacó",
       addressRegion: "Puntarenas",
       postalCode: "04023",
       addressCountry: "CR",
     },
-    // Genuine on-page values (shown in the hero and footer).
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.7",
-      reviewCount: "42",
-      bestRating: "5",
-      worstRating: "1",
+    // Coordinates already used in the live location-section map embed
+    // (components/home/location.tsx) — Playa Hermosa, Jacó.
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: "9.580177",
+      longitude: "-84.6141703",
     },
+    // Daily reception window as published on the Google Business Profile.
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ],
+      opens: "07:00",
+      closes: "22:00",
+    },
+    // Official tourism classification, confirmed on the Google Business Profile.
+    starRating: { "@type": "Rating", ratingValue: "3" },
+    // Qualitative price tier (kept short per Google guidance; not a fabricated rate).
+    priceRange: "$$",
+    // Pet policy as published (one dog, ≤10 kg, US$20/pet/day; service animals free).
+    petsAllowed: "Dogs up to 10 kg / 22 lb allowed for a fee; service animals free.",
+    // NOTE: aggregateRating removed — the only on-page reviews are placeholders
+    // (testimonials TODO), and copying Google's review counts into self-serving
+    // Hotel markup violates Google's rich-results policy. Re-add ONLY once real,
+    // first-party reviews are displayed on-page, reflecting those numbers.
     checkinTime: "15:00",
     checkoutTime: "13:00",
     amenityFeature: hotelAmenities.map((name) => ({
@@ -173,8 +203,7 @@ export function organizationJsonLd() {
       "https://www.tiktok.com/@terrazadelpacifico",
     ],
     // TODO (need real values to add safely — fabricated structured data is a
-    // Google penalty risk): geo {latitude, longitude}, priceRange, starRating,
-    // numberOfRooms.
+    // Google penalty risk): numberOfRooms.
   };
 }
 
@@ -222,6 +251,25 @@ export function breadcrumbJsonLd({
   };
 }
 
+// FAQPage built from the on-page FAQ accordion. NOTE: since 2023 Google only
+// shows FAQ rich results for authoritative gov/health sites, so this won't
+// render rich snippets — its value is machine-readable Q&A for AI search
+// (AI Overviews, ChatGPT, Perplexity), which is the reason the section exists.
+export function faqJsonLd(items: { q: string; a: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  };
+}
+
 export function restaurantJsonLd() {
   return {
     "@context": "https://schema.org",
@@ -236,26 +284,38 @@ export function restaurantJsonLd() {
     telephone: "+50626433222",
     // Downloadable menu page linked from /restaurante.
     hasMenu: absoluteUrl("/es/restaurante/menu"),
-    // Daily operating window as advertised on the page ("Open daily · 7 AM – 10 PM").
-    openingHoursSpecification: {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday",
-      ],
-      opens: "07:00",
-      closes: "22:00",
-    },
+    // Open daily for three service windows (breakfast / lunch / dinner) as
+    // advertised on /restaurante. Each meal is its own OpeningHoursSpecification.
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        opens: "07:00",
+        closes: "10:00",
+        name: "Breakfast",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        opens: "12:00",
+        closes: "15:00",
+        name: "Lunch",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        opens: "18:00",
+        closes: "21:00",
+        name: "Dinner",
+      },
+    ],
+    // Same physical address as the Hotel — kept identical for NAP consistency.
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Playa Hermosa",
-      addressLocality: "Playa Hermosa",
+      streetAddress: "Playa Hermosa, 34",
+      addressLocality: "Jacó",
       addressRegion: "Puntarenas",
+      postalCode: "04023",
       addressCountry: "CR",
     },
   };

@@ -57,10 +57,10 @@ export default async function Page({
           <Reveal>
             <div className="mx-auto max-w-2xl text-center">
               <p className="eyebrow">{copy.eyebrow}</p>
-              <h1 className="mt-4 font-concept text-4xl font-medium leading-[1.06] text-concept-ocean md:text-5xl">
+              <h1 className="mt-4 font-concept text-h1 font-medium leading-[1.06] text-concept-ocean ">
                 {copy.title}
               </h1>
-              <p className="mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-concept-ink/80">
+              <p className="mx-auto mt-5 max-w-xl text-body-sm leading-relaxed text-concept-ink/80">
                 {copy.description}
               </p>
             </div>
@@ -90,10 +90,10 @@ export default async function Page({
                       />
                     </div>
                     <div className="p-8">
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-concept-gold-muted">
+                      <p className="text-micro font-semibold uppercase tracking-[0.16em] text-concept-gold-muted">
                         {t.card.tagline}
                       </p>
-                      <h2 className="mt-2 font-concept text-3xl font-medium leading-none text-concept-ocean">
+                      <h2 className="mt-2 font-concept text-h3 font-medium leading-none text-concept-ocean">
                         {t.hero.title}
                       </h2>
                       <p className="mt-3 text-sm leading-relaxed text-[#6f6a62]">

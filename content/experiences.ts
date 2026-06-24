@@ -11,11 +11,11 @@ export const experienceHub: HubPage = {
     en: "Beachfront experiences in Playa Hermosa",
   },
   description: {
-    es: "Avistamiento de ballenas, yoga en la arena y noches con musica en vivo. Estas son las actividades que hacen que una estadia en Terraza del Pacifico sea mas que una visita a la playa.",
-    en: "Whale watching, yoga on the sand and evenings of live music. These are the activities that turn a stay at Terraza del Pacifico into more than a beach visit.",
+    es: "Avistamiento de ballenas, yoga en la arena y noches de musica en vivo, todo frente al mar en Playa Hermosa, al sur de Jaco. Estas son las experiencias que hacen de una estadia en Terraza del Pacifico mucho mas que una visita a la playa.",
+    en: "Whale watching, yoga on the sand and evenings of live music, all beachfront in Playa Hermosa, just south of Jaco. These are the experiences that turn a stay at Terraza del Pacifico into far more than a beach visit.",
   },
   heroImage: {
-    src: "/images/Resort Highlights/DJI_20250526154631_0071_D.JPG",
+    src: "/images/Resort Highlights/IMG_3170.JPG",
     alt: {
       es: "Vista aerea del resort y Playa Hermosa",
       en: "Aerial view of the resort and Playa Hermosa",
@@ -47,8 +47,8 @@ export const experiences: InfoPage[] = [
       en: "July to October",
     },
     description: {
-      es: "Durante la temporada, las ballenas jorobadas llegan a las aguas calidas del Pacifico costarricense. Playa Hermosa ofrece un punto de partida natural para verlas de cerca.",
-      en: "During the season, humpback whales arrive in the warm waters of Costa Rica's Pacific. Playa Hermosa is a natural starting point for seeing them up close.",
+      es: "Durante la temporada, las ballenas jorobadas llegan a las aguas calidas del Pacifico costarricense. La playa de Playa Hermosa, al sur de Jaco, es un punto de partida natural para verlas de cerca frente al mar.",
+      en: "During the season, humpback whales arrive in the warm waters of Costa Rica's Pacific. Beachfront Playa Hermosa, just south of Jaco, is a natural starting point for seeing them up close.",
     },
     heroImage: {
       src: "/images/whales-aerial-Bx8BrmsB.jpg",
@@ -111,11 +111,11 @@ export const experiences: InfoPage[] = [
         body: {
           es: [
             "El avistamiento de ballenas es una de las experiencias naturales mas memorables del Pacifico costarricense.",
-            "Cada temporada, las ballenas jorobadas migran hacia aguas calidas para aparearse y dar a luz, creando momentos que pueden disfrutarse desde la zona de Playa Hermosa y sus alrededores.",
+            "Cada temporada, las ballenas jorobadas migran hacia aguas calidas para aparearse y dar a luz, creando momentos que se disfrutan desde Playa Hermosa, a pocos minutos al sur de Jaco, y la costa que la rodea.",
           ],
           en: [
             "Whale watching is one of the most memorable natural experiences on Costa Rica's Pacific coast.",
-            "Each season, humpback whales migrate to warm waters to mate and give birth, creating moments guests can experience around Playa Hermosa and the surrounding coast.",
+            "Each season, humpback whales migrate to warm waters to mate and give birth, creating moments guests can experience from Playa Hermosa, minutes south of Jaco, and the coastline around it.",
           ],
         },
       },
@@ -149,11 +149,11 @@ export const experiences: InfoPage[] = [
         title: { es: "Por que Playa Hermosa", en: "Why Playa Hermosa" },
         body: {
           es: [
-            "La ubicacion frente al Pacifico permite que la experiencia se sienta conectada con la estadia, no como una actividad aislada.",
+            "La ubicacion frente al mar en Playa Hermosa hace que la experiencia se sienta parte de la estadia, no como una actividad aislada.",
             "Despues de la salida, puedes volver al hotel para almorzar, descansar junto a la piscina o ver el atardecer.",
           ],
           en: [
-            "The Pacific-front location makes the experience feel connected to the stay, not like a separate excursion.",
+            "The beachfront location in Playa Hermosa makes the experience feel part of the stay, not like a separate excursion.",
             "After the outing, guests can return to the hotel for lunch, pool time or sunset by the beach.",
           ],
         },
@@ -162,11 +162,11 @@ export const experiences: InfoPage[] = [
         title: { es: "Para toda la familia", en: "Family-friendly nature experience" },
         body: {
           es: [
-            "Es una actividad educativa y emocionante para ninos, parejas y grupos que quieren conectar con la naturaleza de Costa Rica.",
+            "Es una actividad educativa y emocionante para toda la familia, parejas y grupos que quieren conectar con la naturaleza de Costa Rica frente al mar.",
             "Recomendamos consultar antes de viajar para confirmar condiciones y opciones disponibles.",
           ],
           en: [
-            "This is an educational and exciting activity for kids, couples and groups who want to connect with Costa Rica's nature.",
+            "It is an educational, exciting activity for the whole family, couples and groups who want to connect with Costa Rica's nature by the sea.",
             "We recommend checking before traveling to confirm conditions and available options.",
           ],
         },
@@ -194,8 +194,8 @@ export const experiences: InfoPage[] = [
       en: "Conservation and nature",
     },
     description: {
-      es: "Playa Hermosa es parte de un entorno natural donde las tortugas marinas forman parte de una historia de conservacion, educacion y respeto por la vida silvestre.",
-      en: "Playa Hermosa is part of a natural setting where sea turtles are connected to conservation, education and respect for wildlife.",
+      es: "Playa Hermosa, al sur de Jaco, es un entorno natural frente al mar donde las tortugas marinas forman parte de una historia de conservacion, educacion y respeto por la vida silvestre.",
+      en: "Playa Hermosa, just south of Jaco, is a natural beachfront setting where sea turtles are part of a story of conservation, education and respect for wildlife.",
     },
     heroImage: {
       src: "/images/baby-turtle-DGA7PRRL.jpg",
@@ -220,7 +220,7 @@ export const experiences: InfoPage[] = [
         },
       },
       {
-        src: "/images/g-family-beach-DHJPEGnp.jpg",
+        src: "/images/exp-beach-grounds.jpg",
         alt: {
           es: "Familia caminando por la playa",
           en: "Family walking on the beach",
@@ -297,11 +297,11 @@ export const experiences: InfoPage[] = [
         body: {
           es: [
             "Es importante mantener distancia, evitar luces fuertes, seguir instrucciones y respetar los espacios protegidos.",
-            "La mejor experiencia es la que deja la playa igual o mejor de como la encontramos.",
+            "La mejor experiencia es la que deja la playa de Playa Hermosa igual o mejor de como la encontramos.",
           ],
           en: [
             "It is important to keep distance, avoid bright lights, follow instructions and respect protected areas.",
-            "The best experience is one that leaves the beach as good as or better than we found it.",
+            "The best experience is one that leaves the Playa Hermosa beach as good as, or better than, we found it.",
           ],
         },
       },
@@ -310,11 +310,11 @@ export const experiences: InfoPage[] = [
         body: {
           es: [
             "La actividad ayuda a comprender la biodiversidad de Costa Rica y la importancia de cuidar los ecosistemas costeros.",
-            "Es una forma sencilla y poderosa de sumar aprendizaje a una estadia frente al mar.",
+            "Es una forma sencilla y poderosa de sumar aprendizaje en familia a una estadia frente al mar en Playa Hermosa.",
           ],
           en: [
             "The activity helps guests understand Costa Rica's biodiversity and the importance of caring for coastal ecosystems.",
-            "It is a simple and powerful way to add learning to an oceanfront stay.",
+            "It is a simple, powerful way to add family learning to a beachfront stay in Playa Hermosa.",
           ],
         },
       },
@@ -341,8 +341,8 @@ export const experiences: InfoPage[] = [
       en: "Wellness by the waves",
     },
     description: {
-      es: "Clases de yoga frente al Pacifico, abiertas para huespedes y pensadas para todos los niveles en un entorno natural de Playa Hermosa.",
-      en: "Yoga classes facing the Pacific, open to guests and designed for every level in the natural setting of Playa Hermosa.",
+      es: "Clases de yoga frente al mar en Playa Hermosa, al sur de Jaco, abiertas para huespedes y pensadas para todos los niveles en un entorno natural y tranquilo.",
+      en: "Beachfront yoga classes in Playa Hermosa, just south of Jaco, open to guests and designed for every level in a calm, natural setting.",
     },
     heroImage: {
       src: "/images/yoga-class-1Z8S9ilZ.jpg",
@@ -360,21 +360,21 @@ export const experiences: InfoPage[] = [
         },
       },
       {
-        src: "/images/Resort Highlights/IMG_3712.JPG",
+        src: "/images/Resort Highlights/IMG_5978.JPG",
         alt: {
           es: "Camino natural dentro del resort",
           en: "Natural pathway inside the resort",
         },
       },
       {
-        src: "/images/g-family-beach-DHJPEGnp.jpg",
+        src: "/images/exp-beach-topdown.jpg",
         alt: {
           es: "Playa Hermosa junto al hotel",
           en: "Playa Hermosa beside the hotel",
         },
       },
       {
-        src: "/images/pool-aerial-day-BveHvOiS.jpg",
+        src: "/images/Resort Highlights/IMG_59363.JPG",
         alt: {
           es: "Piscina y areas comunes durante el dia",
           en: "Pool and common areas during the day",
@@ -430,11 +430,11 @@ export const experiences: InfoPage[] = [
         title: { es: "El entorno", en: "Setting by the ocean" },
         body: {
           es: [
-            "Practicar junto al Pacifico crea un ritmo natural: brisa, sombra, arena y sonido de mar.",
+            "Practicar frente al mar en Playa Hermosa crea un ritmo natural: brisa, sombra, arena y sonido de las olas.",
             "Una practica sencilla que toma su ritmo del lugar.",
           ],
           en: [
-            "Practicing beside the Pacific creates a natural rhythm: breeze, shade, sand and ocean sound.",
+            "Practicing beachfront in Playa Hermosa creates a natural rhythm: breeze, shade, sand and the sound of the waves.",
             "A simple practice that takes its cues from the place itself.",
           ],
         },
@@ -444,11 +444,11 @@ export const experiences: InfoPage[] = [
         body: {
           es: [
             "Las clases estan pensadas para todos los niveles, desde principiantes hasta personas con practica regular.",
-            "El enfoque es relajado y accesible, ideal para integrarlo a unas vacaciones.",
+            "El enfoque es relajado y accesible, ideal para integrarlo a unas vacaciones en familia frente al mar.",
           ],
           en: [
             "Classes are designed for every level, from beginners to regular practitioners.",
-            "The approach is relaxed and accessible, ideal for adding wellness to a vacation.",
+            "The approach is relaxed and accessible, ideal for adding wellness to a beachfront family vacation.",
           ],
         },
       },
@@ -488,8 +488,8 @@ export const experiences: InfoPage[] = [
       en: "Weekends",
     },
     description: {
-      es: "Musica local, cocteles tropicales y cenas frente al mar crean el ambiente perfecto para cerrar el dia en Playa Hermosa.",
-      en: "Local music, tropical cocktails and oceanfront dinners create the perfect atmosphere to close the day in Playa Hermosa.",
+      es: "Musica local, cocteles tropicales y cenas frente al mar crean el ambiente perfecto para cerrar el dia en Playa Hermosa, al sur de Jaco.",
+      en: "Local music, tropical cocktails and beachfront dinners set the perfect mood to close the day in Playa Hermosa, just south of Jaco.",
     },
     heroImage: {
       src: "/images/live-music-U-RLRqGX.jpg",
@@ -590,11 +590,11 @@ export const experiences: InfoPage[] = [
         title: { es: "Talento local", en: "Local artists" },
         body: {
           es: [
-            "La programacion resalta artistas locales y sonidos que encajan con el ambiente relajado de Playa Hermosa.",
+            "La programacion resalta artistas locales y sonidos que encajan con el ambiente relajado y familiar de Playa Hermosa.",
             "Consulta el calendario semanal para confirmar horarios y presentaciones.",
           ],
           en: [
-            "The lineup highlights local artists and sounds that match Playa Hermosa's relaxed atmosphere.",
+            "The lineup highlights local artists and sounds that match the relaxed, family-friendly atmosphere of Playa Hermosa.",
             "Check the weekly schedule to confirm times and performances.",
           ],
         },

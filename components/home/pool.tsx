@@ -9,8 +9,8 @@ import { bookingHref } from "@/lib/site";
 
 const strip = [
   {
-    src: "/images/New Pool/dji_fly_20241022_013636_0636_1753125648022_photo2.JPG",
-    alt: "Aerial view of the LED pool glowing deep blue at night",
+    src: "/images/exp-pool-day-loungers.avif",
+    alt: "Daytime view of the outdoor pool with sun loungers and tropical foliage",
   },
   {
     src: "/images/New Pool/dji_fly_20241022_013726_0642_1753125646863_photo2.JPG",
@@ -38,7 +38,7 @@ export function Pool({
     >
       {/* Full-bleed night-pool backdrop */}
       <Image
-        src="/images/New Pool/dji_fly_20241022_014010_0648_1753125627850_photo2.JPG"
+        src="/images/New Pool/dji_fly_20241022_013922_0645_1753125628421_photo4.JPG"
         alt="Aerial view of the signature LED pool lit up at night"
         fill
         sizes="100vw"
@@ -53,7 +53,7 @@ export function Pool({
               <Sparkles className="h-4 w-4" aria-hidden />
               {pool.eyebrow}
             </p>
-            <h2 className="mt-4 text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
+            <h2 className="mt-4 text-h1 font-bold leading-tight ">
               {pool.title}
             </h2>
             <p className="mt-6 text-base leading-relaxed text-white/80 sm:text-lg">
@@ -67,7 +67,7 @@ export function Pool({
           <Reveal delay={120} className="mt-10 flex flex-wrap gap-10">
             {[pool.stat1, pool.stat2].map((stat) => (
               <div key={stat.label}>
-                <p className="font-serif text-4xl font-bold text-accent sm:text-5xl">
+                <p className="font-serif text-h1 font-bold text-accent ">
                   {stat.value}
                 </p>
                 <p className="mt-1 max-w-[12rem] text-sm text-white/70">

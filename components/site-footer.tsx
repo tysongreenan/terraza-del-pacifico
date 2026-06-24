@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Mail, MessageCircle, MapPin, Instagram, Facebook } from "lucide-react";
+import { Mail, MessageCircle, MapPin, Phone, Instagram, Facebook } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/lib/dictionaries";
 
@@ -48,10 +48,12 @@ export function SiteFooter({
     { href: p("habitaciones"), label: n.rooms },
     { href: p("restaurante"), label: n.restaurant },
     { href: p("bares"), label: n.bars },
+    { href: p("panaderia"), label: n.bakery },
     { href: p("eventos"), label: n.events },
     { href: p("experiencias"), label: n.experiences },
     { href: p("galeria"), label: n.gallery },
     { href: p("blog"), label: n.blog },
+    { href: p("politicas"), label: f.policies },
   ];
 
   return (
@@ -68,10 +70,17 @@ export function SiteFooter({
           <p className="mt-3 text-sm italic text-primary-foreground/70">
             {f.tagline}
           </p>
-          <p className="mt-4 flex items-start gap-2 text-sm text-primary-foreground/80">
+          {/* Full postal address (NAP) — kept in sync with the Google Business Profile. */}
+          <address className="mt-4 flex items-start gap-2 text-sm not-italic text-primary-foreground/80">
             <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" aria-hidden />
-            {dict.location.address}
-          </p>
+            <span>
+              {dict.location.address}
+              <br />
+              {dict.location.addressLine2}
+              <br />
+              {dict.location.addressLine3}
+            </span>
+          </address>
           <div className="mt-5 flex gap-3">
             {socials.map(({ label, href, Icon }) => (
               <a
@@ -109,6 +118,15 @@ export function SiteFooter({
           <ul className="mt-3 space-y-2 text-primary-foreground/80">
             <li>
               <a
+                href={f.phoneHref}
+                className="inline-flex items-center gap-2 transition-colors hover:text-accent"
+              >
+                <Phone className="h-4 w-4 text-accent" aria-hidden />
+                {f.phone}
+              </a>
+            </li>
+            <li>
+              <a
                 href={`mailto:${f.email}`}
                 className="inline-flex items-center gap-2 transition-colors hover:text-accent"
               >
@@ -136,6 +154,7 @@ export function SiteFooter({
             <li>{f.checkin}</li>
             <li>{f.checkout}</li>
             <li>{f.pools}</li>
+            <li>{f.yoga}</li>
           </ul>
         </div>
       </div>

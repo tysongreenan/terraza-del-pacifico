@@ -117,7 +117,7 @@ export default async function BlogPost({
           className="mb-8 aspect-video w-full rounded-lg object-cover"
         />
       ) : null}
-      <h1 className="font-display text-4xl font-bold text-primary md:text-5xl">{post.title}</h1>
+      <h1 className="font-display text-h1 font-bold text-primary ">{post.title}</h1>
       <time
         dateTime={post.publishedAt}
         className="mt-4 block text-sm font-semibold uppercase tracking-[0.18em] text-accent"

@@ -29,7 +29,7 @@ type Room = Dictionary["suites"]["items"][number];
 // their own alt text so a resort shot is never mislabelled as the room.
 const FALLBACK_PHOTOS: { src: string; alt: { es: string; en: string } }[] = [
   {
-    src: "/images/pool-aerial-day-BveHvOiS.jpg",
+    src: "/images/New Pool/dji_fly_20241022_014010_0648_1753125627850_photo2.JPG",
     alt: {
       es: "Piscina y playa del resort Terraza del Pacífico",
       en: "Resort pool and beach at Terraza del Pacífico",
@@ -130,10 +130,10 @@ export function SuiteDetail({
               <div className="absolute inset-0 bg-gradient-to-t from-concept-ocean/[0.62] via-concept-ocean/[0.05] to-transparent" />
             </button>
             <div className="pointer-events-none absolute bottom-6 left-6 z-20 md:bottom-7 md:left-7">
-              <p className="mb-2 text-[11px] font-medium uppercase tracking-[0.22em] text-[#f3ead6]">
+              <p className="mb-2 text-micro font-medium uppercase tracking-[0.22em] text-[#f3ead6]">
                 {editorial.kicker} · {room.view}
               </p>
-              <h1 className="font-concept text-4xl font-medium leading-none text-white md:text-6xl">
+              <h1 className="font-concept text-display font-medium leading-none text-white ">
                 {room.name}
               </h1>
             </div>
@@ -174,15 +174,15 @@ export function SuiteDetail({
       </section>
 
       {/* BODY: content + sticky booking card */}
-      <section className="container py-16 md:py-20">
+      <section className="container py-section-sm md:py-section">
         <div className="flex flex-col gap-12 lg:flex-row lg:gap-14">
           {/* left: editorial content */}
           <div className="min-w-0 flex-1">
             <Reveal>
-              <h2 className="max-w-xl font-concept text-3xl font-medium leading-[1.1] text-concept-ocean md:text-[40px]">
+              <h2 className="max-w-xl font-concept text-h1 font-medium leading-[1.1] text-concept-ocean ">
                 {roomCopy.headline}
               </h2>
-              <p className="mt-5 max-w-2xl text-[15px] leading-[1.8] text-[#6f6a62]">
+              <p className="mt-5 max-w-2xl text-body-sm leading-[1.8] text-[#6f6a62]">
                 {editorial.description}
               </p>
             </Reveal>
@@ -199,10 +199,10 @@ export function SuiteDetail({
                     i < 2 && "border-b border-[#ece5d8] sm:border-b-0"
                   )}
                 >
-                  <dd className="font-concept text-3xl leading-none text-concept-ocean">
+                  <dd className="font-concept text-h3 leading-none text-concept-ocean">
                     {spec.value}
                   </dd>
-                  <dt className="mt-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#9a9282]">
+                  <dt className="mt-1.5 text-micro font-semibold uppercase tracking-[0.12em] text-[#9a9282]">
                     {spec.label}
                   </dt>
                 </div>
@@ -285,17 +285,17 @@ export function SuiteDetail({
                 className="block rounded-sm border border-[#ece5d8] bg-white p-7 shadow-[0_14px_40px_rgba(16,58,77,0.1)] transition-shadow hover:shadow-[0_18px_50px_rgba(16,58,77,0.16)] focus:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold"
               >
                 <div className="flex items-baseline justify-between">
-                  <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a9282]">
+                  <span className="text-micro font-semibold uppercase tracking-[0.16em] text-[#9a9282]">
                     {copy.reserveDirect}
                   </span>
-                  <span className="text-[10px] font-semibold uppercase tracking-[0.08em] text-[#1f7a4d]">
+                  <span className="text-micro font-semibold uppercase tracking-[0.08em] text-[#1f7a4d]">
                     {copy.bestRate}
                   </span>
                 </div>
 
                 <div className="mt-5 flex overflow-hidden rounded-sm border border-[#e4ddce]">
                   <div className="flex-1 border-r border-[#e4ddce] px-4 py-3.5">
-                    <div className="text-[9px] font-semibold uppercase tracking-[0.14em] text-[#9a9282]">
+                    <div className="text-micro font-semibold uppercase tracking-[0.14em] text-[#9a9282]">
                       {dict.bookingBar.checkIn}
                     </div>
                     <div className="mt-1 text-sm text-concept-ink">
@@ -303,7 +303,7 @@ export function SuiteDetail({
                     </div>
                   </div>
                   <div className="flex-1 px-4 py-3.5">
-                    <div className="text-[9px] font-semibold uppercase tracking-[0.14em] text-[#9a9282]">
+                    <div className="text-micro font-semibold uppercase tracking-[0.14em] text-[#9a9282]">
                       {dict.bookingBar.checkOut}
                     </div>
                     <div className="mt-1 text-sm text-concept-ink">
@@ -312,7 +312,7 @@ export function SuiteDetail({
                   </div>
                 </div>
                 <div className="rounded-sm rounded-t-none border border-t-0 border-[#e4ddce] px-4 py-3.5">
-                  <div className="text-[9px] font-semibold uppercase tracking-[0.14em] text-[#9a9282]">
+                  <div className="text-micro font-semibold uppercase tracking-[0.14em] text-[#9a9282]">
                     {dict.bookingBar.guests}
                   </div>
                   <div className="mt-1 text-sm text-concept-ink">
@@ -320,7 +320,7 @@ export function SuiteDetail({
                   </div>
                 </div>
 
-                <div className="mt-5 flex items-center justify-center gap-2 rounded-sm bg-concept-gold px-6 py-4 text-[13px] font-semibold uppercase tracking-[0.1em] text-concept-ink">
+                <div className="mt-5 flex items-center justify-center gap-2 rounded-sm bg-concept-gold px-6 py-4 text-caption font-semibold uppercase tracking-[0.1em] text-concept-ink">
                   {dict.bookingBar.cta}
                   <ArrowRight className="h-4 w-4" aria-hidden />
                 </div>
@@ -338,7 +338,7 @@ export function SuiteDetail({
                     ? "Pregunta por WhatsApp (abre en una pestaña nueva)"
                     : "Ask on WhatsApp (opens in a new tab)"
                 }
-                className="mt-4 flex items-center justify-center gap-2.5 rounded-sm bg-[#1f7a4d] px-5 py-3.5 text-[13px] font-medium text-white transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold"
+                className="mt-4 flex items-center justify-center gap-2.5 rounded-sm bg-[#1f7a4d] px-5 py-3.5 text-caption font-medium text-white transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold"
               >
                 <MessageCircle className="h-4 w-4" aria-hidden />
                 {copy.askWhatsApp}
@@ -366,14 +366,14 @@ export function SuiteDetail({
 
                 {/* children policy — a must-keep fact with no slot in the mockup */}
                 <div className="mt-5 border-t border-[#e6ddcd] pt-5">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#9a9282]">
+                  <p className="text-micro font-semibold uppercase tracking-[0.14em] text-[#9a9282]">
                     {copy.childrenLabel}
                   </p>
                   <ul className="mt-2 space-y-1.5">
                     {roomCopy.childrenPolicy.map((line) => (
                       <li
                         key={line}
-                        className="text-[13px] leading-relaxed text-concept-ink"
+                        className="text-caption leading-relaxed text-concept-ink"
                       >
                         {line}
                       </li>
@@ -393,14 +393,14 @@ export function SuiteDetail({
       </section>
 
       {/* OTHER WAYS TO STAY */}
-      <section className="bg-concept-sand-muted py-16 md:py-20">
+      <section className="bg-concept-sand-muted py-section-sm md:py-section">
         <div className="container">
           <div className="mb-8 flex items-end justify-between gap-6">
             <div>
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-concept-gold-muted">
                 {copy.keepLooking}
               </p>
-              <h2 className="font-concept text-3xl font-medium leading-[1.04] text-concept-ocean md:text-[38px]">
+              <h2 className="font-concept text-h2 font-medium leading-[1.04] text-concept-ocean ">
                 {copy.otherWays}
               </h2>
             </div>
@@ -434,7 +434,7 @@ export function SuiteDetail({
                 <h3 className="mt-4 font-concept text-2xl text-concept-ocean transition-colors group-hover:text-concept-gold-muted">
                   {r.name}
                 </h3>
-                <p className="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-concept-gold-muted">
+                <p className="mt-1.5 text-micro font-semibold uppercase tracking-[0.1em] text-concept-gold-muted">
                   {copy.sleeps(r.guests)} · {r.view}
                 </p>
               </Link>
@@ -453,7 +453,7 @@ export function SuiteDetail({
         primaryHref={`mailto:${eventsEmail}`}
         secondaryLabel={cta.secondary}
         secondaryHref={whatsappHref}
-        image="/images/pool-aerial-day-BveHvOiS.jpg"
+        image="/images/Resort Highlights/IMG_3170.JPG"
       />
 
       {openIndex !== null && (

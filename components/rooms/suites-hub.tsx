@@ -81,8 +81,8 @@ export function SuitesHub({
 
           <div className="container relative flex min-h-[78svh] flex-col justify-end pb-44 pt-28 md:min-h-[88svh] md:pb-48">
             <Reveal>
-              <p className="eyebrow text-concept-gold">{copy.hero.eyebrow}</p>
-              <h1 className="mt-4 max-w-3xl font-concept text-4xl font-medium leading-[1.02] text-shadow-hero md:text-6xl lg:text-[68px]">
+              <p className="text-eyebrow uppercase text-concept-gold text-shadow-hero">{copy.hero.eyebrow}</p>
+              <h1 className="mt-4 max-w-3xl font-concept text-display font-medium leading-[1.02] text-shadow-hero ">
                 {copy.hero.titleLines[0]}
                 <br />
                 {copy.hero.titleLines[1]}
@@ -94,7 +94,7 @@ export function SuitesHub({
                 <a
                   href={bookingHref}
                   className={cn(
-                    "inline-flex items-center justify-center gap-2 rounded-sm bg-concept-gold px-7 py-3.5 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90",
+                    "inline-flex items-center justify-center gap-2 rounded-sm bg-concept-gold px-7 py-3.5 text-caption font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90",
                     focusRing
                   )}
                 >
@@ -104,7 +104,7 @@ export function SuitesHub({
                 <Link
                   href={`/${locale}/habitaciones/comparar`}
                   className={cn(
-                    "inline-flex items-center justify-center rounded-sm border border-white/60 px-7 py-3.5 text-[13px] font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10",
+                    "inline-flex items-center justify-center rounded-sm border border-white/60 px-7 py-3.5 text-caption font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10",
                     focusRing
                   )}
                 >
@@ -141,62 +141,20 @@ export function SuitesHub({
           </div>
         </div>
 
-        {/* room-type switcher bar — overlaps hero bottom */}
-        <div className="container relative z-10 -mt-24 pb-px md:-mt-20">
-          <div className="flex flex-col overflow-hidden rounded-sm bg-white/95 shadow-[0_14px_40px_rgba(16,58,77,0.2)] backdrop-blur md:flex-row md:items-stretch">
-            {rooms.map(({ room }, i) => (
-              <button
-                key={room.slug}
-                type="button"
-                onClick={() => setActive(i)}
-                aria-current={i === active ? "true" : undefined}
-                className={cn(
-                  "flex-1 border-b border-[#eae4d8] px-6 py-4 text-left transition-colors last:border-b-0 md:border-b-0 md:border-r",
-                  focusRing,
-                  i === active && "border-b-2 border-b-concept-gold md:border-b-0 md:border-t-2 md:border-t-concept-gold"
-                )}
-              >
-                <div className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#6b6559]">
-                  {room.guests} · {room.size}
-                </div>
-                <div
-                  className={cn(
-                    "mt-1 font-concept text-[17px]",
-                    i === active ? "text-concept-ocean" : "text-concept-ink"
-                  )}
-                >
-                  {room.name}
-                </div>
-              </button>
-            ))}
-            <div className="flex items-center justify-center p-3">
-              <a
-                href={bookingHref}
-                className={cn(
-                  "inline-flex w-full items-center justify-center rounded-sm bg-concept-gold px-7 py-3.5 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90 md:w-auto",
-                  focusRing
-                )}
-              >
-                {copy.switcher.reserve}
-              </a>
-            </div>
-          </div>
-
-          {/* Announce the active room to screen readers as the carousel changes. */}
-          <p aria-live="polite" className="sr-only">
-            {locale === "es"
-              ? `Mostrando ${activeRoom.room.name}`
-              : `Showing ${activeRoom.room.name}`}
-          </p>
-        </div>
+        {/* Announce the active room to screen readers as the carousel changes. */}
+        <p aria-live="polite" className="sr-only">
+          {locale === "es"
+            ? `Mostrando ${activeRoom.room.name}`
+            : `Showing ${activeRoom.room.name}`}
+        </p>
       </section>
 
       {/* INTRO band */}
-      <section className="py-16 md:py-24">
+      <section className="py-section-sm md:py-section">
         <div className="container max-w-4xl text-center">
           <Reveal>
             <p className="eyebrow">{copy.intro.eyebrow}</p>
-            <p className="mx-auto mt-5 max-w-3xl font-concept text-2xl font-normal leading-[1.34] text-concept-ink md:text-[34px]">
+            <p className="mx-auto mt-5 max-w-3xl font-concept text-2xl font-normal leading-[1.34] text-concept-ink text-h2">
               {copy.intro.body.map((seg, i) =>
                 typeof seg === "string" ? (
                   <span key={i}>{seg}</span>
@@ -248,15 +206,15 @@ export function SuitesHub({
       </div>
 
       {/* INCLUDED IN EVERY ROOM */}
-      <section className="bg-concept-sand py-16 md:py-24">
+      <section className="bg-concept-sand py-section-sm md:py-section">
         <div className="container">
           <Reveal>
             <div className="mx-auto mb-12 max-w-2xl text-center md:mb-14">
               <p className="eyebrow">{copy.included.eyebrow}</p>
-              <h2 className="mt-4 font-concept text-3xl font-medium leading-[1.06] text-concept-ocean md:text-[44px]">
+              <h2 className="mt-4 font-concept text-h1 font-medium leading-[1.06] text-concept-ocean ">
                 {copy.included.title}
               </h2>
-              <p className="mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-concept-ink/80">
+              <p className="mx-auto mt-5 max-w-xl text-body-sm leading-relaxed text-concept-ink/80">
                 {copy.included.body}
               </p>
             </div>
@@ -270,7 +228,7 @@ export function SuitesHub({
                 <h3 className="font-concept text-2xl text-concept-ocean">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-[13px] leading-relaxed text-[#5f5a52]">
+                <p className="mt-2 text-caption leading-relaxed text-[#5f5a52]">
                   {item.body}
                 </p>
               </div>
@@ -289,7 +247,7 @@ export function SuitesHub({
         primaryHref={`mailto:${eventsEmail}`}
         secondaryLabel={copy.cta.secondary}
         secondaryHref={whatsappHref}
-        image="/images/pool-aerial-day-BveHvOiS.jpg"
+        image="/images/exp-room-pool-view.webp"
       />
     </article>
   );
@@ -317,7 +275,7 @@ function RoomFeature({
   ];
 
   return (
-    <section className="container relative py-8 md:py-12">
+    <section className="container relative py-8 md:py-section-sm">
       <div
         className={cn(
           "relative flex flex-col gap-0 md:block",
@@ -346,7 +304,7 @@ function RoomFeature({
             {editorial.badge && (
               <span
                 className={cn(
-                  "absolute top-6 text-[10px] font-semibold uppercase tracking-[0.16em]",
+                  "absolute top-6 text-micro font-semibold uppercase tracking-[0.16em]",
                   room.slug === "villas"
                     ? "left-6 bg-concept-gold px-3 py-1.5 text-[#1a1611]"
                     : "left-6 rounded-full border border-white/55 px-4 py-2 text-white"
@@ -361,15 +319,15 @@ function RoomFeature({
                 reverse ? "right-7 text-right" : "left-7"
               )}
             >
-              <p className="mb-2.5 text-[11px] font-medium uppercase tracking-[0.22em] text-[#f3ead6]">
+              <p className="mb-2.5 text-micro font-medium uppercase tracking-[0.22em] text-[#f3ead6]">
                 {editorial.kicker}
               </p>
-              <h2 className="font-concept text-4xl font-medium leading-none text-white md:text-5xl">
+              <h2 className="font-concept text-h1 font-medium leading-none text-white ">
                 {room.name}
               </h2>
             </div>
             {editorial.photoCount > 0 && (
-              <p className="absolute bottom-6 right-7 z-10 hidden font-mono text-[11px] tracking-[0.14em] text-white/80 md:block">
+              <p className="absolute bottom-6 right-7 z-10 hidden font-mono text-micro tracking-[0.14em] text-white/80 md:block">
                 {suitesHubContent[locale].galleryLabel(editorial.photoCount)}
               </p>
             )}
@@ -384,7 +342,7 @@ function RoomFeature({
             reverse ? "md:left-0" : "md:right-0"
           )}
         >
-          <h3 className="font-concept text-3xl font-medium leading-none text-concept-ocean">
+          <h3 className="font-concept text-h3 font-medium leading-none text-concept-ocean">
             {room.name}
           </h3>
           <p className="mt-4 text-sm leading-[1.7] text-[#6f6a62]">
@@ -400,7 +358,7 @@ function RoomFeature({
                   <dd className="font-concept text-2xl leading-none text-concept-ocean">
                     {stat.value}
                   </dd>
-                  <dt className="mt-1 text-[9px] font-semibold uppercase tracking-[0.12em] text-[#6b6559]">
+                  <dt className="mt-1 text-micro font-semibold uppercase tracking-[0.12em] text-[#6b6559]">
                     {stat.label}
                   </dt>
                 </div>

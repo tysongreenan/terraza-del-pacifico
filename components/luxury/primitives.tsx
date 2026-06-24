@@ -47,8 +47,8 @@ export function LuxuryHero({
       <div className="hero-scrim absolute inset-0" />
       <div className="container relative flex min-h-[72svh] flex-col justify-end pb-16 pt-28 md:pb-20">
         <Reveal>
-          <p className="eyebrow text-concept-gold">{eyebrow}</p>
-          <h1 className="mt-4 max-w-4xl font-concept text-4xl font-medium leading-[1.02] text-shadow-hero md:text-6xl lg:text-[68px]">
+          <p className="text-eyebrow uppercase text-concept-gold text-shadow-hero">{eyebrow}</p>
+          <h1 className="mt-4 max-w-4xl font-concept text-display font-medium leading-[1.02] text-shadow-hero ">
             {title}
           </h1>
           {description && (
@@ -73,14 +73,14 @@ export function LuxuryIntro({
   body: string;
 }) {
   return (
-    <section className="bg-concept-sand py-14 md:py-20">
+    <section className="bg-concept-sand py-14 md:py-section">
       <div className="container max-w-4xl text-center">
         <Reveal>
           <p className="eyebrow">{eyebrow}</p>
-          <h2 className="mt-4 font-concept text-3xl font-medium leading-[1.08] text-concept-ocean md:text-[44px]">
+          <h2 className="mt-4 font-concept text-h1 font-medium leading-[1.08] text-concept-ocean ">
             {title}
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-[15px] leading-relaxed text-concept-ink/80 md:text-base">
+          <p className="mx-auto mt-5 max-w-2xl text-body-sm leading-relaxed text-concept-ink/80 md:text-base">
             {body}
           </p>
         </Reveal>
@@ -103,14 +103,14 @@ export function LuxuryMosaic({
   if (images.length === 0) return null;
 
   return (
-    <section className={cn("bg-concept-sand py-14 md:py-20", className)}>
+    <section className={cn("bg-concept-sand py-14 md:py-section", className)}>
       <div className="container">
         {(eyebrow || title) && (
           <Reveal>
             <div className="mb-8 md:mb-10">
               {eyebrow && <p className="eyebrow">{eyebrow}</p>}
               {title && (
-                <h2 className="mt-3 font-concept text-3xl font-medium leading-[1.05] text-concept-ocean md:text-[46px]">
+                <h2 className="mt-3 font-concept text-h1 font-medium leading-[1.05] text-concept-ocean ">
                   {title}
                 </h2>
               )}
@@ -181,18 +181,18 @@ export function LuxurySplitBand({
         <p className="text-xs font-semibold uppercase tracking-[0.24em] text-concept-gold">
           {eyebrow}
         </p>
-        <h2 className="mt-4 font-concept text-3xl font-medium leading-[1.1] text-white md:text-[42px]">
+        <h2 className="mt-4 font-concept text-h1 font-medium leading-[1.1] text-white ">
           {title}
         </h2>
         {body && (
-          <p className="mt-5 max-w-md text-[15px] leading-relaxed text-[#bcd0d8]">
+          <p className="mt-5 max-w-md text-body-sm leading-relaxed text-[#bcd0d8]">
             {body}
           </p>
         )}
         {cta && (
           <Link
             href={cta.href}
-            className="mt-8 inline-flex w-fit items-center gap-2 rounded-sm border border-white/45 px-8 py-3.5 text-[13px] font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10"
+            className="mt-8 inline-flex w-fit items-center gap-2 rounded-sm border border-white/45 px-8 py-3.5 text-caption font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10"
           >
             {cta.label}
             <ArrowRight className="h-4 w-4" aria-hidden />
@@ -234,14 +234,14 @@ export function LuxuryImageBand({
       {(eyebrow || title || body) && (
         <div className="container relative flex items-end py-16 md:min-h-[inherit] md:py-20">
           <Reveal className="max-w-xl">
-            {eyebrow && <p className="eyebrow text-concept-gold">{eyebrow}</p>}
+            {eyebrow && <p className="text-eyebrow uppercase text-concept-gold text-shadow-hero">{eyebrow}</p>}
             {title && (
-              <h2 className="mt-3 font-concept text-3xl font-medium leading-[1.08] md:text-5xl">
+              <h2 className="mt-3 font-concept text-h1 font-medium leading-[1.08] ">
                 {title}
               </h2>
             )}
             {body && (
-              <p className="mt-4 text-[15px] leading-relaxed text-white/85">{body}</p>
+              <p className="mt-4 text-body-sm leading-relaxed text-white/85">{body}</p>
             )}
           </Reveal>
         </div>
@@ -271,10 +271,10 @@ export function LuxuryFactsStrip({
                 index < facts.length - 1 && "md:border-r md:border-[#ece5d8]"
               )}
             >
-              <dd className="font-concept text-3xl font-medium text-concept-ocean md:text-[38px]">
+              <dd className="font-concept text-h2 font-medium text-concept-ocean ">
                 {fact.value}
               </dd>
-              <dt className="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#6f6a62]">
+              <dt className="mt-1.5 text-micro font-semibold uppercase tracking-[0.12em] text-[#6f6a62]">
                 {fact.label}
               </dt>
             </div>
@@ -294,7 +294,7 @@ export function LuxuryCtaBand({
   primaryHref = bookingHref,
   secondaryLabel,
   secondaryHref = whatsappHref,
-  image = "/images/pool-aerial-day-BveHvOiS.jpg",
+  image = "/images/exp-hero-front-aerial.avif",
 }: {
   locale: Locale;
   eyebrow: string;
@@ -321,8 +321,8 @@ export function LuxuryCtaBand({
       <div className="absolute inset-0 bg-gradient-to-b from-[rgba(16,58,77,0.45)] to-[rgba(16,58,77,0.62)]" />
       <div className="container relative z-10">
         <Reveal>
-          <p className="eyebrow text-concept-gold">{eyebrow}</p>
-          <h2 className="mx-auto mt-4 max-w-3xl font-concept text-3xl font-medium leading-tight text-shadow-hero md:text-[52px]">
+          <p className="text-eyebrow uppercase text-concept-gold text-shadow-hero">{eyebrow}</p>
+          <h2 className="mx-auto mt-4 max-w-3xl font-concept text-h1 font-medium leading-tight text-shadow-hero ">
             {title}
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-white/85 md:text-base">
@@ -335,7 +335,7 @@ export function LuxuryCtaBand({
         >
           <a
             href={primaryHref}
-            className="inline-flex items-center justify-center rounded-sm bg-concept-gold px-8 py-4 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#1a1611]"
+            className="inline-flex items-center justify-center rounded-sm bg-concept-gold px-8 py-4 text-caption font-semibold uppercase tracking-[0.1em] text-[#1a1611]"
           >
             {primaryLabel}
           </a>
@@ -343,7 +343,7 @@ export function LuxuryCtaBand({
             href={secondaryHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-sm border border-white/60 px-8 py-4 text-[13px] font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10"
+            className="inline-flex items-center justify-center gap-2 rounded-sm border border-white/60 px-8 py-4 text-caption font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10"
           >
             <MessageCircle className="h-4 w-4" aria-hidden />
             {secondaryLabel}
@@ -364,7 +364,7 @@ export function luxuryButtonPrimary(label: string, href: string) {
   return (
     <a
       href={href}
-      className="inline-flex items-center justify-center gap-2 rounded-sm bg-concept-gold px-7 py-3.5 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90"
+      className="inline-flex items-center justify-center gap-2 rounded-sm bg-concept-gold px-7 py-3.5 text-caption font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90"
     >
       {label}
       <ArrowRight className="h-4 w-4" aria-hidden />
@@ -376,7 +376,7 @@ export function luxuryButtonOutline(label: string, href: string) {
   return (
     <Link
       href={href}
-      className="inline-flex items-center justify-center gap-2 rounded-sm border border-white/55 px-7 py-3.5 text-[13px] font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10"
+      className="inline-flex items-center justify-center gap-2 rounded-sm border border-white/55 px-7 py-3.5 text-caption font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10"
     >
       {label}
     </Link>

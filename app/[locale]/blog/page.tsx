@@ -44,7 +44,7 @@ export default async function BlogPage({
   const t = copy[safeLocale];
 
   return (
-    <section className="container py-12">
+    <section className="container py-section-sm">
       <JsonLd
         data={breadcrumbJsonLd({
           locale: safeLocale,
@@ -53,7 +53,7 @@ export default async function BlogPage({
         })}
       />
       <header className="max-w-2xl">
-        <h1 className="font-display text-4xl font-bold tracking-tight text-primary md:text-5xl">
+        <h1 className="font-display text-h1 font-bold tracking-tight text-primary ">
           {t.heading}
         </h1>
         <p className="mt-3 text-base leading-relaxed text-muted-foreground">

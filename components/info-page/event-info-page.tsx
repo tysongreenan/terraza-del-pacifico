@@ -94,7 +94,7 @@ export function EventInfoPage({
           href={page.cta.href}
           target={external ? "_blank" : undefined}
           rel={external ? "noopener noreferrer" : undefined}
-          className="inline-flex items-center justify-center gap-2 rounded-sm bg-concept-gold px-7 py-3.5 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2"
+          className="inline-flex items-center justify-center gap-2 rounded-sm bg-concept-gold px-7 py-3.5 text-caption font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2"
         >
           {page.cta.label[locale]}
           <ArrowRight className="h-4 w-4" aria-hidden />
@@ -110,13 +110,13 @@ export function EventInfoPage({
       />
 
       {overview && (
-        <section className="bg-concept-sand py-14 md:py-20">
+        <section className="bg-concept-sand py-14 md:py-section">
           <div className="container max-w-3xl">
             <p className="eyebrow">{copy.overviewEyebrow}</p>
-            <h2 className="mt-4 font-concept text-3xl font-medium leading-[1.08] text-concept-ocean md:text-[42px]">
+            <h2 className="mt-4 font-concept text-h1 font-medium leading-[1.08] text-concept-ocean ">
               {overview.title[locale]}
             </h2>
-            <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-concept-ink/82 md:text-base">
+            <div className="mt-6 space-y-4 text-body-sm leading-relaxed text-concept-ink/82 md:text-base">
               {overview.body[locale].map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
@@ -156,11 +156,11 @@ export function EventInfoPage({
       />
 
       {related.length > 0 && (
-        <section className="bg-concept-sand-muted py-14 md:py-20">
+        <section className="bg-concept-sand-muted py-14 md:py-section">
           <div className="container">
             <div className="mb-8 md:mb-10">
               <p className="eyebrow">{copy.relatedEyebrow}</p>
-              <h2 className="mt-3 font-concept text-3xl font-medium leading-[1.05] text-concept-ocean md:text-[46px]">
+              <h2 className="mt-3 font-concept text-h1 font-medium leading-[1.05] text-concept-ocean ">
                 {copy.relatedTitle}
               </h2>
             </div>
@@ -180,13 +180,13 @@ export function EventInfoPage({
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-concept-ocean/90 via-transparent to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-concept-gold">
+                    <p className="text-micro font-semibold uppercase tracking-[0.14em] text-concept-gold">
                       {item.eyebrow[locale]}
                     </p>
                     <h3 className="mt-2 font-concept text-2xl leading-tight">
                       {item.title[locale]}
                     </h3>
-                    <span className="mt-3 inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.1em]">
+                    <span className="mt-3 inline-flex items-center gap-1.5 text-micro font-semibold uppercase tracking-[0.1em]">
                       {copy.explore}
                       <ArrowRight className="h-3.5 w-3.5" aria-hidden />
                     </span>
