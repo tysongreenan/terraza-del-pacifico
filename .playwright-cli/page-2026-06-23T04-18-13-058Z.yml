@@ -1,0 +1,368 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "TERRAZA del Pacífico" [ref=e4] [cursor=pointer]:
+        - /url: /en
+      - navigation [ref=e5]:
+        - link "Home" [ref=e6] [cursor=pointer]:
+          - /url: /en
+        - link "Rooms" [ref=e7] [cursor=pointer]:
+          - /url: /en/habitaciones
+        - link "Restaurant" [ref=e8] [cursor=pointer]:
+          - /url: /en/restaurante
+        - link "Events" [ref=e9] [cursor=pointer]:
+          - /url: /en/eventos
+        - link "Experiences" [ref=e10] [cursor=pointer]:
+          - /url: /en/experiencias
+        - link "Gallery" [ref=e11] [cursor=pointer]:
+          - /url: /en/galeria
+        - link "About Us" [ref=e12] [cursor=pointer]:
+          - /url: /en/sobre-nosotros
+      - generic [ref=e13]:
+        - link "Ver en español" [ref=e14] [cursor=pointer]:
+          - /url: /es
+          - img [ref=e15]
+          - text: ES
+        - link "Book Your Escape" [ref=e18] [cursor=pointer]:
+          - /url: "#booking"
+  - main [ref=e19]:
+    - generic [ref=e20]:
+      - generic [ref=e21]:
+        - generic [ref=e22]:
+          - generic "Aerial view of Hotel Terraza del Pacífico on Playa Hermosa, Costa Rica" [ref=e24]
+          - img [ref=e26]
+          - img [ref=e28]
+          - img [ref=e30]
+          - generic [ref=e34]:
+            - generic [ref=e35]:
+              - paragraph [ref=e36]: Playa Hermosa · Costa Rica
+              - heading "Where the Pacific Is Your Front Yard" [level=1] [ref=e37]
+              - paragraph [ref=e38]: Oceanfront luxury, unforgettable sunsets and authentic Costa Rican hospitality — directly on the sand of Playa Hermosa.
+              - generic [ref=e39]:
+                - link "Book Your Escape" [ref=e40] [cursor=pointer]:
+                  - /url: "#booking"
+                  - text: Book Your Escape
+                  - img [ref=e41]
+                - generic [ref=e43]:
+                  - generic [ref=e44]:
+                    - img [ref=e45]
+                    - img [ref=e47]
+                    - img [ref=e49]
+                    - img [ref=e51]
+                    - img [ref=e53]
+                  - generic [ref=e55]: "4.7"
+                  - generic [ref=e56]: Based on 42 customer reviews
+            - tablist "View slide" [ref=e57]:
+              - tab "View slide 1" [selected] [ref=e58] [cursor=pointer]
+              - tab "View slide 2" [ref=e59] [cursor=pointer]
+              - tab "View slide 3" [ref=e60] [cursor=pointer]
+              - tab "View slide 4" [ref=e61] [cursor=pointer]
+        - generic [ref=e65]:
+          - generic [ref=e66]:
+            - generic [ref=e67]: Check in
+            - generic [ref=e68]: Add dates
+          - generic [ref=e69]:
+            - generic [ref=e70]: Check out
+            - generic [ref=e71]: Add dates
+          - generic [ref=e72]:
+            - generic [ref=e73]: Guests
+            - generic [ref=e74]: 2 adults
+          - link "Check availability" [ref=e76] [cursor=pointer]:
+            - /url: "#booking"
+        - paragraph [ref=e78]: ◆Best rate guaranteed when you book direct
+      - generic [ref=e80]:
+        - generic [ref=e82]:
+          - generic [ref=e83]:
+            - paragraph [ref=e84]: All of it, steps from your room
+            - heading "One resort, a thousand reasons to never leave the sand" [level=2] [ref=e85]
+          - link "Explore the resort →" [ref=e86] [cursor=pointer]:
+            - /url: /en/sobre-nosotros
+        - generic [ref=e87]:
+          - link "Beachfront resort on Playa Hermosa 0 Meters to the Beach The resort is on the sand" [ref=e89] [cursor=pointer]:
+            - /url: /en/sobre-nosotros
+            - img "Beachfront resort on Playa Hermosa" [ref=e90]
+            - generic [ref=e92]:
+              - paragraph [ref=e93]: 0 Meters to the Beach
+              - paragraph [ref=e94]: The resort is on the sand
+          - link "LED-lit pool at night The signature pool Swim Under 1,200 Stars" [ref=e96] [cursor=pointer]:
+            - /url: /en/galeria
+            - img "LED-lit pool at night" [ref=e97]
+            - generic [ref=e99]:
+              - paragraph [ref=e100]: The signature pool
+              - paragraph [ref=e101]: Swim Under 1,200 Stars
+          - link "Oceanfront suite Oceanfront Suites Steps from the sand" [ref=e103] [cursor=pointer]:
+            - /url: /en/habitaciones
+            - img "Oceanfront suite" [ref=e104]
+            - generic [ref=e106]:
+              - paragraph [ref=e107]: Oceanfront Suites
+              - paragraph [ref=e108]: Steps from the sand
+          - link "Villa living room The Villa Room for the whole family" [ref=e110] [cursor=pointer]:
+            - /url: /en/habitaciones/villas
+            - img "Villa living room" [ref=e111]
+            - generic [ref=e113]:
+              - paragraph [ref=e114]: The Villa
+              - paragraph [ref=e115]: Room for the whole family
+          - link "Vivace Beachfront at night Vivace Beachfront Italian dining by Chef Luigi" [ref=e117] [cursor=pointer]:
+            - /url: /en/restaurante
+            - img "Vivace Beachfront at night" [ref=e118]
+            - generic [ref=e120]:
+              - paragraph [ref=e121]: Vivace Beachfront
+              - paragraph [ref=e122]: Italian dining by Chef Luigi
+          - link "Beachfront bar at sunset Beachfront Bar Sunset cocktails by the water" [ref=e124] [cursor=pointer]:
+            - /url: /en/restaurante
+            - img "Beachfront bar at sunset" [ref=e125]
+            - generic [ref=e127]:
+              - paragraph [ref=e128]: Beachfront Bar
+              - paragraph [ref=e129]: Sunset cocktails by the water
+          - link "Resort gardens and grounds Gardens & Grounds Tropical, barefoot, unhurried" [ref=e131] [cursor=pointer]:
+            - /url: /en/galeria
+            - img "Resort gardens and grounds" [ref=e132]
+            - generic [ref=e134]:
+              - paragraph [ref=e135]: Gardens & Grounds
+              - paragraph [ref=e136]: Tropical, barefoot, unhurried
+      - generic [ref=e137]:
+        - generic [ref=e140]:
+          - generic [ref=e141]:
+            - paragraph [ref=e142]: Experiences
+            - heading "Adventure Begins at Your Doorstep" [level=2] [ref=e143]
+          - generic [ref=e144]:
+            - generic [ref=e145]: Reserve before you arrive
+            - generic [ref=e146]:
+              - button "Previous experience" [ref=e147] [cursor=pointer]:
+                - img [ref=e148]
+              - button "Next experience" [ref=e150] [cursor=pointer]:
+                - img [ref=e151]
+        - generic [ref=e153]:
+          - article [ref=e154]:
+            - img "Whale Watching" [ref=e155]
+            - generic [ref=e157]: Jul – Oct
+            - generic [ref=e158]:
+              - heading "Whale Watching" [level=3] [ref=e159]
+              - paragraph [ref=e160]: Humpbacks off the sand — no boat, just the horizon.
+              - generic [ref=e161]:
+                - generic [ref=e162]: 2.5 hrs · seasonal
+                - link "Reserve" [ref=e163] [cursor=pointer]:
+                  - /url: /en/experiencias/whale-watching
+          - article [ref=e164]:
+            - img "Beachfront Yoga" [ref=e165]
+            - generic [ref=e167]: Included
+            - generic [ref=e168]:
+              - heading "Beachfront Yoga" [level=3] [ref=e169]
+              - paragraph [ref=e170]: Open the day with surf and breath at the water's edge.
+              - generic [ref=e171]:
+                - generic [ref=e172]: Daily · 7:00 AM
+                - link "Join" [ref=e173] [cursor=pointer]:
+                  - /url: /en/experiencias/beachfront-yoga
+          - article [ref=e174]:
+            - img "Live Music" [ref=e175]
+            - generic [ref=e177]: Nightly
+            - generic [ref=e178]:
+              - heading "Live Music" [level=3] [ref=e179]
+              - paragraph [ref=e180]: Sunset sets under the string lights.
+              - generic [ref=e181]:
+                - generic [ref=e182]: Fri – Sun · free
+                - link "See line-up" [ref=e183] [cursor=pointer]:
+                  - /url: /en/experiencias/live-music
+          - article [ref=e184]:
+            - img "Surf Nights" [ref=e185]
+            - generic [ref=e187]: Surf Nights
+            - generic [ref=e188]:
+              - heading "Surf Nights" [level=3] [ref=e189]
+              - paragraph [ref=e190]: A world-class break, floodlit for contests.
+              - generic [ref=e191]:
+                - generic [ref=e192]: Fridays · 6 PM
+                - link "Sign up" [ref=e193] [cursor=pointer]:
+                  - /url: /en/eventos/surf-nights
+          - article [ref=e194]:
+            - img "Turtle Nesting" [ref=e195]
+            - generic [ref=e197]: Seasonal · Night
+            - generic [ref=e198]:
+              - heading "Turtle Nesting" [level=3] [ref=e199]
+              - paragraph [ref=e200]: A quiet, protected ritual under the stars.
+              - generic [ref=e201]:
+                - generic [ref=e202]: Guided · small groups
+                - link "Reserve" [ref=e203] [cursor=pointer]:
+                  - /url: /en/experiencias/turtle-nesting
+          - article [ref=e204]:
+            - img "Weddings & Events" [ref=e205]
+            - generic [ref=e207]: By the sea
+            - generic [ref=e208]:
+              - heading "Weddings & Events" [level=3] [ref=e209]
+              - paragraph [ref=e210]: Barefoot ceremonies as the sun goes down.
+              - generic [ref=e211]:
+                - generic [ref=e212]: Bespoke planning
+                - link "Enquire" [ref=e213] [cursor=pointer]:
+                  - /url: /en/eventos/bodas
+        - generic [ref=e218]: Drag to explore →
+      - generic [ref=e220]:
+        - generic [ref=e222]:
+          - generic [ref=e223]:
+            - paragraph [ref=e224]: Stay
+            - heading "Comfort and Elegance Facing the Ocean" [level=2] [ref=e225]
+          - link "All Rooms & Suites →" [ref=e226] [cursor=pointer]:
+            - /url: /en/habitaciones
+        - generic [ref=e228]:
+          - generic [ref=e229]:
+            - img "Wide junior suite with pool view" [ref=e230]
+            - img "King bed in junior suite" [ref=e231]
+            - img "Art and details in junior suite" [ref=e232]
+            - img "Pool view from junior suite" [ref=e233]
+            - img "Junior suite terrace" [ref=e234]
+            - generic [ref=e236]: Most booked
+            - generic [ref=e238]: 01 / 05
+            - generic [ref=e245]:
+              - button "Previous photo" [ref=e246] [cursor=pointer]:
+                - img [ref=e247]
+              - button "Next photo" [ref=e249] [cursor=pointer]:
+                - img [ref=e250]
+          - generic [ref=e252]:
+            - paragraph [ref=e253]: Made for couples
+            - heading "Junior Suite" [level=3] [ref=e254]
+            - generic [ref=e255]:
+              - generic [ref=e256]:
+                - definition [ref=e257]: "2"
+                - term [ref=e258]: Guests
+              - generic [ref=e259]:
+                - definition [ref=e260]: 32 m²
+                - term [ref=e261]: Size
+              - generic [ref=e262]:
+                - definition [ref=e263]: 1 King
+                - term [ref=e264]: Bed
+              - generic [ref=e265]:
+                - definition [ref=e266]: Pool
+                - term [ref=e267]: View
+            - paragraph [ref=e268]: A calm, light-filled retreat for two — wake to the pool and the sound of the surf just beyond your terrace.
+            - paragraph [ref=e269]: Free WiFi · A/C · Flat-screen TV · Full resort access
+            - generic [ref=e270]:
+              - link "Reserve" [ref=e271] [cursor=pointer]:
+                - /url: "#booking"
+              - link "View Details" [ref=e272] [cursor=pointer]:
+                - /url: /en/habitaciones/junior-suite
+            - paragraph [ref=e273]: ◆ Best rate guaranteed when you book direct
+        - generic [ref=e274]:
+          - button "Superior Room Superior Room 4 · 32 m² · 2 Double · Pool" [ref=e275] [cursor=pointer]:
+            - img "Superior Room" [ref=e277]
+            - paragraph [ref=e278]: Superior Room
+            - paragraph [ref=e279]: 4 · 32 m² · 2 Double · Pool
+          - button "Standard Room Standard Room 4 · 32 m² · 2 Double · Gardens" [ref=e280] [cursor=pointer]:
+            - img "Standard Room" [ref=e282]
+            - paragraph [ref=e283]: Standard Room
+            - paragraph [ref=e284]: 4 · 32 m² · 2 Double · Gardens
+          - button "Junior Suite Junior Suite 2 · 32 m² · 1 King · viewing now" [ref=e285] [cursor=pointer]:
+            - img "Junior Suite" [ref=e287]
+            - paragraph [ref=e288]: Junior Suite
+            - paragraph [ref=e289]: 2 · 32 m² · 1 King · viewing now
+          - button "Villa Villa 6 · 72 m² · Multiple · Ocean" [ref=e290] [cursor=pointer]:
+            - img "Villa" [ref=e292]
+            - paragraph [ref=e293]: Villa
+            - paragraph [ref=e294]: 6 · 72 m² · Multiple · Ocean
+      - generic [ref=e295]:
+        - img "Vivace Beachfront restaurant facing the Pacific" [ref=e297]
+        - generic [ref=e298]:
+          - paragraph [ref=e299]: Vivace Beachfront
+          - heading "Mediterranean Soul, Pacific Setting" [level=2] [ref=e300]
+          - paragraph [ref=e301]: Sicilian Chef Luigi brings the flavors of southern Italy to the water's edge — fresh catch, handmade pasta and slow evenings with sand beneath your table.
+          - link "Explore the Menu" [ref=e302] [cursor=pointer]:
+            - /url: /en/restaurante
+      - paragraph [ref=e306]: Guest Stories
+      - generic [ref=e309]:
+        - paragraph [ref=e310]: Bienvenidos
+        - paragraph [ref=e311]: For more than twenty years, this stretch of sand has been a place to slow down — where mornings open with whale song on the horizon and evenings close with the sky on fire over the Pacific.
+        - generic [ref=e312]:
+          - generic [ref=e313]:
+            - definition [ref=e314]: 20+
+            - term [ref=e315]: Years of history
+          - generic [ref=e316]:
+            - definition [ref=e317]: 0 m
+            - term [ref=e318]: To the beach
+          - generic [ref=e319]:
+            - definition [ref=e320]: 90 min
+            - term [ref=e321]: From San José
+          - generic [ref=e322]:
+            - definition [ref=e323]: 1,200
+            - term [ref=e324]: LED lights in our pool
+      - generic [ref=e325]:
+        - generic [ref=e326]:
+          - paragraph [ref=e327]: Location
+          - heading "Easy to Reach, Hard to Leave" [level=2] [ref=e328]
+          - paragraph [ref=e329]: Playa Hermosa, Jacó — on the central Pacific coast, just 90 minutes from San José International Airport.
+          - generic [ref=e330]:
+            - text: Terraza del Pacífico
+            - text: Playa Hermosa, 34, Provincia de Puntarenas
+            - text: Jacó, 04023 · Costa Rica
+        - iframe [ref=e332]
+      - generic [ref=e335]:
+        - paragraph [ref=e336]: "@terrazadelpacificocr"
+        - heading "Follow Us on Instagram" [level=2] [ref=e337]
+      - generic [ref=e338]:
+        - img "Aerial view of the pool and beach at Terraza del Pacífico" [ref=e339]
+        - generic [ref=e341]:
+          - heading "Your Place in Paradise Is Waiting" [level=2] [ref=e343]
+          - generic [ref=e344]:
+            - link "Book Direct" [ref=e345] [cursor=pointer]:
+              - /url: "#booking"
+            - link "WhatsApp Us" [ref=e346] [cursor=pointer]:
+              - /url: https://wa.me/50684319953
+          - paragraph [ref=e348]: ◆ Best rate guaranteed when you book direct
+  - contentinfo [ref=e349]:
+    - generic [ref=e350]:
+      - generic [ref=e351]:
+        - paragraph [ref=e352]: Hotel Terraza del Pacífico
+        - paragraph [ref=e353]: Warm water and cool waves.
+        - paragraph [ref=e354]:
+          - img [ref=e355]
+          - text: Terraza del Pacífico
+        - generic [ref=e358]:
+          - link "Instagram" [ref=e359] [cursor=pointer]:
+            - /url: https://www.instagram.com/terrazadelpacificocr/
+            - img [ref=e360]
+          - link "Facebook" [ref=e363] [cursor=pointer]:
+            - /url: https://www.facebook.com/TerrazadelPacifico
+            - img [ref=e364]
+          - link "TikTok" [ref=e366] [cursor=pointer]:
+            - /url: https://www.tiktok.com/@terrazadelpacifico
+            - img [ref=e367]
+      - generic [ref=e369]:
+        - paragraph [ref=e370]: Explore
+        - list [ref=e371]:
+          - listitem [ref=e372]:
+            - link "Rooms" [ref=e373] [cursor=pointer]:
+              - /url: /en/habitaciones
+          - listitem [ref=e374]:
+            - link "Restaurant" [ref=e375] [cursor=pointer]:
+              - /url: /en/restaurante
+          - listitem [ref=e376]:
+            - link "Events" [ref=e377] [cursor=pointer]:
+              - /url: /en/eventos
+          - listitem [ref=e378]:
+            - link "Experiences" [ref=e379] [cursor=pointer]:
+              - /url: /en/experiencias
+          - listitem [ref=e380]:
+            - link "Gallery" [ref=e381] [cursor=pointer]:
+              - /url: /en/galeria
+          - listitem [ref=e382]:
+            - link "Blog" [ref=e383] [cursor=pointer]:
+              - /url: /en/blog
+      - generic [ref=e384]:
+        - paragraph [ref=e385]: Contact
+        - list [ref=e386]:
+          - listitem [ref=e387]:
+            - link "info@terrazadelpacifico.com" [ref=e388] [cursor=pointer]:
+              - /url: mailto:info@terrazadelpacifico.com
+              - img [ref=e389]
+              - text: info@terrazadelpacifico.com
+          - listitem [ref=e392]:
+            - 'link "WhatsApp: +506 8431 9953" [ref=e393] [cursor=pointer]':
+              - /url: https://wa.me/50684319953
+              - img [ref=e394]
+              - text: "WhatsApp: +506 8431 9953"
+      - generic [ref=e396]:
+        - paragraph [ref=e397]: Schedule
+        - list [ref=e398]:
+          - listitem [ref=e399]: "Check-in: 3:00 PM"
+          - listitem [ref=e400]: "Check-out: 1:00 PM"
+          - listitem [ref=e401]: "Pools: 8:30 AM – 8:30 PM"
+    - generic [ref=e402]: © 2026 Hotel Terraza del Pacífico. All rights reserved.
+  - link "Chat on WhatsApp" [ref=e403] [cursor=pointer]:
+    - /url: https://wa.me/50684319953
+    - img [ref=e404]

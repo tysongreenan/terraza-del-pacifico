@@ -1,0 +1,280 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "TERRAZA del Pacífico" [ref=e5] [cursor=pointer]:
+        - /url: /en
+      - navigation [ref=e6]:
+        - link "Home" [ref=e7] [cursor=pointer]:
+          - /url: /en
+        - link "Rooms" [ref=e8] [cursor=pointer]:
+          - /url: /en/habitaciones
+        - link "Restaurant" [ref=e9] [cursor=pointer]:
+          - /url: /en/restaurante
+        - link "Bars" [ref=e10] [cursor=pointer]:
+          - /url: /en/bares
+        - link "Events" [ref=e11] [cursor=pointer]:
+          - /url: /en/eventos
+        - link "Experiences" [ref=e12] [cursor=pointer]:
+          - /url: /en/experiencias
+        - link "Gallery" [ref=e13] [cursor=pointer]:
+          - /url: /en/galeria
+        - link "About Us" [ref=e14] [cursor=pointer]:
+          - /url: /en/sobre-nosotros
+      - generic [ref=e15]:
+        - link "Ver en español" [ref=e16] [cursor=pointer]:
+          - /url: /es/galeria
+          - img [ref=e17]
+          - text: ES
+        - link "Book Your Escape" [ref=e20] [cursor=pointer]:
+          - /url: "#booking"
+        - button "Open menu" [ref=e22]:
+          - img [ref=e23]
+  - main [ref=e24]:
+    - generic [ref=e25]:
+      - img [ref=e26]
+      - article [ref=e27]:
+        - generic [ref=e28]:
+          - img "Gallery" [ref=e29]
+          - generic [ref=e31]:
+            - paragraph [ref=e32]: Hotel Terraza del Pacífico
+            - heading "Gallery" [level=1] [ref=e33]
+            - paragraph [ref=e34]: Browse photos of the hotel, rooms, restaurant, events and experiences in Playa Hermosa, Costa Rica.
+            - generic [ref=e35]:
+              - link "Book Your Escape" [ref=e36] [cursor=pointer]:
+                - /url: "#booking"
+                - text: Book Your Escape
+                - img [ref=e37]
+              - link "WhatsApp" [ref=e39] [cursor=pointer]:
+                - /url: https://wa.me/50684319953
+                - img [ref=e40]
+                - text: WhatsApp
+        - generic [ref=e44]:
+          - paragraph [ref=e45]: Visual gallery
+          - heading "Beach, pool, weddings and resort life" [level=2] [ref=e46]
+          - paragraph [ref=e47]: From first light on the sand to the glow of the pool after dark — moments from life at Terraza del Pacífico.
+        - generic [ref=e49]:
+          - generic [ref=e51]:
+            - paragraph [ref=e52]: Sun & water
+            - heading "The Pool" [level=2] [ref=e53]
+          - generic [ref=e55]:
+            - button "Open photo 1 of 8" [ref=e56]:
+              - img "The Pool — Terraza del Pacífico (1)" [ref=e57]
+              - img [ref=e59]
+            - button "Open photo 2 of 8" [ref=e62]:
+              - img "The Pool — Terraza del Pacífico (2)" [ref=e63]
+              - img [ref=e65]
+            - button "Open photo 3 of 8" [ref=e68]:
+              - img "The Pool — Terraza del Pacífico (3)" [ref=e69]
+              - img [ref=e71]
+            - button "Open photo 4 of 8" [ref=e74]:
+              - img "The Pool — Terraza del Pacífico (4)" [ref=e75]
+              - img [ref=e77]
+            - button "Open photo 5 of 8" [ref=e80]:
+              - img "The Pool — Terraza del Pacífico (5)" [ref=e81]
+              - img [ref=e83]
+            - button "Open photo 6 of 8" [ref=e86]:
+              - img "The Pool — Terraza del Pacífico (6)" [ref=e87]
+              - img [ref=e89]
+            - button "Open photo 7 of 8" [ref=e92]:
+              - img "The Pool — Terraza del Pacífico (7)" [ref=e93]
+              - img [ref=e95]
+            - button "Open photo 8 of 8" [ref=e98]:
+              - img "The Pool — Terraza del Pacífico (8)" [ref=e99]
+              - img [ref=e101]
+        - generic [ref=e105]:
+          - generic [ref=e107]:
+            - paragraph [ref=e108]: Celebrations
+            - heading "Weddings" [level=2] [ref=e109]
+          - generic [ref=e111]:
+            - button "Open photo 1 of 8" [ref=e112]:
+              - img "Weddings — Terraza del Pacífico (1)" [ref=e113]
+              - img [ref=e115]
+            - button "Open photo 2 of 8" [ref=e118]:
+              - img "Weddings — Terraza del Pacífico (2)" [ref=e119]
+              - img [ref=e121]
+            - button "Open photo 3 of 8" [ref=e124]:
+              - img "Weddings — Terraza del Pacífico (3)" [ref=e125]
+              - img [ref=e127]
+            - button "Open photo 4 of 8" [ref=e130]:
+              - img "Weddings — Terraza del Pacífico (4)" [ref=e131]
+              - img [ref=e133]
+            - button "Open photo 5 of 8" [ref=e136]:
+              - img "Weddings — Terraza del Pacífico (5)" [ref=e137]
+              - img [ref=e139]
+            - button "Open photo 6 of 8" [ref=e142]:
+              - img "Weddings — Terraza del Pacífico (6)" [ref=e143]
+              - img [ref=e145]
+            - button "Open photo 7 of 8" [ref=e148]:
+              - img "Weddings — Terraza del Pacífico (7)" [ref=e149]
+              - img [ref=e151]
+            - button "Open photo 8 of 8" [ref=e154]:
+              - img "Weddings — Terraza del Pacífico (8)" [ref=e155]
+              - img [ref=e157]
+        - generic [ref=e161]:
+          - generic [ref=e163]:
+            - paragraph [ref=e164]: Vivace Beachfront
+            - heading "Dining" [level=2] [ref=e165]
+          - generic [ref=e167]:
+            - button "Open photo 1 of 8" [ref=e168]:
+              - img "Dining — Terraza del Pacífico (1)" [ref=e169]
+              - img [ref=e171]
+            - button "Open photo 2 of 8" [ref=e174]:
+              - img "Dining — Terraza del Pacífico (2)" [ref=e175]
+              - img [ref=e177]
+            - button "Open photo 3 of 8" [ref=e180]:
+              - img "Dining — Terraza del Pacífico (3)" [ref=e181]
+              - img [ref=e183]
+            - button "Open photo 4 of 8" [ref=e186]:
+              - img "Dining — Terraza del Pacífico (4)" [ref=e187]
+              - img [ref=e189]
+            - button "Open photo 5 of 8" [ref=e192]:
+              - img "Dining — Terraza del Pacífico (5)" [ref=e193]
+              - img [ref=e195]
+            - button "Open photo 6 of 8" [ref=e198]:
+              - img "Dining — Terraza del Pacífico (6)" [ref=e199]
+              - img [ref=e201]
+            - button "Open photo 7 of 8" [ref=e204]:
+              - img "Dining — Terraza del Pacífico (7)" [ref=e205]
+              - img [ref=e207]
+            - button "Open photo 8 of 8" [ref=e210]:
+              - img "Dining — Terraza del Pacífico (8)" [ref=e211]
+              - img [ref=e213]
+        - generic [ref=e217]:
+          - generic [ref=e219]:
+            - paragraph [ref=e220]: Where you stay
+            - heading "Suites & Rooms" [level=2] [ref=e221]
+          - generic [ref=e223]:
+            - button "Open photo 1 of 8" [ref=e224]:
+              - img "Suites & Rooms — Terraza del Pacífico (1)" [ref=e225]
+              - img [ref=e227]
+            - button "Open photo 2 of 8" [ref=e230]:
+              - img "Suites & Rooms — Terraza del Pacífico (2)" [ref=e231]
+              - img [ref=e233]
+            - button "Open photo 3 of 8" [ref=e236]:
+              - img "Suites & Rooms — Terraza del Pacífico (3)" [ref=e237]
+              - img [ref=e239]
+            - button "Open photo 4 of 8" [ref=e242]:
+              - img "Suites & Rooms — Terraza del Pacífico (4)" [ref=e243]
+              - img [ref=e245]
+            - button "Open photo 5 of 8" [ref=e248]:
+              - img "Suites & Rooms — Terraza del Pacífico (5)" [ref=e249]
+              - img [ref=e251]
+            - button "Open photo 6 of 8" [ref=e254]:
+              - img "Suites & Rooms — Terraza del Pacífico (6)" [ref=e255]
+              - img [ref=e257]
+            - button "Open photo 7 of 8" [ref=e260]:
+              - img "Suites & Rooms — Terraza del Pacífico (7)" [ref=e261]
+              - img [ref=e263]
+            - button "Open photo 8 of 8" [ref=e266]:
+              - img "Suites & Rooms — Terraza del Pacífico (8)" [ref=e267]
+              - img [ref=e269]
+        - generic [ref=e273]:
+          - generic [ref=e275]:
+            - paragraph [ref=e276]: Sea & surroundings
+            - heading "Beach & Grounds" [level=2] [ref=e277]
+          - generic [ref=e279]:
+            - button "Open photo 1 of 8" [ref=e280]:
+              - img "Beach & Grounds — Terraza del Pacífico (1)" [ref=e281]
+              - img [ref=e283]
+            - button "Open photo 2 of 8" [ref=e286]:
+              - img "Beach & Grounds — Terraza del Pacífico (2)" [ref=e287]
+              - img [ref=e289]
+            - button "Open photo 3 of 8" [ref=e292]:
+              - img "Beach & Grounds — Terraza del Pacífico (3)" [ref=e293]
+              - img [ref=e295]
+            - button "Open photo 4 of 8" [ref=e298]:
+              - img "Beach & Grounds — Terraza del Pacífico (4)" [ref=e299]
+              - img [ref=e301]
+            - button "Open photo 5 of 8" [ref=e304]:
+              - img "Beach & Grounds — Terraza del Pacífico (5)" [ref=e305]
+              - img [ref=e307]
+            - button "Open photo 6 of 8" [ref=e310]:
+              - img "Beach & Grounds — Terraza del Pacífico (6)" [ref=e311]
+              - img [ref=e313]
+            - button "Open photo 7 of 8" [ref=e316]:
+              - img "Beach & Grounds — Terraza del Pacífico (7)" [ref=e317]
+              - img [ref=e319]
+            - button "Open photo 8 of 8" [ref=e322]:
+              - img "Beach & Grounds — Terraza del Pacífico (8)" [ref=e323]
+              - img [ref=e325]
+        - generic [ref=e329]:
+          - generic [ref=e330]:
+            - paragraph [ref=e331]: Direct booking
+            - heading "Ready to plan your stay?" [level=2] [ref=e332]
+            - paragraph [ref=e333]: Contact the hotel for availability, events, restaurant reservations, or help choosing the right room.
+          - generic [ref=e334]:
+            - link "Book Your Escape" [ref=e335] [cursor=pointer]:
+              - /url: "#booking"
+            - link "WhatsApp" [ref=e336] [cursor=pointer]:
+              - /url: https://wa.me/50684319953
+              - img [ref=e337]
+              - text: WhatsApp
+          - paragraph [ref=e340]: ◆ Best rate guaranteed
+  - contentinfo [ref=e341]:
+    - generic [ref=e342]:
+      - generic [ref=e343]:
+        - paragraph [ref=e344]: Hotel Terraza del Pacífico
+        - paragraph [ref=e345]: Warm water and cool waves.
+        - paragraph [ref=e346]:
+          - img [ref=e347]
+          - text: Terraza del Pacífico
+        - generic [ref=e350]:
+          - link "Instagram" [ref=e351] [cursor=pointer]:
+            - /url: https://www.instagram.com/terrazadelpacificocr/
+            - img [ref=e352]
+          - link "Facebook" [ref=e355] [cursor=pointer]:
+            - /url: https://www.facebook.com/TerrazadelPacifico
+            - img [ref=e356]
+          - link "TikTok" [ref=e358] [cursor=pointer]:
+            - /url: https://www.tiktok.com/@terrazadelpacifico
+            - img [ref=e359]
+      - generic [ref=e361]:
+        - paragraph [ref=e362]: Explore
+        - list [ref=e363]:
+          - listitem [ref=e364]:
+            - link "Rooms" [ref=e365] [cursor=pointer]:
+              - /url: /en/habitaciones
+          - listitem [ref=e366]:
+            - link "Restaurant" [ref=e367] [cursor=pointer]:
+              - /url: /en/restaurante
+          - listitem [ref=e368]:
+            - link "Bars" [ref=e369] [cursor=pointer]:
+              - /url: /en/bares
+          - listitem [ref=e370]:
+            - link "Events" [ref=e371] [cursor=pointer]:
+              - /url: /en/eventos
+          - listitem [ref=e372]:
+            - link "Experiences" [ref=e373] [cursor=pointer]:
+              - /url: /en/experiencias
+          - listitem [ref=e374]:
+            - link "Gallery" [ref=e375] [cursor=pointer]:
+              - /url: /en/galeria
+          - listitem [ref=e376]:
+            - link "Blog" [ref=e377] [cursor=pointer]:
+              - /url: /en/blog
+      - generic [ref=e378]:
+        - paragraph [ref=e379]: Contact
+        - list [ref=e380]:
+          - listitem [ref=e381]:
+            - link "info@terrazadelpacifico.com" [ref=e382] [cursor=pointer]:
+              - /url: mailto:info@terrazadelpacifico.com
+              - img [ref=e383]
+              - text: info@terrazadelpacifico.com
+          - listitem [ref=e386]:
+            - 'link "WhatsApp: +506 8431 9953" [ref=e387] [cursor=pointer]':
+              - /url: https://wa.me/50684319953
+              - img [ref=e388]
+              - text: "WhatsApp: +506 8431 9953"
+      - generic [ref=e390]:
+        - paragraph [ref=e391]: Schedule
+        - list [ref=e392]:
+          - listitem [ref=e393]: "Check-in: 3:00 PM"
+          - listitem [ref=e394]: "Check-out: 1:00 PM"
+          - listitem [ref=e395]: "Pools: 8:30 AM – 8:30 PM"
+    - generic [ref=e396]: © 2026 Hotel Terraza del Pacífico. All rights reserved.
+  - link "Chat on WhatsApp" [ref=e397] [cursor=pointer]:
+    - /url: https://wa.me/50684319953
+    - img [ref=e398]
+  - alert [ref=e400]

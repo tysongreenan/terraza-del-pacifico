@@ -1,0 +1,301 @@
+- generic [active] [ref=e1]:
+  - link "Saltar al contenido" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "TERRAZA del Pacífico" [ref=e5] [cursor=pointer]:
+        - /url: /es
+      - generic [ref=e6]:
+        - link "View in English" [ref=e7] [cursor=pointer]:
+          - /url: /en/galeria
+          - img [ref=e8]
+          - text: EN
+        - button "Open menu" [ref=e12] [cursor=pointer]:
+          - img [ref=e13]
+  - main [ref=e14]:
+    - generic [ref=e15]:
+      - img [ref=e16]
+      - article [ref=e17]:
+        - generic [ref=e18]:
+          - img "Gallery" [ref=e19]
+          - generic [ref=e22]:
+            - paragraph [ref=e23]: Hotel Terraza del Pacífico
+            - heading "Gallery" [level=1] [ref=e24]
+            - paragraph [ref=e25]: Browse photos of the hotel, rooms, restaurant, events and experiences in Playa Hermosa, Costa Rica.
+            - generic [ref=e26]:
+              - link "Reservar" [ref=e27] [cursor=pointer]:
+                - /url: "#booking"
+                - text: Reservar
+                - img [ref=e28]
+              - link "WhatsApp" [ref=e30] [cursor=pointer]:
+                - /url: https://wa.me/50684319953
+                - img [ref=e31]
+                - text: WhatsApp
+        - generic [ref=e35]:
+          - paragraph [ref=e36]: Galería visual
+          - heading "Playa, piscina, bodas y vida en el resort" [level=2] [ref=e37]
+          - paragraph [ref=e38]: "Desde la primera luz sobre la arena hasta el brillo de la piscina al anochecer: momentos de la vida en Terraza del Pacífico."
+        - generic [ref=e40]:
+          - generic [ref=e42]:
+            - paragraph [ref=e43]: Sol y agua
+            - heading "La piscina" [level=2] [ref=e44]
+          - generic [ref=e46]:
+            - button "Abrir foto 1 de 8" [ref=e47] [cursor=pointer]:
+              - img "La piscina — Terraza del Pacífico (1)" [ref=e48]
+              - generic:
+                - img
+            - button "Abrir foto 2 de 8" [ref=e49] [cursor=pointer]:
+              - img "La piscina — Terraza del Pacífico (2)" [ref=e50]
+              - generic:
+                - img
+            - button "Abrir foto 3 de 8" [ref=e51] [cursor=pointer]:
+              - img "La piscina — Terraza del Pacífico (3)" [ref=e52]
+              - generic:
+                - img
+            - button "Abrir foto 4 de 8" [ref=e53] [cursor=pointer]:
+              - img "La piscina — Terraza del Pacífico (4)" [ref=e54]
+              - generic:
+                - img
+            - button "Abrir foto 5 de 8" [ref=e55] [cursor=pointer]:
+              - img "La piscina — Terraza del Pacífico (5)" [ref=e56]
+              - generic:
+                - img
+            - button "Abrir foto 6 de 8" [ref=e57] [cursor=pointer]:
+              - img "La piscina — Terraza del Pacífico (6)" [ref=e58]
+              - generic:
+                - img
+            - button "Abrir foto 7 de 8" [ref=e59] [cursor=pointer]:
+              - img "La piscina — Terraza del Pacífico (7)" [ref=e60]
+              - generic:
+                - img
+            - button "Abrir foto 8 de 8" [ref=e61] [cursor=pointer]:
+              - img "La piscina — Terraza del Pacífico (8)" [ref=e62]
+              - generic:
+                - img
+        - generic [ref=e64]:
+          - generic [ref=e66]:
+            - paragraph [ref=e67]: Celebraciones
+            - heading "Bodas" [level=2] [ref=e68]
+          - generic [ref=e70]:
+            - button "Abrir foto 1 de 8" [ref=e71] [cursor=pointer]:
+              - img "Bodas — Terraza del Pacífico (1)" [ref=e72]
+              - generic:
+                - img
+            - button "Abrir foto 2 de 8" [ref=e73] [cursor=pointer]:
+              - img "Bodas — Terraza del Pacífico (2)" [ref=e74]
+              - generic:
+                - img
+            - button "Abrir foto 3 de 8" [ref=e75] [cursor=pointer]:
+              - img "Bodas — Terraza del Pacífico (3)" [ref=e76]
+              - generic:
+                - img
+            - button "Abrir foto 4 de 8" [ref=e77] [cursor=pointer]:
+              - img "Bodas — Terraza del Pacífico (4)" [ref=e78]
+              - generic:
+                - img
+            - button "Abrir foto 5 de 8" [ref=e79] [cursor=pointer]:
+              - img "Bodas — Terraza del Pacífico (5)" [ref=e80]
+              - generic:
+                - img
+            - button "Abrir foto 6 de 8" [ref=e81] [cursor=pointer]:
+              - img "Bodas — Terraza del Pacífico (6)" [ref=e82]
+              - generic:
+                - img
+            - button "Abrir foto 7 de 8" [ref=e83] [cursor=pointer]:
+              - img "Bodas — Terraza del Pacífico (7)" [ref=e84]
+              - generic:
+                - img
+            - button "Abrir foto 8 de 8" [ref=e85] [cursor=pointer]:
+              - img "Bodas — Terraza del Pacífico (8)" [ref=e86]
+              - generic:
+                - img
+        - generic [ref=e88]:
+          - generic [ref=e90]:
+            - paragraph [ref=e91]: Vivace Beachfront
+            - heading "Gastronomía" [level=2] [ref=e92]
+          - generic [ref=e94]:
+            - button "Abrir foto 1 de 8" [ref=e95] [cursor=pointer]:
+              - img "Gastronomía — Terraza del Pacífico (1)" [ref=e96]
+              - generic:
+                - img
+            - button "Abrir foto 2 de 8" [ref=e97] [cursor=pointer]:
+              - img "Gastronomía — Terraza del Pacífico (2)" [ref=e98]
+              - generic:
+                - img
+            - button "Abrir foto 3 de 8" [ref=e99] [cursor=pointer]:
+              - img "Gastronomía — Terraza del Pacífico (3)" [ref=e100]
+              - generic:
+                - img
+            - button "Abrir foto 4 de 8" [ref=e101] [cursor=pointer]:
+              - img "Gastronomía — Terraza del Pacífico (4)" [ref=e102]
+              - generic:
+                - img
+            - button "Abrir foto 5 de 8" [ref=e103] [cursor=pointer]:
+              - img "Gastronomía — Terraza del Pacífico (5)" [ref=e104]
+              - generic:
+                - img
+            - button "Abrir foto 6 de 8" [ref=e105] [cursor=pointer]:
+              - img "Gastronomía — Terraza del Pacífico (6)" [ref=e106]
+              - generic:
+                - img
+            - button "Abrir foto 7 de 8" [ref=e107] [cursor=pointer]:
+              - img "Gastronomía — Terraza del Pacífico (7)" [ref=e108]
+              - generic:
+                - img
+            - button "Abrir foto 8 de 8" [ref=e109] [cursor=pointer]:
+              - img "Gastronomía — Terraza del Pacífico (8)" [ref=e110]
+              - generic:
+                - img
+        - generic [ref=e112]:
+          - generic [ref=e114]:
+            - paragraph [ref=e115]: Dónde te alojas
+            - heading "Suites y habitaciones" [level=2] [ref=e116]
+          - generic [ref=e118]:
+            - button "Abrir foto 1 de 8" [ref=e119] [cursor=pointer]:
+              - img "Suites y habitaciones — Terraza del Pacífico (1)" [ref=e120]
+              - generic:
+                - img
+            - button "Abrir foto 2 de 8" [ref=e121] [cursor=pointer]:
+              - img "Suites y habitaciones — Terraza del Pacífico (2)" [ref=e122]
+              - generic:
+                - img
+            - button "Abrir foto 3 de 8" [ref=e123] [cursor=pointer]:
+              - img "Suites y habitaciones — Terraza del Pacífico (3)" [ref=e124]
+              - generic:
+                - img
+            - button "Abrir foto 4 de 8" [ref=e125] [cursor=pointer]:
+              - img "Suites y habitaciones — Terraza del Pacífico (4)" [ref=e126]
+              - generic:
+                - img
+            - button "Abrir foto 5 de 8" [ref=e127] [cursor=pointer]:
+              - img "Suites y habitaciones — Terraza del Pacífico (5)" [ref=e128]
+              - generic:
+                - img
+            - button "Abrir foto 6 de 8" [ref=e129] [cursor=pointer]:
+              - img "Suites y habitaciones — Terraza del Pacífico (6)" [ref=e130]
+              - generic:
+                - img
+            - button "Abrir foto 7 de 8" [ref=e131] [cursor=pointer]:
+              - img "Suites y habitaciones — Terraza del Pacífico (7)" [ref=e132]
+              - generic:
+                - img
+            - button "Abrir foto 8 de 8" [ref=e133] [cursor=pointer]:
+              - img "Suites y habitaciones — Terraza del Pacífico (8)" [ref=e134]
+              - generic:
+                - img
+        - generic [ref=e136]:
+          - generic [ref=e138]:
+            - paragraph [ref=e139]: Mar y entorno
+            - heading "Playa y entorno" [level=2] [ref=e140]
+          - generic [ref=e142]:
+            - button "Abrir foto 1 de 8" [ref=e143] [cursor=pointer]:
+              - img "Playa y entorno — Terraza del Pacífico (1)" [ref=e144]
+              - generic:
+                - img
+            - button "Abrir foto 2 de 8" [ref=e145] [cursor=pointer]:
+              - img "Playa y entorno — Terraza del Pacífico (2)" [ref=e146]
+              - generic:
+                - img
+            - button "Abrir foto 3 de 8" [ref=e147] [cursor=pointer]:
+              - img "Playa y entorno — Terraza del Pacífico (3)" [ref=e148]
+              - generic:
+                - img
+            - button "Abrir foto 4 de 8" [ref=e149] [cursor=pointer]:
+              - img "Playa y entorno — Terraza del Pacífico (4)" [ref=e150]
+              - generic:
+                - img
+            - button "Abrir foto 5 de 8" [ref=e151] [cursor=pointer]:
+              - img "Playa y entorno — Terraza del Pacífico (5)" [ref=e152]
+              - generic:
+                - img
+            - button "Abrir foto 6 de 8" [ref=e153] [cursor=pointer]:
+              - img "Playa y entorno — Terraza del Pacífico (6)" [ref=e154]
+              - generic:
+                - img
+            - button "Abrir foto 7 de 8" [ref=e155] [cursor=pointer]:
+              - img "Playa y entorno — Terraza del Pacífico (7)" [ref=e156]
+              - generic:
+                - img
+            - button "Abrir foto 8 de 8" [ref=e157] [cursor=pointer]:
+              - img "Playa y entorno — Terraza del Pacífico (8)" [ref=e158]
+              - generic:
+                - img
+        - generic [ref=e161]:
+          - generic [ref=e162]:
+            - paragraph [ref=e163]: Reserva directa
+            - heading "¿Listo para planear tu estancia?" [level=2] [ref=e164]
+            - paragraph [ref=e165]: Contacta al hotel para disponibilidad, eventos, restaurante o ayuda para elegir la habitación ideal.
+          - generic [ref=e166]:
+            - link "Reservar" [ref=e167] [cursor=pointer]:
+              - /url: "#booking"
+            - link "WhatsApp" [ref=e168] [cursor=pointer]:
+              - /url: https://wa.me/50684319953
+              - img [ref=e169]
+              - text: WhatsApp
+          - paragraph [ref=e172]: ◆ Mejor tarifa garantizada
+  - contentinfo [ref=e173]:
+    - generic [ref=e174]:
+      - generic [ref=e175]:
+        - paragraph [ref=e176]: Hotel Terraza del Pacífico
+        - paragraph [ref=e177]: Aguas cálidas y olas frescas.
+        - paragraph [ref=e178]:
+          - img [ref=e179]
+          - text: Terraza del Pacífico
+        - generic [ref=e182]:
+          - link "Instagram" [ref=e183] [cursor=pointer]:
+            - /url: https://www.instagram.com/terrazadelpacificocr/
+            - img [ref=e184]
+          - link "Facebook" [ref=e187] [cursor=pointer]:
+            - /url: https://www.facebook.com/TerrazadelPacifico
+            - img [ref=e188]
+          - link "TikTok" [ref=e190] [cursor=pointer]:
+            - /url: https://www.tiktok.com/@terrazadelpacifico
+            - img [ref=e191]
+      - generic [ref=e193]:
+        - paragraph [ref=e194]: Explorar
+        - list [ref=e195]:
+          - listitem [ref=e196]:
+            - link "Habitaciones" [ref=e197] [cursor=pointer]:
+              - /url: /es/habitaciones
+          - listitem [ref=e198]:
+            - link "Restaurante" [ref=e199] [cursor=pointer]:
+              - /url: /es/restaurante
+          - listitem [ref=e200]:
+            - link "Bares" [ref=e201] [cursor=pointer]:
+              - /url: /es/bares
+          - listitem [ref=e202]:
+            - link "Eventos" [ref=e203] [cursor=pointer]:
+              - /url: /es/eventos
+          - listitem [ref=e204]:
+            - link "Experiencias" [ref=e205] [cursor=pointer]:
+              - /url: /es/experiencias
+          - listitem [ref=e206]:
+            - link "Galería" [ref=e207] [cursor=pointer]:
+              - /url: /es/galeria
+          - listitem [ref=e208]:
+            - link "Blog" [ref=e209] [cursor=pointer]:
+              - /url: /es/blog
+      - generic [ref=e210]:
+        - paragraph [ref=e211]: Contacto
+        - list [ref=e212]:
+          - listitem [ref=e213]:
+            - link "info@terrazadelpacifico.com" [ref=e214] [cursor=pointer]:
+              - /url: mailto:info@terrazadelpacifico.com
+              - img [ref=e215]
+              - text: info@terrazadelpacifico.com
+          - listitem [ref=e218]:
+            - 'link "WhatsApp: +506 8431 9953" [ref=e219] [cursor=pointer]':
+              - /url: https://wa.me/50684319953
+              - img [ref=e220]
+              - text: "WhatsApp: +506 8431 9953"
+      - generic [ref=e222]:
+        - paragraph [ref=e223]: Horario
+        - list [ref=e224]:
+          - listitem [ref=e225]: "Check-in: 3:00 PM"
+          - listitem [ref=e226]: "Check-out: 1:00 PM"
+          - listitem [ref=e227]: "Piscinas: 8:30 AM – 8:30 PM"
+    - generic [ref=e228]: © 2026 Hotel Terraza del Pacífico. Todos los derechos reservados.
+  - link "Escríbenos por WhatsApp" [ref=e229] [cursor=pointer]:
+    - /url: https://wa.me/50684319953
+    - img [ref=e230]
+  - alert [ref=e232]

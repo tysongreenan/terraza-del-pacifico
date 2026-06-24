@@ -1,0 +1,364 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Pause, Play, Star } from "lucide-react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { heroSlides } from "@/content/hero-slides";
+import { HeroBookingBar } from "@/components/home/hero-booking-bar";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import type { Locale } from "@/lib/i18n";
+import type { Dictionary } from "@/lib/dictionaries";
+import { bookingHref } from "@/lib/site";
+
+const AUTO_ADVANCE_MS = 8000;
+
+function SlideThumb({
+  slide,
+  index,
+  active,
+  onSelect,
+  label,
+  size,
+}: {
+  slide: (typeof heroSlides)[number];
+  index: number;
+  active: number;
+  onSelect: (index: number) => void;
+  label: string;
+  size: "sm" | "md";
+}) {
+  const thumb = slide.type === "video" ? slide.poster : slide.src;
+  const isActive = index === active;
+
+  return (
+    <button
+      type="button"
+      role="tab"
+      aria-selected={isActive}
+      aria-label={`${label} ${index + 1}`}
+      onClick={() => onSelect(index)}
+      className={cn(
+        "relative shrink-0 overflow-hidden rounded-md border-2 transition-all duration-300",
+        size === "sm"
+          ? "h-16 w-16"
+          : "h-20 w-20 md:h-24 md:w-24",
+        isActive
+          ? "scale-105 border-white shadow-lg shadow-black/30"
+          : "border-white/35 opacity-80 hover:opacity-100"
+      )}
+    >
+      <Image
+        src={thumb}
+        alt=""
+        fill
+        sizes={size === "sm" ? "64px" : "96px"}
+        className="object-cover"
+      />
+    </button>
+  );
+}
+
+function PlayPauseButton({
+  locale,
+  stopped,
+  onToggle,
+}: {
+  locale: Locale;
+  stopped: boolean;
+  onToggle: () => void;
+}) {
+  const label = stopped
+    ? locale === "en"
+      ? "Play slideshow"
+      : "Reproducir presentación"
+    : locale === "en"
+      ? "Pause slideshow"
+      : "Pausar presentación";
+
+  return (
+    <button
+      type="button"
+      onClick={onToggle}
+      aria-label={label}
+      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/45 bg-black/20 text-white backdrop-blur-sm transition-colors hover:bg-black/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+    >
+      {stopped ? (
+        <Play className="h-4 w-4" aria-hidden />
+      ) : (
+        <Pause className="h-4 w-4" aria-hidden />
+      )}
+    </button>
+  );
+}
+
+function StarRating({ score }: { score: string }) {
+  const value = Number.parseFloat(score);
+  const full = Math.floor(value);
+  const partial = value - full >= 0.5;
+
+  return (
+    <div className="flex items-center gap-1" aria-hidden>
+      {Array.from({ length: 5 }).map((_, i) => {
+        const filled = i < full || (i === full && partial);
+        return (
+          <Star
+            key={i}
+            className={cn(
+              "h-4 w-4",
+              filled ? "fill-accent text-accent" : "fill-white/20 text-white/20"
+            )}
+          />
+        );
+      })}
+    </div>
+  );
+}
+
+export function HeroCarousel({
+  locale,
+  dict,
+}: {
+  locale: Locale;
+  dict: Dictionary;
+}) {
+  const h = dict.hero;
+  const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
+  // User-controlled stop, distinct from transient hover/focus pause. Honors
+  // prefers-reduced-motion so motion-sensitive users never get auto-advance.
+  const [stopped, setStopped] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const slides = heroSlides;
+  const current = slides[active];
+  const isVideo = current.type === "video";
+
+  // The first slide's LCP asset (video poster or image). Preloaded at high
+  // priority via the hoisted <link> below so the hero paints fast.
+  const firstSlide = slides[0];
+  const lcpAsset =
+    firstSlide.type === "video" ? firstSlide.poster : firstSlide.src;
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
+  // Stop auto-advance for users who prefer reduced motion.
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setStopped(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
+  useEffect(() => {
+    if (paused || stopped) return;
+    if (isVideo) return;
+
+    const timer = window.setInterval(() => {
+      setActive((index) => (index + 1) % slides.length);
+    }, AUTO_ADVANCE_MS);
+
+    return () => window.clearInterval(timer);
+  }, [active, paused, stopped, isVideo, slides.length]);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !isVideo) return;
+
+    video.currentTime = 0;
+    void video.play().catch(() => {});
+  }, [active, isVideo]);
+
+  const selectSlide = useCallback((index: number) => {
+    setActive(index);
+  }, []);
+
+  return (
+    <section className="relative w-full">
+      {/* React 19 hoists this to <head>; preloads the hero LCP asset. */}
+      <link
+        rel="preload"
+        as="image"
+        href={lcpAsset}
+        fetchPriority="high"
+      />
+      {/* Media + copy — overflow only clips backgrounds, not the booking bar */}
+      <div
+        className="relative min-h-[92svh] overflow-hidden"
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+        onFocusCapture={() => setPaused(true)}
+        onBlurCapture={() => setPaused(false)}
+      >
+        {slides.map((slide, index) => {
+          const isActive = index === active;
+
+          return (
+            <div
+              key={slide.id}
+              className={cn(
+                "absolute inset-0 transition-opacity duration-1000 ease-in-out",
+                isActive ? "opacity-100" : "opacity-0"
+              )}
+              aria-hidden={!isActive}
+            >
+              {slide.type === "video" ? (
+                isActive && (
+                  <video
+                    ref={videoRef}
+                    className="h-full w-full object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    poster={slide.poster}
+                    aria-label={slide.alt[locale]}
+                  >
+                    {slide.webm && (
+                      <source src={slide.webm} type="video/webm" />
+                    )}
+                    <source
+                      src={isMobile ? "/videos/hero-mobile.mp4" : slide.src}
+                      type="video/mp4"
+                    />
+                  </video>
+                )
+              ) : (
+                <Image
+                  src={slide.src}
+                  alt={slide.alt[locale]}
+                  fill
+                  priority={index === 0}
+                  sizes="100vw"
+                  className="object-cover"
+                />
+              )}
+            </div>
+          );
+        })}
+
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/15 to-transparent" />
+
+        <div className="container relative z-10 flex min-h-[92svh] w-full items-end pb-36 pt-28 md:pb-44 md:pt-32">
+          <div className="max-w-2xl text-white">
+            <p className="animate-rise text-sm font-semibold uppercase tracking-[0.22em] text-white/85 text-shadow-hero">
+              {h.eyebrow}
+            </p>
+            <h1
+              className="animate-rise mt-4 text-balance font-concept text-4xl font-medium leading-[1.08] text-shadow-hero sm:text-5xl md:text-6xl lg:text-[3.4rem]"
+              style={{ animationDelay: "0.08s" }}
+            >
+              {h.title}
+            </h1>
+            <p
+              className="animate-rise mt-5 max-w-xl text-pretty text-base leading-relaxed text-white/88 text-shadow-hero sm:text-lg"
+              style={{ animationDelay: "0.16s" }}
+            >
+              {h.subtitle}
+            </p>
+
+            <div
+              className="animate-rise mt-8 flex flex-col gap-5 sm:flex-row sm:items-center"
+              style={{ animationDelay: "0.24s" }}
+            >
+              <Link
+                href={bookingHref}
+                className={cn(
+                  buttonVariants({ size: "lg" }),
+                  "inline-flex min-w-[220px] items-center justify-center gap-2 bg-white text-primary shadow-xl shadow-black/25 hover:bg-white/92"
+                )}
+              >
+                {h.primaryCta}
+                <ArrowRight className="h-4 w-4" aria-hidden />
+              </Link>
+
+              <div className="flex items-center gap-3 text-sm text-white/90">
+                <StarRating score={h.rating} />
+                <span className="font-semibold">{h.rating}</span>
+                <span className="text-white/70">{h.reviews}</span>
+              </div>
+            </div>
+
+            {/* Mobile: inline strip below CTA */}
+            <div
+              className="animate-rise mt-6 flex items-center gap-2.5 sm:hidden"
+              style={{ animationDelay: "0.32s" }}
+            >
+              <PlayPauseButton
+                locale={locale}
+                stopped={stopped}
+                onToggle={() => setStopped((v) => !v)}
+              />
+              <div
+                className="flex gap-2.5 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+                role="tablist"
+                aria-label={h.slideLabel}
+              >
+                {slides.map((slide, index) => (
+                  <SlideThumb
+                    key={slide.id}
+                    slide={slide}
+                    index={index}
+                    active={active}
+                    onSelect={selectSlide}
+                    label={h.slideLabel}
+                    size="sm"
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Desktop: pinned bottom-right, level with CTA row */}
+          <div className="absolute bottom-36 right-6 hidden items-end gap-3 sm:flex md:bottom-40 md:right-8 xl:right-0">
+            <PlayPauseButton
+              locale={locale}
+              stopped={stopped}
+              onToggle={() => setStopped((v) => !v)}
+            />
+            <div
+              className="flex gap-2.5 md:gap-3"
+              role="tablist"
+              aria-label={h.slideLabel}
+            >
+              {slides.map((slide, index) => (
+                <SlideThumb
+                  key={slide.id}
+                  slide={slide}
+                  index={index}
+                  active={active}
+                  onSelect={selectSlide}
+                  label={h.slideLabel}
+                  size="md"
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Booking bar + trust — one sand bridge into the next section */}
+      <div className="relative z-20 bg-concept-sand">
+        <div className="relative z-30 -mt-12 px-6 md:-mt-[4.5rem] md:px-0">
+          <div className="container">
+            <HeroBookingBar dict={dict} />
+          </div>
+        </div>
+        <p className="px-6 pb-8 pt-5 text-center text-xs font-medium uppercase tracking-[0.14em] text-concept-ocean md:px-12 md:pb-10 md:pt-6">
+          <span className="text-concept-gold-muted">◆</span>
+          <span className="mx-2">{h.trust}</span>
+        </p>
+      </div>
+    </section>
+  );
+}

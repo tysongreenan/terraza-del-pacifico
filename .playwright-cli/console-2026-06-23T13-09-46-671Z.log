@@ -1,0 +1,16 @@
+[    2328ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3006/es/eventos?_rsc=kjyt8DiyK6q5emNu:0
+[    2328ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3006/es/restaurante?_rsc=kjyt8DiyK6q5emNu:0
+[    2328ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3006/es/experiencias?_rsc=kjyt8DiyK6q5emNu:0
+[    2328ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3006/es/galeria?_rsc=kjyt8DiyK6q5emNu:0
+[    2329ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3006/es/habitaciones?_rsc=kjyt8DiyK6q5emNu:0
+[    2699ms] [ERROR] Failed to fetch RSC payload for http://localhost:3006/en. Falling back to browser navigation. Error: Failed to read a RSC payload created by a development version of React on the server while using a production version on the client. Always use matching versions on the server and the client.
+    at http://localhost:3006/_next/static/chunks/255-98a0bdaa30757bda.js:1:152336
+    at t (http://localhost:3006/_next/static/chunks/255-98a0bdaa30757bda.js:1:152829) @ http://localhost:3006/_next/static/chunks/255-98a0bdaa30757bda.js:0
+[    2699ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3006/favicon.ico:0
+[    3105ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3006/es/sobre-nosotros?_rsc=kjyt8DiyK6q5emNu:0
+[   34114ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3006/es/habitaciones/villas?_rsc=kjyt8DiyK6q5emNu:0
+[   34114ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3006/es/eventos/surf-nights?_rsc=kjyt8DiyK6q5emNu:0
+[   34114ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3006/es/experiencias/avistamiento-ballenas?_rsc=kjyt8DiyK6q5emNu:0
+[   34114ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3006/es/experiencias/yoga-frente-al-mar?_rsc=kjyt8DiyK6q5emNu:0
+[   34114ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3006/es/experiencias/musica-en-vivo?_rsc=kjyt8DiyK6q5emNu:0
+[   34690ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3006/es/habitaciones/junior-suite?_rsc=kjyt8DiyK6q5emNu:0

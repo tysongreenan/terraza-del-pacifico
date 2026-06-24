@@ -1,0 +1,347 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "TERRAZA del Pacífico" [ref=e4] [cursor=pointer]:
+        - /url: /es
+      - navigation [ref=e5]:
+        - link "Inicio" [ref=e6] [cursor=pointer]:
+          - /url: /es
+        - link "Habitaciones" [ref=e7] [cursor=pointer]:
+          - /url: /es/habitaciones
+        - link "Restaurante" [ref=e8] [cursor=pointer]:
+          - /url: /es/restaurante
+        - link "Eventos" [ref=e9] [cursor=pointer]:
+          - /url: /es/eventos
+        - link "Experiencias" [ref=e10] [cursor=pointer]:
+          - /url: /es/experiencias
+        - link "Galería" [ref=e11] [cursor=pointer]:
+          - /url: /es/galeria
+        - link "Sobre Nosotros" [ref=e12] [cursor=pointer]:
+          - /url: /es/sobre-nosotros
+      - generic [ref=e13]:
+        - link "View in English" [ref=e14] [cursor=pointer]:
+          - /url: /en/eventos
+          - img [ref=e15]
+          - text: EN
+        - link "Reserva tu Escape" [ref=e18] [cursor=pointer]:
+          - /url: "#booking"
+  - main [ref=e19]:
+    - generic [ref=e20]:
+      - img [ref=e21]
+      - article [ref=e22]:
+        - generic [ref=e23]:
+          - img "Celebracion frente al mar en Terraza del Pacifico" [ref=e24]
+          - generic [ref=e27]:
+            - paragraph [ref=e28]: Eventos
+            - heading "Eventos frente al mar" [level=1] [ref=e29]
+            - paragraph [ref=e30]: Bodas, Surf Nights, reuniones, celebraciones familiares y cenas privadas en un resort frente a Playa Hermosa.
+            - link "Contactar equipo de eventos" [ref=e32] [cursor=pointer]:
+              - /url: mailto:mercadeo1@terrazadelpacifico.com
+              - text: Contactar equipo de eventos
+              - img [ref=e33]
+        - generic [ref=e35]:
+          - generic [ref=e39]:
+            - paragraph [ref=e40]: Playa Hermosa · Costa Rica
+            - heading "Bodas frente al mar" [level=2] [ref=e41]
+            - paragraph [ref=e42]: Celebra tu boda con el Pacifico como escenario, espacios al aire libre, gastronomia de Vivace y un equipo dedicado a cada detalle.
+            - link "Ver más →" [ref=e43] [cursor=pointer]:
+              - /url: /es/eventos/bodas
+          - generic [ref=e44]:
+            - article [ref=e45]:
+              - img "Pareja celebrando una boda frente al mar" [ref=e46]
+              - paragraph [ref=e48]: Pareja celebrando una boda frente al mar
+            - article [ref=e49]:
+              - img "Ceremonia de boda en Terraza del Pacifico" [ref=e50]
+              - paragraph [ref=e52]: Ceremonia de boda en Terraza del Pacifico
+            - article [ref=e53]:
+              - img "Decoracion floral para boda" [ref=e54]
+              - paragraph [ref=e56]: Decoracion floral para boda
+            - article [ref=e57]:
+              - img "Recepcion de boda al aire libre" [ref=e58]
+              - paragraph [ref=e60]: Recepcion de boda al aire libre
+            - article [ref=e61]:
+              - img "Ceremonia nocturna con luces" [ref=e62]
+              - paragraph [ref=e64]: Ceremonia nocturna con luces
+            - article [ref=e65]:
+              - img "Detalles de celebracion de boda" [ref=e66]
+              - paragraph [ref=e68]: Detalles de celebracion de boda
+            - article [ref=e69]:
+              - img "Piscina iluminada para eventos" [ref=e70]
+              - paragraph [ref=e72]: Piscina iluminada para eventos
+            - article [ref=e73]:
+              - img "Bodas frente al mar — imagen 1" [ref=e74]
+              - paragraph [ref=e76]: Bodas frente al mar — imagen 1
+            - article [ref=e77]:
+              - img "Bodas frente al mar — imagen 3" [ref=e78]
+              - paragraph [ref=e80]: Bodas frente al mar — imagen 3
+            - article [ref=e81]:
+              - img "Bodas frente al mar — imagen 4" [ref=e82]
+              - paragraph [ref=e84]: Bodas frente al mar — imagen 4
+            - article [ref=e85]:
+              - img "Bodas frente al mar — imagen 7" [ref=e86]
+              - paragraph [ref=e88]: Bodas frente al mar — imagen 7
+            - article [ref=e89]:
+              - img "Bodas frente al mar — imagen 8" [ref=e90]
+              - paragraph [ref=e92]: Bodas frente al mar — imagen 8
+          - generic [ref=e97]: Desliza para explorar
+        - generic [ref=e98]:
+          - generic [ref=e102]:
+            - paragraph [ref=e103]: Surf nocturno en Playa Hermosa
+            - heading "Surf Nights" [level=2] [ref=e104]
+            - paragraph [ref=e105]: Una experiencia unica donde Playa Hermosa se ilumina para competencias, comunidad, marcas y espectadores bajo las estrellas.
+            - link "Ver más →" [ref=e106] [cursor=pointer]:
+              - /url: /es/eventos/surf-nights
+          - generic [ref=e107]:
+            - article [ref=e108]:
+              - img "Surf Nights con el oceano iluminado" [ref=e109]
+              - paragraph [ref=e111]: Surf Nights con el oceano iluminado
+            - article [ref=e112]:
+              - img "Surfistas durante Surf Nights" [ref=e113]
+              - paragraph [ref=e115]: Surfistas durante Surf Nights
+            - article [ref=e116]:
+              - img "Camiseta oficial de Surf Nights" [ref=e117]
+              - paragraph [ref=e119]: Camiseta oficial de Surf Nights
+            - article [ref=e120]:
+              - img "Ganadores de Surf Nights" [ref=e121]
+              - paragraph [ref=e123]: Ganadores de Surf Nights
+            - article [ref=e124]:
+              - img "Atardecer en Playa Hermosa antes del evento" [ref=e125]
+              - paragraph [ref=e127]: Atardecer en Playa Hermosa antes del evento
+            - article [ref=e128]:
+              - img "Surf Nights — imagen 3" [ref=e129]
+              - paragraph [ref=e131]: Surf Nights — imagen 3
+            - article [ref=e132]:
+              - img "Surf Nights — imagen 4" [ref=e133]
+              - paragraph [ref=e135]: Surf Nights — imagen 4
+            - article [ref=e136]:
+              - img "Surf Nights — imagen 5" [ref=e137]
+              - paragraph [ref=e139]: Surf Nights — imagen 5
+            - article [ref=e140]:
+              - img "Surf Nights — imagen 6" [ref=e141]
+              - paragraph [ref=e143]: Surf Nights — imagen 6
+            - article [ref=e144]:
+              - img "Surf Nights — imagen 7" [ref=e145]
+              - paragraph [ref=e147]: Surf Nights — imagen 7
+            - article [ref=e148]:
+              - img "Surf Nights — imagen 8" [ref=e149]
+              - paragraph [ref=e151]: Surf Nights — imagen 8
+          - generic [ref=e156]: Desliza para explorar
+        - generic [ref=e157]:
+          - generic [ref=e161]:
+            - paragraph [ref=e162]: Reuniones y retiros
+            - heading "Eventos corporativos" [level=2] [ref=e163]
+            - paragraph [ref=e164]: Reuniones, conferencias y retiros empresariales con espacios versatiles, gastronomia personalizada y el Pacifico como entorno.
+            - link "Ver más →" [ref=e165] [cursor=pointer]:
+              - /url: /es/eventos/corporativos
+          - generic [ref=e166]:
+            - article [ref=e167]:
+              - img "Evento corporativo en Terraza del Pacifico" [ref=e168]
+              - paragraph [ref=e170]: Evento corporativo en Terraza del Pacifico
+            - article [ref=e171]:
+              - img "Espacios del resort para grupos" [ref=e172]
+              - paragraph [ref=e174]: Espacios del resort para grupos
+            - article [ref=e175]:
+              - img "Edificio del hotel para eventos" [ref=e176]
+              - paragraph [ref=e178]: Edificio del hotel para eventos
+            - article [ref=e179]:
+              - img "Montaje exterior para grupo corporativo" [ref=e180]
+              - paragraph [ref=e182]: Montaje exterior para grupo corporativo
+            - article [ref=e183]:
+              - img "Vista aerea del resort para retiros" [ref=e184]
+              - paragraph [ref=e186]: Vista aerea del resort para retiros
+            - article [ref=e187]:
+              - img "Eventos corporativos — imagen 5" [ref=e188]
+              - paragraph [ref=e190]: Eventos corporativos — imagen 5
+            - article [ref=e191]:
+              - img "Eventos corporativos — imagen 6" [ref=e192]
+              - paragraph [ref=e194]: Eventos corporativos — imagen 6
+            - article [ref=e195]:
+              - img "Eventos corporativos — imagen 7" [ref=e196]
+              - paragraph [ref=e198]: Eventos corporativos — imagen 7
+            - article [ref=e199]:
+              - img "Eventos corporativos — imagen 8" [ref=e200]
+              - paragraph [ref=e202]: Eventos corporativos — imagen 8
+          - generic [ref=e207]: Desliza para explorar
+        - generic [ref=e208]:
+          - generic [ref=e212]:
+            - paragraph [ref=e213]: Cumpleanos, aniversarios y reuniones
+            - heading "Celebraciones familiares" [level=2] [ref=e214]
+            - paragraph [ref=e215]: Celebra momentos importantes con espacios seguros, comida personalizada y un ambiente frente al mar para todas las edades.
+            - link "Ver más →" [ref=e216] [cursor=pointer]:
+              - /url: /es/eventos/celebraciones-familiares
+          - generic [ref=e217]:
+            - article [ref=e218]:
+              - img "Familia disfrutando la piscina del hotel" [ref=e219]
+              - paragraph [ref=e221]: Familia disfrutando la piscina del hotel
+            - article [ref=e222]:
+              - img "Familia en la playa" [ref=e223]
+              - paragraph [ref=e225]: Familia en la playa
+            - article [ref=e226]:
+              - img "Celebracion familiar junto a la piscina" [ref=e227]
+              - paragraph [ref=e229]: Celebracion familiar junto a la piscina
+            - article [ref=e230]:
+              - img "Areas exteriores del resort" [ref=e231]
+              - paragraph [ref=e233]: Areas exteriores del resort
+            - article [ref=e234]:
+              - img "Cena familiar en el restaurante" [ref=e235]
+              - paragraph [ref=e237]: Cena familiar en el restaurante
+            - article [ref=e238]:
+              - img "Celebraciones familiares — imagen 3" [ref=e239]
+              - paragraph [ref=e241]: Celebraciones familiares — imagen 3
+            - article [ref=e242]:
+              - img "Celebraciones familiares — imagen 4" [ref=e243]
+              - paragraph [ref=e245]: Celebraciones familiares — imagen 4
+            - article [ref=e246]:
+              - img "Celebraciones familiares — imagen 6" [ref=e247]
+              - paragraph [ref=e249]: Celebraciones familiares — imagen 6
+            - article [ref=e250]:
+              - img "Celebraciones familiares — imagen 7" [ref=e251]
+              - paragraph [ref=e253]: Celebraciones familiares — imagen 7
+            - article [ref=e254]:
+              - img "Celebraciones familiares — imagen 8" [ref=e255]
+              - paragraph [ref=e257]: Celebraciones familiares — imagen 8
+          - generic [ref=e262]: Desliza para explorar
+        - generic [ref=e263]:
+          - generic [ref=e267]:
+            - paragraph [ref=e268]: Vivace Beachfront
+            - heading "Cenas privadas" [level=2] [ref=e269]
+            - paragraph [ref=e270]: Experiencias gastronomicas privadas con cocina mediterranea, vistas al Pacifico y opciones para parejas, familias o grupos.
+            - link "Ver más →" [ref=e271] [cursor=pointer]:
+              - /url: /es/eventos/cenas-privadas
+          - generic [ref=e272]:
+            - article [ref=e273]:
+              - img "Cena romantica privada frente al mar" [ref=e274]
+              - paragraph [ref=e276]: Cena romantica privada frente al mar
+            - article [ref=e277]:
+              - img "Plato preparado por Vivace" [ref=e278]
+              - paragraph [ref=e280]: Plato preparado por Vivace
+            - article [ref=e281]:
+              - img "Mesa de restaurante preparada" [ref=e282]
+              - paragraph [ref=e284]: Mesa de restaurante preparada
+            - article [ref=e285]:
+              - img "Restaurante Vivace de noche" [ref=e286]
+              - paragraph [ref=e288]: Restaurante Vivace de noche
+            - article [ref=e289]:
+              - img "Bar frente a la playa para bebidas" [ref=e290]
+              - paragraph [ref=e292]: Bar frente a la playa para bebidas
+            - article [ref=e293]:
+              - img "Cenas privadas — imagen 1" [ref=e294]
+              - paragraph [ref=e296]: Cenas privadas — imagen 1
+            - article [ref=e297]:
+              - img "Cenas privadas — imagen 3" [ref=e298]
+              - paragraph [ref=e300]: Cenas privadas — imagen 3
+            - article [ref=e301]:
+              - img "Cenas privadas — imagen 4" [ref=e302]
+              - paragraph [ref=e304]: Cenas privadas — imagen 4
+          - generic [ref=e309]: Desliza para explorar
+        - generic [ref=e310]:
+          - generic [ref=e314]:
+            - paragraph [ref=e315]: Musica, comida y playa
+            - heading "Fiestas y celebraciones" [level=2] [ref=e316]
+            - paragraph [ref=e317]: Fiestas sociales, despedidas y celebraciones con ambiente tropical, gastronomia, cocteles y espacios junto a la piscina o la playa.
+            - link "Ver más →" [ref=e318] [cursor=pointer]:
+              - /url: /es/eventos/fiestas-y-celebraciones
+          - generic [ref=e319]:
+            - article [ref=e320]:
+              - img "Fiesta frente al mar en Terraza del Pacifico" [ref=e321]
+              - paragraph [ref=e323]: Fiesta frente al mar en Terraza del Pacifico
+            - article [ref=e324]:
+              - img "Fiesta junto a la piscina" [ref=e325]
+              - paragraph [ref=e327]: Fiesta junto a la piscina
+            - article [ref=e328]:
+              - img "Lounge en la playa para evento" [ref=e329]
+              - paragraph [ref=e331]: Lounge en la playa para evento
+            - article [ref=e332]:
+              - img "Piscina iluminada de noche" [ref=e333]
+              - paragraph [ref=e335]: Piscina iluminada de noche
+            - article [ref=e336]:
+              - img "Bebidas y ambiente de fiesta" [ref=e337]
+              - paragraph [ref=e339]: Bebidas y ambiente de fiesta
+            - article [ref=e340]:
+              - img "Fiestas y celebraciones — imagen 4" [ref=e341]
+              - paragraph [ref=e343]: Fiestas y celebraciones — imagen 4
+            - article [ref=e344]:
+              - img "Fiestas y celebraciones — imagen 5" [ref=e345]
+              - paragraph [ref=e347]: Fiestas y celebraciones — imagen 5
+            - article [ref=e348]:
+              - img "Fiestas y celebraciones — imagen 6" [ref=e349]
+              - paragraph [ref=e351]: Fiestas y celebraciones — imagen 6
+            - article [ref=e352]:
+              - img "Fiestas y celebraciones — imagen 7" [ref=e353]
+              - paragraph [ref=e355]: Fiestas y celebraciones — imagen 7
+          - generic [ref=e360]: Desliza para explorar
+        - generic [ref=e363]:
+          - generic [ref=e364]:
+            - paragraph [ref=e365]: Planifica
+            - heading "Cuéntanos qué estás planeando" [level=2] [ref=e366]
+            - paragraph [ref=e367]: El equipo de eventos puede ayudarte con disponibilidad, espacios, gastronomía y los detalles de tu celebración.
+          - generic [ref=e368]:
+            - link "Contactar equipo de eventos" [ref=e369] [cursor=pointer]:
+              - /url: mailto:mercadeo1@terrazadelpacifico.com
+            - link "WhatsApp" [ref=e370] [cursor=pointer]:
+              - /url: https://wa.me/50684319953
+              - img [ref=e371]
+              - text: WhatsApp
+          - paragraph [ref=e374]: ◆ Mejor tarifa garantizada
+  - contentinfo [ref=e375]:
+    - generic [ref=e376]:
+      - generic [ref=e377]:
+        - paragraph [ref=e378]: Hotel Terraza del Pacífico
+        - paragraph [ref=e379]: Aguas cálidas y olas frescas.
+        - paragraph [ref=e380]:
+          - img [ref=e381]
+          - text: Terraza del Pacífico
+        - generic [ref=e384]:
+          - link "Instagram" [ref=e385] [cursor=pointer]:
+            - /url: https://www.instagram.com/terrazadelpacificocr/
+            - img [ref=e386]
+          - link "Facebook" [ref=e389] [cursor=pointer]:
+            - /url: https://www.facebook.com/TerrazadelPacifico
+            - img [ref=e390]
+          - link "TikTok" [ref=e392] [cursor=pointer]:
+            - /url: https://www.tiktok.com/@terrazadelpacifico
+            - img [ref=e393]
+      - generic [ref=e395]:
+        - paragraph [ref=e396]: Explorar
+        - list [ref=e397]:
+          - listitem [ref=e398]:
+            - link "Habitaciones" [ref=e399] [cursor=pointer]:
+              - /url: /es/habitaciones
+          - listitem [ref=e400]:
+            - link "Restaurante" [ref=e401] [cursor=pointer]:
+              - /url: /es/restaurante
+          - listitem [ref=e402]:
+            - link "Eventos" [ref=e403] [cursor=pointer]:
+              - /url: /es/eventos
+          - listitem [ref=e404]:
+            - link "Experiencias" [ref=e405] [cursor=pointer]:
+              - /url: /es/experiencias
+          - listitem [ref=e406]:
+            - link "Galería" [ref=e407] [cursor=pointer]:
+              - /url: /es/galeria
+          - listitem [ref=e408]:
+            - link "Blog" [ref=e409] [cursor=pointer]:
+              - /url: /es/blog
+      - generic [ref=e410]:
+        - paragraph [ref=e411]: Contacto
+        - list [ref=e412]:
+          - listitem [ref=e413]:
+            - link "info@terrazadelpacifico.com" [ref=e414] [cursor=pointer]:
+              - /url: mailto:info@terrazadelpacifico.com
+              - img [ref=e415]
+              - text: info@terrazadelpacifico.com
+          - listitem [ref=e418]:
+            - 'link "WhatsApp: +506 8431 9953" [ref=e419] [cursor=pointer]':
+              - /url: https://wa.me/50684319953
+              - img [ref=e420]
+              - text: "WhatsApp: +506 8431 9953"
+      - generic [ref=e422]:
+        - paragraph [ref=e423]: Horario
+        - list [ref=e424]:
+          - listitem [ref=e425]: "Check-in: 3:00 PM"
+          - listitem [ref=e426]: "Check-out: 1:00 PM"
+          - listitem [ref=e427]: "Piscinas: 8:30 AM – 8:30 PM"
+    - generic [ref=e428]: © 2026 Hotel Terraza del Pacífico. Todos los derechos reservados.
+  - link "Escríbenos por WhatsApp" [ref=e429] [cursor=pointer]:
+    - /url: https://wa.me/50684319953
+    - img [ref=e430]

@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Design tokens reverse-engineered from terrazadelpacifico.com (2026-06-22).
+  shadcn/ui HSL convention: "H S% L%". Brand palette: gold (primary accent),
+  ocean (teal), earth, sand. Verify against the source repo when available.
+*/
+@layer base {
+  :root {
+    --background: 45 30% 98%;
+    --foreground: 30 25% 20%;
+
+    --card: 40 25% 96%;
+    --card-foreground: 30 25% 20%;
+
+    --popover: 45 30% 98%;
+    --popover-foreground: 30 25% 20%;
+
+    --primary: 175 37% 16%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 25%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 40 20% 92%;
+    --muted-foreground: 30 15% 45%;
+
+    --accent: 43 53% 54%;
+    --accent-foreground: 30 40% 12%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 25% 88%;
+    --input: 40 25% 88%;
+    --ring: 43 53% 54%;
+
+    --radius: 0.5rem;
+
+    /* Brand */
+    --gold: 43 53% 54%;
+    --ocean: 174 65% 40%;
+    --ocean-light: 174 55% 65%;
+    --earth: 30 35% 35%;
+    --sand: 40 35% 85%;
+  }
+
+  .dark {
+    --background: 30 25% 8%;
+    --foreground: 40 20% 92%;
+
+    --card: 30 25% 12%;
+    --card-foreground: 40 20% 92%;
+
+    --popover: 30 25% 12%;
+    --popover-foreground: 40 20% 92%;
+
+    --primary: 153 84% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 35%;
+    --secondary-foreground: 40 20% 92%;
+
+    --muted: 30 20% 18%;
+    --muted-foreground: 40 15% 60%;
+
+    --accent: 42 60% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 20% 20%;
+    --input: 30 20% 20%;
+    --ring: 145 55% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    /* Inter body rhythm — see docs/design.md. */
+    line-height: 1.6;
+  }
+  h1, h2, h3, h4 {
+    /* Manrope (font-display). Tight tracking = the clean modern look. */
+    @apply font-display;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+  html {
+    scroll-behavior: smooth;
+    /* offset for the sticky 4rem header when jumping to #booking etc. */
+    scroll-padding-top: 5rem;
+  }
+}
+
+@layer utilities {
+  /* Opt-in statement treatment for hero / section titles — see docs/design.md.
+     Clean modern look: Manrope, bold, tight negative tracking. */
+  .display-title {
+    font-family: var(--font-manrope), sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+
+  /* Scroll-reveal entrance. Elements start hidden ONLY when JS is present to
+     reveal them (.js added before paint in layout). Without JS — no-JS clients,
+     non-JS scrapers, hydration failure — content stays fully visible.
+     Respects prefers-reduced-motion (see media query below). */
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+  .js .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Hero text rises on load. */
+  @keyframes rise-in {
+    from {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  .animate-rise {
+    animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  @keyframes bob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
+  .animate-bob {
+    animation: bob 2.2s ease-in-out infinite;
+  }
+
+  .text-shadow-hero {
+    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45);
+  }
+
+  .hero-scrim {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(16, 58, 77, 0.42) 0%,
+        rgba(16, 58, 77, 0.06) 34%,
+        rgba(16, 58, 77, 0.04) 56%,
+        rgba(16, 58, 77, 0.58) 100%
+      ),
+      radial-gradient(
+        ellipse 70% 60% at 50% 62%,
+        rgba(0, 0, 0, 0),
+        rgba(16, 58, 77, 0.28) 100%
+      );
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.24em] text-concept-gold-muted;
+  }
+
+  .home-concept h1,
+  .home-concept h2,
+  .home-concept h3,
+  .home-concept h4 {
+    font-family: var(--font-cormorant), serif;
+    letter-spacing: 0.01em;
+    line-height: 1.1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .animate-rise,
+  .animate-bob {
+    animation: none;
+  }
+}

@@ -1,0 +1,267 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "TERRAZA del Pacífico" [ref=e4] [cursor=pointer]:
+        - /url: /es
+      - navigation [ref=e5]:
+        - link "Inicio" [ref=e6] [cursor=pointer]:
+          - /url: /es
+        - link "Habitaciones" [ref=e7] [cursor=pointer]:
+          - /url: /es/habitaciones
+        - link "Restaurante" [ref=e8] [cursor=pointer]:
+          - /url: /es/restaurante
+        - link "Eventos" [ref=e9] [cursor=pointer]:
+          - /url: /es/eventos
+        - link "Experiencias" [ref=e10] [cursor=pointer]:
+          - /url: /es/experiencias
+        - link "Galería" [ref=e11] [cursor=pointer]:
+          - /url: /es/galeria
+        - link "Sobre Nosotros" [ref=e12] [cursor=pointer]:
+          - /url: /es/sobre-nosotros
+      - generic [ref=e13]:
+        - link "View in English" [ref=e14] [cursor=pointer]:
+          - /url: /en/eventos/bodas
+          - img [ref=e15]
+          - text: EN
+        - link "Reserva tu Escape" [ref=e18] [cursor=pointer]:
+          - /url: "#booking"
+  - main [ref=e19]:
+    - generic [ref=e20]:
+      - img [ref=e21]
+      - article [ref=e22]:
+        - generic [ref=e23]:
+          - img "Pareja celebrando una boda frente al mar" [ref=e24]
+          - generic [ref=e27]:
+            - paragraph [ref=e28]: Playa Hermosa · Costa Rica
+            - heading "Bodas frente al mar" [level=1] [ref=e29]
+            - paragraph [ref=e30]: Celebra tu boda con el Pacifico como escenario, espacios al aire libre, gastronomia de Vivace y un equipo dedicado a cada detalle.
+            - generic [ref=e31]:
+              - link "Consultar boda" [ref=e32] [cursor=pointer]:
+                - /url: mailto:mercadeo1@terrazadelpacifico.com
+                - text: Consultar boda
+                - img [ref=e33]
+              - link "Todos los eventos" [ref=e35] [cursor=pointer]:
+                - /url: /es/eventos
+        - generic [ref=e38]:
+          - generic [ref=e39]:
+            - definition [ref=e40]: Frente al Pacifico
+            - term [ref=e41]: Escenario
+          - generic [ref=e42]:
+            - definition [ref=e43]: Ceremonias y recepciones
+            - term [ref=e44]: Ideal para
+          - generic [ref=e45]:
+            - definition [ref=e46]: Vivace Beachfront
+            - term [ref=e47]: Cocina
+          - generic [ref=e48]:
+            - definition [ref=e49]: Equipo de eventos
+            - term [ref=e50]: Contacto
+        - generic [ref=e52]:
+          - paragraph [ref=e53]: Resumen
+          - heading "Resumen" [level=2] [ref=e54]
+          - generic [ref=e55]:
+            - paragraph [ref=e56]: Una boda en Terraza del Pacifico combina playa, jardines, atardecer y la energia relajada de Playa Hermosa.
+            - paragraph [ref=e57]: El resort permite crear una celebracion que se siente natural, elegante y conectada con el destino.
+        - generic [ref=e58]:
+          - generic [ref=e62]:
+            - paragraph [ref=e63]: Galería
+            - heading "Explora en fotos" [level=2] [ref=e64]
+          - generic [ref=e65]:
+            - article [ref=e66]:
+              - img "Pareja celebrando una boda frente al mar" [ref=e67]
+              - paragraph [ref=e69]: Pareja celebrando una boda frente al mar
+            - article [ref=e70]:
+              - img "Ceremonia de boda en Terraza del Pacifico" [ref=e71]
+              - paragraph [ref=e73]: Ceremonia de boda en Terraza del Pacifico
+            - article [ref=e74]:
+              - img "Decoracion floral para boda" [ref=e75]
+              - paragraph [ref=e77]: Decoracion floral para boda
+            - article [ref=e78]:
+              - img "Recepcion de boda al aire libre" [ref=e79]
+              - paragraph [ref=e81]: Recepcion de boda al aire libre
+            - article [ref=e82]:
+              - img "Ceremonia nocturna con luces" [ref=e83]
+              - paragraph [ref=e85]: Ceremonia nocturna con luces
+            - article [ref=e86]:
+              - img "Detalles de celebracion de boda" [ref=e87]
+              - paragraph [ref=e89]: Detalles de celebracion de boda
+            - article [ref=e90]:
+              - img "Piscina iluminada para eventos" [ref=e91]
+              - paragraph [ref=e93]: Piscina iluminada para eventos
+            - article [ref=e94]:
+              - img "Bodas frente al mar — imagen 1" [ref=e95]
+              - paragraph [ref=e97]: Bodas frente al mar — imagen 1
+            - article [ref=e98]:
+              - img "Bodas frente al mar — imagen 3" [ref=e99]
+              - paragraph [ref=e101]: Bodas frente al mar — imagen 3
+            - article [ref=e102]:
+              - img "Bodas frente al mar — imagen 4" [ref=e103]
+              - paragraph [ref=e105]: Bodas frente al mar — imagen 4
+            - article [ref=e106]:
+              - img "Bodas frente al mar — imagen 7" [ref=e107]
+              - paragraph [ref=e109]: Bodas frente al mar — imagen 7
+            - article [ref=e110]:
+              - img "Bodas frente al mar — imagen 8" [ref=e111]
+              - paragraph [ref=e113]: Bodas frente al mar — imagen 8
+            - article [ref=e114]:
+              - img "Bodas frente al mar — imagen 9" [ref=e115]
+              - paragraph [ref=e117]: Bodas frente al mar — imagen 9
+            - article [ref=e118]:
+              - img "Bodas frente al mar — imagen 10" [ref=e119]
+              - paragraph [ref=e121]: Bodas frente al mar — imagen 10
+          - generic [ref=e126]: Desliza para ver más
+        - generic [ref=e127]:
+          - img "Ceremonia de boda en Terraza del Pacifico" [ref=e129]
+          - generic [ref=e130]:
+            - paragraph [ref=e131]: Playa Hermosa · Costa Rica
+            - heading "Lugares de ceremonia" [level=2] [ref=e132]
+            - paragraph [ref=e133]: Los espacios frente al mar, jardines y areas exteriores ofrecen opciones para ceremonias intimas o celebraciones mas amplias. El sonido de las olas y la luz del Pacifico ayudan a crear un escenario dificil de replicar en un salon cerrado.
+        - generic [ref=e134]:
+          - img "Decoracion floral para boda" [ref=e136]
+          - generic [ref=e137]:
+            - paragraph [ref=e138]: Playa Hermosa · Costa Rica
+            - heading "Recepcion" [level=2] [ref=e139]
+            - paragraph [ref=e140]: Las recepciones pueden tomar forma en terrazas, jardines, areas junto a la piscina o espacios conectados al restaurante. El equipo adapta la configuracion segun numero de invitados, horario, clima y estilo de celebracion.
+        - generic [ref=e141]:
+          - img "Recepcion de boda al aire libre" [ref=e143]
+          - generic [ref=e144]:
+            - paragraph [ref=e145]: Playa Hermosa · Costa Rica
+            - heading "Gastronomia" [level=2] [ref=e146]
+            - paragraph [ref=e147]: Vivace aporta una experiencia gastronomica mediterranea con ingredientes frescos y opciones personalizadas. Menus, cocteles y servicio se coordinan para acompanar el ritmo de la boda.
+        - generic [ref=e148]:
+          - img "Ceremonia nocturna con luces" [ref=e150]
+          - generic [ref=e151]:
+            - paragraph [ref=e152]: Playa Hermosa · Costa Rica
+            - heading "Experiencia de invitados" [level=2] [ref=e153]
+            - paragraph [ref=e154]: Los invitados pueden hospedarse, disfrutar la playa, la piscina, el restaurante y las actividades del hotel durante el fin de semana. Esto convierte la boda en una experiencia de destino completa, no solo en un evento de una noche.
+        - generic [ref=e155]:
+          - img "Detalles de celebracion de boda" [ref=e157]
+          - generic [ref=e158]:
+            - paragraph [ref=e159]: Playa Hermosa · Costa Rica
+            - heading "Consulta de planificacion" [level=2] [ref=e160]
+            - paragraph [ref=e161]: Para iniciar, comparte fecha tentativa, numero aproximado de invitados y el tipo de celebracion que imaginas. El equipo de eventos puede orientar los siguientes pasos y disponibilidad.
+        - generic [ref=e163]:
+          - generic [ref=e165]:
+            - paragraph [ref=e166]: Galería
+            - heading "El evento en imágenes" [level=2] [ref=e167]
+          - generic [ref=e168]:
+            - img "Pareja celebrando una boda frente al mar" [ref=e171]
+            - img "Ceremonia de boda en Terraza del Pacifico" [ref=e175]
+            - img "Decoracion floral para boda" [ref=e179]
+            - img "Recepcion de boda al aire libre" [ref=e183]
+            - img "Ceremonia nocturna con luces" [ref=e187]
+            - img "Detalles de celebracion de boda" [ref=e191]
+            - img "Piscina iluminada para eventos" [ref=e195]
+            - img "Bodas frente al mar — imagen 1" [ref=e199]
+            - img "Bodas frente al mar — imagen 3" [ref=e203]
+            - img "Bodas frente al mar — imagen 4" [ref=e207]
+            - img "Bodas frente al mar — imagen 7" [ref=e211]
+            - img "Bodas frente al mar — imagen 8" [ref=e215]
+            - img "Bodas frente al mar — imagen 9" [ref=e219]
+            - img "Bodas frente al mar — imagen 10" [ref=e223]
+        - generic [ref=e226]:
+          - generic [ref=e227]:
+            - paragraph [ref=e228]: También te puede interesar
+            - heading "Más eventos en el resort" [level=2] [ref=e229]
+          - generic [ref=e230]:
+            - link "Cena romantica privada frente al mar Vivace Beachfront Cenas privadas Explorar" [ref=e231] [cursor=pointer]:
+              - /url: /es/eventos/cenas-privadas
+              - img "Cena romantica privada frente al mar" [ref=e232]
+              - generic [ref=e234]:
+                - paragraph [ref=e235]: Vivace Beachfront
+                - heading "Cenas privadas" [level=3] [ref=e236]
+                - generic [ref=e237]:
+                  - text: Explorar
+                  - img [ref=e238]
+            - link "Familia disfrutando la piscina del hotel Cumpleanos, aniversarios y reuniones Celebraciones familiares Explorar" [ref=e240] [cursor=pointer]:
+              - /url: /es/eventos/celebraciones-familiares
+              - img "Familia disfrutando la piscina del hotel" [ref=e241]
+              - generic [ref=e243]:
+                - paragraph [ref=e244]: Cumpleanos, aniversarios y reuniones
+                - heading "Celebraciones familiares" [level=3] [ref=e245]
+                - generic [ref=e246]:
+                  - text: Explorar
+                  - img [ref=e247]
+            - link "Fiesta frente al mar en Terraza del Pacifico Musica, comida y playa Fiestas y celebraciones Explorar" [ref=e249] [cursor=pointer]:
+              - /url: /es/eventos/fiestas-y-celebraciones
+              - img "Fiesta frente al mar en Terraza del Pacifico" [ref=e250]
+              - generic [ref=e252]:
+                - paragraph [ref=e253]: Musica, comida y playa
+                - heading "Fiestas y celebraciones" [level=3] [ref=e254]
+                - generic [ref=e255]:
+                  - text: Explorar
+                  - img [ref=e256]
+        - generic [ref=e260]:
+          - generic [ref=e261]:
+            - paragraph [ref=e262]: Planifica tu evento
+            - heading "¿Listo para planear Bodas frente al mar?" [level=2] [ref=e263]
+            - paragraph [ref=e264]: Comparte fecha, número de invitados y el tipo de celebración que imaginas. El equipo de eventos te orientará con los siguientes pasos.
+          - generic [ref=e265]:
+            - link "Consultar boda" [ref=e266] [cursor=pointer]:
+              - /url: mailto:mercadeo1@terrazadelpacifico.com
+            - link "WhatsApp" [ref=e267] [cursor=pointer]:
+              - /url: https://wa.me/50684319953
+              - img [ref=e268]
+              - text: WhatsApp
+          - paragraph [ref=e271]: ◆ Mejor tarifa garantizada
+  - contentinfo [ref=e272]:
+    - generic [ref=e273]:
+      - generic [ref=e274]:
+        - paragraph [ref=e275]: Hotel Terraza del Pacífico
+        - paragraph [ref=e276]: Aguas cálidas y olas frescas.
+        - paragraph [ref=e277]:
+          - img [ref=e278]
+          - text: Terraza del Pacífico
+        - generic [ref=e281]:
+          - link "Instagram" [ref=e282] [cursor=pointer]:
+            - /url: https://www.instagram.com/terrazadelpacificocr/
+            - img [ref=e283]
+          - link "Facebook" [ref=e286] [cursor=pointer]:
+            - /url: https://www.facebook.com/TerrazadelPacifico
+            - img [ref=e287]
+          - link "TikTok" [ref=e289] [cursor=pointer]:
+            - /url: https://www.tiktok.com/@terrazadelpacifico
+            - img [ref=e290]
+      - generic [ref=e292]:
+        - paragraph [ref=e293]: Explorar
+        - list [ref=e294]:
+          - listitem [ref=e295]:
+            - link "Habitaciones" [ref=e296] [cursor=pointer]:
+              - /url: /es/habitaciones
+          - listitem [ref=e297]:
+            - link "Restaurante" [ref=e298] [cursor=pointer]:
+              - /url: /es/restaurante
+          - listitem [ref=e299]:
+            - link "Eventos" [ref=e300] [cursor=pointer]:
+              - /url: /es/eventos
+          - listitem [ref=e301]:
+            - link "Experiencias" [ref=e302] [cursor=pointer]:
+              - /url: /es/experiencias
+          - listitem [ref=e303]:
+            - link "Galería" [ref=e304] [cursor=pointer]:
+              - /url: /es/galeria
+          - listitem [ref=e305]:
+            - link "Blog" [ref=e306] [cursor=pointer]:
+              - /url: /es/blog
+      - generic [ref=e307]:
+        - paragraph [ref=e308]: Contacto
+        - list [ref=e309]:
+          - listitem [ref=e310]:
+            - link "info@terrazadelpacifico.com" [ref=e311] [cursor=pointer]:
+              - /url: mailto:info@terrazadelpacifico.com
+              - img [ref=e312]
+              - text: info@terrazadelpacifico.com
+          - listitem [ref=e315]:
+            - 'link "WhatsApp: +506 8431 9953" [ref=e316] [cursor=pointer]':
+              - /url: https://wa.me/50684319953
+              - img [ref=e317]
+              - text: "WhatsApp: +506 8431 9953"
+      - generic [ref=e319]:
+        - paragraph [ref=e320]: Horario
+        - list [ref=e321]:
+          - listitem [ref=e322]: "Check-in: 3:00 PM"
+          - listitem [ref=e323]: "Check-out: 1:00 PM"
+          - listitem [ref=e324]: "Piscinas: 8:30 AM – 8:30 PM"
+    - generic [ref=e325]: © 2026 Hotel Terraza del Pacífico. Todos los derechos reservados.
+  - link "Escríbenos por WhatsApp" [ref=e326] [cursor=pointer]:
+    - /url: https://wa.me/50684319953
+    - img [ref=e327]

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#dcdad4}
+  .ph{position:relative;overflow:hidden;background:repeating-linear-gradient(135deg,#e6e0d4,#e6e0d4 13px,#ddd6c8 13px,#ddd6c8 26px)}
+  .ph-o{background:repeating-linear-gradient(135deg,#cfdbde,#cfdbde 13px,#c2d1d5 13px,#c2d1d5 26px)}
+  .ph-d{background:repeating-linear-gradient(135deg,#16313f,#16313f 13px,#122935 13px,#122935 26px)}
+  .phl{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:'Inter',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#9a9282;white-space:nowrap;font-weight:500}
+  .ph-o .phl{color:#5e7b85}
+  .ph-d .phl{color:#5d7e8c}
+</style>
+</helmet>
+<div style="font-family:'Inter',sans-serif;width:max-content;min-width:100%;min-height:100vh;box-sizing:border-box;padding:56px;background:#dcdad4;color:#2b2620">
+
+  <div style="margin-bottom:48px;max-width:760px">
+    <div style="font-family:'Inter';font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8478;font-weight:600">Concept Mockups · Round 1</div>
+    <h1 style="font-family:'Cormorant';font-weight:500;font-size:40px;line-height:1.1;margin-top:10px;color:#103a4d">Hotel Terraza del Pacífico — Homepage</h1>
+    <p style="font-size:14px;line-height:1.6;color:#6f6a62;margin-top:10px">Barefoot-luxury, photography-forward, calm. Ocean blue + sand carry the palette; gold is a quiet detail. Now dressed with your real photography. Annotations in gold note motion & intent.</p>
+  </div>
+
+  <!-- ===================== DESKTOP HOMEPAGE ===================== -->
+  <div style="display:flex;gap:64px;align-items:flex-start;margin-bottom:80px">
+    <div style="flex:none;width:1440px">
+      <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:14px">
+        <span style="font-family:'Inter';font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#3a352e;font-weight:600">Homepage</span>
+        <span style="font-family:'Inter';font-size:12px;color:#8a8478">Desktop · 1440</span>
+      </div>
+      <div style="background:#faf6ef;border-radius:3px;box-shadow:0 1px 4px rgba(0,0,0,.1);overflow:hidden;position:relative">
+
+        <!-- HEADER -->
+        <div style="position:absolute;top:0;left:0;right:0;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:26px 48px">
+          <div style="font-family:'Cormorant';font-weight:600;font-size:19px;letter-spacing:.16em;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.4)">TERRAZA <span style="font-weight:400;font-style:italic">del Pacífico</span></div>
+          <div style="display:flex;align-items:center;gap:30px">
+            <div style="display:flex;gap:24px;font-size:13px;letter-spacing:.04em;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.4)">
+              <span>Rooms</span><span>Restaurant</span><span>Events</span><span>Experiences</span><span>Gallery</span><span>About</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:18px">
+              <div style="font-size:12px;letter-spacing:.08em;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.4)"><span style="font-weight:600">EN</span><span style="opacity:.55"> / ES</span></div>
+              <div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#1a1611;background:#c9a763;padding:11px 20px;border-radius:2px;font-weight:600">Book Your Escape</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 1. HERO -->
+        <div class="ph ph-o" style="background-image:url('assets/hero-coast.jpg');background-size:cover;background-position:center;height:780px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;text-align:center;position:relative">
+          <div style="position:absolute;top:96px;left:48px;z-index:3;font-family:'Inter',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.85)">▶ poster shown · video: autoplay · muted · loop</div>
+          <!-- scrim tuned for moving footage: top + bottom darken, gentle radial center -->
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,58,77,.42) 0%,rgba(16,58,77,.06) 34%,rgba(16,58,77,.04) 56%,rgba(16,58,77,.58) 100%)"></div>
+          <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 62%,rgba(0,0,0,0),rgba(16,58,77,.28) 100%)"></div>
+          <!-- mute / sound toggle for the video -->
+          <div style="position:absolute;top:96px;right:48px;z-index:3;display:flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.45);border-radius:40px;padding:8px 16px 8px 12px"><span style="width:18px;height:18px;border-radius:50%;border:1px solid rgba(255,255,255,.7);display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:10px">✕</span><span style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#fff">Sound off</span></div>
+          <div style="position:relative;z-index:2;padding-bottom:150px;max-width:760px">
+            <div style="font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:#f3ead6;font-weight:500;margin-bottom:22px">Playa Hermosa · Costa Rica</div>
+            <h2 style="font-family:'Cormorant';font-weight:500;font-size:74px;line-height:1.04;color:#fff;letter-spacing:.01em">Where the Pacific<br>Is Your Front Yard</h2>
+            <p style="font-size:17px;line-height:1.6;color:#f1ece2;max-width:560px;margin:24px auto 0">Oceanfront luxury, unforgettable sunsets and authentic Costa Rican hospitality — directly on the sand of Playa Hermosa.</p>
+            <div style="display:flex;gap:16px;justify-content:center;margin-top:34px">
+              <span style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#1a1611;background:#c9a763;padding:15px 30px;border-radius:2px;font-weight:600">Book Your Escape</span>
+              <span style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,.6);padding:15px 30px;border-radius:2px;font-weight:500">Explore the Resort</span>
+            </div>
+          </div>
+          <!-- slim booking bar -->
+          <div style="position:relative;z-index:3;width:calc(100% - 96px);max-width:1040px;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-radius:3px;display:flex;align-items:stretch;margin-bottom:-36px;box-shadow:0 14px 40px rgba(16,58,77,.18)">
+            <div style="flex:1;padding:18px 26px;border-right:1px solid #eae4d8;text-align:left"><div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#9a9282;font-weight:600">Check in</div><div style="font-size:15px;color:#2b2620;margin-top:4px">Add dates</div></div>
+            <div style="flex:1;padding:18px 26px;border-right:1px solid #eae4d8;text-align:left"><div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#9a9282;font-weight:600">Check out</div><div style="font-size:15px;color:#2b2620;margin-top:4px">Add dates</div></div>
+            <div style="flex:1;padding:18px 26px;border-right:1px solid #eae4d8;text-align:left"><div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#9a9282;font-weight:600">Guests</div><div style="font-size:15px;color:#2b2620;margin-top:4px">2 adults</div></div>
+            <div style="display:flex;align-items:center;padding:14px"><span style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#1a1611;background:#c9a763;padding:15px 34px;border-radius:2px;font-weight:600">Check availability</span></div>
+          </div>
+        </div>
+        <div style="text-align:center;padding:54px 0 0">
+          <div style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#103a4d"><span style="color:#b08a46">◆</span>&nbsp;&nbsp;Best rate guaranteed when you book direct</div>
+        </div>
+
+        <!-- 1b. THE RESORT AT A GLANCE — sell by showing -->
+        <div style="padding:72px 48px 84px">
+          <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:30px">
+            <div>
+              <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#b08a46;font-weight:600;margin-bottom:12px">All of it, steps from your room</div>
+              <h3 style="font-family:'Cormorant';font-weight:500;font-size:46px;line-height:1.05;color:#103a4d">One resort, a thousand reasons<br>to never leave the sand</h3>
+            </div>
+            <span style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#103a4d;border-bottom:1px solid #b08a46;padding-bottom:4px;white-space:nowrap;margin-bottom:6px">Explore the Resort →</span>
+          </div>
+          <!-- mosaic -->
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:224px;gap:14px">
+            <!-- A beach -->
+            <div class="ph ph-o" style="background-image:url('assets/hero-coast.jpg');background-size:cover;background-position:center;grid-column:span 2;position:relative;border-radius:2px;overflow:hidden"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,58,77,0) 45%,rgba(16,58,77,.62))"></div><div style="position:absolute;left:22px;bottom:20px;z-index:2"><div style="font-family:'Cormorant';font-size:30px;color:#fff">0 Meters to the Beach</div><div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#e7eef0;margin-top:2px">The resort is on the sand</div></div></div>
+            <!-- B LED pool, tall, dark hero tile -->
+            <div class="ph-d" style="background-image:url('assets/pool-top.jpg');background-size:cover;background-position:center;grid-column:span 2;grid-row:span 2;position:relative;border-radius:2px;overflow:hidden"><div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 70%,rgba(70,170,205,.4),rgba(10,28,37,0) 64%)"></div><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,28,37,.1) 40%,rgba(10,28,37,.72))"></div><div style="position:absolute;left:26px;bottom:26px;z-index:2"><div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7fc6dc;margin-bottom:8px">The signature pool</div><div style="font-family:'Cormorant';font-size:42px;line-height:1.04;color:#fff">Swim Under<br>1,200 Stars</div></div></div>
+            <!-- C suites -->
+            <div class="ph ph-o" style="background-image:url('assets/room-art.jpg');background-size:cover;background-position:center;position:relative;border-radius:2px;overflow:hidden"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,58,77,0) 45%,rgba(16,58,77,.62))"></div><div style="position:absolute;left:18px;bottom:16px;z-index:2"><div style="font-family:'Cormorant';font-size:24px;color:#fff">Oceanfront Suites</div><div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#e7eef0">Steps from the sand</div></div></div>
+            <!-- D villa -->
+            <div class="ph" style="background-image:url('assets/villa.jpg');background-size:cover;background-position:center;position:relative;border-radius:2px;overflow:hidden"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(43,38,32,0) 45%,rgba(43,38,32,.58))"></div><div style="position:absolute;left:18px;bottom:16px;z-index:2"><div style="font-family:'Cormorant';font-size:24px;color:#fff">The Villa</div><div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#f0ece4">Room for the whole family</div></div></div>
+            <!-- E dining, wide -->
+            <div class="ph ph-o" style="background-image:url('assets/dining-night.jpg');background-size:cover;background-position:center;grid-column:span 2;position:relative;border-radius:2px;overflow:hidden"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,58,77,0) 45%,rgba(16,58,77,.62))"></div><div style="position:absolute;left:22px;bottom:20px;z-index:2"><div style="font-family:'Cormorant';font-size:30px;color:#fff">Vivace Beachfront</div><div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#e7eef0;margin-top:2px">Italian dining by Chef Luigi</div></div></div>
+            <!-- F bar -->
+            <div class="ph" style="background-image:url('assets/cocktails.jpg');background-size:cover;background-position:center;position:relative;border-radius:2px;overflow:hidden"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(43,38,32,0) 45%,rgba(43,38,32,.58))"></div><div style="position:absolute;left:18px;bottom:16px;z-index:2"><div style="font-family:'Cormorant';font-size:24px;color:#fff">Beachfront Bar</div><div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#f0ece4">Sunset cocktails by the water</div></div></div>
+            <!-- G grounds -->
+            <div class="ph ph-o" style="background-image:url('assets/pool-circle.jpg');background-size:cover;background-position:center;position:relative;border-radius:2px;overflow:hidden"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,58,77,0) 45%,rgba(16,58,77,.62))"></div><div style="position:absolute;left:18px;bottom:16px;z-index:2"><div style="font-family:'Cormorant';font-size:24px;color:#fff">Gardens &amp; Grounds</div><div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#e7eef0">Tropical, barefoot, unhurried</div></div></div>
+          </div>
+        </div>
+
+        <!-- 3. EXPERIENCES — booking slider -->
+        <div style="padding:24px 48px 90px;background:#f5efe5">
+          <div style="display:flex;align-items:flex-end;justify-content:space-between;padding:56px 0 36px">
+            <div>
+              <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#b08a46;font-weight:600;margin-bottom:14px">Experiences</div>
+              <h3 style="font-family:'Cormorant';font-weight:500;font-size:48px;line-height:1.04;color:#103a4d">Adventure Begins<br>at Your Doorstep</h3>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px;margin-bottom:8px">
+              <span style="font-size:12px;letter-spacing:.06em;color:#6f6a62">Reserve before you arrive</span>
+              <div style="display:flex;gap:10px">
+                <span style="width:44px;height:44px;border-radius:50%;border:1px solid #cdbfa6;display:flex;align-items:center;justify-content:center;color:#b9ac95;font-size:16px">‹</span>
+                <span style="width:44px;height:44px;border-radius:50%;border:1px solid #103a4d;display:flex;align-items:center;justify-content:center;color:#103a4d;font-size:16px">›</span>
+              </div>
+            </div>
+          </div>
+          <!-- slider track (peeks next card) -->
+          <div style="overflow:hidden;margin:0 -48px;padding:0 48px">
+            <div style="display:flex;gap:18px;width:max-content">
+
+              <!-- Whale -->
+              <div style="flex:none;width:300px;height:430px;position:relative;border-radius:3px;overflow:hidden;background:linear-gradient(155deg,#1d586e,#0e3142)">
+                <div style="position:absolute;top:14px;right:14px;font-family:'Inter',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(190,214,222,.65)">add photo</div>
+                <div style="position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 30% 28%,rgba(90,150,170,.3),rgba(14,49,66,0) 70%),linear-gradient(180deg,rgba(11,32,42,0) 34%,rgba(11,32,42,.9))"></div>
+                <div style="position:absolute;top:18px;left:18px;z-index:2;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,.5);padding:5px 11px;border-radius:40px">Jul – Oct</div>
+                <div style="position:absolute;left:22px;right:22px;bottom:22px;z-index:2">
+                  <div style="font-family:'Cormorant';font-size:32px;line-height:1.02;color:#fff">Whale Watching</div>
+                  <p style="font-size:12px;line-height:1.55;color:#cfe0e6;margin-top:8px">Humpbacks off the sand — no boat, just the horizon.</p>
+                  <div style="display:flex;align-items:center;justify-content:space-between;margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.18)">
+                    <div style="font-size:11px;letter-spacing:.06em;color:#bcd0d8">2.5 hrs · seasonal</div>
+                    <span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#1a1611;background:#c9a763;padding:9px 16px;border-radius:2px;font-weight:600">Reserve</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Beachfront Yoga -->
+              <div style="flex:none;width:300px;height:430px;position:relative;border-radius:3px;overflow:hidden;background:linear-gradient(155deg,#2a5560,#143843)">
+                <div style="position:absolute;top:14px;right:14px;font-family:'Inter',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(190,214,222,.6)">add photo</div>
+                <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,32,42,0) 34%,rgba(11,32,42,.88))"></div>
+                <div style="position:absolute;top:18px;left:18px;z-index:2;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#1a1611;background:#c9a763;padding:5px 11px;border-radius:40px;font-weight:600">Included</div>
+                <div style="position:absolute;left:22px;right:22px;bottom:22px;z-index:2">
+                  <div style="font-family:'Cormorant';font-size:32px;line-height:1.02;color:#fff">Beachfront Yoga</div>
+                  <p style="font-size:12px;line-height:1.55;color:#cfe0e6;margin-top:8px">Open the day with surf and breath at the water's edge.</p>
+                  <div style="display:flex;align-items:center;justify-content:space-between;margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.18)">
+                    <div style="font-size:11px;letter-spacing:.06em;color:#bcd0d8">Daily · 7:00 AM</div>
+                    <span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,.5);padding:8px 15px;border-radius:2px">Join</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Live Music (photo) -->
+              <div style="flex:none;width:300px;height:430px;position:relative;border-radius:3px;overflow:hidden;background:#103a4d url('assets/dining-night.jpg') center/cover">
+                <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,24,37,0) 34%,rgba(10,24,37,.88))"></div>
+                <div style="position:absolute;top:18px;left:18px;z-index:2;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,.5);padding:5px 11px;border-radius:40px">Nightly</div>
+                <div style="position:absolute;left:22px;right:22px;bottom:22px;z-index:2">
+                  <div style="font-family:'Cormorant';font-size:32px;line-height:1.02;color:#fff">Live Music</div>
+                  <p style="font-size:12px;line-height:1.55;color:#e7eef0;margin-top:8px">Sunset sets under the string lights.</p>
+                  <div style="display:flex;align-items:center;justify-content:space-between;margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.18)">
+                    <div style="font-size:11px;letter-spacing:.06em;color:#cdd9de">Fri – Sun · free</div>
+                    <span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,.5);padding:8px 15px;border-radius:2px">See line-up</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Surf Nights -->
+              <div style="flex:none;width:300px;height:430px;position:relative;border-radius:3px;overflow:hidden;background:linear-gradient(155deg,#243a52,#10202f)">
+                <div style="position:absolute;top:14px;right:14px;font-family:'Inter',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(190,205,222,.6)">add photo</div>
+                <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,24,37,0) 34%,rgba(10,24,37,.9))"></div>
+                <div style="position:absolute;top:18px;left:18px;z-index:2;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,.5);padding:5px 11px;border-radius:40px">Surf Nights</div>
+                <div style="position:absolute;left:22px;right:22px;bottom:22px;z-index:2">
+                  <div style="font-family:'Cormorant';font-size:32px;line-height:1.02;color:#fff">Surf Nights</div>
+                  <p style="font-size:12px;line-height:1.55;color:#cdd6e0;margin-top:8px">A world-class break, floodlit for contests.</p>
+                  <div style="display:flex;align-items:center;justify-content:space-between;margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.18)">
+                    <div style="font-size:11px;letter-spacing:.06em;color:#bcd0d8">Fridays · 6 PM</div>
+                    <span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,.5);padding:8px 15px;border-radius:2px">Sign up</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Turtle Nesting -->
+              <div style="flex:none;width:300px;height:430px;position:relative;border-radius:3px;overflow:hidden;background:linear-gradient(155deg,#234034,#13261d)">
+                <div style="position:absolute;top:14px;right:14px;font-family:'Inter',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(200,210,196,.6)">add photo</div>
+                <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(19,38,29,0) 34%,rgba(19,38,29,.9))"></div>
+                <div style="position:absolute;top:18px;left:18px;z-index:2;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,.5);padding:5px 11px;border-radius:40px">Seasonal · Night</div>
+                <div style="position:absolute;left:22px;right:22px;bottom:22px;z-index:2">
+                  <div style="font-family:'Cormorant';font-size:32px;line-height:1.02;color:#fff">Turtle Nesting</div>
+                  <p style="font-size:12px;line-height:1.55;color:#cdd9d1;margin-top:8px">A quiet, protected ritual under the stars.</p>
+                  <div style="display:flex;align-items:center;justify-content:space-between;margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.18)">
+                    <div style="font-size:11px;letter-spacing:.06em;color:#bcd0c4">Guided · small groups</div>
+                    <span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,.5);padding:8px 15px;border-radius:2px">Reserve</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Weddings (photo) -->
+              <div style="flex:none;width:300px;height:430px;position:relative;border-radius:3px;overflow:hidden;background:#103a4d url('assets/wedding-arch.jpg') center/cover">
+                <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,58,77,0) 34%,rgba(16,58,77,.86))"></div>
+                <div style="position:absolute;top:18px;left:18px;z-index:2;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,.5);padding:5px 11px;border-radius:40px">By the sea</div>
+                <div style="position:absolute;left:22px;right:22px;bottom:22px;z-index:2">
+                  <div style="font-family:'Cormorant';font-size:32px;line-height:1.02;color:#fff">Weddings &amp; Events</div>
+                  <p style="font-size:12px;line-height:1.55;color:#e7eef0;margin-top:8px">Barefoot ceremonies as the sun goes down.</p>
+                  <div style="display:flex;align-items:center;justify-content:space-between;margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.18)">
+                    <div style="font-size:11px;letter-spacing:.06em;color:#cdd9de">Bespoke planning</div>
+                    <span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,.5);padding:8px 15px;border-radius:2px">Enquire</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- progress + hint -->
+          <div style="display:flex;align-items:center;gap:16px;margin-top:26px">
+            <div style="flex:1;height:2px;background:#e2dac9;border-radius:2px;position:relative"><div style="position:absolute;left:0;top:0;height:2px;width:34%;background:#103a4d;border-radius:2px"></div></div>
+            <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#b08a46">Drag to explore →</div>
+          </div>
+        </div>
+
+        <!-- 5. SUITES — gallery / slideshow -->
+        <div style="padding:90px 48px 84px">
+          <div style="display:flex;align-items:flex-end;justify-content:space-between;padding-bottom:40px">
+            <div>
+              <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#b08a46;font-weight:600;margin-bottom:14px">Stay</div>
+              <h3 style="font-family:'Cormorant';font-weight:500;font-size:48px;line-height:1.04;color:#103a4d">Comfort and Elegance<br>Facing the Ocean</h3>
+            </div>
+            <span style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#103a4d;border-bottom:1px solid #b08a46;padding-bottom:4px;margin-bottom:6px">All Rooms &amp; Suites →</span>
+          </div>
+
+          <!-- feature: gallery + details -->
+          <div style="display:flex;border-radius:3px;overflow:hidden;box-shadow:0 14px 40px rgba(16,58,77,.1)">
+            <!-- gallery -->
+            <div style="width:62%;position:relative;background:#103a4d url('assets/room-red.jpg') center/cover;min-height:560px">
+              <div style="position:absolute;top:22px;left:22px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#1a1611;background:#c9a763;padding:7px 13px;border-radius:2px;font-weight:600">Most booked</div>
+              <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,28,37,0) 70%,rgba(10,28,37,.45))"></div>
+              <div style="position:absolute;left:24px;bottom:22px;z-index:2;font-size:12px;letter-spacing:.14em;color:#fff;font-family:'Inter',monospace">01 / 05</div>
+              <div style="position:absolute;right:22px;bottom:20px;z-index:2;display:flex;gap:10px">
+                <span style="width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;color:#103a4d;font-size:17px">‹</span>
+                <span style="width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;color:#103a4d;font-size:17px">›</span>
+              </div>
+              <!-- film-strip dots -->
+              <div style="position:absolute;left:24px;bottom:54px;z-index:2;display:flex;gap:6px"><span style="width:22px;height:3px;background:#fff;border-radius:2px"></span><span style="width:22px;height:3px;background:rgba(255,255,255,.4);border-radius:2px"></span><span style="width:22px;height:3px;background:rgba(255,255,255,.4);border-radius:2px"></span><span style="width:22px;height:3px;background:rgba(255,255,255,.4);border-radius:2px"></span><span style="width:22px;height:3px;background:rgba(255,255,255,.4);border-radius:2px"></span></div>
+            </div>
+            <!-- details -->
+            <div style="width:38%;background:#faf6ef;padding:56px 48px;display:flex;flex-direction:column;justify-content:center">
+              <div style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#b08a46;font-weight:600;margin-bottom:12px">Made for couples</div>
+              <h4 style="font-family:'Cormorant';font-weight:500;font-size:40px;line-height:1;color:#103a4d">Junior Suite</h4>
+              <div style="display:flex;flex-wrap:wrap;gap:0;margin-top:28px;border-top:1px solid #ece5d8;border-bottom:1px solid #ece5d8">
+                <div style="width:50%;padding:16px 0;border-right:1px solid #ece5d8;border-bottom:1px solid #ece5d8"><div style="font-family:'Cormorant';font-size:26px;color:#2b2620">2</div><div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8a8478;margin-top:2px">Guests</div></div>
+                <div style="width:50%;padding:16px 0 16px 22px;border-bottom:1px solid #ece5d8"><div style="font-family:'Cormorant';font-size:26px;color:#2b2620">32 m²</div><div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8a8478;margin-top:2px">Size</div></div>
+                <div style="width:50%;padding:16px 0;border-right:1px solid #ece5d8"><div style="font-family:'Cormorant';font-size:26px;color:#2b2620">1 King</div><div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8a8478;margin-top:2px">Bed</div></div>
+                <div style="width:50%;padding:16px 0 16px 22px"><div style="font-family:'Cormorant';font-size:26px;color:#2b2620">Pool</div><div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8a8478;margin-top:2px">View</div></div>
+              </div>
+              <p style="font-size:14px;line-height:1.7;color:#6f6a62;margin-top:22px">A calm, light-filled retreat for two — wake to the pool and the sound of the surf just beyond your terrace.</p>
+              <div style="font-size:11px;letter-spacing:.04em;color:#8a8478;margin-top:16px">Free WiFi · A/C · Flat-screen TV · Full resort access</div>
+              <div style="display:flex;gap:12px;margin-top:28px">
+                <span style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#1a1611;background:#c9a763;padding:14px 26px;border-radius:2px;font-weight:600">Reserve</span>
+                <span style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#103a4d;border:1px solid #cdbfa6;padding:14px 26px;border-radius:2px">View Details</span>
+              </div>
+              <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#103a4d;margin-top:16px"><span style="color:#b08a46">◆</span> Best rate guaranteed direct</div>
+            </div>
+          </div>
+
+          <!-- room-type selector -->
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:18px">
+            <div style="cursor:pointer"><div style="position:relative;height:150px;border-radius:2px;overflow:hidden;background:#103a4d url('assets/room-art.jpg') center/cover"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,58,77,0) 45%,rgba(16,58,77,.5))"></div></div><div style="padding:12px 2px 0"><div style="font-family:'Cormorant';font-size:21px;color:#2b2620">Superior Room</div><div style="font-size:11px;color:#8a8478;margin-top:2px">4 guests · 32 m² · 2 Double · pool views</div></div></div>
+            <div style="cursor:pointer"><div style="position:relative;height:150px;border-radius:2px;overflow:hidden;background:#103a4d url('assets/room-3.jpg') center/cover"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,58,77,0) 45%,rgba(16,58,77,.5))"></div></div><div style="padding:12px 2px 0"><div style="font-family:'Cormorant';font-size:21px;color:#2b2620">Standard Room</div><div style="font-size:11px;color:#8a8478;margin-top:2px">4 guests · 32 m² · 2 Double · gardens</div></div></div>
+            <div style="cursor:pointer"><div style="position:relative;height:150px;border-radius:2px;overflow:hidden;background:#103a4d url('assets/room-red.jpg') center/cover;outline:2px solid #c9a763;outline-offset:2px"></div><div style="padding:12px 2px 0"><div style="font-family:'Cormorant';font-size:21px;color:#103a4d">Junior Suite</div><div style="font-size:11px;color:#b08a46;margin-top:2px">2 guests · 32 m² · 1 King · viewing now</div></div></div>
+            <div style="cursor:pointer"><div style="position:relative;height:150px;border-radius:2px;overflow:hidden;background:#103a4d url('assets/villa.jpg') center/cover"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,58,77,0) 45%,rgba(16,58,77,.5))"></div></div><div style="padding:12px 2px 0"><div style="font-family:'Cormorant';font-size:21px;color:#2b2620">Villa</div><div style="font-size:11px;color:#8a8478;margin-top:2px">6 guests · 72 m² · kitchen · families</div></div></div>
+          </div>
+          <div style="font-size:11px;letter-spacing:.06em;color:#b08a46;margin-top:16px">◆ Pick a room below to load its gallery above; arrows / swipe cycle that room's photos. Cross-fade between slides.</div>
+        </div>
+
+        <!-- 6. RESTAURANT -->
+        <div style="display:flex;align-items:stretch;background:#103a4d">
+          <div class="ph ph-o" style="background-image:url('assets/dining-beach-day.jpg');background-size:cover;background-position:center;width:50%;min-height:520px"></div>
+          <div style="width:50%;padding:84px 72px;display:flex;flex-direction:column;justify-content:center">
+            <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#c9a763;font-weight:600;margin-bottom:18px">Vivace Beachfront</div>
+            <h3 style="font-family:'Cormorant';font-weight:500;font-size:46px;line-height:1.12;color:#fff">Mediterranean Soul,<br>Pacific Setting</h3>
+            <p style="font-size:15px;line-height:1.75;color:#bcd0d8;margin-top:22px;max-width:430px">Sicilian Chef Luigi brings the flavors of southern Italy to the water's edge — fresh catch, handmade pasta and slow evenings with sand beneath your table.</p>
+            <div style="margin-top:34px"><span style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,.45);padding:14px 30px;border-radius:2px">Explore the Menu</span></div>
+          </div>
+        </div>
+
+        <!-- 7. TESTIMONIALS -->
+        <div style="padding:90px 120px 84px;text-align:center;background:#faf6ef">
+          <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#b08a46;font-weight:600;margin-bottom:40px">Guest Stories</div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:48px">
+            <div><div style="color:#c9a763;font-size:18px;letter-spacing:.3em">★★★★★</div><p style="font-family:'Cormorant';font-style:italic;font-size:23px;line-height:1.4;color:#2b2620;margin-top:18px">"Swimming under those lights at night is something I'll never forget."</p><div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8a8478;margin-top:18px">Marisol · CDMX</div></div>
+            <div><div style="color:#c9a763;font-size:18px;letter-spacing:.3em">★★★★★</div><p style="font-family:'Cormorant';font-style:italic;font-size:23px;line-height:1.4;color:#2b2620;margin-top:18px">"We watched whales with our coffee. Zero meters to the sand is no exaggeration."</p><div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8a8478;margin-top:18px">James &amp; Ana · Austin</div></div>
+            <div><div style="color:#c9a763;font-size:18px;letter-spacing:.3em">★★★★★</div><p style="font-family:'Cormorant';font-style:italic;font-size:23px;line-height:1.4;color:#2b2620;margin-top:18px">"Chef Luigi's pasta, a sunset, our kids asleep early. Perfect."</p><div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8a8478;margin-top:18px">The Rojas Family</div></div>
+          </div>
+        </div>
+
+        <!-- 2b. WELCOME / BY THE NUMBERS -->
+        <div style="padding:84px 120px 76px;text-align:center">
+          <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#b08a46;font-weight:600;margin-bottom:20px">Bienvenidos</div>
+          <p style="font-family:'Cormorant';font-weight:400;font-size:36px;line-height:1.32;color:#2b2620;max-width:880px;margin:0 auto">For more than twenty years, this stretch of sand has been a place to slow down — where mornings open with whale song on the horizon and evenings close with the sky on fire over the Pacific.</p>
+          <div style="display:flex;gap:0;justify-content:center;margin-top:56px;border-top:1px solid #ece5d8;border-bottom:1px solid #ece5d8">
+            <div style="flex:1;max-width:240px;padding:30px 16px;border-right:1px solid #ece5d8"><div style="font-family:'Cormorant';font-size:42px;color:#103a4d;font-weight:500">20+</div><div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#6f6a62;margin-top:6px">Years of history</div></div>
+            <div style="flex:1;max-width:240px;padding:30px 16px;border-right:1px solid #ece5d8"><div style="font-family:'Cormorant';font-size:42px;color:#103a4d;font-weight:500">0 m</div><div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#6f6a62;margin-top:6px">To the beach</div></div>
+            <div style="flex:1;max-width:240px;padding:30px 16px;border-right:1px solid #ece5d8"><div style="font-family:'Cormorant';font-size:42px;color:#103a4d;font-weight:500">90 min</div><div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#6f6a62;margin-top:6px">From San José</div></div>
+            <div style="flex:1;max-width:240px;padding:30px 16px"><div style="font-family:'Cormorant';font-size:42px;color:#103a4d;font-weight:500">1,200</div><div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#6f6a62;margin-top:6px">LED lights in our pool</div></div>
+          </div>
+        </div>
+
+        <!-- 8. LOCATION -->
+        <div style="display:flex;align-items:stretch">
+          <div style="width:46%;padding:84px 72px;display:flex;flex-direction:column;justify-content:center;background:#f5efe5">
+            <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#b08a46;font-weight:600;margin-bottom:18px">Location</div>
+            <h3 style="font-family:'Cormorant';font-weight:500;font-size:46px;line-height:1.1;color:#103a4d">Easy to Reach,<br>Hard to Leave</h3>
+            <p style="font-size:15px;line-height:1.75;color:#6f6a62;margin-top:22px;max-width:380px">Playa Hermosa, Jacó — on the central Pacific coast, just 90 minutes from San José International Airport.</p>
+            <div style="margin-top:26px;font-size:14px;line-height:1.7;color:#2b2620">Terraza del Pacífico<br>Playa Hermosa, 34, Provincia de Puntarenas<br>Jacó, 04023 · Costa Rica</div>
+          </div>
+          <div class="ph ph-o" style="width:54%;min-height:460px"><span class="phl">map · Playa Hermosa, Jacó</span></div>
+        </div>
+
+        <!-- 9. FINAL CTA -->
+        <div class="ph ph-o" style="background-image:url('assets/pool-beach-aerial.jpg');background-size:cover;background-position:center;position:relative;text-align:center;padding:130px 48px">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,58,77,.4),rgba(16,58,77,.55))"></div>
+          <div style="position:relative;z-index:2">
+            <h3 style="font-family:'Cormorant';font-weight:500;font-size:58px;color:#fff">Your Place in Paradise Is Waiting</h3>
+            <div style="display:flex;gap:16px;justify-content:center;margin-top:30px">
+              <span style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#1a1611;background:#c9a763;padding:16px 34px;border-radius:2px;font-weight:600">Book Direct</span>
+              <span style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,.6);padding:16px 34px;border-radius:2px">WhatsApp Us</span>
+            </div>
+            <div style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#f3ead6;margin-top:24px"><span style="color:#c9a763">◆</span>&nbsp;&nbsp;Best rate guaranteed when you book direct</div>
+          </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div style="background:#0c2c3a;padding:64px 48px 40px;color:#9fb9c2">
+          <div style="display:flex;justify-content:space-between;border-bottom:1px solid rgba(159,185,194,.18);padding-bottom:40px">
+            <div style="max-width:280px"><div style="font-family:'Cormorant';font-weight:600;font-size:18px;letter-spacing:.16em;color:#fff">TERRAZA <span style="font-weight:400;font-style:italic">del Pacífico</span></div><p style="font-size:13px;line-height:1.7;margin-top:14px">Oceanfront luxury on the sand of Playa Hermosa, Jacó, Provincia de Puntarenas, Costa Rica.</p></div>
+            <div style="display:flex;gap:64px;font-size:13px;line-height:2">
+              <div><div style="color:#fff;letter-spacing:.1em;text-transform:uppercase;font-size:11px;margin-bottom:10px">Explore</div>Rooms<br>Restaurant<br>Experiences<br>Gallery</div>
+              <div><div style="color:#fff;letter-spacing:.1em;text-transform:uppercase;font-size:11px;margin-bottom:10px">Contact</div>+506 0000 0000<br><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="254d4a49446551405757445f445544464c434c464a0b4657">[email&#160;protected]</a><br>WhatsApp</div>
+              <div><div style="color:#fff;letter-spacing:.1em;text-transform:uppercase;font-size:11px;margin-bottom:10px">Front Desk</div>Open 24 hours<br>Check-in 3:00 PM<br>Check-out 11:00 AM</div>
+            </div>
+          </div>
+          <div style="padding-top:24px;font-size:12px;color:#6f8b95">© 2026 Hotel Terraza del Pacífico · Best rate guaranteed when you book direct</div>
+        </div>
+
+        <!-- floating whatsapp -->
+        <div style="position:absolute;bottom:28px;right:28px;z-index:8;display:flex;align-items:center;gap:10px;background:#1f7a4d;color:#fff;padding:13px 18px 13px 16px;border-radius:40px;box-shadow:0 8px 24px rgba(0,0,0,.25);font-size:13px;font-weight:500">
+          <span style="display:inline-block;width:20px;height:20px;border-radius:50%;background:#fff;color:#1f7a4d;text-align:center;line-height:20px;font-size:12px;font-weight:700">✆</span>Chat with us
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== MOBILE HOMEPAGE ===================== -->
+    <div style="flex:none;width:390px">
+      <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:14px">
+        <span style="font-family:'Inter';font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#3a352e;font-weight:600">Homepage</span>
+        <span style="font-family:'Inter';font-size:12px;color:#8a8478">Mobile · 390</span>
+      </div>
+      <div style="background:#faf6ef;border-radius:3px;box-shadow:0 1px 4px rgba(0,0,0,.1);overflow:hidden;position:relative">
+
+        <!-- mobile header -->
+        <div style="position:absolute;top:0;left:0;right:0;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:18px 20px">
+          <div style="font-family:'Cormorant';font-weight:600;font-size:15px;letter-spacing:.12em;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.4)">TERRAZA <span style="font-weight:400;font-style:italic">del Pacífico</span></div>
+          <div style="display:flex;align-items:center;gap:14px"><span style="font-size:11px;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.4)"><b>EN</b><span style="opacity:.6">/ES</span></span><span style="color:#fff;font-size:18px;text-shadow:0 1px 4px rgba(0,0,0,.4)">≡</span></div>
+        </div>
+
+        <!-- hero -->
+        <div class="ph ph-o" style="background-image:url('assets/hero-coast.jpg');background-size:cover;background-position:center;height:600px;display:flex;flex-direction:column;justify-content:flex-end;text-align:center;position:relative">
+          <div style="position:absolute;top:54px;left:20px;z-index:3;font-family:'Inter',monospace;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.8)">▶ poster · video loop</div>
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,58,77,.42),rgba(16,58,77,.06) 40%,rgba(16,58,77,.66))"></div>
+          <div style="position:relative;z-index:2;padding:0 24px 40px">
+            <div style="font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#f3ead6;margin-bottom:14px">Playa Hermosa · Costa Rica</div>
+            <h2 style="font-family:'Cormorant';font-weight:500;font-size:42px;line-height:1.06;color:#fff">Where the Pacific Is Your Front Yard</h2>
+            <p style="font-size:14px;line-height:1.6;color:#f1ece2;margin-top:16px">Oceanfront luxury directly on the sand of Playa Hermosa.</p>
+            <div style="margin-top:24px"><span style="display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#1a1611;background:#c9a763;padding:15px;border-radius:2px;font-weight:600">Book Your Escape</span></div>
+            <div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#f3ead6;margin-top:14px"><span style="color:#c9a763">◆</span> Best rate guaranteed booking direct</div>
+          </div>
+        </div>
+
+        <!-- resort at a glance -->
+        <div style="padding:44px 20px 40px">
+          <div style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#b08a46;font-weight:600;margin-bottom:10px">All of it, steps away</div>
+          <h3 style="font-family:'Cormorant';font-size:28px;line-height:1.08;color:#103a4d;margin-bottom:18px">A thousand reasons to never leave the sand</h3>
+          <div style="display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:150px;gap:10px">
+            <div class="ph-d" style="background-image:url('assets/pool-top.jpg');background-size:cover;background-position:center;grid-column:span 2;height:200px;position:relative;border-radius:2px;overflow:hidden"><div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 70%,rgba(70,170,205,.4),rgba(10,28,37,0) 64%),linear-gradient(180deg,rgba(10,28,37,0) 45%,rgba(10,28,37,.72))"></div><div style="position:absolute;left:18px;bottom:16px;z-index:2"><div style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#7fc6dc">The signature pool</div><div style="font-family:'Cormorant';font-size:28px;color:#fff;line-height:1.04">Swim Under 1,200 Stars</div></div></div>
+            <div class="ph ph-o" style="background-image:url('assets/hero-coast.jpg');background-size:cover;background-position:center;position:relative;border-radius:2px;overflow:hidden"><span class="phl" style="font-size:9px;display:none">beach</span><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,58,77,0) 45%,rgba(16,58,77,.6))"></div><div style="position:absolute;left:14px;bottom:12px;z-index:2;font-family:'Cormorant';font-size:18px;color:#fff;line-height:1.05">0 m to<br>the Beach</div></div>
+            <div class="ph ph-o" style="background-image:url('assets/room-art.jpg');background-size:cover;background-position:center;position:relative;border-radius:2px;overflow:hidden"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(43,38,32,0) 45%,rgba(43,38,32,.58))"></div><div style="position:absolute;left:14px;bottom:12px;z-index:2;font-family:'Cormorant';font-size:18px;color:#fff">Suites</div></div>
+            <div class="ph ph-o" style="background-image:url('assets/villa.jpg');background-size:cover;background-position:center;position:relative;border-radius:2px;overflow:hidden"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,58,77,0) 45%,rgba(16,58,77,.6))"></div><div style="position:absolute;left:14px;bottom:12px;z-index:2;font-family:'Cormorant';font-size:18px;color:#fff">Villa</div></div>
+            <div class="ph" style="background-image:url('assets/dining-night.jpg');background-size:cover;background-position:center;position:relative;border-radius:2px;overflow:hidden"><span class="phl" style="font-size:9px;display:none">dining</span><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(43,38,32,0) 45%,rgba(43,38,32,.58))"></div><div style="position:absolute;left:14px;bottom:12px;z-index:2;font-family:'Cormorant';font-size:18px;color:#fff">Vivace</div></div>
+          </div>
+        </div>
+
+        <!-- experiences slider -->
+        <div style="padding:44px 0 48px;background:#f5efe5">
+          <div style="padding:0 20px;margin-bottom:18px"><div style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#b08a46;font-weight:600;margin-bottom:10px">Experiences</div><h3 style="font-family:'Cormorant';font-size:30px;color:#103a4d;line-height:1.06">Adventure Begins at Your Doorstep</h3><div style="font-size:12px;color:#6f6a62;margin-top:6px">Reserve before you arrive · swipe →</div></div>
+          <div style="display:flex;gap:12px;overflow-x:auto;padding:0 20px 6px;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory">
+            <div style="flex:none;width:230px;height:330px;position:relative;border-radius:3px;overflow:hidden;background:linear-gradient(155deg,#1d586e,#0e3142);scroll-snap-align:start"><div style="position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 30% 28%,rgba(90,150,170,.3),rgba(14,49,66,0) 70%),linear-gradient(180deg,rgba(11,32,42,0) 34%,rgba(11,32,42,.9))"></div><div style="position:absolute;top:14px;left:14px;z-index:2;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,.5);padding:4px 9px;border-radius:40px">Jul – Oct</div><div style="position:absolute;left:16px;right:16px;bottom:16px;z-index:2"><div style="font-family:'Cormorant';font-size:25px;color:#fff;line-height:1.02">Whale Watching</div><div style="display:flex;align-items:center;justify-content:space-between;margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,.2)"><div style="font-size:10px;color:#bcd0d8">2.5 hrs</div><span style="font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#1a1611;background:#c9a763;padding:7px 13px;border-radius:2px;font-weight:600">Reserve</span></div></div></div>
+            <div style="flex:none;width:230px;height:330px;position:relative;border-radius:3px;overflow:hidden;background:linear-gradient(155deg,#2a5560,#143843);scroll-snap-align:start"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,32,42,0) 34%,rgba(11,32,42,.88))"></div><div style="position:absolute;top:14px;left:14px;z-index:2;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#1a1611;background:#c9a763;padding:4px 9px;border-radius:40px;font-weight:600">Included</div><div style="position:absolute;left:16px;right:16px;bottom:16px;z-index:2"><div style="font-family:'Cormorant';font-size:25px;color:#fff;line-height:1.02">Beachfront Yoga</div><div style="display:flex;align-items:center;justify-content:space-between;margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,.2)"><div style="font-size:10px;color:#bcd0d8">Daily · 7 AM</div><span style="font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,.5);padding:6px 12px;border-radius:2px">Join</span></div></div></div>
+            <div style="flex:none;width:230px;height:330px;position:relative;border-radius:3px;overflow:hidden;background:#103a4d url('assets/dining-night.jpg') center/cover;scroll-snap-align:start"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,24,37,0) 34%,rgba(10,24,37,.88))"></div><div style="position:absolute;top:14px;left:14px;z-index:2;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,.5);padding:4px 9px;border-radius:40px">Nightly</div><div style="position:absolute;left:16px;right:16px;bottom:16px;z-index:2"><div style="font-family:'Cormorant';font-size:25px;color:#fff;line-height:1.02">Live Music</div><div style="display:flex;align-items:center;justify-content:space-between;margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,.2)"><div style="font-size:10px;color:#cdd9de">Fri – Sun</div><span style="font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,.5);padding:6px 12px;border-radius:2px">Line-up</span></div></div></div>
+            <div style="flex:none;width:230px;height:330px;position:relative;border-radius:3px;overflow:hidden;background:#103a4d url('assets/wedding-arch.jpg') center/cover;scroll-snap-align:start"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,58,77,0) 34%,rgba(16,58,77,.86))"></div><div style="position:absolute;top:14px;left:14px;z-index:2;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,.5);padding:4px 9px;border-radius:40px">By the sea</div><div style="position:absolute;left:16px;right:16px;bottom:16px;z-index:2"><div style="font-family:'Cormorant';font-size:25px;color:#fff;line-height:1.02">Weddings</div><div style="display:flex;align-items:center;justify-content:space-between;margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,.2)"><div style="font-size:10px;color:#cdd9de">Bespoke</div><span style="font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,.5);padding:6px 12px;border-radius:2px">Enquire</span></div></div></div>
+          </div>
+        </div>
+
+        <!-- suites gallery -->
+        <div style="padding:48px 0">
+          <div style="padding:0 20px;margin-bottom:18px"><div style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#b08a46;font-weight:600;margin-bottom:10px">Stay</div><h3 style="font-family:'Cormorant';font-size:30px;color:#103a4d;line-height:1.06">Comfort and Elegance Facing the Ocean</h3></div>
+          <!-- gallery -->
+          <div style="position:relative;height:260px;background:#103a4d url('assets/room-red.jpg') center/cover">
+            <div style="position:absolute;top:14px;left:14px;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#1a1611;background:#c9a763;padding:5px 10px;border-radius:2px;font-weight:600">Most booked</div>
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,28,37,0) 70%,rgba(10,28,37,.4))"></div>
+            <div style="position:absolute;left:16px;bottom:14px;z-index:2;font-size:11px;letter-spacing:.12em;color:#fff;font-family:'Inter',monospace">01 / 05</div>
+            <div style="position:absolute;right:14px;bottom:12px;z-index:2;display:flex;gap:8px"><span style="width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;color:#103a4d;font-size:15px">‹</span><span style="width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;color:#103a4d;font-size:15px">›</span></div>
+          </div>
+          <!-- details -->
+          <div style="padding:24px 20px 0">
+            <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#b08a46;font-weight:600;margin-bottom:8px">Made for couples</div>
+            <h4 style="font-family:'Cormorant';font-size:32px;color:#103a4d;line-height:1">Junior Suite</h4>
+            <div style="display:flex;gap:0;margin-top:18px;border-top:1px solid #ece5d8;border-bottom:1px solid #ece5d8">
+              <div style="flex:1;padding:14px 0;text-align:center;border-right:1px solid #ece5d8"><div style="font-family:'Cormorant';font-size:20px;color:#2b2620">2</div><div style="font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:#8a8478">Guests</div></div>
+              <div style="flex:1;padding:14px 0;text-align:center;border-right:1px solid #ece5d8"><div style="font-family:'Cormorant';font-size:20px;color:#2b2620">32 m²</div><div style="font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:#8a8478">Size</div></div>
+              <div style="flex:1;padding:14px 0;text-align:center;border-right:1px solid #ece5d8"><div style="font-family:'Cormorant';font-size:20px;color:#2b2620">1 King</div><div style="font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:#8a8478">Bed</div></div>
+              <div style="flex:1;padding:14px 0;text-align:center"><div style="font-family:'Cormorant';font-size:20px;color:#2b2620">Pool</div><div style="font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:#8a8478">View</div></div>
+            </div>
+            <div style="font-size:10px;letter-spacing:.04em;color:#8a8478;margin-top:14px">Free WiFi · A/C · Flat-screen TV · Full resort access</div>
+            <div style="display:flex;flex-direction:column;gap:10px;margin-top:18px"><span style="text-align:center;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#1a1611;background:#c9a763;padding:14px;border-radius:2px;font-weight:600">Reserve</span><span style="text-align:center;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#103a4d;border:1px solid #cdbfa6;padding:14px;border-radius:2px">View Details</span></div>
+          </div>
+          <!-- room selector -->
+          <div style="display:flex;gap:10px;overflow-x:auto;padding:24px 20px 6px;scroll-snap-type:x mandatory">
+            <div style="flex:none;width:150px;scroll-snap-align:start"><div style="height:96px;border-radius:2px;background:#103a4d url('assets/room-art.jpg') center/cover"></div><div style="font-family:'Cormorant';font-size:17px;margin-top:8px">Superior Room</div><div style="font-size:10px;color:#8a8478">4 · 32 m² · 2 Double</div></div>
+            <div style="flex:none;width:150px;scroll-snap-align:start"><div style="height:96px;border-radius:2px;background:#103a4d url('assets/room-3.jpg') center/cover"></div><div style="font-family:'Cormorant';font-size:17px;margin-top:8px">Standard Room</div><div style="font-size:10px;color:#8a8478">4 · 32 m² · gardens</div></div>
+            <div style="flex:none;width:150px;scroll-snap-align:start"><div style="height:96px;border-radius:2px;background:#103a4d url('assets/room-red.jpg') center/cover;outline:2px solid #c9a763;outline-offset:2px"></div><div style="font-family:'Cormorant';font-size:17px;margin-top:8px;color:#103a4d">Junior Suite</div><div style="font-size:10px;color:#b08a46">viewing now</div></div>
+            <div style="flex:none;width:150px;scroll-snap-align:start"><div style="height:96px;border-radius:2px;background:#103a4d url('assets/villa.jpg') center/cover"></div><div style="font-family:'Cormorant';font-size:17px;margin-top:8px">Villa</div><div style="font-size:10px;color:#8a8478">6 · 72 m² · kitchen</div></div>
+          </div>
+        </div>
+
+        <!-- restaurant -->
+        <div style="background:#103a4d"><div class="ph ph-o" style="background-image:url('assets/dining-beach-day.jpg');background-size:cover;background-position:center;height:220px"></div><div style="padding:40px 28px"><div style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#c9a763;font-weight:600;margin-bottom:14px">Vivace Beachfront</div><h3 style="font-family:'Cormorant';font-size:30px;line-height:1.12;color:#fff">Mediterranean Soul, Pacific Setting</h3><p style="font-size:13px;line-height:1.7;color:#bcd0d8;margin-top:14px">Sicilian Chef Luigi, fresh catch and handmade pasta at the water's edge.</p></div></div>
+
+        <!-- welcome / stats -->
+        <div style="padding:54px 28px 44px;text-align:center">
+          <div style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#b08a46;font-weight:600;margin-bottom:16px">Bienvenidos</div>
+          <p style="font-family:'Cormorant';font-size:25px;line-height:1.34;color:#2b2620">A place to slow down — whale song at dawn, the sky on fire at dusk.</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#ece5d8;margin-top:34px;border:1px solid #ece5d8">
+            <div style="background:#faf6ef;padding:22px 8px"><div style="font-family:'Cormorant';font-size:34px;color:#103a4d">20+</div><div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#6f6a62;margin-top:4px">Years</div></div>
+            <div style="background:#faf6ef;padding:22px 8px"><div style="font-family:'Cormorant';font-size:34px;color:#103a4d">0 m</div><div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#6f6a62;margin-top:4px">To the beach</div></div>
+            <div style="background:#faf6ef;padding:22px 8px"><div style="font-family:'Cormorant';font-size:34px;color:#103a4d">90 min</div><div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#6f6a62;margin-top:4px">From San José</div></div>
+            <div style="background:#faf6ef;padding:22px 8px"><div style="font-family:'Cormorant';font-size:34px;color:#103a4d">1,200</div><div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#6f6a62;margin-top:4px">LED lights</div></div>
+          </div>
+        </div>
+
+        <!-- final cta -->
+        <div class="ph ph-o" style="background-image:url('assets/pool-beach-aerial.jpg');background-size:cover;background-position:center;position:relative;text-align:center;padding:70px 28px">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,58,77,.4),rgba(16,58,77,.58))"></div>
+          <div style="position:relative;z-index:2"><h3 style="font-family:'Cormorant';font-size:34px;color:#fff;line-height:1.1">Your Place in Paradise Is Waiting</h3>
+            <div style="display:flex;flex-direction:column;gap:10px;margin-top:22px"><span style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#1a1611;background:#c9a763;padding:14px;border-radius:2px;font-weight:600">Book Direct</span><span style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,.6);padding:14px;border-radius:2px">WhatsApp Us</span></div>
+          </div>
+        </div>
+
+        <!-- footer -->
+        <div style="background:#0c2c3a;padding:40px 28px;color:#9fb9c2;font-size:12px;line-height:1.9"><div style="font-family:'Cormorant';font-weight:600;font-size:15px;letter-spacing:.12em;color:#fff;margin-bottom:14px">TERRAZA <span style="font-weight:400;font-style:italic">del Pacífico</span></div>Playa Hermosa, 34, Puntarenas<br>Jacó, 04023, CR<br>+506 0000 0000 · WhatsApp<br><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0c6463606d4c78697e7e6d766d7c6d6f656a656f63226f7e">[email&#160;protected]</a></div>
+
+        <!-- floating whatsapp -->
+        <div style="position:absolute;bottom:20px;right:20px;z-index:8;width:48px;height:48px;border-radius:50%;background:#1f7a4d;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.3);font-size:20px">✆</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== OPTIONS ROW ===================== -->
+  <div style="margin:0 0 24px"><h2 style="font-family:'Cormorant';font-weight:500;font-size:30px;color:#103a4d">Alternate treatments to react to</h2><p style="font-size:14px;color:#6f6a62;margin-top:4px">Same system, different moves for the two highest-stakes sections.</p></div>
+  <div style="display:flex;gap:48px;align-items:flex-start">
+
+    <!-- HERO option B: split editorial -->
+    <div style="flex:none;width:760px">
+      <div style="font-family:'Inter';font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#3a352e;font-weight:600;margin-bottom:12px">Hero · Option B — Split Editorial</div>
+      <div style="background:#faf6ef;border-radius:3px;box-shadow:0 1px 4px rgba(0,0,0,.1);overflow:hidden;display:flex;height:480px">
+        <div style="width:46%;padding:48px 44px;display:flex;flex-direction:column;justify-content:center;background:#faf6ef">
+          <div style="font-family:'Cormorant';font-weight:600;font-size:15px;letter-spacing:.14em;color:#103a4d;margin-bottom:auto">TERRAZA <span style="font-weight:400;font-style:italic">del Pacífico</span></div>
+          <div style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#b08a46;font-weight:600;margin-bottom:16px">Playa Hermosa · Costa Rica</div>
+          <h2 style="font-family:'Cormorant';font-weight:500;font-size:46px;line-height:1.04;color:#103a4d">Where the Pacific Is Your Front Yard</h2>
+          <p style="font-size:14px;line-height:1.6;color:#6f6a62;margin-top:16px">Directly on the sand of Playa Hermosa.</p>
+          <div style="display:flex;gap:12px;margin-top:24px"><span style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#1a1611;background:#c9a763;padding:13px 24px;border-radius:2px;font-weight:600">Book Your Escape</span><span style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#103a4d;border:1px solid #cdbfa6;padding:13px 24px;border-radius:2px">Explore</span></div>
+        </div>
+        <div class="ph ph-o" style="background-image:url('assets/hero-coast.jpg');background-size:cover;background-position:center;width:54%"></div>
+      </div>
+      <p style="font-size:12px;color:#b08a46;margin-top:10px;line-height:1.5">◆ Calmer, more boutique. Wordmark + type breathe on sand; photo is a quiet companion rather than the whole stage. Booking lives in a sticky bar on scroll.</p>
+    </div>
+
+    <!-- LED pool option B: full-bleed immersion -->
+    <div style="flex:none;width:760px">
+      <div style="font-family:'Inter';font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#3a352e;font-weight:600;margin-bottom:12px">LED Pool · Option B — Full Immersion</div>
+      <div class="ph-d" style="background-image:url('assets/pool-top.jpg');background-size:cover;background-position:center;position:relative;border-radius:3px;box-shadow:0 1px 4px rgba(0,0,0,.1);overflow:hidden;height:480px;display:flex;flex-direction:column;justify-content:flex-end">
+        <span class="phl" style="top:30%;display:none">edge-to-edge night pool video · drifting light</span>
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 30% 80%,rgba(60,150,180,.4),rgba(11,28,38,0) 65%)"></div>
+        <div style="position:relative;z-index:2;padding:48px 44px;max-width:520px">
+          <div style="font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#7fc6dc;margin-bottom:16px">The Signature Pool</div>
+          <h3 style="font-family:'Cormorant';font-weight:500;font-size:48px;line-height:1.06;color:#fff">A Pool That Turns Into a Starry Sky</h3>
+          <p style="font-size:14px;line-height:1.7;color:#bcd4dd;margin-top:14px">1,200+ underwater LEDs, one of one in Costa Rica.</p>
+        </div>
+      </div>
+      <p style="font-size:12px;color:#b08a46;margin-top:10px;line-height:1.5">◆ Text anchored bottom-left over an edge-to-edge night-pool video; stats overlaid minimally. Maximum cinema, maximum stop-scroll.</p>
+    </div>
+  </div>
+
+</div>
+
+<template id="__bundler_thumbnail" data-bg-color="#103a4d">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#103a4d"/>
+    <path d="M0 560 Q300 520 600 560 T1200 560 V800 H0 Z" fill="#0c2c3a"/>
+    <circle cx="600" cy="300" r="90" fill="#c9a763"/>
+    <text x="600" y="690" font-family="Georgia, serif" font-size="58" fill="#faf6ef" text-anchor="middle" letter-spacing="6">TERRAZA</text>
+    <text x="600" y="740" font-family="Georgia, serif" font-style="italic" font-size="30" fill="#c9a763" text-anchor="middle" letter-spacing="4">del Pacífico</text>
+  </svg>
+</template></x-dc>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

@@ -1,0 +1,157 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "TERRAZA del Pacífico" [ref=e5] [cursor=pointer]:
+        - /url: /en
+      - navigation [ref=e6]:
+        - link "Home" [ref=e7] [cursor=pointer]:
+          - /url: /en
+        - link "Rooms" [ref=e8] [cursor=pointer]:
+          - /url: /en/habitaciones
+        - link "Restaurant" [ref=e9] [cursor=pointer]:
+          - /url: /en/restaurante
+        - link "Bars" [ref=e10] [cursor=pointer]:
+          - /url: /en/bares
+        - link "Events" [ref=e11] [cursor=pointer]:
+          - /url: /en/eventos
+        - link "Experiences" [ref=e12] [cursor=pointer]:
+          - /url: /en/experiencias
+        - link "Gallery" [ref=e13] [cursor=pointer]:
+          - /url: /en/galeria
+        - link "About Us" [ref=e14] [cursor=pointer]:
+          - /url: /en/sobre-nosotros
+      - generic [ref=e15]:
+        - link "Ver en español" [ref=e16] [cursor=pointer]:
+          - /url: /es/galeria
+          - img [ref=e17]
+          - text: ES
+        - link "Book Your Escape" [ref=e20] [cursor=pointer]:
+          - /url: "#booking"
+  - main [ref=e21]:
+    - generic [ref=e22]:
+      - img [ref=e23]
+      - article [ref=e24]:
+        - generic [ref=e25]:
+          - img "Gallery" [ref=e26]
+          - generic [ref=e29]:
+            - paragraph [ref=e30]: Hotel Terraza del Pacífico
+            - heading "Gallery" [level=1] [ref=e31]
+            - paragraph [ref=e32]: Browse photos of the hotel, rooms, restaurant, events and experiences in Playa Hermosa, Costa Rica.
+            - generic [ref=e33]:
+              - link "Book Your Escape" [ref=e34] [cursor=pointer]:
+                - /url: "#booking"
+                - text: Book Your Escape
+                - img [ref=e35]
+              - link "WhatsApp" [ref=e37] [cursor=pointer]:
+                - /url: https://wa.me/50684319953
+                - img [ref=e38]
+                - text: WhatsApp
+        - generic [ref=e42]:
+          - paragraph [ref=e43]: Visual gallery
+          - heading "Beach, pool, weddings and resort life" [level=2] [ref=e44]
+          - paragraph [ref=e45]: Browse photos of the hotel, rooms, restaurant, events and experiences in Playa Hermosa, Costa Rica.
+        - generic [ref=e47]:
+          - generic [ref=e49]:
+            - paragraph [ref=e50]: Gallery
+            - heading "The experience in images" [level=2] [ref=e51]
+          - generic [ref=e52]:
+            - img "Gallery — photo 1" [ref=e55]
+            - img "Gallery — photo 2" [ref=e59]
+            - img "Gallery — photo 3" [ref=e63]
+            - img "Gallery — photo 4" [ref=e67]
+            - img "Gallery — photo 5" [ref=e71]
+            - img "Gallery — photo 6" [ref=e75]
+            - img "Gallery — photo 7" [ref=e79]
+            - img "Gallery — photo 8" [ref=e83]
+            - img "Gallery — photo 9" [ref=e87]
+            - img "Gallery — photo 10" [ref=e91]
+            - img "Gallery — photo 11" [ref=e95]
+            - img "Gallery — photo 12" [ref=e99]
+            - img "Gallery — photo 13" [ref=e103]
+            - img "Gallery — photo 14" [ref=e107]
+            - img "Gallery — photo 15" [ref=e111]
+            - img "Gallery — photo 16" [ref=e115]
+            - img "Gallery — photo 17" [ref=e119]
+            - img "Gallery — photo 18" [ref=e123]
+            - img "Gallery — photo 19" [ref=e127]
+            - img "Gallery — photo 20" [ref=e131]
+        - generic [ref=e135]:
+          - generic [ref=e136]:
+            - paragraph [ref=e137]: Direct booking
+            - heading "Ready to plan your stay?" [level=2] [ref=e138]
+            - paragraph [ref=e139]: Contact the hotel for availability, events, restaurant reservations, or help choosing the right room.
+          - generic [ref=e140]:
+            - link "Book Your Escape" [ref=e141] [cursor=pointer]:
+              - /url: "#booking"
+            - link "WhatsApp" [ref=e142] [cursor=pointer]:
+              - /url: https://wa.me/50684319953
+              - img [ref=e143]
+              - text: WhatsApp
+          - paragraph [ref=e146]: ◆ Best rate guaranteed
+  - contentinfo [ref=e147]:
+    - generic [ref=e148]:
+      - generic [ref=e149]:
+        - paragraph [ref=e150]: Hotel Terraza del Pacífico
+        - paragraph [ref=e151]: Warm water and cool waves.
+        - paragraph [ref=e152]:
+          - img [ref=e153]
+          - text: Terraza del Pacífico
+        - generic [ref=e156]:
+          - link "Instagram" [ref=e157] [cursor=pointer]:
+            - /url: https://www.instagram.com/terrazadelpacificocr/
+            - img [ref=e158]
+          - link "Facebook" [ref=e161] [cursor=pointer]:
+            - /url: https://www.facebook.com/TerrazadelPacifico
+            - img [ref=e162]
+          - link "TikTok" [ref=e164] [cursor=pointer]:
+            - /url: https://www.tiktok.com/@terrazadelpacifico
+            - img [ref=e165]
+      - generic [ref=e167]:
+        - paragraph [ref=e168]: Explore
+        - list [ref=e169]:
+          - listitem [ref=e170]:
+            - link "Rooms" [ref=e171] [cursor=pointer]:
+              - /url: /en/habitaciones
+          - listitem [ref=e172]:
+            - link "Restaurant" [ref=e173] [cursor=pointer]:
+              - /url: /en/restaurante
+          - listitem [ref=e174]:
+            - link "Bars" [ref=e175] [cursor=pointer]:
+              - /url: /en/bares
+          - listitem [ref=e176]:
+            - link "Events" [ref=e177] [cursor=pointer]:
+              - /url: /en/eventos
+          - listitem [ref=e178]:
+            - link "Experiences" [ref=e179] [cursor=pointer]:
+              - /url: /en/experiencias
+          - listitem [ref=e180]:
+            - link "Gallery" [ref=e181] [cursor=pointer]:
+              - /url: /en/galeria
+          - listitem [ref=e182]:
+            - link "Blog" [ref=e183] [cursor=pointer]:
+              - /url: /en/blog
+      - generic [ref=e184]:
+        - paragraph [ref=e185]: Contact
+        - list [ref=e186]:
+          - listitem [ref=e187]:
+            - link "info@terrazadelpacifico.com" [ref=e188] [cursor=pointer]:
+              - /url: mailto:info@terrazadelpacifico.com
+              - img [ref=e189]
+              - text: info@terrazadelpacifico.com
+          - listitem [ref=e192]:
+            - 'link "WhatsApp: +506 8431 9953" [ref=e193] [cursor=pointer]':
+              - /url: https://wa.me/50684319953
+              - img [ref=e194]
+              - text: "WhatsApp: +506 8431 9953"
+      - generic [ref=e196]:
+        - paragraph [ref=e197]: Schedule
+        - list [ref=e198]:
+          - listitem [ref=e199]: "Check-in: 3:00 PM"
+          - listitem [ref=e200]: "Check-out: 1:00 PM"
+          - listitem [ref=e201]: "Pools: 8:30 AM – 8:30 PM"
+    - generic [ref=e202]: © 2026 Hotel Terraza del Pacífico. All rights reserved.
+  - link "Chat on WhatsApp" [ref=e203] [cursor=pointer]:
+    - /url: https://wa.me/50684319953
+    - img [ref=e204]
