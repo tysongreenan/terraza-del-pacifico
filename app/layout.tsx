@@ -35,7 +35,7 @@ export default function RootLayout({
       // expected hydration mismatch on this element only.
       suppressHydrationWarning
     >
-      <body className="min-h-screen antialiased">
+      <body className="flex min-h-screen flex-col antialiased">
         {/* Progressive enhancement: scroll-reveal hides content with CSS, then
             JS reveals it on scroll. Add `js` before paint so the hidden state
             only applies when JS can reveal it — no-JS clients and non-JS

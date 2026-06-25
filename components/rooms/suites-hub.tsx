@@ -104,7 +104,7 @@ export function SuitesHub({
                   <ArrowRight className="h-4 w-4" aria-hidden />
                 </a>
                 <Link
-                  href={`/${locale}/habitaciones/comparar`}
+                  href={`/${locale}/suites/comparar`}
                   className={cn(
                     actionButtonVariants({ variant: "secondary", surface: "dark", size: "lg" }),
                     focusRing
@@ -156,7 +156,7 @@ export function SuitesHub({
         <div className="container max-w-4xl text-center">
           <Reveal>
             <p className="eyebrow">{copy.intro.eyebrow}</p>
-            <p className="mx-auto mt-5 max-w-3xl font-concept text-2xl font-normal leading-[1.34] text-concept-ink text-h2">
+            <p className="mx-auto mt-5 max-w-3xl font-concept font-normal leading-[1.34] text-concept-ink text-h2">
               {copy.intro.body.map((seg, i) =>
                 typeof seg === "string" ? (
                   <span key={i}>{seg}</span>
@@ -197,7 +197,7 @@ export function SuitesHub({
       {/* compare CTA */}
       <div className="container pb-20 text-center md:pb-24">
         <Link
-          href={`/${locale}/habitaciones/comparar`}
+          href={`/${locale}/suites/comparar`}
           className={cn(
             actionButtonVariants({ variant: "secondary", surface: "light", size: "lg" }),
             focusRing
@@ -221,13 +221,13 @@ export function SuitesHub({
               </p>
             </div>
           </Reveal>
-          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-px overflow-hidden rounded-sm border border-[#e7dfcf] bg-[#e7dfcf] sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-px overflow-hidden rounded-sm border border-concept-border-soft bg-concept-border-soft sm:grid-cols-2 lg:grid-cols-3">
             {copy.included.items.map((item) => (
               <div key={item.title} className="bg-concept-sand p-8 md:p-9">
                 <span className="mb-5 flex h-9 w-9 items-center justify-center rounded-full border border-concept-gold text-concept-gold">
                   <Diamond className="h-3.5 w-3.5" aria-hidden />
                 </span>
-                <h3 className="font-concept text-2xl text-concept-ocean">
+                <h3 className="font-concept text-h3 text-concept-ocean">
                   {item.title}
                 </h3>
                 <p className="mt-2 text-caption leading-relaxed text-[#5f5a52]">
@@ -308,7 +308,7 @@ function RoomFeature({
                 className={cn(
                   "absolute top-6 text-micro font-semibold uppercase tracking-[0.16em]",
                   room.slug === "villas"
-                    ? "left-6 bg-concept-gold px-3 py-1.5 text-[#1a1611]"
+                    ? "left-6 bg-concept-gold px-3 py-1.5 text-concept-ink-strong"
                     : "left-6 rounded-full border border-white/55 px-4 py-2 text-white"
                 )}
               >
@@ -321,7 +321,7 @@ function RoomFeature({
                 reverse ? "right-7 text-right" : "left-7"
               )}
             >
-              <p className="mb-2.5 text-micro font-medium uppercase tracking-[0.22em] text-[#f3ead6]">
+              <p className="mb-2.5 text-micro font-medium uppercase tracking-[0.22em] text-concept-cream">
                 {editorial.kicker}
               </p>
               <h2 className="font-concept text-h1 font-medium leading-none text-white ">
@@ -347,10 +347,10 @@ function RoomFeature({
           <h3 className="font-concept text-h3 font-medium leading-none text-concept-ocean">
             {room.name}
           </h3>
-          <p className="mt-4 text-sm leading-[1.7] text-[#6f6a62]">
+          <p className="mt-4 text-sm leading-[1.7] text-concept-ink-muted">
             {editorial.description}
           </p>
-          <dl className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-3 border-y border-[#e7dfcf] py-5">
+          <dl className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-3 border-y border-concept-border-soft py-5">
             {stats.map((stat, i) => (
               <div key={stat.label} className="flex items-center gap-4">
                 {i > 0 && (
@@ -380,7 +380,7 @@ function RoomFeature({
               {s.bookCta}
             </a>
             <Link
-              href={`/${locale}/habitaciones/${room.slug}`}
+              href={`/${locale}/suites/${room.slug}`}
               className={cn(
                 actionButtonVariants({ variant: "secondary", surface: "light" }),
                 focusRing

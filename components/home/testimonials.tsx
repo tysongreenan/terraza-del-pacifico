@@ -36,7 +36,7 @@ export function Testimonials({ dict }: { dict: Dictionary }) {
                   <blockquote className="mt-4 font-concept text-xl italic leading-snug text-concept-ink text-h4">
                     “{item.quote}”
                   </blockquote>
-                  <figcaption className="mt-4 text-xs font-medium uppercase tracking-[0.1em] text-[#8a8478]">
+                  <figcaption className="mt-4 text-xs font-medium uppercase tracking-[0.1em] text-concept-ink-subtle">
                     {item.author}
                     {item.meta ? ` · ${item.meta}` : ""}
                   </figcaption>

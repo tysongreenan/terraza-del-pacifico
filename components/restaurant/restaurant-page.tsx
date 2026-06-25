@@ -12,7 +12,7 @@ import { restaurantPageContent } from "@/content/restaurant-page";
 export function RestaurantPage({ locale }: { locale: Locale }) {
   const copy = restaurantPageContent[locale];
   const menuHref = (cat?: string) =>
-    `/${locale}/restaurante/menu${cat ? `?cat=${cat}` : ""}`;
+    `/${locale}/restaurant/menu${cat ? `?cat=${cat}` : ""}`;
 
   return (
     <article className="home-concept bg-concept-sand">
@@ -64,7 +64,7 @@ export function RestaurantPage({ locale }: { locale: Locale }) {
               {copy.hero.meta.map((item) => (
                 <p
                   key={item}
-                  className="text-xs uppercase tracking-[0.12em] text-[#f3ead6]"
+                  className="text-xs uppercase tracking-[0.12em] text-concept-cream"
                 >
                   <span className="mr-1.5 text-concept-gold">◆</span>
                   {item}
@@ -90,7 +90,7 @@ export function RestaurantPage({ locale }: { locale: Locale }) {
             <br />
             {copy.ambiance.titleLines[1]}
           </h2>
-          <p className="mt-5 max-w-md text-body-sm leading-[1.8] text-[#bcd0d8]">
+          <p className="mt-5 max-w-md text-body-sm leading-[1.8] text-on-dark-muted">
             {copy.ambiance.body}
           </p>
         </Reveal>
@@ -112,7 +112,7 @@ export function RestaurantPage({ locale }: { locale: Locale }) {
               <Reveal key={card.key} delay={i * 90}>
                 <Link
                   href={menuHref(card.key === "drinks" ? "drinks" : undefined)}
-                  className="group flex h-full flex-col overflow-hidden rounded-sm border border-[#ece5d8] bg-white transition-shadow hover:shadow-[0_18px_44px_rgba(16,58,77,0.14)]"
+                  className="group flex h-full flex-col overflow-hidden rounded-sm border border-concept-border bg-white transition-shadow hover:shadow-[0_18px_44px_rgba(16,58,77,0.14)]"
                 >
                   <div className="relative h-72 overflow-hidden">
                     <Image
@@ -127,7 +127,7 @@ export function RestaurantPage({ locale }: { locale: Locale }) {
                     <h3 className="font-concept text-h3 font-medium leading-none text-concept-ocean">
                       {card.title}
                     </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-[#6f6a62]">
+                    <p className="mt-3 text-sm leading-relaxed text-concept-ink-muted">
                       {card.body}
                     </p>
                     <span className="mt-6 inline-flex w-fit items-center gap-1 border-b border-[#d8c79c] pb-1 text-xs font-semibold uppercase tracking-[0.12em] text-concept-ocean">
@@ -161,7 +161,7 @@ export function RestaurantPage({ locale }: { locale: Locale }) {
             <br />
             {copy.chef.titleLines[1]}
           </h2>
-          <p className="mt-5 max-w-md text-body-sm leading-[1.8] text-[#bcd0d8]">
+          <p className="mt-5 max-w-md text-body-sm leading-[1.8] text-on-dark-muted">
             {copy.chef.body}
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -190,7 +190,7 @@ export function RestaurantPage({ locale }: { locale: Locale }) {
           <h2 className="mt-4 font-concept text-h1 font-medium leading-[1.08] text-white ">
             {copy.reserve.title}
           </h2>
-          <p className="mt-5 max-w-md text-body-sm leading-[1.7] text-[#bcd0d8]">
+          <p className="mt-5 max-w-md text-body-sm leading-[1.7] text-on-dark-muted">
             {copy.reserve.body}
           </p>
           <div className="mt-8 flex flex-wrap gap-3">

@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import posthog from "posthog-js";
 import {
   LuxuryCtaBand,
   LuxuryFactsStrip,
@@ -52,7 +55,7 @@ export function InfoPage({
   locale: Locale;
 }) {
   const copy = PAGE_COPY[locale];
-  const sectionLabel = page.type === "experience" ? "experiencias" : "eventos";
+  const sectionLabel = page.type === "experience" ? "experiences" : "events";
   const hubHref = `/${locale}/${sectionLabel}`;
   const external = page.cta.href.startsWith("http");
 
@@ -78,6 +81,14 @@ export function InfoPage({
           target={external ? "_blank" : undefined}
           rel={external ? "noopener noreferrer" : undefined}
           className={cn(actionButtonVariants({ variant: "primary" }))}
+          onClick={() =>
+            posthog.capture("info_cta_clicked", {
+              page_id: page.id,
+              page_title: page.title[locale],
+              page_type: page.type,
+              locale,
+            })
+          }
         >
           {page.cta.label[locale]}
           <ArrowRight className="h-4 w-4" aria-hidden />
@@ -168,7 +179,7 @@ export function InfoPage({
                     <p className="text-micro font-semibold uppercase tracking-[0.14em] text-concept-gold">
                       {item.eyebrow[locale]}
                     </p>
-                    <h3 className="mt-2 font-concept text-2xl leading-tight">
+                    <h3 className="mt-2 font-concept text-h3 leading-tight">
                       {item.title[locale]}
                     </h3>
                     <span className="mt-3 inline-flex items-center gap-1.5 text-micro font-semibold uppercase tracking-[0.1em]">

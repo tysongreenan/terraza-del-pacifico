@@ -1,49 +1,25 @@
-import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "@/lib/utils";
-
-const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
-  {
-    variants: {
-      variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        accent: "bg-accent text-accent-foreground hover:bg-accent/90",
-        outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
-      },
-      size: {
-        default: "h-10 px-5 py-2",
-        sm: "h-9 rounded-md px-3",
-        lg: "h-12 rounded-md px-8 text-base",
-      },
-    },
-    defaultVariants: { variant: "default", size: "default" },
-  }
-);
 
 /**
- * Canonical brand button system — the single source of truth for site CTAs.
- * See docs/design.md › Buttons. Apply the className to a <button>, <a>, or
- * next/link <Link>. Three variants, surface-aware for light vs dark/photo
- * backgrounds:
+ * Canonical brand button system — THE single source of truth for every button
+ * on the site. See docs/design.md › Buttons. Apply the className to a
+ * <button>, <a>, or next/link <Link>. Three variants, surface-aware for light
+ * vs dark/photo backgrounds:
  *   - primary   gold solid (main action)
  *   - secondary outline (ocean on light, white on dark)
  *   - tertiary  text link + arrow (quiet inline action; no padding/border)
  *
- * NOTE: `buttonVariants` above is the legacy shadcn cva, still used by a few
- * core-chrome files (header, nav, hero, pool, page-scaffold, not-found). It is
- * being migrated onto `actionButtonVariants` and will be removed afterward.
+ * Edit the shared base string or any variant here and EVERY button updates.
  */
 export const actionButtonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-sm text-caption font-semibold uppercase tracking-[0.1em] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-60",
+  // font-sans is explicit so buttons never inherit Cormorant from a page that
+  // sets font-concept on a wrapper (buttons are always the Inter UI font).
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-sm font-sans text-caption font-semibold uppercase tracking-[0.1em] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-60",
   {
     variants: {
       variant: {
         // Matches the homepage gold CTA exactly (RESERVE / CHECK AVAILABILITY).
-        primary: "bg-concept-gold text-[#1a1611] transition-opacity hover:opacity-90",
+        primary: "bg-concept-gold text-concept-ink-strong transition-opacity hover:opacity-90",
         secondary: "border",
         tertiary: "gap-1.5",
       },
@@ -83,20 +59,3 @@ export const actionButtonVariants = cva(
 );
 
 export type ActionButtonVariants = VariantProps<typeof actionButtonVariants>;
-
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {}
-
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, ...props }, ref) => (
-    <button
-      ref={ref}
-      className={cn(buttonVariants({ variant, size, className }))}
-      {...props}
-    />
-  )
-);
-Button.displayName = "Button";
-
-export { Button, buttonVariants };

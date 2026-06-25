@@ -131,7 +131,7 @@ export function InfoHub({
                   <p className="text-micro font-semibold uppercase tracking-[0.14em] text-concept-gold">
                     {page.eyebrow[locale]}
                   </p>
-                  <h3 className="mt-2 font-concept text-2xl leading-tight text-h3">
+                  <h3 className="mt-2 font-concept leading-tight text-h3">
                     {page.title[locale]}
                   </h3>
                   <span className="mt-4 inline-flex items-center gap-1.5 text-micro font-semibold uppercase tracking-[0.1em] text-white/90">

@@ -2,12 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import posthog from "posthog-js";
 import { ChevronDown, Phone } from "lucide-react";
-import { buttonVariants } from "@/components/ui/button";
+import { actionButtonVariants } from "@/components/ui/button";
 import { LanguageToggle } from "@/components/language-toggle";
 import { MobileNav } from "@/components/mobile-nav";
-import type { Locale } from "@/lib/i18n";
+import { locales, type Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/lib/dictionaries";
 import { bookingHref } from "@/lib/site";
 import { socials } from "@/lib/socials";
@@ -15,6 +17,30 @@ import { cn } from "@/lib/utils";
 
 export type NavLink = { href: string; label: string };
 export type NavEntry = NavLink | { label: string; children: NavLink[] };
+
+// Drop the /es or /en prefix → logical path ("/es/suites/x" → "/suites/x").
+function stripLocale(pathname: string): string {
+  for (const l of locales) {
+    if (pathname === `/${l}`) return "/";
+    if (pathname.startsWith(`/${l}/`)) return pathname.slice(l.length + 1);
+  }
+  return pathname || "/";
+}
+
+// Pages that open on a LIGHT surface (no dark full-bleed hero behind the header)
+// must use the solid header — otherwise the transparent white nav is invisible.
+// Verified visually 2026-06-24. ADD new hero-less routes here as they're built.
+function resolveVariant(pathname: string): "overlay" | "solid" {
+  const path = stripLocale(pathname);
+  // Suite detail pages (/suites/<slug>) open on a light photo mosaic;
+  // the /habitaciones hub and the /comparar page do have dark heroes.
+  const isSuiteDetail =
+    path.startsWith("/suites/") && path !== "/suites/comparar";
+  // Blog list + posts open on a light surface (no dark hero) → solid header.
+  const isBlog = path === "/blog" || path.startsWith("/blog/");
+  if (path === "/experiences" || isSuiteDetail || isBlog) return "solid";
+  return "overlay";
+}
 
 function NavDropdown({
   label,
@@ -92,12 +118,22 @@ function NavDropdown({
 export function SiteHeader({
   locale,
   dict,
+  variant,
 }: {
   locale: Locale;
   dict: Dictionary;
+  // "overlay" = transparent over a dark hero, solidifies on scroll (home,
+  // restaurant, about…). "solid" = always-solid surface from the top, for
+  // hero-less / light pages (suite detail, experiences hub) where a transparent
+  // white nav would be invisible. When omitted, the variant is resolved from
+  // the route (see resolveVariant); pass it explicitly only to force a variant
+  // (e.g. the /styleguide previews).
+  variant?: "overlay" | "solid";
 }) {
   const n = dict.nav;
   const p = (slug: string) => `/${locale}${slug ? `/${slug}` : ""}`;
+  const pathname = usePathname();
+  const resolved = variant ?? resolveVariant(pathname);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -107,22 +143,23 @@ export function SiteHeader({
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const transparent = !scrolled;
+  // Solid pages never go transparent; overlay pages are transparent until scroll.
+  const transparent = resolved === "overlay" ? !scrolled : false;
 
   const nav: NavEntry[] = [
-    { href: p("habitaciones"), label: n.rooms },
+    { href: p("suites"), label: n.rooms },
     {
       label: n.eatDrink,
       children: [
-        { href: p("restaurante"), label: n.restaurant },
-        { href: p("bares"), label: n.bars },
-        { href: p("panaderia"), label: n.bakery },
+        { href: p("restaurant"), label: n.restaurant },
+        { href: p("bars"), label: n.bars },
+        { href: p("bakery"), label: n.bakery },
       ],
     },
-    { href: p("eventos"), label: n.events },
-    { href: p("experiencias"), label: n.experiences },
-    { href: p("galeria"), label: n.gallery },
-    { href: p("sobre-nosotros"), label: n.about },
+    { href: p("events"), label: n.events },
+    { href: p("experiences"), label: n.experiences },
+    { href: p("gallery"), label: n.gallery },
+    { href: p("about"), label: n.about },
   ];
   const bookHref = bookingHref;
 
@@ -230,14 +267,10 @@ export function SiteHeader({
             target="_blank"
             rel="noopener noreferrer"
             className={cn(
-              buttonVariants({
-                variant: "accent",
-                size: "sm",
-                className: "hidden sm:inline-flex uppercase tracking-[0.1em]",
-              }),
-              transparent &&
-                "bg-concept-gold text-[#1a1611] hover:bg-concept-gold/90"
+              actionButtonVariants({ variant: "primary", size: "sm" }),
+              "hidden sm:inline-flex"
             )}
+            onClick={() => posthog.capture("nav_booking_clicked")}
           >
             {n.book}
           </Link>

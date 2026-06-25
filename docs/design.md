@@ -77,9 +77,16 @@ composes with any font weight/tracking (the serif and sans looks keep their own)
 There is also an `.eyebrow` utility (`text-eyebrow uppercase text-concept-gold-muted`)
 for the standard gold overline.
 
-**Conventions:** serif titles → `font-concept font-medium` + a `text-h*`/`text-display`
-token. Body → nothing to do (`font-sans` is the `<body>` default). Real bold weights
-exist on all three fonts — use `font-semibold`/`font-bold` freely.
+**Font assignment (strict):**
+
+- **Cormorant (`font-concept`) is for headings only** — `text-display` + `text-h1`
+  through `text-h4`. Pattern: `font-concept font-medium` + the heading token.
+- **Everything else is sans** — body, leads, labels, captions, eyebrows, prices,
+  card meta. Use `font-sans` (Inter, the `<body>` default — usually nothing to do)
+  or `font-display` (Manrope) for an alternate sans. **Never put `font-concept` on
+  body/label/caption text or on a raw `text-lg/xl/2xl` size.**
+
+Real bold weights exist on all three fonts — use `font-semibold`/`font-bold` freely.
 
 ---
 
@@ -125,6 +132,7 @@ rhythm**, use the fluid tokens instead of ad-hoc `py-16/20/24/28`:
 |-------|-------------------------|-----|
 | `py-section` | 56 → 96px | Standard section padding |
 | `py-section-sm` | 40 → 64px | Tighter sections (lists, info hubs) |
+| `pt-section-top` | 112 → 144px | **Top padding for the first section on a hero-less / solid-header page** — clears the fixed header (~72–88px) + rhythm. Overlay/hero pages don't need it (the hero sits under the header). |
 
 Container is centered, `1.5rem` gutter, `1280px` max (`tailwind.config.ts`).
 

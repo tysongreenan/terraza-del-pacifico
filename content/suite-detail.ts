@@ -39,6 +39,7 @@ type SuiteDetailCopy = {
   prev: string;
   next: string;
   // booking sidebar
+  bookToday: string;
   reserveDirect: string;
   bestRate: string;
   freeCancel: string;
@@ -64,6 +65,7 @@ const en: SuiteDetailCopy = {
   enlarge: (i, n) => `Enlarge photo ${i} of ${n}`,
   prev: "Previous photo",
   next: "Next photo",
+  bookToday: "Book today",
   reserveDirect: "Reserve direct",
   bestRate: "◆ Best rate · direct",
   freeCancel: "We'll confirm your dates by email or WhatsApp — no prepayment to ask.",
@@ -175,6 +177,7 @@ const es: SuiteDetailCopy = {
   enlarge: (i, n) => `Ampliar foto ${i} de ${n}`,
   prev: "Foto anterior",
   next: "Foto siguiente",
+  bookToday: "Reserva hoy",
   reserveDirect: "Reserva directa",
   bestRate: "◆ Mejor tarifa · directo",
   freeCancel:

@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { MessageCircle } from "lucide-react";
+import posthog from "posthog-js";
 import { actionButtonVariants } from "@/components/ui/button";
 import type { Locale } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
@@ -116,7 +117,7 @@ export function InquiryForm({
       : "border-[#d3cab6] text-concept-ink placeholder:text-[#aaa394]"
   );
   const fieldLabelClass = cn(
-    "block text-[11px] uppercase tracking-[0.12em]",
+    "block text-micro uppercase tracking-[0.12em]",
     dark ? "text-white/50" : "text-[#aaa394]"
   );
 
@@ -150,7 +151,16 @@ export function InquiryForm({
       const json = (await res.json().catch(() => ({ ok: false }))) as {
         ok?: boolean;
       };
-      setStatus(json.ok ? "sent" : "fallback");
+      if (json.ok) {
+        posthog.capture("inquiry_submitted", {
+          kind,
+          page_title: pageTitle,
+          locale,
+        });
+        setStatus("sent");
+      } else {
+        setStatus("fallback");
+      }
     } catch {
       setStatus("fallback");
     }
@@ -176,7 +186,7 @@ export function InquiryForm({
         <p
           className={cn(
             "mx-auto mt-3 max-w-xs text-sm leading-relaxed",
-            dark ? "text-[#bcd0d8]" : "text-concept-ink/70"
+            dark ? "text-concept-mist" : "text-concept-ink/70"
           )}
         >
           {k.sentBody}
@@ -205,7 +215,7 @@ export function InquiryForm({
         <p
           className={cn(
             "mx-auto mt-3 max-w-xs text-sm leading-relaxed",
-            dark ? "text-[#bcd0d8]" : "text-concept-ink/70"
+            dark ? "text-concept-mist" : "text-concept-ink/70"
           )}
         >
           {t.fallbackBody}
@@ -216,6 +226,9 @@ export function InquiryForm({
             target="_blank"
             rel="noopener noreferrer"
             className={actionButtonVariants({ variant: "primary", size: "sm" })}
+            onClick={() =>
+              posthog.capture("inquiry_whatsapp_fallback_clicked", { kind, locale })
+            }
           >
             <MessageCircle className="h-4 w-4" aria-hidden />
             {t.whatsapp}
@@ -359,7 +372,7 @@ export function InquiryForm({
       </button>
       <p
         className={cn(
-          "mt-4 text-center text-[11px] leading-relaxed",
+          "mt-4 text-center text-micro leading-relaxed",
           dark ? "text-[#7f99a3]" : "text-[#aaa394]"
         )}
       >

@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/home/reveal";
+import { actionButtonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import type { Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/lib/dictionaries";
 
@@ -39,12 +41,15 @@ export function Restaurant({
         <h2 className="mt-4 font-concept text-h1 font-medium leading-[1.12] text-white ">
           {r.title}
         </h2>
-        <p className="mt-5 max-w-md text-body-sm leading-relaxed text-[#bcd0d8]">
+        <p className="mt-5 max-w-md text-body-sm leading-relaxed text-on-dark-muted">
           {r.body}
         </p>
         <Link
-          href={`/${locale}/restaurante`}
-          className="mt-8 inline-flex w-fit rounded-sm border border-white/45 px-8 py-3.5 text-caption font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-concept-ocean"
+          href={`/${locale}/restaurant`}
+          className={cn(
+            actionButtonVariants({ variant: "secondary", surface: "dark" }),
+            "mt-8 w-fit"
+          )}
         >
           {r.cta}
         </Link>

@@ -17,15 +17,15 @@ export function SiteFooter({
   const p = (slug: string) => `/${locale}${slug ? `/${slug}` : ""}`;
 
   const explore = [
-    { href: p("habitaciones"), label: n.rooms },
-    { href: p("restaurante"), label: n.restaurant },
-    { href: p("bares"), label: n.bars },
-    { href: p("panaderia"), label: n.bakery },
-    { href: p("eventos"), label: n.events },
-    { href: p("experiencias"), label: n.experiences },
-    { href: p("galeria"), label: n.gallery },
+    { href: p("suites"), label: n.rooms },
+    { href: p("restaurant"), label: n.restaurant },
+    { href: p("bars"), label: n.bars },
+    { href: p("bakery"), label: n.bakery },
+    { href: p("events"), label: n.events },
+    { href: p("experiences"), label: n.experiences },
+    { href: p("gallery"), label: n.gallery },
     { href: p("blog"), label: n.blog },
-    { href: p("politicas"), label: f.policies },
+    { href: p("policies"), label: f.policies },
   ];
 
   return (

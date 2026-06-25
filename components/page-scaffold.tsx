@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, CalendarDays, Mail, MessageCircle } from "lucide-react";
-import { buttonVariants } from "@/components/ui/button";
+import { actionButtonVariants } from "@/components/ui/button";
 import {
   LuxuryCtaBand,
   LuxuryHero,
@@ -105,7 +105,7 @@ const FEATURED_IMAGES: Record<string, string[]> = {
     "/images/Resturant/DSCF4078(1).JPG",
     "/images/Resturant/chloemurdochphotography-342.JPG",
   ],
-  "sobre-nosotros": [
+  "about": [
     "/images/Resort Highlights/DJI_0361(1)2.JPG",
     "/images/Resort Highlights/RLR_0780(1)3.JPG",
     "/images/New Pool/dji_fly_20241022_013922_0645_1753125628421_photo4.JPG",
@@ -122,7 +122,7 @@ const FEATURED_IMAGES: Record<string, string[]> = {
 };
 
 const SUPPLEMENT_IMAGES: Record<string, string[]> = {
-  "sobre-nosotros": [
+  "about": [
     "/images/g-aerial-beach-property-COogc_9W.jpg",
     "/images/exp-sunset-drone.jpg",
     "/images/wedding-beach-ceremony-NqUR8iSS.jpg",
@@ -251,7 +251,7 @@ const PAGE_INTRO: Record<
       title: "Mediterranean cuisine on the Pacific",
     },
   },
-  "sobre-nosotros": {
+  "about": {
     es: {
       eyebrow: "Nuestra historia",
       title: "Más de 20 años frente al mar",
@@ -438,7 +438,7 @@ function LuxuryPageScaffold({
   const { intro, sections } = buildSections(data);
   const storySections = sections
     .filter((section) => section.body.length > 0)
-    .slice(0, path === "galeria" ? 0 : 4);
+    .slice(0, path === "gallery" ? 0 : 4);
   const pageIntro = PAGE_INTRO[path]?.[locale];
   const heroCopy = LUXURY_HERO[path]?.[locale];
   const heroTitle = heroCopy?.title ?? title;
@@ -446,16 +446,16 @@ function LuxuryPageScaffold({
   const introLine = data.desc;
 
   const mosaicItems: MosaicImage[] = images
-    .slice(0, path === "galeria" ? 20 : 14)
+    .slice(0, path === "gallery" ? 20 : 14)
     .map((src, index) => ({
       src,
       alt: `${title} — ${locale === "en" ? "photo" : "foto"} ${index + 1}`,
     }));
 
   const ctaImage =
-    path === "restaurante"
+    path === "restaurant"
       ? "/images/restaurant-sunset-T7wmiQ85.jpg"
-      : path === "sobre-nosotros"
+      : path === "about"
         ? "/images/g-aerial-beach-property-COogc_9W.jpg"
         : "/images/Resort Highlights/IMG_2559.JPG";
 
@@ -476,7 +476,7 @@ function LuxuryPageScaffold({
           href={whatsappHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-2 rounded-sm border border-white/55 px-7 py-3.5 text-caption font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10"
+          className={actionButtonVariants({ variant: "secondary", surface: "dark" })}
         >
           <MessageCircle className="h-4 w-4" aria-hidden />
           {copy.whatsapp}
@@ -500,7 +500,7 @@ function LuxuryPageScaffold({
             title={section.title}
             reverse={index % 2 === 1}
             cta={
-              path === "restaurante" && index === storySections.length - 1
+              path === "restaurant" && index === storySections.length - 1
                 ? {
                     label:
                       locale === "en" ? "Reserve your table" : "Reservar mesa",
@@ -512,7 +512,7 @@ function LuxuryPageScaffold({
         );
       })}
 
-      {path === "galeria" ? (
+      {path === "gallery" ? (
         // The gallery is separated into resort aspects (pool, weddings, dining,
         // suites, beach) — each a titled band with its own lightbox-enabled
         // mosaic — so the Intro leads straight into the categorized sections.
@@ -576,7 +576,7 @@ export function PageScaffold({
   const primarySections = sections.slice(0, 6);
   // Policy/legal routes: suppress the generic marketing gallery + "essentials"
   // resort framing so the page stays focused on the policy content.
-  const isPolicies = path === "politicas";
+  const isPolicies = path === "policies";
 
   return (
     <article>
@@ -608,21 +608,20 @@ export function PageScaffold({
                 href={bookingHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={buttonVariants({ variant: "accent", size: "lg" })}
+                className={actionButtonVariants({ variant: "primary", size: "lg" })}
               >
                 {copy.book}
-                <ArrowRight className="ml-2 h-4 w-4" />
+                <ArrowRight className="h-4 w-4" aria-hidden />
               </Link>
               <Link
                 href={whatsappHref}
-                className={buttonVariants({
-                  variant: "outline",
+                className={actionButtonVariants({
+                  variant: "secondary",
+                  surface: "dark",
                   size: "lg",
-                  className:
-                    "border-white/50 bg-white/10 text-white hover:bg-white hover:text-primary",
                 })}
               >
-                <MessageCircle className="mr-2 h-4 w-4" />
+                <MessageCircle className="h-4 w-4" aria-hidden />
                 {copy.whatsapp}
               </Link>
             </div>
@@ -674,7 +673,7 @@ export function PageScaffold({
                 key={section.title}
                 className="rounded-md border bg-card p-6 shadow-sm"
               >
-                <h2 className="text-2xl font-bold text-primary">
+                <h2 className="text-h3 font-bold text-primary">
                   {section.title}
                 </h2>
                 <SectionBody lines={section.body} />
@@ -701,21 +700,20 @@ export function PageScaffold({
           <div className="flex flex-wrap gap-3">
             <Link
               href="mailto:info@terrazadelpacifico.com"
-              className={buttonVariants({
-                variant: "outline",
+              className={actionButtonVariants({
+                variant: "secondary",
+                surface: "dark",
                 size: "lg",
-                className:
-                  "border-white/50 bg-white/10 text-white hover:bg-white hover:text-primary",
               })}
             >
-              <Mail className="mr-2 h-4 w-4" />
+              <Mail className="h-4 w-4" aria-hidden />
               {copy.email}
             </Link>
             <Link
               href={whatsappHref}
-              className={buttonVariants({ variant: "accent", size: "lg" })}
+              className={actionButtonVariants({ variant: "primary", size: "lg" })}
             >
-              <MessageCircle className="mr-2 h-4 w-4" />
+              <MessageCircle className="h-4 w-4" aria-hidden />
               {copy.whatsapp}
             </Link>
           </div>

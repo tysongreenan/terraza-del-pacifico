@@ -2,6 +2,7 @@ import Image from "next/image";
 import { MessageCircle } from "lucide-react";
 import { Reveal } from "@/components/home/reveal";
 import { PanelCarousel } from "@/components/luxury/panel-carousel";
+import { actionButtonVariants } from "@/components/ui/button";
 import { whatsappHref } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import type { Locale } from "@/lib/i18n";
@@ -54,7 +55,7 @@ export function VenuePage({
             </Reveal>
             <div className="mt-8 flex flex-col gap-3 border-t border-white/15 pt-6 md:flex-row md:gap-9">
               {t.hero.meta.map((item) => (
-                <p key={item} className="text-xs uppercase tracking-[0.12em] text-[#f3ead6]">
+                <p key={item} className="text-xs uppercase tracking-[0.12em] text-concept-cream">
                   <span className="mr-1.5 text-concept-gold">◆</span>
                   {item}
                 </p>
@@ -73,12 +74,15 @@ export function VenuePage({
             <br />
             {t.intro.titleLines[1]}
           </h2>
-          <p className="mt-5 max-w-md text-body-sm leading-[1.8] text-[#6f6a62]">
+          <p className="mt-5 max-w-md text-body-sm leading-[1.8] text-concept-ink-muted">
             {t.intro.body}
           </p>
           <a
             href="#pours"
-            className="mt-8 inline-flex w-fit items-center rounded-sm border border-[#cdbfa6] px-7 py-3.5 text-caption font-medium uppercase tracking-[0.1em] text-concept-ocean transition-colors hover:border-concept-ocean focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2"
+            className={cn(
+              actionButtonVariants({ variant: "secondary", surface: "light" }),
+              "mt-8 w-fit"
+            )}
           >
             {t.intro.cta}
           </a>
@@ -106,7 +110,7 @@ export function VenuePage({
               <p
                 className={cn(
                   "max-w-xs text-sm leading-relaxed md:mb-1.5",
-                  amber ? "text-[#cdbfa6]" : "text-[#bcd0d8]"
+                  amber ? "text-[#cdbfa6]" : "text-on-dark-muted"
                 )}
               >
                 {t.pours.blurb}
@@ -162,7 +166,7 @@ export function VenuePage({
                 href={mapHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-sm bg-concept-gold px-8 py-3.5 text-caption font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+                className={actionButtonVariants({ variant: "primary" })}
               >
                 {t.cta.primary}
               </a>
@@ -170,7 +174,7 @@ export function VenuePage({
                 href={whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-sm border border-white/60 px-8 py-3.5 text-caption font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+                className={actionButtonVariants({ variant: "secondary", surface: "dark" })}
               >
                 <MessageCircle className="h-4 w-4" aria-hidden />
                 {t.cta.secondary}

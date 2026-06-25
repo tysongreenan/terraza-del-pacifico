@@ -1,4 +1,7 @@
+"use client";
+
 import { Plus } from "lucide-react";
+import posthog from "posthog-js";
 import { Reveal } from "@/components/home/reveal";
 import type { Dictionary } from "@/lib/dictionaries";
 
@@ -17,7 +20,15 @@ export function Faq({ dict }: { dict: Dictionary }) {
 
         <Reveal delay={100} className="mt-10 divide-y divide-border/70 border-y border-border/70">
           {f.items.map((item) => (
-            <details key={item.q} className="group">
+            <details
+              key={item.q}
+              className="group"
+              onToggle={(e) => {
+                if ((e.currentTarget as HTMLDetailsElement).open) {
+                  posthog.capture("faq_expanded", { question: item.q });
+                }
+              }}
+            >
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-left text-body font-medium text-concept-ink transition-colors hover:text-concept-ocean [&::-webkit-details-marker]:hidden">
                 {item.q}
                 <Plus
@@ -25,7 +36,7 @@ export function Faq({ dict }: { dict: Dictionary }) {
                   aria-hidden
                 />
               </summary>
-              <p className="pb-5 pr-9 text-body-sm leading-relaxed text-[#6f6a62]">
+              <p className="pb-5 pr-9 text-body-sm leading-relaxed text-concept-ink-muted">
                 {item.a}
               </p>
             </details>

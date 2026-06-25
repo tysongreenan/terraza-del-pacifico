@@ -186,7 +186,7 @@ export function LuxurySplitBand({
           {title}
         </h2>
         {body && (
-          <p className="mt-5 max-w-md text-body-sm leading-relaxed text-[#bcd0d8]">
+          <p className="mt-5 max-w-md text-body-sm leading-relaxed text-on-dark-muted">
             {body}
           </p>
         )}
@@ -264,7 +264,7 @@ export function LuxuryFactsStrip({
   if (facts.length === 0) return null;
 
   return (
-    <section className="border-y border-[#ece5d8] bg-concept-sand-muted">
+    <section className="border-y border-concept-border bg-concept-sand-muted">
       <div className="container">
         <dl className="grid grid-cols-2 md:grid-cols-4">
           {facts.map((fact, index) => (
@@ -272,15 +272,15 @@ export function LuxuryFactsStrip({
               key={fact.label}
               className={cn(
                 "flex flex-col px-4 py-8 md:px-6 md:py-10",
-                index % 2 === 0 && "border-r border-[#ece5d8]",
-                index < 2 && "border-b border-[#ece5d8] md:border-b-0",
-                index < facts.length - 1 && "md:border-r md:border-[#ece5d8]"
+                index % 2 === 0 && "border-r border-concept-border",
+                index < 2 && "border-b border-concept-border md:border-b-0",
+                index < facts.length - 1 && "md:border-r md:border-concept-border"
               )}
             >
               <dd className="font-concept text-h2 font-medium text-concept-ocean ">
                 {fact.value}
               </dd>
-              <dt className="mt-1.5 text-micro font-semibold uppercase tracking-[0.12em] text-[#6f6a62]">
+              <dt className="mt-1.5 text-micro font-semibold uppercase tracking-[0.12em] text-concept-ink-muted">
                 {fact.label}
               </dt>
             </div>
@@ -362,7 +362,7 @@ export function LuxuryCtaBand({
           </a>
         </Reveal>
         <Reveal delay={180}>
-          <p className="mt-6 text-xs font-medium uppercase tracking-[0.14em] text-[#f3ead6]">
+          <p className="mt-6 text-xs font-medium uppercase tracking-[0.14em] text-concept-cream">
             <span className="text-concept-gold">◆</span>{" "}
             {locale === "en" ? "Best rate guaranteed" : "Mejor tarifa garantizada"}
           </p>

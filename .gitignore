@@ -32,3 +32,15 @@ yarn-error.log*
 # legacy imported Vite site — not part of the Next app; breaks build type-check
 /terraza-web-creator-main/
 .vercel
+
+# design-sync (claude.ai/design) — generated/staged, not committed
+.ds-sync/
+ds-bundle/
+.design-sync/.cache/
+.design-sync/learnings/
+.design-sync/node_modules
+.design-sync/compiled/
+
+# local agent/tooling dirs
+.claude/
+.agents/

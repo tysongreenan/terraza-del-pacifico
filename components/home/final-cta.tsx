@@ -1,5 +1,9 @@
+"use client";
+
 import Image from "next/image";
+import posthog from "posthog-js";
 import { Reveal } from "@/components/home/reveal";
+import { actionButtonVariants } from "@/components/ui/button";
 import type { Dictionary } from "@/lib/dictionaries";
 import { bookingHref } from "@/lib/site";
 
@@ -35,7 +39,8 @@ export function FinalCta({ dict }: { dict: Dictionary }) {
             href={bookingHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-sm bg-concept-gold px-8 py-4 text-caption font-semibold uppercase tracking-[0.1em] text-[#1a1611]"
+            className={actionButtonVariants({ variant: "primary", size: "lg" })}
+            onClick={() => posthog.capture("booking_cta_clicked", { location: "final_cta" })}
           >
             {c.primaryCta}
           </a>
@@ -43,14 +48,15 @@ export function FinalCta({ dict }: { dict: Dictionary }) {
             href={c.whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-sm border border-white/60 px-8 py-4 text-caption font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10"
+            className={actionButtonVariants({ variant: "secondary", surface: "dark", size: "lg" })}
+            onClick={() => posthog.capture("whatsapp_cta_clicked", { location: "final_cta" })}
           >
             {c.secondaryCta}
           </a>
         </Reveal>
 
         <Reveal delay={200}>
-          <p className="mt-6 text-xs font-medium uppercase tracking-[0.14em] text-[#f3ead6]">
+          <p className="mt-6 text-xs font-medium uppercase tracking-[0.14em] text-concept-cream">
             <span className="text-concept-gold">◆</span> {dict.hero.trust}
           </p>
         </Reveal>

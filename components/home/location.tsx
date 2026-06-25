@@ -11,7 +11,7 @@ export function Location({ dict }: { dict: Dictionary }) {
         <h2 className="mt-4 font-concept text-h1 font-medium leading-[1.1] text-concept-ocean ">
           {l.title}
         </h2>
-        <p className="mt-5 max-w-sm text-body-sm leading-relaxed text-[#6f6a62]">
+        <p className="mt-5 max-w-sm text-body-sm leading-relaxed text-concept-ink-muted">
           {l.distance}
         </p>
         <address className="mt-6 not-italic text-sm leading-relaxed text-concept-ink">

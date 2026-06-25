@@ -98,7 +98,7 @@ function NavCard({ tile, locale }: { tile: NavTile; locale: Locale }) {
         <p
           className={cn(
             "mt-1 font-concept leading-tight text-white",
-            isFeature ? "text-h1 " : "text-xl md:text-h3"
+            isFeature ? "text-h1 " : "text-h3"
           )}
         >
           {tile.title[locale]}

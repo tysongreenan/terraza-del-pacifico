@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useMemo, useState } from "react";
+import posthog from "posthog-js";
 import { defaultRoomSlug, roomGalleries } from "@/content/room-galleries";
 import { Reveal } from "@/components/home/reveal";
 import { actionButtonVariants } from "@/components/ui/button";
@@ -74,6 +75,7 @@ export function Suites({
   const selectRoom = (slug: string) => {
     setActiveSlug(slug);
     setSlideIndex(0);
+    posthog.capture("suite_selected", { suite_slug: slug });
   };
 
   const nextSlide = () =>
@@ -95,7 +97,7 @@ export function Suites({
               </h2>
             </div>
             <Link
-              href={`/${locale}/habitaciones`}
+              href={`/${locale}/suites`}
               className="mb-1 shrink-0 border-b border-concept-gold-muted pb-1 text-xs font-semibold uppercase tracking-[0.1em] text-concept-ocean transition-colors hover:text-concept-gold-muted"
             >
               {s.allRoomsCta}
@@ -122,7 +124,7 @@ export function Suites({
               ))}
               <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(10,28,37,0)_70%,rgba(10,28,37,0.45)_100%)]" />
               {isJunior && (
-                <span className="absolute left-5 top-5 z-10 rounded-sm bg-concept-gold px-3.5 py-1.5 text-micro font-semibold uppercase tracking-[0.14em] text-[#1a1611]">
+                <span className="absolute left-5 top-5 z-10 rounded-sm bg-concept-gold px-3.5 py-1.5 text-micro font-semibold uppercase tracking-[0.14em] text-concept-ink-strong">
                   {s.mostBooked}
                 </span>
               )}
@@ -176,7 +178,7 @@ export function Suites({
                 {room.name}
               </h3>
 
-              <dl className="mt-7 grid grid-cols-2 border-y border-[#ece5d8]">
+              <dl className="mt-7 grid grid-cols-2 border-y border-concept-border">
                 {[
                   { label: s.guestsLabel, value: room.guests },
                   { label: s.sizeLabel, value: room.size },
@@ -187,25 +189,25 @@ export function Suites({
                     key={stat.label}
                     className={cn(
                       "py-4",
-                      i % 2 === 0 && "border-r border-[#ece5d8] pr-4",
+                      i % 2 === 0 && "border-r border-concept-border pr-4",
                       i % 2 === 1 && "pl-5 md:pl-[22px]",
-                      i < 2 && "border-b border-[#ece5d8]"
+                      i < 2 && "border-b border-concept-border"
                     )}
                   >
                     <dd className="font-concept text-h3 leading-none text-concept-ink">
                       {stat.value}
                     </dd>
-                    <dt className="mt-0.5 text-micro font-semibold uppercase tracking-[0.12em] text-[#8a8478]">
+                    <dt className="mt-0.5 text-micro font-semibold uppercase tracking-[0.12em] text-concept-ink-subtle">
                       {stat.label}
                     </dt>
                   </div>
                 ))}
               </dl>
 
-              <p className="mt-5 text-sm leading-[1.7] text-[#6f6a62]">
+              <p className="mt-5 text-sm leading-[1.7] text-concept-ink-muted">
                 {room.blurb}
               </p>
-              <p className="mt-4 text-micro tracking-wide text-[#8a8478]">
+              <p className="mt-4 text-micro tracking-wide text-concept-ink-subtle">
                 {s.amenitiesNote}
               </p>
 
@@ -219,7 +221,7 @@ export function Suites({
                   {s.bookCta}
                 </Link>
                 <Link
-                  href={`/${locale}/habitaciones/${room.slug}`}
+                  href={`/${locale}/suites/${room.slug}`}
                   className={actionButtonVariants({ variant: "secondary", surface: "light" })}
                 >
                   {s.detailsCta}
@@ -277,7 +279,7 @@ export function Suites({
                 <p
                   className={cn(
                     "mt-1 text-micro",
-                    selected ? "text-concept-gold-muted" : "text-[#8a8478]"
+                    selected ? "text-concept-gold-muted" : "text-concept-ink-subtle"
                   )}
                 >
                   {item.guests} · {item.size} · {item.beds}

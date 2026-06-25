@@ -51,7 +51,7 @@ export function ExperiencesCarousel({
   };
 
   return (
-    <section className="bg-concept-sand py-section-sm md:py-section">
+    <section className="bg-concept-sand pb-section-sm pt-section-top md:pb-section">
       <div className="container">
         <div className="flex flex-col gap-6 pb-8 md:flex-row md:items-end md:justify-between md:pb-10">
           <div className="max-w-2xl">
@@ -66,7 +66,7 @@ export function ExperiencesCarousel({
               href={hub.cta.href}
               target={external ? "_blank" : undefined}
               rel={external ? "noopener noreferrer" : undefined}
-              className={cn(actionButtonVariants({ variant: "primary" }), "mt-7")}
+              className={cn(actionButtonVariants({ variant: "primary", size: "lg" }), "mt-7")}
             >
               <MessageCircle className="h-4 w-4" aria-hidden />
               {hub.cta.label[locale]}
@@ -104,27 +104,34 @@ export function ExperiencesCarousel({
           <Link
             key={page.id}
             href={pageHref(page, locale)}
-            className="group relative h-[380px] w-[260px] shrink-0 overflow-hidden rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2 md:h-[430px] md:w-[300px]"
+            className="group relative h-[420px] w-[280px] shrink-0 overflow-hidden rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2 md:h-[460px] md:w-[320px]"
             style={{ scrollSnapAlign: "start" }}
           >
             <Image
               src={page.heroImage.src}
               alt={page.heroImage.alt[locale]}
               fill
-              sizes="300px"
-              className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+              sizes="320px"
+              className="object-cover transition-transform duration-700 group-hover:scale-[1.05]"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[rgba(11,32,42,0.9)] via-[rgba(11,32,42,0.2)] to-transparent" />
-            <div className="absolute inset-x-0 bottom-0 z-10 p-5 text-white">
+            <div className="absolute inset-0 bg-gradient-to-t from-concept-ocean/95 via-concept-ocean/40 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 z-10 p-6 text-white">
               <p className="text-micro font-semibold uppercase tracking-[0.14em] text-concept-gold">
                 {page.eyebrow[locale]}
               </p>
-              <h3 className="mt-2 font-concept text-h3 leading-[1.02]">
+              <h3 className="mt-2 font-concept text-h3 leading-[1.05]">
                 {page.title[locale]}
               </h3>
-              <span className="mt-4 inline-flex items-center gap-1.5 text-micro font-semibold uppercase tracking-[0.1em] text-white/90">
+              {/* description was unused before — adds context to each card */}
+              <p className="mt-2 line-clamp-2 text-body-sm leading-relaxed text-white/75">
+                {page.description[locale]}
+              </p>
+              <span className="mt-4 inline-flex items-center gap-1.5 text-caption font-semibold uppercase tracking-[0.1em] text-concept-gold">
                 {copy.explore}
-                <ArrowRight className="h-3.5 w-3.5" aria-hidden />
+                <ArrowRight
+                  className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                  aria-hidden
+                />
               </span>
             </div>
           </Link>

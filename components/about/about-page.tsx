@@ -83,7 +83,7 @@ export function AboutPage({
         <div className="container max-w-4xl text-center">
           <Reveal>
             <p className="eyebrow">{copy.statementEyebrow}</p>
-            <p className="mx-auto mt-5 max-w-3xl font-concept text-2xl font-normal leading-[1.34] text-concept-ink text-h2">
+            <p className="mx-auto mt-5 max-w-3xl font-concept font-normal leading-[1.34] text-concept-ink text-h2">
               {w.body}
             </p>
           </Reveal>
@@ -102,7 +102,7 @@ export function AboutPage({
           {copy.story.paragraphs.map((p, i) => (
             <p
               key={i}
-              className="mt-5 max-w-md text-body-sm leading-[1.8] text-[#6f6a62]"
+              className="mt-5 max-w-md text-body-sm leading-[1.8] text-concept-ink-muted"
             >
               {p}
             </p>
@@ -170,10 +170,10 @@ export function AboutPage({
                     className="object-cover"
                   />
                 </div>
-                <h3 className="font-concept text-2xl text-concept-ocean">
+                <h3 className="font-concept text-h3 text-concept-ocean">
                   {item.title}
                 </h3>
-                <p className="mx-auto mt-3 max-w-xs text-sm leading-relaxed text-[#6f6a62]">
+                <p className="mx-auto mt-3 max-w-xs text-sm leading-relaxed text-concept-ink-muted">
                   {item.body}
                 </p>
               </Reveal>
@@ -206,7 +206,7 @@ export function AboutPage({
           {copy.pool.paragraphs.map((p, i) => (
             <p
               key={i}
-              className="mt-5 max-w-md text-body-sm leading-[1.8] text-[#bcd0d8]"
+              className="mt-5 max-w-md text-body-sm leading-[1.8] text-on-dark-muted"
             >
               {p}
             </p>
@@ -226,7 +226,7 @@ export function AboutPage({
               {copy.location.paragraphs.map((p, i) => (
                 <p
                   key={i}
-                  className="mt-5 text-body-sm leading-[1.8] text-[#6f6a62]"
+                  className="mt-5 text-body-sm leading-[1.8] text-concept-ink-muted"
                 >
                   {p}
                 </p>
@@ -238,12 +238,12 @@ export function AboutPage({
               <Reveal
                 key={h.title}
                 delay={i * 90}
-                className="rounded-sm border border-[#ece5d8] bg-concept-sand-muted p-8 md:p-10"
+                className="rounded-sm border border-concept-border bg-concept-sand-muted p-8 md:p-10"
               >
-                <h3 className="font-concept text-2xl text-concept-ocean">
+                <h3 className="font-concept text-h3 text-concept-ocean">
                   {h.title}
                 </h3>
-                <p className="mt-3 max-w-md text-sm leading-relaxed text-[#6f6a62]">
+                <p className="mt-3 max-w-md text-sm leading-relaxed text-concept-ink-muted">
                   {h.body}
                 </p>
               </Reveal>
@@ -273,10 +273,10 @@ export function AboutPage({
                     aria-hidden
                   />
                   <div>
-                    <h3 className="font-concept text-lg leading-tight text-concept-ocean">
+                    <h3 className="font-concept text-h4 leading-tight text-concept-ocean">
                       {item.title}
                     </h3>
-                    <p className="mt-1 text-sm leading-snug text-[#6f6a62]">
+                    <p className="mt-1 text-sm leading-snug text-concept-ink-muted">
                       {item.subtitle}
                     </p>
                   </div>
@@ -288,12 +288,12 @@ export function AboutPage({
                   {item.href ? (
                     <Link
                       href={`/${locale}${item.href}`}
-                      className="flex h-full items-start gap-4 rounded-sm border border-[#ece5d8] bg-concept-sand p-6 transition-colors hover:border-concept-gold/60 md:p-7"
+                      className="flex h-full items-start gap-4 rounded-sm border border-concept-border bg-concept-sand p-6 transition-colors hover:border-concept-gold/60 md:p-7"
                     >
                       {inner}
                     </Link>
                   ) : (
-                    <div className="flex h-full items-start gap-4 rounded-sm border border-[#ece5d8] bg-concept-sand p-6 md:p-7">
+                    <div className="flex h-full items-start gap-4 rounded-sm border border-concept-border bg-concept-sand p-6 md:p-7">
                       {inner}
                     </div>
                   )}
@@ -311,7 +311,7 @@ export function AboutPage({
         eyebrow={copy.weddings.eyebrow}
         title={copy.weddings.title}
         body={copy.weddings.body}
-        cta={{ label: copy.weddings.cta, href: `/${locale}/eventos` }}
+        cta={{ label: copy.weddings.cta, href: `/${locale}/events` }}
       />
 
       {/* STATS strip */}

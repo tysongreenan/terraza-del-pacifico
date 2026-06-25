@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X, Phone } from "lucide-react";
-import { buttonVariants } from "@/components/ui/button";
+import { actionButtonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 type NavLink = { href: string; label: string };
@@ -95,8 +95,8 @@ export function MobileNav({
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
-              className={buttonVariants({
-                variant: "accent",
+              className={actionButtonVariants({
+                variant: "primary",
                 size: "lg",
                 className: "mt-3",
               })}

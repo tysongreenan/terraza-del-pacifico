@@ -53,7 +53,7 @@ export function Experiences({
               </h2>
             </div>
             <div className="flex items-center gap-4 md:mb-2">
-              <span className="text-xs tracking-wide text-[#6f6a62]">
+              <span className="text-xs tracking-wide text-concept-ink-muted">
                 {e.subtitle}
               </span>
               <div className="flex gap-2.5">
@@ -102,7 +102,7 @@ export function Experiences({
               className={cn(
                 "absolute left-4 top-4 z-10 rounded-full px-3 py-1 text-micro font-semibold uppercase tracking-[0.12em]",
                 item.badge === "Included" || item.badge === "Incluido"
-                  ? "bg-concept-gold text-[#1a1611]"
+                  ? "bg-concept-gold text-concept-ink-strong"
                   : "border border-white/50 text-white"
               )}
             >
@@ -116,7 +116,7 @@ export function Experiences({
                 {item.body}
               </p>
               <div className="mt-4 flex items-center justify-between border-t border-white/20 pt-3.5">
-                <span className="text-micro tracking-wide text-[#bcd0d8]">
+                <span className="text-micro tracking-wide text-concept-mist">
                   {item.detail}
                 </span>
                 <Link
@@ -125,7 +125,7 @@ export function Experiences({
                     "rounded-sm px-4 py-2 text-micro font-semibold uppercase tracking-[0.08em] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2 focus-visible:ring-offset-[rgba(11,32,42,0.9)]",
                     item.cta === "Join" || item.cta === "Unirse"
                       ? "border border-white/50 text-white"
-                      : "bg-concept-gold text-[#1a1611]"
+                      : "bg-concept-gold text-concept-ink-strong"
                   )}
                 >
                   {item.cta}

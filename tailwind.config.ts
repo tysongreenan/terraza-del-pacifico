@@ -64,6 +64,15 @@ const config: Config = {
           sand: "hsl(var(--sand))",
           "sand-muted": "hsl(var(--sand-muted))",
           ink: "hsl(var(--ink))",
+          // Auxiliary shades — named so pages stop hand-coding raw [#hex].
+          // Values are the exact hexes they replace (zero visual change).
+          border: "#ece5d8", // warm hairline border (cards, dividers)
+          "border-soft": "#e7dfcf", // softer warm border
+          "ink-muted": "#6f6a62", // muted body/label text on light
+          "ink-subtle": "#8a8478", // lighter label text on light
+          "ink-strong": "#1a1611", // near-black, e.g. text on gold buttons
+          mist: "#bcd0d8", // light blue-grey text on ocean surfaces
+          cream: "#f3ead6", // pale cream label (on dark/photo)
         },
         // Semantic text colors for dark/ocean surfaces — replaces ad-hoc
         // `text-white/NN`. Use on footer, hero scrims, ocean panels.
@@ -103,6 +112,10 @@ const config: Config = {
         // Standard vertical rhythm for top-level page sections.
         section: "clamp(3.5rem, 2rem + 5vw, 6rem)",
         "section-sm": "clamp(2.5rem, 1.5rem + 3vw, 4rem)",
+        // Top padding for the FIRST section on a hero-less / solid-header page,
+        // so content clears the fixed header (~72–88px) plus section rhythm.
+        // Overlay/hero pages don't need this (their hero sits under the header).
+        "section-top": "clamp(7rem, 5.5rem + 4vw, 9rem)",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "sans-serif"],
