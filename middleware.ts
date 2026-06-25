@@ -25,6 +25,7 @@ export function middleware(req: NextRequest) {
 
 export const config = {
   // Only locale-less pages need redirect handling. Localized routes should not
-  // invoke middleware in production.
-  matcher: ["/((?!_next|api|es(?:/|$)|en(?:/|$)|.*\\..*).*)"],
+  // invoke middleware in production. `styleguide` is a standalone internal tool
+  // that lives outside the [locale] tree, so it must skip the locale redirect.
+  matcher: ["/((?!_next|api|ingest|styleguide|es(?:/|$)|en(?:/|$)|.*\\..*).*)"],
 };

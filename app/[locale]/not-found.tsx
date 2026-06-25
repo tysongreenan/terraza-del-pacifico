@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, MessageCircle } from "lucide-react";
-import { buttonVariants } from "@/components/ui/button";
+import { actionButtonVariants } from "@/components/ui/button";
 
 export default function NotFound() {
   return (
@@ -17,27 +17,27 @@ export default function NotFound() {
           restaurant, events, or contact us directly on WhatsApp.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
-          <Link href="/es" className={buttonVariants({ variant: "accent" })}>
+          <Link href="/es" className={actionButtonVariants({ variant: "primary" })}>
             Go home
-            <ArrowRight className="ml-2 h-4 w-4" />
+            <ArrowRight className="h-4 w-4" aria-hidden />
           </Link>
           <Link
-            href="/es/habitaciones"
-            className={buttonVariants({ variant: "outline" })}
+            href="/es/suites"
+            className={actionButtonVariants({ variant: "secondary", surface: "light" })}
           >
             Rooms
           </Link>
           <Link
-            href="/es/restaurante"
-            className={buttonVariants({ variant: "outline" })}
+            href="/es/restaurant"
+            className={actionButtonVariants({ variant: "secondary", surface: "light" })}
           >
             Restaurant
           </Link>
           <Link
             href="https://wa.me/50684319953"
-            className={buttonVariants({ variant: "outline" })}
+            className={actionButtonVariants({ variant: "secondary", surface: "light" })}
           >
-            <MessageCircle className="mr-2 h-4 w-4" />
+            <MessageCircle className="h-4 w-4" aria-hidden />
             WhatsApp
           </Link>
         </div>

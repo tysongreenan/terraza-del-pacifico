@@ -79,7 +79,7 @@ export default async function LocaleLayout({
         {locale === "en" ? "Skip to content" : "Saltar al contenido"}
       </a>
       <SiteHeader locale={locale as Locale} dict={dict} />
-      <main id="main">{children}</main>
+      <main id="main" className="flex-1">{children}</main>
       <SiteFooter locale={locale as Locale} dict={dict} />
       <JsonLd data={organizationJsonLd()} />
       <JsonLd data={websiteJsonLd(locale as Locale)} />

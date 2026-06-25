@@ -78,13 +78,13 @@ const en: HubCopy = {
       "Every room here is built around the same idea: ",
       {
         text: "the ocean",
-        href: "/en/galeria",
+        href: "/en/gallery",
         image: "/images/exp-villa-block-lawn.jpg",
       },
       " should be the first thing you see and the last thing you hear. The only choice is ",
       {
         text: "how much space",
-        href: "/en/habitaciones/comparar",
+        href: "/en/suites/comparar",
         image: "/images/exp-villa-block-lawn.jpg",
       },
       " you want around it.",
@@ -184,13 +184,13 @@ const es: HubCopy = {
       "Cada habitación parte de la misma idea: ",
       {
         text: "el océano",
-        href: "/es/galeria",
+        href: "/es/gallery",
         image: "/images/exp-villa-block-lawn.jpg",
       },
       " debe ser lo primero que veas y lo último que escuches. Lo único que eliges es ",
       {
         text: "cuánto espacio",
-        href: "/es/habitaciones/comparar",
+        href: "/es/suites/comparar",
         image: "/images/exp-villa-block-lawn.jpg",
       },
       " quieres a su alrededor.",

@@ -240,7 +240,7 @@ export function RoomsCompare({
 
                     <div role="cell" className="col-span-2 flex gap-2.5 md:col-span-1 md:justify-end">
                       <Link
-                        href={`/${locale}/habitaciones/${room.slug}`}
+                        href={`/${locale}/suites/${room.slug}`}
                         aria-label={`${s.detailsCta}: ${room.name}`}
                         className="flex min-h-[44px] items-center rounded-sm border border-border px-4 py-2.5 text-micro font-semibold uppercase tracking-[0.1em] text-concept-ocean transition-colors hover:border-concept-ocean focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
                       >
@@ -265,7 +265,7 @@ export function RoomsCompare({
 
             <div className="pt-10">
               <Link
-                href={`/${locale}/habitaciones`}
+                href={`/${locale}/suites`}
                 className="inline-flex min-h-[44px] items-center text-xs font-semibold uppercase tracking-[0.12em] text-concept-ocean transition-colors hover:text-concept-gold-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
               >
                 {copy.backToHub}

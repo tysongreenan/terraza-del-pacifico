@@ -66,7 +66,7 @@ const en = {
     cta: "See all experiences",
     items: [
       {
-        slug: "experiencias/whale-watching",
+        slug: "experiences/whale-watching",
         title: "Whale Watching",
         meta: "July – October",
         detail: "2.5 hrs · seasonal",
@@ -76,7 +76,7 @@ const en = {
         image: "/images/whales-aerial-Bx8BrmsB.jpg",
       },
       {
-        slug: "experiencias/beachfront-yoga",
+        slug: "experiences/beachfront-yoga",
         title: "Beachfront Yoga",
         meta: "Included",
         detail: "Sun & Wed 8 AM · Sat 4 PM",
@@ -86,7 +86,7 @@ const en = {
         image: "/images/yoga-class-1Z8S9ilZ.jpg",
       },
       {
-        slug: "experiencias/live-music",
+        slug: "experiences/live-music",
         title: "Live Music",
         meta: "Nightly",
         detail: "Fri – Sun · free",
@@ -96,7 +96,7 @@ const en = {
         image: "/images/live-music-U-RLRqGX.jpg",
       },
       {
-        slug: "eventos/surf-nights",
+        slug: "events/surf-nights",
         title: "Surf Nights",
         meta: "Surf Nights",
         detail: "Fridays · 6 PM",
@@ -106,7 +106,7 @@ const en = {
         image: "/images/surf-nights-C5MPn3sY.jpg",
       },
       {
-        slug: "experiencias/turtle-nesting",
+        slug: "experiences/turtle-nesting",
         title: "Turtle Nesting",
         meta: "Seasonal · Night",
         detail: "Guided · small groups",
@@ -116,7 +116,7 @@ const en = {
         image: "/images/baby-turtle-DGA7PRRL.jpg",
       },
       {
-        slug: "eventos/bodas",
+        slug: "events/weddings",
         title: "Weddings & Events",
         meta: "By the sea",
         detail: "Bespoke planning",
@@ -380,7 +380,7 @@ const es: Dict = {
     cta: "Ver todas las experiencias",
     items: [
       {
-        slug: "experiencias/avistamiento-ballenas",
+        slug: "experiences/avistamiento-ballenas",
         title: "Avistamiento de Ballenas",
         meta: "Julio – Octubre",
         detail: "2,5 hrs · temporada",
@@ -390,7 +390,7 @@ const es: Dict = {
         image: "/images/whales-aerial-Bx8BrmsB.jpg",
       },
       {
-        slug: "experiencias/yoga-frente-al-mar",
+        slug: "experiences/yoga-frente-al-mar",
         title: "Yoga Frente al Mar",
         meta: "Incluido",
         detail: "Dom y Mié 8 AM · Sáb 4 PM",
@@ -400,7 +400,7 @@ const es: Dict = {
         image: "/images/yoga-class-1Z8S9ilZ.jpg",
       },
       {
-        slug: "experiencias/musica-en-vivo",
+        slug: "experiences/musica-en-vivo",
         title: "Música en Vivo",
         meta: "Todas las noches",
         detail: "Vie – Dom · gratis",
@@ -410,7 +410,7 @@ const es: Dict = {
         image: "/images/live-music-U-RLRqGX.jpg",
       },
       {
-        slug: "eventos/surf-nights",
+        slug: "events/surf-nights",
         title: "Surf Nights",
         meta: "Surf Nights",
         detail: "Viernes · 6 PM",
@@ -420,7 +420,7 @@ const es: Dict = {
         image: "/images/surf-nights-C5MPn3sY.jpg",
       },
       {
-        slug: "experiencias/anidacion-tortugas",
+        slug: "experiences/anidacion-tortugas",
         title: "Anidación de Tortugas",
         meta: "De temporada · Noche",
         detail: "Guiado · grupos pequeños",
@@ -430,7 +430,7 @@ const es: Dict = {
         image: "/images/baby-turtle-DGA7PRRL.jpg",
       },
       {
-        slug: "eventos/bodas",
+        slug: "events/bodas",
         title: "Bodas y Eventos",
         meta: "Junto al mar",
         detail: "Planificación a medida",

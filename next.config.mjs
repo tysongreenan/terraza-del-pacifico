@@ -9,6 +9,50 @@ const nextConfig = {
   images: {
     remotePatterns: [],
   },
+  async rewrites() {
+    return [
+      {
+        source: "/ingest/static/:path*",
+        destination: "https://us-assets.i.posthog.com/static/:path*",
+      },
+      {
+        source: "/ingest/array/:path*",
+        destination: "https://us-assets.i.posthog.com/array/:path*",
+      },
+      {
+        source: "/ingest/:path*",
+        destination: "https://us.i.posthog.com/:path*",
+      },
+    ];
+  },
+  // 301 the legacy Spanish parent route segments to their new English slugs.
+  // Children (slugs, sub-pages) are preserved via the :path* wildcard.
+  async redirects() {
+    const map = [
+      ["experiencias", "experiences"],
+      ["eventos", "events"],
+      ["habitaciones", "suites"],
+      ["bares", "bars"],
+      ["galeria", "gallery"],
+      ["restaurante", "restaurant"],
+      ["panaderia", "bakery"],
+      ["politicas", "policies"],
+      ["sobre-nosotros", "about"],
+    ];
+    return map.flatMap(([from, to]) => [
+      {
+        source: `/:locale(es|en)/${from}/:path*`,
+        destination: `/:locale/${to}/:path*`,
+        permanent: true,
+      },
+      {
+        source: `/:locale(es|en)/${from}`,
+        destination: `/:locale/${to}`,
+        permanent: true,
+      },
+    ]);
+  },
+  skipTrailingSlashRedirect: true,
 };
 
 export default nextConfig;

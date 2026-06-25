@@ -33,26 +33,26 @@ export type StaticRoute = {
 
 export const staticRoutes: StaticRoute[] = [
   { slug: "home", path: "", priority: 1, changeFrequency: "weekly" },
-  { slug: "habitaciones", path: "habitaciones", priority: 0.9, changeFrequency: "monthly" },
-  { slug: "habitaciones-comparar", path: "habitaciones/comparar", priority: 0.7, changeFrequency: "monthly" },
-  { slug: "habitaciones-superior", path: "habitaciones/superior", priority: 0.8, changeFrequency: "monthly" },
-  { slug: "habitaciones-estandar", path: "habitaciones/estandar", priority: 0.8, changeFrequency: "monthly" },
-  { slug: "habitaciones-junior-suite", path: "habitaciones/junior-suite", priority: 0.8, changeFrequency: "monthly" },
-  { slug: "habitaciones-villas", path: "habitaciones/villas", priority: 0.8, changeFrequency: "monthly" },
-  { slug: "restaurante", path: "restaurante", priority: 0.9, changeFrequency: "weekly" },
-  { slug: "restaurante-menu", path: "restaurante/menu", priority: 0.8, changeFrequency: "monthly" },
-  { slug: "bares", path: "bares", priority: 0.7, changeFrequency: "monthly" },
-  { slug: "bares-golden-beach-bar", path: "bares/golden-beach-bar", priority: 0.65, changeFrequency: "monthly" },
-  { slug: "bares-iguana-bar", path: "bares/iguana-bar", priority: 0.65, changeFrequency: "monthly" },
-  { slug: "panaderia", path: "panaderia", priority: 0.7, changeFrequency: "monthly" },
-  { slug: "eventos", path: "eventos", priority: 0.85, changeFrequency: "monthly" },
-  { slug: "eventos-bodas", path: "eventos/bodas", priority: 0.85, changeFrequency: "monthly" },
-  { slug: "eventos-surf-nights", path: "eventos/surf-nights", priority: 0.8, changeFrequency: "weekly" },
-  { slug: "eventos-otros", path: "eventos/otros", priority: 0.75, changeFrequency: "monthly" },
-  { slug: "experiencias", path: "experiencias", priority: 0.85, changeFrequency: "weekly" },
-  { slug: "galeria", path: "galeria", priority: 0.65, changeFrequency: "monthly" },
-  { slug: "sobre-nosotros", path: "sobre-nosotros", priority: 0.7, changeFrequency: "monthly" },
-  { slug: "politicas", path: "politicas", priority: 0.4, changeFrequency: "monthly" },
+  { slug: "suites", path: "suites", priority: 0.9, changeFrequency: "monthly" },
+  { slug: "suites-comparar", path: "suites/comparar", priority: 0.7, changeFrequency: "monthly" },
+  { slug: "suites-superior", path: "suites/superior", priority: 0.8, changeFrequency: "monthly" },
+  { slug: "suites-estandar", path: "suites/estandar", priority: 0.8, changeFrequency: "monthly" },
+  { slug: "suites-junior-suite", path: "suites/junior-suite", priority: 0.8, changeFrequency: "monthly" },
+  { slug: "suites-villas", path: "suites/villas", priority: 0.8, changeFrequency: "monthly" },
+  { slug: "restaurant", path: "restaurant", priority: 0.9, changeFrequency: "weekly" },
+  { slug: "restaurant-menu", path: "restaurant/menu", priority: 0.8, changeFrequency: "monthly" },
+  { slug: "bars", path: "bars", priority: 0.7, changeFrequency: "monthly" },
+  { slug: "bars-golden-beach-bar", path: "bars/golden-beach-bar", priority: 0.65, changeFrequency: "monthly" },
+  { slug: "bars-iguana-bar", path: "bars/iguana-bar", priority: 0.65, changeFrequency: "monthly" },
+  { slug: "bakery", path: "bakery", priority: 0.7, changeFrequency: "monthly" },
+  { slug: "events", path: "events", priority: 0.85, changeFrequency: "monthly" },
+  { slug: "events-bodas", path: "events/bodas", priority: 0.85, changeFrequency: "monthly" },
+  { slug: "events-surf-nights", path: "events/surf-nights", priority: 0.8, changeFrequency: "weekly" },
+  { slug: "events-otros", path: "events/otros", priority: 0.75, changeFrequency: "monthly" },
+  { slug: "experiences", path: "experiences", priority: 0.85, changeFrequency: "weekly" },
+  { slug: "gallery", path: "gallery", priority: 0.65, changeFrequency: "monthly" },
+  { slug: "about", path: "about", priority: 0.7, changeFrequency: "monthly" },
+  { slug: "policies", path: "policies", priority: 0.4, changeFrequency: "monthly" },
   { slug: "blog", path: "blog", priority: 0.7, changeFrequency: "weekly" },
 ];
 
@@ -274,16 +274,16 @@ export function restaurantJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "Restaurant",
-    "@id": `${siteUrl}/restaurante#restaurant`,
+    "@id": `${siteUrl}/restaurant#restaurant`,
     name: "Vivace Beachfront",
-    url: absoluteUrl("/es/restaurante"),
+    url: absoluteUrl("/es/restaurant"),
     image: absoluteUrl("/images/restaurant-view-WsRnSUPN.jpg"),
     servesCuisine: ["Mediterranean", "Italian", "Costa Rican"],
     parentOrganization: { "@id": `${siteUrl}/#hotel` },
     // Published on /restaurante ("You can also call us at +506 2643 3222").
     telephone: "+50626433222",
     // Downloadable menu page linked from /restaurante.
-    hasMenu: absoluteUrl("/es/restaurante/menu"),
+    hasMenu: absoluteUrl("/es/restaurant/menu"),
     // Open daily for three service windows (breakfast / lunch / dinner) as
     // advertised on /restaurante. Each meal is its own OpeningHoursSpecification.
     openingHoursSpecification: [
@@ -343,7 +343,7 @@ export function barsItemListJsonLd(locale: Locale, bars: BarListEntry[]) {
       item: {
         "@type": "BarOrPub",
         name: bar.name,
-        url: absoluteUrl(localizedPath(locale, `bares/${bar.slug}`)),
+        url: absoluteUrl(localizedPath(locale, `bars/${bar.slug}`)),
         image: absoluteUrl(bar.cardImage),
         parentOrganization: { "@id": `${siteUrl}/#hotel` },
         ...(bar.hours
@@ -402,7 +402,7 @@ export function roomsJsonLd(locale: Locale, rooms: RoomListEntry[]) {
         item: {
           "@type": "HotelRoom",
           name: room.name,
-          url: absoluteUrl(localizedPath(locale, `habitaciones/${room.slug}`)),
+          url: absoluteUrl(localizedPath(locale, `suites/${room.slug}`)),
           ...(occupancy !== undefined
             ? {
                 occupancy: {

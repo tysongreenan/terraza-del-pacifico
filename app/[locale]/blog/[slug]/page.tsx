@@ -83,7 +83,7 @@ export default async function BlogPost({
     Boolean(post.coverImage) && !post.coverImage.endsWith("/og-image.jpg");
 
   return (
-    <article className="container max-w-2xl py-12">
+    <article className="container max-w-2xl pb-section-sm pt-section-top">
       <JsonLd
         data={breadcrumbJsonLd({
           locale: safeLocale,
@@ -114,13 +114,13 @@ export default async function BlogPost({
           height={720}
           priority
           sizes="(min-width: 768px) 42rem, 100vw"
-          className="mb-8 aspect-video w-full rounded-lg object-cover"
+          className="mb-8 aspect-video w-full rounded-sm object-cover"
         />
       ) : null}
-      <h1 className="font-display text-h1 font-bold text-primary ">{post.title}</h1>
+      <h1 className="font-concept text-h1 font-medium leading-[1.05] text-concept-ocean">{post.title}</h1>
       <time
         dateTime={post.publishedAt}
-        className="mt-4 block text-sm font-semibold uppercase tracking-[0.18em] text-accent"
+        className="mt-4 block text-caption font-semibold uppercase tracking-[0.18em] text-concept-gold-muted"
       >
         {new Intl.DateTimeFormat(safeLocale === "es" ? "es-CR" : "en-US", {
           month: "long",
@@ -128,14 +128,14 @@ export default async function BlogPost({
           year: "numeric",
         }).format(new Date(post.publishedAt))}
       </time>
-      <p className="mt-4 text-lg text-muted-foreground">{post.excerpt}</p>
-      <div className="mt-10 space-y-4 text-base leading-8 text-foreground/78">
+      <p className="mt-4 text-body-lg leading-relaxed text-concept-ink/70">{post.excerpt}</p>
+      <div className="mt-10 space-y-4 text-body leading-8 text-concept-ink/80">
         {body.map((line, index) => {
           const isHeading = line === line.toUpperCase() && line.length > 8;
           return isHeading ? (
             <h2
               key={`${line}-${index}`}
-              className="pt-6 text-2xl font-bold text-primary"
+              className="pt-6 font-concept text-h3 text-concept-ocean"
             >
               {line}
             </h2>
@@ -147,7 +147,7 @@ export default async function BlogPost({
       <div className="mt-12 border-t border-border pt-8">
         <Link
           href={localizedPath(safeLocale, "blog")}
-          className="inline-flex min-h-[44px] items-center font-display text-sm font-semibold text-primary underline-offset-4 transition-colors hover:text-ocean hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+          className="inline-flex min-h-[44px] items-center text-caption font-semibold uppercase tracking-[0.1em] text-concept-ocean transition-colors hover:text-concept-gold-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2"
         >
           {safeLocale === "es" ? "← Volver al blog" : "← Back to blog"}
         </Link>

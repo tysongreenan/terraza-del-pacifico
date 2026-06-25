@@ -26,7 +26,7 @@ export type NavTile = {
 export const navTiles: NavTile[] = [
   {
     id: "rooms",
-    href: "habitaciones",
+    href: "suites",
     image: "/images/Suit photos/RLR_48512.JPG",
     icon: "bed",
     alt: {
@@ -45,7 +45,7 @@ export const navTiles: NavTile[] = [
   },
   {
     id: "restaurant",
-    href: "restaurante",
+    href: "restaurant",
     image: "/images/Resturant/DSCF40452.JPG",
     icon: "restaurant",
     alt: {
@@ -63,7 +63,7 @@ export const navTiles: NavTile[] = [
   },
   {
     id: "bars",
-    href: "bares",
+    href: "bars",
     image: "/images/Resturant/chloemurdochphotography-293.JPG",
     icon: "bar",
     alt: {
@@ -81,7 +81,7 @@ export const navTiles: NavTile[] = [
   },
   {
     id: "about",
-    href: "sobre-nosotros",
+    href: "about",
     image: "/images/exp-facade.webp",
     icon: "about",
     alt: {
@@ -99,7 +99,7 @@ export const navTiles: NavTile[] = [
   },
   {
     id: "gallery",
-    href: "galeria",
+    href: "gallery",
     image: "/images/New Pool/dji_fly_20241022_013726_0642_1753125646863_photo2.JPG",
     icon: "gallery",
     alt: {

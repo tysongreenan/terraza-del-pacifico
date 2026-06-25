@@ -5,7 +5,7 @@ import type { Venue } from "@/content/bars";
 // /panaderia. Prices are intentionally left blank until confirmed — set `price`
 // per item to show one.
 export const bakery: Venue = {
-  slug: "panaderia",
+  slug: "bakery",
   palette: "amber",
   // Bakery + coffee morning window. Closing time not yet confirmed; the on-page
   // copy advertises "open daily from 7 AM", so we omit `closes` here rather than
