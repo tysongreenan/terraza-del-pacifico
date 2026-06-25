@@ -7,6 +7,7 @@ import { useMemo, useState } from "react";
 import posthog from "posthog-js";
 import { defaultRoomSlug, roomGalleries } from "@/content/room-galleries";
 import { Reveal } from "@/components/home/reveal";
+import { Lightbox } from "@/components/luxury/lightbox";
 import { actionButtonVariants } from "@/components/ui/button";
 import type { Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/lib/dictionaries";
@@ -16,7 +17,7 @@ import { cn } from "@/lib/utils";
 const ROOM_EXTRA_IMAGES: Record<string, string[]> = {
   superior: [
     "/images/room-king-bed-B58lVEdC.jpg",
-    "/images/Suit photos/RLR_4906.jpg",
+    "/images/Suit photos/RLR_4906.JPG",
   ],
   standard: [
     "/images/room-toucan-art-n3cC8Tze.jpg",
@@ -29,7 +30,7 @@ const ROOM_EXTRA_IMAGES: Record<string, string[]> = {
   ],
   villas: [
     "/images/villa-bedroom-view-_Eb74lE7.jpg",
-    "/images/Suit photos/IMG_4757.jpg",
+    "/images/Suit photos/IMG_4757.JPG",
   ],
 };
 
@@ -61,6 +62,7 @@ export function Suites({
   const s = dict.suites;
   const [activeSlug, setActiveSlug] = useState(defaultRoomSlug);
   const [slideIndex, setSlideIndex] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
 
   const room = useMemo(
     () => s.items.find((r) => r.slug === activeSlug) ?? s.items[0],
@@ -123,6 +125,14 @@ export function Suites({
                 />
               ))}
               <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(10,28,37,0)_70%,rgba(10,28,37,0.45)_100%)]" />
+              {/* Click anywhere on the photo to open the full-screen lightbox.
+                  z-[5] sits above the images but below the dot/arrow controls (z-10). */}
+              <button
+                type="button"
+                onClick={() => setLightboxOpen(true)}
+                aria-label={locale === "en" ? "Enlarge photo" : "Ampliar foto"}
+                className="absolute inset-0 z-[5] cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-concept-gold"
+              />
               {isJunior && (
                 <span className="absolute left-5 top-5 z-10 rounded-sm bg-concept-gold px-3.5 py-1.5 text-micro font-semibold uppercase tracking-[0.14em] text-concept-ink-strong">
                   {s.mostBooked}
@@ -290,6 +300,19 @@ export function Suites({
           })}
         </div>
       </div>
+
+      {lightboxOpen && (
+        <Lightbox
+          images={gallery.map((img) => ({
+            src: img.src,
+            alt: img.alt[locale],
+          }))}
+          index={slideIndex}
+          onIndexChange={setSlideIndex}
+          onClose={() => setLightboxOpen(false)}
+          locale={locale}
+        />
+      )}
     </section>
   );
 }

@@ -277,12 +277,12 @@ export function LuxuryFactsStrip({
                 index < facts.length - 1 && "md:border-r md:border-concept-border"
               )}
             >
-              <dd className="font-concept text-h2 font-medium text-concept-ocean ">
-                {fact.value}
-              </dd>
-              <dt className="mt-1.5 text-micro font-semibold uppercase tracking-[0.12em] text-concept-ink-muted">
+              <dt className="text-micro font-semibold uppercase tracking-[0.12em] text-concept-ink-muted">
                 {fact.label}
               </dt>
+              <dd className="mt-2 font-concept text-h2 font-medium text-concept-ocean ">
+                {fact.value}
+              </dd>
             </div>
           ))}
         </dl>

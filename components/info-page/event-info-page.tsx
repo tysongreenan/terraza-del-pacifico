@@ -184,6 +184,21 @@ export function EventInfoPage({
         </section>
       ) : null}
 
+      <LuxuryCtaBand
+        locale={locale}
+        eyebrow={copy.planEyebrow}
+        title={
+          locale === "en"
+            ? `Ready to plan ${page.title.en}?`
+            : `¿Listo para planear ${page.title.es}?`
+        }
+        body={copy.planBody}
+        primaryLabel={page.cta.label[locale]}
+        primaryHref={page.cta.href}
+        secondaryLabel="WhatsApp"
+        image={page.heroImage.src}
+      />
+
       {related.length > 0 && (
         <section className="bg-concept-sand-muted py-14 md:py-section">
           <div className="container">
@@ -226,21 +241,6 @@ export function EventInfoPage({
           </div>
         </section>
       )}
-
-      <LuxuryCtaBand
-        locale={locale}
-        eyebrow={copy.planEyebrow}
-        title={
-          locale === "en"
-            ? `Ready to plan ${page.title.en}?`
-            : `¿Listo para planear ${page.title.es}?`
-        }
-        body={copy.planBody}
-        primaryLabel={page.cta.label[locale]}
-        primaryHref={page.cta.href}
-        secondaryLabel="WhatsApp"
-        image={page.heroImage.src}
-      />
     </article>
   );
 }

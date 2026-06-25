@@ -60,7 +60,9 @@ const posts: BlogPost[] = [
     excerpt: postCopy[newsletter.slug].en.excerpt,
     publishedAt: "2026-04-23",
     language: "en",
-    coverImage: localImage(newsletter.imgs?.[1] ?? "/images/og-image.jpg"),
+    // The source newsletter's images are external CMS URLs that aren't mirrored
+    // locally, so use a real on-disk beachfront-sunset photo for the cover/OG.
+    coverImage: localImage("/images/events-aerial-sunset-DjFbPbt1.jpg"),
     content: newsletter,
   },
 ];
