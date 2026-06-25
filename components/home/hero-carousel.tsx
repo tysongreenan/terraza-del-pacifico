@@ -300,13 +300,8 @@ export function HeroCarousel({
         </div>
       </div>
 
-      {/* Trust line — sand bridge into the next section */}
-      <div className="relative z-20 bg-concept-sand">
-        <p className="px-6 pb-8 pt-8 text-center text-xs font-medium uppercase tracking-[0.14em] text-concept-ocean md:px-12 md:pb-10 md:pt-10">
-          <span className="text-concept-gold-muted">◆</span>
-          <span className="mx-2">{h.trust}</span>
-        </p>
-      </div>
+      {/* Sand bridge into the next section */}
+      <div className="relative z-20 bg-concept-sand pb-8 pt-8 md:pb-10 md:pt-10" />
     </section>
   );
 }

@@ -381,8 +381,8 @@ export const events: InfoPage[] = [
     ],
     facts: [
       {
-        label: { es: "Formato", en: "Format" },
-        value: { es: "Surf nocturno", en: "Night surfing" },
+        label: { es: "Cuándo", en: "When" },
+        value: { es: "Se anuncia por edición", en: "Announced per edition" },
       },
       {
         label: { es: "Registro", en: "Registration" },
@@ -395,10 +395,6 @@ export const events: InfoPage[] = [
       {
         label: { es: "Premios", en: "Prizes" },
         value: { es: "$300 / $200 / $100 USD", en: "$300 / $200 / $100 USD" },
-      },
-      {
-        label: { es: "Cobertura", en: "Coverage" },
-        value: { es: "TV en vivo (Canal 33 / Trivision)", en: "Live TV (Canal 33 / Trivision)" },
       },
     ],
     sections: [

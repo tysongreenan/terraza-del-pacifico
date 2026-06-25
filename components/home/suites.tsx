@@ -237,10 +237,6 @@ export function Suites({
                   {s.detailsCta}
                 </Link>
               </div>
-              <p className="mt-4 text-micro font-medium uppercase tracking-[0.1em] text-concept-ocean">
-                <span className="text-concept-gold-muted">◆</span>{" "}
-                {dict.hero.trust}
-              </p>
             </div>
           </div>
         </Reveal>

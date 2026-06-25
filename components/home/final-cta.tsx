@@ -54,12 +54,6 @@ export function FinalCta({ dict }: { dict: Dictionary }) {
             {c.secondaryCta}
           </a>
         </Reveal>
-
-        <Reveal delay={200}>
-          <p className="mt-6 text-xs font-medium uppercase tracking-[0.14em] text-concept-cream">
-            <span className="text-concept-gold">◆</span> {dict.hero.trust}
-          </p>
-        </Reveal>
       </div>
     </section>
   );
