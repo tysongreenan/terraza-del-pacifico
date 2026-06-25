@@ -136,7 +136,7 @@ export function LuxuryImageSlider({
 
       <div
         ref={trackRef}
-        className="flex gap-4 overflow-x-auto px-6 pb-2 [-ms-overflow-style:none] [scrollbar-width:none] md:gap-5 md:px-[max(1.5rem,calc((100vw-1280px)/2+1.5rem))] [&::-webkit-scrollbar]:hidden"
+        className="flex gap-4 overflow-x-auto scroll-pl-6 px-6 pb-2 [-ms-overflow-style:none] [scrollbar-width:none] md:gap-5 md:scroll-pl-[max(1.5rem,calc((100vw-1280px)/2+1.5rem))] md:px-[max(1.5rem,calc((100vw-1280px)/2+1.5rem))] [&::-webkit-scrollbar]:hidden"
         style={{ scrollSnapType: "x mandatory" }}
       >
         {slides.map((slide, index) => (

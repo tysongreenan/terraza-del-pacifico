@@ -444,7 +444,7 @@ export const experiences: InfoPage[] = [
         },
       },
       {
-        src: "/images/Resort Highlights/IMG_5978.JPG",
+        src: "/images/Resort Highlights/Family 3.JPG",
         alt: {
           es: "Camino natural dentro del resort",
           en: "Natural pathway inside the resort",

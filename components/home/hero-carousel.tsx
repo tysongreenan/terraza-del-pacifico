@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Pause, Play, Star } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { heroSlides } from "@/content/hero-slides";
 import { actionButtonVariants } from "@/components/ui/button";
@@ -55,39 +55,6 @@ function SlideThumb({
         sizes={size === "sm" ? "64px" : "96px"}
         className="object-cover"
       />
-    </button>
-  );
-}
-
-function PlayPauseButton({
-  locale,
-  stopped,
-  onToggle,
-}: {
-  locale: Locale;
-  stopped: boolean;
-  onToggle: () => void;
-}) {
-  const label = stopped
-    ? locale === "en"
-      ? "Play slideshow"
-      : "Reproducir presentación"
-    : locale === "en"
-      ? "Pause slideshow"
-      : "Pausar presentación";
-
-  return (
-    <button
-      type="button"
-      onClick={onToggle}
-      aria-label={label}
-      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/45 bg-black/20 text-white backdrop-blur-sm transition-colors hover:bg-black/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-    >
-      {stopped ? (
-        <Play className="h-4 w-4" aria-hidden />
-      ) : (
-        <Pause className="h-4 w-4" aria-hidden />
-      )}
     </button>
   );
 }
@@ -290,47 +257,13 @@ export function HeroCarousel({
               </div>
             </div>
 
-            {/* Mobile: inline strip below CTA */}
+            {/* Mobile + tablet: inline strip below CTA (keeps clear of the
+                reviews row; the wide pinned strip only fits at xl) */}
             <div
-              className="animate-rise mt-6 flex items-center gap-2.5 sm:hidden"
-              style={{ animationDelay: "0.32s" }}
-            >
-              <PlayPauseButton
-                locale={locale}
-                stopped={stopped}
-                onToggle={() => setStopped((v) => !v)}
-              />
-              <div
-                className="flex gap-2.5 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-                role="tablist"
-                aria-label={h.slideLabel}
-              >
-                {slides.map((slide, index) => (
-                  <SlideThumb
-                    key={slide.id}
-                    slide={slide}
-                    index={index}
-                    active={active}
-                    onSelect={selectSlide}
-                    label={h.slideLabel}
-                    size="sm"
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Desktop: pinned bottom-right, level with CTA row */}
-          <div className="absolute bottom-36 right-6 hidden items-end gap-3 sm:flex md:bottom-40 md:right-8 xl:right-0">
-            <PlayPauseButton
-              locale={locale}
-              stopped={stopped}
-              onToggle={() => setStopped((v) => !v)}
-            />
-            <div
-              className="flex gap-2.5 md:gap-3"
+              className="animate-rise mt-6 flex gap-2.5 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] xl:hidden [&::-webkit-scrollbar]:hidden"
               role="tablist"
               aria-label={h.slideLabel}
+              style={{ animationDelay: "0.32s" }}
             >
               {slides.map((slide, index) => (
                 <SlideThumb
@@ -340,10 +273,29 @@ export function HeroCarousel({
                   active={active}
                   onSelect={selectSlide}
                   label={h.slideLabel}
-                  size="md"
+                  size="sm"
                 />
               ))}
             </div>
+          </div>
+
+          {/* Desktop (xl+): pinned bottom-right, level with CTA row */}
+          <div
+            className="absolute bottom-40 right-0 hidden items-end gap-3 xl:flex"
+            role="tablist"
+            aria-label={h.slideLabel}
+          >
+            {slides.map((slide, index) => (
+              <SlideThumb
+                key={slide.id}
+                slide={slide}
+                index={index}
+                active={active}
+                onSelect={selectSlide}
+                label={h.slideLabel}
+                size="md"
+              />
+            ))}
           </div>
         </div>
       </div>

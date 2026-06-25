@@ -110,7 +110,7 @@ const en: AboutCopy = {
       {
         title: "Real hospitality",
         body: "Family-run means the welcome isn't a script. You're a guest in our home.",
-        image: "/images/Resort Highlights/IMG_6128.JPG",
+        image: "/images/Resort Highlights/Family2.JPG",
         alt: "A family enjoying the beach",
       },
       {
@@ -232,7 +232,7 @@ const es: AboutCopy = {
       {
         title: "Hospitalidad real",
         body: "Manejo familiar significa que la bienvenida no es un guion. Eres un huésped en nuestra casa.",
-        image: "/images/Resort Highlights/IMG_6128.JPG",
+        image: "/images/Resort Highlights/Family2.JPG",
         alt: "Una familia disfrutando de la playa",
       },
       {

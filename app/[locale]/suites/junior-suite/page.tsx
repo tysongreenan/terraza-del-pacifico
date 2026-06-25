@@ -15,11 +15,11 @@ const slug = "junior-suite";
 // same `CapturedSeoContent` shape and pass a localized copy per request.
 const seo = {
   es: {
-    title: "Junior Suite frente a la piscina | Hotel Terraza del Pacífico",
+    title: "Junior Suite frente a la piscina en Playa Hermosa de Jacó",
     desc: "Junior Suite para dos con cama King, balcón privado y vista a la piscina principal en Playa Hermosa. Solo dos suites disponibles.",
   },
   en: {
-    title: "Junior Suite with pool view | Hotel Terraza del Pacífico",
+    title: "Junior Suite with Pool View in Playa Hermosa de Jacó",
     desc: "Junior Suite for two with a King bed, private balcony and main-pool view in Playa Hermosa. Only two suites available.",
   },
 } as const;

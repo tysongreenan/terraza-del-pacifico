@@ -16,7 +16,7 @@ const EXPERIENCE_SUPPLEMENTS: Record<string, string[]> = {
   ],
   "turtle-nesting": [
     "/images/baby-turtle-DGA7PRRL.jpg",
-    "/images/Resort Highlights/IMG_22232.JPG",
+    "/images/Resort Highlights/Surf 1.JPG",
     "/images/Resort Highlights/IMG_61303.JPG",
     "/images/Resort Highlights/IMG_2406.JPG",
     "/images/Resort Highlights/DSC03681.jpg",
@@ -28,7 +28,7 @@ const EXPERIENCE_SUPPLEMENTS: Record<string, string[]> = {
   ],
   "beachfront-yoga": [
     "/images/yoga-class-1Z8S9ilZ.jpg",
-    "/images/Resort Highlights/IMG_5978.JPG",
+    "/images/Resort Highlights/Family 3.JPG",
     "/images/g-family-pool-1-g77anSd1.jpg",
     "/images/New Pool/dji_fly_20241022_013712_0640_1753125647224_photo2.JPG",
     "/images/Resort Highlights/IMG_3712.JPG",

@@ -38,12 +38,12 @@ function menuJsonLd(locale: Locale) {
 
 const seo = {
   es: {
-    title: "Menú · Vivace Beachfront | Hotel Terraza del Pacífico",
-    desc: "Carta de Vivace Beachfront, nuestro restaurante mediterráneo en la playa: entradas, pastas hechas en casa, pescado y mariscos del Pacífico, carnes, pizzas y postres.",
+    title: "Carta de Vivace · Restaurante italiano en Playa Hermosa, Jacó",
+    desc: "Carta de Vivace Beachfront, nuestro restaurante mediterráneo e italiano en Playa Hermosa de Jacó: pastas caseras, pescados del Pacífico, pizzas y postres.",
   },
   en: {
-    title: "Menu · Vivace Beachfront | Hotel Terraza del Pacífico",
-    desc: "The menu at Vivace Beachfront, our Mediterranean restaurant on the beach: appetizers, house-made pastas, Pacific fish and seafood, meat, pizzas and dessert.",
+    title: "Vivace Menu · Italian Restaurant in Playa Hermosa de Jacó",
+    desc: "The menu at Vivace Beachfront, our Mediterranean and Italian restaurant in Playa Hermosa de Jacó: house-made pastas, Pacific seafood, pizzas and dessert.",
   },
 };
 

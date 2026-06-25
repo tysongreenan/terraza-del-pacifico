@@ -7,7 +7,7 @@ import { PanelCarousel } from "@/components/luxury/panel-carousel";
 import { JsonLd } from "@/components/json-ld";
 import { bars, barsIndexCopy } from "@/content/bars";
 import type { Locale } from "@/lib/i18n";
-import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
+import { barsItemListJsonLd, breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 
 const path = "bars";
 
@@ -45,6 +45,17 @@ export default async function Page({
   const l = locale as Locale;
   const copy = barsIndexCopy[l];
 
+  // ItemList of BarOrPub nodes built from the SAME on-page venue data the hub
+  // renders (content/bars.ts). Only verifiable fields are mapped — slug + name
+  // + cardImage always, plus the locale-invariant daily opening hours which
+  // exist for both venues. No drink prices/menus are emitted (none confirmed).
+  const barList = bars.map((venue) => ({
+    slug: venue.slug,
+    name: venue.text[l].hero.title,
+    cardImage: venue.cardImage,
+    ...(venue.hours ? { hours: venue.hours } : {}),
+  }));
+
   return (
     <>
       <JsonLd
@@ -54,6 +65,7 @@ export default async function Page({
           title: l === "en" ? "Bars" : "Bares",
         })}
       />
+      <JsonLd data={barsItemListJsonLd(l, barList)} />
       <article className="home-concept bg-concept-sand">
         {/* HERO */}
         <section className="relative overflow-hidden text-white">

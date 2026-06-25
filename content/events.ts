@@ -372,7 +372,7 @@ export const events: InfoPage[] = [
         },
       },
       {
-        src: "/images/Resort Highlights/IMG_22232.JPG",
+        src: "/images/Resort Highlights/Surf 1.JPG",
         alt: {
           es: "Surfista sobre la arena negra de Playa Hermosa",
           en: "Surfer on the black sand of Playa Hermosa",
@@ -752,7 +752,7 @@ export const events: InfoPage[] = [
     },
     gallery: [
       {
-        src: "/images/Resort Highlights/IMG_5978.JPG",
+        src: "/images/Resort Highlights/Family 3.JPG",
         alt: {
           es: "Familia disfrutando junto a la piscina",
           en: "Family enjoying time by the pool",

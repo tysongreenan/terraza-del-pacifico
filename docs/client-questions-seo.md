@@ -4,7 +4,7 @@
 
 **How to use:** Send to the client, fill in the `Answer:` lines, send back. We don't publish anything until it's confirmed true.
 
-_Auto-maintained from `docs/seo-loop-log.md` — last updated 2026-06-25 (Loop 23). The loop will keep adding to this as it covers more pages._
+_Auto-maintained from `docs/seo-loop-log.md` — last updated 2026-06-25 (Loop 26). The loop will keep adding to this as it covers more pages._
 
 ---
 
