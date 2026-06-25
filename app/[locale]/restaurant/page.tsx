@@ -18,7 +18,7 @@ const seoByLocale: Record<Locale, { title: string; desc: string }> = {
   },
   es: {
     title: "Vivace Beachfront | Restaurante mediterráneo en Playa Hermosa",
-    desc: "Restaurante frente al mar a cargo del chef siciliano Luigi. Cocina mediterránea e italiana con ingredientes frescos de Costa Rica.",
+    desc: "Restaurante frente al mar en Playa Hermosa de Jacó, Costa Rica, a cargo del chef siciliano Luigi. Cocina mediterránea e italiana con ingredientes frescos.",
   },
 };
 

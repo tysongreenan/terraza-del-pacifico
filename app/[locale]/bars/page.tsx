@@ -13,11 +13,11 @@ const path = "bars";
 
 const seo = {
   es: {
-    title: "Bares · Golden Beach Bar e Iguana Bar | Hotel Terraza del Pacífico",
+    title: "Bares en Playa Hermosa de Jacó, Costa Rica | Terraza",
     desc: "Dos bares frente al agua en Terraza del Pacífico: Golden Beach Bar sobre la arena e Iguana Bar junto a la piscina. Cócteles, cerveza fría y más.",
   },
   en: {
-    title: "Bars · Golden Beach Bar & Iguana Bar | Hotel Terraza del Pacífico",
+    title: "Bars in Playa Hermosa de Jacó, Costa Rica | Terraza",
     desc: "Two waterfront bars at Terraza del Pacífico: Golden Beach Bar on the sand and Iguana Bar by the pool. Cocktails, cold beer and more.",
   },
 };

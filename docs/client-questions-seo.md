@@ -4,7 +4,7 @@
 
 **How to use:** Send to the client, fill in the `Answer:` lines, send back. We don't publish anything until it's confirmed true.
 
-_Auto-maintained from `docs/seo-loop-log.md` — last updated 2026-06-25 (Loop 19). The loop will keep adding to this as it covers more pages._
+_Auto-maintained from `docs/seo-loop-log.md` — last updated 2026-06-25 (Loop 23). The loop will keep adding to this as it covers more pages._
 
 ---
 
@@ -109,6 +109,16 @@ Every competitor's top result and AI Overview answers "how much does it cost" an
 - [ ] **Any cover charge or minimum for live-music nights?** — is the live music just part of regular Vivace dining (no extra charge), or is there a cover / music charge / minimum spend? Searchers and the opentable "restaurants with live music in Jaco" result expect this answer.
   - Answer:
 
+## 🛏️ Suites / Rooms hub  (`/suites`)
+
+- [ ] **Starting nightly rate / price range for rooms** — is there a "from $X / night" starting rate (or a price tier) we can publish for the rooms & villas? Competitors rank with "From US$85" in the SERP title. As of Loop 23 the `roomsJsonLd` ItemList is now live on the hub and already emits occupancy + size + bed per room (from existing content), but it carries NO price; with a confirmed rate we can add `priceRange`/Offer. The guardrail blocks inventing a number.
+  - Answer:
+
+## 🍝 Restaurant — Vivace Beachfront  (`/restaurant`)
+
+- [ ] **Price range / tier for the restaurant** — what price tier is Vivace ($, $$, $$$, or an average per-person spend)? Google surfaces a `priceRange` in the Restaurant rich result and we currently omit it; the guardrail blocks inventing a number.
+  - Answer:
+
 ## 📍 Location & Logistics  (applies to all events)
 
 - [ ] **Confirm SJO travel time** — the site states **"90 min from San José."** Is that accurate (drive time from SJO airport)?
@@ -126,5 +136,10 @@ Every competitor's top result and AI Overview answers "how much does it cost" an
 | Corporate price + capacity + rooms | Retreat FAQ + capacity/meeting-room facts | "corporate retreat costa rica", "meeting venue jaco" |
 | Surf lessons / dates | Surf FAQ ("can beginners learn", "when is Surf Nights") | "playa hermosa surf", "surf lessons jaco" |
 | SJO time + transfers | A logistics FAQ on every event page | "how far is jaco from san jose airport" |
+
+## Bars — Golden Beach Bar & Iguana Bar
+
+- [ ] **Drink / menu prices for the two bars** — `content/bars.ts` intentionally leaves every pour `price` blank ("until confirmed"); the Jaco bar SERP rankers all show menus/prices and the AI Overview leans on them. With confirmed prices we can show a pour list and add `priceRange` to the bar schema.
+  - Answer:
 
 _None of the above is published until the client confirms it's true._
