@@ -4,7 +4,7 @@ import { SuiteDetail } from "@/components/rooms/suite-detail";
 import { JsonLd } from "@/components/json-ld";
 import { getDictionary } from "@/lib/dictionaries";
 import type { Locale } from "@/lib/i18n";
-import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, hotelRoomJsonLd, pageMetadata } from "@/lib/seo";
 
 const path = "suites/villas";
 const slug = "villas";
@@ -26,9 +26,27 @@ export default async function Page({
   const l = locale as Locale;
   const dict = getDictionary(l);
 
+  const room = dict.suites.items.find((r) => r.slug === slug);
+  // Shared, genuine amenities note ("Free WiFi · A/C · …") split for schema.
+  const amenities = dict.suites.amenitiesNote
+    .split("·")
+    .map((a) => a.trim())
+    .filter(Boolean);
+
   return (
     <>
       <JsonLd data={breadcrumbJsonLd({ locale: l, path, title: data.h1[0] })} />
+      {room ? (
+        <JsonLd
+          data={hotelRoomJsonLd({
+            locale: l,
+            path,
+            room,
+            description: data.desc[l === "en" ? "en" : "es"],
+            amenities,
+          })}
+        />
+      ) : null}
       <SuiteDetail slug={slug} locale={l} dict={dict} />
     </>
   );

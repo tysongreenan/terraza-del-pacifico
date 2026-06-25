@@ -4,7 +4,12 @@ import type { Dictionary } from "@/lib/dictionaries";
 
 export function Testimonials({ dict }: { dict: Dictionary }) {
   const t = dict.testimonials;
-  const reviewsId = process.env.NEXT_PUBLIC_ELFSIGHT_REVIEWS_ID;
+  // Use the single-row reviews widget (same one the About page renders) so the
+  // home testimonials display on one line instead of the masonry grid. Falls
+  // back to the original grid widget if the About id isn't configured.
+  const reviewsId =
+    process.env.NEXT_PUBLIC_ELFSIGHT_ABOUT_ID ??
+    process.env.NEXT_PUBLIC_ELFSIGHT_REVIEWS_ID;
 
   return (
     <section className="bg-concept-sand px-6 py-section-sm text-center md:px-12 md:py-section">
