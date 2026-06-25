@@ -24,7 +24,7 @@ const en = {
   },
   hero: {
     eyebrow: "Playa Hermosa · Costa Rica",
-    title: "Beachfront on Playa Hermosa",
+    title: "Beachfront Resort on Playa Hermosa",
     subtitle:
       "Right on the sand at Playa Hermosa, just south of Jacó — the surf a few steps from your room and a warm Costa Rican welcome at the door.",
     primaryCta: "Book Your Escape",
@@ -338,7 +338,7 @@ const es: Dict = {
   },
   hero: {
     eyebrow: "Playa Hermosa · Costa Rica",
-    title: "Frente al Mar en Playa Hermosa",
+    title: "Resort Frente al Mar en Playa Hermosa",
     subtitle:
       "Sobre la arena de Playa Hermosa, al sur de Jacó — el surf a pocos pasos de tu habitación y una cálida bienvenida costarricense en la puerta.",
     primaryCta: "Reserva tu Escape",
