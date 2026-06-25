@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { eventsEmail } from "@/lib/site";
+import { getPostHogClient } from "@/lib/posthog-server";
 
 export const runtime = "nodejs";
 
@@ -108,6 +109,19 @@ export async function POST(request: Request) {
     if (error) {
       return NextResponse.json({ ok: false, error: "send_failed" }, { status: 502 });
     }
+
+    const ph = getPostHogClient();
+    ph.capture({
+      distinctId: email,
+      event: "server_inquiry_received",
+      properties: {
+        kind: body.kind,
+        page_title: body.pageTitle,
+        locale: body.locale,
+        has_message: !!body.message,
+      },
+    });
+
     return NextResponse.json({ ok: true });
   } catch {
     return NextResponse.json({ ok: false, error: "send_failed" }, { status: 502 });
