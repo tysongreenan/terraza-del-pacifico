@@ -104,7 +104,7 @@ export function SuitesHub({
                   <ArrowRight className="h-4 w-4" aria-hidden />
                 </a>
                 <Link
-                  href={`/${locale}/suites/comparar`}
+                  href={`/${locale}/suites/compare`}
                   className={cn(
                     actionButtonVariants({ variant: "secondary", surface: "dark", size: "lg" }),
                     focusRing
@@ -197,7 +197,7 @@ export function SuitesHub({
       {/* compare CTA */}
       <div className="container pb-20 text-center md:pb-24">
         <Link
-          href={`/${locale}/suites/comparar`}
+          href={`/${locale}/suites/compare`}
           className={cn(
             actionButtonVariants({ variant: "secondary", surface: "light", size: "lg" }),
             focusRing

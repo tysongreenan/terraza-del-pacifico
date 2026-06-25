@@ -6,8 +6,8 @@ import { getDictionary } from "@/lib/dictionaries";
 import type { Locale } from "@/lib/i18n";
 import { breadcrumbJsonLd, hotelRoomJsonLd, pageMetadata } from "@/lib/seo";
 
-const path = "suites/estandar";
-const slug = "estandar";
+const path = "suites/standard";
+const slug = "standard";
 
 export function generateMetadata({
   params,

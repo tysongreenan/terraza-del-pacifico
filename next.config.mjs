@@ -39,18 +39,31 @@ const nextConfig = {
       ["politicas", "policies"],
       ["sobre-nosotros", "about"],
     ];
-    return map.flatMap(([from, to]) => [
-      {
-        source: `/:locale(es|en)/${from}/:path*`,
-        destination: `/:locale/${to}/:path*`,
-        permanent: true,
-      },
-      {
+    // Child slugs renamed Spanish->English (the parent wildcard above maps the
+    // old /habitaciones/<child> to /suites/<child>; these catch the second hop).
+    const childMap = [
+      ["suites/estandar", "suites/standard"],
+      ["suites/comparar", "suites/compare"],
+    ];
+    return [
+      ...map.flatMap(([from, to]) => [
+        {
+          source: `/:locale(es|en)/${from}/:path*`,
+          destination: `/:locale/${to}/:path*`,
+          permanent: true,
+        },
+        {
+          source: `/:locale(es|en)/${from}`,
+          destination: `/:locale/${to}`,
+          permanent: true,
+        },
+      ]),
+      ...childMap.map(([from, to]) => ({
         source: `/:locale(es|en)/${from}`,
         destination: `/:locale/${to}`,
         permanent: true,
-      },
-    ]);
+      })),
+    ];
   },
   skipTrailingSlashRedirect: true,
 };

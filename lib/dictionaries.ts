@@ -154,7 +154,7 @@ const en = {
         image: "/images/exp-room-superior-hero.avif",
       },
       {
-        slug: "estandar",
+        slug: "standard",
         name: "Standard Room",
         tagline: "",
         guests: "4",
@@ -203,7 +203,7 @@ const en = {
   restaurant: {
     eyebrow: "Vivace Beachfront",
     title: "Mediterranean Soul, Pacific Setting",
-    body: "Sicilian Chef Luigi brings the flavors of southern Italy to the beachfront at Playa Hermosa: fresh catch, handmade pasta and slow evenings with sand beneath your table.",
+    body: "Vivace, the resort's beachfront restaurant, is where Sicilian Chef Luigi brings the flavors of southern Italy to Playa Hermosa: fresh catch, handmade pasta and slow evenings with sand beneath your table.",
     cta: "Explore the Menu",
     chefCaption: "Chef Luigi · Sicily, Italy",
   },
@@ -468,7 +468,7 @@ const es: Dict = {
         image: "/images/exp-room-superior-hero.avif",
       },
       {
-        slug: "estandar",
+        slug: "standard",
         name: "Habitación Estándar",
         tagline: "",
         guests: "4",
@@ -517,7 +517,7 @@ const es: Dict = {
   restaurant: {
     eyebrow: "Vivace Beachfront",
     title: "Alma Mediterránea, Escenario Pacífico",
-    body: "El chef siciliano Luigi trae los sabores del sur de Italia a la orilla del mar en Playa Hermosa: pesca fresca, pasta artesanal y tardes lentas con arena bajo la mesa.",
+    body: "Vivace, el restaurante del resort frente al mar, es donde el chef siciliano Luigi trae los sabores del sur de Italia a Playa Hermosa: pesca fresca, pasta artesanal y tardes lentas con arena bajo la mesa.",
     cta: "Explorar el Menú",
     chefCaption: "Chef Luigi · Sicilia, Italia",
   },

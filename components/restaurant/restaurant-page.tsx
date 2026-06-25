@@ -198,18 +198,10 @@ export function RestaurantPage({ locale }: { locale: Locale }) {
               href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className={actionButtonVariants({ variant: "primary", size: "lg" })}
-            >
-              {copy.reserve.primary}
-            </a>
-            <a
-              href={whatsappHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(actionButtonVariants({ variant: "secondary", surface: "dark", size: "lg" }), "gap-2.5")}
+              className={cn(actionButtonVariants({ variant: "primary", size: "lg" }), "gap-2.5")}
             >
               <MessageCircle className="h-4 w-4" aria-hidden />
-              {copy.reserve.secondary}
+              {copy.reserve.primary}
             </a>
           </div>
         </Reveal>

@@ -13,11 +13,11 @@ const slug = "superior";
 // on-page room data: 4 guests, 32 m², two double beds, main-pool view.
 const seo = {
   es: {
-    title: "Habitación Superior | Hotel Terraza del Pacífico",
+    title: "Habitación Superior frente a la piscina en Playa Hermosa de Jacó",
     desc: "Habitación Superior en Playa Hermosa: dos camas dobles para hasta 4 huéspedes, 32 m², aire acondicionado y WiFi, a pasos de la piscina y la playa.",
   },
   en: {
-    title: "Superior Room | Hotel Terraza del Pacífico",
+    title: "Superior Room with Pool View in Playa Hermosa de Jacó",
     desc: "Superior Room in Playa Hermosa with two double beds for up to 4 guests, 32 m², air conditioning and WiFi, steps from the pool and the beach.",
   },
 };

@@ -18,7 +18,7 @@ const ROOM_EXTRA_IMAGES: Record<string, string[]> = {
     "/images/room-king-bed-B58lVEdC.jpg",
     "/images/Suit photos/RLR_4906.jpg",
   ],
-  estandar: [
+  standard: [
     "/images/room-toucan-art-n3cC8Tze.jpg",
     "/images/room-interior-C3-O8UpA.jpg",
   ],

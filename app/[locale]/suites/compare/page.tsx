@@ -11,7 +11,7 @@ import {
 } from "@/lib/seo";
 import { hubRoomOrder } from "@/content/suites-hub";
 
-const path = "suites/comparar";
+const path = "suites/compare";
 
 const seo = {
   es: {

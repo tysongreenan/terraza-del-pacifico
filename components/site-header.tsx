@@ -33,9 +33,9 @@ function stripLocale(pathname: string): string {
 function resolveVariant(pathname: string): "overlay" | "solid" {
   const path = stripLocale(pathname);
   // Suite detail pages (/suites/<slug>) open on a light photo mosaic;
-  // the /habitaciones hub and the /comparar page do have dark heroes.
+  // the /habitaciones hub and the /compare page do have dark heroes.
   const isSuiteDetail =
-    path.startsWith("/suites/") && path !== "/suites/comparar";
+    path.startsWith("/suites/") && path !== "/suites/compare";
   // Blog list + posts open on a light surface (no dark hero) → solid header.
   const isBlog = path === "/blog" || path.startsWith("/blog/");
   if (path === "/experiences" || isSuiteDetail || isBlog) return "solid";

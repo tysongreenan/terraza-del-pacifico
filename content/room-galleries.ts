@@ -54,7 +54,7 @@ export const roomGalleries: RoomGallery[] = [
     ],
   },
   {
-    slug: "estandar",
+    slug: "standard",
     images: [
       {
         src: "/images/exp-standard-01.avif",

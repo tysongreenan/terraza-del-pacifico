@@ -60,7 +60,7 @@ type HubCopy = {
 };
 
 /** Display order for the hub (Junior featured first, then by size). */
-export const hubRoomOrder = ["junior-suite", "superior", "estandar", "villas"];
+export const hubRoomOrder = ["junior-suite", "superior", "standard", "villas"];
 
 const en: HubCopy = {
   hero: {
@@ -84,7 +84,7 @@ const en: HubCopy = {
       " should be the first thing you see and the last thing you hear. The only choice is ",
       {
         text: "how much space",
-        href: "/en/suites/comparar",
+        href: "/en/suites/compare",
         image: "/images/exp-villa-block-lawn.jpg",
       },
       " you want around it.",
@@ -109,7 +109,7 @@ const en: HubCopy = {
       photoCount: 0,
       image: "/images/exp-room-superior-hero.avif",
     },
-    estandar: {
+    standard: {
       kicker: "Quiet & serene",
       description:
         "A calm, garden-facing room for up to four — two double beds, your own terrace, and the same short barefoot walk to the sand as every other room.",
@@ -190,7 +190,7 @@ const es: HubCopy = {
       " debe ser lo primero que veas y lo último que escuches. Lo único que eliges es ",
       {
         text: "cuánto espacio",
-        href: "/es/suites/comparar",
+        href: "/es/suites/compare",
         image: "/images/exp-villa-block-lawn.jpg",
       },
       " quieres a su alrededor.",
@@ -215,7 +215,7 @@ const es: HubCopy = {
       photoCount: 0,
       image: "/images/exp-room-superior-hero.avif",
     },
-    estandar: {
+    standard: {
       kicker: "Tranquila y serena",
       description:
         "Una habitación serena frente al jardín para hasta cuatro — dos camas dobles, tu propia terraza y la misma corta caminata descalza a la arena que cualquier otra habitación.",

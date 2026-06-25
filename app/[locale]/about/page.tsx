@@ -16,11 +16,11 @@ const path = "about";
 const seoCopy: Record<Locale, { title: string; desc: string }> = {
   es: {
     title: "Sobre nosotros | Hotel Terraza del Pacífico",
-    desc: "Más de 20 años creando estancias frente al Pacífico costarricense en Playa Hermosa. Conoce nuestra historia, instalaciones y forma de recibir.",
+    desc: "Más de 20 años creando estancias frente al Pacífico costarricense en Playa Hermosa de Jacó. Conoce nuestra historia, instalaciones y forma de recibir.",
   },
   en: {
     title: "About us | Hotel Terraza del Pacífico",
-    desc: "More than 20 years of beachfront stays on the Costa Rican Pacific at Playa Hermosa. Read our story, facilities and how we welcome guests.",
+    desc: "More than 20 years of beachfront stays on the Costa Rican Pacific at Playa Hermosa de Jacó. Read our story, facilities and how we welcome guests.",
   },
 };
 

@@ -11,6 +11,7 @@ import { Welcome } from "@/components/home/welcome";
 import { Experiences } from "@/components/home/experiences";
 import { Suites } from "@/components/home/suites";
 import { Restaurant } from "@/components/home/restaurant";
+import { Bars } from "@/components/home/bars";
 import { Testimonials } from "@/components/home/testimonials";
 import { Instagram } from "@/components/home/instagram";
 import { Location } from "@/components/home/location";
@@ -24,12 +25,12 @@ import { FinalCta } from "@/components/home/final-cta";
 // the en fallback. Facts (place, amenities) are unchanged.
 const homeSeo: Record<Locale, { title: string; desc: string }> = {
   es: {
-    title: "Hotel Terraza del Pacífico | Playa Hermosa, Costa Rica",
-    desc: "Hotel frente al mar en Playa Hermosa, Costa Rica. Habitaciones con vista al océano, piscina con luces LED, restaurante mediterráneo y experiencias junto a la playa.",
+    title: "Hotel Terraza del Pacífico | Playa Hermosa de Jacó, Costa Rica",
+    desc: "Hotel frente al mar en Playa Hermosa de Jacó, Costa Rica. Habitaciones con vista al océano, piscina con luces LED, restaurante mediterráneo y experiencias junto a la playa.",
   },
   en: {
-    title: "Hotel Terraza del Pacífico | Playa Hermosa, Costa Rica",
-    desc: "Beachfront hotel in Playa Hermosa, Costa Rica. Ocean-view rooms, an LED-lit pool, a Mediterranean restaurant and experiences by the sea.",
+    title: "Hotel Terraza del Pacífico | Playa Hermosa de Jacó, Costa Rica",
+    desc: "Beachfront hotel in Playa Hermosa de Jacó, Costa Rica. Ocean-view rooms, an LED-lit pool, a Mediterranean restaurant and experiences by the sea.",
   },
 };
 
@@ -65,6 +66,7 @@ export default async function HomePage({
       <Experiences locale={l} dict={dict} />
       <Suites locale={l} dict={dict} />
       <Restaurant locale={l} dict={dict} />
+      <Bars locale={l} />
       <Testimonials dict={dict} />
       <Welcome dict={dict} />
       <Location dict={dict} />

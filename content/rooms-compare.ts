@@ -14,7 +14,7 @@ export const roomFacets: Record<
 > = {
   "junior-suite": { guests: "2", view: "pool", beds: "king", kicker: "couples" },
   superior: { guests: "4", view: "pool", beds: "double", kicker: "families" },
-  estandar: { guests: "4", view: "garden", beds: "double", kicker: "serene" },
+  standard: { guests: "4", view: "garden", beds: "double", kicker: "serene" },
   villas: { guests: "6", view: "ocean", beds: "kitchen", kicker: "whole-home" },
 };
 

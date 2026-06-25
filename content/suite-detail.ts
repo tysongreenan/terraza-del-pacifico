@@ -119,7 +119,7 @@ const en: SuiteDetailCopy = {
         "12+ years: adult rate",
       ],
     },
-    estandar: {
+    standard: {
       headline: "A quiet, garden-facing room for up to four",
       amenities: [
         "Air conditioning",
@@ -232,7 +232,7 @@ const es: SuiteDetailCopy = {
         "12+ años: tarifa de adulto",
       ],
     },
-    estandar: {
+    standard: {
       headline: "Una habitación serena frente al jardín para hasta cuatro",
       amenities: [
         "Aire acondicionado",

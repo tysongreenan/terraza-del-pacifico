@@ -34,9 +34,9 @@ export type StaticRoute = {
 export const staticRoutes: StaticRoute[] = [
   { slug: "home", path: "", priority: 1, changeFrequency: "weekly" },
   { slug: "suites", path: "suites", priority: 0.9, changeFrequency: "monthly" },
-  { slug: "suites-comparar", path: "suites/comparar", priority: 0.7, changeFrequency: "monthly" },
+  { slug: "suites-compare", path: "suites/compare", priority: 0.7, changeFrequency: "monthly" },
   { slug: "suites-superior", path: "suites/superior", priority: 0.8, changeFrequency: "monthly" },
-  { slug: "suites-estandar", path: "suites/estandar", priority: 0.8, changeFrequency: "monthly" },
+  { slug: "suites-standard", path: "suites/standard", priority: 0.8, changeFrequency: "monthly" },
   { slug: "suites-junior-suite", path: "suites/junior-suite", priority: 0.8, changeFrequency: "monthly" },
   { slug: "suites-villas", path: "suites/villas", priority: 0.8, changeFrequency: "monthly" },
   { slug: "restaurant", path: "restaurant", priority: 0.9, changeFrequency: "weekly" },

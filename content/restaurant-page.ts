@@ -38,7 +38,6 @@ type RestaurantCopy = {
     title: string;
     body: string;
     primary: string;
-    secondary: string;
     image: string;
   };
 };
@@ -120,7 +119,6 @@ const en: RestaurantCopy = {
     title: "Book your table by the water",
     body: "Dinner reservations recommended, especially at sunset. Resort guests dine first.",
     primary: "WhatsApp Us",
-    secondary: "WhatsApp Us",
     image: "/images/Resturant/1L6A2634.jpg",
   },
 };
@@ -202,7 +200,6 @@ const es: RestaurantCopy = {
     title: "Reserva tu mesa junto al agua",
     body: "Recomendamos reservar para la cena, sobre todo al atardecer. Los huéspedes del resort cenan primero.",
     primary: "WhatsApp",
-    secondary: "WhatsApp",
     image: "/images/Resturant/1L6A2634.jpg",
   },
 };

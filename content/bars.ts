@@ -186,16 +186,16 @@ export function getVenue(slug: string) {
 export const barsIndexCopy: Record<Locale, { eyebrow: string; title: string; description: string; viewCta: string }> = {
   en: {
     eyebrow: "Eat & Drink · Bars",
-    title: "Two bars, both on the water",
+    title: "Two bars, both on the resort",
     description:
-      "Whether you want toes in the sand at sunset or a frozen drink without leaving the pool, there's a bar a few steps away.",
+      "Both bars are right here on the resort: toes in the sand at sunset, or a frozen drink without leaving the pool — each just a few steps from your room.",
     viewCta: "Visit the bar",
   },
   es: {
     eyebrow: "Comer y beber · Bares",
-    title: "Dos bares, ambos sobre el agua",
+    title: "Dos bares, ambos en el resort",
     description:
-      "Ya sea con los pies en la arena al atardecer o un trago frozen sin salir de la piscina, hay un bar a pocos pasos.",
+      "Ambos bares están aquí en el resort: los pies en la arena al atardecer o un trago frozen sin salir de la piscina, cada uno a pocos pasos de tu habitación.",
     viewCta: "Visitar el bar",
   },
 };
