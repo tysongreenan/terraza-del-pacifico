@@ -9,8 +9,8 @@ export const eventHub: HubPage = {
     en: "Events",
   },
   title: {
-    es: "Eventos frente al mar",
-    en: "Oceanfront events",
+    es: "Eventos frente al mar en Playa Hermosa",
+    en: "Beachfront Events in Playa Hermosa",
   },
   description: {
     es: "Bodas, Surf Nights, reuniones, celebraciones familiares y cenas privadas en un resort frente al mar en Playa Hermosa, a pocos minutos de Jaco.",
@@ -38,8 +38,8 @@ export const otherEventsHub: HubPage = {
     en: "Special events",
   },
   title: {
-    es: "Espacios para cada ocasion",
-    en: "Spaces for every occasion",
+    es: "Espacios para eventos en Playa Hermosa, Costa Rica",
+    en: "Event Spaces in Playa Hermosa, Costa Rica",
   },
   description: {
     es: "Reuniones corporativas, celebraciones familiares, cenas privadas y fiestas con servicio personalizado, frente al mar en Playa Hermosa cerca de Jaco.",
@@ -82,8 +82,8 @@ export const events: InfoPage[] = [
       en: "weddings",
     },
     title: {
-      es: "Bodas frente al mar",
-      en: "Beachfront Weddings",
+      es: "Bodas frente al mar en Playa Hermosa, Costa Rica",
+      en: "Beachfront Weddings in Playa Hermosa, Costa Rica",
     },
     eyebrow: {
       es: "Playa Hermosa · Costa Rica",
@@ -184,6 +184,19 @@ export const events: InfoPage[] = [
         },
       },
       {
+        title: { es: "Que incluye una boda aqui", en: "What a wedding here includes" },
+        body: {
+          es: [
+            "Una boda en Terraza del Pacifico se realiza en un solo lugar frente al mar en Playa Hermosa, al sur de Jaco, donde la ceremonia, la recepcion, la gastronomia y el hospedaje de los invitados ocurren en el mismo resort.",
+            "Incluye cuatro espacios para elegir (jardin frente al mar, ceremonia nocturna, Terraza Vivace y la piscina estrellada), gastronomia del restaurante Vivace con la cocina del Chef Luigi, habitaciones y suites en el hotel para alojar a los invitados, y un equipo de eventos que coordina cada detalle.",
+          ],
+          en: [
+            "A wedding at Terraza del Pacifico takes place in a single beachfront location on Playa Hermosa, just south of Jaco, where the ceremony, reception, dining and guest lodging all happen at the same resort.",
+            "It includes four venues to choose from (beachfront garden, evening ceremony, Vivace Terrace and the starlit pool), catering from the on-site Vivace restaurant with Chef Luigi's cuisine, hotel rooms and suites to host your guests, and an events team that coordinates every detail.",
+          ],
+        },
+      },
+      {
         title: { es: "Nuestros espacios", en: "Our venues" },
         body: {
           es: [
@@ -255,6 +268,48 @@ export const events: InfoPage[] = [
         },
       },
     ],
+    faq: [
+      {
+        q: {
+          es: "¿Dónde está ubicado el lugar para bodas?",
+          en: "Where is the wedding venue located?",
+        },
+        a: {
+          es: "Terraza del Pacifico está frente al mar en Playa Hermosa, al sur de Jaco, en Puntarenas, sobre el Pacifico Central de Costa Rica.",
+          en: "Terraza del Pacifico is beachfront on Playa Hermosa, just south of Jaco, in Puntarenas, on Costa Rica's Central Pacific coast.",
+        },
+      },
+      {
+        q: {
+          es: "¿Pueden hospedarse en el resort los invitados a la boda?",
+          en: "Can our wedding guests stay at the resort?",
+        },
+        a: {
+          es: "Si. El resort cuenta con habitaciones y suites en el hotel para alojar a los invitados, de modo que la boda se vive como un fin de semana de destino y no solo como una noche.",
+          en: "Yes. The resort has on-site hotel rooms and suites to host your guests, so the wedding becomes a destination weekend rather than a single evening.",
+        },
+      },
+      {
+        q: {
+          es: "¿Hay servicio de gastronomía en el lugar?",
+          en: "Is catering available on site?",
+        },
+        a: {
+          es: "Si. La gastronomía proviene del restaurante Vivace, en el mismo resort, con la cocina mediterránea del Chef Luigi, coordinada para acompañar el ritmo de la boda.",
+          en: "Yes. Catering comes from the on-site Vivace restaurant, with Chef Luigi's Mediterranean cuisine, coordinated around the rhythm of the wedding.",
+        },
+      },
+      {
+        q: {
+          es: "¿Qué espacios para bodas están disponibles?",
+          en: "What wedding spaces are available?",
+        },
+        a: {
+          es: "Hay cuatro espacios para elegir: el jardín frente al mar, la ceremonia nocturna, la Terraza Vivace y la piscina estrellada con 1,200 luces LED.",
+          en: "There are four venues to choose from: the beachfront garden, the evening ceremony, the Vivace Terrace and the starlit pool with 1,200 LED lights.",
+        },
+      },
+    ],
     cta: {
       label: { es: "Consultar boda", en: "Ask about weddings" },
       href: eventInquiryHref,
@@ -269,8 +324,8 @@ export const events: InfoPage[] = [
       en: "surf-nights",
     },
     title: {
-      es: "Surf Nights",
-      en: "Surf Nights",
+      es: "Surf Nights en Playa Hermosa, Costa Rica",
+      en: "Surf Nights in Playa Hermosa, Costa Rica",
     },
     eyebrow: {
       es: "Surf nocturno en Playa Hermosa",
@@ -432,6 +487,48 @@ export const events: InfoPage[] = [
         },
       },
     ],
+    faq: [
+      {
+        q: {
+          es: "Que es Surf Nights?",
+          en: "What is Surf Nights?",
+        },
+        a: {
+          es: "Surf Nights es el primer evento de surf nocturno transmitido en vivo en Centroamerica. El mar frente a Terraza del Pacifico, en Playa Hermosa cerca de Jaco, se ilumina con infraestructura profesional para que surfistas compitan de noche, con musica, gastronomia y publico en la playa.",
+          en: "Surf Nights is the first live televised night surfing event in Central America. The ocean in front of Terraza del Pacifico, at Playa Hermosa near Jaco, is lit with professional infrastructure so surfers can compete after dark, with music, food and spectators on the beach.",
+        },
+      },
+      {
+        q: {
+          es: "Pueden asistir espectadores a Surf Nights?",
+          en: "Can spectators attend Surf Nights?",
+        },
+        a: {
+          es: "Si. El publico puede vivir el surf desde la playa y combinarlo con cena, cocteles y el ambiente de Terraza del Pacifico. Es una noche pensada para compartir, apoyar a los surfistas y disfrutar Playa Hermosa de una forma distinta.",
+          en: "Yes. Spectators can watch from the beach and pair the event with dinner, cocktails and the Terraza del Pacifico atmosphere. It is a night made to gather, support the surfers and experience Playa Hermosa in a different way.",
+        },
+      },
+      {
+        q: {
+          es: "Es Playa Hermosa apta para surfistas principiantes?",
+          en: "Is Playa Hermosa good for beginner surfers?",
+        },
+        a: {
+          es: "Playa Hermosa de Jaco es un beach break potente y consistente, reconocido como Reserva Mundial de Surf, mas indicado para surfistas con experiencia que para principiantes. No debe confundirse con la otra Playa Hermosa de Guanacaste, de aguas mas tranquilas: la identidad de surf pertenece a esta playa del Pacifico Central.",
+          en: "Playa Hermosa de Jaco is a powerful, consistent beach break, recognized as a World Surfing Reserve, and is better suited to experienced surfers than to beginners. It should not be confused with the calmer Playa Hermosa in Guanacaste: the surf identity belongs to this Central Pacific beach.",
+        },
+      },
+      {
+        q: {
+          es: "Cual es la mejor epoca para surfear en Playa Hermosa?",
+          en: "When is the best season to surf at Playa Hermosa?",
+        },
+        a: {
+          es: "Playa Hermosa ofrece surf consistente durante todo el ano, y suele recibir el oleaje mas grande y constante en la temporada de lluvias, aproximadamente de mayo a noviembre. Surf Nights se anuncia por fecha; recomendamos consultar por WhatsApp para confirmar la proxima edicion.",
+          en: "Playa Hermosa offers consistent surf year-round, and typically receives its largest, most consistent swell during the wet season, roughly May to November. Surf Nights is announced by date, so we recommend checking by WhatsApp to confirm the next edition.",
+        },
+      },
+    ],
     cta: {
       label: { es: "Consultar Surf Nights", en: "Ask about Surf Nights" },
       href: whatsappHref,
@@ -576,6 +673,48 @@ export const events: InfoPage[] = [
             "The setting allows teams to add bonding activities, beach time, wellness or hotel experiences.",
             "This turns the event into a fuller experience for attendees.",
           ],
+        },
+      },
+    ],
+    faq: [
+      {
+        q: {
+          es: "Pueden organizarse retiros corporativos en Terraza del Pacifico?",
+          en: "Can Terraza del Pacifico host corporate retreats?",
+        },
+        a: {
+          es: "Si. El hotel recibe reuniones, retiros, sesiones de planificacion, capacitaciones, conferencias y encuentros de equipo, en un entorno frente al mar en Playa Hermosa, cerca de Jaco. Los espacios se adaptan al tamano del grupo, el formato del evento y las necesidades tecnicas.",
+          en: "Yes. The hotel hosts meetings, retreats, planning sessions, trainings, conferences and team gatherings in a beachfront setting on Playa Hermosa, near Jaco. Spaces adapt to group size, event format and technical needs.",
+        },
+      },
+      {
+        q: {
+          es: "Donde esta ubicado para un retiro de empresa?",
+          en: "Where is it located for a company retreat?",
+        },
+        a: {
+          es: "En Playa Hermosa, a minutos al sur de Jaco, en el Pacifico Central de Costa Rica. No debe confundirse con la otra Playa Hermosa de Guanacaste: este es un entorno de playa frente al mar en la costa central, pensado para que los equipos se desconecten de la rutina.",
+          en: "On Playa Hermosa, minutes south of Jaco, on Costa Rica's Central Pacific coast. It should not be confused with the other Playa Hermosa in Guanacaste: this is a beachfront setting on the central coast, made to help teams step away from routine.",
+        },
+      },
+      {
+        q: {
+          es: "Hay servicio de alimentos y bebidas para grupos?",
+          en: "Is food and beverage available for groups?",
+        },
+        a: {
+          es: "Si. Vivace, el restaurante del hotel, puede apoyar con catering, pausas de cafe, almuerzos o cenas para el grupo. Los menus se coordinan segun el horario, el presupuesto y el estilo del evento.",
+          en: "Yes. Vivace, the on-site restaurant, can support with catering, coffee breaks, lunches or dinners for the group. Menus are coordinated around timing, budget and event style.",
+        },
+      },
+      {
+        q: {
+          es: "Que actividades de integracion se pueden sumar?",
+          en: "What team-building activities can be added?",
+        },
+        a: {
+          es: "El entorno frente al mar permite combinar las sesiones formales con tiempo de playa, yoga frente al mar y otras experiencias del hotel, para convertir el evento en algo mas completo. El equipo ayuda a coordinar la agenda segun el grupo.",
+          en: "The beachfront setting lets you pair formal sessions with beach time, beachfront yoga and other hotel experiences, turning the event into something fuller. The team helps coordinate the agenda around your group.",
         },
       },
     ],
@@ -726,6 +865,48 @@ export const events: InfoPage[] = [
         },
       },
     ],
+    faq: [
+      {
+        q: {
+          es: "Pueden organizar un cumpleanos, aniversario o reunion familiar?",
+          en: "Can you host a birthday, anniversary or family reunion?",
+        },
+        a: {
+          es: "Si. Terraza del Pacifico recibe cumpleanos, aniversarios, reuniones familiares y celebraciones especiales frente al mar en Playa Hermosa, al sur de Jaco, en el Pacifico Central de Costa Rica. El equipo ayuda a coordinar horarios, espacios y servicios para que la celebracion fluya.",
+          en: "Yes. Terraza del Pacifico hosts birthdays, anniversaries, family reunions and special celebrations beachfront on Playa Hermosa, just south of Jaco, on Costa Rica's Central Pacific. The team helps coordinate timing, spaces and services so the celebration flows.",
+        },
+      },
+      {
+        q: {
+          es: "Que espacios funcionan para grupos con ninos y adultos mayores?",
+          en: "What spaces work for groups with kids and older adults?",
+        },
+        a: {
+          es: "Las areas de playa, piscina, jardines y restaurante permiten que cada invitado encuentre su ritmo, algo util en celebraciones que mezclan generaciones. El hotel cuenta con piscina para ninos, ademas de acceso directo a la playa, para que los mas pequenos y los adultos mayores esten comodos.",
+          en: "The beach, pool, garden and restaurant areas let every guest find their own rhythm, which helps when a celebration mixes generations. The hotel has a children's pool plus direct beach access, so younger kids and older adults can all be comfortable.",
+        },
+      },
+      {
+        q: {
+          es: "Hay comida para diferentes edades y preferencias?",
+          en: "Is there food for different ages and preferences?",
+        },
+        a: {
+          es: "Si. Vivace, el restaurante del resort, puede apoyar con menus personalizados para distintas edades y preferencias, desde comidas casuales hasta cenas mas completas, ajustando la propuesta a la ocasion.",
+          en: "Yes. Vivace, the on-site restaurant, can support with personalized menus for different ages and preferences, from casual meals to fuller dinners, adapting the offering to the occasion.",
+        },
+      },
+      {
+        q: {
+          es: "Como se planifica y reserva una celebracion familiar?",
+          en: "How do we plan and reserve a family celebration?",
+        },
+        a: {
+          es: "El equipo del hotel ayuda a ordenar horarios, espacios y servicios segun el tipo de celebracion. Conviene consultar con anticipacion para coordinar disponibilidad, menu y detalles. Escribenos para revisar opciones y reservar.",
+          en: "The hotel team helps organize timing, spaces and services around the type of celebration. It is best to ask in advance to coordinate availability, menu and details. Reach out to review options and book.",
+        },
+      },
+    ],
     cta: {
       label: { es: "Consultar celebracion", en: "Ask about a celebration" },
       href: eventInquiryHref,
@@ -873,6 +1054,48 @@ export const events: InfoPage[] = [
         },
       },
     ],
+    faq: [
+      {
+        q: {
+          es: "Que es una cena privada en Terraza del Pacifico?",
+          en: "What is a private dinner at Terraza del Pacifico?",
+        },
+        a: {
+          es: "Es una cena mas intima dentro del hotel, frente al mar en Playa Hermosa al sur de Jaco, en el Pacifico Central de Costa Rica. Segun disponibilidad, la mesa puede ubicarse en terrazas, areas frente al mar o espacios del restaurante Vivace, con la luz del atardecer y el sonido de las olas como ambiente.",
+          en: "It is a more intimate dinner within the hotel, beachfront on Playa Hermosa south of Jaco, on Costa Rica's Central Pacific. Based on availability, the table can be set on terraces, oceanfront areas or spaces at the Vivace restaurant, with sunset light and the sound of the waves setting the mood.",
+        },
+      },
+      {
+        q: {
+          es: "Que cocina se sirve en la cena privada?",
+          en: "What food is served at a private dinner?",
+        },
+        a: {
+          es: "La cena proviene del restaurante Vivace, en el mismo resort, con la cocina mediterranea e italiana del Chef Luigi y producto fresco. El equipo puede orientar opciones de menu, bebidas y detalles especiales coordinados con anticipacion.",
+          en: "Dinner comes from the on-site Vivace restaurant, with Chef Luigi's Mediterranean and Italian cuisine and fresh produce. The team can guide menu options, drinks and special details coordinated in advance.",
+        },
+      },
+      {
+        q: {
+          es: "Es ideal para parejas o tambien para grupos?",
+          en: "Is it best for couples or also for groups?",
+        },
+        a: {
+          es: "La experiencia se adapta a una pareja, una familia o un grupo pequeno. La decoracion, el horario y el menu se coordinan segun el tipo de ocasion, ya sea una velada romantica, una celebracion familiar o una mesa especial para compartir.",
+          en: "The experience adapts to a couple, a family or a small group. Decor, timing and menu are coordinated around the occasion, whether a romantic evening, a family celebration or a special table to share.",
+        },
+      },
+      {
+        q: {
+          es: "Como se reserva una cena privada?",
+          en: "How do I reserve a private dinner?",
+        },
+        a: {
+          es: "Las cenas privadas se coordinan segun disponibilidad, por lo que conviene consultar con anticipacion para confirmar fecha, espacio y preferencias de menu. Escribenos para revisar opciones y reservar tu mesa frente al mar.",
+          en: "Private dinners are coordinated based on availability, so it is best to ask in advance to confirm the date, the setting and menu preferences. Reach out to review options and reserve your beachfront table.",
+        },
+      },
+    ],
     cta: {
       label: { es: "Consultar cena privada", en: "Ask about private dinners" },
       href: eventInquiryHref,
@@ -1017,6 +1240,48 @@ export const events: InfoPage[] = [
             "The poolside or beach setting brings a vacation feeling to any celebration.",
             "Day or night, outdoor spaces are central to the experience.",
           ],
+        },
+      },
+    ],
+    faq: [
+      {
+        q: {
+          es: "Donde esta el espacio para fiestas privadas?",
+          en: "Where is the venue for private parties?",
+        },
+        a: {
+          es: "Terraza del Pacifico esta frente al mar en Playa Hermosa, al sur de Jaco, en la costa del Pacifico Central de Costa Rica (no la Playa Hermosa de Guanacaste). Es una sede para fiestas sociales, despedidas y celebraciones privadas, con piscina, playa y restaurante.",
+          en: "Terraza del Pacifico is beachfront on Playa Hermosa, just south of Jaco, on Costa Rica's Central Pacific coast (not the Playa Hermosa in Guanacaste). It works as a venue for social parties, sendoffs and private celebrations, with pool, beach and restaurant settings.",
+        },
+      },
+      {
+        q: {
+          es: "Que tipo de fiestas y celebraciones se pueden hacer?",
+          en: "What kind of parties and celebrations can be hosted?",
+        },
+        a: {
+          es: "El formato funciona para despedidas, reuniones de amigos, celebraciones privadas y eventos sociales. Cada montaje se adapta al tamano del grupo y al tono de la ocasion, de dia o de noche.",
+          en: "The format works for sendoffs, friend gatherings, private celebrations and social events. Each setup adapts to the group size and the tone of the occasion, day or night.",
+        },
+      },
+      {
+        q: {
+          es: "Hay opciones de musica, DJ y catering?",
+          en: "Are music, DJ and catering options available?",
+        },
+        a: {
+          es: "Segun el evento, se pueden coordinar opciones de DJ, musica en vivo o ambiente musical personalizado. Vivace y los bares del hotel pueden apoyar con comida, bebidas y estaciones, definidas por horario, presupuesto y estilo de celebracion.",
+          en: "Depending on the event, DJ options, live music or a custom music atmosphere can be coordinated. Vivace and the hotel bars can support with food, drinks and stations, defined by timing, budget and celebration style.",
+        },
+      },
+      {
+        q: {
+          es: "Se puede celebrar junto a la piscina o en la playa?",
+          en: "Can the party be by the pool or on the beach?",
+        },
+        a: {
+          es: "Si. El entorno junto a la piscina o la playa aporta una sensacion de vacaciones a cualquier celebracion, y los espacios exteriores son parte central de la experiencia, de dia o de noche.",
+          en: "Yes. The poolside or beach setting brings a vacation feeling to any celebration, and the outdoor spaces are central to the experience, day or night.",
         },
       },
     ],

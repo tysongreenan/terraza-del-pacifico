@@ -36,6 +36,8 @@ const COPY = {
         "Cuéntanos tus fechas y tu grupo, y confirmamos las condiciones de temporada y opciones disponibles.",
     },
     galleryEyebrow: "Galería",
+    faqEyebrow: "Preguntas frecuentes",
+    faqTitle: "Preguntas frecuentes",
     relatedEyebrow: "También te puede interesar",
     relatedTitleEvent: "Más eventos en el resort",
     relatedTitleExperience: "Más experiencias frente al mar",
@@ -65,6 +67,8 @@ const COPY = {
         "Tell us your travel dates and group, and we'll confirm seasonal conditions and available options.",
     },
     galleryEyebrow: "Gallery",
+    faqEyebrow: "Frequently asked questions",
+    faqTitle: "Frequently asked questions",
     relatedEyebrow: "You may also like",
     relatedTitleEvent: "More events at the resort",
     relatedTitleExperience: "More beachfront experiences",
@@ -88,7 +92,7 @@ export function InfoDetailTemplate({
   const isEvent = page.type === "event";
   const t = COPY[locale];
   const k = isEvent ? t.event : t.experience;
-  const hubHref = `/${locale}/${isEvent ? "eventos" : "experiencias"}`;
+  const hubHref = `/${locale}/${isEvent ? "events" : "experiences"}`;
 
   const facts = page.facts.map((f) => ({
     label: f.label[locale],
@@ -123,7 +127,7 @@ export function InfoDetailTemplate({
         <div className="absolute inset-0" style={{ backgroundImage: heroGradient }} />
         <div className="container relative flex min-h-[86svh] flex-col justify-end pb-10 pt-28">
           <Reveal className="max-w-3xl">
-            <p className="text-eyebrow uppercase text-[#f3ead6] text-shadow-hero">
+            <p className="text-eyebrow uppercase text-concept-cream text-shadow-hero">
               {page.eyebrow[locale]}
             </p>
             <h1 className="mt-5 font-concept text-display font-medium leading-[1.0] text-shadow-hero">
@@ -221,7 +225,7 @@ export function InfoDetailTemplate({
                     {k.railTitle}
                   </h2>
                 </div>
-                <p className="max-w-sm text-body-sm leading-relaxed text-[#bcd0d8]">
+                <p className="max-w-sm text-body-sm leading-relaxed text-on-dark-muted">
                   {t.experience.railNote}
                 </p>
               </Reveal>
@@ -230,7 +234,7 @@ export function InfoDetailTemplate({
             <div
               className={cn(
                 "grid border-t md:grid-cols-3",
-                isEvent ? "border-[#e7dfcf]" : "border-white/20"
+                isEvent ? "border-concept-border-soft" : "border-white/20"
               )}
             >
               {railSections.map((section, index) => (
@@ -240,7 +244,7 @@ export function InfoDetailTemplate({
                   className={cn(
                     "px-2 py-8 md:px-8",
                     isEvent
-                      ? index < railSections.length - 1 && "md:border-r md:border-[#e7dfcf]"
+                      ? index < railSections.length - 1 && "md:border-r md:border-concept-border-soft"
                       : index < railSections.length - 1 && "md:border-r md:border-white/15"
                   )}
                 >
@@ -255,7 +259,7 @@ export function InfoDetailTemplate({
                   <p
                     className={cn(
                       "mt-3 text-body-sm leading-relaxed",
-                      isEvent ? "text-concept-ink/72" : "text-[#bcd0d8]"
+                      isEvent ? "text-concept-ink/72" : "text-concept-mist"
                     )}
                   >
                     {joinBody(section, locale)}
@@ -285,7 +289,7 @@ export function InfoDetailTemplate({
 
       {/* GALLERY STRIP */}
       {gallery.length > 0 && (
-        <section className="grid grid-cols-2 gap-px bg-[#e7dfcf] md:grid-cols-4">
+        <section className="grid grid-cols-2 gap-px bg-concept-border-soft md:grid-cols-4">
           {gallery.map((image, index) => (
             <div key={`${image.src}-${index}`} className="relative aspect-[4/3] overflow-hidden">
               <Image
@@ -299,6 +303,34 @@ export function InfoDetailTemplate({
           ))}
         </section>
       )}
+
+      {/* FAQ */}
+      {page.faq?.length ? (
+        <section className="bg-concept-sand py-14 md:py-section-sm">
+          <div className="container max-w-3xl">
+            <Reveal className="mb-8 md:mb-10">
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-concept-gold-muted">
+                {t.faqEyebrow}
+              </p>
+              <h2 className="mt-3 font-concept text-h1 font-medium leading-[1.05] text-concept-ocean">
+                {t.faqTitle}
+              </h2>
+            </Reveal>
+            <dl className="divide-y divide-concept-border-soft border-t border-concept-border-soft">
+              {page.faq.map((item) => (
+                <div key={item.q[locale]} className="py-6">
+                  <dt className="font-concept text-h3 leading-snug text-concept-ocean">
+                    {item.q[locale]}
+                  </dt>
+                  <dd className="mt-3 text-body-sm leading-relaxed text-concept-ink/80">
+                    {item.a[locale]}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+      ) : null}
 
       {/* RELATED */}
       {related.length > 0 && (
@@ -329,7 +361,7 @@ export function InfoDetailTemplate({
                     <p className="text-micro font-semibold uppercase tracking-[0.14em] text-concept-gold">
                       {item.eyebrow[locale]}
                     </p>
-                    <h3 className="mt-2 font-concept text-2xl leading-tight">
+                    <h3 className="mt-2 font-concept text-h3 leading-tight">
                       {item.title[locale]}
                     </h3>
                     <span className="mt-3 inline-flex items-center gap-1.5 text-micro font-semibold uppercase tracking-[0.1em]">
@@ -363,7 +395,7 @@ export function InfoDetailTemplate({
               <h2 className="mt-4 font-concept text-h1 font-medium leading-[1.06] text-white">
                 {k.formTitle}
               </h2>
-              <p className="mt-5 max-w-md text-body-sm leading-relaxed text-[#bcd0d8]">
+              <p className="mt-5 max-w-md text-body-sm leading-relaxed text-on-dark-muted">
                 {k.formBody}
               </p>
             </Reveal>

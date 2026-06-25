@@ -34,6 +34,7 @@ export type InfoPage = {
   gallery: InfoImage[];
   facts: InfoFact[];
   sections: InfoSection[];
+  faq?: { q: Localized; a: Localized }[];
   cta: InfoCta;
   relatedIds: string[];
 };
@@ -47,7 +48,7 @@ export type HubPage = {
 };
 
 export function pageHref(page: InfoPage, locale: Locale) {
-  const base = page.type === "experience" ? "experiencias" : "eventos";
+  const base = page.type === "experience" ? "experiences" : "events";
   return `/${locale}/${base}/${page.slugs[locale]}`;
 }
 

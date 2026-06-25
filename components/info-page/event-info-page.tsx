@@ -26,6 +26,8 @@ const COPY = {
     mosaicEyebrow: "Más imágenes",
     sliderTitle: "Explora en fotos",
     dragHint: "Desliza para ver más",
+    faqEyebrow: "Preguntas frecuentes",
+    faqTitle: "Preguntas frecuentes",
     relatedEyebrow: "También te puede interesar",
     relatedTitle: "Más eventos en el resort",
     planEyebrow: "Planifica tu evento",
@@ -41,6 +43,8 @@ const COPY = {
     mosaicEyebrow: "More photos",
     sliderTitle: "Explore in photos",
     dragHint: "Swipe to see more",
+    faqEyebrow: "Frequently asked questions",
+    faqTitle: "Frequently asked questions",
     relatedEyebrow: "You may also like",
     relatedTitle: "More events at the resort",
     planEyebrow: "Plan your event",
@@ -65,7 +69,7 @@ export function EventInfoPage({
   locale: Locale;
 }) {
   const copy = COPY[locale];
-  const hubHref = `/${locale}/eventos`;
+  const hubHref = `/${locale}/events`;
   const external = page.cta.href.startsWith("http");
 
   const expandedGallery = expandInfoPageGallery(page, 16);
@@ -157,6 +161,29 @@ export function EventInfoPage({
         className="bg-concept-sand"
       />
 
+      {page.faq?.length ? (
+        <section className="bg-concept-sand py-14 md:py-section">
+          <div className="container max-w-3xl">
+            <p className="eyebrow">{copy.faqEyebrow}</p>
+            <h2 className="mt-3 font-concept text-h1 font-medium leading-[1.05] text-concept-ocean">
+              {copy.faqTitle}
+            </h2>
+            <dl className="mt-8 divide-y divide-concept-border-soft border-t border-concept-border-soft">
+              {page.faq.map((item) => (
+                <div key={item.q[locale]} className="py-6">
+                  <dt className="font-concept text-h3 leading-snug text-concept-ocean">
+                    {item.q[locale]}
+                  </dt>
+                  <dd className="mt-3 text-body-sm leading-relaxed text-concept-ink/82">
+                    {item.a[locale]}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+      ) : null}
+
       {related.length > 0 && (
         <section className="bg-concept-sand-muted py-14 md:py-section">
           <div className="container">
@@ -185,7 +212,7 @@ export function EventInfoPage({
                     <p className="text-micro font-semibold uppercase tracking-[0.14em] text-concept-gold">
                       {item.eyebrow[locale]}
                     </p>
-                    <h3 className="mt-2 font-concept text-2xl leading-tight">
+                    <h3 className="mt-2 font-concept text-h3 leading-tight">
                       {item.title[locale]}
                     </h3>
                     <span className="mt-3 inline-flex items-center gap-1.5 text-micro font-semibold uppercase tracking-[0.1em]">
