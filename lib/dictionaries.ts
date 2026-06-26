@@ -338,7 +338,7 @@ const es: Dict = {
   },
   hero: {
     eyebrow: "Playa Hermosa · Costa Rica",
-    title: "Resort Frente al Mar en Playa Hermosa",
+    title: "Resort Frente al Mar en Playa Hermosa.",
     subtitle:
       "Sobre la arena de Playa Hermosa, al sur de Jacó — el surf a pocos pasos de tu habitación y una cálida bienvenida costarricense en la puerta.",
     primaryCta: "Reserva tu Escape",
