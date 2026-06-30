@@ -99,7 +99,8 @@ const en: HubCopy = {
         "A calm, light-filled retreat for two — wake to the pool and the sound of the surf just beyond your terrace, then drift to sleep with the doors open.",
       viewCta: "View Suite →",
       photoCount: 6,
-      image: "/images/suites/junior/exp-room-junior-hero.avif",
+      // was: "/images/suites/junior/exp-room-junior-hero.avif"
+      image: "/images/approve-suite-images/junior-suite.JPG",
     },
     superior: {
       kicker: "For families & friends",
@@ -107,7 +108,8 @@ const en: HubCopy = {
         "Two double beds and main-pool views, steps from the sand. Room to spread out without ever losing the water from sight.",
       viewCta: "View Room →",
       photoCount: 0,
-      image: "/images/suites/superior/exp-room-superior-hero.avif",
+      // was: "/images/suites/superior/exp-room-superior-hero.avif"
+      image: "/images/approve-suite-images/superior.JPG",
     },
     standard: {
       kicker: "Quiet & serene",
@@ -115,7 +117,8 @@ const en: HubCopy = {
         "A calm, garden-facing room for up to four — two double beds, your own terrace, and the same short barefoot walk to the sand as every other room.",
       viewCta: "View Room →",
       photoCount: 5,
-      image: "/images/suites/standard/exp-room-standard-hero.avif",
+      // was: "/images/suites/standard/exp-room-standard-hero.avif"
+      image: "/images/approve-suite-images/standard-room-1.JPG",
     },
     villas: {
       kicker: "Room for everyone",
@@ -124,7 +127,8 @@ const en: HubCopy = {
         "A whole home on the sand for up to six — full kitchen, living room and a wraparound terrace. The most space we offer, with nothing between you and the Pacific.",
       viewCta: "View Villa →",
       photoCount: 0,
-      image: "/images/suites/villa/exp-villa-hero.avif",
+      // was: "/images/suites/villa/exp-villa-hero.avif"
+      image: "/images/approve-suite-images/villa-1.JPG",
     },
   },
   included: {
@@ -205,7 +209,8 @@ const es: HubCopy = {
         "Un refugio luminoso y tranquilo para dos — despierta con la piscina y el sonido del mar justo más allá de tu terraza, y duérmete con las puertas abiertas.",
       viewCta: "Ver suite →",
       photoCount: 6,
-      image: "/images/suites/junior/exp-room-junior-hero.avif",
+      // was: "/images/suites/junior/exp-room-junior-hero.avif"
+      image: "/images/approve-suite-images/junior-suite.JPG",
     },
     superior: {
       kicker: "Para familias y amigos",
@@ -213,7 +218,8 @@ const es: HubCopy = {
         "Dos camas dobles y vista a la piscina principal, a pasos de la arena. Espacio para estirarse sin perder nunca el agua de vista.",
       viewCta: "Ver habitación →",
       photoCount: 0,
-      image: "/images/suites/superior/exp-room-superior-hero.avif",
+      // was: "/images/suites/superior/exp-room-superior-hero.avif"
+      image: "/images/approve-suite-images/superior.JPG",
     },
     standard: {
       kicker: "Tranquila y serena",
@@ -221,7 +227,8 @@ const es: HubCopy = {
         "Una habitación serena frente al jardín para hasta cuatro — dos camas dobles, tu propia terraza y la misma corta caminata descalza a la arena que cualquier otra habitación.",
       viewCta: "Ver habitación →",
       photoCount: 5,
-      image: "/images/suites/standard/exp-room-standard-hero.avif",
+      // was: "/images/suites/standard/exp-room-standard-hero.avif"
+      image: "/images/approve-suite-images/standard-room-1.JPG",
     },
     villas: {
       kicker: "Espacio para todos",
@@ -230,7 +237,8 @@ const es: HubCopy = {
         "Una casa entera sobre la arena para hasta seis — cocina completa, sala de estar y una terraza envolvente. El mayor espacio que ofrecemos, sin nada entre tú y el Pacífico.",
       viewCta: "Ver villa →",
       photoCount: 0,
-      image: "/images/suites/villa/exp-villa-hero.avif",
+      // was: "/images/suites/villa/exp-villa-hero.avif"
+      image: "/images/approve-suite-images/villa-1.JPG",
     },
   },
   included: {

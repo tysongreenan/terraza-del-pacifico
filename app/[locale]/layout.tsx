@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Script from "next/script";
 import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google";
+import { AnalyticsClickTracker } from "@/components/analytics-click-tracker";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { WhatsAppButton } from "@/components/whatsapp-button";
@@ -88,6 +89,10 @@ export default async function LocaleLayout({
       <WhatsAppButton
         label={locale === "en" ? "Chat on WhatsApp" : "Escríbenos por WhatsApp"}
       />
+
+      {/* Fires clic_whatsapp / book_click / contact_click to dataLayer (GTM/GA4)
+          and PostHog whenever a matching link is clicked anywhere on the page. */}
+      <AnalyticsClickTracker />
 
       {/* Elfsight platform loader — hydrates every <ElfsightWidget> on the page. */}
       <Script src="https://elfsightcdn.com/platform.js" strategy="lazyOnload" />

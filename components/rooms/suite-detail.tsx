@@ -27,26 +27,6 @@ import { roomGalleries } from "@/content/room-galleries";
 
 type Room = Dictionary["suites"]["items"][number];
 
-// Resort photos used only to round out the mosaic/carousel when a room ships
-// fewer than five of its own shots. Kept generic (pool/beach) on purpose, with
-// their own alt text so a resort shot is never mislabelled as the room.
-const FALLBACK_PHOTOS: { src: string; alt: { es: string; en: string } }[] = [
-  {
-    src: "/images/resort/pool/dji_fly_20241022_014010_0648_1753125627850_photo2.JPG",
-    alt: {
-      es: "Piscina y playa del resort Terraza del Pacífico",
-      en: "Resort pool and beach at Terraza del Pacífico",
-    },
-  },
-  {
-    src: "/images/resort/pool/g-aerial-pool-overview-CCOWXk2j.jpg",
-    alt: {
-      es: "Vista aérea de la piscina del resort",
-      en: "Aerial view of the resort pool",
-    },
-  },
-];
-
 export function SuiteDetail({
   slug,
   locale,
@@ -67,14 +47,7 @@ export function SuiteDetail({
 
   if (!room || !roomCopy || !editorial) return null;
 
-  const ownGallery = roomGalleries.find((g) => g.slug === slug)?.images ?? [];
-  const gallery = [...ownGallery];
-  for (const photo of FALLBACK_PHOTOS) {
-    if (gallery.length >= 5) break;
-    if (!gallery.some((g) => g.src === photo.src)) {
-      gallery.push(photo);
-    }
-  }
+  const gallery = roomGalleries.find((g) => g.slug === slug)?.images ?? [];
   const photoAlt = (i: number) => gallery[i]?.alt[locale] ?? room.name;
   const remaining = Math.max(0, gallery.length - 5);
   const lightboxImages = gallery.map((g, i) => ({
@@ -331,7 +304,7 @@ export function SuiteDetail({
                 <DirectBookingNote
                   locale={locale}
                   surface="light"
-                  className="mt-4 justify-center"
+                  className="mt-4 text-center"
                 />
               </div>
 

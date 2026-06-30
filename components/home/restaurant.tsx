@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/home/reveal";
 import { actionButtonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -44,15 +45,29 @@ export function Restaurant({
         <p className="mt-5 max-w-md text-body-sm leading-relaxed text-on-dark-muted">
           {r.body}
         </p>
-        <Link
-          href={`/${locale}/restaurant`}
-          className={cn(
-            actionButtonVariants({ variant: "secondary", surface: "dark" }),
-            "mt-8 w-fit"
-          )}
-        >
-          {r.cta}
-        </Link>
+        <div className="mt-8 flex flex-wrap items-center gap-4">
+          <Link
+            href={`/${locale}/restaurant`}
+            className={cn(
+              actionButtonVariants({ variant: "secondary", surface: "dark" }),
+              "w-fit"
+            )}
+          >
+            {r.ctaResort}
+          </Link>
+          <Link
+            href="https://www.ristorantevivace.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={cn(
+              actionButtonVariants({ variant: "secondary", surface: "dark" }),
+              "inline-flex w-fit items-center gap-1.5"
+            )}
+          >
+            {r.ctaJaco}
+            <ArrowUpRight className="h-4 w-4" aria-hidden />
+          </Link>
+        </div>
       </Reveal>
     </section>
   );

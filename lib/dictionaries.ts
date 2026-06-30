@@ -10,6 +10,9 @@ const en = {
     rooms: "Suites",
     eatDrink: "Eat & Drink",
     restaurant: "Restaurant",
+    restaurants: "Restaurants",
+    vivaceResort: "Vivace Beachfront – Resort",
+    vivaceJaco: "Ristorante Vivace – Jacó",
     bars: "Bars",
     bakery: "Bakery",
     events: "Events",
@@ -152,7 +155,8 @@ const en = {
         beds: "2 Double",
         view: "Pool",
         blurb: "Main pool views, steps from the restaurant and the sand.",
-        image: "/images/suites/superior/exp-room-superior-hero.avif",
+        // was: "/images/suites/superior/exp-room-superior-hero.avif"
+        image: "/images/approve-suite-images/superior.JPG",
       },
       {
         slug: "standard",
@@ -163,7 +167,8 @@ const en = {
         beds: "2 Double",
         view: "Gardens",
         blurb: "A quiet room set among tropical gardens.",
-        image: "/images/suites/standard/exp-room-standard-hero.avif",
+        // was: "/images/suites/standard/exp-room-standard-hero.avif"
+        image: "/images/approve-suite-images/standard-room-1.JPG",
       },
       {
         slug: "junior-suite",
@@ -174,7 +179,8 @@ const en = {
         beds: "1 King",
         view: "Pool",
         blurb: "A calm, light-filled retreat for two. Wake to the pool and the sound of the surf just beyond your terrace.",
-        image: "/images/suites/junior/exp-room-junior-hero.avif",
+        // was: "/images/suites/junior/exp-room-junior-hero.avif"
+        image: "/images/approve-suite-images/junior-suite.JPG",
       },
       {
         slug: "villas",
@@ -185,7 +191,8 @@ const en = {
         beds: "Multiple",
         view: "Partial ocean",
         blurb: "A full kitchen and living room with ocean views — ideal for families.",
-        image: "/images/suites/villa/exp-villa-hero.avif",
+        // was: "/images/suites/villa/exp-villa-hero.avif"
+        image: "/images/approve-suite-images/villa-1.JPG",
       },
     ],
     amenitiesNote:
@@ -202,10 +209,11 @@ const en = {
     cta: "Experience the magic",
   },
   restaurant: {
-    eyebrow: "Vivace Beachfront",
+    eyebrow: "Two Vivace Locations",
     title: "Mediterranean Soul, Pacific Setting",
-    body: "Vivace, the resort's beachfront restaurant, is where Sicilian Chef Luigi brings the flavors of southern Italy to Playa Hermosa: fresh catch, handmade pasta and slow evenings with sand beneath your table.",
-    cta: "Explore the Menu",
+    body: "Vivace brings Sicilian Chef Luigi's Mediterranean cooking to two settings: our beachfront restaurant on Playa Hermosa, and the original Ristorante Vivace in the heart of Jacó.",
+    ctaResort: "Visit Us at the Resort",
+    ctaJaco: "Visit Us in Downtown Jacó",
     chefCaption: "Chef Luigi · Sicily, Italy",
   },
   testimonials: {
@@ -353,6 +361,9 @@ const es: Dict = {
     rooms: "Suites",
     eatDrink: "Comer y Beber",
     restaurant: "Restaurante",
+    restaurants: "Restaurantes",
+    vivaceResort: "Vivace Beachfront – Resort",
+    vivaceJaco: "Ristorante Vivace – Jacó",
     bars: "Bares",
     bakery: "Panadería",
     events: "Eventos",
@@ -495,7 +506,8 @@ const es: Dict = {
         beds: "2 Dobles",
         view: "Piscina",
         blurb: "Vista a la piscina principal, a pasos del restaurante y la arena.",
-        image: "/images/suites/superior/exp-room-superior-hero.avif",
+        // was: "/images/suites/superior/exp-room-superior-hero.avif"
+        image: "/images/approve-suite-images/superior.JPG",
       },
       {
         slug: "standard",
@@ -506,7 +518,8 @@ const es: Dict = {
         beds: "2 Dobles",
         view: "Jardines",
         blurb: "Una habitación tranquila entre jardines tropicales.",
-        image: "/images/suites/standard/exp-room-standard-hero.avif",
+        // was: "/images/suites/standard/exp-room-standard-hero.avif"
+        image: "/images/approve-suite-images/standard-room-1.JPG",
       },
       {
         slug: "junior-suite",
@@ -517,7 +530,8 @@ const es: Dict = {
         beds: "1 King",
         view: "Piscina",
         blurb: "Un refugio luminoso y tranquilo para dos. Despierta con la piscina y el sonido del mar justo más allá de tu terraza.",
-        image: "/images/suites/junior/exp-room-junior-hero.avif",
+        // was: "/images/suites/junior/exp-room-junior-hero.avif"
+        image: "/images/approve-suite-images/junior-suite.JPG",
       },
       {
         slug: "villas",
@@ -528,7 +542,8 @@ const es: Dict = {
         beds: "Múltiples",
         view: "Vista parcial al mar",
         blurb: "Cocina completa y sala de estar con vista al océano, ideal para familias.",
-        image: "/images/suites/villa/exp-villa-hero.avif",
+        // was: "/images/suites/villa/exp-villa-hero.avif"
+        image: "/images/approve-suite-images/villa-1.JPG",
       },
     ],
     amenitiesNote:
@@ -545,10 +560,11 @@ const es: Dict = {
     cta: "Vive la magia",
   },
   restaurant: {
-    eyebrow: "Vivace Beachfront",
+    eyebrow: "Dos Locales Vivace",
     title: "Alma Mediterránea, Escenario Pacífico",
-    body: "Vivace, el restaurante del resort frente al mar, es donde el chef siciliano Luigi trae los sabores del sur de Italia a Playa Hermosa: pesca fresca, pasta artesanal y tardes lentas con arena bajo la mesa.",
-    cta: "Explorar el Menú",
+    body: "Vivace lleva la cocina mediterránea del chef siciliano Luigi a dos lugares: nuestro restaurante frente al mar en Playa Hermosa, y el Ristorante Vivace original en el corazón de Jacó.",
+    ctaResort: "Visítanos en el Resort",
+    ctaJaco: "Visítanos en el Centro de Jacó",
     chefCaption: "Chef Luigi · Sicilia, Italia",
   },
   testimonials: {

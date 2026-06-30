@@ -15,8 +15,9 @@ import { bookingHref } from "@/lib/site";
 import { socials } from "@/lib/socials";
 import { cn } from "@/lib/utils";
 
-export type NavLink = { href: string; label: string };
-export type NavEntry = NavLink | { label: string; children: NavLink[] };
+export type NavLink = { href: string; label: string; external?: boolean };
+export type NavChild = NavLink | { label: string; children: NavLink[] };
+export type NavEntry = NavLink | { label: string; children: NavChild[] };
 
 // Drop the /es or /en prefix → logical path ("/es/suites/x" → "/suites/x").
 function stripLocale(pathname: string): string {
@@ -43,13 +44,71 @@ function resolveVariant(pathname: string): "overlay" | "solid" {
   return "overlay";
 }
 
+// Nested submenu (e.g. "Restaurants" → Resort / Jacó) rendered as a flyout
+// to the right of its parent dropdown panel. Stays open while the pointer is
+// over the trigger or the flyout itself — both live inside the parent
+// NavDropdown's wrapper, so hovering between them never trips the parent's
+// own close timer.
+function NavSubmenu({ label, children }: { label: string; children: NavLink[] }) {
+  const [open, setOpen] = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const cancelClose = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+  };
+  const scheduleClose = () => {
+    cancelClose();
+    closeTimer.current = setTimeout(() => setOpen(false), 120);
+  };
+
+  return (
+    <div
+      className="relative"
+      onMouseEnter={() => {
+        cancelClose();
+        setOpen(true);
+      }}
+      onMouseLeave={scheduleClose}
+    >
+      <button
+        type="button"
+        aria-expanded={open}
+        aria-haspopup="true"
+        onClick={() => setOpen((v) => !v)}
+        className="flex w-full items-center justify-between gap-3 rounded-sm px-3 py-2 text-caption tracking-wide text-foreground/80 transition-colors hover:bg-muted hover:text-foreground"
+      >
+        {label}
+        <ChevronDown className="h-3.5 w-3.5 -rotate-90" aria-hidden />
+      </button>
+      {open && (
+        <div className="absolute left-full top-0 pl-2">
+          <div className="min-w-[14rem] overflow-hidden rounded-sm border border-border bg-background p-1.5 shadow-lg">
+            {children.map((c) => (
+              <Link
+                key={c.href}
+                href={c.href}
+                target={c.external ? "_blank" : undefined}
+                rel={c.external ? "noopener noreferrer" : undefined}
+                onClick={() => setOpen(false)}
+                className="block rounded-sm px-3 py-2 text-caption tracking-wide text-foreground/80 transition-colors hover:bg-muted hover:text-foreground"
+              >
+                {c.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 function NavDropdown({
   label,
   children,
   transparent,
 }: {
   label: string;
-  children: NavLink[];
+  children: NavChild[];
   transparent: boolean;
 }) {
   const [open, setOpen] = useState(false);
@@ -98,17 +157,23 @@ function NavDropdown({
       </button>
       {open && (
         <div className="absolute left-1/2 top-full -translate-x-1/2 pt-3">
-          <div className="min-w-[12rem] overflow-hidden rounded-sm border border-border bg-background p-1.5 shadow-lg">
-            {children.map((c) => (
-              <Link
-                key={c.href}
-                href={c.href}
-                onClick={() => setOpen(false)}
-                className="block rounded-sm px-3 py-2 text-caption tracking-wide text-foreground/80 transition-colors hover:bg-muted hover:text-foreground"
-              >
-                {c.label}
-              </Link>
-            ))}
+          <div className="min-w-[12rem] rounded-sm border border-border bg-background p-1.5 shadow-lg">
+            {children.map((c) =>
+              "children" in c ? (
+                <NavSubmenu key={c.label} label={c.label} children={c.children} />
+              ) : (
+                <Link
+                  key={c.href}
+                  href={c.href}
+                  target={c.external ? "_blank" : undefined}
+                  rel={c.external ? "noopener noreferrer" : undefined}
+                  onClick={() => setOpen(false)}
+                  className="block rounded-sm px-3 py-2 text-caption tracking-wide text-foreground/80 transition-colors hover:bg-muted hover:text-foreground"
+                >
+                  {c.label}
+                </Link>
+              )
+            )}
           </div>
         </div>
       )}
@@ -152,7 +217,17 @@ export function SiteHeader({
     {
       label: n.eatDrink,
       children: [
-        { href: p("restaurant"), label: n.restaurant },
+        {
+          label: n.restaurants,
+          children: [
+            { href: p("restaurant"), label: n.vivaceResort },
+            {
+              href: "https://www.ristorantevivace.com/",
+              label: n.vivaceJaco,
+              external: true,
+            },
+          ],
+        },
         { href: p("bars"), label: n.bars },
         { href: p("bakery"), label: n.bakery },
       ],

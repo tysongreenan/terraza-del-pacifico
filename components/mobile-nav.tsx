@@ -6,8 +6,9 @@ import { Menu, X, Phone } from "lucide-react";
 import { actionButtonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-type NavLink = { href: string; label: string };
-type NavItem = NavLink | { label: string; children: NavLink[] };
+type NavLink = { href: string; label: string; external?: boolean };
+type NavChild = NavLink | { label: string; children: NavLink[] };
+type NavItem = NavLink | { label: string; children: NavChild[] };
 
 export function MobileNav({
   items,
@@ -60,16 +61,38 @@ export function MobileNav({
                   <p className="py-1 text-xs font-semibold uppercase tracking-wider text-foreground/50">
                     {item.label}
                   </p>
-                  {item.children.map((child) => (
-                    <Link
-                      key={child.href}
-                      href={child.href}
-                      onClick={() => setOpen(false)}
-                      className="flex min-h-[44px] items-center pl-3 text-base text-foreground/90 transition-colors hover:text-accent"
-                    >
-                      {child.label}
-                    </Link>
-                  ))}
+                  {item.children.map((child) =>
+                    "children" in child ? (
+                      <div key={child.label} className="pl-3">
+                        <p className="py-1 text-xs font-semibold uppercase tracking-wider text-foreground/40">
+                          {child.label}
+                        </p>
+                        {child.children.map((grandchild) => (
+                          <Link
+                            key={grandchild.href}
+                            href={grandchild.href}
+                            target={grandchild.external ? "_blank" : undefined}
+                            rel={grandchild.external ? "noopener noreferrer" : undefined}
+                            onClick={() => setOpen(false)}
+                            className="flex min-h-[44px] items-center pl-6 text-base text-foreground/90 transition-colors hover:text-accent"
+                          >
+                            {grandchild.label}
+                          </Link>
+                        ))}
+                      </div>
+                    ) : (
+                      <Link
+                        key={child.href}
+                        href={child.href}
+                        target={child.external ? "_blank" : undefined}
+                        rel={child.external ? "noopener noreferrer" : undefined}
+                        onClick={() => setOpen(false)}
+                        className="flex min-h-[44px] items-center pl-3 text-base text-foreground/90 transition-colors hover:text-accent"
+                      >
+                        {child.label}
+                      </Link>
+                    )
+                  )}
                 </div>
               ) : (
                 <Link

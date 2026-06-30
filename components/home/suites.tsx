@@ -15,24 +15,25 @@ import { bookingHref } from "@/lib/site";
 import { DirectBookingNote } from "@/components/direct-booking-note";
 import { cn } from "@/lib/utils";
 
+// Previous Expedia-era extra photos — commented out for now, may be re-added later.
 const ROOM_EXTRA_IMAGES: Record<string, string[]> = {
-  superior: [
-    "/images/suites/general/room-king-bed-B58lVEdC.jpg",
-    "/images/suites/originals/RLR_4906.JPG",
-  ],
-  standard: [
-    "/images/suites/general/room-toucan-art-n3cC8Tze.jpg",
-    "/images/suites/general/room-interior-C3-O8UpA.jpg",
-  ],
-  "junior-suite": [
-    "/images/suites/general/room-toucan-art-n3cC8Tze.jpg",
-    "/images/suites/originals/RLR_48512.JPG",
-    "/images/suites/general/room-king-bed-B58lVEdC.jpg",
-  ],
-  villas: [
-    "/images/suites/villa/villa-bedroom-view-_Eb74lE7.jpg",
-    "/images/suites/originals/IMG_4757.JPG",
-  ],
+  // superior: [
+  //   "/images/suites/general/room-king-bed-B58lVEdC.jpg",
+  //   "/images/suites/originals/RLR_4906.JPG",
+  // ],
+  // standard: [
+  //   "/images/suites/general/room-toucan-art-n3cC8Tze.jpg",
+  //   "/images/suites/general/room-interior-C3-O8UpA.jpg",
+  // ],
+  // "junior-suite": [
+  //   "/images/suites/general/room-toucan-art-n3cC8Tze.jpg",
+  //   "/images/suites/originals/RLR_48512.JPG",
+  //   "/images/suites/general/room-king-bed-B58lVEdC.jpg",
+  // ],
+  // villas: [
+  //   "/images/suites/villa/villa-bedroom-view-_Eb74lE7.jpg",
+  //   "/images/suites/originals/IMG_4757.JPG",
+  // ],
 };
 
 function roomGalleryImages(slug: string, locale: Locale) {

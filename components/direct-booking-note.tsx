@@ -7,9 +7,9 @@ const COPY: Record<Locale, string> = {
 };
 
 /**
- * Small reassurance line shown beneath primary booking-engine CTAs.
- * `surface` flips the text tone: "dark" for hero/photo backgrounds,
- * "light" for cards and pale sections (the gold ◆ reads on both).
+ * Reassurance line shown beneath primary booking-engine CTAs, styled as a
+ * bold gold eyebrow label so it reads on both photo and pale backgrounds.
+ * `surface="dark"` adds a text shadow for legibility over hero imagery.
  */
 export function DirectBookingNote({
   locale,
@@ -23,16 +23,11 @@ export function DirectBookingNote({
   return (
     <p
       className={cn(
-        "flex items-center gap-2 text-sm font-medium",
-        surface === "dark"
-          ? "text-white/90 text-shadow-hero"
-          : "text-concept-ink-muted",
+        "text-balance text-sm font-semibold uppercase tracking-[0.1em] text-accent",
+        surface === "dark" && "text-shadow-hero",
         className
       )}
     >
-      <span className="text-accent" aria-hidden>
-        ◆
-      </span>
       {COPY[locale]}
     </p>
   );

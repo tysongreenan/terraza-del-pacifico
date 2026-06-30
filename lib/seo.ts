@@ -31,6 +31,11 @@ export type StaticRoute = {
   changeFrequency: "weekly" | "monthly";
 };
 
+// Routes whose path is identical in both locales. Routes whose slug differs
+// by locale (events/*, experiences/*) are NOT listed here — they're built
+// from content/events.ts and content/experiences.ts in app/sitemap.ts via
+// pageHref() so each locale gets its own correct, localized URL instead of
+// the same path forced onto both languages.
 export const staticRoutes: StaticRoute[] = [
   { slug: "home", path: "", priority: 1, changeFrequency: "weekly" },
   { slug: "suites", path: "suites", priority: 0.9, changeFrequency: "monthly" },
@@ -41,17 +46,16 @@ export const staticRoutes: StaticRoute[] = [
   { slug: "suites-villas", path: "suites/villas", priority: 0.8, changeFrequency: "monthly" },
   { slug: "restaurant", path: "restaurant", priority: 0.9, changeFrequency: "weekly" },
   { slug: "restaurant-menu", path: "restaurant/menu", priority: 0.8, changeFrequency: "monthly" },
+  { slug: "restaurant-about", path: "restaurant/about", priority: 0.6, changeFrequency: "monthly" },
   { slug: "bars", path: "bars", priority: 0.7, changeFrequency: "monthly" },
   { slug: "bars-golden-beach-bar", path: "bars/golden-beach-bar", priority: 0.65, changeFrequency: "monthly" },
   { slug: "bars-iguana-bar", path: "bars/iguana-bar", priority: 0.65, changeFrequency: "monthly" },
   { slug: "bakery", path: "bakery", priority: 0.7, changeFrequency: "monthly" },
   { slug: "events", path: "events", priority: 0.85, changeFrequency: "monthly" },
-  { slug: "events-bodas", path: "events/bodas", priority: 0.85, changeFrequency: "monthly" },
-  { slug: "events-surf-nights", path: "events/surf-nights", priority: 0.8, changeFrequency: "weekly" },
-  { slug: "events-otros", path: "events/otros", priority: 0.75, changeFrequency: "monthly" },
   { slug: "experiences", path: "experiences", priority: 0.85, changeFrequency: "weekly" },
   { slug: "gallery", path: "gallery", priority: 0.65, changeFrequency: "monthly" },
   { slug: "about", path: "about", priority: 0.7, changeFrequency: "monthly" },
+  { slug: "contact", path: "contact", priority: 0.6, changeFrequency: "monthly" },
   { slug: "policies", path: "policies", priority: 0.4, changeFrequency: "monthly" },
   { slug: "blog", path: "blog", priority: 0.7, changeFrequency: "weekly" },
 ];

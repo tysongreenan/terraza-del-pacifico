@@ -364,7 +364,7 @@ export function LuxuryCtaBand({
         </Reveal>
         {primaryHref === bookingHref && (
           <Reveal delay={180} className="mt-6 flex justify-center">
-            <DirectBookingNote locale={locale} className="justify-center" />
+            <DirectBookingNote locale={locale} className="text-center" />
           </Reveal>
         )}
       </div>
