@@ -104,10 +104,7 @@ function NavCard({ tile, locale }: { tile: NavTile; locale: Locale }) {
           {tile.title[locale]}
         </p>
         <span
-          className={cn(
-            "mt-2.5 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.12em]",
-            isFeature ? "text-concept-gold" : "text-white"
-          )}
+          className="mt-2.5 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-white"
         >
           {tile.cta[locale]}
           <ArrowRight

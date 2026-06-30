@@ -128,7 +128,7 @@ export function InfoHub({
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-concept-ocean/90 via-concept-ocean/20 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-                  <p className="text-micro font-semibold uppercase tracking-[0.14em] text-concept-gold">
+                  <p className="text-micro font-semibold uppercase tracking-[0.14em] text-white">
                     {page.eyebrow[locale]}
                   </p>
                   <h3 className="mt-2 font-concept leading-tight text-h3">

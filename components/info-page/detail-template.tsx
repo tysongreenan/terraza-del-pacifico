@@ -358,7 +358,7 @@ export function InfoDetailTemplate({
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[rgba(11,32,42,0.9)] via-transparent to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-                    <p className="text-micro font-semibold uppercase tracking-[0.14em] text-concept-gold">
+                    <p className="text-micro font-semibold uppercase tracking-[0.14em] text-white">
                       {item.eyebrow[locale]}
                     </p>
                     <h3 className="mt-2 font-concept text-h3 leading-tight">
@@ -389,7 +389,7 @@ export function InfoDetailTemplate({
           <div className="absolute inset-0 bg-gradient-to-b from-[rgba(8,20,30,.85)] to-[rgba(8,20,30,.93)]" />
           <div className="container relative grid items-center gap-12 md:grid-cols-2 md:gap-20">
             <Reveal>
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-concept-gold">
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-white">
                 {k.formEyebrow}
               </p>
               <h2 className="mt-4 font-concept text-h1 font-medium leading-[1.06] text-white">

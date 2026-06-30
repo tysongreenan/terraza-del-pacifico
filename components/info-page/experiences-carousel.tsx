@@ -116,7 +116,7 @@ export function ExperiencesCarousel({
             />
             <div className="absolute inset-0 bg-gradient-to-t from-concept-ocean/95 via-concept-ocean/40 to-transparent" />
             <div className="absolute inset-x-0 bottom-0 z-10 p-6 text-white">
-              <p className="text-micro font-semibold uppercase tracking-[0.14em] text-concept-gold">
+              <p className="text-micro font-semibold uppercase tracking-[0.14em] text-white">
                 {page.eyebrow[locale]}
               </p>
               <h3 className="mt-2 font-concept text-h3 leading-[1.05]">
@@ -126,7 +126,7 @@ export function ExperiencesCarousel({
               <p className="mt-2 line-clamp-2 text-body-sm leading-relaxed text-white/75">
                 {page.description[locale]}
               </p>
-              <span className="mt-4 inline-flex items-center gap-1.5 text-caption font-semibold uppercase tracking-[0.1em] text-concept-gold">
+              <span className="mt-4 inline-flex items-center gap-1.5 text-caption font-semibold uppercase tracking-[0.1em] text-white">
                 {copy.explore}
                 <ArrowRight
                   className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"

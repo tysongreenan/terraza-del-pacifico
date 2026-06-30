@@ -176,7 +176,7 @@ export function InfoPage({
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[rgba(11,32,42,0.88)] via-transparent to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-                    <p className="text-micro font-semibold uppercase tracking-[0.14em] text-concept-gold">
+                    <p className="text-micro font-semibold uppercase tracking-[0.14em] text-white">
                       {item.eyebrow[locale]}
                     </p>
                     <h3 className="mt-2 font-concept text-h3 leading-tight">
