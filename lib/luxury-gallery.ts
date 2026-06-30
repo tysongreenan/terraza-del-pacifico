@@ -75,6 +75,10 @@ const EVENT_SUPPLEMENTS: Record<string, string[]> = {
     "/images/resort/highlights/IMG_24012.JPG",
     "/images/resort/bars/golden-beach-bar-qN10cbKY.jpg",
     "/images/resort/bars/live-music-U-RLRqGX.jpg",
+    "/images/experiences/surf-nights/surf-night-hero.png",
+    "/images/experiences/surf-nights/surf-night-2.png",
+    "/images/experiences/surf-nights/surf-night-3.png",
+    "/images/experiences/surf-nights/surf-night-lights.JPG",
   ],
   "corporate-events": [
     "/images/resort/events/events-corporate-CUI1lTmu.jpg",

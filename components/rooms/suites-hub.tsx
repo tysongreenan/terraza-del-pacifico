@@ -183,31 +183,31 @@ export function SuitesHub({
       </section>
 
       {/* EDITORIAL ROOM FEATURES — alternating frames + overlapping spec panel */}
-      <div className="pb-4">
-        {rooms.map(({ room, editorial }, i) => (
-          <RoomFeature
-            key={room.slug}
-            locale={locale}
-            dict={dict}
-            room={room}
-            editorial={editorial}
-            reverse={i % 2 === 1}
-          />
-        ))}
-      </div>
+      {rooms.map(({ room, editorial }, i) => (
+        <RoomFeature
+          key={room.slug}
+          locale={locale}
+          dict={dict}
+          room={room}
+          editorial={editorial}
+          reverse={i % 2 === 1}
+        />
+      ))}
 
-      {/* compare CTA */}
-      <div className="container pb-20 text-center md:pb-24">
-        <Link
-          href={`/${locale}/suites/compare`}
-          className={cn(
-            actionButtonVariants({ variant: "secondary", surface: "light", size: "lg" }),
-            focusRing
-          )}
-        >
-          {copy.compareCta}
-        </Link>
-      </div>
+      {/* compare CTA — own section, sits clear below the last villa spec card */}
+      <section className="relative z-20 pb-10 pt-20 text-center md:pb-14 md:pt-24">
+        <div className="container">
+          <Link
+            href={`/${locale}/suites/compare`}
+            className={cn(
+              actionButtonVariants({ variant: "secondary", surface: "light", size: "lg" }),
+              focusRing
+            )}
+          >
+            {copy.compareCta}
+          </Link>
+        </div>
+      </section>
 
       {/* INCLUDED IN EVERY ROOM */}
       <section className="bg-concept-sand py-section-sm md:py-section">

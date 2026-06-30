@@ -59,7 +59,7 @@ const en: RestaurantCopy = {
     body: "Chef Luigi cooks the way his grandmother did — slowly, generously, and with whatever the boats brought in that morning. Handmade pasta, wood-fire fish, and a wine list that knows its way around the Mediterranean.",
     menuCta: "Explore the Menu",
     bioCta: "Read Chef Luigi's story →",
-    image: "/images/resort/dining/chef-luigi-BOxS8-8w.jpg",
+    image: "/images/resort/dining/chef-luigi-portrait.jpeg",
     alt: "Chef Luigi of Vivace Beachfront",
   },
   menus: {
@@ -112,6 +112,10 @@ const en: RestaurantCopy = {
       { src: "/images/resort/dining/chloemurdochphotography-2252.JPG", alt: "Latte served at the restaurant" },
       { src: "/images/resort/dining/restaurant-sunset-silhouette-CBBvMTsI.jpg", alt: "Sunset drinks by the ocean" },
       { src: "/images/resort/dining/restaurant-night-DDkbFUTM.jpg", alt: "Dinner under the string lights" },
+      { src: "/images/resort/dining/chloemurdochphotography-95.JPG", alt: "Lobster and seafood platter with white wine by the pool" },
+      { src: "/images/resort/dining/chloemurdochphotography-247.JPG", alt: "Fresh dish at the beachfront restaurant" },
+      { src: "/images/resort/dining/RLR_3818.JPG", alt: "Dining at Vivace Beachfront" },
+      { src: "/images/resort/dining/RLR_3947.JPG", alt: "Plated entree at Vivace Beachfront restaurant" },
     ],
   },
   reserve: {
@@ -140,7 +144,7 @@ const es: RestaurantCopy = {
     body: "El Chef Luigi cocina como lo hacía su abuela — despacio, con generosidad y con lo que trajeron los botes esa mañana. Pasta artesanal, pescado al fuego y una carta de vinos que conoce bien el Mediterráneo.",
     menuCta: "Explorar el menú",
     bioCta: "Conoce la historia del Chef Luigi →",
-    image: "/images/resort/dining/chef-luigi-BOxS8-8w.jpg",
+    image: "/images/resort/dining/chef-luigi-portrait.jpeg",
     alt: "El Chef Luigi de Vivace Beachfront",
   },
   menus: {
@@ -193,6 +197,10 @@ const es: RestaurantCopy = {
       { src: "/images/resort/dining/chloemurdochphotography-2252.JPG", alt: "Latte servido en el restaurante" },
       { src: "/images/resort/dining/restaurant-sunset-silhouette-CBBvMTsI.jpg", alt: "Bebidas al atardecer junto al océano" },
       { src: "/images/resort/dining/restaurant-night-DDkbFUTM.jpg", alt: "Cena bajo las luces de guirnalda" },
+      { src: "/images/resort/dining/chloemurdochphotography-95.JPG", alt: "Langosta y mariscos con vino blanco junto a la piscina" },
+      { src: "/images/resort/dining/chloemurdochphotography-247.JPG", alt: "Plato fresco en el restaurante frente al mar" },
+      { src: "/images/resort/dining/RLR_3818.JPG", alt: "Comedor en Vivace Beachfront" },
+      { src: "/images/resort/dining/RLR_3947.JPG", alt: "Plato principal en el restaurante Vivace Beachfront" },
     ],
   },
   reserve: {

@@ -60,7 +60,7 @@ export function VivaceMenu({
           />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,24,37,0.4)_0%,rgba(10,24,37,0.1)_45%,rgba(10,24,37,0.72)_100%)]" />
           <div className="container relative flex h-full flex-col justify-end pb-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-concept-gold">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white">
               {labels.eyebrow}
             </p>
             <h1 className="mt-3 font-concept text-display font-medium leading-none text-shadow-hero ">

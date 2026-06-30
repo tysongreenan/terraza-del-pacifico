@@ -25,6 +25,7 @@ export function SiteFooter({
     { href: p("experiences"), label: n.experiences },
     { href: p("gallery"), label: n.gallery },
     { href: p("blog"), label: n.blog },
+    { href: p("contact"), label: n.contact },
     { href: p("policies"), label: f.policies },
   ];
 

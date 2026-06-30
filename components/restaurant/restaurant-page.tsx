@@ -93,6 +93,14 @@ export function RestaurantPage({ locale }: { locale: Locale }) {
           <p className="mt-5 max-w-md text-body-sm leading-[1.8] text-on-dark-muted">
             {copy.ambiance.body}
           </p>
+          <div className="mt-8">
+            <Link
+              href={`/${locale}/restaurant/about`}
+              className={actionButtonVariants({ variant: "secondary", surface: "dark", size: "lg" })}
+            >
+              {locale === "en" ? "About the Restaurant" : "Sobre el restaurante"}
+            </Link>
+          </div>
         </Reveal>
       </section>
 
@@ -141,15 +149,54 @@ export function RestaurantPage({ locale }: { locale: Locale }) {
         </div>
       </section>
 
+      {/* FEATURE — pizza split, dark bg, text left image right */}
+      <section className="flex flex-col bg-concept-ocean md:flex-row md:items-stretch">
+        <Reveal className="flex w-full flex-col justify-center px-8 py-16 md:w-1/2 md:px-[72px] md:py-24">
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-concept-gold">
+            {locale === "en" ? "Wednesdays mean" : "Los miércoles son de"}
+          </p>
+          <h2 className="mt-4 font-concept text-h1 font-medium leading-[1.08] text-white">
+            {locale === "en" ? "Pizza Offer" : "Oferta de pizza"}
+          </h2>
+          <p className="mt-5 max-w-md text-body-sm leading-[1.8] text-on-dark-muted">
+            {locale === "en"
+              ? "Every Wednesday enjoy 30% off all our pizzas (except Margherita)."
+              : "Todos los miércoles disfruta un 30% de descuento en todas nuestras pizzas (excepto la Margherita)."}
+          </p>
+          <p className="mt-4 max-w-md text-body-sm leading-[1.8] text-on-dark-muted">
+            {locale === "en"
+              ? "Prepared with artisan dough and fresh ingredients, our pizzas combine flavor, texture and the authentic Italian touch."
+              : "Preparadas con masa artesanal e ingredientes frescos, nuestras pizzas combinan sabor, textura y el auténtico toque italiano."}
+          </p>
+          <div className="mt-8">
+            <Link
+              href={menuHref()}
+              className={actionButtonVariants({ variant: "primary", size: "lg" })}
+            >
+              {locale === "en" ? "View Pizza Menu" : "Ver menú de pizzas"}
+            </Link>
+          </div>
+        </Reveal>
+        <div className="relative w-full md:w-1/2 aspect-[4/5]">
+          <Image
+            src="/images/resort/dining/chloemurdochphotography-207.JPG"
+            alt={locale === "en" ? "Two artisan pizzas on wooden serving boards" : "Dos pizzas artesanales en tablas de madera"}
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover object-center"
+          />
+        </div>
+      </section>
+
       {/* CHEF split — image left, ocean panel right */}
       <section className="flex flex-col bg-concept-ocean md:flex-row md:items-stretch">
-        <div className="relative min-h-[360px] w-full md:min-h-[560px] md:w-1/2">
+        <div className="relative w-full md:w-1/2 aspect-[4/5]">
           <Image
             src={copy.chef.image}
             alt={copy.chef.alt}
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover object-[center_top]"
+            className="object-cover object-top"
           />
         </div>
         <Reveal className="flex w-full flex-col justify-center px-8 py-16 md:w-1/2 md:px-[72px] md:py-24">
@@ -170,12 +217,6 @@ export function RestaurantPage({ locale }: { locale: Locale }) {
               className={actionButtonVariants({ variant: "primary", size: "lg" })}
             >
               {copy.chef.menuCta}
-            </Link>
-            <Link
-              href={menuHref()}
-              className={actionButtonVariants({ variant: "secondary", surface: "dark", size: "lg" })}
-            >
-              {copy.chef.bioCta}
             </Link>
           </div>
         </Reveal>

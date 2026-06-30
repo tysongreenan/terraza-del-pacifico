@@ -38,7 +38,8 @@ function resolveVariant(pathname: string): "overlay" | "solid" {
     path.startsWith("/suites/") && path !== "/suites/compare";
   // Blog list + posts open on a light surface (no dark hero) → solid header.
   const isBlog = path === "/blog" || path.startsWith("/blog/");
-  if (path === "/experiences" || isSuiteDetail || isBlog) return "solid";
+  const isContact = path === "/contact";
+  if (path === "/experiences" || isSuiteDetail || isBlog || isContact) return "solid";
   return "overlay";
 }
 
@@ -160,6 +161,7 @@ export function SiteHeader({
     { href: p("experiences"), label: n.experiences },
     { href: p("gallery"), label: n.gallery },
     { href: p("about"), label: n.about },
+    { href: p("contact"), label: n.contact },
   ];
   const bookHref = bookingHref;
 
