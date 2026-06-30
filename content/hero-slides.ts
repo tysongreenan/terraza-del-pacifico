@@ -53,13 +53,4 @@ export const heroSlides: HeroSlide[] = [
       en: "Beachfront resort on Playa Hermosa, just south of Jacó, Costa Rica",
     },
   },
-  {
-    id: "resort-sunset-aerial",
-    type: "image",
-    src: "/images/resort/beach-aerial/aerial-resort-sunset.JPG",
-    alt: {
-      es: "Vista aérea del Hotel Terraza del Pacífico al atardecer en Playa Hermosa, Costa Rica",
-      en: "Aerial sunset view of Hotel Terraza del Pacífico on Playa Hermosa, Costa Rica",
-    },
-  },
 ];
