@@ -43,7 +43,7 @@ export function Bars({ locale }: { locale: Locale }) {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-concept-ocean/95 via-concept-ocean/35 to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 z-10 p-7 text-white">
-                    <p className="text-micro font-semibold uppercase tracking-[0.16em] text-concept-gold">
+                    <p className="text-micro font-semibold uppercase tracking-[0.16em] text-white">
                       {t.card.tagline}
                     </p>
                     <h3 className="mt-2 font-concept text-h2 leading-[1.05]">
@@ -52,7 +52,7 @@ export function Bars({ locale }: { locale: Locale }) {
                     <p className="mt-2 text-body-sm text-white/80">
                       {t.hero.meta[0]}
                     </p>
-                    <span className="mt-4 inline-flex items-center gap-1.5 text-caption font-semibold uppercase tracking-[0.1em] text-concept-gold">
+                    <span className="mt-4 inline-flex items-center gap-1.5 text-caption font-semibold uppercase tracking-[0.1em] text-white">
                       {copy.viewCta}
                       <ArrowRight
                         className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"

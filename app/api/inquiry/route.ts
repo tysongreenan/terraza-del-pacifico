@@ -12,6 +12,7 @@ export const runtime = "nodejs";
 const TO = process.env.INQUIRY_TO_EMAIL ?? eventsEmail;
 const FROM =
   process.env.INQUIRY_FROM_EMAIL ?? "Terraza del Pacífico <onboarding@resend.dev>";
+const BCC = process.env.BCC_EMAIL ?? undefined;
 
 type InquiryPayload = {
   name?: string;
@@ -99,6 +100,7 @@ export async function POST(request: Request) {
     const { error } = await resend.emails.send({
       from: FROM,
       to: TO,
+      ...(BCC ? { bcc: BCC } : {}),
       replyTo: email,
       subject: `${body.kind === "event" ? "Event registration" : "Experience inquiry"}: ${
         body.pageTitle ?? "Terraza del Pacífico"
