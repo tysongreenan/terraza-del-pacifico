@@ -62,7 +62,7 @@ const posts: BlogPost[] = [
     language: "en",
     // The source newsletter's images are external CMS URLs that aren't mirrored
     // locally, so use a real on-disk beachfront-sunset photo for the cover/OG.
-    coverImage: localImage("/images/events-aerial-sunset-DjFbPbt1.jpg"),
+    coverImage: localImage("/images/resort/events/events-aerial-sunset-DjFbPbt1.jpg"),
     content: newsletter,
   },
 ];
@@ -106,5 +106,5 @@ export function blogBodyLines(post: BlogPost) {
 function localImage(src: string) {
   if (src.startsWith("/images/")) return src;
   const base = src.split("/").pop()?.split("?")[0];
-  return base ? `/images/${base}` : "/images/og-image.jpg";
+  return base ? `/images/${base}` : "/images/brand/og-image.jpg";
 }

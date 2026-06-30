@@ -11,15 +11,15 @@ export const bakery: Venue = {
   // copy advertises "open daily from 7 AM", so we omit `closes` here rather than
   // guess (fabricated structured data is a Google penalty risk).
   hours: { opens: "07:00", closes: "12:00" },
-  heroImage: "/images/Resturant/chloemurdochphotography-241.JPG",
+  heroImage: "/images/resort/dining/chloemurdochphotography-241.JPG",
   introSlides: [
-    { src: "/images/Resturant/chloemurdochphotography-224.JPG", alt: "Chocolate cake slice with a layered latte" },
-    { src: "/images/Resturant/IMG_0693_jpg2.JPG", alt: "Costa Rican breakfast and black coffee with a garden view" },
-    { src: "/images/Resturant/chloemurdochphotography-225.JPG", alt: "Layered latte macchiato" },
-    { src: "/images/Resturant/chloemurdochphotography-234.JPG", alt: "Dessert lineup" },
+    { src: "/images/resort/dining/chloemurdochphotography-224.JPG", alt: "Chocolate cake slice with a layered latte" },
+    { src: "/images/resort/dining/IMG_0693_jpg2.JPG", alt: "Costa Rican breakfast and black coffee with a garden view" },
+    { src: "/images/resort/dining/chloemurdochphotography-225.JPG", alt: "Layered latte macchiato" },
+    { src: "/images/resort/dining/chloemurdochphotography-234.JPG", alt: "Dessert lineup" },
   ],
-  ctaImage: "/images/exp-breakfast-ocean.jpg",
-  cardImage: "/images/Resturant/chloemurdochphotography-2473.JPG",
+  ctaImage: "/images/resort/dining/exp-breakfast-ocean.jpg",
+  cardImage: "/images/resort/dining/chloemurdochphotography-2473.JPG",
   text: {
     en: {
       hero: {

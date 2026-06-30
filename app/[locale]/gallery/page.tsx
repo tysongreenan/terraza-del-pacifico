@@ -6,7 +6,7 @@ import type { Locale } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/seo";
 
 const path = "gallery";
-const pagePeekImage = "/images/hero-aerial-beach-QbQLfxOv.jpg";
+const pagePeekImage = "/images/resort/beach-aerial/hero-aerial-beach-QbQLfxOv.jpg";
 
 // Localized title/desc so the Spanish route ships Spanish SEO metadata instead
 // of the English values baked into galeria.json.
@@ -32,7 +32,7 @@ export async function generateMetadata({
     params,
     path,
     content,
-    image: "/images/Resort Highlights/IMG_2559.JPG",
+    image: "/images/resort/highlights/IMG_2559.JPG",
   });
 }
 

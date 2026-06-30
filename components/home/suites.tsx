@@ -12,25 +12,26 @@ import { actionButtonVariants } from "@/components/ui/button";
 import type { Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/lib/dictionaries";
 import { bookingHref } from "@/lib/site";
+import { DirectBookingNote } from "@/components/direct-booking-note";
 import { cn } from "@/lib/utils";
 
 const ROOM_EXTRA_IMAGES: Record<string, string[]> = {
   superior: [
-    "/images/room-king-bed-B58lVEdC.jpg",
-    "/images/Suit photos/RLR_4906.JPG",
+    "/images/suites/general/room-king-bed-B58lVEdC.jpg",
+    "/images/suites/originals/RLR_4906.JPG",
   ],
   standard: [
-    "/images/room-toucan-art-n3cC8Tze.jpg",
-    "/images/room-interior-C3-O8UpA.jpg",
+    "/images/suites/general/room-toucan-art-n3cC8Tze.jpg",
+    "/images/suites/general/room-interior-C3-O8UpA.jpg",
   ],
   "junior-suite": [
-    "/images/room-toucan-art-n3cC8Tze.jpg",
-    "/images/Suit photos/RLR_48512.JPG",
-    "/images/room-king-bed-B58lVEdC.jpg",
+    "/images/suites/general/room-toucan-art-n3cC8Tze.jpg",
+    "/images/suites/originals/RLR_48512.JPG",
+    "/images/suites/general/room-king-bed-B58lVEdC.jpg",
   ],
   villas: [
-    "/images/villa-bedroom-view-_Eb74lE7.jpg",
-    "/images/Suit photos/IMG_4757.JPG",
+    "/images/suites/villa/villa-bedroom-view-_Eb74lE7.jpg",
+    "/images/suites/originals/IMG_4757.JPG",
   ],
 };
 
@@ -237,6 +238,11 @@ export function Suites({
                   {s.detailsCta}
                 </Link>
               </div>
+              <DirectBookingNote
+                locale={locale}
+                surface="light"
+                className="mt-3"
+              />
             </div>
           </div>
         </Reveal>

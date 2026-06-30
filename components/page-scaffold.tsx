@@ -13,6 +13,7 @@ import {
   type MosaicImage,
 } from "@/components/luxury/primitives";
 import { GallerySections } from "@/components/luxury/gallery-sections";
+import { DirectBookingNote } from "@/components/direct-booking-note";
 import { cn } from "@/lib/utils";
 import { bookingHref, whatsappHref } from "@/lib/site";
 import { JsonLd } from "@/components/json-ld";
@@ -47,7 +48,7 @@ const navLabels = new Set([
 ]);
 
 function local(src: string) {
-  // Already a local image path (incl. subfolders like "/images/Wedding/x.jpg") — keep as-is.
+  // Already a local image path (incl. subfolders like "/images/resort/weddings/x.jpg") — keep as-is.
   if (src.startsWith("/images/")) return src;
   const base = src.split("/").pop()?.split("?")[0] ?? "";
   return `/images/${base}`;
@@ -61,85 +62,85 @@ function imageList(data: Captured) {
 }
 
 // Hand-picked "best of" photos from the real property shoots
-// (public/images/{Resort Highlights,New Pool,Resturant,Wedding,Suit photos}).
+// (public/images/{resort/highlights,resort/pool,resort/dining,resort/weddings,suites/originals}).
 // These are PREPENDED so they lead the hero + mosaic on each luxury page,
 // ahead of the older scraped/stock-named assets in the page JSON.
 const FEATURED_IMAGES: Record<string, string[]> = {
   galeria: [
-    "/images/New Pool/dji_fly_20241022_013922_0645_1753125628421_photo4.JPG",
-    "/images/Resort Highlights/DJI_0361(1)2.JPG",
-    "/images/New Pool/dji_fly_20241022_014010_0648_1753125627850_photo2.JPG",
-    "/images/New Pool/dji_fly_20241022_013636_0636_1753125648022_photo2.JPG",
-    "/images/New Pool/dji_fly_20241022_013726_0642_1753125646863_photo2.JPG",
-    "/images/Resort Highlights/Surf 1.JPG",
-    "/images/Resort Highlights/IMG_3170.JPG",
-    "/images/Resturant/DSCF40452.JPG",
-    "/images/Resturant/chloemurdochphotography-37.JPG",
-    "/images/Resturant/RLR_3857.JPG",
-    "/images/Wedding/RLR_86342.JPG",
-    "/images/Wedding/AM5_96582.JPG",
-    "/images/Wedding/AM5_93622.JPG",
-    "/images/Suit photos/DSC03703.jpg",
-    "/images/Suit photos/RLR_48512.JPG",
-    "/images/Resort Highlights/DSC03775.jpg",
-    "/images/Resort Highlights/IMG_2542.JPG",
-    "/images/Resort Highlights/hotel sign.JPG",
-    "/images/Resort Highlights/Family 3.JPG",
-    "/images/New Pool/dji_fly_20241111_035710_0766_1754911281185_photo.JPG",
-    "/images/Resturant/chloemurdochphotography-255.JPG",
-    "/images/Resort Highlights/IMG_61303.JPG",
+    "/images/resort/pool/dji_fly_20241022_013922_0645_1753125628421_photo4.JPG",
+    "/images/resort/highlights/DJI_0361(1)2.JPG",
+    "/images/resort/pool/dji_fly_20241022_014010_0648_1753125627850_photo2.JPG",
+    "/images/resort/pool/dji_fly_20241022_013636_0636_1753125648022_photo2.JPG",
+    "/images/resort/pool/dji_fly_20241022_013726_0642_1753125646863_photo2.JPG",
+    "/images/resort/highlights/Surf 1.JPG",
+    "/images/resort/highlights/IMG_3170.JPG",
+    "/images/resort/dining/DSCF40452.JPG",
+    "/images/resort/dining/chloemurdochphotography-37.JPG",
+    "/images/resort/dining/RLR_3857.JPG",
+    "/images/resort/weddings/RLR_86342.JPG",
+    "/images/resort/weddings/AM5_96582.JPG",
+    "/images/resort/weddings/AM5_93622.JPG",
+    "/images/suites/originals/DSC03703.jpg",
+    "/images/suites/originals/RLR_48512.JPG",
+    "/images/resort/highlights/DSC03775.jpg",
+    "/images/resort/highlights/IMG_2542.JPG",
+    "/images/resort/highlights/hotel sign.JPG",
+    "/images/resort/highlights/Family 3.JPG",
+    "/images/resort/pool/dji_fly_20241111_035710_0766_1754911281185_photo.JPG",
+    "/images/resort/dining/chloemurdochphotography-255.JPG",
+    "/images/resort/highlights/IMG_61303.JPG",
   ],
   restaurante: [
-    "/images/Resturant/DSCF40452.JPG",
-    "/images/Resturant/1L6A2626.jpg",
-    "/images/Resturant/chloemurdochphotography-37.JPG",
-    "/images/Resturant/1L6A2547.jpg",
-    "/images/Resturant/chloemurdochphotography-17.JPG",
-    "/images/Resturant/chloemurdochphotography-320.JPG",
-    "/images/Resturant/chloemurdochphotography-255.JPG",
-    "/images/Resturant/chloemurdochphotography-267.JPG",
-    "/images/Resturant/chloemurdochphotography-293.JPG",
-    "/images/Resturant/IMG_0964.JPG",
-    "/images/Resturant/RLR_37623.JPG",
-    "/images/Resturant/RLR_3857.JPG",
-    "/images/Resturant/DSCF4078(1).JPG",
-    "/images/Resturant/chloemurdochphotography-342.JPG",
+    "/images/resort/dining/DSCF40452.JPG",
+    "/images/resort/dining/1L6A2626.jpg",
+    "/images/resort/dining/chloemurdochphotography-37.JPG",
+    "/images/resort/dining/1L6A2547.jpg",
+    "/images/resort/dining/chloemurdochphotography-17.JPG",
+    "/images/resort/dining/chloemurdochphotography-320.JPG",
+    "/images/resort/dining/chloemurdochphotography-255.JPG",
+    "/images/resort/dining/chloemurdochphotography-267.JPG",
+    "/images/resort/dining/chloemurdochphotography-293.JPG",
+    "/images/resort/dining/IMG_0964.JPG",
+    "/images/resort/dining/RLR_37623.JPG",
+    "/images/resort/dining/RLR_3857.JPG",
+    "/images/resort/dining/DSCF4078(1).JPG",
+    "/images/resort/dining/chloemurdochphotography-342.JPG",
   ],
   "about": [
-    "/images/Resort Highlights/DJI_0361(1)2.JPG",
-    "/images/Resort Highlights/RLR_0780(1)3.JPG",
-    "/images/New Pool/dji_fly_20241022_013922_0645_1753125628421_photo4.JPG",
-    "/images/Resort Highlights/IMG_2542.JPG",
-    "/images/Resort Highlights/IMG_2559.JPG",
-    "/images/exp-reception.avif",
-    "/images/Resort Highlights/IMG_3735.JPG",
-    "/images/exp-entry-walkway.avif",
-    "/images/Resort Highlights/hotel sign.JPG",
-    "/images/Resort Highlights/Surf 1.JPG",
-    "/images/Resort Highlights/IMG_2458_jpg.JPG",
-    "/images/Resort Highlights/IMG_61303.JPG",
+    "/images/resort/highlights/DJI_0361(1)2.JPG",
+    "/images/resort/highlights/RLR_0780(1)3.JPG",
+    "/images/resort/pool/dji_fly_20241022_013922_0645_1753125628421_photo4.JPG",
+    "/images/resort/highlights/IMG_2542.JPG",
+    "/images/resort/highlights/IMG_2559.JPG",
+    "/images/resort/grounds/exp-reception.avif",
+    "/images/resort/highlights/IMG_3735.JPG",
+    "/images/resort/grounds/exp-entry-walkway.avif",
+    "/images/resort/highlights/hotel sign.JPG",
+    "/images/resort/highlights/Surf 1.JPG",
+    "/images/resort/highlights/IMG_2458_jpg.JPG",
+    "/images/resort/highlights/IMG_61303.JPG",
   ],
 };
 
 const SUPPLEMENT_IMAGES: Record<string, string[]> = {
   "about": [
-    "/images/g-aerial-beach-property-COogc_9W.jpg",
-    "/images/exp-sunset-drone.jpg",
-    "/images/wedding-beach-ceremony-NqUR8iSS.jpg",
-    "/images/Resort Highlights/DJI_20250526154631_0071_D.JPG",
-    "/images/restaurant-sunset-T7wmiQ85.jpg",
-    "/images/Resort Highlights/Family2.JPG",
-    "/images/events-pool-aerial-DuNYfspA.jpg",
-    "/images/g-aerial-pool-overview-CCOWXk2j.jpg",
+    "/images/resort/beach-aerial/g-aerial-beach-property-COogc_9W.jpg",
+    "/images/resort/beach-aerial/exp-sunset-drone.jpg",
+    "/images/resort/weddings/wedding-beach-ceremony-NqUR8iSS.jpg",
+    "/images/resort/highlights/DJI_20250526154631_0071_D.JPG",
+    "/images/resort/dining/restaurant-sunset-T7wmiQ85.jpg",
+    "/images/resort/highlights/Family2.JPG",
+    "/images/resort/events/events-pool-aerial-DuNYfspA.jpg",
+    "/images/resort/pool/g-aerial-pool-overview-CCOWXk2j.jpg",
   ],
   restaurante: [
-    "/images/restaurant-sunset-T7wmiQ85.jpg",
-    "/images/restaurant-night-DDkbFUTM.jpg",
-    "/images/restaurant-dining-nygPbVtS.jpg",
-    "/images/restaurant-cocktails-ITbgxYoM.jpg",
-    "/images/golden-beach-bar-qN10cbKY.jpg",
-    "/images/iguana-bar-pool-CP3k5v8t.jpg",
-    "/images/restaurant-sunset-silhouette-CBBvMTsI.jpg",
+    "/images/resort/dining/restaurant-sunset-T7wmiQ85.jpg",
+    "/images/resort/dining/restaurant-night-DDkbFUTM.jpg",
+    "/images/resort/dining/restaurant-dining-nygPbVtS.jpg",
+    "/images/resort/dining/restaurant-cocktails-ITbgxYoM.jpg",
+    "/images/resort/bars/golden-beach-bar-qN10cbKY.jpg",
+    "/images/resort/bars/iguana-bar-pool-CP3k5v8t.jpg",
+    "/images/resort/dining/restaurant-sunset-silhouette-CBBvMTsI.jpg",
   ],
 };
 
@@ -434,7 +435,7 @@ function LuxuryPageScaffold({
   const copy = LUXURY_COPY[locale];
   const title = data.h1[0] ?? data.title;
   const images = luxuryImages(data, path);
-  const hero = images[0] ?? "/images/hero-aerial-beach-QbQLfxOv.jpg";
+  const hero = images[0] ?? "/images/resort/beach-aerial/hero-aerial-beach-QbQLfxOv.jpg";
   const { intro, sections } = buildSections(data);
   const storySections = sections
     .filter((section) => section.body.length > 0)
@@ -454,10 +455,10 @@ function LuxuryPageScaffold({
 
   const ctaImage =
     path === "restaurant"
-      ? "/images/restaurant-sunset-T7wmiQ85.jpg"
+      ? "/images/resort/dining/restaurant-sunset-T7wmiQ85.jpg"
       : path === "about"
-        ? "/images/g-aerial-beach-property-COogc_9W.jpg"
-        : "/images/Resort Highlights/IMG_2559.JPG";
+        ? "/images/resort/beach-aerial/g-aerial-beach-property-COogc_9W.jpg"
+        : "/images/resort/highlights/IMG_2559.JPG";
 
   return (
     <article className="home-concept">
@@ -625,6 +626,7 @@ export function PageScaffold({
                 {copy.whatsapp}
               </Link>
             </div>
+            <DirectBookingNote locale={locale} className="mt-5" />
           </div>
         </div>
       </section>

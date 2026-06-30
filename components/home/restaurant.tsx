@@ -19,7 +19,7 @@ export function Restaurant({
     <section className="flex flex-col bg-concept-ocean md:flex-row">
       <Reveal className="relative min-h-[220px] w-full md:min-h-[520px] md:w-1/2">
         <Image
-          src="/images/Resturant/1L6A2547.jpg"
+          src="/images/resort/dining/1L6A2547.jpg"
           alt={
             locale === "en"
               ? "Vivace beachfront restaurant, open-air tables facing the Pacific"

@@ -16,6 +16,7 @@ import { Reveal } from "@/components/home/reveal";
 import { actionButtonVariants } from "@/components/ui/button";
 import { LuxuryCtaBand } from "@/components/luxury/primitives";
 import { Lightbox } from "@/components/luxury/lightbox";
+import { DirectBookingNote } from "@/components/direct-booking-note";
 import { bookingHref, eventsEmail, whatsappHref } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import type { Locale } from "@/lib/i18n";
@@ -31,14 +32,14 @@ type Room = Dictionary["suites"]["items"][number];
 // their own alt text so a resort shot is never mislabelled as the room.
 const FALLBACK_PHOTOS: { src: string; alt: { es: string; en: string } }[] = [
   {
-    src: "/images/New Pool/dji_fly_20241022_014010_0648_1753125627850_photo2.JPG",
+    src: "/images/resort/pool/dji_fly_20241022_014010_0648_1753125627850_photo2.JPG",
     alt: {
       es: "Piscina y playa del resort Terraza del Pacífico",
       en: "Resort pool and beach at Terraza del Pacífico",
     },
   },
   {
-    src: "/images/g-aerial-pool-overview-CCOWXk2j.jpg",
+    src: "/images/resort/pool/g-aerial-pool-overview-CCOWXk2j.jpg",
     alt: {
       es: "Vista aérea de la piscina del resort",
       en: "Aerial view of the resort pool",
@@ -326,6 +327,12 @@ export function SuiteDetail({
                   <MessageCircle className="h-4 w-4" aria-hidden />
                   {copy.askWhatsApp}
                 </a>
+
+                <DirectBookingNote
+                  locale={locale}
+                  surface="light"
+                  className="mt-4 justify-center"
+                />
               </div>
 
               {/* good to know */}
@@ -437,7 +444,7 @@ export function SuiteDetail({
         primaryHref={`mailto:${eventsEmail}`}
         secondaryLabel={cta.secondary}
         secondaryHref={whatsappHref}
-        image="/images/Resort Highlights/IMG_3170.JPG"
+        image="/images/resort/highlights/IMG_3170.JPG"
       />
 
       {openIndex !== null && (

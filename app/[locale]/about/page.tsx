@@ -35,7 +35,7 @@ export async function generateMetadata({
     params: Promise.resolve({ locale }),
     path,
     content: { ...data, ...seoCopy[l] },
-    image: "/images/g-aerial-beach-property-COogc_9W.jpg",
+    image: "/images/resort/beach-aerial/g-aerial-beach-property-COogc_9W.jpg",
   });
 }
 

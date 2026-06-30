@@ -51,7 +51,7 @@ export function VivaceMenu({
       <section className="relative overflow-hidden text-white">
         <div className="relative h-[340px] md:h-[400px]">
           <Image
-            src="/images/restaurant-dining-nygPbVtS.jpg"
+            src="/images/resort/dining/restaurant-dining-nygPbVtS.jpg"
             alt={labels.title}
             fill
             priority

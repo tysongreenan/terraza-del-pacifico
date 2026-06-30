@@ -15,7 +15,7 @@ export const experienceHub: HubPage = {
     en: "Whale watching, yoga on the sand and evenings of live music, all beachfront in Playa Hermosa, just south of Jaco. These are the experiences that turn a stay at Terraza del Pacifico into far more than a beach visit.",
   },
   heroImage: {
-    src: "/images/Resort Highlights/IMG_3170.JPG",
+    src: "/images/resort/highlights/IMG_3170.JPG",
     alt: {
       es: "Vista aerea del resort y Playa Hermosa",
       en: "Aerial view of the resort and Playa Hermosa",
@@ -51,7 +51,7 @@ export const experiences: InfoPage[] = [
       en: "Whale watching in Costa Rica: each season humpbacks arrive in the warm Pacific. Beachfront Playa Hermosa, south of Jaco, is your starting point to see them.",
     },
     heroImage: {
-      src: "/images/whales-aerial-Bx8BrmsB.jpg",
+      src: "/images/experiences/whale-watching/whales-aerial-Bx8BrmsB.jpg",
       alt: {
         es: "Ballenas nadando en el Pacifico frente a Costa Rica",
         en: "Whales swimming in the Pacific off Costa Rica",
@@ -59,28 +59,28 @@ export const experiences: InfoPage[] = [
     },
     gallery: [
       {
-        src: "/images/whale-watching-VSLDwvTY.jpg",
+        src: "/images/experiences/whale-watching/whale-watching-VSLDwvTY.jpg",
         alt: {
           es: "Avistamiento de ballenas en el Pacifico",
           en: "Whale watching in the Pacific",
         },
       },
       {
-        src: "/images/Resort Highlights/DJI_0361(1)2.JPG",
+        src: "/images/resort/highlights/DJI_0361(1)2.JPG",
         alt: {
           es: "Costa y montanas alrededor de Playa Hermosa",
           en: "Coastline and mountains around Playa Hermosa",
         },
       },
       {
-        src: "/images/Resort Highlights/IMG_2398.JPG",
+        src: "/images/resort/highlights/IMG_2398.JPG",
         alt: {
           es: "Vista del mar desde el resort",
           en: "Ocean view from the resort",
         },
       },
       {
-        src: "/images/g-aerial-beach-property-COogc_9W.jpg",
+        src: "/images/resort/beach-aerial/g-aerial-beach-property-COogc_9W.jpg",
         alt: {
           es: "Hotel Terraza del Pacifico frente al mar",
           en: "Hotel Terraza del Pacifico on the oceanfront",
@@ -240,7 +240,7 @@ export const experiences: InfoPage[] = [
       en: "Sea turtles in Costa Rica: Playa Hermosa, just south of Jaco, is a beachfront base for turtle nesting season, conservation and respect for wildlife.",
     },
     heroImage: {
-      src: "/images/baby-turtle-DGA7PRRL.jpg",
+      src: "/images/experiences/turtle-nesting/baby-turtle-DGA7PRRL.jpg",
       alt: {
         es: "Tortuga bebe avanzando hacia el mar",
         en: "Baby turtle moving toward the ocean",
@@ -248,28 +248,28 @@ export const experiences: InfoPage[] = [
     },
     gallery: [
       {
-        src: "/images/turtle-nesting-qhRPIRHR.jpg",
+        src: "/images/experiences/turtle-nesting/turtle-nesting-qhRPIRHR.jpg",
         alt: {
           es: "Tortuga marina en la arena",
           en: "Sea turtle on the sand",
         },
       },
       {
-        src: "/images/Resort Highlights/DSC03680.jpg",
+        src: "/images/resort/highlights/DSC03680.jpg",
         alt: {
           es: "Playa Hermosa durante el dia",
           en: "Playa Hermosa during the day",
         },
       },
       {
-        src: "/images/exp-beach-grounds.jpg",
+        src: "/images/resort/beach-aerial/exp-beach-grounds.jpg",
         alt: {
           es: "Familia caminando por la playa",
           en: "Family walking on the beach",
         },
       },
       {
-        src: "/images/Resort Highlights/IMG_3722.JPG",
+        src: "/images/resort/highlights/IMG_3722.JPG",
         alt: {
           es: "Entorno natural del resort",
           en: "Natural setting around the resort",
@@ -429,7 +429,7 @@ export const experiences: InfoPage[] = [
       en: "Beachfront yoga classes in Playa Hermosa, just south of Jaco, open to guests and designed for every level in a calm, natural setting.",
     },
     heroImage: {
-      src: "/images/yoga-class-1Z8S9ilZ.jpg",
+      src: "/images/experiences/yoga/yoga-class-1Z8S9ilZ.jpg",
       alt: {
         es: "Clase de yoga frente al mar en Playa Hermosa",
         en: "Beachfront yoga class in Playa Hermosa",
@@ -437,28 +437,28 @@ export const experiences: InfoPage[] = [
     },
     gallery: [
       {
-        src: "/images/Resort Highlights/IMG_2209.JPG",
+        src: "/images/resort/highlights/IMG_2209.JPG",
         alt: {
           es: "Zona verde del resort para relajarse",
           en: "Green resort area for relaxing",
         },
       },
       {
-        src: "/images/Resort Highlights/Family 3.JPG",
+        src: "/images/resort/highlights/Family 3.JPG",
         alt: {
           es: "Camino natural dentro del resort",
           en: "Natural pathway inside the resort",
         },
       },
       {
-        src: "/images/exp-beach-topdown.jpg",
+        src: "/images/resort/beach-aerial/exp-beach-topdown.jpg",
         alt: {
           es: "Playa Hermosa junto al hotel",
           en: "Playa Hermosa beside the hotel",
         },
       },
       {
-        src: "/images/Resort Highlights/IMG_59363.JPG",
+        src: "/images/resort/highlights/IMG_59363.JPG",
         alt: {
           es: "Piscina y areas comunes durante el dia",
           en: "Pool and common areas during the day",
@@ -618,7 +618,7 @@ export const experiences: InfoPage[] = [
       en: "Local music, tropical cocktails and beachfront dinners set the perfect mood to close the day in Playa Hermosa, just south of Jaco.",
     },
     heroImage: {
-      src: "/images/live-music-U-RLRqGX.jpg",
+      src: "/images/resort/bars/live-music-U-RLRqGX.jpg",
       alt: {
         es: "Musica en vivo en el restaurante",
         en: "Live music at the restaurant",
@@ -626,28 +626,28 @@ export const experiences: InfoPage[] = [
     },
     gallery: [
       {
-        src: "/images/Resturant/chloemurdochphotography-312.JPG",
+        src: "/images/resort/dining/chloemurdochphotography-312.JPG",
         alt: {
           es: "Ambiente del restaurante Vivace",
           en: "Atmosphere at Vivace restaurant",
         },
       },
       {
-        src: "/images/Resturant/RLR_38442.JPG",
+        src: "/images/resort/dining/RLR_38442.JPG",
         alt: {
           es: "Cena y bebidas en Vivace",
           en: "Dinner and drinks at Vivace",
         },
       },
       {
-        src: "/images/restaurant-sunset-T7wmiQ85.jpg",
+        src: "/images/resort/dining/restaurant-sunset-T7wmiQ85.jpg",
         alt: {
           es: "Atardecer desde el restaurante",
           en: "Sunset from the restaurant",
         },
       },
       {
-        src: "/images/restaurant-cocktails-ITbgxYoM.jpg",
+        src: "/images/resort/dining/restaurant-cocktails-ITbgxYoM.jpg",
         alt: {
           es: "Cocteles tropicales frente al mar",
           en: "Tropical cocktails by the ocean",

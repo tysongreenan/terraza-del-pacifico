@@ -329,7 +329,7 @@ export function AboutPage({
         primaryHref={bookingHref}
         secondaryLabel={copy.cta.secondary}
         secondaryHref={whatsappHref}
-        image="/images/exp-garden-lawn.avif"
+        image="/images/resort/grounds/exp-garden-lawn.avif"
       />
     </article>
   );

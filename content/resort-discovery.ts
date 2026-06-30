@@ -27,7 +27,7 @@ export const navTiles: NavTile[] = [
   {
     id: "rooms",
     href: "suites",
-    image: "/images/Suit photos/RLR_48512.JPG",
+    image: "/images/suites/originals/RLR_48512.JPG",
     icon: "bed",
     alt: {
       es: "Suite frente al mar en Terraza del Pacífico, Playa Hermosa",
@@ -46,7 +46,7 @@ export const navTiles: NavTile[] = [
   {
     id: "restaurant",
     href: "restaurant",
-    image: "/images/Resturant/DSCF40452.JPG",
+    image: "/images/resort/dining/DSCF40452.JPG",
     icon: "restaurant",
     alt: {
       es: "Restaurante Vivace Beachfront de noche",
@@ -64,7 +64,7 @@ export const navTiles: NavTile[] = [
   {
     id: "bars",
     href: "bars",
-    image: "/images/Resturant/chloemurdochphotography-293.JPG",
+    image: "/images/resort/dining/chloemurdochphotography-293.JPG",
     icon: "bar",
     alt: {
       es: "Cócteles en el bar frente al mar",
@@ -82,7 +82,7 @@ export const navTiles: NavTile[] = [
   {
     id: "about",
     href: "about",
-    image: "/images/exp-facade.webp",
+    image: "/images/resort/grounds/exp-facade.webp",
     icon: "about",
     alt: {
       es: "Vista aérea del resort frente al mar en Playa Hermosa, cerca de Jacó",
@@ -100,7 +100,7 @@ export const navTiles: NavTile[] = [
   {
     id: "gallery",
     href: "gallery",
-    image: "/images/New Pool/dji_fly_20241022_013726_0642_1753125646863_photo2.JPG",
+    image: "/images/resort/pool/dji_fly_20241022_013726_0642_1753125646863_photo2.JPG",
     icon: "gallery",
     alt: {
       es: "Piscina LED bajo una noche estrellada",

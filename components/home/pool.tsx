@@ -7,18 +7,19 @@ import { cn } from "@/lib/utils";
 import type { Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/lib/dictionaries";
 import { bookingHref } from "@/lib/site";
+import { DirectBookingNote } from "@/components/direct-booking-note";
 
 const strip = [
   {
-    src: "/images/exp-pool-day-loungers.avif",
+    src: "/images/resort/pool/exp-pool-day-loungers.avif",
     alt: "Daytime view of the outdoor pool with sun loungers and tropical foliage",
   },
   {
-    src: "/images/New Pool/dji_fly_20241022_013726_0642_1753125646863_photo2.JPG",
+    src: "/images/resort/pool/dji_fly_20241022_013726_0642_1753125646863_photo2.JPG",
     alt: "Overhead view of the pool washed in vivid purple light",
   },
   {
-    src: "/images/New Pool/dji_fly_20241111_035710_0766_1754911281185_photo.JPG",
+    src: "/images/resort/pool/dji_fly_20241111_035710_0766_1754911281185_photo.JPG",
     alt: "Top-down view of the LED pool glowing emerald-teal at night",
   },
 ];
@@ -39,7 +40,7 @@ export function Pool({
     >
       {/* Full-bleed night-pool backdrop */}
       <Image
-        src="/images/New Pool/dji_fly_20241022_013922_0645_1753125628421_photo4.JPG"
+        src="/images/resort/pool/dji_fly_20241022_013922_0645_1753125628421_photo4.JPG"
         alt="Aerial view of the signature LED pool lit up at night"
         fill
         sizes="100vw"
@@ -78,7 +79,7 @@ export function Pool({
             ))}
           </Reveal>
 
-          <Reveal delay={200} className="mt-10">
+          <Reveal delay={200} className="mt-10 flex flex-col items-start gap-4">
             <Link
               href={bookingHref}
               target="_blank"
@@ -88,6 +89,7 @@ export function Pool({
               {pool.cta}
               <ArrowRight className="h-4 w-4" aria-hidden />
             </Link>
+            <DirectBookingNote locale={locale} />
           </Reveal>
         </div>
 

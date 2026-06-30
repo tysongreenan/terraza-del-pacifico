@@ -71,7 +71,7 @@ export default async function Page({
         <section className="relative overflow-hidden text-white">
           <div className="relative min-h-[58svh] md:min-h-[66svh]">
             <Image
-              src="/images/golden-beach-bar-qN10cbKY.jpg"
+              src="/images/resort/bars/golden-beach-bar-qN10cbKY.jpg"
               alt={copy.title}
               fill
               priority

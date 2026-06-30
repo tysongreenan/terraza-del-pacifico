@@ -32,15 +32,15 @@ export const bars: Venue[] = [
     slug: "golden-beach-bar",
     palette: "amber",
     hours: { opens: "11:00", closes: "19:00" },
-    heroImage: "/images/Resturant/chloemurdochphotography-259.JPG",
+    heroImage: "/images/resort/dining/chloemurdochphotography-259.JPG",
     introSlides: [
-      { src: "/images/Resturant/DSCF40452.JPG", alt: "Sunset terrace framed by palms" },
-      { src: "/images/Resturant/1L6A2634.jpg", alt: "Couples at a terrace table under string lights, ocean beyond" },
-      { src: "/images/Resturant/chloemurdochphotography-53.JPG", alt: "Tacos and a cold beer" },
-      { src: "/images/Resturant/chloemurdochphotography-48.JPG", alt: "White wine poured poolside" },
+      { src: "/images/resort/dining/DSCF40452.JPG", alt: "Sunset terrace framed by palms" },
+      { src: "/images/resort/dining/1L6A2634.jpg", alt: "Couples at a terrace table under string lights, ocean beyond" },
+      { src: "/images/resort/dining/chloemurdochphotography-53.JPG", alt: "Tacos and a cold beer" },
+      { src: "/images/resort/dining/chloemurdochphotography-48.JPG", alt: "White wine poured poolside" },
     ],
-    ctaImage: "/images/Resturant/DSCF4078(1).JPG",
-    cardImage: "/images/golden-beach-bar-qN10cbKY.jpg",
+    ctaImage: "/images/resort/dining/DSCF4078(1).JPG",
+    cardImage: "/images/resort/bars/golden-beach-bar-qN10cbKY.jpg",
     text: {
       en: {
         hero: {
@@ -106,16 +106,16 @@ export const bars: Venue[] = [
     slug: "iguana-bar",
     palette: "ocean",
     hours: { opens: "10:00", closes: "18:00" },
-    heroImage: "/images/iguanabar-photo-download-1of1/Iguana_Bar_at_night/DSC09526-3.jpg",
+    heroImage: "/images/resort/bars/DSC09526-3.jpg",
     introSlides: [
-      { src: "/images/iguanabar-photo-download-1of1/Iguana_Bar_at_day/DSC08652-2.jpg", alt: "Iguana Bar's poolside palapa across the turquoise pool by day" },
-      { src: "/images/iguanabar-photo-download-1of1/Iguana_Bar_at_day/DSC08675.jpg", alt: "Iguana Bar counter and barstools beside the pool in daylight" },
-      { src: "/images/iguanabar-photo-download-1of1/Iguana_Bar_at_night/DSC09546-2.jpg", alt: "Iguana Bar glowing at dusk with guests relaxing in the pool" },
-      { src: "/images/iguanabar-photo-download-1of1/Iguana_Bar_at_night/DSC09544-2.jpg", alt: "Iguana Bar's illuminated sign and barstools at night" },
-      { src: "/images/iguanabar-photo-download-1of1/Iguana_Bar_at_night/DSC09526-2.jpg", alt: "Iguana Bar lit up at night beside the pool" },
+      { src: "/images/resort/bars/DSC08652-2.jpg", alt: "Iguana Bar's poolside palapa across the turquoise pool by day" },
+      { src: "/images/resort/bars/DSC08675.jpg", alt: "Iguana Bar counter and barstools beside the pool in daylight" },
+      { src: "/images/resort/bars/DSC09546-2.jpg", alt: "Iguana Bar glowing at dusk with guests relaxing in the pool" },
+      { src: "/images/resort/bars/DSC09544-2.jpg", alt: "Iguana Bar's illuminated sign and barstools at night" },
+      { src: "/images/resort/bars/DSC09526-2.jpg", alt: "Iguana Bar lit up at night beside the pool" },
     ],
-    ctaImage: "/images/Resturant/IMG_78472.JPG",
-    cardImage: "/images/iguanabar-photo-download-1of1/Iguana_Bar_at_day/DSC08652-2.jpg",
+    ctaImage: "/images/resort/dining/IMG_78472.JPG",
+    cardImage: "/images/resort/bars/DSC08652-2.jpg",
     text: {
       en: {
         hero: {

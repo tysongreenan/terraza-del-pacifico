@@ -5,9 +5,11 @@ import posthog from "posthog-js";
 import { Reveal } from "@/components/home/reveal";
 import { actionButtonVariants } from "@/components/ui/button";
 import type { Dictionary } from "@/lib/dictionaries";
+import type { Locale } from "@/lib/i18n";
 import { bookingHref } from "@/lib/site";
+import { DirectBookingNote } from "@/components/direct-booking-note";
 
-export function FinalCta({ dict }: { dict: Dictionary }) {
+export function FinalCta({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const c = dict.finalCta;
 
   return (
@@ -16,7 +18,7 @@ export function FinalCta({ dict }: { dict: Dictionary }) {
       className="relative scroll-mt-20 overflow-hidden py-24 text-center text-white md:py-32"
     >
       <Image
-        src="/images/exp-dining-sunset-silhouette.jpg"
+        src="/images/resort/dining/exp-dining-sunset-silhouette.jpg"
         alt="Sunset beachfront dining with string lights at Terraza del Pacífico"
         fill
         sizes="100vw"
@@ -53,6 +55,10 @@ export function FinalCta({ dict }: { dict: Dictionary }) {
           >
             {c.secondaryCta}
           </a>
+        </Reveal>
+
+        <Reveal delay={180} className="mt-6 flex justify-center">
+          <DirectBookingNote locale={locale} className="justify-center" />
         </Reveal>
       </div>
     </section>

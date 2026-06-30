@@ -80,7 +80,7 @@ export default async function BlogPost({
       ? "Atardecer sobre el Pacífico desde la terraza frente al mar del Hotel Terraza del Pacífico, Playa Hermosa."
       : "Sunset over the Pacific from the beachfront terrace at Hotel Terraza del Pacífico, Playa Hermosa.";
   const showCover =
-    Boolean(post.coverImage) && !post.coverImage.endsWith("/og-image.jpg");
+    Boolean(post.coverImage) && !post.coverImage.endsWith("/images/brand/og-image.jpg");
 
   return (
     <article className="container max-w-2xl pb-section-sm pt-section-top">

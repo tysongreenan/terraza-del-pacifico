@@ -73,7 +73,7 @@ export default async function HomePage({
       <Faq dict={dict} />
       <JsonLd data={faqJsonLd(dict.faq.items)} />
       <Instagram dict={dict} />
-      <FinalCta dict={dict} />
+      <FinalCta locale={l} dict={dict} />
     </div>
   );
 }

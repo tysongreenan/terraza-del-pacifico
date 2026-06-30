@@ -4,7 +4,7 @@ import { htmlLang, locales } from "@/lib/i18n";
 
 export const siteUrl = "https://terrazadelpacifico.com";
 export const siteName = "Hotel Terraza del Pacífico";
-export const defaultOgImage = "/images/og-image.jpg";
+export const defaultOgImage = "/images/brand/og-image.jpg";
 
 // A localizable string is either one shared value or a per-locale map. The map
 // form lets content/*.json supply { es, en } so each route serves metadata in
@@ -137,11 +137,11 @@ export function organizationJsonLd() {
     "@id": `${siteUrl}/#hotel`,
     name: siteName,
     url: siteUrl,
-    logo: absoluteUrl("/images/Logo-nuevo-B86U915-.png"),
+    logo: absoluteUrl("/images/brand/Logo-nuevo-B86U915-.png"),
     image: [
       absoluteUrl(defaultOgImage),
-      absoluteUrl("/images/exp-beach-topdown.jpg"),
-      absoluteUrl("/images/restaurant-view-WsRnSUPN.jpg"),
+      absoluteUrl("/images/resort/beach-aerial/exp-beach-topdown.jpg"),
+      absoluteUrl("/images/resort/dining/restaurant-view-WsRnSUPN.jpg"),
     ],
     email: "info@terrazadelpacifico.com",
     // Main hotel line — matches the Google Business Profile and restaurantJsonLd
@@ -277,7 +277,7 @@ export function restaurantJsonLd() {
     "@id": `${siteUrl}/restaurant#restaurant`,
     name: "Vivace Beachfront",
     url: absoluteUrl("/es/restaurant"),
-    image: absoluteUrl("/images/restaurant-view-WsRnSUPN.jpg"),
+    image: absoluteUrl("/images/resort/dining/restaurant-view-WsRnSUPN.jpg"),
     servesCuisine: ["Mediterranean", "Italian", "Costa Rican"],
     parentOrganization: { "@id": `${siteUrl}/#hotel` },
     // Published on /restaurante ("You can also call us at +506 2643 3222").

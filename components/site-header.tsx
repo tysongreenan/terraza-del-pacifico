@@ -214,7 +214,7 @@ export function SiteHeader({
           className="relative z-10 inline-flex items-center"
         >
           <Image
-            src="/images/Logo-nuevo-B86U915-.png"
+            src="/images/brand/Logo-nuevo-B86U915-.png"
             alt="Terraza del Pacífico"
             width={480}
             height={432}

@@ -7,6 +7,7 @@ import { ArrowRight, ChevronLeft, ChevronRight, Diamond } from "lucide-react";
 import { Reveal } from "@/components/home/reveal";
 import { LuxuryCtaBand } from "@/components/luxury/primitives";
 import { actionButtonVariants } from "@/components/ui/button";
+import { DirectBookingNote } from "@/components/direct-booking-note";
 import { bookingHref, whatsappHref, eventsEmail } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import type { Locale } from "@/lib/i18n";
@@ -33,7 +34,7 @@ function roomImageAlt(room: Room, locale: Locale) {
 // Shared focus ring so keyboard focus is visible on gold and bordered controls.
 const focusRing =
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2 focus-visible:ring-offset-transparent";
-const roomsHeroImage = "/images/Photos from Expedia/Common areas/LEd pool view from room .webp";
+const roomsHeroImage = "/images/resort/grounds/LEd pool view from room .webp";
 
 export function SuitesHub({
   locale,
@@ -113,6 +114,7 @@ export function SuitesHub({
                   {copy.hero.secondaryCta}
                 </Link>
               </div>
+              <DirectBookingNote locale={locale} className="mt-5" />
             </Reveal>
 
             {/* carousel arrows */}
@@ -249,7 +251,7 @@ export function SuitesHub({
         primaryHref={`mailto:${eventsEmail}`}
         secondaryLabel={copy.cta.secondary}
         secondaryHref={whatsappHref}
-        image="/images/exp-room-pool-view.webp"
+        image="/images/suites/general/exp-room-pool-view.webp"
       />
     </article>
   );
@@ -389,6 +391,7 @@ function RoomFeature({
               {editorial.viewCta}
             </Link>
           </div>
+          <DirectBookingNote locale={locale} surface="light" className="mt-4" />
         </Reveal>
       </div>
     </section>

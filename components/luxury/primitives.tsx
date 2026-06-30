@@ -5,6 +5,7 @@ import { Reveal } from "@/components/home/reveal";
 import { actionButtonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { bookingHref, whatsappHref } from "@/lib/site";
+import { DirectBookingNote } from "@/components/direct-booking-note";
 import type { Locale } from "@/lib/i18n";
 import {
   MOSAIC_GRID_CLASS,
@@ -300,7 +301,7 @@ export function LuxuryCtaBand({
   primaryHref = bookingHref,
   secondaryLabel,
   secondaryHref = whatsappHref,
-  image = "/images/exp-hero-front-aerial.avif",
+  image = "/images/resort/beach-aerial/exp-hero-front-aerial.avif",
 }: {
   locale: Locale;
   eyebrow: string;
@@ -361,12 +362,11 @@ export function LuxuryCtaBand({
             {secondaryLabel}
           </a>
         </Reveal>
-        <Reveal delay={180}>
-          <p className="mt-6 text-xs font-medium uppercase tracking-[0.14em] text-concept-cream">
-            <span className="text-concept-gold">◆</span>{" "}
-            {locale === "en" ? "Best rate guaranteed" : "Mejor tarifa garantizada"}
-          </p>
-        </Reveal>
+        {primaryHref === bookingHref && (
+          <Reveal delay={180} className="mt-6 flex justify-center">
+            <DirectBookingNote locale={locale} className="justify-center" />
+          </Reveal>
+        )}
       </div>
     </section>
   );

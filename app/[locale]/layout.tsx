@@ -6,6 +6,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import { MetaPixel } from "@/components/meta-pixel";
+import { SojernPixel } from "@/components/sojern-pixel";
 import { locales, isLocale, type Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionaries";
 import { JsonLd } from "@/components/json-ld";
@@ -104,6 +105,11 @@ export default async function LocaleLayout({
 
       {/* Disabled until NEXT_PUBLIC_FB_PIXEL_ID is set (no-op otherwise). */}
       <MetaPixel />
+
+      {/* Sojern Travel Platform pixel. One container, page-type derived from the
+          route (HOME_PAGE / PRODUCT / TRACKING). Disabled until
+          NEXT_PUBLIC_SOJERN_HPID is set to the Property ID (6483). */}
+      <SojernPixel />
     </>
   );
 }

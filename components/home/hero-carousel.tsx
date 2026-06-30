@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import type { Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/lib/dictionaries";
 import { bookingHref } from "@/lib/site";
+import { DirectBookingNote } from "@/components/direct-booking-note";
 
 const AUTO_ADVANCE_MS = 8000;
 
@@ -255,6 +256,14 @@ export function HeroCarousel({
                 <span className="font-semibold">{h.rating}</span>
                 <span className="text-white/70">{h.reviews}</span>
               </div>
+            </div>
+
+            {/* Direct-booking reassurance — subtle line beneath the CTA */}
+            <div
+              className="animate-rise mt-4"
+              style={{ animationDelay: "0.28s" }}
+            >
+              <DirectBookingNote locale={locale} />
             </div>
 
             {/* Mobile + tablet: inline strip below CTA (keeps clear of the

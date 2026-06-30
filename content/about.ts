@@ -76,7 +76,7 @@ const en: AboutCopy = {
     description:
       "A family-run stretch of the Pacific where the welcome is real and the ocean has never moved.",
     meta: "Playa Hermosa, Jacó · est. 2006",
-    image: "/images/exp-hero-front-aerial.avif",
+    image: "/images/resort/beach-aerial/exp-hero-front-aerial.avif",
   },
   statementEyebrow: "Bienvenidos",
   story: {
@@ -87,10 +87,10 @@ const en: AboutCopy = {
       "Today the resort is still family-run, still on the sand, and still measured by the same thing — whether you leave already planning to come back.",
     ],
     slides: [
-      { src: "/images/exp-villa-balcony-ocean.avif", alt: "Villa balcony with an ocean view at Terraza del Pacífico" },
-      { src: "/images/exp-led-pool-aerial.webp", alt: "Aerial view of the LED pool" },
-      { src: "/images/exp-pool-day-loungers.avif", alt: "Pool and loungers by day" },
-      { src: "/images/exp-beach-grounds.jpg", alt: "Beachfront grounds of the property" },
+      { src: "/images/suites/villa/exp-villa-balcony-ocean.avif", alt: "Villa balcony with an ocean view at Terraza del Pacífico" },
+      { src: "/images/resort/pool/exp-led-pool-aerial.webp", alt: "Aerial view of the LED pool" },
+      { src: "/images/resort/pool/exp-pool-day-loungers.avif", alt: "Pool and loungers by day" },
+      { src: "/images/resort/beach-aerial/exp-beach-grounds.jpg", alt: "Beachfront grounds of the property" },
     ],
   },
   timeline: {
@@ -110,19 +110,19 @@ const en: AboutCopy = {
       {
         title: "Real hospitality",
         body: "Family-run means the welcome isn't a script. You're a guest in our home.",
-        image: "/images/Resort Highlights/Family2.JPG",
+        image: "/images/resort/highlights/Family2.JPG",
         alt: "A family enjoying the beach",
       },
       {
         title: "The coast, protected",
         body: "Turtle nesting, clean sand, low footprint — we keep the beach worth waking to.",
-        image: "/images/turtle-nesting-qhRPIRHR.jpg",
+        image: "/images/experiences/turtle-nesting/turtle-nesting-qhRPIRHR.jpg",
         alt: "Sea turtle nesting on the beach",
       },
       {
         title: "Costa Rica, fully",
         body: "Local hands, local flavor, local adventure — pura vida isn't a slogan here.",
-        image: "/images/live-music-U-RLRqGX.jpg",
+        image: "/images/resort/bars/live-music-U-RLRqGX.jpg",
         alt: "Live music at the resort",
       },
     ],
@@ -135,7 +135,7 @@ const en: AboutCopy = {
       "1,200 LED lights set into the pool floor evoke a starry sky underwater. Every night the lights come alive, turning an evening swim into a quiet, unforgettable spectacle.",
       "And it's beautiful with a purpose: the low-energy LED technology reflects our commitment to sustainability, without ever asking our guests to settle for less.",
     ],
-    image: "/images/pool-starry-night-DUYiQ-e6.jpg",
+    image: "/images/resort/pool/pool-starry-night-DUYiQ-e6.jpg",
     alt: "The LED-lit pool glowing like a starry sky at night",
   },
   location: {
@@ -181,7 +181,7 @@ const en: AboutCopy = {
     title: "Celebrate where the sand meets the sea",
     body: "From weddings to milestone celebrations, our beachfront space turns the big moments into something unforgettable. Discover everything we can host for you.",
     cta: "View Events Page",
-    image: "/images/Wedding/RLR_86342.JPG",
+    image: "/images/resort/weddings/RLR_86342.JPG",
     alt: "Beachfront wedding and event space at Terraza del Pacífico",
   },
   cta: {
@@ -198,7 +198,7 @@ const es: AboutCopy = {
     description:
       "Un tramo del Pacífico de manejo familiar, donde la bienvenida es de verdad y el océano nunca se ha movido.",
     meta: "Playa Hermosa, Jacó · desde 2006",
-    image: "/images/exp-hero-front-aerial.avif",
+    image: "/images/resort/beach-aerial/exp-hero-front-aerial.avif",
   },
   statementEyebrow: "Bienvenidos",
   story: {
@@ -209,10 +209,10 @@ const es: AboutCopy = {
       "Hoy el resort sigue siendo de manejo familiar, sigue sobre la arena, y se mide por lo mismo de siempre — si te vas ya planeando volver.",
     ],
     slides: [
-      { src: "/images/exp-villa-balcony-ocean.avif", alt: "Balcón de la villa con vista al mar en Terraza del Pacífico" },
-      { src: "/images/exp-led-pool-aerial.webp", alt: "Vista aérea de la piscina LED" },
-      { src: "/images/exp-pool-day-loungers.avif", alt: "Piscina y camastros de día" },
-      { src: "/images/exp-beach-grounds.jpg", alt: "Jardines frente al mar de la propiedad" },
+      { src: "/images/suites/villa/exp-villa-balcony-ocean.avif", alt: "Balcón de la villa con vista al mar en Terraza del Pacífico" },
+      { src: "/images/resort/pool/exp-led-pool-aerial.webp", alt: "Vista aérea de la piscina LED" },
+      { src: "/images/resort/pool/exp-pool-day-loungers.avif", alt: "Piscina y camastros de día" },
+      { src: "/images/resort/beach-aerial/exp-beach-grounds.jpg", alt: "Jardines frente al mar de la propiedad" },
     ],
   },
   timeline: {
@@ -232,19 +232,19 @@ const es: AboutCopy = {
       {
         title: "Hospitalidad real",
         body: "Manejo familiar significa que la bienvenida no es un guion. Eres un huésped en nuestra casa.",
-        image: "/images/Resort Highlights/Family2.JPG",
+        image: "/images/resort/highlights/Family2.JPG",
         alt: "Una familia disfrutando de la playa",
       },
       {
         title: "La costa, protegida",
         body: "Anidación de tortugas, arena limpia, baja huella — cuidamos que la playa valga la pena al despertar.",
-        image: "/images/turtle-nesting-qhRPIRHR.jpg",
+        image: "/images/experiences/turtle-nesting/turtle-nesting-qhRPIRHR.jpg",
         alt: "Tortuga marina anidando en la playa",
       },
       {
         title: "Costa Rica, de verdad",
         body: "Manos locales, sabor local, aventura local — aquí pura vida no es un eslogan.",
-        image: "/images/live-music-U-RLRqGX.jpg",
+        image: "/images/resort/bars/live-music-U-RLRqGX.jpg",
         alt: "Música en vivo en el resort",
       },
     ],
@@ -257,7 +257,7 @@ const es: AboutCopy = {
       "1.200 luces LED integradas en el fondo de la piscina evocan un cielo estrellado bajo el agua. Cada noche las luces cobran vida y convierten un baño nocturno en un espectáculo sereno e inolvidable.",
       "Y es hermosa con un propósito: la tecnología LED de bajo consumo refleja nuestro compromiso con la sostenibilidad, sin pedirles nunca a nuestros huéspedes que renuncien a la experiencia.",
     ],
-    image: "/images/pool-starry-night-DUYiQ-e6.jpg",
+    image: "/images/resort/pool/pool-starry-night-DUYiQ-e6.jpg",
     alt: "La piscina iluminada con LED brillando como un cielo estrellado de noche",
   },
   location: {
@@ -303,7 +303,7 @@ const es: AboutCopy = {
     title: "Celebra donde la arena se encuentra con el mar",
     body: "Desde bodas hasta celebraciones inolvidables, nuestro espacio frente al mar convierte los grandes momentos en algo memorable. Descubre todo lo que podemos organizar para ti.",
     cta: "Ver Página de Eventos",
-    image: "/images/Wedding/RLR_86342.JPG",
+    image: "/images/resort/weddings/RLR_86342.JPG",
     alt: "Espacio para bodas y eventos frente al mar en Terraza del Pacífico",
   },
   cta: {

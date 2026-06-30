@@ -17,7 +17,7 @@ export const eventHub: HubPage = {
     en: "Weddings, Surf Nights, meetings, family celebrations and private dinners at a beachfront resort on Playa Hermosa, just south of Jaco.",
   },
   heroImage: {
-    src: "/images/Wedding/RLR_89012.JPG",
+    src: "/images/resort/weddings/RLR_89012.JPG",
     alt: {
       es: "Celebracion frente al mar en Terraza del Pacifico",
       en: "Oceanfront celebration at Terraza del Pacifico",
@@ -46,7 +46,7 @@ export const otherEventsHub: HubPage = {
     en: "Corporate gatherings, family celebrations, private dinners and parties with personalized service, beachfront on Playa Hermosa near Jaco.",
   },
   heroImage: {
-    src: "/images/Resturant/RLR_40112.JPG",
+    src: "/images/resort/dining/RLR_40112.JPG",
     alt: {
       es: "Cena social al aire libre frente al mar",
       en: "Warm al-fresco group dinner by the ocean",
@@ -94,7 +94,7 @@ export const events: InfoPage[] = [
       en: "Celebrate your beachfront wedding on Playa Hermosa near Jaco, with the Pacific as your backdrop, open-air spaces, Vivace cuisine and a team dedicated to every detail.",
     },
     heroImage: {
-      src: "/images/Wedding/RLR_88882.JPG",
+      src: "/images/resort/weddings/RLR_88882.JPG",
       alt: {
         es: "Pareja celebrando una boda frente al mar",
         en: "Couple celebrating an oceanfront wedding",
@@ -102,49 +102,49 @@ export const events: InfoPage[] = [
     },
     gallery: [
       {
-        src: "/images/Wedding/RLR_86342.JPG",
+        src: "/images/resort/weddings/RLR_86342.JPG",
         alt: {
           es: "Montaje de boda en el jardin frente al mar",
           en: "Beachfront-garden wedding setup",
         },
       },
       {
-        src: "/images/Wedding/AM5_96762.JPG",
+        src: "/images/resort/weddings/AM5_96762.JPG",
         alt: {
           es: "Novia a la hora dorada con luces colgantes",
           en: "Golden-hour bride with string lights",
         },
       },
       {
-        src: "/images/Wedding/AM5_92602.JPG",
+        src: "/images/resort/weddings/AM5_92602.JPG",
         alt: {
           es: "Arco de ceremonia en el jardin frente al mar",
           en: "Beachfront-garden ceremony arch",
         },
       },
       {
-        src: "/images/wedding-ceremony-night-BS1EmGIk.jpg",
+        src: "/images/resort/weddings/wedding-ceremony-night-BS1EmGIk.jpg",
         alt: {
           es: "Ceremonia nocturna con luces",
           en: "Evening ceremony with lights",
         },
       },
       {
-        src: "/images/Wedding/RLR_8676.JPG",
+        src: "/images/resort/weddings/RLR_8676.JPG",
         alt: {
           es: "Arco decorado con estrellas de mar doradas y flores",
           en: "Draped arch with gold starfish and florals",
         },
       },
       {
-        src: "/images/events-pool-night-lights-BcHsd1B9.jpg",
+        src: "/images/resort/events/events-pool-night-lights-BcHsd1B9.jpg",
         alt: {
           es: "Piscina iluminada para eventos",
           en: "Illuminated pool for events",
         },
       },
       {
-        src: "/images/New Pool/dji_fly_20241022_013726_0642_1753125646863_photo2.JPG",
+        src: "/images/resort/pool/dji_fly_20241022_013726_0642_1753125646863_photo2.JPG",
         alt: {
           es: "Piscina estrellada con luces LED moradas para recepciones",
           en: "Starlit pool with purple LED lights for receptions",
@@ -336,7 +336,7 @@ export const events: InfoPage[] = [
       en: "The first live televised night surfing event in Central America: the surf at Playa Hermosa, near Jaco, lights up for competitions, community, brands and spectators under the stars.",
     },
     heroImage: {
-      src: "/images/surf-nights-hero-Cp_0Sh9X.png",
+      src: "/images/experiences/surf-nights/surf-nights-hero-Cp_0Sh9X.png",
       alt: {
         es: "Surf Nights con el oceano iluminado",
         en: "Surf Nights with the illuminated ocean",
@@ -344,35 +344,35 @@ export const events: InfoPage[] = [
     },
     gallery: [
       {
-        src: "/images/surf-nights-C5MPn3sY.jpg",
+        src: "/images/experiences/surf-nights/surf-nights-C5MPn3sY.jpg",
         alt: {
           es: "Surfistas durante Surf Nights",
           en: "Surfers during Surf Nights",
         },
       },
       {
-        src: "/images/surf-nights-shirt-jqYD2ns3.jpg",
+        src: "/images/experiences/surf-nights/surf-nights-shirt-jqYD2ns3.jpg",
         alt: {
           es: "Camiseta oficial de Surf Nights",
           en: "Official Surf Nights shirt",
         },
       },
       {
-        src: "/images/surf-nights-winners-B4pwft7w.jpg",
+        src: "/images/experiences/surf-nights/surf-nights-winners-B4pwft7w.jpg",
         alt: {
           es: "Ganadores de Surf Nights",
           en: "Surf Nights winners",
         },
       },
       {
-        src: "/images/events-aerial-sunset-DjFbPbt1.jpg",
+        src: "/images/resort/events/events-aerial-sunset-DjFbPbt1.jpg",
         alt: {
           es: "Atardecer en Playa Hermosa antes del evento",
           en: "Sunset in Playa Hermosa before the event",
         },
       },
       {
-        src: "/images/Resort Highlights/Surf 1.JPG",
+        src: "/images/resort/highlights/Surf 1.JPG",
         alt: {
           es: "Surfista sobre la arena negra de Playa Hermosa",
           en: "Surfer on the black sand of Playa Hermosa",
@@ -551,7 +551,7 @@ export const events: InfoPage[] = [
       en: "Meetings, conferences and business retreats with versatile spaces, personalized dining and a beachfront setting on Playa Hermosa, minutes from Jaco.",
     },
     heroImage: {
-      src: "/images/events-corporate-CUI1lTmu.jpg",
+      src: "/images/resort/events/events-corporate-CUI1lTmu.jpg",
       alt: {
         es: "Evento corporativo en Terraza del Pacifico",
         en: "Corporate event at Terraza del Pacifico",
@@ -559,28 +559,28 @@ export const events: InfoPage[] = [
     },
     gallery: [
       {
-        src: "/images/Resort Highlights/AM5_93932.JPG",
+        src: "/images/resort/highlights/AM5_93932.JPG",
         alt: {
           es: "Espacios del resort para grupos",
           en: "Resort spaces for groups",
         },
       },
       {
-        src: "/images/events-building-Bvc9tdB1.jpg",
+        src: "/images/resort/events/events-building-Bvc9tdB1.jpg",
         alt: {
           es: "Edificio del hotel para eventos",
           en: "Hotel building for events",
         },
       },
       {
-        src: "/images/events-outdoor-dining-DZwFtwJD.jpg",
+        src: "/images/resort/events/events-outdoor-dining-DZwFtwJD.jpg",
         alt: {
           es: "Montaje exterior para grupo corporativo",
           en: "Outdoor setup for a corporate group",
         },
       },
       {
-        src: "/images/Resort Highlights/DJI_20250526154631_0071_D.JPG",
+        src: "/images/resort/highlights/DJI_20250526154631_0071_D.JPG",
         alt: {
           es: "Vista aerea del resort para retiros",
           en: "Aerial view of the resort for retreats",
@@ -740,7 +740,7 @@ export const events: InfoPage[] = [
       en: "Celebrate important moments with safe, comfortable spaces, personalized food and a family-friendly beachfront atmosphere on Playa Hermosa, near Jaco.",
     },
     heroImage: {
-      src: "/images/g-family-pool-1-g77anSd1.jpg",
+      src: "/images/resort/pool/g-family-pool-1-g77anSd1.jpg",
       alt: {
         es: "Familia disfrutando la piscina del hotel",
         en: "Family enjoying the hotel pool",
@@ -748,28 +748,28 @@ export const events: InfoPage[] = [
     },
     gallery: [
       {
-        src: "/images/Resort Highlights/Family 3.JPG",
+        src: "/images/resort/highlights/Family 3.JPG",
         alt: {
           es: "Familia disfrutando junto a la piscina",
           en: "Family enjoying time by the pool",
         },
       },
       {
-        src: "/images/events-pool-party-D_ez1wdr.jpg",
+        src: "/images/resort/events/events-pool-party-D_ez1wdr.jpg",
         alt: {
           es: "Celebracion familiar junto a la piscina",
           en: "Family celebration by the pool",
         },
       },
       {
-        src: "/images/Resort Highlights/IMG_3728.JPG",
+        src: "/images/resort/highlights/IMG_3728.JPG",
         alt: {
           es: "Areas exteriores del resort",
           en: "Outdoor resort areas",
         },
       },
       {
-        src: "/images/restaurant-dining-nygPbVtS.jpg",
+        src: "/images/resort/dining/restaurant-dining-nygPbVtS.jpg",
         alt: {
           es: "Cena familiar en el restaurante",
           en: "Family dinner at the restaurant",
@@ -929,7 +929,7 @@ export const events: InfoPage[] = [
       en: "Private dining experiences with Chef Luigi's Mediterranean cuisine, beachfront Pacific views on Playa Hermosa near Jaco, and options for couples, families or groups.",
     },
     heroImage: {
-      src: "/images/events-romantic-setup-CdyCZVZj.jpg",
+      src: "/images/resort/events/events-romantic-setup-CdyCZVZj.jpg",
       alt: {
         es: "Cena romantica privada frente al mar",
         en: "Private romantic dinner by the ocean",
@@ -937,28 +937,28 @@ export const events: InfoPage[] = [
     },
     gallery: [
       {
-        src: "/images/Resturant/chloemurdochphotography-37.JPG",
+        src: "/images/resort/dining/chloemurdochphotography-37.JPG",
         alt: {
           es: "Langosta entera a la parrilla con vista al mar",
           en: "Whole grilled lobster with ocean view",
         },
       },
       {
-        src: "/images/Resturant/chloemurdochphotography-259.JPG",
+        src: "/images/resort/dining/chloemurdochphotography-259.JPG",
         alt: {
           es: "Mesa de restaurante preparada",
           en: "Prepared restaurant table",
         },
       },
       {
-        src: "/images/restaurant-night-DDkbFUTM.jpg",
+        src: "/images/resort/dining/restaurant-night-DDkbFUTM.jpg",
         alt: {
           es: "Restaurante Vivace de noche",
           en: "Vivace restaurant at night",
         },
       },
       {
-        src: "/images/golden-beach-bar-qN10cbKY.jpg",
+        src: "/images/resort/bars/golden-beach-bar-qN10cbKY.jpg",
         alt: {
           es: "Bar frente a la playa para bebidas",
           en: "Beachfront bar for drinks",
@@ -1118,7 +1118,7 @@ export const events: InfoPage[] = [
       en: "Social parties, sendoffs and celebrations with a tropical atmosphere, food, cocktails and beachfront or poolside spaces on Playa Hermosa, near Jaco.",
     },
     heroImage: {
-      src: "/images/events-party-IPZcQeS1.jpg",
+      src: "/images/resort/events/events-party-IPZcQeS1.jpg",
       alt: {
         es: "Fiesta frente al mar en Terraza del Pacifico",
         en: "Oceanfront party at Terraza del Pacifico",
@@ -1126,28 +1126,28 @@ export const events: InfoPage[] = [
     },
     gallery: [
       {
-        src: "/images/events-pool-party-D_ez1wdr.jpg",
+        src: "/images/resort/events/events-pool-party-D_ez1wdr.jpg",
         alt: {
           es: "Fiesta junto a la piscina",
           en: "Poolside party",
         },
       },
       {
-        src: "/images/events-beach-lounge-BX7jVZUA.jpg",
+        src: "/images/resort/events/events-beach-lounge-BX7jVZUA.jpg",
         alt: {
           es: "Lounge en la playa para evento",
           en: "Beach lounge for an event",
         },
       },
       {
-        src: "/images/pool-aerial-night-BvFgNxHn.jpg",
+        src: "/images/resort/pool/pool-aerial-night-BvFgNxHn.jpg",
         alt: {
           es: "Piscina iluminada de noche",
           en: "Illuminated pool at night",
         },
       },
       {
-        src: "/images/Resturant/RLR_38442.JPG",
+        src: "/images/resort/dining/RLR_38442.JPG",
         alt: {
           es: "Bebidas y ambiente de fiesta",
           en: "Drinks and party atmosphere",

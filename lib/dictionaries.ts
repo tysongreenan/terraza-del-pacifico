@@ -29,7 +29,7 @@ const en = {
       "Right on the sand at Playa Hermosa, just south of Jacó — the surf a few steps from your room and a warm Costa Rican welcome at the door.",
     primaryCta: "Book Your Escape",
     secondaryCta: "Explore the Resort",
-    trust: "Best rate guaranteed when you book direct",
+    trust: "Best Prices When You Book Direct",
     scroll: "Discover paradise",
     rating: "4.2",
     reviews: "Based on 1,472 Google reviews",
@@ -73,7 +73,7 @@ const en = {
         cta: "Reserve",
         badge: "Jul – Oct",
         body: "Humpbacks off the sand. No boat, just the horizon.",
-        image: "/images/whales-aerial-Bx8BrmsB.jpg",
+        image: "/images/experiences/whale-watching/whales-aerial-Bx8BrmsB.jpg",
       },
       {
         slug: "experiences/beachfront-yoga",
@@ -83,7 +83,7 @@ const en = {
         cta: "Join",
         badge: "Included",
         body: "Open the day with surf and breath at the water's edge.",
-        image: "/images/yoga-class-1Z8S9ilZ.jpg",
+        image: "/images/experiences/yoga/yoga-class-1Z8S9ilZ.jpg",
       },
       {
         slug: "experiences/live-music",
@@ -93,7 +93,7 @@ const en = {
         cta: "See line-up",
         badge: "Nightly",
         body: "Sunset sets under the string lights.",
-        image: "/images/live-music-U-RLRqGX.jpg",
+        image: "/images/resort/bars/live-music-U-RLRqGX.jpg",
       },
       {
         slug: "events/surf-nights",
@@ -103,7 +103,7 @@ const en = {
         cta: "Sign up",
         badge: "Surf Nights",
         body: "Playa Hermosa's famous surf break, floodlit for night contests.",
-        image: "/images/surf-nights-C5MPn3sY.jpg",
+        image: "/images/experiences/surf-nights/surf-nights-C5MPn3sY.jpg",
       },
       {
         slug: "experiences/turtle-nesting",
@@ -113,7 +113,7 @@ const en = {
         cta: "Reserve",
         badge: "Seasonal · Night",
         body: "A quiet, protected ritual under the stars.",
-        image: "/images/baby-turtle-DGA7PRRL.jpg",
+        image: "/images/experiences/turtle-nesting/baby-turtle-DGA7PRRL.jpg",
       },
       {
         slug: "events/weddings",
@@ -123,7 +123,7 @@ const en = {
         cta: "Enquire",
         badge: "By the sea",
         body: "Barefoot ceremonies as the sun goes down.",
-        image: "/images/wedding-ceremony-night-BS1EmGIk.jpg",
+        image: "/images/resort/weddings/wedding-ceremony-night-BS1EmGIk.jpg",
       },
     ],
   },
@@ -151,7 +151,7 @@ const en = {
         beds: "2 Double",
         view: "Pool",
         blurb: "Main pool views, steps from the restaurant and the sand.",
-        image: "/images/exp-room-superior-hero.avif",
+        image: "/images/suites/superior/exp-room-superior-hero.avif",
       },
       {
         slug: "standard",
@@ -162,7 +162,7 @@ const en = {
         beds: "2 Double",
         view: "Gardens",
         blurb: "A quiet room set among tropical gardens.",
-        image: "/images/exp-room-standard-hero.avif",
+        image: "/images/suites/standard/exp-room-standard-hero.avif",
       },
       {
         slug: "junior-suite",
@@ -173,7 +173,7 @@ const en = {
         beds: "1 King",
         view: "Pool",
         blurb: "A calm, light-filled retreat for two. Wake to the pool and the sound of the surf just beyond your terrace.",
-        image: "/images/exp-room-junior-hero.avif",
+        image: "/images/suites/junior/exp-room-junior-hero.avif",
       },
       {
         slug: "villas",
@@ -184,7 +184,7 @@ const en = {
         beds: "Multiple",
         view: "Partial ocean",
         blurb: "A full kitchen and living room with ocean views — ideal for families.",
-        image: "/images/exp-villa-hero.avif",
+        image: "/images/suites/villa/exp-villa-hero.avif",
       },
     ],
     amenitiesNote:
@@ -343,7 +343,7 @@ const es: Dict = {
       "Sobre la arena de Playa Hermosa, al sur de Jacó — el surf a pocos pasos de tu habitación y una cálida bienvenida costarricense en la puerta.",
     primaryCta: "Reserva tu Escape",
     secondaryCta: "Explora el Resort",
-    trust: "Mejor tarifa garantizada al reservar directo",
+    trust: "Mejores Precios al Reservar Directo",
     scroll: "Descubre el paraíso",
     rating: "4.2",
     reviews: "Basado en 1.472 reseñas de Google",
@@ -387,7 +387,7 @@ const es: Dict = {
         cta: "Reservar",
         badge: "Jul – Oct",
         body: "Jorobadas frente a la arena. Sin bote, solo el horizonte.",
-        image: "/images/whales-aerial-Bx8BrmsB.jpg",
+        image: "/images/experiences/whale-watching/whales-aerial-Bx8BrmsB.jpg",
       },
       {
         slug: "experiences/yoga-frente-al-mar",
@@ -397,7 +397,7 @@ const es: Dict = {
         cta: "Unirse",
         badge: "Incluido",
         body: "Abre el día con olas y respiración a la orilla del agua.",
-        image: "/images/yoga-class-1Z8S9ilZ.jpg",
+        image: "/images/experiences/yoga/yoga-class-1Z8S9ilZ.jpg",
       },
       {
         slug: "experiences/musica-en-vivo",
@@ -407,7 +407,7 @@ const es: Dict = {
         cta: "Ver cartelera",
         badge: "Todas las noches",
         body: "Sets al atardecer bajo las luces de guirnaldas.",
-        image: "/images/live-music-U-RLRqGX.jpg",
+        image: "/images/resort/bars/live-music-U-RLRqGX.jpg",
       },
       {
         slug: "events/surf-nights",
@@ -417,7 +417,7 @@ const es: Dict = {
         cta: "Inscribirse",
         badge: "Surf Nights",
         body: "El famoso break de surf de Playa Hermosa, iluminado para competencias nocturnas.",
-        image: "/images/surf-nights-C5MPn3sY.jpg",
+        image: "/images/experiences/surf-nights/surf-nights-C5MPn3sY.jpg",
       },
       {
         slug: "experiences/anidacion-tortugas",
@@ -427,7 +427,7 @@ const es: Dict = {
         cta: "Reservar",
         badge: "De temporada · Noche",
         body: "Un ritual tranquilo y protegido bajo las estrellas.",
-        image: "/images/baby-turtle-DGA7PRRL.jpg",
+        image: "/images/experiences/turtle-nesting/baby-turtle-DGA7PRRL.jpg",
       },
       {
         slug: "events/bodas",
@@ -437,7 +437,7 @@ const es: Dict = {
         cta: "Consultar",
         badge: "Junto al mar",
         body: "Ceremonias descalzas mientras cae el sol.",
-        image: "/images/wedding-ceremony-night-BS1EmGIk.jpg",
+        image: "/images/resort/weddings/wedding-ceremony-night-BS1EmGIk.jpg",
       },
     ],
   },
@@ -465,7 +465,7 @@ const es: Dict = {
         beds: "2 Dobles",
         view: "Piscina",
         blurb: "Vista a la piscina principal, a pasos del restaurante y la arena.",
-        image: "/images/exp-room-superior-hero.avif",
+        image: "/images/suites/superior/exp-room-superior-hero.avif",
       },
       {
         slug: "standard",
@@ -476,7 +476,7 @@ const es: Dict = {
         beds: "2 Dobles",
         view: "Jardines",
         blurb: "Una habitación tranquila entre jardines tropicales.",
-        image: "/images/exp-room-standard-hero.avif",
+        image: "/images/suites/standard/exp-room-standard-hero.avif",
       },
       {
         slug: "junior-suite",
@@ -487,7 +487,7 @@ const es: Dict = {
         beds: "1 King",
         view: "Piscina",
         blurb: "Un refugio luminoso y tranquilo para dos. Despierta con la piscina y el sonido del mar justo más allá de tu terraza.",
-        image: "/images/exp-room-junior-hero.avif",
+        image: "/images/suites/junior/exp-room-junior-hero.avif",
       },
       {
         slug: "villas",
@@ -498,7 +498,7 @@ const es: Dict = {
         beds: "Múltiples",
         view: "Vista parcial al mar",
         blurb: "Cocina completa y sala de estar con vista al océano, ideal para familias.",
-        image: "/images/exp-villa-hero.avif",
+        image: "/images/suites/villa/exp-villa-hero.avif",
       },
     ],
     amenitiesNote:
