@@ -37,7 +37,7 @@ export const bakery: Venue = {
       pours: {
         eyebrow: "What we serve",
         title: "From the oven & the bar",
-        blurb: "Artisan breads, pastries and specialty coffee — baked and brewed fresh each morning.",
+        blurb: "Artisan breads, pastries and specialty coffee. Baked and brewed fresh each morning.",
         items: [
           { name: "Artisan breads" },
           { name: "Croissants & pastries" },

@@ -73,10 +73,11 @@ export function EventInfoPage({
   const external = page.cta.href.startsWith("http");
 
   const expandedGallery = expandInfoPageGallery(page, 16);
+  // No visible caption: the auto-expanded gallery alt text ("… — image 3") is
+  // for screen readers only, not something to print under each slide.
   const sliderSlides: SliderSlide[] = expandedGallery.map((image) => ({
     src: image.src,
     alt: image.alt[locale],
-    caption: image.alt[locale],
   }));
 
   const galleryMosaic: MosaicImage[] = expandedGallery.map((image) => ({

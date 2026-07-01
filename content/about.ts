@@ -83,8 +83,8 @@ const en: AboutCopy = {
     eyebrow: "Our story",
     titleLines: ["A small idea that", "never left the beach"],
     paragraphs: [
-      "It began with a handful of rooms and a simple belief: that the best of Costa Rica isn't something you visit, it's something you wake up inside of. Two decades later we've grown, but the idea hasn't moved an inch from the water.",
-      "Today the resort is still family-run, still on the sand, and still measured by the same thing — whether you leave already planning to come back.",
+      "It began with a handful of rooms and a simple belief: the best of Costa Rica isn't something you visit, it's something you wake up to. Two decades later, we've grown, but our belief hasn't moved an inch from the water.",
+      "Today, the resort is still family-run, still on the sand, and still measured by the same thing — and we know you will leave already planning to come back.",
     ],
     slides: [
       { src: "/images/suites/villa/exp-villa-balcony-ocean.avif", alt: "Villa balcony with an ocean view at Terraza del Pacífico" },
@@ -97,15 +97,15 @@ const en: AboutCopy = {
     eyebrow: "The years, in brief",
     title: "How we got here",
     items: [
-      { year: "2006", body: "First rooms open on Playa Hermosa — a dozen keys and a dream." },
+      { year: "2006", body: "First rooms open on Playa Hermosa, with a dozen keys and a dream." },
       { year: "2013", body: "Vivace Beachfront restaurant opens with Chef Luigi at the pass." },
-      { year: "2019", body: "The signature LED pool — 1,200 lights — is unveiled." },
-      { year: "Today", body: "Four room types, weddings & surf nights — still on the same sand." },
+      { year: "2019", body: "The signature LED pool — with 1,200 lights — is unveiled." },
+      { year: "Today", body: "Four room types, weddings, and surf nights — still on the same sand." },
     ],
   },
   values: {
     eyebrow: "What we stand for",
-    title: "Three things we won't compromise",
+    title: "Three things we won't compromise on",
     items: [
       {
         title: "Real hospitality",
@@ -121,7 +121,7 @@ const en: AboutCopy = {
       },
       {
         title: "Costa Rica, fully",
-        body: "Local hands, local flavor, local adventure — pura vida isn't a slogan here.",
+        body: "Local hands, local flavor, and local adventure. Pura vida isn't a slogan here.",
         image: "/images/resort/bars/live-music-U-RLRqGX.jpg",
         alt: "Live music at the resort",
       },
@@ -131,9 +131,9 @@ const en: AboutCopy = {
     eyebrow: "A unique pool in Central America",
     title: "A starry sky, just below the surface",
     paragraphs: [
-      "Designed by a renowned Italian artist, our main pool is a functional work of art — a meeting of technology and nature you won't find anywhere else on this coast.",
-      "1,200 LED lights set into the pool floor evoke a starry sky underwater. Every night the lights come alive, turning an evening swim into a quiet, unforgettable spectacle.",
-      "And it's beautiful with a purpose: the low-energy LED technology reflects our commitment to sustainability, without ever asking our guests to settle for less.",
+      "Designed by a renowned Italian artist, our main pool is a functional work of art, and a meeting of technology and nature you won't find anywhere else on this coast.",
+      "1,200 LED lights set into the pool floor evoke a starry sky underwater. Every night, the lights come alive, turning an evening swim into a quiet, unforgettable spectacle.",
+      "Our low-energy LED technology is beautiful with a purpose: it reflects our commitment to sustainability, without ever asking our guests to settle for less.",
     ],
     image: "/images/resort/pool/pool-starry-night-DUYiQ-e6.jpg",
     alt: "The LED-lit pool glowing like a starry sky at night",
@@ -148,7 +148,7 @@ const en: AboutCopy = {
     highlights: [
       {
         title: "Whale watching",
-        body: "From July to October, majestic humpback whales visit our shores — an unforgettable natural spectacle just offshore.",
+        body: "From July to October, majestic humpback whales visit our shores: an unforgettable natural spectacle just offshore.",
       },
       {
         title: "Turtle nesting",
@@ -178,7 +178,7 @@ const en: AboutCopy = {
   },
   weddings: {
     eyebrow: "Weddings & beachfront events",
-    title: "Celebrate where the sand meets the sea",
+    title: "Celebrate right on the sand",
     body: "From weddings to milestone celebrations, our beachfront space turns the big moments into something unforgettable. Discover everything we can host for you.",
     cta: "View Events Page",
     image: "/images/resort/weddings/RLR_86342.JPG",

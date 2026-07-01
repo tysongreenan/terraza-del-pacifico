@@ -67,7 +67,7 @@ const en: HubCopy = {
     eyebrow: "Stay · Oceanfront Rooms",
     titleLines: ["Wake to the Pacific,", "Four Ways"],
     description:
-      "Each room sits a few barefoot steps from the sand, the pool and the morning light. Pick a couple's hideaway or a full family villa.",
+      "Each room sits just a few barefoot steps from the sand, the pool, and the morning light. Choose a couple's hideaway or a full family villa.",
     primaryCta: "Check Availability",
     secondaryCta: "Compare All Rooms",
   },
@@ -142,11 +142,11 @@ const en: HubCopy = {
       },
       {
         title: "The LED pool",
-        body: "Swim under 1,200 lights after dark — open to every guest, steps from your door.",
+        body: "Swim under 1,200 lights after dark; open to every guest, steps from your door.",
       },
       {
         title: "Beachfront yoga",
-        body: "Free sessions at the water's edge — Sun & Wed 8 AM, Sat 4 PM, included with your stay.",
+        body: "Free sessions at the water's edge: Sun & Wed 8 AM, Sat 4 PM, included with your stay.",
       },
       {
         title: "Private terrace",
@@ -154,7 +154,7 @@ const en: HubCopy = {
       },
       {
         title: "A/C & fast Wi-Fi",
-        body: "Cool, quiet rooms and connection quick enough to work from — standard throughout.",
+        body: "Cool, quiet rooms and a connection quick enough to work from are standard throughout.",
       },
       {
         title: "Direct-book rate",

@@ -94,7 +94,7 @@ const en: SuiteDetailCopy = {
         { label: "Availability", value: "Only 2 suites" },
       ],
       childrenPolicy: [
-        "Adults only — children are not accepted in this room category.",
+        "Adults only. Children are not accepted in this room category.",
       ],
       highlight:
         "Only two of these exist, and they book out first.",

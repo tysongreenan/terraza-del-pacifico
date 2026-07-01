@@ -12,7 +12,7 @@ export const experienceHub: HubPage = {
   },
   description: {
     es: "Avistamiento de ballenas, yoga en la arena y noches de musica en vivo, todo frente al mar en Playa Hermosa, al sur de Jaco. Estas son las experiencias que hacen de una estadia en Terraza del Pacifico mucho mas que una visita a la playa.",
-    en: "Whale watching, yoga on the sand and evenings of live music, all beachfront in Playa Hermosa, just south of Jaco. These are the experiences that turn a stay at Terraza del Pacifico into far more than a beach visit.",
+    en: "Whale watching, yoga on the sand and evenings of live music — all beachfront in Playa Hermosa, just south of Jaco. These are the experiences that turn a stay at Terraza del Pacifico into far more than a beach visit.",
   },
   heroImage: {
     src: "/images/resort/highlights/IMG_3170.JPG",
@@ -48,7 +48,7 @@ export const experiences: InfoPage[] = [
     },
     description: {
       es: "Avistamiento de ballenas en Costa Rica: cada temporada las jorobadas llegan al Pacifico. Playa Hermosa, al sur de Jaco, es tu punto de partida frente al mar.",
-      en: "Whale watching in Costa Rica: each season humpbacks arrive in the warm Pacific. Beachfront Playa Hermosa, south of Jaco, is your starting point to see them.",
+      en: "Whale watching in Costa Rica: each season, humpbacks arrive in the warm Pacific. Beachfront Playa Hermosa is your starting point to see them.",
     },
     heroImage: {
       src: "/images/experiences/whale-watching/whales-aerial-Bx8BrmsB.jpg",
@@ -115,7 +115,7 @@ export const experiences: InfoPage[] = [
           ],
           en: [
             "Whale watching is one of the most memorable natural experiences on Costa Rica's Pacific coast.",
-            "Each season, humpback whales migrate to warm waters to mate and give birth, creating moments guests can experience from Playa Hermosa, minutes south of Jaco, and the coastline around it.",
+            "Each season, humpback whales migrate to warm waters to mate and give birth, creating moments guests can experience from Playa Hermosa and the coastline around it.",
           ],
         },
       },
@@ -355,7 +355,7 @@ export const experiences: InfoPage[] = [
             "Es una forma sencilla y poderosa de sumar aprendizaje en familia a una estadia frente al mar en Playa Hermosa.",
           ],
           en: [
-            "The activity helps guests understand Costa Rica's biodiversity and the importance of caring for coastal ecosystems.",
+            "This activity helps guests understand Costa Rica's biodiversity and the importance of caring for coastal ecosystems.",
             "It is a simple, powerful way to add family learning to a beachfront stay in Playa Hermosa.",
           ],
         },
@@ -399,7 +399,7 @@ export const experiences: InfoPage[] = [
         },
         a: {
           es: "Es importante mantener distancia, evitar luces blancas fuertes, seguir las instrucciones de los proyectos locales de conservacion y respetar las areas protegidas. En Costa Rica la observacion nocturna suele requerir guias certificados. La meta es dejar la playa igual o mejor de como la encontramos.",
-          en: "Keep your distance, avoid bright white lights, follow the guidance of local conservation projects and respect protected areas. In Costa Rica night viewing usually requires certified guides. The goal is to leave the beach as good as, or better than, we found it.",
+          en: "Keep your distance, avoid bright white lights, follow the guidance of local conservation projects and respect protected areas. In Costa Rica, night viewing usually requires certified guides. The goal is to leave the beach as good as, or better than, we found it.",
         },
       },
     ],
@@ -518,7 +518,7 @@ export const experiences: InfoPage[] = [
             "Una practica sencilla que toma su ritmo del lugar.",
           ],
           en: [
-            "Practicing beachfront in Playa Hermosa creates a natural rhythm: breeze, shade, sand and the sound of the waves.",
+            "Practicing beachfront yoga in Playa Hermosa creates a natural rhythm: breeze, shade, sand and the sound of the waves.",
             "A simple practice that takes its cues from the place itself.",
           ],
         },

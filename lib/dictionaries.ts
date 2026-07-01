@@ -54,7 +54,7 @@ const en = {
   welcome: {
     eyebrow: "Our story",
     title: "Twenty years on Playa Hermosa",
-    body: "For more than twenty years, this beachfront stretch of Playa Hermosa, just minutes from Jacó, has been a place for families to slow down — where mornings open with whale song on the horizon and evenings close with the sky on fire over the Pacific.",
+    body: "For more than twenty years, this beachfront stretch of Playa Hermosa, Costa Rica, has been a place for families to slow down. Here, mornings open with whale song on the horizon and evenings close with the sky on fire over the Pacific.",
     stats: [
       { value: "20+", label: "Years of history" },
       { value: "0 m", label: "To the beach" },
@@ -72,7 +72,7 @@ const en = {
       {
         slug: "experiences/beachfront-yoga",
         title: "Beachfront Yoga",
-        meta: "Included",
+        meta: "Free",
         detail: "Sun & Wed 8 AM · Sat 4 PM",
         cta: "Learn more",
         badge: "Included",
@@ -261,7 +261,7 @@ const en = {
     eyebrow: "Get in Touch",
     title: "Contact Us",
     subtitle:
-      "Questions about your stay, a reservation, or anything else — we're happy to help.",
+      "Questions about your stay, a reservation, or anything else? We're happy to help.",
     namePlaceholder: "Full name",
     emailPlaceholder: "Email address",
     subjectLabel: "Subject",
@@ -423,7 +423,7 @@ const es: Dict = {
       {
         slug: "experiences/yoga-frente-al-mar",
         title: "Yoga Frente al Mar",
-        meta: "Incluido",
+        meta: "Gratis",
         detail: "Dom y Mié 8 AM · Sáb 4 PM",
         cta: "Ver más",
         badge: "Incluido",
