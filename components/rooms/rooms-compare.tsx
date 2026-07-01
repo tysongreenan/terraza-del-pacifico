@@ -82,7 +82,7 @@ export function RoomsCompare({
               <h1 className="mt-4 font-concept text-display font-medium leading-[1.02] text-shadow-hero ">
                 {copy.hero.title}
               </h1>
-              <p className="mt-4 max-w-lg text-base leading-relaxed text-white/88">
+              <p className="mt-4 max-w-lg text-base leading-relaxed text-white/90 text-shadow-hero">
                 {copy.hero.description}
               </p>
             </Reveal>

@@ -137,7 +137,7 @@ const en: HubCopy = {
     body: "Whichever room you book, the essentials of a Terraza morning come standard. Nothing here is reserved for the suite.",
     items: [
       {
-        title: "0 m to the sand",
+        title: "On the sand",
         body: "The resort is on the beach — no road to cross, every room a barefoot walk from the water.",
       },
       {
@@ -247,7 +247,7 @@ const es: HubCopy = {
     body: "Reserves la habitación que reserves, lo esencial de una mañana en Terraza viene de serie. Aquí nada queda reservado solo para la suite.",
     items: [
       {
-        title: "0 m a la arena",
+        title: "Sobre la arena",
         body: "El resort está sobre la playa — sin calle que cruzar, cada habitación a una caminata descalza del agua.",
       },
       {

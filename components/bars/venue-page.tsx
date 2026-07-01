@@ -49,7 +49,7 @@ export function VenuePage({
               <h1 className="max-w-3xl font-concept text-display font-medium leading-[1.02] text-shadow-hero ">
                 {t.hero.title}
               </h1>
-              <p className="mt-5 max-w-md text-base leading-relaxed text-white/88 md:text-lg">
+              <p className="mt-5 max-w-md text-base leading-relaxed text-white/90 text-shadow-hero md:text-lg">
                 {t.hero.description}
               </p>
             </Reveal>

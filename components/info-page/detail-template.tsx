@@ -133,7 +133,7 @@ export function InfoDetailTemplate({
             <h1 className="mt-5 font-concept text-display font-medium leading-[1.0] text-shadow-hero">
               {page.title[locale]}
             </h1>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-white/90 md:text-lg">
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-white/90 text-shadow-hero md:text-lg">
               {page.description[locale]}
             </p>
           </Reveal>

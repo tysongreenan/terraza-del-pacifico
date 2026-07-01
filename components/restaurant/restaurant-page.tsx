@@ -38,7 +38,7 @@ export function RestaurantPage({ locale }: { locale: Locale }) {
                 <br />
                 {copy.hero.titleLines[1]}
               </h1>
-              <p className="mt-5 max-w-md text-base leading-relaxed text-white/88 md:text-lg">
+              <p className="mt-5 max-w-md text-base leading-relaxed text-white/90 text-shadow-hero md:text-lg">
                 {copy.hero.description}
               </p>
               <div className="mt-8 flex flex-wrap gap-3">

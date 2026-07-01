@@ -54,7 +54,7 @@ export function LuxuryHero({
             {title}
           </h1>
           {description && (
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/88 md:text-lg">
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/90 text-shadow-hero md:text-lg">
               {description}
             </p>
           )}
