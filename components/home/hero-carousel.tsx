@@ -163,7 +163,7 @@ export function HeroCarousel({
       />
       {/* Media + copy — overflow only clips backgrounds, not the booking bar */}
       <div
-        className="relative min-h-[92svh] overflow-hidden"
+        className="relative min-h-[92svh] overflow-hidden bg-concept-ocean"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
         onFocusCapture={() => setPaused(true)}

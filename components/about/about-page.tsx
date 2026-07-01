@@ -48,7 +48,7 @@ export function AboutPage({
   return (
     <article className="home-concept bg-concept-sand">
       {/* HERO */}
-      <section className="relative overflow-hidden text-white">
+      <section className="relative overflow-hidden bg-concept-ocean text-white">
         <div className="relative min-h-[68svh] md:min-h-[74svh]">
           <Image
             src={copy.hero.image}

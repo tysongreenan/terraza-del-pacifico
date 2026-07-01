@@ -37,7 +37,7 @@ export function LuxuryHero({
   children?: React.ReactNode;
 }) {
   return (
-    <section className="relative min-h-[72svh] overflow-hidden text-white">
+    <section className="relative min-h-[72svh] overflow-hidden bg-concept-ocean text-white">
       <Image
         src={image}
         alt={imageAlt}

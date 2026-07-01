@@ -65,7 +65,7 @@ export function RoomsCompare({
   return (
     <article className="home-concept bg-concept-sand">
       {/* HERO — condensed cinematic band */}
-      <section className="relative overflow-hidden text-white">
+      <section className="relative overflow-hidden bg-concept-ocean text-white">
         <div className="relative min-h-[56svh] md:min-h-[60svh]">
           <Image
             src={heroImage}

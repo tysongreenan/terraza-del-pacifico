@@ -115,7 +115,7 @@ export function InfoDetailTemplate({
   return (
     <article className="home-concept">
       {/* HERO + overlaid facts meta-bar */}
-      <section className="relative min-h-[86svh] overflow-hidden text-white">
+      <section className="relative min-h-[86svh] overflow-hidden bg-concept-ocean text-white">
         <Image
           src={page.heroImage.src}
           alt={page.heroImage.alt[locale]}

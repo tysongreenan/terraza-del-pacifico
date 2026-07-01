@@ -64,7 +64,7 @@ export function SuitesHub({
   return (
     <article className="home-concept bg-concept-sand">
       {/* HERO — cinematic carousel cycling all rooms, switcher docked below */}
-      <section className="relative overflow-hidden text-white">
+      <section className="relative overflow-hidden bg-concept-ocean text-white">
         <div className="relative min-h-[78svh] md:min-h-[88svh]">
           <Image
             src={roomsHeroImage}

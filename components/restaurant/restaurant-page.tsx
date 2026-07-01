@@ -17,7 +17,7 @@ export function RestaurantPage({ locale }: { locale: Locale }) {
   return (
     <article className="home-concept bg-concept-sand">
       {/* HERO — night palette */}
-      <section className="relative overflow-hidden text-white">
+      <section className="relative overflow-hidden bg-concept-ocean text-white">
         <div className="relative min-h-[72svh] md:min-h-[80svh]">
           <Image
             src={copy.hero.image}

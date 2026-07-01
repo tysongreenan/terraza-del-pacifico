@@ -48,7 +48,7 @@ export function VivaceMenu({
   return (
     <article className="home-concept bg-concept-sand">
       {/* compact hero */}
-      <section className="relative overflow-hidden text-white">
+      <section className="relative overflow-hidden bg-concept-ocean text-white">
         <div className="relative h-[340px] md:h-[400px]">
           <Image
             src="/images/resort/dining/restaurant-dining-nygPbVtS.jpg"
