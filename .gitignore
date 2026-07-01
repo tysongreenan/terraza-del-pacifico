@@ -7,6 +7,10 @@
 /.next/
 /out/
 next-env.d.ts
+*.tsbuildinfo
+
+# playwright debug output (screenshots, console logs, page dumps)
+/.playwright-cli/
 
 # production
 /build
