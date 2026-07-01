@@ -6,7 +6,7 @@ Reviewers: Laura, Zac, Khera Alexander, Sway. 79 comments (71 unresolved, 8 reso
 Status legend: ✅ done · 🔧 in progress · ⬜ todo · 👁 needs visual check · ⏭ already handled before export
 
 ## Recurring bugs (cross-page)
-- 👁 #1/#7/#16/#20 — Transparent nav/logo overlaps hero text on first load, fixes on scroll. #1/#7 marked resolved by team; #16 (/suites), #20 (/bars) still open. Header logic in `components/site-header.tsx` (`resolveVariant`, overlay vs solid). Needs per-page visual check.
+- ✅ #1/#7/#16/#20 — Transparent nav/logo overlapped hero text on first load. Root cause: heroes had a scrim only *over the image*, so before the image painted the backdrop was the page's light cream. Fixed by adding `bg-concept-ocean` dark base to every hero container. Verified via throttled early-paint capture (nav stays legible white).
 - 🔧 #24/#26/#27/#42/#43/#44 — Events galleries show "Image 1/2/3…" captions. Source: auto alt in `lib/luxury-gallery.ts:148-149`, surfaced as `caption` in `event-info-page.tsx:79` + `events-hub.tsx:39`. Fix: drop redundant captions.
 - ⬜ #29/#34 — Nav doesn't appear immediately on /experiences and /contact. Those are `solid` variant in `resolveVariant`; team wants consistency. Decide: keep solid (fine per Zac) but ensure it's present on load.
 
@@ -40,10 +40,18 @@ Status legend: ✅ done · 🔧 in progress · ⬜ todo · 👁 needs visual che
 - ✅ #11 — "Included"/yoga card already moved to lead position in 40fdf71
 - ✅ #30 — yoga chip now says "Free"/"Gratis" (dictionaries.ts) + already leads
 - ✅ #80 — LanguageToggle rebuilt as a flag dropdown (🇨🇷 Español / 🇺🇸 English) in language-toggle.tsx
-- 👁 #12 — audit remaining CTA labels site-wide (Reserve/Sign up/Enquire) — needs visual pass
-- 👁 #18 — suites: photo-over-copy→gallery interaction — client likes the hero version (#9); confirm scope
-- 👁 #19 — suites: form spacing drifts lower each scroll — needs visual/layout pass
+- ✅ #19 — suites floating spec panel no longer bleeds over the next room's image (md:min-h-[640px] on the room container). Verified visually.
+- ✅ #5 — "0 m to the sand" card renamed "On the sand" (serif zero read as O)
+- ✅ #6/#17 — hero description paragraphs now carry text-shadow-hero (legible over bright bar counter / pool)
+- 👁 #12 — audit remaining CTA labels site-wide (Reserve/Sign up/Enquire) — needs a pass
+- 👁 #18 — suites: photo-over-copy→gallery interaction — client likes the hero version (#9); confirm this is a different spot before changing
 - 🟡 #13/#23/#31 — title repetition ("steps from"/"Beachfront"/"in Playa Hermosa"). Deferred: these overlap on-page headings AND SEO meta titles — needs a careful pass to avoid dropping geo keywords.
+
+## Photos — need assets from the team (can't fix in code)
+- ⬜ #2/#14 — blurry photos / blur on left of image (home)
+- ⬜ #21/#25 — weak wedding photos; #25 "roadside memorial" dinner shot (events)
+- ⬜ #32 — too many pool images (gallery)
+- 🟡 #3 — slider loop vs back-and-forth: still a decision for Laura
 
 ## Photos
 - ⬜ #2 — four blurry photos (home)
