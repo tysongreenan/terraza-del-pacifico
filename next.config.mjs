@@ -8,6 +8,9 @@ const nextConfig = {
   outputFileTracingRoot: dirname(fileURLToPath(import.meta.url)),
   images: {
     remotePatterns: [],
+    // Allow the higher-quality thumbnails (hero slide selectors) alongside the
+    // default. Next 15.3+ requires non-default quality values to be allowlisted.
+    qualities: [75, 90],
   },
   async rewrites() {
     return [

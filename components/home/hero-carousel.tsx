@@ -53,7 +53,11 @@ function SlideThumb({
         src={thumb}
         alt=""
         fill
-        sizes={size === "sm" ? "64px" : "96px"}
+        // Thumbnails render small (64–96px) but downscale busy aerial photos,
+        // so bump quality above the default 75 to keep edges crisp. Sizes are
+        // set to the 2x pixel width so high-DPR screens get a dense candidate.
+        sizes={size === "sm" ? "128px" : "192px"}
+        quality={90}
         className="object-cover"
       />
     </button>
@@ -216,7 +220,7 @@ export function HeroCarousel({
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/15 to-transparent" />
 
-        <div className="container relative z-10 flex min-h-[92svh] w-full items-end pb-36 pt-28 md:pb-44 md:pt-32">
+        <div className="container relative z-10 flex min-h-[92svh] w-full items-end pb-36 pt-32 md:pb-44 md:pt-48">
           <div className="max-w-2xl text-white">
             <p className="animate-rise text-sm font-semibold uppercase tracking-[0.22em] text-white text-shadow-hero">
               {h.eyebrow}

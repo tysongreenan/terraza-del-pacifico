@@ -146,7 +146,7 @@ export function ExperiencesCarousel({
               style={{ width: `${Math.max(12, progress * 100)}%` }}
             />
           </div>
-          <span className="text-micro font-medium uppercase tracking-[0.1em] text-concept-gold-muted">
+          <span className="text-micro font-medium uppercase tracking-[0.1em] text-concept-gold-muted lg:hidden">
             {copy.dragHint}
           </span>
         </div>

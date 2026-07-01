@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { renderBrandedEmail } from "@/lib/email-template";
 import { getPostHogClient } from "@/lib/posthog-server";
 
 export const runtime = "nodejs";
@@ -17,14 +18,6 @@ type ContactPayload = {
   locale?: string;
   company?: string; // honeypot
 };
-
-function escapeHtml(value: string) {
-  return value
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
-}
 
 export async function POST(request: Request) {
   let body: ContactPayload;
@@ -58,22 +51,15 @@ export async function POST(request: Request) {
     ["Language", body.locale === "es" ? "Español" : "English"],
   ];
 
-  const html = `
-    <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#1a1611">
-      <h2 style="color:#103a4d">New contact form message</h2>
-      <table style="border-collapse:collapse">
-        ${rows
-          .map(
-            ([label, value]) =>
-              `<tr><td style="padding:6px 16px 6px 0;color:#6f6a62;vertical-align:top"><b>${escapeHtml(
-                label
-              )}</b></td><td style="padding:6px 0">${escapeHtml(value).replace(/\n/g, "<br>")}</td></tr>`
-          )
-          .join("")}
-      </table>
-    </div>`;
-
-  const text = rows.map(([label, value]) => `${label}: ${value}`).join("\n");
+  const { html, text } = renderBrandedEmail({
+    heading: body.locale === "es" ? "Nuevo mensaje de contacto" : "New contact form message",
+    preheader:
+      body.locale === "es"
+        ? "Desde el formulario de contacto del sitio"
+        : "From the website contact form",
+    rows,
+    locale: body.locale,
+  });
 
   try {
     const resend = new Resend(process.env.RESEND_API_KEY);

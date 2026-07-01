@@ -122,7 +122,7 @@ export function Experiences({
                 <Link
                   href={`/${locale}/${item.slug}`}
                   className={cn(
-                    "rounded-sm px-4 py-2 text-micro font-semibold uppercase tracking-[0.08em] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2 focus-visible:ring-offset-[rgba(11,32,42,0.9)]",
+                    "shrink-0 whitespace-nowrap rounded-sm px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.08em] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2 focus-visible:ring-offset-[rgba(11,32,42,0.9)]",
                     item.cta === "Join" || item.cta === "Unirse"
                       ? "border border-white/50 text-white"
                       : "bg-concept-gold text-concept-ink-strong"
@@ -144,7 +144,7 @@ export function Experiences({
               style={{ width: `${Math.max(12, progress * 100)}%` }}
             />
           </div>
-          <span className="text-micro font-medium uppercase tracking-[0.1em] text-concept-gold-muted">
+          <span className="text-micro font-medium uppercase tracking-[0.1em] text-concept-gold-muted lg:hidden">
             {e.dragHint}
           </span>
         </div>
