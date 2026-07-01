@@ -283,6 +283,10 @@ function RoomFeature({
       <div
         className={cn(
           "relative flex flex-col gap-0 md:block",
+          // Reserve height for the absolutely-positioned spec panel (top-20 +
+          // its content) so a tall panel never bleeds down over the next room's
+          // image on desktop.
+          "md:min-h-[640px]",
           // give the floating panel room to overlap on desktop
           reverse ? "md:pl-[300px]" : "md:pr-[300px]"
         )}
