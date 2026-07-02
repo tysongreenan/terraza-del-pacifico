@@ -60,7 +60,7 @@ const COPY = {
       railEyebrow: "Good to know",
       railTitle: "Planning your visit",
       railNote:
-        "Conditions shift with the season — our team helps you time it and arranges trusted local operators.",
+        "Conditions shift with the season. Our team helps you time it and arranges trusted local operators.",
       formEyebrow: "Ask about availability",
       formTitle: "Plan your experience",
       formBody:

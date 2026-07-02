@@ -12,7 +12,7 @@ export const experienceHub: HubPage = {
   },
   description: {
     es: "Avistamiento de ballenas, yoga en la arena y noches de musica en vivo, todo frente al mar en Playa Hermosa, al sur de Jaco. Estas son las experiencias que hacen de una estadia en Terraza del Pacifico mucho mas que una visita a la playa.",
-    en: "Whale watching, yoga on the sand and evenings of live music — all beachfront in Playa Hermosa, just south of Jaco. These are the experiences that turn a stay at Terraza del Pacifico into far more than a beach visit.",
+    en: "Whale watching, yoga on the sand and evenings of live music, all beachfront in Playa Hermosa, just south of Jaco. These are the experiences that turn a stay at Terraza del Pacifico into far more than a beach visit.",
   },
   heroImage: {
     src: "/images/resort/highlights/IMG_3170.JPG",
