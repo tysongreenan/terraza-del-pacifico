@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, CalendarDays, Mail, MessageCircle } from "lucide-react";
-import { buttonVariants } from "@/components/ui/button";
+import { actionButtonVariants } from "@/components/ui/button";
 import {
   LuxuryCtaBand,
   LuxuryHero,
@@ -13,6 +13,7 @@ import {
   type MosaicImage,
 } from "@/components/luxury/primitives";
 import { GallerySections } from "@/components/luxury/gallery-sections";
+import { DirectBookingNote } from "@/components/direct-booking-note";
 import { cn } from "@/lib/utils";
 import { bookingHref, whatsappHref } from "@/lib/site";
 import { JsonLd } from "@/components/json-ld";
@@ -47,7 +48,7 @@ const navLabels = new Set([
 ]);
 
 function local(src: string) {
-  // Already a local image path (incl. subfolders like "/images/Wedding/x.jpg") — keep as-is.
+  // Already a local image path (incl. subfolders like "/images/resort/weddings/x.jpg") — keep as-is.
   if (src.startsWith("/images/")) return src;
   const base = src.split("/").pop()?.split("?")[0] ?? "";
   return `/images/${base}`;
@@ -61,85 +62,85 @@ function imageList(data: Captured) {
 }
 
 // Hand-picked "best of" photos from the real property shoots
-// (public/images/{Resort Highlights,New Pool,Resturant,Wedding,Suit photos}).
+// (public/images/{resort/highlights,resort/pool,resort/dining,resort/weddings,suites/originals}).
 // These are PREPENDED so they lead the hero + mosaic on each luxury page,
 // ahead of the older scraped/stock-named assets in the page JSON.
 const FEATURED_IMAGES: Record<string, string[]> = {
   galeria: [
-    "/images/New Pool/dji_fly_20241022_013922_0645_1753125628421_photo4.JPG",
-    "/images/Resort Highlights/DJI_0361(1)2.JPG",
-    "/images/New Pool/dji_fly_20241022_014010_0648_1753125627850_photo2.JPG",
-    "/images/New Pool/dji_fly_20241022_013636_0636_1753125648022_photo2.JPG",
-    "/images/New Pool/dji_fly_20241022_013726_0642_1753125646863_photo2.JPG",
-    "/images/Resort Highlights/IMG_22232.JPG",
-    "/images/Resort Highlights/IMG_3170.JPG",
-    "/images/Resturant/DSCF40452.JPG",
-    "/images/Resturant/chloemurdochphotography-37.JPG",
-    "/images/Resturant/RLR_3857.JPG",
-    "/images/Wedding/RLR_86342.JPG",
-    "/images/Wedding/AM5_96582.JPG",
-    "/images/Wedding/AM5_93622.JPG",
-    "/images/Suit photos/DSC03703.jpg",
-    "/images/Suit photos/RLR_48512.JPG",
-    "/images/Resort Highlights/DSC03775.jpg",
-    "/images/Resort Highlights/IMG_2542.JPG",
-    "/images/Resort Highlights/perfileimage2.JPG",
-    "/images/Resort Highlights/IMG_5978.JPG",
-    "/images/New Pool/dji_fly_20241111_035710_0766_1754911281185_photo.JPG",
-    "/images/Resturant/chloemurdochphotography-255.JPG",
-    "/images/Resort Highlights/IMG_61303.JPG",
+    "/images/resort/pool/dji_fly_20241022_013922_0645_1753125628421_photo4.JPG",
+    "/images/resort/highlights/DJI_0361(1)2.JPG",
+    "/images/resort/pool/dji_fly_20241022_014010_0648_1753125627850_photo2.JPG",
+    "/images/resort/pool/dji_fly_20241022_013636_0636_1753125648022_photo2.JPG",
+    "/images/resort/pool/dji_fly_20241022_013726_0642_1753125646863_photo2.JPG",
+    "/images/resort/highlights/Surf 1.JPG",
+    "/images/resort/highlights/IMG_3170.JPG",
+    "/images/resort/dining/DSCF40452.JPG",
+    "/images/resort/dining/chloemurdochphotography-37.JPG",
+    "/images/resort/dining/RLR_3857.JPG",
+    "/images/resort/weddings/RLR_86342.JPG",
+    "/images/resort/weddings/AM5_96582.JPG",
+    "/images/resort/weddings/AM5_93622.JPG",
+    "/images/suites/originals/DSC03703.jpg",
+    "/images/suites/originals/RLR_48512.JPG",
+    "/images/resort/highlights/DSC03775.jpg",
+    "/images/resort/highlights/IMG_2542.JPG",
+    "/images/resort/highlights/hotel sign.JPG",
+    "/images/resort/highlights/Family 3.JPG",
+    "/images/resort/pool/dji_fly_20241111_035710_0766_1754911281185_photo.JPG",
+    "/images/resort/dining/chloemurdochphotography-255.JPG",
+    "/images/resort/highlights/IMG_61303.JPG",
   ],
   restaurante: [
-    "/images/Resturant/DSCF40452.JPG",
-    "/images/Resturant/1L6A2626.jpg",
-    "/images/Resturant/chloemurdochphotography-37.JPG",
-    "/images/Resturant/1L6A2554.jpg",
-    "/images/Resturant/chloemurdochphotography-17.JPG",
-    "/images/Resturant/1L6A2572.jpg",
-    "/images/Resturant/chloemurdochphotography-255.JPG",
-    "/images/Resturant/chloemurdochphotography-267.JPG",
-    "/images/Resturant/chloemurdochphotography-293.JPG",
-    "/images/Resturant/IMG_0964.JPG",
-    "/images/Resturant/RLR_37623.JPG",
-    "/images/Resturant/RLR_3857.JPG",
-    "/images/Resturant/DSCF4078(1).JPG",
-    "/images/Resturant/chloemurdochphotography-342.JPG",
+    "/images/resort/dining/DSCF40452.JPG",
+    "/images/resort/dining/1L6A2626.jpg",
+    "/images/resort/dining/chloemurdochphotography-37.JPG",
+    "/images/resort/dining/1L6A2547.jpg",
+    "/images/resort/dining/chloemurdochphotography-17.JPG",
+    "/images/resort/dining/chloemurdochphotography-320.JPG",
+    "/images/resort/dining/chloemurdochphotography-255.JPG",
+    "/images/resort/dining/chloemurdochphotography-267.JPG",
+    "/images/resort/dining/chloemurdochphotography-293.JPG",
+    "/images/resort/dining/IMG_0964.JPG",
+    "/images/resort/dining/RLR_37623.JPG",
+    "/images/resort/dining/RLR_3857.JPG",
+    "/images/resort/dining/DSCF4078(1).JPG",
+    "/images/resort/dining/chloemurdochphotography-342.JPG",
   ],
-  "sobre-nosotros": [
-    "/images/Resort Highlights/DJI_0361(1)2.JPG",
-    "/images/Resort Highlights/RLR_0780(1)3.JPG",
-    "/images/New Pool/dji_fly_20241022_013922_0645_1753125628421_photo4.JPG",
-    "/images/Resort Highlights/IMG_2542.JPG",
-    "/images/Resort Highlights/IMG_2559.JPG",
-    "/images/Resort Highlights/DSC03681.jpg",
-    "/images/Resort Highlights/IMG_3735.JPG",
-    "/images/Resort Highlights/IMG_3748.JPG",
-    "/images/Resort Highlights/perfileimage2.JPG",
-    "/images/Resort Highlights/IMG_22232.JPG",
-    "/images/Resort Highlights/IMG_2458_jpg.JPG",
-    "/images/Resort Highlights/IMG_61303.JPG",
+  "about": [
+    "/images/resort/highlights/DJI_0361(1)2.JPG",
+    "/images/resort/highlights/RLR_0780(1)3.JPG",
+    "/images/resort/pool/dji_fly_20241022_013922_0645_1753125628421_photo4.JPG",
+    "/images/resort/highlights/IMG_2542.JPG",
+    "/images/resort/highlights/IMG_2559.JPG",
+    "/images/resort/grounds/exp-reception.avif",
+    "/images/resort/highlights/IMG_3735.JPG",
+    "/images/resort/grounds/exp-entry-walkway.avif",
+    "/images/resort/highlights/hotel sign.JPG",
+    "/images/resort/highlights/Surf 1.JPG",
+    "/images/resort/highlights/IMG_2458_jpg.JPG",
+    "/images/resort/highlights/IMG_61303.JPG",
   ],
 };
 
 const SUPPLEMENT_IMAGES: Record<string, string[]> = {
-  "sobre-nosotros": [
-    "/images/g-aerial-beach-property-COogc_9W.jpg",
-    "/images/pool-aerial-day-BveHvOiS.jpg",
-    "/images/wedding-beach-ceremony-NqUR8iSS.jpg",
-    "/images/Resort Highlights/DJI_20250526154631_0071_D.JPG",
-    "/images/restaurant-sunset-T7wmiQ85.jpg",
-    "/images/g-family-beach-DHJPEGnp.jpg",
-    "/images/events-pool-aerial-DuNYfspA.jpg",
-    "/images/g-aerial-pool-overview-CCOWXk2j.jpg",
+  "about": [
+    "/images/resort/beach-aerial/g-aerial-beach-property-COogc_9W.jpg",
+    "/images/resort/beach-aerial/exp-sunset-drone.jpg",
+    "/images/resort/weddings/wedding-beach-ceremony-NqUR8iSS.jpg",
+    "/images/resort/highlights/DJI_20250526154631_0071_D.JPG",
+    "/images/resort/dining/restaurant-sunset-T7wmiQ85.jpg",
+    "/images/resort/highlights/Family2.JPG",
+    "/images/resort/events/events-pool-aerial-DuNYfspA.jpg",
+    "/images/resort/pool/g-aerial-pool-overview-CCOWXk2j.jpg",
   ],
   restaurante: [
-    "/images/restaurant-sunset-T7wmiQ85.jpg",
-    "/images/restaurant-night-DDkbFUTM.jpg",
-    "/images/restaurant-dining-nygPbVtS.jpg",
-    "/images/restaurant-cocktails-ITbgxYoM.jpg",
-    "/images/golden-beach-bar-qN10cbKY.jpg",
-    "/images/iguana-bar-pool-CP3k5v8t.jpg",
-    "/images/restaurant-sunset-silhouette-CBBvMTsI.jpg",
+    "/images/resort/dining/restaurant-sunset-T7wmiQ85.jpg",
+    "/images/resort/dining/restaurant-night-DDkbFUTM.jpg",
+    "/images/resort/dining/restaurant-dining-nygPbVtS.jpg",
+    "/images/resort/dining/restaurant-cocktails-ITbgxYoM.jpg",
+    "/images/resort/bars/golden-beach-bar-qN10cbKY.jpg",
+    "/images/resort/bars/iguana-bar-pool-CP3k5v8t.jpg",
+    "/images/resort/dining/restaurant-sunset-silhouette-CBBvMTsI.jpg",
   ],
 };
 
@@ -251,7 +252,7 @@ const PAGE_INTRO: Record<
       title: "Mediterranean cuisine on the Pacific",
     },
   },
-  "sobre-nosotros": {
+  "about": {
     es: {
       eyebrow: "Nuestra historia",
       title: "Más de 20 años frente al mar",
@@ -385,14 +386,14 @@ function ImageGallery({
   const altLead = locale === "es" ? "Foto de" : "Photo of";
 
   return (
-    <section className="bg-muted/45 py-16">
+    <section className="bg-muted/45 py-section-sm">
       <div className="container">
         <div className="mb-8 flex items-end justify-between gap-6">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-accent">
               {copy.galleryEyebrow}
             </p>
-            <h2 className="mt-2 text-3xl font-bold text-primary md:text-4xl">
+            <h2 className="mt-2 text-h2 font-bold text-primary ">
               {copy.galleryTitle}
             </h2>
           </div>
@@ -434,11 +435,11 @@ function LuxuryPageScaffold({
   const copy = LUXURY_COPY[locale];
   const title = data.h1[0] ?? data.title;
   const images = luxuryImages(data, path);
-  const hero = images[0] ?? "/images/hero-aerial-beach-QbQLfxOv.jpg";
+  const hero = images[0] ?? "/images/resort/beach-aerial/hero-aerial-beach-QbQLfxOv.jpg";
   const { intro, sections } = buildSections(data);
   const storySections = sections
     .filter((section) => section.body.length > 0)
-    .slice(0, path === "galeria" ? 0 : 4);
+    .slice(0, path === "gallery" ? 0 : 4);
   const pageIntro = PAGE_INTRO[path]?.[locale];
   const heroCopy = LUXURY_HERO[path]?.[locale];
   const heroTitle = heroCopy?.title ?? title;
@@ -446,18 +447,18 @@ function LuxuryPageScaffold({
   const introLine = data.desc;
 
   const mosaicItems: MosaicImage[] = images
-    .slice(0, path === "galeria" ? 20 : 14)
+    .slice(0, path === "gallery" ? 20 : 14)
     .map((src, index) => ({
       src,
       alt: `${title} — ${locale === "en" ? "photo" : "foto"} ${index + 1}`,
     }));
 
   const ctaImage =
-    path === "restaurante"
-      ? "/images/restaurant-sunset-T7wmiQ85.jpg"
-      : path === "sobre-nosotros"
-        ? "/images/g-aerial-beach-property-COogc_9W.jpg"
-        : "/images/pool-aerial-day-BveHvOiS.jpg";
+    path === "restaurant"
+      ? "/images/resort/dining/restaurant-sunset-T7wmiQ85.jpg"
+      : path === "about"
+        ? "/images/resort/beach-aerial/g-aerial-beach-property-COogc_9W.jpg"
+        : "/images/resort/highlights/IMG_2559.JPG";
 
   return (
     <article className="home-concept">
@@ -476,7 +477,7 @@ function LuxuryPageScaffold({
           href={whatsappHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-2 rounded-sm border border-white/55 px-7 py-3.5 text-[13px] font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10"
+          className={actionButtonVariants({ variant: "secondary", surface: "dark" })}
         >
           <MessageCircle className="h-4 w-4" aria-hidden />
           {copy.whatsapp}
@@ -500,7 +501,7 @@ function LuxuryPageScaffold({
             title={section.title}
             reverse={index % 2 === 1}
             cta={
-              path === "restaurante" && index === storySections.length - 1
+              path === "restaurant" && index === storySections.length - 1
                 ? {
                     label:
                       locale === "en" ? "Reserve your table" : "Reservar mesa",
@@ -512,7 +513,7 @@ function LuxuryPageScaffold({
         );
       })}
 
-      {path === "galeria" ? (
+      {path === "gallery" ? (
         // The gallery is separated into resort aspects (pool, weddings, dining,
         // suites, beach) — each a titled band with its own lightbox-enabled
         // mosaic — so the Intro leads straight into the categorized sections.
@@ -576,7 +577,7 @@ export function PageScaffold({
   const primarySections = sections.slice(0, 6);
   // Policy/legal routes: suppress the generic marketing gallery + "essentials"
   // resort framing so the page stays focused on the policy content.
-  const isPolicies = path === "politicas";
+  const isPolicies = path === "policies";
 
   return (
     <article>
@@ -599,36 +600,38 @@ export function PageScaffold({
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-accent">
               {copy.brand}
             </p>
-            <h1 className="mt-4 text-4xl font-bold md:text-6xl">{title}</h1>
+            <h1 className="mt-4 text-display font-bold ">{title}</h1>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-white/86">
               {data.desc}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href={bookingHref}
-                className={buttonVariants({ variant: "accent", size: "lg" })}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={actionButtonVariants({ variant: "primary", size: "lg" })}
               >
                 {copy.book}
-                <ArrowRight className="ml-2 h-4 w-4" />
+                <ArrowRight className="h-4 w-4" aria-hidden />
               </Link>
               <Link
                 href={whatsappHref}
-                className={buttonVariants({
-                  variant: "outline",
+                className={actionButtonVariants({
+                  variant: "secondary",
+                  surface: "dark",
                   size: "lg",
-                  className:
-                    "border-white/50 bg-white/10 text-white hover:bg-white hover:text-primary",
                 })}
               >
-                <MessageCircle className="mr-2 h-4 w-4" />
+                <MessageCircle className="h-4 w-4" aria-hidden />
                 {copy.whatsapp}
               </Link>
             </div>
+            <DirectBookingNote locale={locale} className="mt-5" />
           </div>
         </div>
       </section>
 
-      <section className="container py-14 md:py-18">
+      <section className="container py-14 md:py-section">
         <div
           className={cn(
             "grid gap-10",
@@ -640,7 +643,7 @@ export function PageScaffold({
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-accent">
                 {copy.overviewEyebrow}
               </p>
-              <h2 className="mt-3 text-3xl font-bold text-primary md:text-4xl">
+              <h2 className="mt-3 text-h2 font-bold text-primary ">
                 {copy.overviewTitle}
               </h2>
               <div className="mt-8 grid gap-5 sm:grid-cols-3 lg:grid-cols-1">
@@ -672,7 +675,7 @@ export function PageScaffold({
                 key={section.title}
                 className="rounded-md border bg-card p-6 shadow-sm"
               >
-                <h2 className="text-2xl font-bold text-primary">
+                <h2 className="text-h3 font-bold text-primary">
                   {section.title}
                 </h2>
                 <SectionBody lines={section.body} />
@@ -686,34 +689,33 @@ export function PageScaffold({
         <ImageGallery images={images} title={title} locale={locale} />
       )}
 
-      <section id="booking" className="container py-16">
+      <section id="booking" className="container py-section-sm">
         <div className="grid gap-8 rounded-md bg-primary p-8 text-primary-foreground md:grid-cols-[1fr_auto] md:items-center">
           <div>
             <p className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.22em] text-accent">
               <CalendarDays className="h-4 w-4" />
               {copy.reserveEyebrow}
             </p>
-            <h2 className="mt-3 text-3xl font-bold">{copy.reserveTitle}</h2>
+            <h2 className="mt-3 text-h3 font-bold">{copy.reserveTitle}</h2>
             <p className="mt-3 max-w-2xl text-white/78">{copy.reserveBody}</p>
           </div>
           <div className="flex flex-wrap gap-3">
             <Link
               href="mailto:info@terrazadelpacifico.com"
-              className={buttonVariants({
-                variant: "outline",
+              className={actionButtonVariants({
+                variant: "secondary",
+                surface: "dark",
                 size: "lg",
-                className:
-                  "border-white/50 bg-white/10 text-white hover:bg-white hover:text-primary",
               })}
             >
-              <Mail className="mr-2 h-4 w-4" />
+              <Mail className="h-4 w-4" aria-hidden />
               {copy.email}
             </Link>
             <Link
               href={whatsappHref}
-              className={buttonVariants({ variant: "accent", size: "lg" })}
+              className={actionButtonVariants({ variant: "primary", size: "lg" })}
             >
-              <MessageCircle className="mr-2 h-4 w-4" />
+              <MessageCircle className="h-4 w-4" aria-hidden />
               {copy.whatsapp}
             </Link>
           </div>

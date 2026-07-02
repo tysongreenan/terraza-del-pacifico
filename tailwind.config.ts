@@ -64,6 +64,15 @@ const config: Config = {
           sand: "hsl(var(--sand))",
           "sand-muted": "hsl(var(--sand-muted))",
           ink: "hsl(var(--ink))",
+          // Auxiliary shades — named so pages stop hand-coding raw [#hex].
+          // Values are the exact hexes they replace (zero visual change).
+          border: "#ece5d8", // warm hairline border (cards, dividers)
+          "border-soft": "#e7dfcf", // softer warm border
+          "ink-muted": "#6f6a62", // muted body/label text on light
+          "ink-subtle": "#8a8478", // lighter label text on light
+          "ink-strong": "#1a1611", // near-black, e.g. text on gold buttons
+          mist: "#bcd0d8", // light blue-grey text on ocean surfaces
+          cream: "#f3ead6", // pale cream label (on dark/photo)
         },
         // Semantic text colors for dark/ocean surfaces — replaces ad-hoc
         // `text-white/NN`. Use on footer, hero scrims, ocean panels.
@@ -76,25 +85,37 @@ const config: Config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
-      // Semantic type scale (fluid via clamp → responsive without md: variants).
-      // Pairs size with its line-height / tracking / weight so headings are
-      // consistent everywhere. See docs/design.md.
+      // Semantic type scale. Fluid via clamp → responsive without md: variants.
+      // Headings carry size + line-height ONLY (no weight/tracking) so they
+      // compose with any font — the serif display look (font-concept / Cormorant)
+      // and the sans look (font-display / Manrope) both keep their own weight and
+      // tracking. `eyebrow` is a fixed style, so it bundles its tracking/weight.
+      // See docs/design.md.
+      // Maxes are tuned to the site's existing desktop sizes so these tokens
+      // ARE the current hierarchy (hero ~70px, section title ~46px, etc.):
+      //   micro 11 · caption 13 · body-sm 15 · body 16 · body-lg 18
+      //   h4 22 · h3 28 · h2 38 · h1 46 · display 70
       fontSize: {
         eyebrow: ["0.75rem", { lineHeight: "1", letterSpacing: "0.24em", fontWeight: "600" }],
-        caption: ["0.8125rem", { lineHeight: "1.5" }],
-        "body-sm": ["0.9375rem", { lineHeight: "1.6" }],
-        body: ["1rem", { lineHeight: "1.6" }],
-        "body-lg": ["1.125rem", { lineHeight: "1.6" }],
-        h4: ["1.25rem", { lineHeight: "1.3", letterSpacing: "-0.01em", fontWeight: "600" }],
-        h3: ["clamp(1.375rem, 1.05rem + 1.4vw, 1.75rem)", { lineHeight: "1.2", letterSpacing: "-0.015em", fontWeight: "600" }],
-        h2: ["clamp(1.75rem, 1.15rem + 2.6vw, 2.5rem)", { lineHeight: "1.15", letterSpacing: "-0.02em", fontWeight: "700" }],
-        h1: ["clamp(2.25rem, 1.3rem + 4vw, 3.5rem)", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" }],
-        display: ["clamp(2.75rem, 1.2rem + 6.4vw, 4.5rem)", { lineHeight: "1.05", letterSpacing: "-0.025em", fontWeight: "700" }],
+        micro: ["0.6875rem", "1.4"],
+        caption: ["0.8125rem", "1.5"],
+        "body-sm": ["0.9375rem", "1.6"],
+        body: ["1rem", "1.6"],
+        "body-lg": ["1.125rem", "1.65"],
+        h4: ["1.375rem", "1.3"],
+        h3: ["clamp(1.5rem, 1.1rem + 1.3vw, 1.75rem)", "1.2"],
+        h2: ["clamp(1.875rem, 1.3rem + 2vw, 2.375rem)", "1.15"],
+        h1: ["clamp(2.125rem, 1.4rem + 2.6vw, 2.875rem)", "1.1"],
+        display: ["clamp(2.75rem, 1.4rem + 6vw, 4.375rem)", "1.04"],
       },
       spacing: {
         // Standard vertical rhythm for top-level page sections.
         section: "clamp(3.5rem, 2rem + 5vw, 6rem)",
         "section-sm": "clamp(2.5rem, 1.5rem + 3vw, 4rem)",
+        // Top padding for the FIRST section on a hero-less / solid-header page,
+        // so content clears the fixed header (~72–88px) plus section rhythm.
+        // Overlay/hero pages don't need this (their hero sits under the header).
+        "section-top": "clamp(7rem, 5.5rem + 4vw, 9rem)",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "sans-serif"],

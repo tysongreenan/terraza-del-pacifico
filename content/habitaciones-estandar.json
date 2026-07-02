@@ -1,8 +1,8 @@
 {
   "url": "https://terrazadelpacifico.com/habitaciones/estandar",
   "title": {
-    "es": "Habitación Estándar | Hotel Terraza del Pacífico",
-    "en": "Standard Room | Hotel Terraza del Pacífico"
+    "es": "Habitación Estándar con vista a los jardines en Playa Hermosa, Jacó",
+    "en": "Standard Room with Garden View in Playa Hermosa de Jacó"
   },
   "desc": {
     "es": "Habitación Estándar de 32 m² frente a los jardines en Playa Hermosa, para hasta cuatro huéspedes con dos camas dobles. A pasos de la piscina, el restaurante y la playa.",
@@ -22,12 +22,12 @@
     "H3: Stay Connected"
   ],
   "imgs": [
-    "/assets/Logo-nuevo-B86U915-.png",
-    "/images/Suit photos/RLR_4906.jpg",
-    "/images/room-standard-wide-DxUYeeXV.jpg",
-    "/images/room-interior-C3-O8UpA.jpg",
-    "/images/room-two-beds-D9Pgywgw.jpg",
-    "/assets/Logo-nuevo-B86U915-.png"
+    "/images/brand/Logo-nuevo-B86U915-.png",
+    "/images/suites/originals/RLR_4906.JPG",
+    "/images/suites/standard/room-standard-wide-DxUYeeXV.jpg",
+    "/images/suites/general/room-interior-C3-O8UpA.jpg",
+    "/images/suites/general/room-two-beds-D9Pgywgw.jpg",
+    "/images/brand/Logo-nuevo-B86U915-.png"
   ],
   "ctas": [
     "Home",

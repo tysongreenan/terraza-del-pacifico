@@ -11,7 +11,9 @@ import {
   type MosaicImage,
 } from "@/components/luxury/primitives";
 import { LuxuryImageSlider, type SliderSlide } from "@/components/luxury/image-slider";
+import { actionButtonVariants } from "@/components/ui/button";
 import { expandInfoPageGallery } from "@/lib/luxury-gallery";
+import { cn } from "@/lib/utils";
 import type { Locale } from "@/lib/i18n";
 import type { InfoPage as InfoPageData } from "@/content/info-pages";
 import { pageHref } from "@/content/info-pages";
@@ -24,6 +26,8 @@ const COPY = {
     mosaicEyebrow: "Más imágenes",
     sliderTitle: "Explora en fotos",
     dragHint: "Desliza para ver más",
+    faqEyebrow: "Preguntas frecuentes",
+    faqTitle: "Preguntas frecuentes",
     relatedEyebrow: "También te puede interesar",
     relatedTitle: "Más eventos en el resort",
     planEyebrow: "Planifica tu evento",
@@ -39,6 +43,8 @@ const COPY = {
     mosaicEyebrow: "More photos",
     sliderTitle: "Explore in photos",
     dragHint: "Swipe to see more",
+    faqEyebrow: "Frequently asked questions",
+    faqTitle: "Frequently asked questions",
     relatedEyebrow: "You may also like",
     relatedTitle: "More events at the resort",
     planEyebrow: "Plan your event",
@@ -63,14 +69,15 @@ export function EventInfoPage({
   locale: Locale;
 }) {
   const copy = COPY[locale];
-  const hubHref = `/${locale}/eventos`;
+  const hubHref = `/${locale}/events`;
   const external = page.cta.href.startsWith("http");
 
   const expandedGallery = expandInfoPageGallery(page, 16);
+  // No visible caption: the auto-expanded gallery alt text ("… — image 3") is
+  // for screen readers only, not something to print under each slide.
   const sliderSlides: SliderSlide[] = expandedGallery.map((image) => ({
     src: image.src,
     alt: image.alt[locale],
-    caption: image.alt[locale],
   }));
 
   const galleryMosaic: MosaicImage[] = expandedGallery.map((image) => ({
@@ -94,7 +101,7 @@ export function EventInfoPage({
           href={page.cta.href}
           target={external ? "_blank" : undefined}
           rel={external ? "noopener noreferrer" : undefined}
-          className="inline-flex items-center justify-center gap-2 rounded-sm bg-concept-gold px-7 py-3.5 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2"
+          className={cn(actionButtonVariants({ variant: "primary" }))}
         >
           {page.cta.label[locale]}
           <ArrowRight className="h-4 w-4" aria-hidden />
@@ -110,13 +117,13 @@ export function EventInfoPage({
       />
 
       {overview && (
-        <section className="bg-concept-sand py-14 md:py-20">
+        <section className="bg-concept-sand py-14 md:py-section">
           <div className="container max-w-3xl">
             <p className="eyebrow">{copy.overviewEyebrow}</p>
-            <h2 className="mt-4 font-concept text-3xl font-medium leading-[1.08] text-concept-ocean md:text-[42px]">
+            <h2 className="mt-4 font-concept text-h1 font-medium leading-[1.08] text-concept-ocean ">
               {overview.title[locale]}
             </h2>
-            <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-concept-ink/82 md:text-base">
+            <div className="mt-6 space-y-4 text-body-sm leading-relaxed text-concept-ink/82 md:text-base">
               {overview.body[locale].map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
@@ -155,12 +162,50 @@ export function EventInfoPage({
         className="bg-concept-sand"
       />
 
+      {page.faq?.length ? (
+        <section className="bg-concept-sand py-14 md:py-section">
+          <div className="container max-w-3xl">
+            <p className="eyebrow">{copy.faqEyebrow}</p>
+            <h2 className="mt-3 font-concept text-h1 font-medium leading-[1.05] text-concept-ocean">
+              {copy.faqTitle}
+            </h2>
+            <dl className="mt-8 divide-y divide-concept-border-soft border-t border-concept-border-soft">
+              {page.faq.map((item) => (
+                <div key={item.q[locale]} className="py-6">
+                  <dt className="font-concept text-h3 leading-snug text-concept-ocean">
+                    {item.q[locale]}
+                  </dt>
+                  <dd className="mt-3 text-body-sm leading-relaxed text-concept-ink/82">
+                    {item.a[locale]}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+      ) : null}
+
+      <LuxuryCtaBand
+        locale={locale}
+        eyebrow={copy.planEyebrow}
+        title={
+          locale === "en"
+            ? `Ready to plan ${page.title.en}?`
+            : `¿Listo para planear ${page.title.es}?`
+        }
+        body={copy.planBody}
+        primaryLabel={page.cta.label[locale]}
+        primaryHref={page.cta.href}
+        secondaryLabel="WhatsApp"
+        image={page.heroImage.src}
+      />
+
       {related.length > 0 && (
-        <section className="bg-concept-sand-muted py-14 md:py-20">
+        <section className="bg-concept-sand-muted py-14 md:py-section">
           <div className="container">
             <div className="mb-8 md:mb-10">
               <p className="eyebrow">{copy.relatedEyebrow}</p>
-              <h2 className="mt-3 font-concept text-3xl font-medium leading-[1.05] text-concept-ocean md:text-[46px]">
+              <h2 className="mt-3 font-concept text-h1 font-medium leading-[1.05] text-concept-ocean ">
                 {copy.relatedTitle}
               </h2>
             </div>
@@ -180,13 +225,13 @@ export function EventInfoPage({
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-concept-ocean/90 via-transparent to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-concept-gold">
+                    <p className="text-micro font-semibold uppercase tracking-[0.14em] text-white">
                       {item.eyebrow[locale]}
                     </p>
-                    <h3 className="mt-2 font-concept text-2xl leading-tight">
+                    <h3 className="mt-2 font-concept text-h3 leading-tight">
                       {item.title[locale]}
                     </h3>
-                    <span className="mt-3 inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.1em]">
+                    <span className="mt-3 inline-flex items-center gap-1.5 text-micro font-semibold uppercase tracking-[0.1em]">
                       {copy.explore}
                       <ArrowRight className="h-3.5 w-3.5" aria-hidden />
                     </span>
@@ -197,21 +242,6 @@ export function EventInfoPage({
           </div>
         </section>
       )}
-
-      <LuxuryCtaBand
-        locale={locale}
-        eyebrow={copy.planEyebrow}
-        title={
-          locale === "en"
-            ? `Ready to plan ${page.title.en}?`
-            : `¿Listo para planear ${page.title.es}?`
-        }
-        body={copy.planBody}
-        primaryLabel={page.cta.label[locale]}
-        primaryHref={page.cta.href}
-        secondaryLabel="WhatsApp"
-        image={page.heroImage.src}
-      />
     </article>
   );
 }

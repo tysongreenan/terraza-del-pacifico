@@ -90,7 +90,7 @@ function NavCard({ tile, locale }: { tile: NavTile; locale: Locale }) {
         <p
           className={cn(
             "font-medium uppercase tracking-[0.14em] text-white/80",
-            isFeature ? "text-[11px]" : "hidden text-[10px] md:block"
+            isFeature ? "text-micro" : "hidden text-micro md:block"
           )}
         >
           {tile.subtitle[locale]}
@@ -98,16 +98,13 @@ function NavCard({ tile, locale }: { tile: NavTile; locale: Locale }) {
         <p
           className={cn(
             "mt-1 font-concept leading-tight text-white",
-            isFeature ? "text-3xl md:text-[40px]" : "text-xl md:text-[26px]"
+            isFeature ? "text-h1 " : "text-h3"
           )}
         >
           {tile.title[locale]}
         </p>
         <span
-          className={cn(
-            "mt-2.5 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.12em]",
-            isFeature ? "text-concept-gold" : "text-white"
-          )}
+          className="mt-2.5 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-white"
         >
           {tile.cta[locale]}
           <ArrowRight
@@ -135,7 +132,7 @@ export function ResortDiscovery({
         <Reveal>
           <div className="mb-8 max-w-3xl md:mb-10">
             <p className="eyebrow">{d.eyebrow}</p>
-            <h2 className="mt-3 text-balance font-concept text-3xl font-medium leading-[1.05] text-concept-ocean md:text-[46px]">
+            <h2 className="mt-3 text-balance font-concept text-h1 font-medium leading-[1.05] text-concept-ocean ">
               {d.title}
             </h2>
           </div>

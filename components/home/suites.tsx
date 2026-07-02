@@ -4,31 +4,36 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useMemo, useState } from "react";
+import posthog from "posthog-js";
 import { defaultRoomSlug, roomGalleries } from "@/content/room-galleries";
 import { Reveal } from "@/components/home/reveal";
+import { Lightbox } from "@/components/luxury/lightbox";
+import { actionButtonVariants } from "@/components/ui/button";
 import type { Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/lib/dictionaries";
 import { bookingHref } from "@/lib/site";
+import { DirectBookingNote } from "@/components/direct-booking-note";
 import { cn } from "@/lib/utils";
 
+// Previous Expedia-era extra photos — commented out for now, may be re-added later.
 const ROOM_EXTRA_IMAGES: Record<string, string[]> = {
-  superior: [
-    "/images/room-king-bed-B58lVEdC.jpg",
-    "/images/g-aerial-pool-overview-CCOWXk2j.jpg",
-  ],
-  estandar: [
-    "/images/room-toucan-art-n3cC8Tze.jpg",
-    "/images/room-interior-C3-O8UpA.jpg",
-  ],
-  "junior-suite": [
-    "/images/room-toucan-art-n3cC8Tze.jpg",
-    "/images/pool-aerial-day-BveHvOiS.jpg",
-    "/images/room-king-bed-B58lVEdC.jpg",
-  ],
-  villas: [
-    "/images/villa-bedroom-view-_Eb74lE7.jpg",
-    "/images/g-aerial-beach-property-COogc_9W.jpg",
-  ],
+  // superior: [
+  //   "/images/suites/general/room-king-bed-B58lVEdC.jpg",
+  //   "/images/suites/originals/RLR_4906.JPG",
+  // ],
+  // standard: [
+  //   "/images/suites/general/room-toucan-art-n3cC8Tze.jpg",
+  //   "/images/suites/general/room-interior-C3-O8UpA.jpg",
+  // ],
+  // "junior-suite": [
+  //   "/images/suites/general/room-toucan-art-n3cC8Tze.jpg",
+  //   "/images/suites/originals/RLR_48512.JPG",
+  //   "/images/suites/general/room-king-bed-B58lVEdC.jpg",
+  // ],
+  // villas: [
+  //   "/images/suites/villa/villa-bedroom-view-_Eb74lE7.jpg",
+  //   "/images/suites/originals/IMG_4757.JPG",
+  // ],
 };
 
 function roomGalleryImages(slug: string, locale: Locale) {
@@ -59,6 +64,7 @@ export function Suites({
   const s = dict.suites;
   const [activeSlug, setActiveSlug] = useState(defaultRoomSlug);
   const [slideIndex, setSlideIndex] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
 
   const room = useMemo(
     () => s.items.find((r) => r.slug === activeSlug) ?? s.items[0],
@@ -73,6 +79,7 @@ export function Suites({
   const selectRoom = (slug: string) => {
     setActiveSlug(slug);
     setSlideIndex(0);
+    posthog.capture("suite_selected", { suite_slug: slug });
   };
 
   const nextSlide = () =>
@@ -83,18 +90,18 @@ export function Suites({
   const isJunior = activeSlug === "junior-suite";
 
   return (
-    <section id="suites" className="scroll-mt-20 bg-concept-sand py-16 md:py-24">
+    <section id="suites" className="scroll-mt-20 bg-concept-sand py-section-sm md:py-section">
       <div className="container">
         <Reveal>
           <div className="mb-10 flex flex-col gap-6 md:mb-12 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="eyebrow">{s.eyebrow}</p>
-              <h2 className="mt-3 font-concept text-3xl font-medium leading-[1.04] text-concept-ocean md:text-5xl">
+              <h2 className="mt-3 font-concept text-h1 font-medium leading-[1.04] text-concept-ocean ">
                 {s.title}
               </h2>
             </div>
             <Link
-              href={`/${locale}/habitaciones`}
+              href={`/${locale}/suites`}
               className="mb-1 shrink-0 border-b border-concept-gold-muted pb-1 text-xs font-semibold uppercase tracking-[0.1em] text-concept-ocean transition-colors hover:text-concept-gold-muted"
             >
               {s.allRoomsCta}
@@ -120,8 +127,16 @@ export function Suites({
                 />
               ))}
               <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(10,28,37,0)_70%,rgba(10,28,37,0.45)_100%)]" />
+              {/* Click anywhere on the photo to open the full-screen lightbox.
+                  z-[5] sits above the images but below the dot/arrow controls (z-10). */}
+              <button
+                type="button"
+                onClick={() => setLightboxOpen(true)}
+                aria-label={locale === "en" ? "Enlarge photo" : "Ampliar foto"}
+                className="absolute inset-0 z-[5] cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-concept-gold"
+              />
               {isJunior && (
-                <span className="absolute left-5 top-5 z-10 rounded-sm bg-concept-gold px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#1a1611]">
+                <span className="absolute left-5 top-5 z-10 rounded-sm bg-concept-gold px-3.5 py-1.5 text-micro font-semibold uppercase tracking-[0.14em] text-concept-ink-strong">
                   {s.mostBooked}
                 </span>
               )}
@@ -167,15 +182,15 @@ export function Suites({
 
             <div className="flex w-full flex-col justify-center bg-concept-sand px-8 py-10 md:w-[38%] md:px-12 md:py-14">
               {room.tagline && (
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-concept-gold-muted">
+                <p className="text-micro font-semibold uppercase tracking-[0.22em] text-concept-gold-muted">
                   {room.tagline}
                 </p>
               )}
-              <h3 className="mt-2 font-concept text-[34px] font-medium leading-none text-concept-ocean md:text-[40px]">
+              <h3 className="mt-2 font-concept text-h1 font-medium leading-none text-concept-ocean ">
                 {room.name}
               </h3>
 
-              <dl className="mt-7 grid grid-cols-2 border-y border-[#ece5d8]">
+              <dl className="mt-7 grid grid-cols-2 border-y border-concept-border">
                 {[
                   { label: s.guestsLabel, value: room.guests },
                   { label: s.sizeLabel, value: room.size },
@@ -186,46 +201,49 @@ export function Suites({
                     key={stat.label}
                     className={cn(
                       "py-4",
-                      i % 2 === 0 && "border-r border-[#ece5d8] pr-4",
+                      i % 2 === 0 && "border-r border-concept-border pr-4",
                       i % 2 === 1 && "pl-5 md:pl-[22px]",
-                      i < 2 && "border-b border-[#ece5d8]"
+                      i < 2 && "border-b border-concept-border"
                     )}
                   >
-                    <dd className="font-concept text-[26px] leading-none text-concept-ink">
+                    <dd className="font-concept text-h3 leading-none text-concept-ink">
                       {stat.value}
                     </dd>
-                    <dt className="mt-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#8a8478]">
+                    <dt className="mt-0.5 text-micro font-semibold uppercase tracking-[0.12em] text-concept-ink-subtle">
                       {stat.label}
                     </dt>
                   </div>
                 ))}
               </dl>
 
-              <p className="mt-5 text-sm leading-[1.7] text-[#6f6a62]">
+              <p className="mt-5 text-sm leading-[1.7] text-concept-ink-muted">
                 {room.blurb}
               </p>
-              <p className="mt-4 text-[11px] tracking-wide text-[#8a8478]">
+              <p className="mt-4 text-micro tracking-wide text-concept-ink-subtle">
                 {s.amenitiesNote}
               </p>
 
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link
                   href={bookingHref}
-                  className="rounded-sm bg-concept-gold px-6 py-3.5 text-xs font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-concept-ocean focus-visible:ring-offset-2 focus-visible:ring-offset-concept-sand"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={actionButtonVariants({ variant: "primary" })}
                 >
                   {s.bookCta}
                 </Link>
                 <Link
-                  href={`/${locale}/habitaciones/${room.slug}`}
-                  className="rounded-sm border border-[#cdbfa6] px-6 py-3.5 text-xs font-semibold uppercase tracking-[0.1em] text-concept-ocean transition-colors hover:border-concept-ocean focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2 focus-visible:ring-offset-concept-sand"
+                  href={`/${locale}/suites/${room.slug}`}
+                  className={actionButtonVariants({ variant: "secondary", surface: "light" })}
                 >
                   {s.detailsCta}
                 </Link>
               </div>
-              <p className="mt-4 text-[11px] font-medium uppercase tracking-[0.1em] text-concept-ocean">
-                <span className="text-concept-gold-muted">◆</span>{" "}
-                {dict.hero.trust}
-              </p>
+              <DirectBookingNote
+                locale={locale}
+                surface="light"
+                className="mt-3"
+              />
             </div>
           </div>
         </Reveal>
@@ -265,7 +283,7 @@ export function Suites({
                 </div>
                 <p
                   className={cn(
-                    "mt-3 font-concept text-lg md:text-[21px]",
+                    "mt-3 font-concept text-lg md:text-h4",
                     selected ? "text-concept-ocean" : "text-concept-ink"
                   )}
                 >
@@ -273,8 +291,8 @@ export function Suites({
                 </p>
                 <p
                   className={cn(
-                    "mt-1 text-[11px]",
-                    selected ? "text-concept-gold-muted" : "text-[#8a8478]"
+                    "mt-1 text-micro",
+                    selected ? "text-concept-gold-muted" : "text-concept-ink-subtle"
                   )}
                 >
                   {item.guests} · {item.size} · {item.beds}
@@ -285,6 +303,19 @@ export function Suites({
           })}
         </div>
       </div>
+
+      {lightboxOpen && (
+        <Lightbox
+          images={gallery.map((img) => ({
+            src: img.src,
+            alt: img.alt[locale],
+          }))}
+          index={slideIndex}
+          onIndexChange={setSlideIndex}
+          onClose={() => setLightboxOpen(false)}
+          locale={locale}
+        />
+      )}
     </section>
   );
 }

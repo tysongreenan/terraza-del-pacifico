@@ -33,10 +33,10 @@ const COPY = {
 } as const;
 
 function eventSlides(page: InfoPage, locale: Locale): SliderSlide[] {
+  // Alt text only (screen readers); no printed "… — image 3" caption per slide.
   return expandInfoPageGallery(page, 12).map((image) => ({
     src: image.src,
     alt: image.alt[locale],
-    caption: image.alt[locale],
   }));
 }
 

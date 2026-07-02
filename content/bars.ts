@@ -32,15 +32,15 @@ export const bars: Venue[] = [
     slug: "golden-beach-bar",
     palette: "amber",
     hours: { opens: "11:00", closes: "19:00" },
-    heroImage: "/images/golden-beach-bar-qN10cbKY.jpg",
+    heroImage: "/images/resort/dining/chloemurdochphotography-259.JPG",
     introSlides: [
-      { src: "/images/pool-aerial-day-BveHvOiS.jpg", alt: "Aerial of the beach and pool" },
-      { src: "/images/restaurant-cocktails-ITbgxYoM.jpg", alt: "Craft cocktails" },
-      { src: "/images/restaurant-sunset-T7wmiQ85.jpg", alt: "Sunset over the Pacific" },
-      { src: "/images/restaurant-view-WsRnSUPN.jpg", alt: "Beachfront seating" },
+      { src: "/images/resort/dining/DSCF40452.JPG", alt: "Sunset terrace framed by palms" },
+      { src: "/images/resort/dining/1L6A2634.jpg", alt: "Couples at a terrace table under string lights, ocean beyond" },
+      { src: "/images/resort/dining/chloemurdochphotography-53.JPG", alt: "Tacos and a cold beer" },
+      { src: "/images/resort/dining/chloemurdochphotography-48.JPG", alt: "White wine poured poolside" },
     ],
-    ctaImage: "/images/restaurant-sunset-silhouette-CBBvMTsI.jpg",
-    cardImage: "/images/golden-beach-bar-qN10cbKY.jpg",
+    ctaImage: "/images/resort/dining/DSCF4078(1).JPG",
+    cardImage: "/images/resort/bars/golden-beach-bar-qN10cbKY.jpg",
     text: {
       en: {
         hero: {
@@ -106,15 +106,16 @@ export const bars: Venue[] = [
     slug: "iguana-bar",
     palette: "ocean",
     hours: { opens: "10:00", closes: "18:00" },
-    heroImage: "/images/iguana-bar-pool-CP3k5v8t.jpg",
+    heroImage: "/images/resort/bars/DSC09526-3.jpg",
     introSlides: [
-      { src: "/images/pool-starry-night-DUYiQ-e6.jpg", alt: "The LED pool at night" },
-      { src: "/images/g-aerial-pool-overview-CCOWXk2j.jpg", alt: "Pool overview" },
-      { src: "/images/pool-aerial-day-BveHvOiS.jpg", alt: "Pool by day" },
-      { src: "/images/g-pool-night-1-WgdE2JvM.jpg", alt: "Poolside at night" },
+      { src: "/images/resort/bars/DSC08652-2.jpg", alt: "Iguana Bar's poolside palapa across the turquoise pool by day" },
+      { src: "/images/resort/bars/DSC08675.jpg", alt: "Iguana Bar counter and barstools beside the pool in daylight" },
+      { src: "/images/resort/bars/DSC09546-2.jpg", alt: "Iguana Bar glowing at dusk with guests relaxing in the pool" },
+      { src: "/images/resort/bars/DSC09544-2.jpg", alt: "Iguana Bar's illuminated sign and barstools at night" },
+      { src: "/images/resort/bars/DSC09526-2.jpg", alt: "Iguana Bar lit up at night beside the pool" },
     ],
-    ctaImage: "/images/pool-aerial-night-BvFgNxHn.jpg",
-    cardImage: "/images/iguana-bar-pool-CP3k5v8t.jpg",
+    ctaImage: "/images/resort/dining/IMG_78472.JPG",
+    cardImage: "/images/resort/bars/DSC08652-2.jpg",
     text: {
       en: {
         hero: {
@@ -185,16 +186,16 @@ export function getVenue(slug: string) {
 export const barsIndexCopy: Record<Locale, { eyebrow: string; title: string; description: string; viewCta: string }> = {
   en: {
     eyebrow: "Eat & Drink · Bars",
-    title: "Two bars, both on the water",
+    title: "Two bars, both on the resort",
     description:
-      "Whether you want toes in the sand at sunset or a frozen drink without leaving the pool, there's a bar a few steps away.",
+      "Both bars are right here on the resort: toes in the sand at sunset, or a frozen drink without leaving the pool — each just a few steps from your room.",
     viewCta: "Visit the bar",
   },
   es: {
     eyebrow: "Comer y beber · Bares",
-    title: "Dos bares, ambos sobre el agua",
+    title: "Dos bares, ambos en el resort",
     description:
-      "Ya sea con los pies en la arena al atardecer o un trago frozen sin salir de la piscina, hay un bar a pocos pasos.",
+      "Ambos bares están aquí en el resort: los pies en la arena al atardecer o un trago frozen sin salir de la piscina, cada uno a pocos pasos de tu habitación.",
     viewCta: "Visitar el bar",
   },
 };

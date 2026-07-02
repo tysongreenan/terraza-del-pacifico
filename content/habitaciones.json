@@ -19,12 +19,12 @@
     "H3: Stay Connected"
   ],
   "imgs": [
-    "/assets/Logo-nuevo-B86U915-.png",
-    "/assets/room-two-beds-D9Pgywgw.jpg",
-    "/assets/room-standard-wide-DxUYeeXV.jpg",
-    "/assets/room-junior-suite-wide-D5tbucTk.jpg",
-    "/assets/villa-living-room-CHkIhyVw.jpg",
-    "/assets/Logo-nuevo-B86U915-.png"
+    "/images/brand/Logo-nuevo-B86U915-.png",
+    "/images/suites/general/room-two-beds-D9Pgywgw.jpg",
+    "/images/suites/standard/room-standard-wide-DxUYeeXV.jpg",
+    "/images/suites/junior/room-junior-suite-wide-D5tbucTk.jpg",
+    "/images/suites/villa/villa-living-room-CHkIhyVw.jpg",
+    "/images/brand/Logo-nuevo-B86U915-.png"
   ],
   "ctas": [
     "Home",

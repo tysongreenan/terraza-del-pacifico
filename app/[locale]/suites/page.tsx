@@ -1,0 +1,69 @@
+import type { Metadata } from "next";
+import data from "@/content/habitaciones.json";
+import { SuitesHub } from "@/components/rooms/suites-hub";
+import { JsonLd } from "@/components/json-ld";
+import { getDictionary } from "@/lib/dictionaries";
+import type { Locale } from "@/lib/i18n";
+import { breadcrumbJsonLd, pageMetadata, roomsJsonLd } from "@/lib/seo";
+
+const path = "suites";
+
+// Localized title/description so the Spanish route does not inherit the
+// English-only strings stored in habitaciones.json. The OG/Twitter/canonical
+// and hreflang alternates still come from pageMetadata().
+const seoCopy: Record<Locale, { title: string; desc: string }> = {
+  es: {
+    title: "Habitaciones frente al mar en Playa Hermosa de Jacó | Terraza",
+    desc: "Habitaciones Superior, Estándar, Junior Suite y villas en Playa Hermosa. Vistas al Pacífico, aire acondicionado, WiFi y acceso a la playa.",
+  },
+  en: {
+    title: "Beachfront Rooms & Villas in Playa Hermosa de Jacó | Terraza",
+    desc: "Superior, Standard, Junior Suite rooms and villas in Playa Hermosa. Pacific views, air conditioning, WiFi and direct beach access.",
+  },
+};
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const l = (locale === "en" ? "en" : "es") as Locale;
+  return pageMetadata({
+    params: Promise.resolve({ locale }),
+    path,
+    content: { ...data, ...seoCopy[l] },
+  });
+}
+
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const l = locale as Locale;
+  const dict = getDictionary(l);
+
+  // ItemList of HotelRoom nodes built from the SAME on-page room data the hub
+  // renders (dict.suites.items). Only verifiable display strings are mapped —
+  // name + slug always, plus guests/size/beds which exist for every room. Price
+  // is intentionally omitted by roomsJsonLd until confirmed.
+  const rooms = dict.suites.items.map((room) => ({
+    slug: room.slug,
+    name: room.name,
+    guests: room.guests,
+    size: room.size,
+    beds: room.beds,
+  }));
+
+  return (
+    <>
+      <JsonLd
+        data={breadcrumbJsonLd({ locale: l, path, title: dict.suites.title })}
+      />
+      <JsonLd data={roomsJsonLd(l, rooms)} />
+      <SuitesHub locale={l} dict={dict} />
+    </>
+  );
+}

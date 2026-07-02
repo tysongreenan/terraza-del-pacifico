@@ -4,15 +4,20 @@ import type { Dictionary } from "@/lib/dictionaries";
 
 export function Testimonials({ dict }: { dict: Dictionary }) {
   const t = dict.testimonials;
-  const reviewsId = process.env.NEXT_PUBLIC_ELFSIGHT_REVIEWS_ID;
+  // Use the single-row reviews widget (same one the About page renders) so the
+  // home testimonials display on one line instead of the masonry grid. Falls
+  // back to the original grid widget if the About id isn't configured.
+  const reviewsId =
+    process.env.NEXT_PUBLIC_ELFSIGHT_ABOUT_ID ??
+    process.env.NEXT_PUBLIC_ELFSIGHT_REVIEWS_ID;
 
   return (
-    <section className="bg-concept-sand px-6 py-16 text-center md:px-12 md:py-24">
+    <section className="bg-concept-sand px-6 py-section-sm text-center md:px-12 md:py-section">
       <div className="container">
         <Reveal>
           <p className="eyebrow">{t.eyebrow}</p>
           {t.title && (
-            <h2 className="mt-4 font-concept text-3xl font-medium leading-[1.12] text-concept-ink md:text-[46px]">
+            <h2 className="mt-4 font-concept text-h1 font-medium leading-[1.12] text-concept-ink ">
               {t.title}
             </h2>
           )}
@@ -33,10 +38,10 @@ export function Testimonials({ dict }: { dict: Dictionary }) {
                   >
                     ★★★★★
                   </div>
-                  <blockquote className="mt-4 font-concept text-xl italic leading-snug text-concept-ink md:text-[23px]">
+                  <blockquote className="mt-4 font-concept text-xl italic leading-snug text-concept-ink text-h4">
                     “{item.quote}”
                   </blockquote>
-                  <figcaption className="mt-4 text-xs font-medium uppercase tracking-[0.1em] text-[#8a8478]">
+                  <figcaption className="mt-4 text-xs font-medium uppercase tracking-[0.1em] text-concept-ink-subtle">
                     {item.author}
                     {item.meta ? ` · ${item.meta}` : ""}
                   </figcaption>

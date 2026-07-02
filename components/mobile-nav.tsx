@@ -2,21 +2,27 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
-import { buttonVariants } from "@/components/ui/button";
+import { Menu, X, Phone } from "lucide-react";
+import { actionButtonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-type NavItem = { href: string; label: string };
+type NavLink = { href: string; label: string; external?: boolean };
+type NavChild = NavLink | { label: string; children: NavLink[] };
+type NavItem = NavLink | { label: string; children: NavChild[] };
 
 export function MobileNav({
   items,
   bookHref,
   bookLabel,
+  callHref,
+  callLabel,
   overlay = false,
 }: {
   items: NavItem[];
   bookHref: string;
   bookLabel: string;
+  callHref: string;
+  callLabel: string;
   overlay?: boolean;
 }) {
   const [open, setOpen] = useState(false);
@@ -39,25 +45,83 @@ export function MobileNav({
       </button>
 
       {open && (
-        <div className="fixed inset-x-0 top-16 z-40 border-b border-border bg-background/98 backdrop-blur shadow-lg">
+        <div
+          className={cn(
+            "fixed inset-x-0 z-40 border-b border-border bg-background shadow-lg",
+            overlay ? "top-24 md:top-[11rem]" : "top-[4.5rem] md:top-[5.5rem]"
+          )}
+        >
           <nav className="container flex flex-col py-4">
-            {items.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="flex min-h-[44px] items-center border-b border-border/50 text-base text-foreground/90 transition-colors hover:text-accent"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {items.map((item) =>
+              "children" in item ? (
+                <div
+                  key={item.label}
+                  className="border-b border-border/50 py-2"
+                >
+                  <p className="py-1 text-xs font-semibold uppercase tracking-wider text-foreground/50">
+                    {item.label}
+                  </p>
+                  {item.children.map((child) =>
+                    "children" in child ? (
+                      <div key={child.label} className="pl-3">
+                        <p className="py-1 text-xs font-semibold uppercase tracking-wider text-foreground/40">
+                          {child.label}
+                        </p>
+                        {child.children.map((grandchild) => (
+                          <Link
+                            key={grandchild.href}
+                            href={grandchild.href}
+                            target={grandchild.external ? "_blank" : undefined}
+                            rel={grandchild.external ? "noopener noreferrer" : undefined}
+                            onClick={() => setOpen(false)}
+                            className="flex min-h-[44px] items-center pl-6 text-base text-foreground/90 transition-colors hover:text-accent"
+                          >
+                            {grandchild.label}
+                          </Link>
+                        ))}
+                      </div>
+                    ) : (
+                      <Link
+                        key={child.href}
+                        href={child.href}
+                        target={child.external ? "_blank" : undefined}
+                        rel={child.external ? "noopener noreferrer" : undefined}
+                        onClick={() => setOpen(false)}
+                        className="flex min-h-[44px] items-center pl-3 text-base text-foreground/90 transition-colors hover:text-accent"
+                      >
+                        {child.label}
+                      </Link>
+                    )
+                  )}
+                </div>
+              ) : (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="flex min-h-[44px] items-center border-b border-border/50 text-base text-foreground/90 transition-colors hover:text-accent"
+                >
+                  {item.label}
+                </Link>
+              )
+            )}
+            <a
+              href={callHref}
+              onClick={() => setOpen(false)}
+              className="mt-4 inline-flex min-h-[44px] items-center gap-2 text-base font-medium text-concept-ocean transition-colors hover:text-accent"
+            >
+              <Phone className="h-4 w-4 text-accent" aria-hidden />
+              {callLabel}
+            </a>
             <Link
               href={bookHref}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
-              className={buttonVariants({
-                variant: "accent",
+              className={actionButtonVariants({
+                variant: "primary",
                 size: "lg",
-                className: "mt-4",
+                className: "mt-3",
               })}
             >
               {bookLabel}

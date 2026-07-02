@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { Reveal } from "@/components/home/reveal";
+import { actionButtonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export type SliderSlide = {
@@ -89,18 +90,21 @@ export function LuxuryImageSlider({
           <div className="flex flex-col gap-6 pb-8 md:flex-row md:items-end md:justify-between md:pb-10">
             <div className="max-w-2xl">
               {eyebrow && <p className="eyebrow">{eyebrow}</p>}
-              <h2 className="mt-3 font-concept text-3xl font-medium leading-[1.04] text-concept-ocean md:text-5xl">
+              <h2 className="mt-3 font-concept text-h1 font-medium leading-[1.04] text-concept-ocean ">
                 {title}
               </h2>
               {subtitle && (
-                <p className="mt-4 text-sm leading-relaxed text-concept-ink/75 md:text-[15px]">
+                <p className="mt-4 text-sm leading-relaxed text-concept-ink/75 md:text-body-sm">
                   {subtitle}
                 </p>
               )}
               {exploreHref && exploreLabel && (
                 <Link
                   href={exploreHref}
-                  className="mt-6 inline-flex items-center gap-2 rounded-sm border-b border-concept-gold-muted pb-1 text-xs font-semibold uppercase tracking-[0.1em] text-concept-ocean transition-colors hover:text-concept-gold-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2"
+                  className={cn(
+                    actionButtonVariants({ variant: "tertiary", surface: "light" }),
+                    "mt-6"
+                  )}
                 >
                   {exploreLabel} →
                 </Link>
@@ -132,7 +136,7 @@ export function LuxuryImageSlider({
 
       <div
         ref={trackRef}
-        className="flex gap-4 overflow-x-auto px-6 pb-2 [-ms-overflow-style:none] [scrollbar-width:none] md:gap-5 md:px-[max(1.5rem,calc((100vw-1280px)/2+1.5rem))] [&::-webkit-scrollbar]:hidden"
+        className="flex gap-4 overflow-x-auto scroll-pl-6 px-6 pb-2 [-ms-overflow-style:none] [scrollbar-width:none] md:gap-5 md:scroll-pl-[max(1.5rem,calc((100vw-1280px)/2+1.5rem))] md:px-[max(1.5rem,calc((100vw-1280px)/2+1.5rem))] [&::-webkit-scrollbar]:hidden"
         style={{ scrollSnapType: "x mandatory" }}
       >
         {slides.map((slide, index) => (
@@ -168,7 +172,7 @@ export function LuxuryImageSlider({
             />
           </div>
           {dragHint && (
-            <span className="text-[11px] font-medium uppercase tracking-[0.1em] text-concept-gold-muted">
+            <span className="text-micro font-medium uppercase tracking-[0.1em] text-concept-gold-muted">
               {dragHint}
             </span>
           )}

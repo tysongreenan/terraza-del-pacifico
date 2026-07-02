@@ -1,37 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Mail, MessageCircle, MapPin, Instagram, Facebook } from "lucide-react";
+import { Mail, MessageCircle, MapPin, Phone } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/lib/dictionaries";
-
-// Official social profiles (same for both locales).
-const socials = [
-  {
-    label: "Instagram",
-    href: "https://www.instagram.com/terrazadelpacificocr/",
-    Icon: Instagram,
-  },
-  {
-    label: "Facebook",
-    href: "https://www.facebook.com/TerrazadelPacifico",
-    Icon: Facebook,
-  },
-  {
-    label: "TikTok",
-    href: "https://www.tiktok.com/@terrazadelpacifico",
-    // lucide has no TikTok glyph — inline brand mark.
-    Icon: (props: { className?: string }) => (
-      <svg
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        aria-hidden
-        className={props.className}
-      >
-        <path d="M16.5 3c.36 2.3 1.86 4.06 4.5 4.32v2.82c-1.53.15-2.87-.35-4.43-1.29v5.66c0 5.78-6.3 7.59-8.83 3.44-1.62-2.67-.62-7.36 4.6-7.55v2.97c-.4.06-.82.16-1.21.3-1.16.42-1.82 1.16-1.64 2.46.36 2.5 4.94 3.23 4.56-1.65V3h2.45Z" />
-      </svg>
-    ),
-  },
-];
+import { socials } from "@/lib/socials";
 
 export function SiteFooter({
   locale,
@@ -45,13 +17,16 @@ export function SiteFooter({
   const p = (slug: string) => `/${locale}${slug ? `/${slug}` : ""}`;
 
   const explore = [
-    { href: p("habitaciones"), label: n.rooms },
-    { href: p("restaurante"), label: n.restaurant },
-    { href: p("bares"), label: n.bars },
-    { href: p("eventos"), label: n.events },
-    { href: p("experiencias"), label: n.experiences },
-    { href: p("galeria"), label: n.gallery },
+    { href: p("suites"), label: n.rooms },
+    { href: p("restaurant"), label: n.restaurant },
+    { href: p("bars"), label: n.bars },
+    { href: p("bakery"), label: n.bakery },
+    { href: p("events"), label: n.events },
+    { href: p("experiences"), label: n.experiences },
+    { href: p("gallery"), label: n.gallery },
     { href: p("blog"), label: n.blog },
+    { href: p("contact"), label: n.contact },
+    { href: p("policies"), label: f.policies },
   ];
 
   return (
@@ -59,7 +34,7 @@ export function SiteFooter({
       <div className="container grid gap-10 py-14 md:grid-cols-4">
         <div className="md:col-span-1">
           <Image
-            src="/images/logo-light.png"
+            src="/images/brand/logo-light.png"
             alt="Hotel Terraza del Pacífico"
             width={480}
             height={432}
@@ -68,10 +43,17 @@ export function SiteFooter({
           <p className="mt-3 text-sm italic text-primary-foreground/70">
             {f.tagline}
           </p>
-          <p className="mt-4 flex items-start gap-2 text-sm text-primary-foreground/80">
+          {/* Full postal address (NAP) — kept in sync with the Google Business Profile. */}
+          <address className="mt-4 flex items-start gap-2 text-sm not-italic text-primary-foreground/80">
             <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" aria-hidden />
-            {dict.location.address}
-          </p>
+            <span>
+              {dict.location.address}
+              <br />
+              {dict.location.addressLine2}
+              <br />
+              {dict.location.addressLine3}
+            </span>
+          </address>
           <div className="mt-5 flex gap-3">
             {socials.map(({ label, href, Icon }) => (
               <a
@@ -109,6 +91,15 @@ export function SiteFooter({
           <ul className="mt-3 space-y-2 text-primary-foreground/80">
             <li>
               <a
+                href={f.phoneHref}
+                className="inline-flex items-center gap-2 transition-colors hover:text-accent"
+              >
+                <Phone className="h-4 w-4 text-accent" aria-hidden />
+                {f.phone}
+              </a>
+            </li>
+            <li>
+              <a
                 href={`mailto:${f.email}`}
                 className="inline-flex items-center gap-2 transition-colors hover:text-accent"
               >
@@ -136,6 +127,7 @@ export function SiteFooter({
             <li>{f.checkin}</li>
             <li>{f.checkout}</li>
             <li>{f.pools}</li>
+            <li>{f.yoga}</li>
           </ul>
         </div>
       </div>

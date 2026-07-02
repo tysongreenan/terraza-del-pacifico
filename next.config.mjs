@@ -8,7 +8,67 @@ const nextConfig = {
   outputFileTracingRoot: dirname(fileURLToPath(import.meta.url)),
   images: {
     remotePatterns: [],
+    // Allow the higher-quality thumbnails (hero slide selectors) alongside the
+    // default. Next 15.3+ requires non-default quality values to be allowlisted.
+    qualities: [75, 90],
   },
+  async rewrites() {
+    return [
+      {
+        source: "/ingest/static/:path*",
+        destination: "https://us-assets.i.posthog.com/static/:path*",
+      },
+      {
+        source: "/ingest/array/:path*",
+        destination: "https://us-assets.i.posthog.com/array/:path*",
+      },
+      {
+        source: "/ingest/:path*",
+        destination: "https://us.i.posthog.com/:path*",
+      },
+    ];
+  },
+  // 301 the legacy Spanish parent route segments to their new English slugs.
+  // Children (slugs, sub-pages) are preserved via the :path* wildcard.
+  async redirects() {
+    const map = [
+      ["experiencias", "experiences"],
+      ["eventos", "events"],
+      ["habitaciones", "suites"],
+      ["bares", "bars"],
+      ["galeria", "gallery"],
+      ["restaurante", "restaurant"],
+      ["panaderia", "bakery"],
+      ["politicas", "policies"],
+      ["sobre-nosotros", "about"],
+    ];
+    // Child slugs renamed Spanish->English (the parent wildcard above maps the
+    // old /habitaciones/<child> to /suites/<child>; these catch the second hop).
+    const childMap = [
+      ["suites/estandar", "suites/standard"],
+      ["suites/comparar", "suites/compare"],
+    ];
+    return [
+      ...map.flatMap(([from, to]) => [
+        {
+          source: `/:locale(es|en)/${from}/:path*`,
+          destination: `/:locale/${to}/:path*`,
+          permanent: true,
+        },
+        {
+          source: `/:locale(es|en)/${from}`,
+          destination: `/:locale/${to}`,
+          permanent: true,
+        },
+      ]),
+      ...childMap.map(([from, to]) => ({
+        source: `/:locale(es|en)/${from}`,
+        destination: `/:locale/${to}`,
+        permanent: true,
+      })),
+    ];
+  },
+  skipTrailingSlashRedirect: true,
 };
 
 export default nextConfig;

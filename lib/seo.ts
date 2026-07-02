@@ -4,7 +4,7 @@ import { htmlLang, locales } from "@/lib/i18n";
 
 export const siteUrl = "https://terrazadelpacifico.com";
 export const siteName = "Hotel Terraza del Pacífico";
-export const defaultOgImage = "/images/og-image.jpg";
+export const defaultOgImage = "/images/brand/og-image.jpg";
 
 // A localizable string is either one shared value or a per-locale map. The map
 // form lets content/*.json supply { es, en } so each route serves metadata in
@@ -31,27 +31,32 @@ export type StaticRoute = {
   changeFrequency: "weekly" | "monthly";
 };
 
+// Routes whose path is identical in both locales. Routes whose slug differs
+// by locale (events/*, experiences/*) are NOT listed here — they're built
+// from content/events.ts and content/experiences.ts in app/sitemap.ts via
+// pageHref() so each locale gets its own correct, localized URL instead of
+// the same path forced onto both languages.
 export const staticRoutes: StaticRoute[] = [
   { slug: "home", path: "", priority: 1, changeFrequency: "weekly" },
-  { slug: "habitaciones", path: "habitaciones", priority: 0.9, changeFrequency: "monthly" },
-  { slug: "habitaciones-comparar", path: "habitaciones/comparar", priority: 0.7, changeFrequency: "monthly" },
-  { slug: "habitaciones-superior", path: "habitaciones/superior", priority: 0.8, changeFrequency: "monthly" },
-  { slug: "habitaciones-estandar", path: "habitaciones/estandar", priority: 0.8, changeFrequency: "monthly" },
-  { slug: "habitaciones-junior-suite", path: "habitaciones/junior-suite", priority: 0.8, changeFrequency: "monthly" },
-  { slug: "habitaciones-villas", path: "habitaciones/villas", priority: 0.8, changeFrequency: "monthly" },
-  { slug: "restaurante", path: "restaurante", priority: 0.9, changeFrequency: "weekly" },
-  { slug: "restaurante-menu", path: "restaurante/menu", priority: 0.8, changeFrequency: "monthly" },
-  { slug: "bares", path: "bares", priority: 0.7, changeFrequency: "monthly" },
-  { slug: "bares-golden-beach-bar", path: "bares/golden-beach-bar", priority: 0.65, changeFrequency: "monthly" },
-  { slug: "bares-iguana-bar", path: "bares/iguana-bar", priority: 0.65, changeFrequency: "monthly" },
-  { slug: "eventos", path: "eventos", priority: 0.85, changeFrequency: "monthly" },
-  { slug: "eventos-bodas", path: "eventos/bodas", priority: 0.85, changeFrequency: "monthly" },
-  { slug: "eventos-surf-nights", path: "eventos/surf-nights", priority: 0.8, changeFrequency: "weekly" },
-  { slug: "eventos-otros", path: "eventos/otros", priority: 0.75, changeFrequency: "monthly" },
-  { slug: "experiencias", path: "experiencias", priority: 0.85, changeFrequency: "weekly" },
-  { slug: "galeria", path: "galeria", priority: 0.65, changeFrequency: "monthly" },
-  { slug: "sobre-nosotros", path: "sobre-nosotros", priority: 0.7, changeFrequency: "monthly" },
-  { slug: "politicas", path: "politicas", priority: 0.4, changeFrequency: "monthly" },
+  { slug: "suites", path: "suites", priority: 0.9, changeFrequency: "monthly" },
+  { slug: "suites-compare", path: "suites/compare", priority: 0.7, changeFrequency: "monthly" },
+  { slug: "suites-superior", path: "suites/superior", priority: 0.8, changeFrequency: "monthly" },
+  { slug: "suites-standard", path: "suites/standard", priority: 0.8, changeFrequency: "monthly" },
+  { slug: "suites-junior-suite", path: "suites/junior-suite", priority: 0.8, changeFrequency: "monthly" },
+  { slug: "suites-villas", path: "suites/villas", priority: 0.8, changeFrequency: "monthly" },
+  { slug: "restaurant", path: "restaurant", priority: 0.9, changeFrequency: "weekly" },
+  { slug: "restaurant-menu", path: "restaurant/menu", priority: 0.8, changeFrequency: "monthly" },
+  { slug: "restaurant-about", path: "restaurant/about", priority: 0.6, changeFrequency: "monthly" },
+  { slug: "bars", path: "bars", priority: 0.7, changeFrequency: "monthly" },
+  { slug: "bars-golden-beach-bar", path: "bars/golden-beach-bar", priority: 0.65, changeFrequency: "monthly" },
+  { slug: "bars-iguana-bar", path: "bars/iguana-bar", priority: 0.65, changeFrequency: "monthly" },
+  { slug: "bakery", path: "bakery", priority: 0.7, changeFrequency: "monthly" },
+  { slug: "events", path: "events", priority: 0.85, changeFrequency: "monthly" },
+  { slug: "experiences", path: "experiences", priority: 0.85, changeFrequency: "weekly" },
+  { slug: "gallery", path: "gallery", priority: 0.65, changeFrequency: "monthly" },
+  { slug: "about", path: "about", priority: 0.7, changeFrequency: "monthly" },
+  { slug: "contact", path: "contact", priority: 0.6, changeFrequency: "monthly" },
+  { slug: "policies", path: "policies", priority: 0.4, changeFrequency: "monthly" },
   { slug: "blog", path: "blog", priority: 0.7, changeFrequency: "weekly" },
 ];
 
@@ -125,6 +130,8 @@ const hotelAmenities = [
   "Bar",
   "Beachfront yoga",
   "Event & wedding venue",
+  "Children's pool",
+  "Pet-friendly (dogs)",
 ];
 
 export function organizationJsonLd() {
@@ -134,30 +141,57 @@ export function organizationJsonLd() {
     "@id": `${siteUrl}/#hotel`,
     name: siteName,
     url: siteUrl,
-    logo: absoluteUrl("/images/Logo-nuevo-B86U915-.png"),
+    logo: absoluteUrl("/images/brand/Logo-nuevo-B86U915-.png"),
     image: [
       absoluteUrl(defaultOgImage),
-      absoluteUrl("/images/pool-aerial-day-BveHvOiS.jpg"),
-      absoluteUrl("/images/restaurant-view-WsRnSUPN.jpg"),
+      absoluteUrl("/images/resort/beach-aerial/exp-beach-topdown.jpg"),
+      absoluteUrl("/images/resort/dining/restaurant-view-WsRnSUPN.jpg"),
     ],
     email: "info@terrazadelpacifico.com",
-    telephone: "+50684319953",
+    // Main hotel line — matches the Google Business Profile and restaurantJsonLd
+    // (the WhatsApp booking line lives in finalCta/footer, not here).
+    telephone: "+50626433222",
+    // Mirrors the Google Business Profile listing exactly for NAP consistency.
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Playa Hermosa",
-      addressLocality: "Playa Hermosa",
+      streetAddress: "Playa Hermosa, 34",
+      addressLocality: "Jacó",
       addressRegion: "Puntarenas",
       postalCode: "04023",
       addressCountry: "CR",
     },
-    // Genuine on-page values (shown in the hero and footer).
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.7",
-      reviewCount: "42",
-      bestRating: "5",
-      worstRating: "1",
+    // Coordinates already used in the live location-section map embed
+    // (components/home/location.tsx) — Playa Hermosa, Jacó.
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: "9.580177",
+      longitude: "-84.6141703",
     },
+    // Daily reception window as published on the Google Business Profile.
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ],
+      opens: "07:00",
+      closes: "22:00",
+    },
+    // Official tourism classification, confirmed on the Google Business Profile.
+    starRating: { "@type": "Rating", ratingValue: "3" },
+    // Qualitative price tier (kept short per Google guidance; not a fabricated rate).
+    priceRange: "$$",
+    // Pet policy as published (one dog, ≤10 kg, US$20/pet/day; service animals free).
+    petsAllowed: "Dogs up to 10 kg / 22 lb allowed for a fee; service animals free.",
+    // NOTE: aggregateRating removed — the only on-page reviews are placeholders
+    // (testimonials TODO), and copying Google's review counts into self-serving
+    // Hotel markup violates Google's rich-results policy. Re-add ONLY once real,
+    // first-party reviews are displayed on-page, reflecting those numbers.
     checkinTime: "15:00",
     checkoutTime: "13:00",
     amenityFeature: hotelAmenities.map((name) => ({
@@ -173,8 +207,7 @@ export function organizationJsonLd() {
       "https://www.tiktok.com/@terrazadelpacifico",
     ],
     // TODO (need real values to add safely — fabricated structured data is a
-    // Google penalty risk): geo {latitude, longitude}, priceRange, starRating,
-    // numberOfRooms.
+    // Google penalty risk): numberOfRooms.
   };
 }
 
@@ -222,40 +255,71 @@ export function breadcrumbJsonLd({
   };
 }
 
+// FAQPage built from the on-page FAQ accordion. NOTE: since 2023 Google only
+// shows FAQ rich results for authoritative gov/health sites, so this won't
+// render rich snippets — its value is machine-readable Q&A for AI search
+// (AI Overviews, ChatGPT, Perplexity), which is the reason the section exists.
+export function faqJsonLd(items: { q: string; a: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  };
+}
+
 export function restaurantJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "Restaurant",
-    "@id": `${siteUrl}/restaurante#restaurant`,
+    "@id": `${siteUrl}/restaurant#restaurant`,
     name: "Vivace Beachfront",
-    url: absoluteUrl("/es/restaurante"),
-    image: absoluteUrl("/images/restaurant-view-WsRnSUPN.jpg"),
+    url: absoluteUrl("/es/restaurant"),
+    image: absoluteUrl("/images/resort/dining/restaurant-view-WsRnSUPN.jpg"),
     servesCuisine: ["Mediterranean", "Italian", "Costa Rican"],
     parentOrganization: { "@id": `${siteUrl}/#hotel` },
     // Published on /restaurante ("You can also call us at +506 2643 3222").
     telephone: "+50626433222",
     // Downloadable menu page linked from /restaurante.
-    hasMenu: absoluteUrl("/es/restaurante/menu"),
-    // Daily operating window as advertised on the page ("Open daily · 7 AM – 10 PM").
-    openingHoursSpecification: {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday",
-      ],
-      opens: "07:00",
-      closes: "22:00",
-    },
+    hasMenu: absoluteUrl("/es/restaurant/menu"),
+    // Open daily for three service windows (breakfast / lunch / dinner) as
+    // advertised on /restaurante. Each meal is its own OpeningHoursSpecification.
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        opens: "07:00",
+        closes: "10:00",
+        name: "Breakfast",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        opens: "12:00",
+        closes: "15:00",
+        name: "Lunch",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        opens: "18:00",
+        closes: "21:00",
+        name: "Dinner",
+      },
+    ],
+    // Same physical address as the Hotel — kept identical for NAP consistency.
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Playa Hermosa",
-      addressLocality: "Playa Hermosa",
+      streetAddress: "Playa Hermosa, 34",
+      addressLocality: "Jacó",
       addressRegion: "Puntarenas",
+      postalCode: "04023",
       addressCountry: "CR",
     },
   };
@@ -283,7 +347,7 @@ export function barsItemListJsonLd(locale: Locale, bars: BarListEntry[]) {
       item: {
         "@type": "BarOrPub",
         name: bar.name,
-        url: absoluteUrl(localizedPath(locale, `bares/${bar.slug}`)),
+        url: absoluteUrl(localizedPath(locale, `bars/${bar.slug}`)),
         image: absoluteUrl(bar.cardImage),
         parentOrganization: { "@id": `${siteUrl}/#hotel` },
         ...(bar.hours
@@ -342,7 +406,7 @@ export function roomsJsonLd(locale: Locale, rooms: RoomListEntry[]) {
         item: {
           "@type": "HotelRoom",
           name: room.name,
-          url: absoluteUrl(localizedPath(locale, `habitaciones/${room.slug}`)),
+          url: absoluteUrl(localizedPath(locale, `suites/${room.slug}`)),
           ...(occupancy !== undefined
             ? {
                 occupancy: {

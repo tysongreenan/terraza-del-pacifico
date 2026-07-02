@@ -40,14 +40,14 @@ export function MosaicGallery({
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className={cn("bg-concept-sand py-14 md:py-20", className)}>
+    <section className={cn("bg-concept-sand py-14 md:py-section", className)}>
       <div className="container">
         {(eyebrow || title) && (
           <Reveal>
             <div className="mb-8 md:mb-10">
               {eyebrow && <p className="eyebrow">{eyebrow}</p>}
               {title && (
-                <h2 className="mt-3 font-concept text-3xl font-medium leading-[1.05] text-concept-ocean md:text-[46px]">
+                <h2 className="mt-3 font-concept text-h1 font-medium leading-[1.05] text-concept-ocean ">
                   {title}
                 </h2>
               )}

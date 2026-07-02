@@ -102,8 +102,8 @@
   }
   html {
     scroll-behavior: smooth;
-    /* offset for the sticky 4rem header when jumping to #booking etc. */
-    scroll-padding-top: 5rem;
+    /* offset for the fixed header (utility bar + main bar) when jumping to #booking etc. */
+    scroll-padding-top: 7rem;
   }
 }
 
@@ -165,15 +165,15 @@
     background:
       linear-gradient(
         180deg,
-        rgba(16, 58, 77, 0.42) 0%,
-        rgba(16, 58, 77, 0.06) 34%,
-        rgba(16, 58, 77, 0.04) 56%,
-        rgba(16, 58, 77, 0.58) 100%
+        rgba(0, 0, 0, 0.52) 0%,
+        rgba(0, 0, 0, 0.18) 34%,
+        rgba(0, 0, 0, 0.16) 56%,
+        rgba(0, 0, 0, 0.68) 100%
       ),
       radial-gradient(
         ellipse 70% 60% at 50% 62%,
         rgba(0, 0, 0, 0),
-        rgba(16, 58, 77, 0.28) 100%
+        rgba(0, 0, 0, 0.38) 100%
       );
   }
 

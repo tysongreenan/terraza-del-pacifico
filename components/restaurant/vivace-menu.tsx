@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { Reveal } from "@/components/home/reveal";
+import { actionButtonVariants } from "@/components/ui/button";
 import { whatsappHref } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import type { Locale } from "@/lib/i18n";
@@ -47,10 +48,10 @@ export function VivaceMenu({
   return (
     <article className="home-concept bg-concept-sand">
       {/* compact hero */}
-      <section className="relative overflow-hidden text-white">
+      <section className="relative overflow-hidden bg-concept-ocean text-white">
         <div className="relative h-[340px] md:h-[400px]">
           <Image
-            src="/images/restaurant-dining-nygPbVtS.jpg"
+            src="/images/resort/dining/restaurant-dining-nygPbVtS.jpg"
             alt={labels.title}
             fill
             priority
@@ -59,7 +60,7 @@ export function VivaceMenu({
           />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,24,37,0.4)_0%,rgba(10,24,37,0.1)_45%,rgba(10,24,37,0.72)_100%)]" />
           <div className="container relative flex h-full flex-col justify-end pb-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-concept-gold">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white">
               {labels.eyebrow}
             </p>
             <h1 className="mt-3 font-concept text-display font-medium leading-none text-shadow-hero ">
@@ -70,7 +71,7 @@ export function VivaceMenu({
       </section>
 
       {/* category nav + language pill */}
-      <div className="sticky top-[4.25rem] z-30 border-b border-[#e7dfcf] bg-concept-sand/95 backdrop-blur md:top-[4.75rem]">
+      <div className="sticky top-[4.25rem] z-30 border-b border-concept-border-soft bg-concept-sand/95 backdrop-blur md:top-[4.75rem]">
         <div className="container relative flex items-center">
           <div className="flex flex-1 flex-wrap items-center justify-center gap-1 py-4 md:pr-28">
             {vivaceMenu.map((c) => (
@@ -97,7 +98,7 @@ export function VivaceMenu({
                 onClick={() => setLang(l)}
                 className={cn(
                   "rounded-full px-4 py-1.5 text-xs uppercase tracking-[0.12em] transition-colors",
-                  lang === l ? "bg-concept-gold font-semibold text-[#1a1611]" : "text-[#5f5a52]"
+                  lang === l ? "bg-concept-gold font-semibold text-concept-ink-strong" : "text-[#5f5a52]"
                 )}
               >
                 {l}
@@ -143,10 +144,10 @@ export function VivaceMenu({
       </section>
 
       {/* footer actions */}
-      <section className="border-t border-[#e7dfcf] bg-concept-sand-muted py-section-sm">
+      <section className="border-t border-concept-border-soft bg-concept-sand-muted py-section-sm">
         <div className="container flex flex-col items-center justify-between gap-4 sm:flex-row">
           <Link
-            href={`/${locale}/restaurante`}
+            href={`/${locale}/restaurant`}
             className="text-xs font-semibold uppercase tracking-[0.12em] text-concept-ocean transition-colors hover:text-concept-gold-muted"
           >
             {labels.back}
@@ -155,7 +156,7 @@ export function VivaceMenu({
             href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-sm bg-concept-gold px-8 py-3.5 text-caption font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90"
+            className={actionButtonVariants({ variant: "primary" })}
           >
             {labels.reserve}
           </a>

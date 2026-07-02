@@ -1,8 +1,8 @@
 {
   "url": "https://terrazadelpacifico.com/habitaciones/villas",
   "title": {
-    "es": "Villas | Hotel Terraza del Pacífico",
-    "en": "Villas | Hotel Terraza del Pacífico"
+    "es": "Villa con vista parcial al mar en Playa Hermosa de Jacó",
+    "en": "Villa with Partial Ocean View in Playa Hermosa de Jacó"
   },
   "desc": {
     "es": "Villas amplias para hasta 6 huéspedes, con cocina completa y sala privada en Playa Hermosa. Ideales para familias, grupos y estancias largas.",
@@ -23,15 +23,15 @@
     "H3: Stay Connected"
   ],
   "imgs": [
-    "/assets/Logo-nuevo-B86U915-.png",
-    "/images/villa-living-room-CHkIhyVw.jpg",
-    "/images/Suit photos/RLR_48512.jpg",
-    "/images/Suit photos/IMG_4757.jpg",
-    "/images/Suit photos/IMG_4779.jpg",
-    "/images/Suit photos/IMG_4763.jpg",
-    "/images/Suit photos/IMG_4762.jpg",
-    "/images/villa-kitchen-detail-CYiwCD4T.jpg",
-    "/assets/Logo-nuevo-B86U915-.png"
+    "/images/brand/Logo-nuevo-B86U915-.png",
+    "/images/suites/villa/villa-living-room-CHkIhyVw.jpg",
+    "/images/suites/originals/RLR_48512.JPG",
+    "/images/suites/originals/IMG_4757.JPG",
+    "/images/suites/originals/IMG_4779.JPG",
+    "/images/suites/originals/IMG_4763.JPG",
+    "/images/suites/originals/IMG_4762.JPG",
+    "/images/suites/villa/villa-kitchen-detail-CYiwCD4T.jpg",
+    "/images/brand/Logo-nuevo-B86U915-.png"
   ],
   "ctas": [
     "Home",

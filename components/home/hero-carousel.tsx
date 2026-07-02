@@ -2,15 +2,15 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Pause, Play, Star } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { heroSlides } from "@/content/hero-slides";
-import { HeroBookingBar } from "@/components/home/hero-booking-bar";
-import { buttonVariants } from "@/components/ui/button";
+import { actionButtonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import type { Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/lib/dictionaries";
 import { bookingHref } from "@/lib/site";
+import { DirectBookingNote } from "@/components/direct-booking-note";
 
 const AUTO_ADVANCE_MS = 8000;
 
@@ -53,42 +53,13 @@ function SlideThumb({
         src={thumb}
         alt=""
         fill
-        sizes={size === "sm" ? "64px" : "96px"}
+        // Thumbnails render small (64–96px) but downscale busy aerial photos,
+        // so bump quality above the default 75 to keep edges crisp. Sizes are
+        // set to the 2x pixel width so high-DPR screens get a dense candidate.
+        sizes={size === "sm" ? "128px" : "192px"}
+        quality={90}
         className="object-cover"
       />
-    </button>
-  );
-}
-
-function PlayPauseButton({
-  locale,
-  stopped,
-  onToggle,
-}: {
-  locale: Locale;
-  stopped: boolean;
-  onToggle: () => void;
-}) {
-  const label = stopped
-    ? locale === "en"
-      ? "Play slideshow"
-      : "Reproducir presentación"
-    : locale === "en"
-      ? "Pause slideshow"
-      : "Pausar presentación";
-
-  return (
-    <button
-      type="button"
-      onClick={onToggle}
-      aria-label={label}
-      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/45 bg-black/20 text-white backdrop-blur-sm transition-colors hover:bg-black/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-    >
-      {stopped ? (
-        <Play className="h-4 w-4" aria-hidden />
-      ) : (
-        <Pause className="h-4 w-4" aria-hidden />
-      )}
     </button>
   );
 }
@@ -192,7 +163,7 @@ export function HeroCarousel({
       />
       {/* Media + copy — overflow only clips backgrounds, not the booking bar */}
       <div
-        className="relative min-h-[92svh] overflow-hidden"
+        className="relative min-h-[92svh] overflow-hidden bg-concept-ocean"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
         onFocusCapture={() => setPaused(true)}
@@ -249,9 +220,9 @@ export function HeroCarousel({
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/15 to-transparent" />
 
-        <div className="container relative z-10 flex min-h-[92svh] w-full items-end pb-36 pt-28 md:pb-44 md:pt-32">
+        <div className="container relative z-10 flex min-h-[92svh] w-full items-end pb-36 pt-32 md:pb-44 md:pt-48">
           <div className="max-w-2xl text-white">
-            <p className="animate-rise text-sm font-semibold uppercase tracking-[0.22em] text-concept-gold text-shadow-hero">
+            <p className="animate-rise text-sm font-semibold uppercase tracking-[0.22em] text-white text-shadow-hero">
               {h.eyebrow}
             </p>
             <h1
@@ -273,9 +244,11 @@ export function HeroCarousel({
             >
               <Link
                 href={bookingHref}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={cn(
-                  buttonVariants({ size: "lg" }),
-                  "inline-flex min-w-[220px] items-center justify-center gap-2 bg-white text-primary shadow-xl shadow-black/25 hover:bg-white/92"
+                  actionButtonVariants({ variant: "primary", size: "lg" }),
+                  "min-w-[220px] shadow-xl shadow-black/25"
                 )}
               >
                 {h.primaryCta}
@@ -289,47 +262,21 @@ export function HeroCarousel({
               </div>
             </div>
 
-            {/* Mobile: inline strip below CTA */}
+            {/* Direct-booking reassurance — subtle line beneath the CTA */}
             <div
-              className="animate-rise mt-6 flex items-center gap-2.5 sm:hidden"
-              style={{ animationDelay: "0.32s" }}
+              className="animate-rise mt-4"
+              style={{ animationDelay: "0.28s" }}
             >
-              <PlayPauseButton
-                locale={locale}
-                stopped={stopped}
-                onToggle={() => setStopped((v) => !v)}
-              />
-              <div
-                className="flex gap-2.5 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-                role="tablist"
-                aria-label={h.slideLabel}
-              >
-                {slides.map((slide, index) => (
-                  <SlideThumb
-                    key={slide.id}
-                    slide={slide}
-                    index={index}
-                    active={active}
-                    onSelect={selectSlide}
-                    label={h.slideLabel}
-                    size="sm"
-                  />
-                ))}
-              </div>
+              <DirectBookingNote locale={locale} />
             </div>
-          </div>
 
-          {/* Desktop: pinned bottom-right, level with CTA row */}
-          <div className="absolute bottom-36 right-6 hidden items-end gap-3 sm:flex md:bottom-40 md:right-8 xl:right-0">
-            <PlayPauseButton
-              locale={locale}
-              stopped={stopped}
-              onToggle={() => setStopped((v) => !v)}
-            />
+            {/* Mobile + tablet: inline strip below CTA (keeps clear of the
+                reviews row; the wide pinned strip only fits at xl) */}
             <div
-              className="flex gap-2.5 md:gap-3"
+              className="animate-rise mt-6 flex gap-2.5 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] xl:hidden [&::-webkit-scrollbar]:hidden"
               role="tablist"
               aria-label={h.slideLabel}
+              style={{ animationDelay: "0.32s" }}
             >
               {slides.map((slide, index) => (
                 <SlideThumb
@@ -339,26 +286,35 @@ export function HeroCarousel({
                   active={active}
                   onSelect={selectSlide}
                   label={h.slideLabel}
-                  size="md"
+                  size="sm"
                 />
               ))}
             </div>
           </div>
+
+          {/* Desktop (xl+): pinned bottom-right, level with CTA row */}
+          <div
+            className="absolute bottom-40 right-0 hidden items-end gap-3 xl:flex"
+            role="tablist"
+            aria-label={h.slideLabel}
+          >
+            {slides.map((slide, index) => (
+              <SlideThumb
+                key={slide.id}
+                slide={slide}
+                index={index}
+                active={active}
+                onSelect={selectSlide}
+                label={h.slideLabel}
+                size="md"
+              />
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* Booking bar + trust — one sand bridge into the next section */}
-      <div className="relative z-20 bg-concept-sand">
-        <div className="relative z-30 -mt-12 px-6 md:-mt-[4.5rem] md:px-0">
-          <div className="container">
-            <HeroBookingBar dict={dict} />
-          </div>
-        </div>
-        <p className="px-6 pb-8 pt-5 text-center text-xs font-medium uppercase tracking-[0.14em] text-concept-ocean md:px-12 md:pb-10 md:pt-6">
-          <span className="text-concept-gold-muted">◆</span>
-          <span className="mx-2">{h.trust}</span>
-        </p>
-      </div>
+      {/* Sand bridge into the next section */}
+      <div className="relative z-20 bg-concept-sand pb-8 pt-8 md:pb-10 md:pt-10" />
     </section>
   );
 }

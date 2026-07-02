@@ -6,6 +6,8 @@ import { useState } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight, Diamond } from "lucide-react";
 import { Reveal } from "@/components/home/reveal";
 import { LuxuryCtaBand } from "@/components/luxury/primitives";
+import { actionButtonVariants } from "@/components/ui/button";
+import { DirectBookingNote } from "@/components/direct-booking-note";
 import { bookingHref, whatsappHref, eventsEmail } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import type { Locale } from "@/lib/i18n";
@@ -32,6 +34,7 @@ function roomImageAlt(room: Room, locale: Locale) {
 // Shared focus ring so keyboard focus is visible on gold and bordered controls.
 const focusRing =
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2 focus-visible:ring-offset-transparent";
+const roomsHeroImage = "/images/resort/grounds/LEd pool view from room .webp";
 
 export function SuitesHub({
   locale,
@@ -61,40 +64,40 @@ export function SuitesHub({
   return (
     <article className="home-concept bg-concept-sand">
       {/* HERO — cinematic carousel cycling all rooms, switcher docked below */}
-      <section className="relative overflow-hidden text-white">
+      <section className="relative overflow-hidden bg-concept-ocean text-white">
         <div className="relative min-h-[78svh] md:min-h-[88svh]">
-          {rooms.map(({ room, editorial }, i) => (
-            <Image
-              key={room.slug}
-              src={editorial.image}
-              alt={roomImageAlt(room, locale)}
-              fill
-              priority={i === 0}
-              sizes="100vw"
-              className={cn(
-                "object-cover transition-opacity [transition-duration:900ms]",
-                i === active ? "opacity-100" : "opacity-0"
-              )}
-            />
-          ))}
+          <Image
+            src={roomsHeroImage}
+            alt={
+              locale === "es"
+                ? "Vista desde una habitacion hacia la piscina, jardines y Playa Hermosa"
+                : "View from a room toward the pool, gardens and Playa Hermosa"
+            }
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
           <div className="hero-scrim absolute inset-0" />
 
           <div className="container relative flex min-h-[78svh] flex-col justify-end pb-44 pt-28 md:min-h-[88svh] md:pb-48">
             <Reveal>
-              <p className="eyebrow text-concept-gold">{copy.hero.eyebrow}</p>
-              <h1 className="mt-4 max-w-3xl font-concept text-4xl font-medium leading-[1.02] text-shadow-hero md:text-6xl lg:text-[68px]">
+              <p className="text-eyebrow uppercase text-white text-shadow-hero">{copy.hero.eyebrow}</p>
+              <h1 className="mt-4 max-w-3xl font-concept text-display font-medium leading-[1.02] text-shadow-hero ">
                 {copy.hero.titleLines[0]}
                 <br />
                 {copy.hero.titleLines[1]}
               </h1>
-              <p className="mt-5 max-w-xl text-base leading-relaxed text-white/88 md:text-lg">
+              <p className="mt-5 max-w-xl text-base leading-relaxed text-white/90 text-shadow-hero md:text-lg">
                 {copy.hero.description}
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
                   href={bookingHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={cn(
-                    "inline-flex items-center justify-center gap-2 rounded-sm bg-concept-gold px-7 py-3.5 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90",
+                    actionButtonVariants({ variant: "primary", size: "lg" }),
                     focusRing
                   )}
                 >
@@ -102,15 +105,16 @@ export function SuitesHub({
                   <ArrowRight className="h-4 w-4" aria-hidden />
                 </a>
                 <Link
-                  href={`/${locale}/habitaciones/comparar`}
+                  href={`/${locale}/suites/compare`}
                   className={cn(
-                    "inline-flex items-center justify-center rounded-sm border border-white/60 px-7 py-3.5 text-[13px] font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10",
+                    actionButtonVariants({ variant: "secondary", surface: "dark", size: "lg" }),
                     focusRing
                   )}
                 >
                   {copy.hero.secondaryCta}
                 </Link>
               </div>
+              <DirectBookingNote locale={locale} className="mt-5" />
             </Reveal>
 
             {/* carousel arrows */}
@@ -141,62 +145,20 @@ export function SuitesHub({
           </div>
         </div>
 
-        {/* room-type switcher bar — overlaps hero bottom */}
-        <div className="container relative z-10 -mt-24 pb-px md:-mt-20">
-          <div className="flex flex-col overflow-hidden rounded-sm bg-white/95 shadow-[0_14px_40px_rgba(16,58,77,0.2)] backdrop-blur md:flex-row md:items-stretch">
-            {rooms.map(({ room }, i) => (
-              <button
-                key={room.slug}
-                type="button"
-                onClick={() => setActive(i)}
-                aria-current={i === active ? "true" : undefined}
-                className={cn(
-                  "flex-1 border-b border-[#eae4d8] px-6 py-4 text-left transition-colors last:border-b-0 md:border-b-0 md:border-r",
-                  focusRing,
-                  i === active && "border-b-2 border-b-concept-gold md:border-b-0 md:border-t-2 md:border-t-concept-gold"
-                )}
-              >
-                <div className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#6b6559]">
-                  {room.guests} · {room.size}
-                </div>
-                <div
-                  className={cn(
-                    "mt-1 font-concept text-[17px]",
-                    i === active ? "text-concept-ocean" : "text-concept-ink"
-                  )}
-                >
-                  {room.name}
-                </div>
-              </button>
-            ))}
-            <div className="flex items-center justify-center p-3">
-              <a
-                href={bookingHref}
-                className={cn(
-                  "inline-flex w-full items-center justify-center rounded-sm bg-concept-gold px-7 py-3.5 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90 md:w-auto",
-                  focusRing
-                )}
-              >
-                {copy.switcher.reserve}
-              </a>
-            </div>
-          </div>
-
-          {/* Announce the active room to screen readers as the carousel changes. */}
-          <p aria-live="polite" className="sr-only">
-            {locale === "es"
-              ? `Mostrando ${activeRoom.room.name}`
-              : `Showing ${activeRoom.room.name}`}
-          </p>
-        </div>
+        {/* Announce the active room to screen readers as the carousel changes. */}
+        <p aria-live="polite" className="sr-only">
+          {locale === "es"
+            ? `Mostrando ${activeRoom.room.name}`
+            : `Showing ${activeRoom.room.name}`}
+        </p>
       </section>
 
       {/* INTRO band */}
-      <section className="py-16 md:py-24">
+      <section className="py-section-sm md:py-section">
         <div className="container max-w-4xl text-center">
           <Reveal>
             <p className="eyebrow">{copy.intro.eyebrow}</p>
-            <p className="mx-auto mt-5 max-w-3xl font-concept text-2xl font-normal leading-[1.34] text-concept-ink md:text-[34px]">
+            <p className="mx-auto mt-5 max-w-3xl font-concept font-normal leading-[1.34] text-concept-ink text-h2">
               {copy.intro.body.map((seg, i) =>
                 typeof seg === "string" ? (
                   <span key={i}>{seg}</span>
@@ -221,56 +183,56 @@ export function SuitesHub({
       </section>
 
       {/* EDITORIAL ROOM FEATURES — alternating frames + overlapping spec panel */}
-      <div className="pb-4">
-        {rooms.map(({ room, editorial }, i) => (
-          <RoomFeature
-            key={room.slug}
-            locale={locale}
-            dict={dict}
-            room={room}
-            editorial={editorial}
-            reverse={i % 2 === 1}
-          />
-        ))}
-      </div>
+      {rooms.map(({ room, editorial }, i) => (
+        <RoomFeature
+          key={room.slug}
+          locale={locale}
+          dict={dict}
+          room={room}
+          editorial={editorial}
+          reverse={i % 2 === 1}
+        />
+      ))}
 
-      {/* compare CTA */}
-      <div className="container pb-20 text-center md:pb-24">
-        <Link
-          href={`/${locale}/habitaciones/comparar`}
-          className={cn(
-            "inline-flex items-center gap-2 rounded-sm border border-[#cdbfa6] px-8 py-4 text-xs font-semibold uppercase tracking-[0.12em] text-concept-ocean transition-colors hover:border-concept-ocean",
-            focusRing
-          )}
-        >
-          {copy.compareCta}
-        </Link>
-      </div>
+      {/* compare CTA — own section, sits clear below the last villa spec card */}
+      <section className="relative z-20 pb-10 pt-20 text-center md:pb-14 md:pt-24">
+        <div className="container">
+          <Link
+            href={`/${locale}/suites/compare`}
+            className={cn(
+              actionButtonVariants({ variant: "secondary", surface: "light", size: "lg" }),
+              focusRing
+            )}
+          >
+            {copy.compareCta}
+          </Link>
+        </div>
+      </section>
 
       {/* INCLUDED IN EVERY ROOM */}
-      <section className="bg-concept-sand py-16 md:py-24">
+      <section className="bg-concept-sand py-section-sm md:py-section">
         <div className="container">
           <Reveal>
             <div className="mx-auto mb-12 max-w-2xl text-center md:mb-14">
               <p className="eyebrow">{copy.included.eyebrow}</p>
-              <h2 className="mt-4 font-concept text-3xl font-medium leading-[1.06] text-concept-ocean md:text-[44px]">
+              <h2 className="mt-4 font-concept text-h1 font-medium leading-[1.06] text-concept-ocean ">
                 {copy.included.title}
               </h2>
-              <p className="mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-concept-ink/80">
+              <p className="mx-auto mt-5 max-w-xl text-body-sm leading-relaxed text-concept-ink/80">
                 {copy.included.body}
               </p>
             </div>
           </Reveal>
-          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-px overflow-hidden rounded-sm border border-[#e7dfcf] bg-[#e7dfcf] sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-px overflow-hidden rounded-sm border border-concept-border-soft bg-concept-border-soft sm:grid-cols-2 lg:grid-cols-3">
             {copy.included.items.map((item) => (
               <div key={item.title} className="bg-concept-sand p-8 md:p-9">
                 <span className="mb-5 flex h-9 w-9 items-center justify-center rounded-full border border-concept-gold text-concept-gold">
                   <Diamond className="h-3.5 w-3.5" aria-hidden />
                 </span>
-                <h3 className="font-concept text-2xl text-concept-ocean">
+                <h3 className="font-concept text-h3 text-concept-ocean">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-[13px] leading-relaxed text-[#5f5a52]">
+                <p className="mt-2 text-caption leading-relaxed text-[#5f5a52]">
                   {item.body}
                 </p>
               </div>
@@ -289,7 +251,7 @@ export function SuitesHub({
         primaryHref={`mailto:${eventsEmail}`}
         secondaryLabel={copy.cta.secondary}
         secondaryHref={whatsappHref}
-        image="/images/pool-aerial-day-BveHvOiS.jpg"
+        image="/images/suites/general/exp-room-pool-view.webp"
       />
     </article>
   );
@@ -317,10 +279,14 @@ function RoomFeature({
   ];
 
   return (
-    <section className="container relative py-8 md:py-12">
+    <section className="container relative py-8 md:py-section-sm">
       <div
         className={cn(
           "relative flex flex-col gap-0 md:block",
+          // Reserve height for the absolutely-positioned spec panel (top-20 +
+          // its content) so a tall panel never bleeds down over the next room's
+          // image on desktop.
+          "md:min-h-[640px]",
           // give the floating panel room to overlap on desktop
           reverse ? "md:pl-[300px]" : "md:pr-[300px]"
         )}
@@ -346,9 +312,9 @@ function RoomFeature({
             {editorial.badge && (
               <span
                 className={cn(
-                  "absolute top-6 text-[10px] font-semibold uppercase tracking-[0.16em]",
+                  "absolute top-6 text-micro font-semibold uppercase tracking-[0.16em]",
                   room.slug === "villas"
-                    ? "left-6 bg-concept-gold px-3 py-1.5 text-[#1a1611]"
+                    ? "left-6 bg-concept-gold px-3 py-1.5 text-concept-ink-strong"
                     : "left-6 rounded-full border border-white/55 px-4 py-2 text-white"
                 )}
               >
@@ -361,15 +327,15 @@ function RoomFeature({
                 reverse ? "right-7 text-right" : "left-7"
               )}
             >
-              <p className="mb-2.5 text-[11px] font-medium uppercase tracking-[0.22em] text-[#f3ead6]">
+              <p className="mb-2.5 text-micro font-medium uppercase tracking-[0.22em] text-concept-cream">
                 {editorial.kicker}
               </p>
-              <h2 className="font-concept text-4xl font-medium leading-none text-white md:text-5xl">
+              <h2 className="font-concept text-h1 font-medium leading-none text-white ">
                 {room.name}
               </h2>
             </div>
             {editorial.photoCount > 0 && (
-              <p className="absolute bottom-6 right-7 z-10 hidden font-mono text-[11px] tracking-[0.14em] text-white/80 md:block">
+              <p className="absolute bottom-6 right-7 z-10 hidden font-mono text-micro tracking-[0.14em] text-white/80 md:block">
                 {suitesHubContent[locale].galleryLabel(editorial.photoCount)}
               </p>
             )}
@@ -384,13 +350,13 @@ function RoomFeature({
             reverse ? "md:left-0" : "md:right-0"
           )}
         >
-          <h3 className="font-concept text-3xl font-medium leading-none text-concept-ocean">
+          <h3 className="font-concept text-h3 font-medium leading-none text-concept-ocean">
             {room.name}
           </h3>
-          <p className="mt-4 text-sm leading-[1.7] text-[#6f6a62]">
+          <p className="mt-4 text-sm leading-[1.7] text-concept-ink-muted">
             {editorial.description}
           </p>
-          <dl className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-3 border-y border-[#e7dfcf] py-5">
+          <dl className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-3 border-y border-concept-border-soft py-5">
             {stats.map((stat, i) => (
               <div key={stat.label} className="flex items-center gap-4">
                 {i > 0 && (
@@ -400,7 +366,7 @@ function RoomFeature({
                   <dd className="font-concept text-2xl leading-none text-concept-ocean">
                     {stat.value}
                   </dd>
-                  <dt className="mt-1 text-[9px] font-semibold uppercase tracking-[0.12em] text-[#6b6559]">
+                  <dt className="mt-1 text-micro font-semibold uppercase tracking-[0.12em] text-[#6b6559]">
                     {stat.label}
                   </dt>
                 </div>
@@ -410,23 +376,26 @@ function RoomFeature({
           <div className="mt-7 flex flex-wrap gap-3">
             <a
               href={bookingHref}
+              target="_blank"
+              rel="noopener noreferrer"
               className={cn(
-                "rounded-sm bg-concept-gold px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.1em] text-[#1a1611] transition-opacity hover:opacity-90",
+                actionButtonVariants({ variant: "primary" }),
                 focusRing
               )}
             >
               {s.bookCta}
             </a>
             <Link
-              href={`/${locale}/habitaciones/${room.slug}`}
+              href={`/${locale}/suites/${room.slug}`}
               className={cn(
-                "rounded-sm border border-[#cdbfa6] px-6 py-3.5 text-xs font-semibold uppercase tracking-[0.1em] text-concept-ocean transition-colors hover:border-concept-ocean",
+                actionButtonVariants({ variant: "secondary", surface: "light" }),
                 focusRing
               )}
             >
               {editorial.viewCta}
             </Link>
           </div>
+          <DirectBookingNote locale={locale} surface="light" className="mt-4" />
         </Reveal>
       </div>
     </section>

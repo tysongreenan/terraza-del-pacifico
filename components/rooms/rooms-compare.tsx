@@ -65,7 +65,7 @@ export function RoomsCompare({
   return (
     <article className="home-concept bg-concept-sand">
       {/* HERO — condensed cinematic band */}
-      <section className="relative overflow-hidden text-white">
+      <section className="relative overflow-hidden bg-concept-ocean text-white">
         <div className="relative min-h-[56svh] md:min-h-[60svh]">
           <Image
             src={heroImage}
@@ -78,11 +78,11 @@ export function RoomsCompare({
           <div className="hero-scrim absolute inset-0" />
           <div className="container relative flex min-h-[56svh] flex-col justify-end pb-16 pt-28 md:min-h-[60svh] md:pb-20">
             <Reveal>
-              <p className="eyebrow text-concept-gold">{copy.hero.eyebrow}</p>
-              <h1 className="mt-4 font-concept text-4xl font-medium leading-[1.02] text-shadow-hero md:text-6xl">
+              <p className="text-eyebrow uppercase text-white text-shadow-hero">{copy.hero.eyebrow}</p>
+              <h1 className="mt-4 font-concept text-display font-medium leading-[1.02] text-shadow-hero ">
                 {copy.hero.title}
               </h1>
-              <p className="mt-4 max-w-lg text-base leading-relaxed text-white/88">
+              <p className="mt-4 max-w-lg text-base leading-relaxed text-white/90 text-shadow-hero">
                 {copy.hero.description}
               </p>
             </Reveal>
@@ -141,10 +141,10 @@ export function RoomsCompare({
 
             <div className="mt-8 border-t border-border pt-6">
               <div role="status" aria-live="polite">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                <p className="text-micro font-semibold uppercase tracking-[0.14em] text-muted-foreground">
                   {copy.showing}
                 </p>
-                <p className="mt-1 font-concept text-[28px] text-concept-ocean">
+                <p className="mt-1 font-concept text-h3 text-concept-ocean">
                   {copy.roomTypes(filtered.length)}
                 </p>
               </div>
@@ -166,7 +166,7 @@ export function RoomsCompare({
               <div className="mb-7 flex items-end justify-between gap-6">
                 <div>
                   <p className="eyebrow">{copy.heading.eyebrow}</p>
-                  <h2 className="mt-2 font-concept text-3xl font-medium leading-none text-concept-ocean md:text-4xl">
+                  <h2 className="mt-2 font-concept text-h2 font-medium leading-none text-concept-ocean ">
                     {copy.heading.title}
                   </h2>
                 </div>
@@ -192,7 +192,7 @@ export function RoomsCompare({
                 <div
                   key={c}
                   role="columnheader"
-                  className="text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground"
+                  className="text-micro font-semibold uppercase tracking-[0.16em] text-muted-foreground"
                 >
                   {c}
                 </div>
@@ -224,7 +224,7 @@ export function RoomsCompare({
                         />
                       </div>
                       <div>
-                        <div className="text-[10px] font-semibold uppercase tracking-[0.16em] text-concept-gold-muted">
+                        <div className="text-micro font-semibold uppercase tracking-[0.16em] text-concept-gold-muted">
                           {f ? copy.kickers[f.kicker] : ""}
                         </div>
                         <div className="mt-1 font-concept text-2xl font-medium leading-none text-concept-ocean">
@@ -240,9 +240,9 @@ export function RoomsCompare({
 
                     <div role="cell" className="col-span-2 flex gap-2.5 md:col-span-1 md:justify-end">
                       <Link
-                        href={`/${locale}/habitaciones/${room.slug}`}
+                        href={`/${locale}/suites/${room.slug}`}
                         aria-label={`${s.detailsCta}: ${room.name}`}
-                        className="flex min-h-[44px] items-center rounded-sm border border-border px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-concept-ocean transition-colors hover:border-concept-ocean focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+                        className="flex min-h-[44px] items-center rounded-sm border border-border px-4 py-2.5 text-micro font-semibold uppercase tracking-[0.1em] text-concept-ocean transition-colors hover:border-concept-ocean focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
                       >
                         {s.detailsCta}
                       </Link>
@@ -252,7 +252,7 @@ export function RoomsCompare({
                         {...(bookingHref.startsWith("http")
                           ? { target: "_blank", rel: "noopener noreferrer" }
                           : {})}
-                        className="flex min-h-[44px] items-center rounded-sm bg-concept-gold px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-concept-ink transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+                        className="flex min-h-[44px] items-center rounded-sm bg-concept-gold px-4 py-2.5 text-micro font-semibold uppercase tracking-[0.1em] text-concept-ink transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
                       >
                         {s.bookCta}
                       </a>
@@ -265,7 +265,7 @@ export function RoomsCompare({
 
             <div className="pt-10">
               <Link
-                href={`/${locale}/habitaciones`}
+                href={`/${locale}/suites`}
                 className="inline-flex min-h-[44px] items-center text-xs font-semibold uppercase tracking-[0.12em] text-concept-ocean transition-colors hover:text-concept-gold-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
               >
                 {copy.backToHub}
@@ -283,7 +283,7 @@ export function RoomsCompare({
 function Filter({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div className="mt-8">
-      <p className="mb-3.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+      <p className="mb-3.5 text-micro font-semibold uppercase tracking-[0.14em] text-muted-foreground">
         {label}
       </p>
       <div className="flex flex-wrap gap-2">{children}</div>
@@ -333,7 +333,7 @@ function CheckRow({
       role="checkbox"
       aria-checked={checked}
       className={cn(
-        "flex min-h-[44px] items-center gap-2.5 py-1.5 text-left text-[13px] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2",
+        "flex min-h-[44px] items-center gap-2.5 py-1.5 text-left text-caption transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2",
         checked ? "text-concept-ink" : "text-muted-foreground hover:text-concept-ink"
       )}
     >
@@ -353,7 +353,7 @@ function CheckRow({
 function SpecCell({ label, value }: { label: string; value: string }) {
   return (
     <div role="cell" className="font-concept text-2xl leading-none text-concept-ocean">
-      <span className="mr-2 font-sans text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground md:hidden">
+      <span className="mr-2 font-sans text-micro font-semibold uppercase tracking-[0.12em] text-muted-foreground md:hidden">
         {label}
       </span>
       {value}

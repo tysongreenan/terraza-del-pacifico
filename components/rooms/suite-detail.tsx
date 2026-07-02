@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
+import posthog from "posthog-js";
 import {
   ArrowRight,
   ChevronLeft,
@@ -12,8 +13,10 @@ import {
   MessageCircle,
 } from "lucide-react";
 import { Reveal } from "@/components/home/reveal";
+import { actionButtonVariants } from "@/components/ui/button";
 import { LuxuryCtaBand } from "@/components/luxury/primitives";
 import { Lightbox } from "@/components/luxury/lightbox";
+import { DirectBookingNote } from "@/components/direct-booking-note";
 import { bookingHref, eventsEmail, whatsappHref } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import type { Locale } from "@/lib/i18n";
@@ -23,26 +26,6 @@ import { suiteDetailContent } from "@/content/suite-detail";
 import { roomGalleries } from "@/content/room-galleries";
 
 type Room = Dictionary["suites"]["items"][number];
-
-// Resort photos used only to round out the mosaic/carousel when a room ships
-// fewer than five of its own shots. Kept generic (pool/beach) on purpose, with
-// their own alt text so a resort shot is never mislabelled as the room.
-const FALLBACK_PHOTOS: { src: string; alt: { es: string; en: string } }[] = [
-  {
-    src: "/images/pool-aerial-day-BveHvOiS.jpg",
-    alt: {
-      es: "Piscina y playa del resort Terraza del Pacífico",
-      en: "Resort pool and beach at Terraza del Pacífico",
-    },
-  },
-  {
-    src: "/images/g-aerial-pool-overview-CCOWXk2j.jpg",
-    alt: {
-      es: "Vista aérea de la piscina del resort",
-      en: "Aerial view of the resort pool",
-    },
-  },
-];
 
 export function SuiteDetail({
   slug,
@@ -64,14 +47,7 @@ export function SuiteDetail({
 
   if (!room || !roomCopy || !editorial) return null;
 
-  const ownGallery = roomGalleries.find((g) => g.slug === slug)?.images ?? [];
-  const gallery = [...ownGallery];
-  for (const photo of FALLBACK_PHOTOS) {
-    if (gallery.length >= 5) break;
-    if (!gallery.some((g) => g.src === photo.src)) {
-      gallery.push(photo);
-    }
-  }
+  const gallery = roomGalleries.find((g) => g.slug === slug)?.images ?? [];
   const photoAlt = (i: number) => gallery[i]?.alt[locale] ?? room.name;
   const remaining = Math.max(0, gallery.length - 5);
   const lightboxImages = gallery.map((g, i) => ({
@@ -109,13 +85,16 @@ export function SuiteDetail({
   return (
     <article className="home-concept bg-concept-sand">
       {/* HERO MOSAIC */}
-      <section className="container pt-24 md:pt-28">
+      <section className="container pt-section-top">
         <div className="grid gap-2 md:grid-cols-[2fr_1fr_1fr] md:grid-rows-[300px_300px]">
           {/* lead tile — image is a button; the title sits above, click-through */}
           <div className="group relative col-span-1 h-[340px] overflow-hidden rounded-sm md:row-span-2 md:h-auto">
             <button
               type="button"
-              onClick={() => setOpenIndex(0)}
+              onClick={() => {
+                setOpenIndex(0);
+                posthog.capture("suite_gallery_opened", { suite_slug: slug, photo_index: 1 });
+              }}
               aria-label={copy.enlarge(1, gallery.length)}
               className="absolute inset-0 z-10 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-concept-gold"
             >
@@ -130,10 +109,10 @@ export function SuiteDetail({
               <div className="absolute inset-0 bg-gradient-to-t from-concept-ocean/[0.62] via-concept-ocean/[0.05] to-transparent" />
             </button>
             <div className="pointer-events-none absolute bottom-6 left-6 z-20 md:bottom-7 md:left-7">
-              <p className="mb-2 text-[11px] font-medium uppercase tracking-[0.22em] text-[#f3ead6]">
+              <p className="mb-2 text-micro font-medium uppercase tracking-[0.22em] text-concept-cream">
                 {editorial.kicker} · {room.view}
               </p>
-              <h1 className="font-concept text-4xl font-medium leading-none text-white md:text-6xl">
+              <h1 className="font-concept text-display font-medium leading-none text-white ">
                 {room.name}
               </h1>
             </div>
@@ -174,35 +153,35 @@ export function SuiteDetail({
       </section>
 
       {/* BODY: content + sticky booking card */}
-      <section className="container py-16 md:py-20">
+      <section className="container py-section-sm md:py-section">
         <div className="flex flex-col gap-12 lg:flex-row lg:gap-14">
           {/* left: editorial content */}
           <div className="min-w-0 flex-1">
             <Reveal>
-              <h2 className="max-w-xl font-concept text-3xl font-medium leading-[1.1] text-concept-ocean md:text-[40px]">
+              <h2 className="max-w-xl font-concept text-h1 font-medium leading-[1.1] text-concept-ocean ">
                 {roomCopy.headline}
               </h2>
-              <p className="mt-5 max-w-2xl text-[15px] leading-[1.8] text-[#6f6a62]">
+              <p className="mt-5 max-w-2xl text-body-sm leading-[1.8] text-concept-ink-muted">
                 {editorial.description}
               </p>
             </Reveal>
 
             {/* spec row */}
-            <dl className="mt-10 grid grid-cols-2 border-y border-[#ece5d8] sm:grid-cols-4">
+            <dl className="mt-10 grid grid-cols-2 border-y border-concept-border sm:grid-cols-4">
               {specs.map((spec, i) => (
                 <div
                   key={spec.label}
                   className={cn(
                     "px-1 py-6",
-                    i < specs.length - 1 && "sm:border-r sm:border-[#ece5d8]",
-                    i % 2 === 0 && "border-r border-[#ece5d8] sm:border-r",
-                    i < 2 && "border-b border-[#ece5d8] sm:border-b-0"
+                    i < specs.length - 1 && "sm:border-r sm:border-concept-border",
+                    i % 2 === 0 && "border-r border-concept-border sm:border-r",
+                    i < 2 && "border-b border-concept-border sm:border-b-0"
                   )}
                 >
-                  <dd className="font-concept text-3xl leading-none text-concept-ocean">
+                  <dd className="font-concept text-h3 leading-none text-concept-ocean">
                     {spec.value}
                   </dd>
-                  <dt className="mt-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#9a9282]">
+                  <dt className="mt-1.5 text-micro font-semibold uppercase tracking-[0.12em] text-[#9a9282]">
                     {spec.label}
                   </dt>
                 </div>
@@ -279,70 +258,55 @@ export function SuiteDetail({
           {/* right: sticky booking card */}
           <aside className="w-full flex-none lg:w-[372px]">
             <div className="lg:sticky lg:top-24">
-              {/* date / availability card — the whole panel links to booking */}
-              <a
-                href={bookingHref}
-                className="block rounded-sm border border-[#ece5d8] bg-white p-7 shadow-[0_14px_40px_rgba(16,58,77,0.1)] transition-shadow hover:shadow-[0_18px_50px_rgba(16,58,77,0.16)] focus:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold"
-              >
-                <div className="flex items-baseline justify-between">
-                  <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a9282]">
-                    {copy.reserveDirect}
-                  </span>
-                  <span className="text-[10px] font-semibold uppercase tracking-[0.08em] text-[#1f7a4d]">
-                    {copy.bestRate}
-                  </span>
-                </div>
+              {/* reserve card — condensed: Book today / room name / two actions.
+                  Primary links out to the Orbe booking engine; secondary to
+                  WhatsApp. Both open in a new tab. */}
+              <div className="rounded-sm border border-concept-border bg-white p-7 shadow-[0_14px_40px_rgba(16,58,77,0.1)]">
+                <h2 className="font-concept text-h4 font-medium leading-tight text-concept-ocean">
+                  {copy.bookToday}
+                </h2>
+                <p className="mt-1.5 text-body-sm text-concept-ink/60">{room.name}</p>
 
-                <div className="mt-5 flex overflow-hidden rounded-sm border border-[#e4ddce]">
-                  <div className="flex-1 border-r border-[#e4ddce] px-4 py-3.5">
-                    <div className="text-[9px] font-semibold uppercase tracking-[0.14em] text-[#9a9282]">
-                      {dict.bookingBar.checkIn}
-                    </div>
-                    <div className="mt-1 text-sm text-concept-ink">
-                      {dict.bookingBar.checkInPlaceholder}
-                    </div>
-                  </div>
-                  <div className="flex-1 px-4 py-3.5">
-                    <div className="text-[9px] font-semibold uppercase tracking-[0.14em] text-[#9a9282]">
-                      {dict.bookingBar.checkOut}
-                    </div>
-                    <div className="mt-1 text-sm text-concept-ink">
-                      {dict.bookingBar.checkOutPlaceholder}
-                    </div>
-                  </div>
-                </div>
-                <div className="rounded-sm rounded-t-none border border-t-0 border-[#e4ddce] px-4 py-3.5">
-                  <div className="text-[9px] font-semibold uppercase tracking-[0.14em] text-[#9a9282]">
-                    {dict.bookingBar.guests}
-                  </div>
-                  <div className="mt-1 text-sm text-concept-ink">
-                    {copy.sleeps(room.guests)}
-                  </div>
-                </div>
-
-                <div className="mt-5 flex items-center justify-center gap-2 rounded-sm bg-concept-gold px-6 py-4 text-[13px] font-semibold uppercase tracking-[0.1em] text-concept-ink">
+                <a
+                  href={bookingHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cn(
+                    actionButtonVariants({ variant: "primary", size: "lg" }),
+                    "mt-6 w-full"
+                  )}
+                  onClick={() =>
+                    posthog.capture("suite_booking_clicked", { suite_slug: slug })
+                  }
+                >
                   {dict.bookingBar.cta}
                   <ArrowRight className="h-4 w-4" aria-hidden />
-                </div>
-                <p className="mt-3.5 text-center text-xs leading-relaxed text-[#8a8478]">
-                  {copy.freeCancel}
-                </p>
-              </a>
+                </a>
 
-              <a
-                href={whatsappHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={
-                  locale === "es"
-                    ? "Pregunta por WhatsApp (abre en una pestaña nueva)"
-                    : "Ask on WhatsApp (opens in a new tab)"
-                }
-                className="mt-4 flex items-center justify-center gap-2.5 rounded-sm bg-[#1f7a4d] px-5 py-3.5 text-[13px] font-medium text-white transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold"
-              >
-                <MessageCircle className="h-4 w-4" aria-hidden />
-                {copy.askWhatsApp}
-              </a>
+                <a
+                  href={whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={
+                    locale === "es"
+                      ? "Pregunta por WhatsApp (abre en una pestaña nueva)"
+                      : "Ask on WhatsApp (opens in a new tab)"
+                  }
+                  className="mt-3 inline-flex w-full items-center justify-center gap-2.5 rounded-sm bg-[#1f7a4d] px-7 py-4 text-caption font-semibold uppercase tracking-[0.1em] text-white transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold focus-visible:ring-offset-2"
+                  onClick={() =>
+                    posthog.capture("suite_whatsapp_clicked", { suite_slug: slug })
+                  }
+                >
+                  <MessageCircle className="h-4 w-4" aria-hidden />
+                  {copy.askWhatsApp}
+                </a>
+
+                <DirectBookingNote
+                  locale={locale}
+                  surface="light"
+                  className="mt-4 text-center"
+                />
+              </div>
 
               {/* good to know */}
               <div className="mt-4 rounded-sm bg-concept-sand-muted p-7">
@@ -358,7 +322,7 @@ export function SuiteDetail({
                         i < goodToKnow.length - 1 && "border-b border-[#e6ddcd]"
                       )}
                     >
-                      <dt className="text-[#8a8478]">{row.label}</dt>
+                      <dt className="text-concept-ink-subtle">{row.label}</dt>
                       <dd className="text-right">{row.value}</dd>
                     </div>
                   ))}
@@ -366,14 +330,14 @@ export function SuiteDetail({
 
                 {/* children policy — a must-keep fact with no slot in the mockup */}
                 <div className="mt-5 border-t border-[#e6ddcd] pt-5">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#9a9282]">
+                  <p className="text-micro font-semibold uppercase tracking-[0.14em] text-[#9a9282]">
                     {copy.childrenLabel}
                   </p>
                   <ul className="mt-2 space-y-1.5">
                     {roomCopy.childrenPolicy.map((line) => (
                       <li
                         key={line}
-                        className="text-[13px] leading-relaxed text-concept-ink"
+                        className="text-caption leading-relaxed text-concept-ink"
                       >
                         {line}
                       </li>
@@ -393,19 +357,19 @@ export function SuiteDetail({
       </section>
 
       {/* OTHER WAYS TO STAY */}
-      <section className="bg-concept-sand-muted py-16 md:py-20">
+      <section className="bg-concept-sand-muted py-section-sm md:py-section">
         <div className="container">
           <div className="mb-8 flex items-end justify-between gap-6">
             <div>
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-concept-gold-muted">
                 {copy.keepLooking}
               </p>
-              <h2 className="font-concept text-3xl font-medium leading-[1.04] text-concept-ocean md:text-[38px]">
+              <h2 className="font-concept text-h2 font-medium leading-[1.04] text-concept-ocean ">
                 {copy.otherWays}
               </h2>
             </div>
             <Link
-              href={`/${locale}/habitaciones`}
+              href={`/${locale}/suites`}
               className="flex-none border-b border-concept-gold-muted pb-1 text-xs font-semibold uppercase tracking-[0.1em] text-concept-ocean transition-colors hover:text-concept-gold-muted"
             >
               {copy.allRooms}
@@ -415,7 +379,7 @@ export function SuiteDetail({
             {others.map(({ room: r, image }) => (
               <Link
                 key={r.slug}
-                href={`/${locale}/habitaciones/${r.slug}`}
+                href={`/${locale}/suites/${r.slug}`}
                 className="group block rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-concept-gold"
               >
                 <div className="relative h-[220px] overflow-hidden rounded-sm">
@@ -431,10 +395,10 @@ export function SuiteDetail({
                     className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                   />
                 </div>
-                <h3 className="mt-4 font-concept text-2xl text-concept-ocean transition-colors group-hover:text-concept-gold-muted">
+                <h3 className="mt-4 font-concept text-h3 text-concept-ocean transition-colors group-hover:text-concept-gold-muted">
                   {r.name}
                 </h3>
-                <p className="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-concept-gold-muted">
+                <p className="mt-1.5 text-micro font-semibold uppercase tracking-[0.1em] text-concept-gold-muted">
                   {copy.sleeps(r.guests)} · {r.view}
                 </p>
               </Link>
@@ -443,7 +407,7 @@ export function SuiteDetail({
         </div>
       </section>
 
-      {/* CTA band — also the `#booking` anchor the booking card scrolls to */}
+      {/* closing CTA band */}
       <LuxuryCtaBand
         locale={locale}
         eyebrow={cta.eyebrow}
@@ -453,7 +417,7 @@ export function SuiteDetail({
         primaryHref={`mailto:${eventsEmail}`}
         secondaryLabel={cta.secondary}
         secondaryHref={whatsappHref}
-        image="/images/pool-aerial-day-BveHvOiS.jpg"
+        image="/images/resort/highlights/IMG_3170.JPG"
       />
 
       {openIndex !== null && (
