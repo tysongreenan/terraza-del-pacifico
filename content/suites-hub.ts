@@ -23,12 +23,12 @@ type IncludedItem = { title: string; body: string };
 
 /**
  * A run of the intro paragraph. Plain strings render as text; objects render
- * as an inline {@link LinkPreview} — hovering the phrase reveals `image` and
- * the phrase links to `href`.
+ * as an inline {@link LinkPreview} — hovering the phrase reveals `image`
+ * (with a `ctaLabel` button overlaid) and the phrase links to `href`.
  */
 export type IntroSegment =
   | string
-  | { text: string; href: string; image: string };
+  | { text: string; href: string; image: string; ctaLabel: string };
 
 type HubCopy = {
   hero: {
@@ -79,13 +79,15 @@ const en: HubCopy = {
       {
         text: "the ocean",
         href: "/en/gallery",
-        image: "/images/resort/grounds/exp-villa-block-lawn.jpg",
+        image: "/images/resort/beach-aerial/exp-beach-topdown.jpg",
+        ctaLabel: "View Gallery",
       },
       " should be the first thing you see and the last thing you hear. The only choice is ",
       {
         text: "how much space",
         href: "/en/suites/compare",
-        image: "/images/resort/grounds/exp-villa-block-lawn.jpg",
+        image: "/images/approve-suite-images/villa-2.JPG",
+        ctaLabel: "Compare Rooms",
       },
       " you want around it.",
     ],
@@ -189,13 +191,15 @@ const es: HubCopy = {
       {
         text: "el océano",
         href: "/es/gallery",
-        image: "/images/resort/grounds/exp-villa-block-lawn.jpg",
+        image: "/images/resort/beach-aerial/exp-beach-topdown.jpg",
+        ctaLabel: "Ver galería",
       },
       " debe ser lo primero que veas y lo último que escuches. Lo único que eliges es ",
       {
         text: "cuánto espacio",
         href: "/es/suites/compare",
-        image: "/images/resort/grounds/exp-villa-block-lawn.jpg",
+        image: "/images/approve-suite-images/villa-2.JPG",
+        ctaLabel: "Comparar habitaciones",
       },
       " quieres a su alrededor.",
     ],

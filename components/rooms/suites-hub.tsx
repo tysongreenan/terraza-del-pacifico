@@ -168,6 +168,7 @@ export function SuitesHub({
                     url={seg.href}
                     isStatic
                     imageSrc={seg.image}
+                    ctaLabel={seg.ctaLabel}
                     width={300}
                     height={188}
                     quality={60}
