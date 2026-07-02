@@ -52,20 +52,10 @@ const EXPERIENCE_SUPPLEMENTS: Record<string, string[]> = {
 };
 
 const EVENT_SUPPLEMENTS: Record<string, string[]> = {
-  weddings: [
-    "/images/resort/weddings/RLR_86342.JPG",
-    "/images/resort/weddings/RLR_88882.JPG",
-    "/images/resort/weddings/RLR_89382.JPG",
-    "/images/resort/weddings/AM5_96582.JPG",
-    "/images/resort/weddings/689FBDA4-AA9B-466A-9DE2-31DC8B13A9002.JPG",
-    "/images/resort/weddings/AM5_93622.JPG",
-    "/images/resort/weddings/AM5_93422.JPG",
-    "/images/resort/weddings/AM5_92612.JPG",
-    "/images/resort/weddings/AM5_94092.JPG",
-    "/images/resort/weddings/RLR_8676.JPG",
-    "/images/resort/weddings/AM5_96762.JPG",
-    "/images/resort/weddings/AM5_92513.JPG",
-  ],
+  // weddings: intentionally omitted — content/events.ts now hand-orders every
+  // wedding photo directly in heroImage + gallery to match the /gallery
+  // Weddings section exactly; a supplement list here would just be dead
+  // weight (dedupeImages() drops anything already present).
   "surf-nights": [
     "/images/experiences/surf-nights/surf-nights-C5MPn3sY.jpg",
     "/images/experiences/surf-nights/surf-nights-shirt-jqYD2ns3.jpg",
