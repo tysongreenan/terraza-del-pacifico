@@ -123,7 +123,7 @@ export function ExperiencesCarousel({
                 {page.eyebrow[locale]}
               </p>
               <h3 className="mt-2 font-concept text-h3 leading-[1.05]">
-                {page.title[locale]}
+                {(page.cardTitle ?? page.title)[locale]}
               </h3>
               {/* description was unused before — adds context to each card */}
               <p className="mt-2 line-clamp-2 text-body-sm leading-relaxed text-white/75">

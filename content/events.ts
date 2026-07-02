@@ -94,25 +94,91 @@ export const events: InfoPage[] = [
       en: "Celebrate your beachfront wedding on Playa Hermosa near Jaco, with the Pacific as your backdrop, open-air spaces, Vivace cuisine and a team dedicated to every detail.",
     },
     heroImage: {
-      src: "/images/resort/weddings/RLR_88882.JPG",
+      src: "/images/resort/weddings/AM5_96762.JPG",
       alt: {
-        es: "Pareja celebrando una boda frente al mar",
-        en: "Couple celebrating an oceanfront wedding",
+        es: "Novia a la hora dorada con luces colgantes",
+        en: "Golden-hour bride with string lights",
       },
     },
+    // Ordered to match the client's picks for the /gallery Weddings section
+    // exactly — this feeds both the events-hub card carousel and this page's
+    // own slider (expandInfoPageGallery: heroImage, then gallery, in order).
     gallery: [
       {
-        src: "/images/resort/weddings/RLR_86342.JPG",
+        src: "/images/resort/weddings/wedding-beach-ceremony-NqUR8iSS.jpg",
         alt: {
-          es: "Montaje de boda en el jardin frente al mar",
-          en: "Beachfront-garden wedding setup",
+          es: "Ceremonia de boda frente al mar",
+          en: "Beachfront wedding ceremony",
         },
       },
       {
-        src: "/images/resort/weddings/AM5_96762.JPG",
+        src: "/images/resort/weddings/wedding-venue-wtXbsJOx.jpg",
         alt: {
-          es: "Novia a la hora dorada con luces colgantes",
-          en: "Golden-hour bride with string lights",
+          es: "Espacio para bodas en Terraza del Pacifico",
+          en: "Wedding venue at Terraza del Pacifico",
+        },
+      },
+      {
+        src: "/images/resort/weddings/AM5_92513.JPG",
+        alt: {
+          es: "Bodas frente al mar en Playa Hermosa, Costa Rica — imagen 4",
+          en: "Beachfront Weddings in Playa Hermosa, Costa Rica — image 4",
+        },
+      },
+      {
+        src: "/images/resort/weddings/AM5_93622.JPG",
+        alt: {
+          es: "Bodas frente al mar en Playa Hermosa, Costa Rica — imagen 5",
+          en: "Beachfront Weddings in Playa Hermosa, Costa Rica — image 5",
+        },
+      },
+      {
+        src: "/images/resort/weddings/AM5_94092.JPG",
+        alt: {
+          es: "Bodas frente al mar en Playa Hermosa, Costa Rica — imagen 6",
+          en: "Beachfront Weddings in Playa Hermosa, Costa Rica — image 6",
+        },
+      },
+      {
+        src: "/images/resort/weddings/689FBDA4-AA9B-466A-9DE2-31DC8B13A9002.JPG",
+        alt: {
+          es: "Bodas frente al mar en Playa Hermosa, Costa Rica — imagen 7",
+          en: "Beachfront Weddings in Playa Hermosa, Costa Rica — image 7",
+        },
+      },
+      {
+        src: "/images/resort/weddings/AM5_92612.JPG",
+        alt: {
+          es: "Bodas frente al mar en Playa Hermosa, Costa Rica — imagen 8",
+          en: "Beachfront Weddings in Playa Hermosa, Costa Rica — image 8",
+        },
+      },
+      {
+        src: "/images/resort/weddings/AM5_92822.JPG",
+        alt: {
+          es: "Bodas frente al mar en Playa Hermosa, Costa Rica — imagen 9",
+          en: "Beachfront Weddings in Playa Hermosa, Costa Rica — image 9",
+        },
+      },
+      {
+        src: "/images/resort/weddings/AM5_93422.JPG",
+        alt: {
+          es: "Bodas frente al mar en Playa Hermosa, Costa Rica — imagen 10",
+          en: "Beachfront Weddings in Playa Hermosa, Costa Rica — image 10",
+        },
+      },
+      {
+        src: "/images/resort/weddings/AM5_92492.JPG",
+        alt: {
+          es: "Bodas frente al mar en Playa Hermosa, Costa Rica — imagen 11",
+          en: "Beachfront Weddings in Playa Hermosa, Costa Rica — image 11",
+        },
+      },
+      {
+        src: "/images/resort/weddings/AM5_92562.JPG",
+        alt: {
+          es: "Bodas frente al mar en Playa Hermosa, Costa Rica — imagen 12",
+          en: "Beachfront Weddings in Playa Hermosa, Costa Rica — image 12",
         },
       },
       {
@@ -123,10 +189,17 @@ export const events: InfoPage[] = [
         },
       },
       {
-        src: "/images/resort/weddings/wedding-ceremony-night-BS1EmGIk.jpg",
+        src: "/images/resort/weddings/AM5_96582.JPG",
         alt: {
-          es: "Ceremonia nocturna con luces",
-          en: "Evening ceremony with lights",
+          es: "Bodas frente al mar en Playa Hermosa, Costa Rica — imagen 14",
+          en: "Beachfront Weddings in Playa Hermosa, Costa Rica — image 14",
+        },
+      },
+      {
+        src: "/images/resort/weddings/RLR_86342.JPG",
+        alt: {
+          es: "Montaje de boda en el jardin frente al mar",
+          en: "Beachfront-garden wedding setup",
         },
       },
       {
@@ -134,6 +207,48 @@ export const events: InfoPage[] = [
         alt: {
           es: "Arco decorado con estrellas de mar doradas y flores",
           en: "Draped arch with gold starfish and florals",
+        },
+      },
+      {
+        src: "/images/resort/weddings/RLR_88882.JPG",
+        alt: {
+          es: "Pareja celebrando una boda frente al mar",
+          en: "Couple celebrating an oceanfront wedding",
+        },
+      },
+      {
+        src: "/images/resort/weddings/RLR_89012.JPG",
+        alt: {
+          es: "Bodas frente al mar en Playa Hermosa, Costa Rica — imagen 18",
+          en: "Beachfront Weddings in Playa Hermosa, Costa Rica — image 18",
+        },
+      },
+      {
+        src: "/images/resort/weddings/RLR_89382.JPG",
+        alt: {
+          es: "Bodas frente al mar en Playa Hermosa, Costa Rica — imagen 19",
+          en: "Beachfront Weddings in Playa Hermosa, Costa Rica — image 19",
+        },
+      },
+      {
+        src: "/images/resort/weddings/wedding-ceremony-night-BS1EmGIk.jpg",
+        alt: {
+          es: "Ceremonia nocturna con luces",
+          en: "Evening ceremony with lights",
+        },
+      },
+      {
+        src: "/images/resort/weddings/wedding-couple-BUFflCio.jpg",
+        alt: {
+          es: "Recien casados en Terraza del Pacifico",
+          en: "Newlyweds at Terraza del Pacifico",
+        },
+      },
+      {
+        src: "/images/resort/weddings/wedding-setup-BpzA9vBd.jpg",
+        alt: {
+          es: "Montaje de la recepcion de boda",
+          en: "Wedding reception setup",
         },
       },
       {
@@ -929,20 +1044,13 @@ export const events: InfoPage[] = [
       en: "Private dining experiences with Chef Luigi's Mediterranean cuisine, beachfront Pacific views on Playa Hermosa near Jaco, and options for couples, families or groups.",
     },
     heroImage: {
-      src: "/images/resort/events/events-romantic-setup-CdyCZVZj.jpg",
+      src: "/images/resort/dining/chloemurdochphotography-37.JPG",
       alt: {
-        es: "Cena romantica privada frente al mar",
-        en: "Private romantic dinner by the ocean",
+        es: "Langosta entera a la parrilla con vista al mar",
+        en: "Whole grilled lobster with ocean view",
       },
     },
     gallery: [
-      {
-        src: "/images/resort/dining/chloemurdochphotography-37.JPG",
-        alt: {
-          es: "Langosta entera a la parrilla con vista al mar",
-          en: "Whole grilled lobster with ocean view",
-        },
-      },
       {
         src: "/images/resort/dining/chloemurdochphotography-259.JPG",
         alt: {

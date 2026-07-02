@@ -42,6 +42,10 @@ export const experiences: InfoPage[] = [
       es: "Yoga Frente al Mar en Playa Hermosa, Costa Rica",
       en: "Beachfront Yoga in Playa Hermosa, Costa Rica",
     },
+    cardTitle: {
+      es: "Yoga Frente al Mar",
+      en: "Beachfront Yoga",
+    },
     eyebrow: {
       es: "Bienestar junto a las olas",
       en: "Wellness by the waves",
@@ -231,6 +235,10 @@ export const experiences: InfoPage[] = [
       es: "Avistamiento de Ballenas en Costa Rica - Playa Hermosa",
       en: "Whale Watching in Costa Rica - Playa Hermosa, Jaco",
     },
+    cardTitle: {
+      es: "Avistamiento de Ballenas",
+      en: "Whale Watching",
+    },
     eyebrow: {
       es: "Julio a octubre",
       en: "July to October",
@@ -355,7 +363,7 @@ export const experiences: InfoPage[] = [
             "Recomendamos consultar antes de viajar para confirmar condiciones y opciones disponibles.",
           ],
           en: [
-            "It is an educational, exciting activity for the whole family, couples and groups who want to connect with Costa Rica's nature by the sea.",
+            "Whale watching is an educational, exciting activity for the whole family, couples and groups who want to connect with Costa Rica's nature by the sea.",
             "We recommend checking before traveling to confirm conditions and available options.",
           ],
         },
@@ -419,6 +427,10 @@ export const experiences: InfoPage[] = [
     title: {
       es: "Anidacion de Tortugas en Costa Rica - Playa Hermosa, Jaco",
       en: "Sea Turtle Nesting in Costa Rica - Playa Hermosa, Jaco",
+    },
+    cardTitle: {
+      es: "Anidacion de Tortugas",
+      en: "Sea Turtle Nesting",
     },
     eyebrow: {
       es: "Conservacion y naturaleza",
@@ -614,8 +626,8 @@ export const experiences: InfoPage[] = [
       en: "Weekends",
     },
     description: {
-      es: "Musica local, cocteles tropicales y cenas frente al mar crean el ambiente perfecto para cerrar el dia en Playa Hermosa, al sur de Jaco.",
-      en: "Local music, tropical cocktails and beachfront dinners set the perfect mood to close the day in Playa Hermosa, just south of Jaco.",
+      es: "Al caer la noche en Playa Hermosa, al sur de Jaco, la musica local, los cocteles tropicales y las cenas frente al mar crean el ambiente perfecto para cerrar el dia.",
+      en: "As evening falls over Playa Hermosa, just south of Jaco, local musicians, tropical cocktails, and beachfront dinners set the mood to close out the day.",
     },
     heroImage: {
       src: "/images/resort/bars/live-music-U-RLRqGX.jpg",
@@ -625,6 +637,13 @@ export const experiences: InfoPage[] = [
       },
     },
     gallery: [
+      {
+        src: "/images/resort/dining/RLR_37603.JPG",
+        alt: {
+          es: "Ambiente con musica en vivo en Vivace",
+          en: "Live music atmosphere at Vivace",
+        },
+      },
       {
         src: "/images/resort/dining/chloemurdochphotography-312.JPG",
         alt: {
@@ -782,8 +801,8 @@ export const experiences: InfoPage[] = [
       },
     ],
     cta: {
-      label: { es: "Consultar programacion", en: "Check the lineup" },
-      href: whatsappHref,
+      label: { es: "Contactanos", en: "Contact Us" },
+      href: "#inquire",
     },
     relatedIds: ["beachfront-yoga", "whale-watching", "turtle-nesting"],
   },

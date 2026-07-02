@@ -87,7 +87,7 @@ const en: HubCopy = {
         text: "how much space",
         href: "/en/suites/compare",
         image: "/images/approve-suite-images/villa-2.JPG",
-        ctaLabel: "Compare Rooms",
+        ctaLabel: "Compare All Rooms",
       },
       " you want around it.",
     ],
