@@ -614,8 +614,8 @@ export const experiences: InfoPage[] = [
       en: "Weekends",
     },
     description: {
-      es: "Musica local, cocteles tropicales y cenas frente al mar crean el ambiente perfecto para cerrar el dia en Playa Hermosa, al sur de Jaco.",
-      en: "Local music, tropical cocktails and beachfront dinners set the perfect mood to close the day in Playa Hermosa, just south of Jaco.",
+      es: "Al caer la noche en Playa Hermosa, al sur de Jaco, la musica local, los cocteles tropicales y las cenas frente al mar crean el ambiente perfecto para cerrar el dia.",
+      en: "As evening falls over Playa Hermosa, just south of Jaco, local musicians, tropical cocktails, and beachfront dinners set the mood to close out the day.",
     },
     heroImage: {
       src: "/images/resort/bars/live-music-U-RLRqGX.jpg",
@@ -625,6 +625,13 @@ export const experiences: InfoPage[] = [
       },
     },
     gallery: [
+      {
+        src: "/images/resort/dining/RLR_37603.JPG",
+        alt: {
+          es: "Ambiente con musica en vivo en Vivace",
+          en: "Live music atmosphere at Vivace",
+        },
+      },
       {
         src: "/images/resort/dining/chloemurdochphotography-312.JPG",
         alt: {
@@ -782,8 +789,8 @@ export const experiences: InfoPage[] = [
       },
     ],
     cta: {
-      label: { es: "Consultar programacion", en: "Check the lineup" },
-      href: whatsappHref,
+      label: { es: "Contactanos", en: "Contact Us" },
+      href: "#inquire",
     },
     relatedIds: ["beachfront-yoga", "whale-watching", "turtle-nesting"],
   },
