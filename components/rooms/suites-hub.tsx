@@ -171,7 +171,7 @@ export function SuitesHub({
                     ctaLabel={seg.ctaLabel}
                     width={300}
                     height={188}
-                    quality={60}
+                    quality={75}
                     className="font-semibold text-concept-ocean underline decoration-dotted decoration-concept-gold/70 decoration-2 underline-offset-[6px] transition-colors hover:text-concept-gold"
                   >
                     {seg.text}
