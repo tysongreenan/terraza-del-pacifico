@@ -1044,20 +1044,13 @@ export const events: InfoPage[] = [
       en: "Private dining experiences with Chef Luigi's Mediterranean cuisine, beachfront Pacific views on Playa Hermosa near Jaco, and options for couples, families or groups.",
     },
     heroImage: {
-      src: "/images/resort/events/events-romantic-setup-CdyCZVZj.jpg",
+      src: "/images/resort/dining/chloemurdochphotography-37.JPG",
       alt: {
-        es: "Cena romantica privada frente al mar",
-        en: "Private romantic dinner by the ocean",
+        es: "Langosta entera a la parrilla con vista al mar",
+        en: "Whole grilled lobster with ocean view",
       },
     },
     gallery: [
-      {
-        src: "/images/resort/dining/chloemurdochphotography-37.JPG",
-        alt: {
-          es: "Langosta entera a la parrilla con vista al mar",
-          en: "Whole grilled lobster with ocean view",
-        },
-      },
       {
         src: "/images/resort/dining/chloemurdochphotography-259.JPG",
         alt: {

@@ -125,7 +125,12 @@ export function InfoDetailTemplate({
           className="object-cover"
         />
         <div className="absolute inset-0" style={{ backgroundImage: heroGradient }} />
-        <div className="container relative flex min-h-[86svh] flex-col justify-end pb-10 pt-28 md:pt-48">
+        <div
+          className={cn(
+            "container relative flex min-h-[86svh] flex-col justify-end pt-28 md:pt-48",
+            facts.length > 0 ? "pb-24 md:pb-20" : "pb-10"
+          )}
+        >
           <Reveal className="max-w-3xl">
             <p className="text-eyebrow uppercase text-concept-cream text-shadow-hero">
               {page.eyebrow[locale]}
@@ -136,6 +141,23 @@ export function InfoDetailTemplate({
             <p className="mt-5 max-w-xl text-base leading-relaxed text-white/90 text-shadow-hero md:text-lg">
               {page.description[locale]}
             </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href={page.cta.href}
+                target={page.cta.href.startsWith("http") ? "_blank" : undefined}
+                rel={page.cta.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                className={actionButtonVariants({ variant: "primary" })}
+              >
+                {page.cta.label[locale]}
+                <ArrowRight className="h-4 w-4" aria-hidden />
+              </a>
+              <Link
+                href={hubHref}
+                className={actionButtonVariants({ variant: "secondary", surface: "dark" })}
+              >
+                {k.introCta}
+              </Link>
+            </div>
           </Reveal>
         </div>
         {facts.length > 0 && (

@@ -87,7 +87,6 @@ const EVENT_SUPPLEMENTS: Record<string, string[]> = {
     "/images/resort/pool/g-pool-kids-DrLSuE2_.jpg",
     "/images/resort/events/events-pool-party-D_ez1wdr.jpg",
     "/images/resort/pool/dji_fly_20241022_014306_0656_1753125594987_photo3.JPG",
-    "/images/resort/events/events-romantic-setup-CdyCZVZj.jpg",
     "/images/resort/highlights/IMG_25682.JPG",
   ],
   "private-dinners": [
