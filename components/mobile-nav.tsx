@@ -17,13 +17,19 @@ export function MobileNav({
   callHref,
   callLabel,
   overlay = false,
+  raised = overlay,
 }: {
   items: NavItem[];
   bookHref: string;
   bookLabel: string;
   callHref: string;
   callLabel: string;
+  /** White hamburger icon (dark hero behind the header). */
   overlay?: boolean;
+  /** Header is at its big/tall size (any big-header variant, dark or light) —
+   * controls where the open panel drops down to. Defaults to `overlay` for
+   * back-compat with callers that only ever had one big variant. */
+  raised?: boolean;
 }) {
   const [open, setOpen] = useState(false);
 
@@ -38,7 +44,9 @@ export function MobileNav({
           "inline-flex h-11 w-11 items-center justify-center rounded-md transition-colors",
           overlay
             ? "text-white drop-shadow-sm hover:bg-white/10"
-            : "text-foreground hover:bg-muted"
+            : raised
+              ? "text-concept-gold drop-shadow-sm hover:bg-concept-ocean/10"
+              : "text-foreground hover:bg-muted"
         )}
       >
         {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -48,7 +56,7 @@ export function MobileNav({
         <div
           className={cn(
             "fixed inset-x-0 z-40 border-b border-border bg-background shadow-lg",
-            overlay ? "top-24 md:top-[11rem]" : "top-[4.5rem] md:top-[5.5rem]"
+            raised ? "top-24 md:top-[11rem]" : "top-[4.5rem] md:top-[5.5rem]"
           )}
         >
           <nav className="container flex flex-col py-4">

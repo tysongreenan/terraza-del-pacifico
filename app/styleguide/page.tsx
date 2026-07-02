@@ -401,6 +401,28 @@ export default function StyleguidePage() {
             <a href="/" className="text-concept-gold-muted underline">homepage</a>.
           </span>
         </p>
+
+        {/* Overlay-light — same big header + scroll animation, recoloured for light pages */}
+        <p className="eyebrow mb-3 mt-12">
+          Overlay-light · <code className="text-caption normal-case tracking-normal">variant=&quot;overlay-light&quot;</code> · big header on a light page
+        </p>
+        <div
+          className="relative h-96 overflow-hidden rounded-sm border border-concept-ink/15 bg-concept-sand"
+          style={{ transform: "translateZ(0)" }}
+        >
+          <SiteHeader locale="es" dict={dict} variant="overlay-light" />
+          <div className="px-6 pt-48 lg:px-10">
+            <p className="eyebrow">Experiencias</p>
+            <p className="mt-2 font-concept text-h2 font-medium text-concept-ocean">
+              Aventuras frente al mar
+            </p>
+          </div>
+        </div>
+        <p className="mt-3 max-w-2xl text-body-sm text-concept-ink/70">
+          Same big header + scroll-shrink animation as overlay, but the logo
+          stays in colour and nav text is gold instead of white, so it reads on
+          a light surface with no dark hero. Used on /experiences.
+        </p>
       </Section>
 
       {/* ---- Spacing ---- */}

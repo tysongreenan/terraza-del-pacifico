@@ -28,10 +28,15 @@ function stripLocale(pathname: string): string {
   return pathname || "/";
 }
 
+export type HeaderVariant = "overlay" | "overlay-light" | "solid";
+
 // Pages that open on a LIGHT surface (no dark full-bleed hero behind the header)
-// must use the solid header — otherwise the transparent white nav is invisible.
-// Verified visually 2026-06-24. ADD new hero-less routes here as they're built.
-function resolveVariant(pathname: string): "overlay" | "solid" {
+// need a header that doesn't rely on white text. "overlay-light" keeps the big
+// cinematic header + scroll-shrink animation but with the coloured logo and
+// gold nav text so it reads on a light background; "solid" is for pages with
+// no big top band at all (compact header from the very top).
+// Verified visually 2026-06-24 / 2026-07-02. ADD new hero-less routes here as they're built.
+function resolveVariant(pathname: string): HeaderVariant {
   const path = stripLocale(pathname);
   // Suite detail pages (/suites/<slug>) open on a light photo mosaic;
   // the /habitaciones hub and the /compare page do have dark heroes.
@@ -40,7 +45,10 @@ function resolveVariant(pathname: string): "overlay" | "solid" {
   // Blog list + posts open on a light surface (no dark hero) → solid header.
   const isBlog = path === "/blog" || path.startsWith("/blog/");
   const isContact = path === "/contact";
-  if (path === "/experiences" || isSuiteDetail || isBlog || isContact) return "solid";
+  // Experiences hub opens on the light sand surface but still wants the big
+  // cinematic header treatment, just recoloured for a light background.
+  if (path === "/experiences") return "overlay-light";
+  if (isSuiteDetail || isBlog || isContact) return "solid";
   return "overlay";
 }
 
@@ -105,11 +113,11 @@ function NavSubmenu({ label, children }: { label: string; children: NavLink[] })
 function NavDropdown({
   label,
   children,
-  transparent,
+  tone,
 }: {
   label: string;
   children: NavChild[];
-  transparent: boolean;
+  tone: "dark" | "light" | "solid";
 }) {
   const [open, setOpen] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -141,9 +149,9 @@ function NavDropdown({
         onClick={() => setOpen((v) => !v)}
         className={cn(
           "inline-flex items-center gap-1 text-caption tracking-wide transition-colors",
-          transparent
-            ? "text-white/95 drop-shadow-sm hover:text-white"
-            : "text-foreground/75 hover:text-foreground"
+          tone === "dark" && "text-white/95 drop-shadow-sm hover:text-white",
+          tone === "light" && "text-concept-gold drop-shadow-sm hover:text-concept-ocean",
+          tone === "solid" && "text-foreground/75 hover:text-foreground"
         )}
       >
         {label}
@@ -189,12 +197,14 @@ export function SiteHeader({
   locale: Locale;
   dict: Dictionary;
   // "overlay" = transparent over a dark hero, solidifies on scroll (home,
-  // restaurant, about…). "solid" = always-solid surface from the top, for
-  // hero-less / light pages (suite detail, experiences hub) where a transparent
-  // white nav would be invisible. When omitted, the variant is resolved from
-  // the route (see resolveVariant); pass it explicitly only to force a variant
-  // (e.g. the /styleguide previews).
-  variant?: "overlay" | "solid";
+  // restaurant, about…). "overlay-light" = same big header + scroll-shrink
+  // animation, but recoloured for a light background: coloured logo, gold nav
+  // text instead of white (experiences hub). "solid" = always-solid surface
+  // from the top, for hero-less / light pages (suite detail, contact) with no
+  // big top band at all. When omitted, the variant is resolved from the route
+  // (see resolveVariant); pass it explicitly only to force a variant (e.g. the
+  // /styleguide previews).
+  variant?: HeaderVariant;
 }) {
   const n = dict.nav;
   const p = (slug: string) => `/${locale}${slug ? `/${slug}` : ""}`;
@@ -209,8 +219,12 @@ export function SiteHeader({
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Solid pages never go transparent; overlay pages are transparent until scroll.
-  const transparent = resolved === "overlay" ? !scrolled : false;
+  // Solid pages never get the big header; overlay/overlay-light pages are big
+  // (transparent bg, large logo, utility bar) until the user scrolls.
+  const bigHeader = resolved !== "solid" && !scrolled;
+  // Only meaningful while bigHeader is true — which colour scheme to apply.
+  const heroStyle: "dark" | "light" = resolved === "overlay-light" ? "light" : "dark";
+  const tone: "dark" | "light" | "solid" = bigHeader ? heroStyle : "solid";
 
   const nav: NavEntry[] = [
     { href: p("suites"), label: n.rooms },
@@ -245,20 +259,31 @@ export function SiteHeader({
       className={cn(
         "top-0 z-50 w-full transition-[background-color,border-color,box-shadow] duration-300",
         "fixed",
-        transparent
+        bigHeader
           ? "border-transparent bg-transparent shadow-none"
           : "border-b border-border bg-background/95 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-background/90"
       )}
     >
       {/* Utility bar — contact + social, right-aligned. Only at the top of the page. */}
-      <div className={cn(transparent ? "hidden md:block" : "hidden")}>
+      <div className={cn(bigHeader ? "hidden md:block" : "hidden")}>
         <div className="mx-auto flex h-10 w-full max-w-[1600px] items-center justify-end gap-5 px-6 lg:px-10">
           <a
             href={dict.footer.phoneHref}
             aria-label={`${n.callAria}: ${dict.footer.phone}`}
-            className="inline-flex items-center gap-2 text-caption tracking-wide text-white/90 drop-shadow-sm transition-colors hover:text-white"
+            className={cn(
+              "inline-flex items-center gap-2 text-caption tracking-wide transition-colors",
+              heroStyle === "light"
+                ? "text-concept-ocean/80 hover:text-concept-ocean"
+                : "text-white/90 drop-shadow-sm hover:text-white"
+            )}
           >
-            <Phone className="h-[0.95rem] w-[0.95rem] text-accent" aria-hidden />
+            <Phone
+              className={cn(
+                "h-[0.95rem] w-[0.95rem]",
+                heroStyle === "light" ? "text-concept-gold" : "text-accent"
+              )}
+              aria-hidden
+            />
             {dict.footer.phone}
           </a>
           <div className="flex items-center gap-1">
@@ -269,7 +294,12 @@ export function SiteHeader({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="flex h-8 w-8 items-center justify-center rounded-full text-white/90 drop-shadow-sm transition-colors hover:bg-white/10 hover:text-white"
+                className={cn(
+                  "flex h-8 w-8 items-center justify-center rounded-full transition-colors",
+                  heroStyle === "light"
+                    ? "text-concept-ocean/80 hover:bg-concept-ocean/10 hover:text-concept-ocean"
+                    : "text-white/90 drop-shadow-sm hover:bg-white/10 hover:text-white"
+                )}
               >
                 <Icon className="h-4 w-4" />
               </a>
@@ -282,7 +312,7 @@ export function SiteHeader({
       <div
         className={cn(
           "mx-auto flex w-full max-w-[1600px] items-center justify-between gap-4 px-6 transition-[height] duration-300 lg:px-10",
-          transparent ? "h-24 md:h-[8.5rem]" : "h-[4.5rem] md:h-[5.5rem]"
+          bigHeader ? "h-24 md:h-[8.5rem]" : "h-[4.5rem] md:h-[5.5rem]"
         )}
       >
         <Link
@@ -298,8 +328,10 @@ export function SiteHeader({
             priority
             className={cn(
               "max-w-[30vw] transition-[width,filter] duration-300",
-              transparent
-                ? "w-[5.5rem] brightness-0 invert drop-shadow-md md:w-[8.5rem]"
+              bigHeader
+                ? heroStyle === "dark"
+                  ? "w-[5.5rem] brightness-0 invert drop-shadow-md md:w-[8.5rem]"
+                  : "w-[5.5rem] drop-shadow-md md:w-[8.5rem]"
                 : "w-[3.25rem] md:w-[4.25rem]"
             )}
           />
@@ -313,7 +345,7 @@ export function SiteHeader({
                 key={item.label}
                 label={item.label}
                 children={item.children}
-                transparent={transparent}
+                tone={tone}
               />
             ) : (
               <Link
@@ -321,9 +353,9 @@ export function SiteHeader({
                 href={item.href}
                 className={cn(
                   "text-caption tracking-wide transition-colors",
-                  transparent
-                    ? "text-white/95 drop-shadow-sm hover:text-white"
-                    : "text-foreground/75 hover:text-foreground"
+                  tone === "dark" && "text-white/95 drop-shadow-sm hover:text-white",
+                  tone === "light" && "text-concept-gold drop-shadow-sm hover:text-concept-ocean",
+                  tone === "solid" && "text-foreground/75 hover:text-foreground"
                 )}
               >
                 {item.label}
@@ -337,7 +369,7 @@ export function SiteHeader({
             locale={locale}
             label={n.langLabel}
             aria={n.langSwitchAria}
-            overlay={transparent}
+            overlay={tone === "dark"}
           />
           <Link
             href={bookHref}
@@ -357,7 +389,8 @@ export function SiteHeader({
             bookLabel={n.book}
             callHref={dict.footer.phoneHref}
             callLabel={dict.footer.phone}
-            overlay={transparent}
+            overlay={tone === "dark"}
+            raised={bigHeader}
           />
         </div>
         </div>
