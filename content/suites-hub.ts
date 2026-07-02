@@ -138,7 +138,7 @@ const en: HubCopy = {
     items: [
       {
         title: "On the sand",
-        body: "The resort is on the beach — no road to cross, every room a barefoot walk from the water.",
+        body: "The resort is on the beach. No road to cross, every room a barefoot walk from the water.",
       },
       {
         title: "The LED pool",
@@ -248,7 +248,7 @@ const es: HubCopy = {
     items: [
       {
         title: "Sobre la arena",
-        body: "El resort está sobre la playa — sin calle que cruzar, cada habitación a una caminata descalza del agua.",
+        body: "El resort está sobre la playa. Sin calle que cruzar, cada habitación a una caminata descalza del agua.",
       },
       {
         title: "La piscina LED",
