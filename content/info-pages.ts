@@ -28,6 +28,10 @@ export type InfoPage = {
   type: InfoPageType;
   slugs: Localized;
   title: Localized;
+  /** Short label for hub/carousel cards (e.g. "Whale Watching"). Falls back
+   * to `title` when omitted. Keeps the geo-keyword-rich `title` intact for
+   * the page's own H1/meta while card grids stay uncluttered. */
+  cardTitle?: Localized;
   eyebrow: Localized;
   description: Localized;
   heroImage: InfoImage;

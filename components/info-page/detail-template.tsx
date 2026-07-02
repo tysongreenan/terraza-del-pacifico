@@ -384,7 +384,7 @@ export function InfoDetailTemplate({
                       {item.eyebrow[locale]}
                     </p>
                     <h3 className="mt-2 font-concept text-h3 leading-tight">
-                      {item.title[locale]}
+                      {(item.cardTitle ?? item.title)[locale]}
                     </h3>
                     <span className="mt-3 inline-flex items-center gap-1.5 text-micro font-semibold uppercase tracking-[0.1em]">
                       {t.explore}

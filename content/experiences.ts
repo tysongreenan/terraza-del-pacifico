@@ -42,6 +42,10 @@ export const experiences: InfoPage[] = [
       es: "Yoga Frente al Mar en Playa Hermosa, Costa Rica",
       en: "Beachfront Yoga in Playa Hermosa, Costa Rica",
     },
+    cardTitle: {
+      es: "Yoga Frente al Mar",
+      en: "Beachfront Yoga",
+    },
     eyebrow: {
       es: "Bienestar junto a las olas",
       en: "Wellness by the waves",
@@ -231,6 +235,10 @@ export const experiences: InfoPage[] = [
       es: "Avistamiento de Ballenas en Costa Rica - Playa Hermosa",
       en: "Whale Watching in Costa Rica - Playa Hermosa, Jaco",
     },
+    cardTitle: {
+      es: "Avistamiento de Ballenas",
+      en: "Whale Watching",
+    },
     eyebrow: {
       es: "Julio a octubre",
       en: "July to October",
@@ -419,6 +427,10 @@ export const experiences: InfoPage[] = [
     title: {
       es: "Anidacion de Tortugas en Costa Rica - Playa Hermosa, Jaco",
       en: "Sea Turtle Nesting in Costa Rica - Playa Hermosa, Jaco",
+    },
+    cardTitle: {
+      es: "Anidacion de Tortugas",
+      en: "Sea Turtle Nesting",
     },
     eyebrow: {
       es: "Conservacion y naturaleza",
