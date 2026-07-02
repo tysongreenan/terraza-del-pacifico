@@ -25,7 +25,7 @@ export const bakery: Venue = {
       hero: {
         title: "Artisan Bakery",
         description:
-          "Bread and pastries baked fresh every morning, plus specialty coffee — a few steps from the sand. Grab a croissant on the way to the beach, or linger by the water.",
+          "Bread and pastries baked fresh every morning, plus specialty coffee, a few steps from the sand. Grab a croissant on the way to the beach, or linger by the water.",
         meta: ["Open daily from 7 AM", "Steps from the sand · grab-and-go or stay"],
       },
       intro: {
@@ -54,7 +54,7 @@ export const bakery: Venue = {
       hero: {
         title: "Panadería Artesanal",
         description:
-          "Pan y repostería horneados cada mañana, además de café de especialidad — a pocos pasos de la arena. Llévate un croissant camino a la playa o quédate junto al agua.",
+          "Pan y repostería horneados cada mañana, además de café de especialidad, a pocos pasos de la arena. Llévate un croissant camino a la playa o quédate junto al agua.",
         meta: ["Abierto todos los días desde las 7 AM", "A pasos de la arena · para llevar o quedarse"],
       },
       intro: {
@@ -66,7 +66,7 @@ export const bakery: Venue = {
       pours: {
         eyebrow: "Lo que ofrecemos",
         title: "Del horno y la barra",
-        blurb: "Panes artesanales, repostería y café de especialidad — horneados y preparados frescos cada mañana.",
+        blurb: "Panes artesanales, repostería y café de especialidad. Horneados y preparados frescos cada mañana.",
         items: [
           { name: "Panes artesanales" },
           { name: "Croissants y repostería" },

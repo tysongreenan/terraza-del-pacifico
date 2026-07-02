@@ -14,7 +14,7 @@ Status legend: ✅ done · 🔧 in progress · ⬜ todo · 👁 needs visual che
 - ✅ #35 suites intro rephrase (suites-hub.ts:70)
 - ✅ #37 semicolon / #38 colon / #39 rephrase — suites essentials grid (LED pool, yoga, Wi-Fi cards). Mapped by grammatical fit since export has no pin coords; the 3 cards Khera didn't flag keep their em-dashes.
 - ✅ #40 junior-suite "Adults only. Children…" (suite-detail.ts)
-- ✅ #41 bakery blurb em-dash→period (bakery.ts)
+- ✅ #41 bakery em-dashes→periods/commas (bakery.ts hero description EN+ES, pours blurb ES — previously only the EN pours blurb had been fixed)
 - ✅ #45 comma / #46/#47 remove "south of Jaco" / #52 the→This / #54 comma / #57 add "yoga" (experiences.ts)
 - ✅ #67 experiences hub rephrase (keeps Khera's em-dash) (experiences.ts:15)
 - ✅ #68 welcome/statement rephrase (dictionaries.ts:57 — shared with homepage)
@@ -32,7 +32,7 @@ Status legend: ✅ done · 🔧 in progress · ⬜ todo · 👁 needs visual che
 - ✅ #33 — reworded weddings title to "Celebrate right on the sand" (about.ts) so it no longer parallels "rainforest meets the tide"
 
 ## Design / UX
-- ⏭ #4 — "drag to explore" hint confusing → hidden on desktop in 40fdf71
+- ⏭ #4 — "drag to explore" hint confusing → hidden above `lg` breakpoint in 40fdf71
 - ⏭ #30 — Beachfront Yoga first + mark FREE → reordered in 40fdf71 (verify FREE label shown)
 - ✅ #12 — inconsistent CTAs. Audited every CTA label site-wide: EN was already consistent ("WhatsApp Us" everywhere); primary booking labels kept contextual per client ("Book Your Escape"/"Check Availability"/"Book Direct"). Fixed the one ES outlier "Escríbenos por WhatsApp"→"WhatsApp" (dictionaries.ts:643) so all ES WhatsApp CTAs match.
 - ✅ #8 — KEEP the 4.2★ by the booking button (client decision, keep as-is)
@@ -43,23 +43,10 @@ Status legend: ✅ done · 🔧 in progress · ⬜ todo · 👁 needs visual che
 - ✅ #19 — suites floating spec panel no longer bleeds over the next room's image (md:min-h-[640px] on the room container). Verified visually.
 - ✅ #5 — "0 m to the sand" card renamed "On the sand" (serif zero read as O)
 - ✅ #6/#17 — hero description paragraphs now carry text-shadow-hero (legible over bright bar counter / pool)
-- 👁 #12 — audit remaining CTA labels site-wide (Reserve/Sign up/Enquire) — needs a pass
 - 👁 #18 — suites: photo-over-copy→gallery interaction — client likes the hero version (#9); confirm this is a different spot before changing
-- 🟡 #13/#23/#31 — title repetition ("steps from"/"Beachfront"/"in Playa Hermosa"). Deferred: these overlap on-page headings AND SEO meta titles — needs a careful pass to avoid dropping geo keywords.
 
 ## Photos — need assets from the team (can't fix in code)
 - ⬜ #2/#14 — blurry photos / blur on left of image (home)
 - ⬜ #21/#25 — weak wedding photos; #25 "roadside memorial" dinner shot (events)
 - ⬜ #32 — too many pool images (gallery)
 - 🟡 #3 — slider loop vs back-and-forth: still a decision for Laura
-
-## Photos
-- ⬜ #2 — four blurry photos (home)
-- ⬜ #14 — remove blur on left of image (home)
-- ⬜ #21/#25 — weak wedding photos (events); #25 "roadside memorial" dinner shot
-- ⬜ #32 — too many pool images (gallery)
-- ⏭ #3 — slider loop vs back-and-forth: decision needed (Laura). Currently back-and-forth.
-
-## Small polish
-- ⬜ #5 — "0 vs O" glyph ambiguity (suites)
-- ⬜ #6/#17 — text hard to read over image (bars, suites)
