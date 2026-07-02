@@ -48,7 +48,7 @@ const en = {
   },
   discover: {
     eyebrow: "All of it, steps from your room",
-    title: "Beachfront resort on Playa Hermosa, and plenty of reasons to stay on the sand",
+    title: "Plenty of reasons to stay on the sand",
     exploreCta: "Explore the resort",
   },
   welcome: {
@@ -133,7 +133,7 @@ const en = {
   },
   suites: {
     eyebrow: "Stay",
-    title: "Beachfront Comfort, Steps from Playa Hermosa",
+    title: "Comfort, steps from the sand",
     subtitle: "",
     allRoomsCta: "All Rooms & Suites →",
     perNight: "",
@@ -286,7 +286,7 @@ const en = {
     hours: "Daily 7:00 AM – 10:00 PM",
   },
   finalCta: {
-    title: "Your Beachfront Escape on Playa Hermosa",
+    title: "Your escape on the Pacific",
     subtitle: "",
     primaryCta: "Book Direct",
     secondaryCta: "WhatsApp Us",
@@ -640,7 +640,7 @@ const es: Dict = {
     title: "Tu Escape Frente al Mar en Playa Hermosa",
     subtitle: "",
     primaryCta: "Reservar Directo",
-    secondaryCta: "Escríbenos por WhatsApp",
+    secondaryCta: "WhatsApp",
     whatsappHref: "https://wa.me/50684319953",
   },
   footer: {

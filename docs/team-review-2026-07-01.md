@@ -27,14 +27,14 @@ Status legend: ✅ done · 🔧 in progress · ⬜ todo · 👁 needs visual che
 ## Copy — repetition / wording (Zac)
 - ⏭ #10 — remove "One" from Beachfront headline → done in 40fdf71
 - ⏭ #15 — "Welcome" too low → reframed "Our story" in 40fdf71
-- ⬜ #13 — overuse of "steps from"/"at your doorstep"/"Beachfront" section titles (home)
-- ⬜ #22/#23/#31 — drop "in Playa Hermosa" from repeated titles (events, experiences)
+- ✅ #13 — homepage had "Beachfront … Playa Hermosa" in 4 headings. Kept hero H1 as the SEO keyword anchor; reworded the other 3 (discover→"Plenty of reasons to stay on the sand", suites→"Comfort, steps from the sand", finalCta→"Your escape on the Pacific"). EN only; ES mirror left for a Spanish reviewer.
+- 🟡 #22/#23/#31 — "in Playa Hermosa" on events/experiences is almost all in per-page H1s + meta descriptions (whale/turtle/yoga/weddings are separate URLs that each legitimately want the geo keyword). Dropping them is the same geo-keyword tradeoff as #50/#55 — bundle with Khera's decision, don't strip blind.
 - ✅ #33 — reworded weddings title to "Celebrate right on the sand" (about.ts) so it no longer parallels "rainforest meets the tide"
 
 ## Design / UX
 - ⏭ #4 — "drag to explore" hint confusing → hidden on desktop in 40fdf71
 - ⏭ #30 — Beachfront Yoga first + mark FREE → reordered in 40fdf71 (verify FREE label shown)
-- 🔧 #12 — inconsistent CTAs (Reserve/Sign up/Enquire). Carousel unified in 40fdf71; audit remaining buttons site-wide.
+- ✅ #12 — inconsistent CTAs. Audited every CTA label site-wide: EN was already consistent ("WhatsApp Us" everywhere); primary booking labels kept contextual per client ("Book Your Escape"/"Check Availability"/"Book Direct"). Fixed the one ES outlier "Escríbenos por WhatsApp"→"WhatsApp" (dictionaries.ts:643) so all ES WhatsApp CTAs match.
 - ✅ #8 — KEEP the 4.2★ by the booking button (client decision, keep as-is)
 - ✅ #9 — KEEP clickable hero pics — client likes the interaction (won't-fix)
 - ✅ #11 — "Included"/yoga card already moved to lead position in 40fdf71
