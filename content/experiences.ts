@@ -355,7 +355,7 @@ export const experiences: InfoPage[] = [
             "Recomendamos consultar antes de viajar para confirmar condiciones y opciones disponibles.",
           ],
           en: [
-            "It is an educational, exciting activity for the whole family, couples and groups who want to connect with Costa Rica's nature by the sea.",
+            "Whale watching is an educational, exciting activity for the whole family, couples and groups who want to connect with Costa Rica's nature by the sea.",
             "We recommend checking before traveling to confirm conditions and available options.",
           ],
         },
