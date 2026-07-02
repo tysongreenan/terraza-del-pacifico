@@ -125,7 +125,7 @@ export function InfoDetailTemplate({
           className="object-cover"
         />
         <div className="absolute inset-0" style={{ backgroundImage: heroGradient }} />
-        <div className="container relative flex min-h-[86svh] flex-col justify-end pb-10 pt-28">
+        <div className="container relative flex min-h-[86svh] flex-col justify-end pb-10 pt-28 md:pt-48">
           <Reveal className="max-w-3xl">
             <p className="text-eyebrow uppercase text-concept-cream text-shadow-hero">
               {page.eyebrow[locale]}

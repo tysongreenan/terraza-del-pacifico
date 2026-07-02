@@ -19,6 +19,8 @@ type LinkPreviewProps = {
   width?: number;
   height?: number;
   quality?: number;
+  /** Small button label overlaid on the preview image (e.g. "View Gallery"). */
+  ctaLabel?: string;
 } & (
   | { isStatic: true; imageSrc: string }
   | { isStatic?: false; imageSrc?: never }
@@ -33,6 +35,7 @@ export const LinkPreview = ({
   quality = 50,
   isStatic = false,
   imageSrc = "",
+  ctaLabel,
 }: LinkPreviewProps) => {
   let src;
   if (!isStatic) {
@@ -130,7 +133,7 @@ export const LinkPreview = ({
               >
                 <Link
                   href={url}
-                  className="block p-1 bg-white border-2 border-transparent shadow rounded-xl hover:border-neutral-200 dark:hover:border-neutral-800"
+                  className="relative block p-1 bg-white border-2 border-transparent shadow rounded-xl hover:border-neutral-200 dark:hover:border-neutral-800"
                   style={{ fontSize: 0 }}
                 >
                   <Image
@@ -142,6 +145,11 @@ export const LinkPreview = ({
                     className="rounded-lg"
                     alt="preview image"
                   />
+                  {ctaLabel && (
+                    <span className="absolute inset-x-2 bottom-2 flex items-center justify-center rounded-md bg-concept-ocean/90 py-1.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-white backdrop-blur-sm">
+                      {ctaLabel}
+                    </span>
+                  )}
                 </Link>
               </motion.div>
             )}

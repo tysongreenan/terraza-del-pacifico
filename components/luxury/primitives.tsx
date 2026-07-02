@@ -47,7 +47,7 @@ export function LuxuryHero({
         className="object-cover"
       />
       <div className="hero-scrim absolute inset-0" />
-      <div className="container relative flex min-h-[72svh] flex-col justify-end pb-16 pt-28 md:pb-20">
+      <div className="container relative flex min-h-[72svh] flex-col justify-end pb-16 pt-28 md:pb-20 md:pt-48">
         <Reveal>
           <p className="text-eyebrow uppercase text-white text-shadow-hero">{eyebrow}</p>
           <h1 className="mt-4 max-w-4xl font-concept text-display font-medium leading-[1.02] text-shadow-hero ">

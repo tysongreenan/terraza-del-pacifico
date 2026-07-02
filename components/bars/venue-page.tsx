@@ -44,7 +44,7 @@ export function VenuePage({
             className="object-cover"
           />
           <div className={cn("absolute inset-0", heroScrim)} />
-          <div className="container relative flex min-h-[64svh] flex-col justify-end pb-8 pt-28 md:min-h-[72svh]">
+          <div className="container relative flex min-h-[64svh] flex-col justify-end pb-8 pt-28 md:min-h-[72svh] md:pt-48">
             <Reveal>
               <h1 className="max-w-3xl font-concept text-display font-medium leading-[1.02] text-shadow-hero ">
                 {t.hero.title}

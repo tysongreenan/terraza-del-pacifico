@@ -80,7 +80,7 @@ export default async function Page({
             />
             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.5)_0%,rgba(0,0,0,0.14)_40%,rgba(0,0,0,0.74)_100%)]" />
             <div className="absolute inset-0 bg-gradient-to-r from-black/45 via-black/10 to-transparent" />
-            <div className="container relative flex min-h-[58svh] flex-col justify-end pb-12 pt-32 md:min-h-[66svh] md:pb-16">
+            <div className="container relative flex min-h-[58svh] flex-col justify-end pb-12 pt-32 md:min-h-[66svh] md:pb-16 md:pt-48">
               <Reveal>
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white">
                   {copy.eyebrow}

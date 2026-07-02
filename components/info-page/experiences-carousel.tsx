@@ -51,7 +51,10 @@ export function ExperiencesCarousel({
   };
 
   return (
-    <section className="bg-concept-sand pb-section-sm pt-section-top md:pb-section">
+    // Extra top clearance (vs. the usual pt-section-top) because this page
+    // uses the "overlay-light" big header: utility bar + tall logo bar run
+    // ~11rem tall on desktop before the user's first scroll shrinks it.
+    <section className="bg-concept-sand pb-section-sm pt-32 md:pb-section md:pt-48">
       <div className="container">
         <div className="flex flex-col gap-6 pb-8 md:flex-row md:items-end md:justify-between md:pb-10">
           <div className="max-w-2xl">

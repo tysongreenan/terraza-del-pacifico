@@ -32,6 +32,195 @@ export const experienceHub: HubPage = {
 
 export const experiences: InfoPage[] = [
   {
+    id: "beachfront-yoga",
+    type: "experience",
+    slugs: {
+      es: "yoga-frente-al-mar",
+      en: "beachfront-yoga",
+    },
+    title: {
+      es: "Yoga Frente al Mar en Playa Hermosa, Costa Rica",
+      en: "Beachfront Yoga in Playa Hermosa, Costa Rica",
+    },
+    eyebrow: {
+      es: "Bienestar junto a las olas",
+      en: "Wellness by the waves",
+    },
+    description: {
+      es: "Clases de yoga frente al mar en Playa Hermosa, al sur de Jaco, abiertas para huespedes y pensadas para todos los niveles en un entorno natural y tranquilo.",
+      en: "Beachfront yoga classes in Playa Hermosa, just south of Jaco, open to guests and designed for every level in a calm, natural setting.",
+    },
+    heroImage: {
+      src: "/images/experiences/yoga/yoga-class-1Z8S9ilZ.jpg",
+      alt: {
+        es: "Clase de yoga frente al mar en Playa Hermosa",
+        en: "Beachfront yoga class in Playa Hermosa",
+      },
+    },
+    gallery: [
+      {
+        src: "/images/resort/highlights/IMG_2209.JPG",
+        alt: {
+          es: "Zona verde del resort para relajarse",
+          en: "Green resort area for relaxing",
+        },
+      },
+      {
+        src: "/images/resort/highlights/Family 3.JPG",
+        alt: {
+          es: "Camino natural dentro del resort",
+          en: "Natural pathway inside the resort",
+        },
+      },
+      {
+        src: "/images/resort/beach-aerial/exp-beach-topdown.jpg",
+        alt: {
+          es: "Playa Hermosa junto al hotel",
+          en: "Playa Hermosa beside the hotel",
+        },
+      },
+      {
+        src: "/images/resort/highlights/IMG_59363.JPG",
+        alt: {
+          es: "Piscina y areas comunes durante el dia",
+          en: "Pool and common areas during the day",
+        },
+      },
+    ],
+    facts: [
+      {
+        label: { es: "Horario", en: "Schedule" },
+        value: { es: "Dom y mie 8 AM, sab 4 PM", en: "Sun and Wed 8 AM, Sat 4 PM" },
+      },
+      {
+        label: { es: "Nivel", en: "Level" },
+        value: { es: "Todos los niveles", en: "All levels" },
+      },
+      {
+        label: { es: "Incluido", en: "Included" },
+        value: { es: "Para huespedes", en: "For guests" },
+      },
+      {
+        label: { es: "Ambiente", en: "Setting" },
+        value: { es: "Frente al mar", en: "Oceanfront" },
+      },
+    ],
+    sections: [
+      {
+        title: { es: "Resumen", en: "Overview" },
+        body: {
+          es: [
+            "El yoga frente al mar es una forma tranquila de empezar o cerrar el dia en Terraza del Pacifico.",
+            "La practica combina movimiento, respiracion y el sonido constante de las olas.",
+          ],
+          en: [
+            "Beachfront yoga is a calm way to begin or end the day at Terraza del Pacifico.",
+            "The practice combines movement, breath and the steady sound of the waves.",
+          ],
+        },
+      },
+      {
+        title: { es: "Horario", en: "Schedule" },
+        body: {
+          es: [
+            "Las sesiones se ofrecen los domingos y miercoles a las 8:00 AM, y los sabados a las 4:00 PM.",
+            "El horario puede ajustarse por clima o necesidades operativas, por lo que recomendamos confirmar durante tu estadia.",
+          ],
+          en: [
+            "Sessions are offered Sundays and Wednesdays at 8:00 AM, and Saturdays at 4:00 PM.",
+            "The schedule may adjust for weather or operations, so we recommend confirming during your stay.",
+          ],
+        },
+      },
+      {
+        title: { es: "El entorno", en: "Setting by the ocean" },
+        body: {
+          es: [
+            "Practicar frente al mar en Playa Hermosa crea un ritmo natural: brisa, sombra, arena y sonido de las olas.",
+            "Una practica sencilla que toma su ritmo del lugar.",
+          ],
+          en: [
+            "Practicing beachfront yoga in Playa Hermosa creates a natural rhythm: breeze, shade, sand and the sound of the waves.",
+            "A simple practice that takes its cues from the place itself.",
+          ],
+        },
+      },
+      {
+        title: { es: "Quien puede unirse", en: "Who can join" },
+        body: {
+          es: [
+            "Las clases estan pensadas para todos los niveles, desde principiantes hasta personas con practica regular.",
+            "El enfoque es relajado y accesible, ideal para integrarlo a unas vacaciones en familia frente al mar.",
+          ],
+          en: [
+            "Classes are designed for every level, from beginners to regular practitioners.",
+            "The approach is relaxed and accessible, ideal for adding wellness to a beachfront family vacation.",
+          ],
+        },
+      },
+      {
+        title: { es: "Que traer", en: "What to bring" },
+        body: {
+          es: [
+            "Recomendamos ropa comoda, agua y llegar unos minutos antes de la clase.",
+            "Si tienes alguna condicion fisica especifica, avisa al instructor antes de iniciar.",
+          ],
+          en: [
+            "We recommend comfortable clothing, water and arriving a few minutes before class.",
+            "If you have a specific physical condition, let the instructor know before beginning.",
+          ],
+        },
+      },
+    ],
+    faq: [
+      {
+        q: {
+          es: "¿El yoga frente al mar es apto para principiantes?",
+          en: "Is beachfront yoga suitable for beginners?",
+        },
+        a: {
+          es: "Si. Las clases estan pensadas para todos los niveles, desde principiantes hasta personas con practica regular, con un enfoque relajado y accesible.",
+          en: "Yes. Classes are designed for every level, from beginners to regular practitioners, with a relaxed and accessible approach.",
+        },
+      },
+      {
+        q: {
+          es: "¿Cual es el horario de las clases de yoga?",
+          en: "What is the yoga class schedule?",
+        },
+        a: {
+          es: "Las sesiones se ofrecen los domingos y miercoles a las 8:00 AM, y los sabados a las 4:00 PM. El horario puede ajustarse por clima o necesidades operativas, por lo que recomendamos confirmar durante tu estadia.",
+          en: "Sessions are offered Sundays and Wednesdays at 8:00 AM, and Saturdays at 4:00 PM. The schedule may adjust for weather or operations, so we recommend confirming during your stay.",
+        },
+      },
+      {
+        q: {
+          es: "¿Quien puede unirse a las clases de yoga?",
+          en: "Who can join the yoga classes?",
+        },
+        a: {
+          es: "Las clases de yoga frente al mar estan disponibles para los huespedes del resort y son ideales para integrarlas a unas vacaciones en familia frente al mar.",
+          en: "The beachfront yoga classes are available for resort guests and are ideal to add to a beachfront family vacation.",
+        },
+      },
+      {
+        q: {
+          es: "¿Que debo llevar a la clase de yoga?",
+          en: "What should I bring to the yoga class?",
+        },
+        a: {
+          es: "Recomendamos ropa comoda, agua y llegar unos minutos antes de la clase. Si tienes alguna condicion fisica especifica, avisa al instructor antes de iniciar.",
+          en: "We recommend comfortable clothing, water and arriving a few minutes before class. If you have a specific physical condition, let the instructor know before beginning.",
+        },
+      },
+    ],
+    cta: {
+      label: { es: "Reservar estadia", en: "Book your stay" },
+      href: bookingHref,
+    },
+    relatedIds: ["whale-watching", "turtle-nesting", "live-music"],
+  },
+  {
     id: "whale-watching",
     type: "experience",
     slugs: {
@@ -410,195 +599,6 @@ export const experiences: InfoPage[] = [
     relatedIds: ["whale-watching", "beachfront-yoga", "live-music"],
   },
   {
-    id: "beachfront-yoga",
-    type: "experience",
-    slugs: {
-      es: "yoga-frente-al-mar",
-      en: "beachfront-yoga",
-    },
-    title: {
-      es: "Yoga Frente al Mar en Playa Hermosa, Costa Rica",
-      en: "Beachfront Yoga in Playa Hermosa, Costa Rica",
-    },
-    eyebrow: {
-      es: "Bienestar junto a las olas",
-      en: "Wellness by the waves",
-    },
-    description: {
-      es: "Clases de yoga frente al mar en Playa Hermosa, al sur de Jaco, abiertas para huespedes y pensadas para todos los niveles en un entorno natural y tranquilo.",
-      en: "Beachfront yoga classes in Playa Hermosa, just south of Jaco, open to guests and designed for every level in a calm, natural setting.",
-    },
-    heroImage: {
-      src: "/images/experiences/yoga/yoga-class-1Z8S9ilZ.jpg",
-      alt: {
-        es: "Clase de yoga frente al mar en Playa Hermosa",
-        en: "Beachfront yoga class in Playa Hermosa",
-      },
-    },
-    gallery: [
-      {
-        src: "/images/resort/highlights/IMG_2209.JPG",
-        alt: {
-          es: "Zona verde del resort para relajarse",
-          en: "Green resort area for relaxing",
-        },
-      },
-      {
-        src: "/images/resort/highlights/Family 3.JPG",
-        alt: {
-          es: "Camino natural dentro del resort",
-          en: "Natural pathway inside the resort",
-        },
-      },
-      {
-        src: "/images/resort/beach-aerial/exp-beach-topdown.jpg",
-        alt: {
-          es: "Playa Hermosa junto al hotel",
-          en: "Playa Hermosa beside the hotel",
-        },
-      },
-      {
-        src: "/images/resort/highlights/IMG_59363.JPG",
-        alt: {
-          es: "Piscina y areas comunes durante el dia",
-          en: "Pool and common areas during the day",
-        },
-      },
-    ],
-    facts: [
-      {
-        label: { es: "Horario", en: "Schedule" },
-        value: { es: "Dom y mie 8 AM, sab 4 PM", en: "Sun and Wed 8 AM, Sat 4 PM" },
-      },
-      {
-        label: { es: "Nivel", en: "Level" },
-        value: { es: "Todos los niveles", en: "All levels" },
-      },
-      {
-        label: { es: "Incluido", en: "Included" },
-        value: { es: "Para huespedes", en: "For guests" },
-      },
-      {
-        label: { es: "Ambiente", en: "Setting" },
-        value: { es: "Frente al mar", en: "Oceanfront" },
-      },
-    ],
-    sections: [
-      {
-        title: { es: "Resumen", en: "Overview" },
-        body: {
-          es: [
-            "El yoga frente al mar es una forma tranquila de empezar o cerrar el dia en Terraza del Pacifico.",
-            "La practica combina movimiento, respiracion y el sonido constante de las olas.",
-          ],
-          en: [
-            "Beachfront yoga is a calm way to begin or end the day at Terraza del Pacifico.",
-            "The practice combines movement, breath and the steady sound of the waves.",
-          ],
-        },
-      },
-      {
-        title: { es: "Horario", en: "Schedule" },
-        body: {
-          es: [
-            "Las sesiones se ofrecen los domingos y miercoles a las 8:00 AM, y los sabados a las 4:00 PM.",
-            "El horario puede ajustarse por clima o necesidades operativas, por lo que recomendamos confirmar durante tu estadia.",
-          ],
-          en: [
-            "Sessions are offered Sundays and Wednesdays at 8:00 AM, and Saturdays at 4:00 PM.",
-            "The schedule may adjust for weather or operations, so we recommend confirming during your stay.",
-          ],
-        },
-      },
-      {
-        title: { es: "El entorno", en: "Setting by the ocean" },
-        body: {
-          es: [
-            "Practicar frente al mar en Playa Hermosa crea un ritmo natural: brisa, sombra, arena y sonido de las olas.",
-            "Una practica sencilla que toma su ritmo del lugar.",
-          ],
-          en: [
-            "Practicing beachfront yoga in Playa Hermosa creates a natural rhythm: breeze, shade, sand and the sound of the waves.",
-            "A simple practice that takes its cues from the place itself.",
-          ],
-        },
-      },
-      {
-        title: { es: "Quien puede unirse", en: "Who can join" },
-        body: {
-          es: [
-            "Las clases estan pensadas para todos los niveles, desde principiantes hasta personas con practica regular.",
-            "El enfoque es relajado y accesible, ideal para integrarlo a unas vacaciones en familia frente al mar.",
-          ],
-          en: [
-            "Classes are designed for every level, from beginners to regular practitioners.",
-            "The approach is relaxed and accessible, ideal for adding wellness to a beachfront family vacation.",
-          ],
-        },
-      },
-      {
-        title: { es: "Que traer", en: "What to bring" },
-        body: {
-          es: [
-            "Recomendamos ropa comoda, agua y llegar unos minutos antes de la clase.",
-            "Si tienes alguna condicion fisica especifica, avisa al instructor antes de iniciar.",
-          ],
-          en: [
-            "We recommend comfortable clothing, water and arriving a few minutes before class.",
-            "If you have a specific physical condition, let the instructor know before beginning.",
-          ],
-        },
-      },
-    ],
-    faq: [
-      {
-        q: {
-          es: "¿El yoga frente al mar es apto para principiantes?",
-          en: "Is beachfront yoga suitable for beginners?",
-        },
-        a: {
-          es: "Si. Las clases estan pensadas para todos los niveles, desde principiantes hasta personas con practica regular, con un enfoque relajado y accesible.",
-          en: "Yes. Classes are designed for every level, from beginners to regular practitioners, with a relaxed and accessible approach.",
-        },
-      },
-      {
-        q: {
-          es: "¿Cual es el horario de las clases de yoga?",
-          en: "What is the yoga class schedule?",
-        },
-        a: {
-          es: "Las sesiones se ofrecen los domingos y miercoles a las 8:00 AM, y los sabados a las 4:00 PM. El horario puede ajustarse por clima o necesidades operativas, por lo que recomendamos confirmar durante tu estadia.",
-          en: "Sessions are offered Sundays and Wednesdays at 8:00 AM, and Saturdays at 4:00 PM. The schedule may adjust for weather or operations, so we recommend confirming during your stay.",
-        },
-      },
-      {
-        q: {
-          es: "¿Quien puede unirse a las clases de yoga?",
-          en: "Who can join the yoga classes?",
-        },
-        a: {
-          es: "Las clases de yoga frente al mar estan disponibles para los huespedes del resort y son ideales para integrarlas a unas vacaciones en familia frente al mar.",
-          en: "The beachfront yoga classes are available for resort guests and are ideal to add to a beachfront family vacation.",
-        },
-      },
-      {
-        q: {
-          es: "¿Que debo llevar a la clase de yoga?",
-          en: "What should I bring to the yoga class?",
-        },
-        a: {
-          es: "Recomendamos ropa comoda, agua y llegar unos minutos antes de la clase. Si tienes alguna condicion fisica especifica, avisa al instructor antes de iniciar.",
-          en: "We recommend comfortable clothing, water and arriving a few minutes before class. If you have a specific physical condition, let the instructor know before beginning.",
-        },
-      },
-    ],
-    cta: {
-      label: { es: "Reservar estadia", en: "Book your stay" },
-      href: bookingHref,
-    },
-    relatedIds: ["whale-watching", "turtle-nesting", "live-music"],
-  },
-  {
     id: "live-music",
     type: "experience",
     slugs: {
@@ -665,7 +665,7 @@ export const experiences: InfoPage[] = [
       },
       {
         label: { es: "Ideal para", en: "Best for" },
-        value: { es: "Cena, cocteles y atardecer", en: "Dinner, cocktails and sunset" },
+        value: { es: "Cena, cocteles y atardecer", en: "Dinner, cocktails, and sunset" },
       },
       {
         label: { es: "Consulta", en: "Check" },
@@ -726,7 +726,7 @@ export const experiences: InfoPage[] = [
         },
       },
       {
-        title: { es: "Atardecer, cena y cocteles", en: "Dinner, cocktails and sunset" },
+        title: { es: "Atardecer, cena y cocteles", en: "Dinner, cocktails, and sunset" },
         body: {
           es: [
             "Llega antes del atardecer para disfrutar la luz del Pacifico y quedarte a cenar cuando inicia la musica.",

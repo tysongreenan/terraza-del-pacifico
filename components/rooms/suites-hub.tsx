@@ -80,7 +80,7 @@ export function SuitesHub({
           />
           <div className="hero-scrim absolute inset-0" />
 
-          <div className="container relative flex min-h-[78svh] flex-col justify-end pb-44 pt-28 md:min-h-[88svh] md:pb-48">
+          <div className="container relative flex min-h-[78svh] flex-col justify-end pb-44 pt-28 md:min-h-[88svh] md:pb-48 md:pt-48">
             <Reveal>
               <p className="text-eyebrow uppercase text-white text-shadow-hero">{copy.hero.eyebrow}</p>
               <h1 className="mt-4 max-w-3xl font-concept text-display font-medium leading-[1.02] text-shadow-hero ">
@@ -168,6 +168,7 @@ export function SuitesHub({
                     url={seg.href}
                     isStatic
                     imageSrc={seg.image}
+                    ctaLabel={seg.ctaLabel}
                     width={300}
                     height={188}
                     quality={60}

@@ -28,7 +28,7 @@ export function RestaurantPage({ locale }: { locale: Locale }) {
             className="object-cover object-center"
           />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.62)_0%,rgba(0,0,0,0.2)_38%,rgba(0,0,0,0.74)_100%)]" />
-          <div className="container relative flex min-h-[72svh] flex-col justify-end pb-8 pt-28 md:min-h-[80svh]">
+          <div className="container relative flex min-h-[72svh] flex-col justify-end pb-8 pt-28 md:min-h-[80svh] md:pt-48">
             <Reveal>
               <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white">
                 {copy.hero.eyebrow}
