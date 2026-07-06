@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/home/reveal";
 import { LuxurySplitBand } from "@/components/luxury/primitives";
+import { LuxuryImageSlider, type SliderSlide } from "@/components/luxury/image-slider";
 import { InquiryForm } from "@/components/info-page/inquiry-form";
 import { actionButtonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -101,16 +102,27 @@ export function InfoDetailTemplate({
 
   const overview = page.sections[0];
   const restSections = page.sections.slice(1);
-  const railSections = restSections.slice(0, 3);
-  const overflowSections = restSections.slice(3);
+  const isDayPassPage = page.id === "day-passes";
+  const useSectionBands = isDayPassPage;
+  const railSections = useSectionBands ? [] : restSections.slice(0, 3);
+  const overflowSections = useSectionBands ? restSections : restSections.slice(3);
+  const heroFacts = isDayPassPage ? [] : facts;
 
   const gallery = page.gallery.length >= 4 ? page.gallery.slice(0, 4) : page.gallery;
   const introImage = page.gallery[0] ?? page.heroImage;
+  const overviewSlides: SliderSlide[] = [page.heroImage, ...page.gallery].map((image) => ({
+    src: image.src,
+    alt: image.alt[locale],
+  }));
+  const galleryHref = `/${locale}/gallery`;
+  const galleryLabel = locale === "en" ? "View Gallery" : "Ver galería";
 
   // Event hero leans warm/dark; experience hero leans ocean.
-  const heroGradient = isEvent
-    ? "linear-gradient(180deg,rgba(10,24,37,.42) 0%,rgba(10,24,37,.08) 40%,rgba(8,20,30,.82) 100%)"
-    : "linear-gradient(180deg,rgba(16,58,77,.4) 0%,rgba(16,58,77,.06) 42%,rgba(12,44,58,.82) 100%)";
+  const heroGradient = isDayPassPage
+    ? "linear-gradient(180deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.42) 42%,rgba(0,0,0,.88) 100%)"
+    : isEvent
+      ? "linear-gradient(180deg,rgba(10,24,37,.42) 0%,rgba(10,24,37,.08) 40%,rgba(8,20,30,.82) 100%)"
+      : "linear-gradient(180deg,rgba(16,58,77,.4) 0%,rgba(16,58,77,.06) 42%,rgba(12,44,58,.82) 100%)";
 
   return (
     <article className="home-concept">
@@ -128,17 +140,24 @@ export function InfoDetailTemplate({
         <div
           className={cn(
             "container relative flex min-h-[86svh] flex-col justify-end pt-28 md:pt-48",
-            facts.length > 0 ? "pb-24 md:pb-20" : "pb-10"
+            heroFacts.length > 0 ? "pb-24 md:pb-20" : "pb-10"
           )}
         >
           <Reveal className="max-w-3xl">
-            <p className="text-eyebrow uppercase text-concept-cream text-shadow-hero">
-              {page.eyebrow[locale]}
-            </p>
-            <h1 className="mt-5 font-concept text-display font-medium leading-[1.0] text-shadow-hero">
+            {!isDayPassPage && (
+              <p className="text-eyebrow uppercase text-concept-cream text-shadow-hero">
+                {page.eyebrow[locale]}
+              </p>
+            )}
+            <h1
+              className={cn(
+                "font-concept !text-display font-medium !leading-[1.0] text-shadow-hero",
+                isDayPassPage ? "mt-0" : "mt-5"
+              )}
+            >
               {page.title[locale]}
             </h1>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-white/90 text-shadow-hero md:text-lg">
+            <p className="mt-5 max-w-xl !text-body-lg leading-relaxed text-white/90 text-shadow-hero">
               {page.description[locale]}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -160,10 +179,10 @@ export function InfoDetailTemplate({
             </div>
           </Reveal>
         </div>
-        {facts.length > 0 && (
+        {heroFacts.length > 0 && (
           <div className="absolute inset-x-0 bottom-0">
             <div className="container flex flex-wrap gap-x-10 gap-y-3 pb-8">
-              {facts.map((fact) => (
+              {heroFacts.map((fact) => (
                 <span
                   key={fact.label}
                   className="text-micro font-medium uppercase tracking-[0.1em] text-[#e7eef0]"
@@ -177,7 +196,19 @@ export function InfoDetailTemplate({
       </section>
 
       {/* INTRO SPLIT — image flips by type */}
-      {overview && (
+      {overview && isDayPassPage && (
+        <LuxuryImageSlider
+          title={overview.title[locale]}
+          subtitle={overview.body[locale].join(" ")}
+          slides={overviewSlides}
+          exploreHref={galleryHref}
+          exploreLabel={galleryLabel}
+          dragHint={locale === "en" ? "Drag to explore" : "Arrastra para explorar"}
+          background="sand-muted"
+        />
+      )}
+
+      {overview && !isDayPassPage && (
         <section
           className={cn(
             "flex flex-col bg-concept-sand-muted md:min-h-[520px] md:flex-row",
@@ -195,7 +226,7 @@ export function InfoDetailTemplate({
           </Reveal>
           <Reveal
             delay={100}
-            className="flex w-full flex-col justify-center px-8 py-16 md:w-1/2 md:px-16 md:py-20"
+              className="flex w-full flex-col justify-center px-8 py-16 md:w-1/2 md:px-16 md:py-20"
           >
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-concept-gold-muted">
               {k.introEyebrow}
@@ -296,6 +327,44 @@ export function InfoDetailTemplate({
       {/* OVERFLOW SECTIONS — preserved as alternating split bands */}
       {overflowSections.map((section, index) => {
         const image = page.gallery[(index + 1) % page.gallery.length] ?? page.heroImage;
+        if (useSectionBands) {
+          return (
+            <section
+              key={section.title[locale]}
+              className={cn(
+                "flex flex-col bg-concept-ocean md:min-h-[420px] md:flex-row",
+                index % 2 === 0 && "md:flex-row-reverse"
+              )}
+            >
+              <Reveal className="group relative min-h-[260px] w-full overflow-hidden md:min-h-0 md:w-1/2">
+                <Image
+                  src={image.src}
+                  alt={image.alt[locale]}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                />
+              </Reveal>
+              <Reveal
+                delay={100}
+                className="flex w-full flex-col justify-center px-8 py-12 md:w-1/2 md:px-14 md:py-16"
+              >
+                <h2 className="font-concept text-h1 font-medium leading-[1.1] text-white">
+                  {section.title[locale]}
+                </h2>
+                <ul className="mt-6 max-w-md space-y-3 text-body-sm leading-relaxed text-on-dark-muted">
+                  {section.body[locale].map((item) => (
+                    <li key={item} className="flex gap-3">
+                      <span className="mt-[0.45em] h-1.5 w-1.5 shrink-0 rounded-full bg-concept-gold" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
+            </section>
+          );
+        }
+
         return (
           <LuxurySplitBand
             key={section.title[locale]}

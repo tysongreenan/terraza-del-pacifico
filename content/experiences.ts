@@ -32,6 +32,210 @@ export const experienceHub: HubPage = {
 
 export const experiences: InfoPage[] = [
   {
+    id: "day-passes",
+    type: "experience",
+    slugs: {
+      es: "pases-de-dia",
+      en: "day-passes",
+    },
+    title: {
+      es: "Pases de Dia en Playa Hermosa",
+      en: "Day Passes in Playa Hermosa",
+    },
+    cardTitle: {
+      es: "Pases de Dia",
+      en: "Day Passes",
+    },
+    eyebrow: {
+      es: "Piscina, playa y almuerzo",
+      en: "Pool, beach, and lunch",
+    },
+    description: {
+      es: "Disfruta las instalaciones de Terraza del Pacifico por el dia, con opciones que van desde acceso basico hasta paquetes con almuerzo, postre, bebida y cafe.",
+      en: "Enjoy Terraza del Pacifico for the day, with options from basic resort access to lunch packages with dessert, soft drink, and coffee.",
+    },
+    heroImage: {
+      src: "/images/resort/pool/exp-pool-day-loungers.avif",
+      alt: {
+        es: "Piscina y sillas de descanso en Terraza del Pacifico",
+        en: "Pool and lounge chairs at Terraza del Pacifico",
+      },
+    },
+    gallery: [
+      {
+        src: "/images/resort/pool/pool-aerial-day-BveHvOiS.jpg",
+        alt: {
+          es: "Vista aerea de la piscina durante el dia",
+          en: "Aerial view of the pool during the day",
+        },
+      },
+      {
+        src: "/images/resort/dining/restaurant-view-WsRnSUPN.jpg",
+        alt: {
+          es: "Restaurante frente al mar en Playa Hermosa",
+          en: "Beachfront restaurant in Playa Hermosa",
+        },
+      },
+      {
+        src: "/images/resort/beach-aerial/beach-lounge-sunset.JPG",
+        alt: {
+          es: "Zona de playa al atardecer",
+          en: "Beach lounge area at sunset",
+        },
+      },
+      {
+        src: "/images/resort/pool/g-family-pool-1-g77anSd1.jpg",
+        alt: {
+          es: "Familia disfrutando la piscina del resort",
+          en: "Family enjoying the resort pool",
+        },
+      },
+      {
+        src: "/images/resort/dining/restaurant-dining-nygPbVtS.jpg",
+        alt: {
+          es: "Mesa servida en el restaurante Vivace Beachfront",
+          en: "Table set at Vivace Beachfront restaurant",
+        },
+      },
+    ],
+    facts: [
+      {
+        label: { es: "Desde", en: "From" },
+        value: { es: "$30 por persona", en: "$30 per person" },
+      },
+      {
+        label: { es: "Con almuerzo", en: "With lunch" },
+        value: { es: "$60 adulto / $50 nino", en: "$60 adult / $50 child" },
+      },
+      {
+        label: { es: "Full pass", en: "Full pass" },
+        value: { es: "$75 adulto / $60 nino", en: "$75 adult / $60 child" },
+      },
+      {
+        label: { es: "Grupos", en: "Groups" },
+        value: { es: "10% desc. desde 11 personas", en: "10% off for 11+ people" },
+      },
+    ],
+    sections: [
+      {
+        title: { es: "Resumen", en: "Overview" },
+        body: {
+          es: [
+            "Los pases de dia son una forma sencilla de disfrutar la piscina, la playa, el restaurante y las areas comunes de Terraza del Pacifico sin hospedarte durante la noche.",
+            "Puedes elegir solo acceso a las instalaciones o sumar comidas para convertirlo en un dia completo frente al mar.",
+          ],
+          en: [
+            "Day passes are an easy way to enjoy the pool, beach, restaurant, and shared resort areas at Terraza del Pacifico without staying overnight.",
+            "Choose simple facility access or add meals to make it a full beachfront day.",
+          ],
+        },
+      },
+      {
+        title: { es: "Pase individual", en: "Individual Day Pass" },
+        body: {
+          es: [
+            "Incluye el uso de las instalaciones del resort.",
+            "Tarifa base: $30 por persona. Se identifica con brazalete naranja.",
+            "Agrega almuerzo, postre, bebida gaseosa y cafe por $30 adicionales por adulto.",
+            "Pase individual con almuerzo: $60 por adulto. Ninos mayores de 4 anos pagan $50. Se identifica con brazalete amarillo.",
+          ],
+          en: [
+            "Includes use of the resort facilities.",
+            "Base rate: $30 per person. Guests are identified with an orange wristband.",
+            "Add lunch, dessert, soft drink, and coffee for an additional $30 per adult.",
+            "Individual day pass with lunch: $60 per adult. Children over 4 years old are $50. Guests are identified with a yellow wristband.",
+          ],
+        },
+      },
+      {
+        title: { es: "Pase individual completo", en: "Full Individual Day Pass" },
+        body: {
+          es: [
+            "Incluye desayuno, almuerzo, postre, bebida gaseosa y cafe.",
+            "La tarifa es de $75 por persona. Ninos mayores de 4 anos pagan $60. Se identifica con brazalete verde.",
+          ],
+          en: [
+            "Includes breakfast, lunch, dessert, soft drink, and coffee.",
+            "The rate is $75 per person. Children over 4 years old are $60. Guests are identified with a green wristband.",
+          ],
+        },
+      },
+      {
+        title: { es: "Plan grupal", en: "Group Plan" },
+        body: {
+          es: [
+            "Los grupos de 11 personas o mas reciben 10% de descuento.",
+            "El grupo se identifica con brazalete azul. Confirma la cantidad de personas al registrarte para aplicar la tarifa correspondiente.",
+          ],
+          en: [
+            "Groups of 11 people or more receive a 10% discount.",
+            "Groups are identified with a blue wristband. Confirm the number of people at registration so the corresponding rate can be applied.",
+          ],
+        },
+      },
+      {
+        title: { es: "Choferes o guias", en: "Drivers or Guides" },
+        body: {
+          es: [
+            "Choferes o guias reciben almuerzo ejecutivo mas bebida gaseosa.",
+            "El beneficio se coordina al momento del registro del grupo.",
+          ],
+          en: [
+            "Drivers or guides receive an executive lunch plus soft drink.",
+            "This benefit is coordinated at the time of group registration.",
+          ],
+        },
+      },
+    ],
+    faq: [
+      {
+        q: {
+          es: "Que incluye el pase de dia individual?",
+          en: "What does the individual day pass include?",
+        },
+        a: {
+          es: "Incluye uso de las instalaciones del resort por $30 por persona. Este pase no incluye comidas y se identifica con brazalete naranja.",
+          en: "It includes use of the resort facilities for $30 per person. This pass does not include meals and is identified with an orange wristband.",
+        },
+      },
+      {
+        q: {
+          es: "Cual es la diferencia entre el pase con almuerzo y el pase completo?",
+          en: "What is the difference between the lunch pass and the full pass?",
+        },
+        a: {
+          es: "El pase con almuerzo incluye almuerzo, postre, bebida gaseosa y cafe. El pase completo agrega desayuno, ademas del almuerzo, postre, bebida gaseosa y cafe.",
+          en: "The lunch pass includes lunch, dessert, soft drink, and coffee. The full pass adds breakfast, along with lunch, dessert, soft drink, and coffee.",
+        },
+      },
+      {
+        q: {
+          es: "Hay tarifa para ninos?",
+          en: "Is there a children's rate?",
+        },
+        a: {
+          es: "Si. En los paquetes con comidas, los ninos mayores de 4 anos pagan $50 para el pase con almuerzo y $60 para el pase completo.",
+          en: "Yes. For meal packages, children over 4 years old are $50 for the lunch pass and $60 for the full pass.",
+        },
+      },
+      {
+        q: {
+          es: "Los grupos tienen descuento?",
+          en: "Do groups receive a discount?",
+        },
+        a: {
+          es: "Si. Los grupos de 11 personas o mas reciben 10% de descuento. La cantidad de personas se verifica al momento del registro.",
+          en: "Yes. Groups of 11 people or more receive a 10% discount. The number of people is verified at registration.",
+        },
+      },
+    ],
+    cta: {
+      label: { es: "Consultar disponibilidad", en: "Ask about availability" },
+      href: whatsappHref,
+    },
+    relatedIds: ["beachfront-yoga", "live-music", "whale-watching"],
+  },
+  {
     id: "beachfront-yoga",
     type: "experience",
     slugs: {

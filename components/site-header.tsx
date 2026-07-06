@@ -247,7 +247,13 @@ export function SiteHeader({
       ],
     },
     { href: p("events"), label: n.events },
-    { href: p("experiences"), label: n.experiences },
+    {
+      label: n.experiences,
+      children: [
+        { href: p("experiences"), label: n.allExperiences },
+        { href: p("experiences/day-passes"), label: n.dayPasses },
+      ],
+    },
     { href: p("gallery"), label: n.gallery },
     { href: p("about"), label: n.about },
     { href: p("contact"), label: n.contact },
