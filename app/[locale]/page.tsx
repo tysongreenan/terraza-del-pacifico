@@ -9,6 +9,7 @@ import { Hero } from "@/components/home/hero";
 import { ResortDiscovery } from "@/components/home/resort-discovery";
 import { Welcome } from "@/components/home/welcome";
 import { Experiences } from "@/components/home/experiences";
+import { DayPassPromo } from "@/components/home/day-pass-promo";
 import { Suites } from "@/components/home/suites";
 import { Restaurant } from "@/components/home/restaurant";
 import { Bars } from "@/components/home/bars";
@@ -64,6 +65,7 @@ export default async function HomePage({
       <Hero locale={l} dict={dict} />
       <ResortDiscovery locale={l} dict={dict} />
       <Experiences locale={l} dict={dict} />
+      <DayPassPromo locale={l} />
       <Suites locale={l} dict={dict} />
       <Restaurant locale={l} dict={dict} />
       <Bars locale={l} />

@@ -468,7 +468,39 @@ export function InfoDetailTemplate({
       )}
 
       {/* FORM BAND */}
-      {isEvent ? (
+      {isDayPassPage ? (
+        <section id="inquire" className="scroll-mt-20 bg-concept-ocean py-20 text-white md:py-section">
+          <div className="container">
+            <Reveal className="mx-auto max-w-3xl text-center">
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-concept-gold">
+                {locale === "en" ? "Day pass availability" : "Disponibilidad de pases"}
+              </p>
+              <h2 className="mt-4 font-concept text-h1 font-medium leading-[1.06] text-white">
+                {locale === "en"
+                  ? "Ask us about your day at Terraza"
+                  : "Consulta tu dia en Terraza"}
+              </h2>
+              <p className="mx-auto mt-5 max-w-xl text-body-sm leading-relaxed text-on-dark-muted">
+                {locale === "en"
+                  ? "Send us your preferred date and group size on WhatsApp, and our team will confirm availability and the best day-pass option."
+                  : "Envianos tu fecha y la cantidad de personas por WhatsApp, y nuestro equipo confirma disponibilidad y la mejor opcion de pase."}
+              </p>
+              <a
+                href={page.cta.href}
+                target={page.cta.href.startsWith("http") ? "_blank" : undefined}
+                rel={page.cta.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                className={actionButtonVariants({
+                  variant: "primary",
+                  className: "mt-8",
+                })}
+              >
+                {locale === "en" ? "Contact via WhatsApp" : "Contactar por WhatsApp"}
+                <ArrowRight className="h-4 w-4" aria-hidden />
+              </a>
+            </Reveal>
+          </div>
+        </section>
+      ) : isEvent ? (
         <section id="inquire" className="relative scroll-mt-20 overflow-hidden py-20 md:py-section">
           <Image
             src={page.heroImage.src}
