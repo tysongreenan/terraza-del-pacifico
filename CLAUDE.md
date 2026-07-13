@@ -68,7 +68,7 @@ Every analytics/widget integration is gated on its `NEXT_PUBLIC_*` var — a bla
 
 - GA4 (`NEXT_PUBLIC_GA_ID`) + GTM (`NEXT_PUBLIC_GTM_ID`): **double-count risk** — if GTM already has a GA4 config tag, leave `NEXT_PUBLIC_GA_ID` blank.
 - Meta Pixel, Sojern travel pixel, Elfsight widgets (reviews/instagram/about) — all off until their IDs are set.
-- Booking CTAs route to the Orbe booking engine (`bookingHref` in `lib/site.ts`, override via `NEXT_PUBLIC_BOOKING_URL`).
+- Booking CTAs route to the direct-book engine (`bookingHref` in `lib/site.ts`, override via `NEXT_PUBLIC_BOOKING_URL`).
 - Contact/inquiry forms (`app/api/contact`, `app/api/inquiry`) send via **Resend** and capture to PostHog server-side. Both have a honeypot (`company` field) and **fall back silently to WhatsApp/email if `RESEND_API_KEY` is unset** — never surface a hard error to guests. PostHog is proxied through `/ingest/*` rewrites (`next.config.mjs`).
 
 See `INTEGRATIONS.md` and `docs/embeds-and-integrations.md`.

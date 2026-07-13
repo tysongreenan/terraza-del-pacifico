@@ -259,7 +259,7 @@ export function SuiteDetail({
           <aside className="w-full flex-none lg:w-[372px]">
             <div className="lg:sticky lg:top-24">
               {/* reserve card — condensed: Book today / room name / two actions.
-                  Primary links out to the Orbe booking engine; secondary to
+                  Primary links out to the direct-book engine; secondary to
                   WhatsApp. Both open in a new tab. */}
               <div className="rounded-sm border border-concept-border bg-white p-7 shadow-[0_14px_40px_rgba(16,58,77,0.1)]">
                 <h2 className="font-concept text-h4 font-medium leading-tight text-concept-ocean">
