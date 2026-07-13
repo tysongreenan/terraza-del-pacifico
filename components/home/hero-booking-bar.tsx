@@ -15,7 +15,7 @@ export function HeroBookingBar({ dict }: { dict: Dictionary }) {
           </p>
           <p className="mt-1 text-body-sm text-concept-ink">{b.subtitle}</p>
         </div>
-        {/* Reservations are handled by the Orbe booking engine (opens in a new tab). */}
+        {/* Reservations are handled by the direct-book engine (opens in a new tab). */}
         <a
           href={bookingHref}
           target="_blank"
