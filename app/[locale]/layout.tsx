@@ -111,9 +111,10 @@ export default async function LocaleLayout({
       {/* Disabled until NEXT_PUBLIC_FB_PIXEL_ID is set (no-op otherwise). */}
       <MetaPixel />
 
-      {/* Sojern Travel Platform pixel. One container, page-type derived from the
-          route (HOME_PAGE / PRODUCT / TRACKING). Disabled until
-          NEXT_PUBLIC_SOJERN_HPID is set to the Property ID (6483). */}
+      {/* Sojern Next Gen pixel. Page type derived from route (homePage /
+          product / tracking). Disabled until NEXT_PUBLIC_SOJERN_PROPERTY_ID
+          (or legacy NEXT_PUBLIC_SOJERN_HPID) is set to the UUID from the guide:
+          ED5635C3-BF1C-4F81-B2B0-A9C371CA2C92 */}
       <SojernPixel />
     </>
   );

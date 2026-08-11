@@ -4,104 +4,108 @@ import Script from "next/script";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef } from "react";
 
-// Sojern Travel Platform container pixel (cp_v3_js). One container tag serves
-// every page; only the page-type (pt) changes, derived here from the route:
-//   /{locale}            -> HOME_PAGE
-//   /{locale}/suites...  -> PRODUCT   (room pages)
-//   everything else      -> TRACKING
-// (The booking-engine CONVERSION pixel is separate — it lives in Orbe, pending
-// the booking Property ID, not on the website.)
+// Sojern Next Generation pixel (cookieless / privacy-first SDK).
+// Spec: "Sojern Next Generation Pixel Implementation Guide for Terraza del Pacifico"
 //
-// DISABLED until NEXT_PUBLIC_SOJERN_HPID is set (Property ID "6483"). Leave the
-// env var blank to keep it dropped; set it to go live. Renders nothing when
-// unset, matching the Meta Pixel / GTM convention.
+// One SDK load; page type is derived from the route on each navigation:
+//   /{locale}              -> homePage
+//   /{locale}/suites...    -> product   (rooms/suites bookable inventory)
+//   everything else        -> tracking  (exclude pages that already fire another type)
+//
+// Gated on NEXT_PUBLIC_SOJERN_PROPERTY_ID (UUID). Falls back to the legacy
+// NEXT_PUBLIC_SOJERN_HPID env name so existing Vercel vars keep working after
+// the value is updated to the new UUID. Renders nothing when unset.
 
-const HPID = process.env.NEXT_PUBLIC_SOJERN_HPID;
-const HPR = "Terraza del Pacifico"; // Hotel property name (hpr)
+declare global {
+  interface Window {
+    sjn?: ((...args: unknown[]) => void) & { q?: unknown[] };
+  }
+}
 
-// Sojern's "event type" lookup — kept verbatim from their snippet so HOME_PAGE
-// and TRACKING resolve to an empty et, PRODUCT to "hpr", etc.
-const ET_BY_PAGE_TYPE: Record<string, string | null> = {
-  HOME_PAGE: null,
-  SEARCH: "hs",
-  PRODUCT: "hpr",
-  SHOPPING_CART: "hcart",
-  CONVERSION: "hc",
-  TRACKING: null,
-};
+const PROPERTY_ID =
+  process.env.NEXT_PUBLIC_SOJERN_PROPERTY_ID ||
+  process.env.NEXT_PUBLIC_SOJERN_HPID;
 
-function getPageType(pathname: string): "HOME_PAGE" | "PRODUCT" | "TRACKING" {
+/** Container ID from the Sojern onboarding guide (fixed for this property). */
+const CONTAINER_ID = "206";
+
+const HOTEL_PARAMS = {
+  city: "Jacó",
+  country: "CR",
+  nearestAirport: "TMU",
+  property: "Terraza del Pacifico",
+} as const;
+
+type SojernPageType = "homePage" | "product" | "tracking";
+
+function getPageType(pathname: string): SojernPageType {
   const seg = pathname.split("/").filter(Boolean); // ["en"] | ["en","suites","superior"]
-  if (seg.length <= 1) return "HOME_PAGE";
-  if (seg[1] === "suites") return "PRODUCT";
-  return "TRACKING";
+  if (seg.length <= 1) return "homePage";
+  // Guide: PRODUCT = pages describing bookable services (rooms, suites, tours…)
+  if (seg[1] === "suites") return "product";
+  return "tracking";
+}
+
+/** Human page category for TRACKING pixels (empty on home/product). */
+function getPageCategory(pathname: string): string {
+  const seg = pathname.split("/").filter(Boolean);
+  if (seg.length <= 1) return "";
+  // Drop locale; use first content segment (restaurant, contact, events, …)
+  return seg[1] ?? "";
+}
+
+/** Install the Sojern command queue before the SDK loads (matches their snippet). */
+function ensureSjnQueue() {
+  if (typeof window === "undefined") return;
+  window.sjn =
+    window.sjn ||
+    function (...args: unknown[]) {
+      (window.sjn!.q = window.sjn!.q || []).push(args);
+    };
 }
 
 export function SojernPixel() {
   const pathname = usePathname();
-  const autocxReady = useRef(false);
   const lastFired = useRef<string | null>(null);
 
   const fire = useCallback((path: string) => {
-    if (!HPID) return;
-    if (lastFired.current === path) return; // guard the landing double-fire
+    if (!PROPERTY_ID || typeof window === "undefined") return;
+    // Guard React Strict Mode double-invoke on the same path
+    if (lastFired.current === path) return;
     lastFired.current = path;
 
-    const params: Record<string, string | null> = {
-      hpr: HPR,
-      hpid: HPID,
-      sha256_eml: "", // hashed email — not collected on the marketing site
-      sha1_eml: "",
-      md5_eml: "",
-      ccid: "", // 1st-party cookie user id — not collected
-      pt: getPageType(path),
-    };
-    params.et = ET_BY_PAGE_TYPE[params.pt as string] ?? "";
+    ensureSjnQueue();
 
-    // Merge in the cookieless auto-context that sjrn_autocx.js exposes on
-    // window.sjrn_params (skipped silently if it hasn't loaded yet).
-    let merged: Record<string, unknown> = params;
-    try {
-      merged = Object.assign(
-        {},
-        (window as unknown as { sjrn_params?: Record<string, unknown> })
-          .sjrn_params,
-        params,
-      );
-    } catch {
-      /* sjrn_params unavailable — fall back to params only */
+    const pageType = getPageType(path);
+    const params: Record<string, string> = {
+      propertyID: PROPERTY_ID,
+      ...HOTEL_PARAMS,
+    };
+
+    if (pageType === "tracking") {
+      params.pageCategory = getPageCategory(path);
     }
 
-    const query = Object.keys(merged)
-      .map((key) => `${key}=${encodeURIComponent(String(merged[key] ?? ""))}`)
-      .join("&");
-
-    const frame = document.createElement("iframe");
-    frame.setAttribute("style", "height:0; width:0; display:none;");
-    frame.setAttribute("aria-hidden", "true");
-    frame.title = "Sojern";
-    frame.src = `https://static.sojern.com/cip/c/59.html?f_v=cp_v3_js&p_v=1&${query}`;
-    (document.head || document.body).appendChild(frame);
+    // Queued if SDK not ready yet; processed once sojern.min.js loads.
+    window.sjn?.("initAndFire", "container", CONTAINER_ID, pageType, {
+      context: { vertical: "hotel" },
+      params,
+    });
   }, []);
 
-  // Fire on every client-side navigation, once autocx is loaded. The very first
-  // (landing) hit is fired from the Script onLoad below so it carries the
-  // auto-context — the attribution-critical pageview for the campaign.
+  // Fire on mount + every client-side navigation.
   useEffect(() => {
-    if (!HPID || !pathname) return;
-    if (autocxReady.current) fire(pathname);
+    if (!PROPERTY_ID || !pathname) return;
+    fire(pathname);
   }, [pathname, fire]);
 
-  if (!HPID) return null;
+  if (!PROPERTY_ID) return null;
 
   return (
     <Script
-      src="https://static.sojern.com/utils/sjrn_autocx.js"
+      id="sojern-sdk"
+      src="https://static.sojern.com/sdk/latest/sojern.min.js"
       strategy="afterInteractive"
-      onLoad={() => {
-        autocxReady.current = true;
-        if (pathname) fire(pathname);
-      }}
     />
   );
 }
