@@ -47,18 +47,19 @@ const seo = {
   },
 };
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  return params.then(({ locale }) =>
-    pageMetadata({
-      params: Promise.resolve({ locale }),
-      path,
-      content: seo[locale === "en" ? "en" : "es"],
-    })
-  );
+  // Async form (not Promise-chained) so crawlers that sample early always see
+  // a resolved <title> — SE Ranking previously flagged this route as title_missing.
+  const { locale } = await params;
+  return pageMetadata({
+    params: Promise.resolve({ locale }),
+    path,
+    content: seo[locale === "en" ? "en" : "es"],
+  });
 }
 
 export default async function Page({

@@ -186,7 +186,11 @@ export function RestaurantAboutPage({ locale }: { locale: Locale }) {
         <div className="relative min-h-[300px] w-full md:min-h-[440px] md:w-1/2">
           <Image
             src={copy.reserve.image}
-            alt=""
+            alt={
+              locale === "en"
+                ? "Vivace Beachfront dining terrace at Hotel Terraza del Pacífico"
+                : "Terraza de Vivace Beachfront en Hotel Terraza del Pacífico"
+            }
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover"

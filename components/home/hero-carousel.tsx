@@ -51,7 +51,9 @@ function SlideThumb({
     >
       <Image
         src={thumb}
-        alt=""
+        // Button already has aria-label; keep a short alt for image SEO tools
+        // that flag empty alts (SE Ranking image_no_alt).
+        alt={slide.alt.en || slide.alt.es || `${label} ${index + 1}`}
         fill
         // Thumbnails render small (64–96px) but downscale busy aerial photos,
         // so bump quality above the default 75 to keep edges crisp. Sizes are

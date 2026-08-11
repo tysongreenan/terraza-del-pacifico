@@ -23,10 +23,16 @@ export async function generateMetadata({
   const venue = getVenue(slug);
   if (!venue) return {};
   const t = venue.text[l];
+  // Locale-specific titles so es/en are not flagged as duplicates (same brand
+  // name across languages is otherwise identical in the document <title>).
+  const title =
+    l === "en"
+      ? `${t.hero.title} · Beachfront Bar in Playa Hermosa | Terraza`
+      : `${t.hero.title} · Bar frente al mar en Playa Hermosa | Terraza`;
   return pageMetadata({
     params: Promise.resolve({ locale }),
     path: `bars/${slug}`,
-    content: { title: `${t.hero.title} | Hotel Terraza del Pacífico`, desc: t.hero.description },
+    content: { title, desc: t.hero.description },
     image: venue.heroImage,
   });
 }

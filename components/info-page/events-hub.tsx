@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   LuxuryCtaBand,
   LuxuryHero,
@@ -19,6 +20,7 @@ const COPY = {
     dragHint: "Desliza para explorar",
     prev: "Imagen anterior",
     next: "Siguiente imagen",
+    moreHub: "Ver más tipos de eventos",
   },
   en: {
     ctaEyebrow: "Plan ahead",
@@ -29,6 +31,7 @@ const COPY = {
     dragHint: "Swipe to explore",
     prev: "Previous image",
     next: "Next image",
+    moreHub: "See more event types",
   },
 } as const;
 
@@ -44,10 +47,13 @@ export function EventsHub({
   hub,
   pages,
   locale,
+  /** Optional deep link to a secondary hub (e.g. /events/other-events). */
+  moreHubHref,
 }: {
   hub: HubPage;
   pages: InfoPage[];
   locale: Locale;
+  moreHubHref?: string;
 }) {
   const copy = COPY[locale];
 
@@ -79,6 +85,17 @@ export function EventsHub({
           background={index % 2 === 0 ? "sand-muted" : "sand"}
         />
       ))}
+
+      {moreHubHref && (
+        <div className="border-t border-concept-border/60 bg-concept-sand py-10 text-center">
+          <Link
+            href={moreHubHref}
+            className="inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-concept-ocean underline-offset-4 transition-colors hover:text-concept-gold hover:underline"
+          >
+            {copy.moreHub}
+          </Link>
+        </div>
+      )}
 
       <LuxuryCtaBand
         locale={locale}

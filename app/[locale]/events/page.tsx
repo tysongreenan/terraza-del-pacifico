@@ -3,7 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { EventsHub } from "@/components/info-page/events-hub";
 import { JsonLd } from "@/components/json-ld";
-import { eventHub, events } from "@/content/events";
+import { eventHub, events, otherEventSlugs } from "@/content/events";
 import { isLocale, type Locale } from "@/lib/i18n";
 import { breadcrumbJsonLd } from "@/lib/seo";
 
@@ -57,7 +57,12 @@ export default async function EventsPage({
         className="sr-only object-cover"
         aria-hidden
       />
-      <EventsHub hub={eventHub} pages={events} locale={l} />
+      <EventsHub
+        hub={eventHub}
+        pages={events}
+        locale={l}
+        moreHubHref={`/${l}/events/${otherEventSlugs[l]}`}
+      />
     </div>
   );
 }

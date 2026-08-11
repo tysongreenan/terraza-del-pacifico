@@ -403,7 +403,7 @@ export function InfoDetailTemplate({
         <section id="inquire" className="relative scroll-mt-20 overflow-hidden py-20 md:py-section">
           <Image
             src={page.heroImage.src}
-            alt=""
+            alt={page.heroImage.alt[locale]}
             fill
             sizes="100vw"
             className="object-cover"

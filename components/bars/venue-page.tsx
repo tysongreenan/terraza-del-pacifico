@@ -154,7 +154,17 @@ export function VenuePage({
 
       {/* CTA band */}
       <section className="relative overflow-hidden py-section text-center text-white md:py-section">
-        <Image src={venue.ctaImage} alt="" fill sizes="100vw" className="object-cover" />
+        <Image
+          src={venue.ctaImage}
+          alt={
+            locale === "en"
+              ? `${t.hero.title} at Hotel Terraza del Pacífico, Playa Hermosa`
+              : `${t.hero.title} en Hotel Terraza del Pacífico, Playa Hermosa`
+          }
+          fill
+          sizes="100vw"
+          className="object-cover"
+        />
         <div className={cn("absolute inset-0", ctaScrim)} />
         <div className="container relative z-10">
           <Reveal>

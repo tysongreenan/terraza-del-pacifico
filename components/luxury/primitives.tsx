@@ -320,7 +320,7 @@ export function LuxuryCtaBand({
     >
       <Image
         src={image}
-        alt=""
+        alt={title}
         fill
         sizes="100vw"
         className="object-cover"

@@ -1,7 +1,13 @@
 {
   "url": "https://terrazadelpacifico.com/blog",
-  "title": "Blog & News | Hotel Terraza del Pacífico",
-  "desc": "News, stories and experiences from Hotel Terraza del Pacífico in Playa Hermosa, Costa Rica.",
+  "title": {
+    "es": "Blog y novedades | Hotel Terraza del Pacífico",
+    "en": "Blog & News | Hotel Terraza del Pacífico"
+  },
+  "desc": {
+    "es": "Noticias, historias y experiencias del Hotel Terraza del Pacífico en Playa Hermosa, Costa Rica.",
+    "en": "News, stories and experiences from Hotel Terraza del Pacífico in Playa Hermosa, Costa Rica."
+  },
   "h1": [
     "Blog & news"
   ],

@@ -35,8 +35,8 @@ export async function generateMetadata({
     metadataBase: new URL(siteUrl),
     title: {
       default: isEn
-        ? `${siteName} | Playa Hermosa, Costa Rica`
-        : `${siteName} | Playa Hermosa, Costa Rica`,
+        ? `Beachfront Hotel in Playa Hermosa, Costa Rica | ${siteName}`
+        : `Hotel frente al mar en Playa Hermosa, Costa Rica | ${siteName}`,
       template: `%s | ${siteName}`,
     },
     description: isEn
@@ -56,6 +56,13 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
       images: [defaultOgImage],
+    },
+    // Favicon / app icons (logo mark). Keeps SE Ranking "favicon missing" clean
+    // and gives browsers a brand icon without a separate .ico asset.
+    icons: {
+      icon: [{ url: "/images/brand/Logo-nuevo-B86U915-.png", type: "image/png" }],
+      apple: [{ url: "/images/brand/Logo-nuevo-B86U915-.png" }],
+      shortcut: ["/images/brand/Logo-nuevo-B86U915-.png"],
     },
     robots: { index: true, follow: true },
   };

@@ -272,7 +272,7 @@ export function Suites({
                 >
                   <Image
                     src={item.image}
-                    alt=""
+                    alt={item.name}
                     fill
                     sizes="(max-width: 768px) 50vw, 25vw"
                     className="object-cover"

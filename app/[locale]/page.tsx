@@ -29,7 +29,7 @@ const homeSeo: Record<Locale, { title: string; desc: string }> = {
     desc: "Hotel frente al mar en Playa Hermosa de Jacó, Costa Rica. Habitaciones con vista al océano, piscina con luces LED, restaurante mediterráneo y experiencias junto a la playa.",
   },
   en: {
-    title: "Hotel Terraza del Pacífico | Playa Hermosa de Jacó, Costa Rica",
+    title: "Beachfront Hotel in Playa Hermosa de Jacó, Costa Rica | Terraza",
     desc: "Beachfront hotel in Playa Hermosa de Jacó, Costa Rica. Ocean-view rooms, an LED-lit pool, a Mediterranean restaurant and experiences by the sea.",
   },
 };

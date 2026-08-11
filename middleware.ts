@@ -15,7 +15,14 @@ export function middleware(req: NextRequest) {
   const hasLocale = locales.some(
     (l) => pathname === `/${l}` || pathname.startsWith(`/${l}/`)
   );
-  if (hasLocale) return NextResponse.next();
+  if (hasLocale) {
+    // Surface the active locale so root layout can set <html lang> to match
+    // hreflang (es-CR / en-US). Without this, every page ships lang="es-CR".
+    const segment = pathname.split("/")[1] ?? defaultLocale;
+    const res = NextResponse.next();
+    res.headers.set("x-locale", segment);
+    return res;
+  }
 
   const locale = pickLocale(req);
   const url = req.nextUrl.clone();
@@ -24,8 +31,8 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-  // Only locale-less pages need redirect handling. Localized routes should not
-  // invoke middleware in production. `styleguide` is a standalone internal tool
-  // that lives outside the [locale] tree, so it must skip the locale redirect.
-  matcher: ["/((?!_next|api|ingest|styleguide|es(?:/|$)|en(?:/|$)|.*\\..*).*)"],
+  // Run on all app routes (including /es and /en) so we can set x-locale for
+  // <html lang>. Static files and internal tooling are excluded.
+  // `styleguide` lives outside the [locale] tree and skips the locale redirect.
+  matcher: ["/((?!_next|api|ingest|styleguide|.*\\..*).*)"],
 };

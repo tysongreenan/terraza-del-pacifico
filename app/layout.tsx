@@ -1,4 +1,6 @@
 import { Cormorant, Inter, Manrope } from "next/font/google";
+import { headers } from "next/headers";
+import { htmlLang, isLocale, defaultLocale } from "@/lib/i18n";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -21,14 +23,21 @@ const inter = Inter({
   display: "swap",
 });
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  // Locale is injected by middleware on every localized request so <html lang>
+  // matches hreflang (es-CR / en-US). Falls back to Spanish-primary default.
+  const headerList = await headers();
+  const raw = headerList.get("x-locale") ?? defaultLocale;
+  const locale = isLocale(raw) ? raw : defaultLocale;
+  const lang = htmlLang[locale];
+
   return (
     <html
-      lang="es-CR"
+      lang={lang}
       className={`${manrope.variable} ${cormorant.variable} ${inter.variable}`}
       // The inline script below adds a `js` class to <html> before paint, so the
       // client markup intentionally differs from the server's. Suppress the
