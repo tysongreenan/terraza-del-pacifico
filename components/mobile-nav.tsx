@@ -55,8 +55,12 @@ export function MobileNav({
       {open && (
         <div
           className={cn(
-            "fixed inset-x-0 z-40 border-b border-border bg-background shadow-lg",
-            raised ? "top-24 md:top-[11rem]" : "top-[4.5rem] md:top-[5.5rem]"
+            // max-h keeps the panel inside the viewport on short screens so the
+            // bottom CTAs stay reachable; it scrolls internally when it overflows.
+            "fixed inset-x-0 z-40 overflow-y-auto overscroll-contain border-b border-border bg-background shadow-lg",
+            raised
+              ? "top-24 max-h-[calc(100dvh-6rem)] md:top-[11rem] md:max-h-[calc(100dvh-11rem)]"
+              : "top-[4.5rem] max-h-[calc(100dvh-4.5rem)] md:top-[5.5rem] md:max-h-[calc(100dvh-5.5rem)]"
           )}
         >
           <nav className="container flex flex-col py-4">
